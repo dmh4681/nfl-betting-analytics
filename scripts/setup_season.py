@@ -20,9 +20,14 @@ logger = logging.getLogger(__name__)
 class NFL2025SeasonSetup:
     def __init__(self):
         """Initialize the season setup"""
-        self.project_root = Path(__file__).parent.parent.parent
+        # Get the actual project root - go up from scripts/ directory
+        self.project_root = Path(__file__).parent.parent
         self.config_path = self.project_root / "config" / "team_mappings.json"
         self.output_path = self.project_root / "data" / "current_season" / "NFL_2025_Season.xlsx"
+        
+        logger.info(f"Project root: {self.project_root}")
+        logger.info(f"Config path: {self.config_path}")
+        logger.info(f"Output path: {self.output_path}")
         
         # Load team mappings
         self.team_mappings = self._load_team_mappings()
@@ -36,7 +41,9 @@ class NFL2025SeasonSetup:
         """Load team mappings from config"""
         try:
             with open(self.config_path, 'r') as f:
-                return json.load(f)
+                mappings = json.load(f)
+                logger.info(f"Loaded {len(mappings)} team mappings")
+                return mappings
         except FileNotFoundError:
             logger.error(f"Team mappings not found at {self.config_path}")
             return {}

@@ -1,0 +1,14 @@
+{
+  "season": 2025,
+  "created_date": "2025-05-31T13:47:05.064758",
+  "sheets_created": {
+    "regular_season_weeks": 18,
+    "playoff_weeks": 4,
+    "betting_logs": 2,
+    "power_rankings": 1,
+    "schedule": 1
+  },
+  "total_sheets": 26,
+  "teams_mapped": 32,
+  "file_location": "C:\\Users\\dmh46\\nfl-betting-analytics\\data\\current_season\\NFL_2025_Season.xlsx"
+}
