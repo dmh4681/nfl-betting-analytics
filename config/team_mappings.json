@@ -1,0 +1,226 @@
+﻿{
+  "Ravens": {
+    "short_name": "Ravens",
+    "full_name": "Baltimore Ravens",
+    "abbreviation": "Bal",
+    "caps": "BAL",
+    "division": "AFC North"
+  },
+  "49ers": {
+    "short_name": "49ers",
+    "full_name": "San Francisco 49ers",
+    "abbreviation": "SF",
+    "caps": "SF",
+    "division": "NFC West"
+  },
+  "Patriots": {
+    "short_name": "Patriots",
+    "full_name": "New England Patriots",
+    "abbreviation": "NE",
+    "caps": "NE",
+    "division": "AFC East"
+  },
+  "Chiefs": {
+    "short_name": "Chiefs",
+    "full_name": "Kansas City Chiefs",
+    "abbreviation": "KC",
+    "caps": "KC",
+    "division": "AFC West"
+  },
+  "Saints": {
+    "short_name": "Saints",
+    "full_name": "New Orleans Saints",
+    "abbreviation": "NO",
+    "caps": "NO",
+    "division": "NFC South"
+  },
+  "Vikings": {
+    "short_name": "Vikings",
+    "full_name": "Minnesota Vikings",
+    "abbreviation": "Min",
+    "caps": "MIN",
+    "division": "NFC North"
+  },
+  "Cowboys": {
+    "short_name": "Cowboys",
+    "full_name": "Dallas Cowboys",
+    "abbreviation": "Dal",
+    "caps": "DAL",
+    "division": "NFC East"
+  },
+  "Rams": {
+    "short_name": "Rams",
+    "full_name": "Los Angeles Rams",
+    "abbreviation": "LAR",
+    "caps": "LAR",
+    "division": "NFC West"
+  },
+  "Titans": {
+    "short_name": "Titans",
+    "full_name": "Tennessee Titans",
+    "abbreviation": "Ten",
+    "caps": "TEN",
+    "division": "AFC South"
+  },
+  "Packers": {
+    "short_name": "Packers",
+    "full_name": "Green Bay Packers",
+    "abbreviation": "GB",
+    "caps": "GB",
+    "division": "NFC North"
+  },
+  "Seahawks": {
+    "short_name": "Seahawks",
+    "full_name": "Seattle Seahawks",
+    "abbreviation": "Sea",
+    "caps": "SEA",
+    "division": "NFC West"
+  },
+  "Bills": {
+    "short_name": "Bills",
+    "full_name": "Buffalo Bills",
+    "abbreviation": "Buf",
+    "caps": "BUF",
+    "division": "AFC East"
+  },
+  "Texans": {
+    "short_name": "Texans",
+    "full_name": "Houston Texans",
+    "abbreviation": "Hou",
+    "caps": "HOU",
+    "division": "AFC South"
+  },
+  "Buccaneers": {
+    "short_name": "Buccaneers",
+    "full_name": "Tampa Bay Buccaneers",
+    "abbreviation": "TB",
+    "caps": "TB",
+    "division": "NFC South"
+  },
+  "Steelers": {
+    "short_name": "Steelers",
+    "full_name": "Pittsburgh Steelers",
+    "abbreviation": "Pit",
+    "caps": "PIT",
+    "division": "AFC North"
+  },
+  "Eagles": {
+    "short_name": "Eagles",
+    "full_name": "Philadelphia Eagles",
+    "abbreviation": "Phi",
+    "caps": "PHI",
+    "division": "NFC East"
+  },
+  "Falcons": {
+    "short_name": "Falcons",
+    "full_name": "Atlanta Falcons",
+    "abbreviation": "Atl",
+    "caps": "ATL",
+    "division": "NFC South"
+  },
+  "Bears": {
+    "short_name": "Bears",
+    "full_name": "Chicago Bears",
+    "abbreviation": "Chi",
+    "caps": "CHI",
+    "division": "NFC North"
+  },
+  "Chargers": {
+    "short_name": "Chargers",
+    "full_name": "Los Angeles Chargers",
+    "abbreviation": "LAC",
+    "caps": "LAC",
+    "division": "AFC West"
+  },
+  "Colts": {
+    "short_name": "Colts",
+    "full_name": "Indianapolis Colts",
+    "abbreviation": "Ind",
+    "caps": "IND",
+    "division": "AFC South"
+  },
+  "Browns": {
+    "short_name": "Browns",
+    "full_name": "Cleveland Browns",
+    "abbreviation": "Cle",
+    "caps": "CLE",
+    "division": "AFC North"
+  },
+  "Broncos": {
+    "short_name": "Broncos",
+    "full_name": "Denver Broncos",
+    "abbreviation": "Den",
+    "caps": "DEN",
+    "division": "AFC West"
+  },
+  "Cardinals": {
+    "short_name": "Cardinals",
+    "full_name": "Arizona Cardinals",
+    "abbreviation": "Ari",
+    "caps": "ARI",
+    "division": "NFC West"
+  },
+  "Lions": {
+    "short_name": "Lions",
+    "full_name": "Detroit Lions",
+    "abbreviation": "Det",
+    "caps": "DET",
+    "division": "NFC North"
+  },
+  "Jets": {
+    "short_name": "Jets",
+    "full_name": "New York Jets",
+    "abbreviation": "NYJ",
+    "caps": "NYJ",
+    "division": "AFC East"
+  },
+  "Jaguars": {
+    "short_name": "Jaguars",
+    "full_name": "Jacksonville Jaguars",
+    "abbreviation": "Jac",
+    "caps": "JAX",
+    "division": "AFC South"
+  },
+  "Raiders": {
+    "short_name": "Raiders",
+    "full_name": "Las Vegas Raiders",
+    "abbreviation": "LV",
+    "caps": "LV",
+    "division": "AFC West"
+  },
+  "Panthers": {
+    "short_name": "Panthers",
+    "full_name": "Carolina Panthers",
+    "abbreviation": "Car",
+    "caps": "CAR",
+    "division": "NFC South"
+  },
+  "Bengals": {
+    "short_name": "Bengals",
+    "full_name": "Cincinnati Bengals",
+    "abbreviation": "Cin",
+    "caps": "CIN",
+    "division": "AFC North"
+  },
+  "Giants": {
+    "short_name": "Giants",
+    "full_name": "New York Giants",
+    "abbreviation": "NYG",
+    "caps": "NYG",
+    "division": "NFC East"
+  },
+  "Washington": {
+    "short_name": "Washington",
+    "full_name": "Washington Commanders",
+    "abbreviation": "Was",
+    "caps": "WSH",
+    "division": "NFC East"
+  },
+  "Dolphins": {
+    "short_name": "Dolphins",
+    "full_name": "Miami Dolphins",
+    "abbreviation": "Mia",
+    "caps": "MIA",
+    "division": "AFC East"
+  }
+}
