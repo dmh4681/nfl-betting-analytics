@@ -1,4 +1,4 @@
-﻿{
+{
   "Ravens": {
     "short_name": "Ravens",
     "full_name": "Baltimore Ravens",
@@ -26,6 +26,13 @@
     "abbreviation": "KC",
     "caps": "KC",
     "division": "AFC West"
+  },
+  "Bills": {
+    "short_name": "Bills",
+    "full_name": "Buffalo Bills",
+    "abbreviation": "Buf",
+    "caps": "BUF",
+    "division": "AFC East"
   },
   "Saints": {
     "short_name": "Saints",
@@ -75,13 +82,6 @@
     "abbreviation": "Sea",
     "caps": "SEA",
     "division": "NFC West"
-  },
-  "Bills": {
-    "short_name": "Bills",
-    "full_name": "Buffalo Bills",
-    "abbreviation": "Buf",
-    "caps": "BUF",
-    "division": "AFC East"
   },
   "Texans": {
     "short_name": "Texans",
