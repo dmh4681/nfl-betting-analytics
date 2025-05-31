@@ -24,13 +24,15 @@ class NFLCLVCalculator:
         Args:
             excel_path: Path to Excel file (defaults to current season)
         """
-        self.project_root = Path(__file__).parent.parent
+        # Get project root - go up from src/data_processing/
+        self.project_root = Path(__file__).parent.parent.parent
         
         if excel_path is None:
             self.excel_path = self.project_root / "data" / "current_season" / "NFL_2025_Season.xlsx"
         else:
             self.excel_path = Path(excel_path)
             
+        logger.info(f"Project root: {self.project_root}")
         logger.info(f"CLV Calculator initialized for: {self.excel_path}")
         
     def american_to_decimal(self, american_odds: float) -> float:
