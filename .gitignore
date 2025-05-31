@@ -1,0 +1,29 @@
+﻿# Environment variables
+.env
+config/api_keys.py
+
+# Data files (too large for git)
+data/raw/*.csv
+data/raw/*.json
+*.xlsx
+*.xls
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
