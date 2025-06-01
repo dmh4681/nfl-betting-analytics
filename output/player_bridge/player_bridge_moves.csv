@@ -4,20 +4,78 @@ Joshua Uche,EDGE,KC,Phi,Free Agent Signing,1,1920000,6.5,7.5,22.0,4.0,7.0,0.2
 Adoree Jackson,CB2,NYG,Phi,Free Agent Signing,1,1755000,6.9,7.0,65.0,6.5,7.5,0.39
 A.J. Dillon,RB,GB,Phi,Free Agent Signing,1,1100000,0.0,6.5,0.0,3.0,5.0,0.0
 Harrison Bryant,TE,LV,Phi,Free Agent Signing,1,1000000,6.0,6.2,45.0,5.0,6.0,0.22
-Josh Sweat,EDGE,Phi,Ari,Free Agent Loss,0,0,8.5,0.0,59.0,9.0,0.0,-0.9
-Milton Williams,DT,Phi,NE,Free Agent Loss,0,0,8.2,0.0,48.0,8.0,0.0,-0.37
-Oren Burks,LB,Phi,Cin,Free Agent Loss,0,0,7.5,0.0,14.0,6.0,0.0,-0.09
-Kenneth Gainwell,RB,Phi,Pit,Free Agent Loss,0,0,6.8,0.0,25.0,5.5,0.0,-0.12
-Avonte Maddox,CB2,Phi,Det,Free Agent Loss,0,0,7.0,0.0,42.0,6.5,0.0,-0.22
-C.J. Gardner-Johnson,S,Phi,Hou,Trade,0,0,8.0,0.0,85.0,8.5,0.0,-0.96
+Josh Sweat,EDGE,Phi,Ari,Free Agent Loss,0,0,8.5,0.0,59.0,9.0,0.0,0.0
+Milton Williams,DT,Phi,NE,Free Agent Loss,0,0,8.2,0.0,48.0,8.0,0.0,0.0
+Oren Burks,LB,Phi,Cin,Free Agent Loss,0,0,7.5,0.0,14.0,6.0,0.0,0.0
+Kenneth Gainwell,RB,Phi,Pit,Free Agent Loss,0,0,6.8,0.0,25.0,5.5,0.0,0.0
+Avonte Maddox,CB2,Phi,Det,Free Agent Loss,0,0,7.0,0.0,42.0,6.5,0.0,0.0
+C.J. Gardner-Johnson,S,Phi,Hou,Trade,0,0,8.0,0.0,85.0,8.5,0.0,0.0
 Kenyon Green,G,Hou,Phi,Trade,2,5000000,6.0,6.5,60.0,5.0,6.0,0.25
-Bryce Huff,EDGE,Phi,SF,Trade,0,0,5.5,0.0,55.0,4.0,0.0,-0.24
-Jihaad Campbell,LB,DRAFT,Phi,2025 Draft Pick #31,4,12000000,0.0,7.5,0.0,0.0,8.5,0.81
-Andrew Mukuba,S,DRAFT,Phi,2025 Draft Pick #45,4,8500000,0.0,7.0,0.0,0.0,8.0,0.75
-Ty Robinson,DT,DRAFT,Phi,2025 Draft Pick #112,4,4200000,0.0,6.5,0.0,0.0,7.0,0.37
-Brandon Graham,EDGE,Phi,RETIRED,Retirement,0,0,7.5,0.0,45.0,8.0,0.0,-0.54
-Darius Slay,CB1,Phi,RELEASED,Post-June 1 Cut,0,0,7.8,0.0,80.0,7.5,0.0,-0.94
-James Bradberry,CB2,Phi,RELEASED,Post-June 1 Cut,0,0,7.2,0.0,70.0,7.0,0.0,-0.41
+Bryce Huff,EDGE,Phi,SF,Trade,0,0,5.5,0.0,55.0,4.0,0.0,0.0
+Jihaad Campbell,LB,DRAFT,Phi,2025 Draft Pick #31,4,12000000,0.0,7.5,0.0,0.0,8.5,0.0
+Andrew Mukuba,S,DRAFT,Phi,2025 Draft Pick #45,4,8500000,0.0,7.0,0.0,0.0,8.0,0.0
+Ty Robinson,DT,DRAFT,Phi,2025 Draft Pick #112,4,4200000,0.0,6.5,0.0,0.0,7.0,0.0
+Brandon Graham,EDGE,Phi,RETIRED,Retirement,0,0,7.5,0.0,45.0,8.0,0.0,0.0
+Darius Slay,CB1,Phi,RELEASED,Post-June 1 Cut,0,0,7.8,0.0,80.0,7.5,0.0,0.0
+James Bradberry,CB2,Phi,RELEASED,Post-June 1 Cut,0,0,7.2,0.0,70.0,7.0,0.0,0.0
+Javonte Williams,RB,Den,Dal,Free Agent Signing,1,3500000,6.5,7.0,60.0,6.0,7.5,0.39
+Miles Sanders,RB,Car,Dal,Free Agent Signing,1,2000000,4.5,6.0,40.0,4.0,6.0,0.14
+Solomon Thomas,DT,NYJ,Dal,Free Agent Signing,2,8000000,6.8,7.0,55.0,6.0,7.0,0.31
+Jack Sanborn,LB,Chi,Dal,Free Agent Signing,1,2500000,6.2,7.0,45.0,5.5,7.0,0.29
+Payton Turner,EDGE,NO,Dal,Free Agent Signing,1,2800000,5.8,6.5,35.0,5.0,6.0,0.24
+Parris Campbell,WR3,Dal,Dal,Re-signing,1,1500000,6.0,6.0,30.0,5.0,5.0,0.06
+Dante Fowler Jr.,EDGE,Was,Dal,Re-signing,1,6000000,7.5,7.2,65.0,7.0,8.0,0.78
+DeMarcus Lawrence,EDGE,Dal,Sea,Free Agent Loss,0,0,6.0,0.0,25.0,8.5,0.0,0.0
+Jourdan Lewis,CB2,Dal,Jac,Free Agent Loss,0,0,8.0,0.0,85.0,8.0,0.0,0.0
+Rico Dowdle,RB,Dal,Car,Free Agent Loss,0,0,8.2,0.0,75.0,8.5,0.0,0.0
+Chauncey Golston,EDGE,Dal,NYG,Free Agent Loss,0,0,7.0,0.0,60.0,7.0,0.0,0.0
+Brandin Cooks,WR1,Dal,NO,Free Agent Loss,0,0,7.5,0.0,80.0,7.5,0.0,0.0
+Cooper Rush,QB,Dal,Bal,Free Agent Loss,0,0,6.5,0.0,15.0,6.0,0.0,0.0
+Chuma Edoga,RT,Dal,Jac,Free Agent Loss,0,0,6.0,0.0,50.0,6.0,0.0,0.0
+George Pickens,WR1,Pit,Dal,Trade,1,8000000,7.8,8.2,85.0,7.5,9.0,1.09
+Kenneth Murray Jr.,LB,Ten,Dal,Trade,1,15500000,7.2,7.5,80.0,7.0,8.0,0.69
+Joe Milton III,QB,NE,Dal,Trade,3,3000000,5.5,6.0,5.0,4.0,6.0,0.06
+Kaiir Elam,CB2,Buf,Dal,Trade,2,4000000,5.8,6.5,25.0,4.0,6.5,0.11
+Tyler Booker,G,DRAFT,Dal,2025 Draft Pick #12,4,28000000,0.0,8.0,0.0,0.0,9.0,0.0
+Donovan Ezeiruaku,EDGE,DRAFT,Dal,2025 Draft Pick #44,4,8500000,0.0,7.5,0.0,0.0,8.5,0.0
+Shavon Revel Jr.,CB1,DRAFT,Dal,2025 Draft Pick #76,4,5500000,0.0,7.0,0.0,0.0,7.5,0.0
+Jaydon Blue,RB,DRAFT,Dal,2025 Draft Pick #149,4,4000000,0.0,6.5,0.0,0.0,6.0,0.0
+Shemar James,LB,DRAFT,Dal,2025 Draft Pick #152,4,3800000,0.0,6.5,0.0,0.0,6.0,0.0
+Osa Odighizuwa,DT,Dal,Dal,Extension,4,80000000,8.0,8.2,70.0,8.5,8.5,0.56
+Markquese Bell,S,Dal,Dal,Extension,3,12000000,7.5,7.8,85.0,7.5,7.5,0.8
+Brian Schottenheimer,COACH,PROMOTION,Dal,Head Coach Promotion,4,0,7.0,7.5,0.0,0.0,9.0,0.0
+Matt Eberflus,COACH,Chi,Dal,Defensive Coordinator Hire,3,0,6.5,8.0,0.0,0.0,8.5,0.0
+Russell Wilson,QB,Pit,NYG,Free Agent Signing,1,10500000,7.2,6.8,100.0,8.5,9.5,2.28
+Jameis Winston,QB,Cle,NYG,Free Agent Signing,1,3500000,6.5,6.2,30.0,6.0,7.0,0.45
+Jevon Holland,S,Mia,NYG,Free Agent Signing,3,45300000,6.8,7.5,85.0,7.5,8.5,0.82
+Paulson Adebo,CB1,NO,NYG,Free Agent Signing,3,54000000,7.5,7.8,60.0,8.0,9.0,0.81
+Chauncey Golston,EDGE,Dal,NYG,Free Agent Signing,3,19500000,7.0,7.2,60.0,7.0,7.5,0.63
+Roy Robertson-Harris,DT,Jac,NYG,Free Agent Signing,2,9000000,6.5,6.8,55.0,6.0,6.5,0.27
+Jeremiah Ledbetter,DT,Jac,NYG,Free Agent Signing,1,2500000,6.0,6.2,45.0,5.5,6.0,0.19
+Chris Board,LB,Det,NYG,Free Agent Signing,2,6000000,7.0,7.0,25.0,6.5,7.0,0.18
+James Hudson III,RT,Cin,NYG,Free Agent Signing,2,12000000,6.2,6.5,50.0,6.0,6.5,0.34
+Stone Forsythe,RT,Mia,NYG,Free Agent Signing,1,2000000,5.8,6.0,40.0,5.0,5.5,0.21
+Zach Pascal,WR3,Ari,NYG,Free Agent Signing,1,1800000,6.0,6.0,45.0,5.5,6.0,0.11
+Lil'Jordan Humphrey,WR3,Den,NYG,Free Agent Signing,1,1500000,5.8,6.0,40.0,5.0,5.5,0.09
+Azeez Ojulari,EDGE,NYG,Phi,Free Agent Loss,0,0,7.2,0.0,35.0,6.0,0.0,0.0
+Adoree Jackson,CB2,NYG,Phi,Free Agent Loss,0,0,6.9,0.0,65.0,6.5,0.0,0.0
+Isaiah Simmons,LB,NYG,GB,Free Agent Loss,0,0,6.0,0.0,17.0,5.0,0.0,0.0
+Drew Lock,QB,NYG,Sea,Free Agent Loss,0,0,5.5,0.0,10.0,5.5,0.0,0.0
+Jason Pinnock,S,NYG,SF,Free Agent Loss,0,0,6.2,0.0,55.0,6.0,0.0,0.0
+Daniel Jones,QB,NYG,RELEASED,Release,0,0,4.5,0.0,60.0,7.0,0.0,0.0
+Jaxson Dart,QB,DRAFT,NYG,2025 Draft Pick #25 (via trade),4,16977000,0.0,6.8,0.0,0.0,9.0,0.0
+Abdul Carter,EDGE,DRAFT,NYG,2025 Draft Pick #3,4,45260000,0.0,8.5,0.0,0.0,9.5,0.0
+Darius Alexander,DT,DRAFT,NYG,2025 Draft Pick #65,4,6500000,0.0,7.0,0.0,0.0,7.5,0.0
+Cam Skattebo,RB,DRAFT,NYG,2025 Draft Pick #105,4,4500000,0.0,6.8,0.0,0.0,7.0,0.0
+Marcus Mbow,G,DRAFT,NYG,2025 Draft Pick #154,4,3800000,0.0,6.0,0.0,0.0,6.0,0.0
+Darius Slayton,WR1,NYG,NYG,Extension,3,36000000,7.5,7.8,80.0,8.0,8.0,0.88
+Jamie Gillan,P,NYG,NYG,Extension,3,10200000,7.0,7.0,100.0,6.0,6.0,0.28
+Greg Van Roten,G,NYG,NYG,Re-signing,1,2500000,7.2,7.0,100.0,7.5,7.5,0.63
+Tommy DeVito,QB,NYG,NYG,Exclusive Rights Tender,1,1030000,6.0,6.0,20.0,6.0,6.0,0.24
+Deebo Samuel,WR1,SF,Was,Trade,1,17550000,7.0,7.8,85.0,7.5,8.0,0.87
+Josh Conerly Jr.,RT,DRAFT,Was,2025 Draft Pick #29,4,15680000,0.0,7.5,0.0,0.0,8.5,0.0
+Trey Amos,CB1,DRAFT,Was,2025 Draft Pick #61,4,8000000,0.0,7.0,0.0,0.0,7.5,0.0
+Jaylin Lane,WR3,DRAFT,Was,2025 Draft Pick #128,4,4500000,0.0,6.0,0.0,0.0,6.0,0.0
 Javon Kinlaw,DT,NYJ,Was,Free Agent Signing,3,45000000,6.5,7.2,65.0,6.0,8.0,0.39
 Will Harris,S,NO,Was,Free Agent Signing,2,10000000,6.0,6.5,62.0,6.0,7.0,0.43
 Jonathan Jones,CB2,NE,Was,Free Agent Signing,1,5500000,6.0,6.2,68.0,6.5,6.0,0.29
@@ -26,16 +84,8 @@ Jacob Martin,EDGE,Chi,Was,Free Agent Signing,1,3000000,5.0,5.5,21.0,4.0,4.0,0.08
 Bobby Wagner,LB,Was,Was,Re-signing,1,9500000,9.0,8.5,94.0,10.0,10.0,1.27
 Zach Ertz,TE,Was,Was,Re-signing,1,8000000,8.0,7.5,78.0,9.0,9.0,0.75
 Marcus Mariota,QB,Was,Was,Re-signing,1,8000000,7.0,7.0,5.0,7.0,7.0,0.08
-Jonathan Allen,DT,Was,Min,Free Agent Loss,0,0,5.0,0.0,50.0,8.0,0.0,-0.23
-Jeremy Chinn,S,Was,LV,Free Agent Loss,0,0,8.0,0.0,94.0,8.0,0.0,-1.0
-Dyami Brown,WR2,Was,Jac,Free Agent Loss,0,0,7.0,0.0,44.0,6.0,0.0,-0.25
-Olamide Zaccheaus,WR3,Was,Chi,Free Agent Loss,0,0,7.0,0.0,60.0,5.0,0.0,-0.14
+Jonathan Allen,DT,Was,Min,Free Agent Loss,0,0,5.0,0.0,50.0,8.0,0.0,0.0
+Jeremy Chinn,S,Was,LV,Free Agent Loss,0,0,8.0,0.0,94.0,8.0,0.0,0.0
+Dyami Brown,WR2,Was,Jac,Free Agent Loss,0,0,7.0,0.0,44.0,6.0,0.0,0.0
+Olamide Zaccheaus,WR3,Was,Chi,Free Agent Loss,0,0,7.0,0.0,60.0,5.0,0.0,0.0
 Laremy Tunsil,LT,Hou,Was,Trade,2,50000000,10.0,9.5,100.0,9.0,10.0,2.0
-Deebo Samuel,WR1,SF,Was,Trade,1,17550000,7.0,7.8,85.0,7.5,8.0,0.87
-Josh Conerly Jr.,RT,DRAFT,Was,2025 Draft Pick #29,4,15680000,0.0,7.5,0.0,0.0,8.5,0.9
-Trey Amos,CB1,DRAFT,Was,2025 Draft Pick #61,4,8000000,0.0,7.0,0.0,0.0,7.5,0.84
-Jaylin Lane,WR3,DRAFT,Was,2025 Draft Pick #128,4,4500000,0.0,6.0,0.0,0.0,6.0,0.14
-Cam Ward,QB,DRAFT,Ten,2025 Draft Pick #1,4,42000000,0.0,6.8,0.0,0.0,10.0,2.27
-Travis Hunter,CB1,DRAFT,Cle,2025 Draft Pick #2,4,38000000,0.0,7.5,0.0,0.0,9.0,1.22
-Russell Wilson,QB,Pit,NYG,Free Agent Signing,2,25000000,7.2,6.8,100.0,8.5,9.5,2.15
-Aaron Rodgers,QB,NYJ,RETIRED,Retirement,0,0,6.0,0.0,100.0,9.0,0.0,-1.8

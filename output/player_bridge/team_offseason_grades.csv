@@ -1,35 +1,35 @@
-team,team_name,players_gained,players_lost,impact_gained,impact_lost,net_impact,offense_impact,defense_impact,special_teams_impact,key_additions,key_losses,offseason_grade
-Was,Washington Commanders,13,7,8.360000000000001,3.72,4.64,4.6499999999999995,-0.009999999999999787,0.0,"['Bobby Wagner (LB)', 'Zach Ertz (TE)', 'Laremy Tunsil (LT)', 'Deebo Samuel (WR1)', 'Josh Conerly Jr. (RT)', 'Trey Amos (CB1)']","['Bobby Wagner (LB)', 'Zach Ertz (TE)', 'Jeremy Chinn (S)']",A-
-NYG,New York Giants,1,2,2.15,0.8200000000000001,1.3299999999999998,1.7599999999999998,-0.43,0.0,['Russell Wilson (QB)'],[],B
-LV,Las Vegas Raiders,1,1,1.0,0.22,0.78,-0.22,1.0,0.0,['Jeremy Chinn (S)'],[],B-
-Jac,Jacksonville Jaguars,1,0,0.25,0.0,0.25,0.25,0.0,0.0,[],[],B-
-BAL,Baltimore Ravens,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-PHI,Philadelphia Eagles,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-DET,Detroit Lions,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-BUF,Buffalo Bills,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-GB,Green Bay Packers,0,1,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-MIN,Minnesota Vikings,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-ARI,Arizona Cardinals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-SEA,Seattle Seahawks,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-MIA,Miami Dolphins,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-TB,Tampa Bay Buccaneers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-HOU,Houston Texans,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CIN,Cincinnati Bengals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-LAC,Los Angeles Chargers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-WAS,WAS,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-DAL,Dallas Cowboys,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-JAC,JAC,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-TEN,Tennessee Titans,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-ATL,Atlanta Falcons,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-PIT,Pittsburgh Steelers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-LAR,Los Angeles Rams,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-DEN,Denver Broncos,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-IND,Indianapolis Colts,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CLE,Cleveland Browns,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CAR,Carolina Panthers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CHI,Chicago Bears,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-KC,Kansas City Chiefs,0,1,0.0,0.2,-0.2,0.0,-0.2,0.0,[],[],C+
-NE,New England Patriots,1,2,0.37,0.61,-0.24,-0.29,0.04999999999999999,0.0,[],[],C+
-NO,New Orleans Saints,0,1,0.0,0.43,-0.43,0.0,-0.43,0.0,[],[],C+
-SF,San Francisco 49ers,1,1,0.24,0.87,-0.63,-0.87,0.24,0.0,[],['Deebo Samuel (WR1)'],C+
-NYJ,New York Jets,0,2,0.0,2.19,-2.19,-1.8,-0.39,0.0,[],['Aaron Rodgers (QB)'],C-
+team,team_name,players_gained,players_lost,impact_gained,impact_lost,net_impact,offense_impact,defense_impact,special_teams_impact,coaching_impact,key_additions,key_losses,offseason_grade
+NYG,New York Giants,22,12,8.41,2.8500000000000005,5.56,4.1,1.4599999999999997,0.0,0.0,"['Russell Wilson (QB)', 'Jevon Holland (S)', 'Paulson Adebo (CB1)', 'Chauncey Golston (EDGE)', 'Darius Slayton (WR1)', 'Greg Van Roten (G)']","['Darius Slayton (WR1)', 'Greg Van Roten (G)']",A-
+Was,Washington Commanders,13,8,6.48,2.88,3.6,2.78,0.8200000000000001,0.0,0.0,"['Deebo Samuel (WR1)', 'Bobby Wagner (LB)', 'Zach Ertz (TE)', 'Laremy Tunsil (LT)']","['Dante Fowler Jr. (EDGE)', 'Bobby Wagner (LB)', 'Zach Ertz (TE)']",B+
+BAL,Baltimore Ravens,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+PHI,Philadelphia Eagles,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+DET,Detroit Lions,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+BUF,Buffalo Bills,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+HOU,Houston Texans,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+CIN,Cincinnati Bengals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+GB,Green Bay Packers,1,1,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+MIN,Minnesota Vikings,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+ARI,Arizona Cardinals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+SEA,Seattle Seahawks,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+MIA,Miami Dolphins,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+TB,Tampa Bay Buccaneers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+ATL,Atlanta Falcons,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+PIT,Pittsburgh Steelers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+LAC,Los Angeles Chargers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+WAS,WAS,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+DAL,Dallas Cowboys,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+JAC,JAC,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+CLE,Cleveland Browns,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+LAR,Los Angeles Rams,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+CHI,Chicago Bears,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+TEN,Tennessee Titans,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+DEN,Denver Broncos,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+IND,Indianapolis Colts,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+CAR,Carolina Panthers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+KC,Kansas City Chiefs,0,1,0.0,0.2,-0.2,-0.2,0.0,0.0,0.0,[],[],C+
+LV,Las Vegas Raiders,1,1,0.0,0.22,-0.22,-0.22,0.0,0.0,0.0,[],[],C+
+Jac,Jacksonville Jaguars,3,2,0.0,0.46,-0.46,0.0,-0.46,0.0,0.0,[],[],C+
+NE,New England Patriots,1,3,0.0,0.6699999999999999,-0.6699999999999999,-0.6699999999999999,0.0,0.0,0.0,[],[],C+
+NYJ,New York Jets,0,2,0.0,0.7,-0.7,0.0,-0.7,0.0,0.0,[],[],C+
+SF,San Francisco 49ers,2,1,0.0,0.87,-0.87,-0.87,0.0,0.0,0.0,[],['Deebo Samuel (WR1)'],C+
+NO,New Orleans Saints,1,3,0.0,1.48,-1.48,-1.05,-0.43,0.0,0.0,[],['Paulson Adebo (CB1)'],C
