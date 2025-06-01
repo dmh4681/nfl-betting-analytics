@@ -1,0 +1,8 @@
+player_name,position,from_team,to_team,move_type,contract_years,contract_value,2024_grade,projected_2025_grade,snap_percentage_2024,importance_to_old_team,importance_to_new_team,impact_score
+Saquon Barkley,RB,NYG,Phi,Free Agent Signing,3,37750000,8.7,8.4,87.0,9.5,8.0,2.42
+C.J. Gardner-Johnson,S,Phi,Det,Free Agent Signing,3,30000000,8.2,8.0,92.0,7.5,8.5,2.83
+Saquon Barkley,RB,NYG,Phi,Free Agent Loss,0,0,8.7,0.0,87.0,9.5,0.0,-2.88
+Cam Ward,QB,DRAFT,Ten,2025 Draft Pick #1,4,42000000,0.0,6.8,0.0,0.0,10.0,6.8
+Travis Hunter,CB1,DRAFT,Cle,2025 Draft Pick #2,4,38000000,0.0,7.5,0.0,0.0,9.0,3.65
+Russell Wilson,QB,Pit,NYG,Free Agent Signing,2,25000000,7.2,6.8,100.0,8.5,9.5,6.46
+Aaron Rodgers,QB,NYJ,RETIRED,Retirement,0,0,6.0,0.0,100.0,9.0,0.0,-5.4

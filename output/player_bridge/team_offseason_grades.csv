@@ -1,0 +1,33 @@
+team,team_name,players_gained,players_lost,impact_gained,impact_lost,net_impact,offense_impact,defense_impact,special_teams_impact,key_additions,key_losses,offseason_grade
+Ten,Tennessee Titans,1,0,6.8,0.0,6.8,6.8,0.0,0.0,['Cam Ward (QB)'],[],A
+Cle,Cleveland Browns,1,0,3.65,0.0,3.65,3.65,0.0,0.0,['Travis Hunter (CB1)'],[],B+
+Det,Detroit Lions,1,0,2.83,0.0,2.83,0.0,2.83,0.0,[],[],B+
+Phi,Philadelphia Eagles,2,1,5.3,2.83,2.4699999999999998,5.3,-2.83,0.0,[],[],B+
+NYG,New York Giants,1,2,6.46,5.3,1.1600000000000001,1.1600000000000001,0.0,0.0,['Russell Wilson (QB)'],[],B
+Buf,Buffalo Bills,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Bal,Baltimore Ravens,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+SF,San Francisco 49ers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Dal,Dallas Cowboys,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Min,Minnesota Vikings,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+GB,Green Bay Packers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+LAR,Los Angeles Rams,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Sea,Seattle Seahawks,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+NO,New Orleans Saints,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+NE,New England Patriots,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+KC,Kansas City Chiefs,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Ari,Arizona Cardinals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+TB,Tampa Bay Buccaneers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Hou,Houston Texans,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Atl,Atlanta Falcons,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Ind,Indianapolis Colts,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+LAC,Los Angeles Chargers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Den,Denver Broncos,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Chi,Chicago Bears,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Was,Washington Commanders,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Jac,Jacksonville Jaguars,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Car,Carolina Panthers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+LV,Las Vegas Raiders,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Mia,Miami Dolphins,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+Cin,Cincinnati Bengals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+NYJ,New York Jets,0,1,0.0,5.4,-5.4,-5.4,0.0,0.0,[],['Aaron Rodgers (QB)'],D
+Pit,Pittsburgh Steelers,0,1,0.0,6.46,-6.46,-6.46,0.0,0.0,[],['Russell Wilson (QB)'],F

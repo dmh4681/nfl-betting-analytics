@@ -1,0 +1,32 @@
+team,rating,team_name,rank
+Bal,6.045423249030199,Baltimore Ravens,1
+Det,6.031015102244639,Detroit Lions,2
+Buf,4.5233023634584075,Buffalo Bills,3
+KC,4.209907210797279,Kansas City Chiefs,4
+GB,3.585424986436138,Green Bay Packers,5
+SF,3.214814620695791,San Francisco 49ers,6
+Min,2.7595141085093218,Minnesota Vikings,7
+Phi,2.7071137103955567,Philadelphia Eagles,8
+Cin,2.2699310232393874,Cincinnati Bengals,9
+Hou,2.0699127314174555,Houston Texans,10
+NYJ,1.3170979437993384,New York Jets,11
+LAC,0.9578146771164894,Los Angeles Chargers,12
+Mia,0.7926801167218988,Miami Dolphins,13
+TB,0.7764850705387644,Tampa Bay Buccaneers,14
+Sea,0.5571171543362047,Seattle Seahawks,15
+Ari,0.35334047237019633,Arizona Cardinals,16
+Was,0.25998663157278395,Washington Commanders,17
+Atl,0.25704646213422055,Atlanta Falcons,18
+Pit,0.1052881494387641,Pittsburgh Steelers,19
+Den,-0.2901362497391649,Denver Broncos,20
+Ind,-1.0670111327562275,Indianapolis Colts,21
+Chi,-2.1473161935474665,Chicago Bears,22
+Ten,-2.541375923788322,Tennessee Titans,23
+Jac,-2.6324758441648703,Jacksonville Jaguars,24
+Dal,-3.1531136789891323,Dallas Cowboys,25
+Cle,-3.7747471746287515,Cleveland Browns,26
+NO,-4.373742156662578,New Orleans Saints,27
+LV,-4.675532690992575,Las Vegas Raiders,28
+NE,-5.29369297294513,New England Patriots,29
+NYG,-5.314488538161158,New York Giants,30
+Car,-7.529583227877478,Carolina Panthers,31
