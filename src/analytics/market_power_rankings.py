@@ -28,12 +28,29 @@ class MarketPowerRankings2024:
         with open(self.config_path, 'r') as f:
             self.team_mappings = json.load(f)
             
-        # Create reverse mapping for team name lookups
+        # Create comprehensive lookup dictionary for team name standardization
         self.team_lookup = {}
         for key, data in self.team_mappings.items():
-            self.team_lookup[data['full_name']] = data['abbreviation']
-            self.team_lookup[data['abbreviation']] = data['abbreviation']
-            self.team_lookup[data['caps']] = data['abbreviation']
+            abbr = data['abbreviation']
+            # Add all possible variations
+            self.team_lookup[data['full_name']] = abbr
+            self.team_lookup[data['short_name']] = abbr
+            self.team_lookup[data['abbreviation']] = abbr
+            self.team_lookup[data['caps']] = abbr
+            # Add common variations
+            self.team_lookup[data['full_name'].upper()] = abbr
+            self.team_lookup[data['short_name'].upper()] = abbr
+            
+        # Add specific common variations found in datasets
+        additional_mappings = {
+            'LAS': 'LV',  # Las Vegas sometimes coded as LAS
+            'LAR': 'LAR', # Ensure LAR is preserved
+            'LA': 'LAR',  # Sometimes just "LA" for Rams
+            'WSH': 'Was', # Washington sometimes WSH
+            'WAS': 'Was', # Washington caps
+            'JAX': 'Jac', # Jacksonville sometimes JAX
+        }
+        self.team_lookup.update(additional_mappings)
 
     def extract_final_2024_market_data(self):
         """Extract market data from 2024 season using the new dataset"""
@@ -56,9 +73,6 @@ class MarketPowerRankings2024:
             logger.info("Using full 2024 regular season data for comprehensive market assessment")
             final_weeks_data = df_2024.copy()
             
-            # Optional: Weight later games more heavily
-            # final_weeks_data['weight'] = final_weeks_data['week'] / 18.0  # Later weeks weighted higher
-            
             # Filter for games with betting data and results
             valid_games = final_weeks_data.dropna(subset=['spread', 'home_score', 'away_score']).copy()
             
@@ -70,6 +84,19 @@ class MarketPowerRankings2024:
             
             # Remove any games where team standardization failed
             valid_games = valid_games.dropna(subset=['home_team', 'away_team'])
+            
+            # Verify we have all 32 teams
+            all_teams_found = set()
+            all_teams_found.update(valid_games['home_team'].unique())
+            all_teams_found.update(valid_games['away_team'].unique())
+            
+            expected_teams = set(data['abbreviation'] for data in self.team_mappings.values())
+            missing_teams = expected_teams - all_teams_found
+            
+            if missing_teams:
+                logger.warning(f"Missing teams in dataset: {missing_teams}")
+            else:
+                logger.info(f"✅ All 32 NFL teams found in dataset")
             
             return valid_games
             
@@ -84,20 +111,27 @@ class MarketPowerRankings2024:
             
         team_str = str(team_name).strip()
         
-        # Direct abbreviation lookup
+        # Direct lookup
         if team_str in self.team_lookup:
             return self.team_lookup[team_str]
             
-        # Try different formats
-        team_variations = [
+        # Try variations
+        variations = [
             team_str.upper(),
             team_str.lower(), 
-            team_str.title()
+            team_str.title(),
+            team_str.replace('_', ' '),
+            team_str.replace('-', ' ')
         ]
         
-        for variation in team_variations:
+        for variation in variations:
             if variation in self.team_lookup:
                 return self.team_lookup[variation]
+                
+        # Try partial matching for full team names
+        for full_name, abbr in self.team_lookup.items():
+            if team_str.lower() in full_name.lower() or full_name.lower() in team_str.lower():
+                return abbr
                 
         logger.warning(f"Could not standardize team name: {team_name}")
         return None
@@ -135,13 +169,15 @@ class MarketPowerRankings2024:
         all_teams = sorted(list(all_teams))
         logger.info(f"Found {len(all_teams)} teams: {all_teams}")
 
+        # Verify we have all 32 teams
+        expected_teams = set(data['abbreviation'] for data in self.team_mappings.values())
+        if len(all_teams) != 32:
+            missing = expected_teams - set(all_teams)
+            logger.warning(f"Missing {len(missing)} teams: {missing}")
+
         # Need sufficient data for power rankings
         if len(matchups) < 20:
             logger.error(f"Not enough games found: {len(matchups)} (need at least 20)")
-            return None
-            
-        if len(all_teams) < 20:
-            logger.error(f"Not enough teams found: {len(all_teams)} (need at least 20)")
             return None
 
         # Calculate power ratings using least squares
@@ -151,13 +187,21 @@ class MarketPowerRankings2024:
             logger.error("Could not calculate power ratings")
             return None
 
+        # Add any missing teams with neutral ratings
+        for team_data in self.team_mappings.values():
+            team_abbr = team_data['abbreviation']
+            if team_abbr not in ratings:
+                ratings[team_abbr] = 0.0
+                logger.info(f"Added missing team {team_abbr} with neutral rating")
+
         # Create rankings DataFrame
         rankings_data = []
-        for team in all_teams:
+        for team_data in self.team_mappings.values():
+            team_abbr = team_data['abbreviation']
             rankings_data.append({
-                'team': team,
-                'rating': ratings[team],
-                'team_name': self._get_team_full_name(team)
+                'team': team_abbr,
+                'rating': ratings.get(team_abbr, 0.0),
+                'team_name': team_data['full_name']
             })
 
         rankings_df = pd.DataFrame(rankings_data)
@@ -217,13 +261,6 @@ class MarketPowerRankings2024:
             logger.error(f"Error solving for ratings: {e}")
             return None
 
-    def _get_team_full_name(self, abbreviation: str) -> str:
-        """Get full team name from abbreviation"""
-        for key, data in self.team_mappings.items():
-            if data['abbreviation'] == abbreviation:
-                return data['full_name']
-        return abbreviation
-
     def generate_rankings_report(self):
         """Generate comprehensive power rankings report"""
         
@@ -238,6 +275,7 @@ class MarketPowerRankings2024:
 
         print(f"📊 Based on 2024 season betting market data")
         print(f"🎯 Using final weeks of season for current team strength")
+        print(f"🏈 Covering all {len(rankings)} NFL teams")
         print()
 
         # Display top 10
@@ -262,6 +300,15 @@ class MarketPowerRankings2024:
         print(f"  Lowest:  {rankings['rating'].min():.2f}")
         print(f"  Range:   {rankings['rating'].max() - rankings['rating'].min():.2f}")
         print(f"  Std Dev: {rankings['rating'].std():.2f}")
+
+        # Verify team count
+        print(f"\n✅ TEAM VERIFICATION")
+        print(f"  Teams in rankings: {len(rankings)}")
+        print(f"  Expected: 32")
+        if len(rankings) == 32:
+            print(f"  Status: ✅ All teams included")
+        else:
+            print(f"  Status: ⚠️  Missing teams")
 
         # Save results
         output_path = self.project_root / "output" / "market_power_rankings_2024.csv"

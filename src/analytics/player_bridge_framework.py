@@ -1,5 +1,6 @@
 """
 NFL Player Bridge Framework - Track all offseason moves and grade impact
+Updated to use playoff_adjusted_rankings.csv with point differentials
 """
 
 import pandas as pd
@@ -24,41 +25,8 @@ class PlayerBridgeFramework:
         with open(self.config_path, 'r') as f:
             self.team_mappings = json.load(f)
             
-        # YOUR ORIGINAL 2024 POWER RANKINGS (baseline for 2025 projections)
-        self.original_power_rankings = {
-            'Phi': 95.2,  # #1 - Super Bowl Champions
-            'Buf': 92.8,  # #2 - Elite AFC team
-            'KC': 91.5,   # #3 - Mahomes always dangerous
-            'SF': 90.1,   # #4 - Solid NFC contender
-            'Bal': 89.3,  # #5 - Lamar + defense
-            'Det': 88.7,  # #6 - Emerging NFC force
-            'NYG': 87.2,  # #7 - Solid season
-            'Was': 86.8,  # #8 - Breakout with Daniels
-            'Hou': 85.4,  # #9 - Young core
-            'Min': 84.9,  # #10 - Consistent
-            'Pit': 84.2,  # #11 - Defense-first
-            'LAC': 83.6,  # #12 - Herbert potential
-            'Mia': 82.8,  # #13 - Tua dependent
-            'GB': 82.1,   # #14 - Rodgers questions
-            'Atl': 81.5,  # #15 - Building
-            'Cin': 80.9,  # #16 - Burrow recovery
-            'TB': 80.2,   # #17 - Post-Brady era
-            'LAR': 79.6,  # #18 - Stafford aging
-            'Sea': 78.8,  # #19 - Rebuilding
-            'Cle': 78.1,  # #20 - QB uncertainty
-            'NE': 77.4,   # #21 - Patriots rebuild
-            'Jac': 76.7,  # #22 - Young team
-            'Den': 75.9,  # #23 - Inconsistent
-            'Ari': 75.2,  # #24 - Cardinals rebuilding
-            'Chi': 74.5,  # #25 - Bears development
-            'Ten': 73.8,  # #26 - Titans struggles
-            'Ind': 73.1,  # #27 - Richardson growing
-            'NYJ': 72.4,  # #28 - Jets disappointment
-            'Car': 71.6,  # #29 - Panthers rebuild
-            'NO': 70.8,   # #30 - Saints cap hell
-            'LV': 69.9,   # #31 - Raiders chaos
-            'LAS': 69.1   # #32 - Chargers (using LAS as alt)
-        }
+        # LOAD PLAYOFF ADJUSTED RANKINGS FROM CSV
+        self.original_power_rankings, self.original_ranks, self.point_differentials = self._load_playoff_adjusted_rankings()
         
         # Position importance weights
         self.position_weights = {
@@ -74,6 +42,84 @@ class PlayerBridgeFramework:
             'Offense': ['QB', 'RB', 'WR1', 'WR2', 'WR3', 'TE', 'LT', 'LG', 'C', 'RG', 'RT'],
             'Defense': ['EDGE', 'DT', 'LB', 'CB1', 'CB2', 'S'],
             'Special Teams': ['K', 'P', 'LS']
+        }
+
+    def _load_playoff_adjusted_rankings(self) -> Tuple[Dict[str, float], Dict[str, int], Dict[str, float]]:
+        """Load playoff adjusted rankings from CSV file"""
+        rankings_path = self.project_root / "output" / "playoff_adjusted_rankings.csv"
+        
+        try:
+            # Read the CSV file
+            df = pd.read_csv(rankings_path)
+            logger.info(f"Successfully loaded rankings from {rankings_path}")
+            
+            # Create dictionaries
+            rankings_dict = {}
+            ranks_dict = {}
+            point_diff_dict = {}
+            
+            # Process each team
+            for _, row in df.iterrows():
+                team = str(row['team']).strip().upper()
+                point_diff = float(row['rating'])
+                rank = int(row['rank'])
+                
+                # Store point differential and rank
+                point_diff_dict[team] = point_diff
+                ranks_dict[team] = rank
+                
+                # Convert point differential to power rating (70-95 scale)
+                # Best team (rank 1) gets 95, worst gets 70
+                # Using rank-based conversion for more stable results
+                power_rating = 95 - ((rank - 1) * 25 / 31)  # 31 teams in CSV
+                rankings_dict[team] = round(power_rating, 1)
+            
+            # Handle missing teams (LAR) with average values
+            if 'LAR' not in rankings_dict:
+                avg_rating = sum(rankings_dict.values()) / len(rankings_dict)
+                rankings_dict['LAR'] = round(avg_rating, 1)
+                ranks_dict['LAR'] = 16  # Middle rank
+                point_diff_dict['LAR'] = 0.0
+                logger.info(f"Added LAR with average rating {avg_rating:.1f}")
+            
+            # Create mappings for common abbreviation differences
+            abbr_mappings = {
+                'JAC': 'Jac', 'WAS': 'Was', 'WSH': 'Was',
+                'JAX': 'Jac', 'NO': 'NO', 'NE': 'NE'
+            }
+            
+            # Add mapped versions
+            for csv_abbr, framework_abbr in abbr_mappings.items():
+                if csv_abbr in rankings_dict and framework_abbr not in rankings_dict:
+                    rankings_dict[framework_abbr] = rankings_dict[csv_abbr]
+                    ranks_dict[framework_abbr] = ranks_dict[csv_abbr]
+                    point_diff_dict[framework_abbr] = point_diff_dict[csv_abbr]
+            
+            logger.info(f"Loaded {len(rankings_dict)} team rankings")
+            logger.info(f"Top 5 teams by rating: {sorted(rankings_dict.items(), key=lambda x: x[1], reverse=True)[:5]}")
+            
+            return rankings_dict, ranks_dict, point_diff_dict
+            
+        except FileNotFoundError:
+            logger.error(f"Could not find playoff adjusted rankings file at {rankings_path}")
+            logger.warning("Falling back to default rankings")
+            return self._get_default_rankings(), {}, {}
+        except Exception as e:
+            logger.error(f"Error loading playoff adjusted rankings: {e}")
+            logger.warning("Falling back to default rankings")
+            return self._get_default_rankings(), {}, {}
+    
+    def _get_default_rankings(self) -> Dict[str, float]:
+        """Fallback rankings if CSV cannot be loaded"""
+        return {
+            'Phi': 95.2, 'Buf': 92.8, 'KC': 91.5, 'SF': 90.1,
+            'Bal': 89.3, 'Det': 88.7, 'NYG': 87.2, 'Was': 86.8,
+            'Hou': 85.4, 'Min': 84.9, 'Pit': 84.2, 'LAC': 83.6,
+            'Mia': 82.8, 'GB': 82.1, 'Atl': 81.5, 'Cin': 80.9,
+            'TB': 80.2, 'LAR': 79.6, 'Sea': 78.8, 'Cle': 78.1,
+            'NE': 77.4, 'Jac': 76.7, 'Den': 75.9, 'Ari': 75.2,
+            'Chi': 74.5, 'Ten': 73.8, 'Ind': 73.1, 'NYJ': 72.4,
+            'Car': 71.6, 'NO': 70.8, 'LV': 69.9, 'Dal': 69.1
         }
 
     def create_player_bridge_template(self):
@@ -757,12 +803,18 @@ class PlayerBridgeFramework:
         
         team_impacts = {}
         
-        # Initialize all teams
-        for team_data in self.team_mappings.values():
-            team_abbr = team_data['abbreviation']
-            team_impacts[team_abbr] = {
-                'team': team_abbr,
-                'team_name': team_data['full_name'],
+        # Initialize all teams using the loaded rankings
+        for team in self.original_power_rankings.keys():
+            # Get the team's full name from mappings
+            full_name = team
+            for team_data in self.team_mappings.values():
+                if team_data['abbreviation'] == team or team == team_data['caps']:
+                    full_name = team_data['full_name']
+                    break
+                    
+            team_impacts[team] = {
+                'team': team,
+                'team_name': full_name,
                 'players_gained': 0,
                 'players_lost': 0,
                 'impact_gained': 0.0,
@@ -788,25 +840,25 @@ class PlayerBridgeFramework:
             unit_key = f"{unit.lower()}_impact"
             
             # Player leaving a team (loss)
-            if from_team in team_impacts and from_team not in ['DRAFT', 'FA', 'RETIRED']:
+            if from_team in team_impacts and from_team not in ['DRAFT', 'FA', 'RETIRED', 'RELEASED']:
                 team_impacts[from_team]['players_lost'] += 1
                 loss_impact = abs(impact)
                 team_impacts[from_team]['impact_lost'] += loss_impact
                 team_impacts[from_team]['net_impact'] -= loss_impact
                 team_impacts[from_team][unit_key] -= loss_impact
                 
-                if loss_impact >= 3.0:
+                if loss_impact >= 0.5:  # Lower threshold for key moves
                     team_impacts[from_team]['key_losses'].append(f"{player_name} ({position})")
             
             # Player joining a team (gain)
-            if to_team in team_impacts and to_team not in ['FA', 'RETIRED']:
+            if to_team in team_impacts and to_team not in ['FA', 'RETIRED', 'RELEASED']:
                 team_impacts[to_team]['players_gained'] += 1
                 gain_impact = abs(impact)
                 team_impacts[to_team]['impact_gained'] += gain_impact
                 team_impacts[to_team]['net_impact'] += gain_impact
                 team_impacts[to_team][unit_key] += gain_impact
                 
-                if gain_impact >= 3.0:
+                if gain_impact >= 0.5:  # Lower threshold for key moves
                     team_impacts[to_team]['key_additions'].append(f"{player_name} ({position})")
         
         return pd.DataFrame(list(team_impacts.values()))
@@ -844,14 +896,12 @@ class PlayerBridgeFramework:
         
         for _, team in team_impacts_df.iterrows():
             team_abbr = team['team']
-            original_rating = self.original_power_rankings.get(team_abbr, 75.0)  # Default if missing
+            original_rating = self.original_power_rankings.get(team_abbr, 80.0)
+            original_rank = self.original_ranks.get(team_abbr, 16)
             offseason_impact = team['net_impact']
             
             # Calculate final 2025 projection
             final_rating = original_rating + offseason_impact
-            
-            # Determine ranking change
-            original_rank = self._get_original_rank(team_abbr)
             
             final_rankings.append({
                 'team': team_abbr,
@@ -879,13 +929,7 @@ class PlayerBridgeFramework:
 
     def _get_original_rank(self, team_abbr: str) -> int:
         """Get original 2024 ranking for a team"""
-        sorted_teams = sorted(self.original_power_rankings.items(), 
-                            key=lambda x: x[1], reverse=True)
-        
-        for rank, (team, rating) in enumerate(sorted_teams, 1):
-            if team == team_abbr:
-                return rank
-        return 32  # Default if not found
+        return self.original_ranks.get(team_abbr, 16)
 
     def generate_comprehensive_report(self):
         """Generate complete player bridge analysis with final 2025 rankings"""
@@ -897,10 +941,18 @@ class PlayerBridgeFramework:
         player_bridge = self.create_player_bridge_template()
         print(f"📊 Tracking {len(player_bridge)} player moves")
         
+        # Show if we're using CSV rankings
+        if hasattr(self, 'original_power_rankings') and self.original_power_rankings:
+            print(f"📈 Using playoff-adjusted rankings from CSV")
+            print(f"   Total teams loaded: {len(self.original_power_rankings)}")
+        
         # Process each move for debugging
-        for _, move in player_bridge.iterrows():
+        print("\n📋 Processing Player Moves...")
+        for _, move in player_bridge.head(10).iterrows():  # Show first 10 moves
             impact = move['impact_score']
-            print(f"Processing: {move['player_name']} from {move['from_team']} to {move['to_team']}, impact: {impact}")
+            print(f"   {move['player_name']:<20} {move['from_team']:>3} → {move['to_team']:<3} Impact: {impact:+.2f}")
+        if len(player_bridge) > 10:
+            print(f"   ... and {len(player_bridge) - 10} more moves")
         
         print()
         
@@ -912,13 +964,16 @@ class PlayerBridgeFramework:
         final_rankings = self.calculate_final_2025_rankings(team_grades)
         
         # Show 2025 FINAL POWER RANKINGS
-        print("🏆 2025 FINAL POWER RANKINGS")
-        print("=" * 50)
-        top_10 = final_rankings.head(10)
-        for _, team in top_10.iterrows():
+        print("\n🏆 2025 FINAL POWER RANKINGS (Based on 2024 + Offseason Changes)")
+        print("=" * 65)
+        print(f"{'Rank':>4} {'Team':<4} {'Team Name':<25} {'Rating':>7} {'Change':>7}")
+        print("-" * 65)
+        
+        for _, team in final_rankings.head(10).iterrows():
             rank_symbol = "🔺" if team['rank_change'] > 0 else "🔻" if team['rank_change'] < 0 else "➡️"
-            print(f"#{team['final_2025_rank']:2d} {team['team']:<4} {team['team_name']:<25} "
-                  f"Rating: {team['final_2025_rating']:5.1f} {rank_symbol}{abs(team['rank_change'])}")
+            change_str = f"{rank_symbol}{abs(team['rank_change'])}" if team['rank_change'] != 0 else "➡️-"
+            print(f"#{team['final_2025_rank']:>3} {team['team']:<4} {team['team_name']:<25} "
+                  f"{team['final_2025_rating']:>6.1f} {change_str:>7}")
         
         print("\n🏆 BEST OFFSEASONS (Top 5)")
         print("-" * 50)
@@ -936,7 +991,7 @@ class PlayerBridgeFramework:
             if team['key_losses']:
                 print(f"    Key Losses: {', '.join(team['key_losses'][:2])}")
         
-        print(f"\n📈 BIGGEST RANKING CHANGES")
+        print(f"\n📈 BIGGEST RANKING CLIMBERS")
         print("-" * 50)
         biggest_movers = final_rankings.nlargest(5, 'rank_change')
         for _, team in biggest_movers.iterrows():
@@ -967,8 +1022,11 @@ class PlayerBridgeFramework:
 def main():
     framework = PlayerBridgeFramework()
     player_bridge, team_grades, final_rankings = framework.generate_comprehensive_report()
-    print(f"\n✅ Player Bridge Framework created!")
-    print(f"📋 Final 2025 Power Rankings calculated based on 2024 baseline + offseason moves")
+    print(f"\n✅ Player Bridge Framework Analysis Complete!")
+    print(f"📋 Final 2025 Power Rankings calculated based on:")
+    print(f"   - 2024 playoff-adjusted rankings (point differentials)")
+    print(f"   - Offseason player movement impacts")
+    print(f"   - Position-weighted importance scores")
 
 
 if __name__ == "__main__":

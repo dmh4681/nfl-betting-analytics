@@ -10,6 +10,16 @@ import json
 class PlayoffAdjustedRankings:
     def __init__(self):
         self.project_root = Path(__file__).parent.parent.parent
+        self.config_path = self.project_root / "config" / "team_mappings.json"
+        
+        # Load team mappings
+        with open(self.config_path, 'r') as f:
+            self.team_mappings = json.load(f)
+            
+        # Create team name lookup from mappings
+        self.team_names = {}
+        for key, data in self.team_mappings.items():
+            self.team_names[data['abbreviation']] = data['full_name']
         
     def create_playoff_adjusted_rankings(self):
         """Create power rankings that include playoff performance"""
@@ -22,54 +32,62 @@ class PlayoffAdjustedRankings:
         # Playoff betting data from our search
         playoff_games = [
             # Wild Card Round
-            {'week': 'WC', 'away_team': 'GB', 'home_team': 'PHI', 'spread': -4.5, 'result': 'PHI', 'margin': 12},
-            {'week': 'WC', 'away_team': 'WAS', 'home_team': 'TB', 'spread': -3.0, 'result': 'WAS', 'margin': 3},
-            {'week': 'WC', 'away_team': 'DEN', 'home_team': 'BUF', 'spread': -9.5, 'result': 'BUF', 'margin': 21},
-            {'week': 'WC', 'away_team': 'PIT', 'home_team': 'BAL', 'spread': -9.5, 'result': 'BAL', 'margin': 11},
+            {'week': 'WC', 'away_team': 'GB', 'home_team': 'Phi', 'spread': -4.5, 'result': 'Phi', 'margin': 12},
+            {'week': 'WC', 'away_team': 'Was', 'home_team': 'TB', 'spread': -3.0, 'result': 'Was', 'margin': 3},
+            {'week': 'WC', 'away_team': 'Den', 'home_team': 'Buf', 'spread': -9.5, 'result': 'Buf', 'margin': 21},
+            {'week': 'WC', 'away_team': 'Pit', 'home_team': 'Bal', 'spread': -9.5, 'result': 'Bal', 'margin': 11},
             
             # Divisional Round  
-            {'week': 'DIV', 'away_team': 'LAR', 'home_team': 'PHI', 'spread': -6.5, 'result': 'PHI', 'margin': 6},
-            {'week': 'DIV', 'away_team': 'WAS', 'home_team': 'DET', 'spread': -8.5, 'result': 'WAS', 'margin': 14},
-            {'week': 'DIV', 'away_team': 'BAL', 'home_team': 'BUF', 'spread': -1.5, 'result': 'BUF', 'margin': 2},
-            {'week': 'DIV', 'away_team': 'HOU', 'home_team': 'KC', 'spread': -8.5, 'result': 'KC', 'margin': 9},
+            {'week': 'DIV', 'away_team': 'LAR', 'home_team': 'Phi', 'spread': -6.5, 'result': 'Phi', 'margin': 6},
+            {'week': 'DIV', 'away_team': 'Was', 'home_team': 'Det', 'spread': -8.5, 'result': 'Was', 'margin': 14},
+            {'week': 'DIV', 'away_team': 'Bal', 'home_team': 'Buf', 'spread': -1.5, 'result': 'Buf', 'margin': 2},
+            {'week': 'DIV', 'away_team': 'Hou', 'home_team': 'KC', 'spread': -8.5, 'result': 'KC', 'margin': 9},
             
             # Conference Championships
-            {'week': 'CC', 'away_team': 'WAS', 'home_team': 'PHI', 'spread': -6.0, 'result': 'PHI', 'margin': 32},
-            {'week': 'CC', 'away_team': 'BUF', 'home_team': 'KC', 'spread': -2.0, 'result': 'KC', 'margin': 3},
+            {'week': 'CC', 'away_team': 'Was', 'home_team': 'Phi', 'spread': -6.0, 'result': 'Phi', 'margin': 32},
+            {'week': 'CC', 'away_team': 'Buf', 'home_team': 'KC', 'spread': -2.0, 'result': 'KC', 'margin': 3},
             
             # Super Bowl
-            {'week': 'SB', 'away_team': 'PHI', 'home_team': 'KC', 'spread': -1.5, 'result': 'PHI', 'margin': 18}
+            {'week': 'SB', 'away_team': 'Phi', 'home_team': 'KC', 'spread': -1.5, 'result': 'Phi', 'margin': 18}
         ]
         
         # Calculate playoff performance scores
         playoff_scores = self._calculate_playoff_scores(playoff_games)
         
-        # Load regular season rankings (from your existing analysis)
+        # Load regular season ratings using team_mappings.json format
         regular_season_ratings = {
-            'BAL': 6.05, 'DET': 6.03, 'BUF': 4.52, 'KC': 4.21, 'GB': 3.59,
-            'SF': 3.21, 'MIN': 2.76, 'PHI': 2.71, 'CIN': 2.27, 'HOU': 2.07,
-            'NYJ': 1.32, 'LAC': 0.96, 'MIA': 0.79, 'TB': 0.78, 'SEA': 0.56,
-            'ARI': 0.35, 'WAS': 0.26, 'ATL': 0.26, 'PIT': 0.11, 'DEN': -0.29,
-            'IND': -1.07, 'CHI': -2.15, 'TEN': -2.54, 'JAC': -2.63, 'DAL': -3.15,
-            'CLE': -3.77, 'NO': -4.37, 'LV': -4.68, 'NE': -5.29, 'NYG': -5.31, 'CAR': -7.53
+            'Bal': 6.05, 'Det': 6.03, 'Buf': 4.52, 'KC': 4.21, 'GB': 3.59,
+            'SF': 3.21, 'Min': 2.76, 'Phi': 2.71, 'Cin': 2.27, 'Hou': 2.07,
+            'NYJ': 1.32, 'LAC': 0.96, 'Mia': 0.79, 'TB': 0.78, 'Sea': 0.56,
+            'Ari': 0.35, 'Was': 0.26, 'Atl': 0.26, 'Pit': 0.11, 'Den': -0.29,
+            'Ind': -1.07, 'Chi': -2.15, 'Ten': -2.54, 'Jac': -2.63, 'Dal': -3.15,
+            'Cle': -3.77, 'NO': -4.37, 'LV': -4.68, 'NE': -5.29, 'NYG': -5.31, 'Car': -7.53
         }
+        
+        # Ensure we have all 32 teams from team_mappings.json
+        for team_data in self.team_mappings.values():
+            team_abbr = team_data['abbreviation']
+            if team_abbr not in regular_season_ratings:
+                regular_season_ratings[team_abbr] = 0.0  # Neutral rating for missing teams
+                print(f"⚠️  Added missing team {team_abbr} with neutral rating")
         
         # Combine regular season and playoff performance
         final_ratings = {}
-        for team in regular_season_ratings:
-            base_rating = regular_season_ratings[team]
-            playoff_bonus = playoff_scores.get(team, 0)
-            final_ratings[team] = base_rating + playoff_bonus
+        for team_abbr in regular_season_ratings:
+            base_rating = regular_season_ratings[team_abbr]
+            playoff_bonus = playoff_scores.get(team_abbr, 0)
+            final_ratings[team_abbr] = base_rating + playoff_bonus
             
-        # Create final rankings
+        # Create final rankings using all teams from mappings
         rankings_data = []
-        for team, rating in final_ratings.items():
+        for team_data in self.team_mappings.values():
+            team_abbr = team_data['abbreviation']
             rankings_data.append({
-                'team': team,
-                'rating': rating,
-                'regular_season': regular_season_ratings[team],
-                'playoff_adjustment': playoff_scores.get(team, 0),
-                'team_name': self._get_team_name(team)
+                'team': team_abbr,
+                'rating': final_ratings.get(team_abbr, 0.0),
+                'regular_season': regular_season_ratings.get(team_abbr, 0.0),
+                'playoff_adjustment': playoff_scores.get(team_abbr, 0),
+                'team_name': team_data['full_name']
             })
             
         df = pd.DataFrame(rankings_data)
@@ -120,28 +138,6 @@ class PlayoffAdjustedRankings:
                 
         return scores
         
-    def _get_team_name(self, abbr):
-        """Get full team name"""
-        team_names = {
-            'PHI': 'Philadelphia Eagles', 'KC': 'Kansas City Chiefs', 
-            'BUF': 'Buffalo Bills', 'WAS': 'Washington Commanders',
-            'BAL': 'Baltimore Ravens', 'DET': 'Detroit Lions',
-            'HOU': 'Houston Texans', 'LAR': 'Los Angeles Rams',
-            'GB': 'Green Bay Packers', 'TB': 'Tampa Bay Buccaneers',
-            'PIT': 'Pittsburgh Steelers', 'DEN': 'Denver Broncos',
-            'MIN': 'Minnesota Vikings', 'SF': 'San Francisco 49ers',
-            'CIN': 'Cincinnati Bengals', 'NYJ': 'New York Jets',
-            'LAC': 'Los Angeles Chargers', 'MIA': 'Miami Dolphins',
-            'SEA': 'Seattle Seahawks', 'ARI': 'Arizona Cardinals',
-            'ATL': 'Atlanta Falcons', 'IND': 'Indianapolis Colts',
-            'CHI': 'Chicago Bears', 'TEN': 'Tennessee Titans',
-            'JAC': 'Jacksonville Jaguars', 'DAL': 'Dallas Cowboys',
-            'CLE': 'Cleveland Browns', 'NO': 'New Orleans Saints',
-            'LV': 'Las Vegas Raiders', 'NE': 'New England Patriots',
-            'NYG': 'New York Giants', 'CAR': 'Carolina Panthers'
-        }
-        return team_names.get(abbr, abbr)
-        
     def display_results(self):
         """Display the playoff-adjusted rankings"""
         df, playoff_games = self.create_playoff_adjusted_rankings()
@@ -171,11 +167,20 @@ class PlayoffAdjustedRankings:
             
         print(f"\n🦅 EAGLES ANALYSIS")
         print("-" * 30)
-        eagles_row = df[df['team'] == 'PHI'].iloc[0]
+        eagles_row = df[df['team'] == 'Phi'].iloc[0]
         print(f"Regular Season Rank: ~#{self._estimate_old_rank(eagles_row['regular_season'])}")
         print(f"Final Rank: #{eagles_row['rank']}")
         print(f"Playoff Boost: +{eagles_row['playoff_adjustment']:.1f}")
         print(f"Championships DO matter! 🏆")
+        
+        # Verify team count
+        print(f"\n✅ TEAM VERIFICATION")
+        print(f"  Teams in rankings: {len(df)}")
+        print(f"  Expected: 32")
+        if len(df) == 32:
+            print(f"  Status: ✅ All teams included")
+        else:
+            print(f"  Status: ⚠️  Missing teams")
         
         return df
         

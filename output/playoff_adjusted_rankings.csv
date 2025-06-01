@@ -1,32 +1,33 @@
 team,rating,regular_season,playoff_adjustment,team_name,rank
-PHI,6.216666666666667,2.71,3.506666666666667,Philadelphia Eagles,1
-BAL,6.09,6.05,0.04000000000000001,Baltimore Ravens,2
-DET,5.470000000000001,6.03,-0.5599999999999999,Detroit Lions,3
-BUF,4.846666666666667,4.52,0.3266666666666667,Buffalo Bills,4
+Phi,6.216666666666667,2.71,3.506666666666667,Philadelphia Eagles,1
+Bal,6.09,6.05,0.04000000000000001,Baltimore Ravens,2
+Det,5.470000000000001,6.03,-0.5599999999999999,Detroit Lions,3
+Buf,4.846666666666667,4.52,0.3266666666666667,Buffalo Bills,4
 GB,3.59,3.59,0.0,Green Bay Packers,5
 SF,3.21,3.21,0.0,San Francisco 49ers,6
 KC,2.8433333333333333,4.21,-1.3666666666666667,Kansas City Chiefs,7
-MIN,2.76,2.76,0.0,Minnesota Vikings,8
-CIN,2.27,2.27,0.0,Cincinnati Bengals,9
-HOU,2.07,2.07,0.0,Houston Texans,10
+Min,2.76,2.76,0.0,Minnesota Vikings,8
+Cin,2.27,2.27,0.0,Cincinnati Bengals,9
+Hou,2.07,2.07,0.0,Houston Texans,10
 NYJ,1.32,1.32,0.0,New York Jets,11
-WAS,0.98,0.26,0.72,Washington Commanders,12
+Was,0.98,0.26,0.72,Washington Commanders,12
 LAC,0.96,0.96,0.0,Los Angeles Chargers,13
-MIA,0.79,0.79,0.0,Miami Dolphins,14
+Mia,0.79,0.79,0.0,Miami Dolphins,14
 TB,0.7,0.78,-0.08000000000000002,Tampa Bay Buccaneers,15
-SEA,0.56,0.56,0.0,Seattle Seahawks,16
-ARI,0.35,0.35,0.0,Arizona Cardinals,17
-ATL,0.26,0.26,0.0,Atlanta Falcons,18
-PIT,0.11,0.11,0.0,Pittsburgh Steelers,19
-DEN,-0.29,-0.29,0.0,Denver Broncos,20
-IND,-1.07,-1.07,0.0,Indianapolis Colts,21
-CHI,-2.15,-2.15,0.0,Chicago Bears,22
-TEN,-2.54,-2.54,0.0,Tennessee Titans,23
-JAC,-2.63,-2.63,0.0,Jacksonville Jaguars,24
-DAL,-3.15,-3.15,0.0,Dallas Cowboys,25
-CLE,-3.77,-3.77,0.0,Cleveland Browns,26
-NO,-4.37,-4.37,0.0,New Orleans Saints,27
-LV,-4.68,-4.68,0.0,Las Vegas Raiders,28
-NE,-5.29,-5.29,0.0,New England Patriots,29
-NYG,-5.31,-5.31,0.0,New York Giants,30
-CAR,-7.53,-7.53,0.0,Carolina Panthers,31
+Sea,0.56,0.56,0.0,Seattle Seahawks,16
+Ari,0.35,0.35,0.0,Arizona Cardinals,17
+Atl,0.26,0.26,0.0,Atlanta Falcons,18
+Pit,0.11,0.11,0.0,Pittsburgh Steelers,19
+LAR,-0.02,0.0,-0.02,Los Angeles Rams,20
+Den,-0.29,-0.29,0.0,Denver Broncos,21
+Ind,-1.07,-1.07,0.0,Indianapolis Colts,22
+Chi,-2.15,-2.15,0.0,Chicago Bears,23
+Ten,-2.54,-2.54,0.0,Tennessee Titans,24
+Jac,-2.63,-2.63,0.0,Jacksonville Jaguars,25
+Dal,-3.15,-3.15,0.0,Dallas Cowboys,26
+Cle,-3.77,-3.77,0.0,Cleveland Browns,27
+NO,-4.37,-4.37,0.0,New Orleans Saints,28
+LV,-4.68,-4.68,0.0,Las Vegas Raiders,29
+NE,-5.29,-5.29,0.0,New England Patriots,30
+NYG,-5.31,-5.31,0.0,New York Giants,31
+Car,-7.53,-7.53,0.0,Carolina Panthers,32
