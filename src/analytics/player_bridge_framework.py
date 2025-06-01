@@ -24,6 +24,42 @@ class PlayerBridgeFramework:
         with open(self.config_path, 'r') as f:
             self.team_mappings = json.load(f)
             
+        # YOUR ORIGINAL 2024 POWER RANKINGS (baseline for 2025 projections)
+        self.original_power_rankings = {
+            'Phi': 95.2,  # #1 - Super Bowl Champions
+            'Buf': 92.8,  # #2 - Elite AFC team
+            'KC': 91.5,   # #3 - Mahomes always dangerous
+            'SF': 90.1,   # #4 - Solid NFC contender
+            'Bal': 89.3,  # #5 - Lamar + defense
+            'Det': 88.7,  # #6 - Emerging NFC force
+            'NYG': 87.2,  # #7 - Solid season
+            'Was': 86.8,  # #8 - Breakout with Daniels
+            'Hou': 85.4,  # #9 - Young core
+            'Min': 84.9,  # #10 - Consistent
+            'Pit': 84.2,  # #11 - Defense-first
+            'LAC': 83.6,  # #12 - Herbert potential
+            'Mia': 82.8,  # #13 - Tua dependent
+            'GB': 82.1,   # #14 - Rodgers questions
+            'Atl': 81.5,  # #15 - Building
+            'Cin': 80.9,  # #16 - Burrow recovery
+            'TB': 80.2,   # #17 - Post-Brady era
+            'LAR': 79.6,  # #18 - Stafford aging
+            'Sea': 78.8,  # #19 - Rebuilding
+            'Cle': 78.1,  # #20 - QB uncertainty
+            'NE': 77.4,   # #21 - Patriots rebuild
+            'Jac': 76.7,  # #22 - Young team
+            'Den': 75.9,  # #23 - Inconsistent
+            'Ari': 75.2,  # #24 - Cardinals rebuilding
+            'Chi': 74.5,  # #25 - Bears development
+            'Ten': 73.8,  # #26 - Titans struggles
+            'Ind': 73.1,  # #27 - Richardson growing
+            'NYJ': 72.4,  # #28 - Jets disappointment
+            'Car': 71.6,  # #29 - Panthers rebuild
+            'NO': 70.8,   # #30 - Saints cap hell
+            'LV': 69.9,   # #31 - Raiders chaos
+            'LAS': 69.1   # #32 - Chargers (using LAS as alt)
+        }
+        
         # Position importance weights
         self.position_weights = {
             'QB': 10.0, 'LT': 6.0, 'EDGE': 6.0, 'CB1': 6.0,
@@ -43,107 +79,616 @@ class PlayerBridgeFramework:
     def create_player_bridge_template(self):
         """Create template for tracking player moves - NOW WITH REAL 2025 DATA!"""
         
-        # REAL 2025 offseason moves - let's start with some big ones
+        # REAL 2025 offseason moves - Eagles comprehensive data from research
         real_2025_moves = [
-            # EAGLES ADDITIONS (Your Super Bowl champs)
+            # EAGLES FREE AGENT SIGNINGS - Value-based approach
             {
-                'player_name': 'Saquon Barkley',
-                'position': 'RB',
+                'player_name': 'Azeez Ojulari',
+                'position': 'EDGE',
                 'from_team': 'NYG',
-                'to_team': 'Phi',  # Changed to match team mappings
+                'to_team': 'Phi',
                 'move_type': 'Free Agent Signing',
-                'contract_years': 3,
-                'contract_value': 37750000,
-                '2024_grade': 8.7,  # Elite RB season
-                'projected_2025_grade': 8.4,  # Slight aging
-                'snap_percentage_2024': 87.0,
-                'importance_to_old_team': 9.5,  # Was NYG's entire offense
-                'importance_to_new_team': 8.0,  # Eagles already had good offense
-                'impact_score': self._calculate_impact_score('RB', 8.7, 87.0, 8.0)
+                'contract_years': 1,
+                'contract_value': 3000000,
+                '2024_grade': 7.2,  # 6 sacks in 11 games with limited snaps
+                'projected_2025_grade': 7.8,  # Should get more opportunity
+                'snap_percentage_2024': 35.0,  # Limited behind Burns/Thibodeaux
+                'importance_to_old_team': 6.0,  # Rotational piece
+                'importance_to_new_team': 8.5,  # Key replacement for Sweat
+                'impact_score': self._calculate_impact_score('EDGE', 7.2, 35.0, 8.5)
             },
             {
-                'player_name': 'C.J. Gardner-Johnson',
-                'position': 'S',
-                'from_team': 'Phi',  # Changed to match team mappings
-                'to_team': 'Det',   # Changed to match team mappings
+                'player_name': 'Joshua Uche',
+                'position': 'EDGE',
+                'from_team': 'KC',
+                'to_team': 'Phi',
                 'move_type': 'Free Agent Signing',
-                'contract_years': 3,
-                'contract_value': 30000000,
-                '2024_grade': 8.2,  # Great safety season
-                'projected_2025_grade': 8.0,
-                'snap_percentage_2024': 92.0,
-                'importance_to_old_team': 7.5,  # Good but not irreplaceable
-                'importance_to_new_team': 8.5,  # Needed secondary help
-                'impact_score': self._calculate_impact_score('S', 8.2, 92.0, 7.5)
+                'contract_years': 1,
+                'contract_value': 1920000,
+                '2024_grade': 6.5,  # Only 2 sacks, 22% snaps
+                'projected_2025_grade': 7.5,  # Bounce-back potential
+                'snap_percentage_2024': 22.0,
+                'importance_to_old_team': 4.0,  # Minimal role
+                'importance_to_new_team': 7.0,  # Pass rush depth
+                'impact_score': self._calculate_impact_score('EDGE', 6.5, 22.0, 7.0)
             },
-            
-            # GIANTS LOSSES (Your NFC East rivals getting worse)
             {
-                'player_name': 'Saquon Barkley',  # Loss for Giants
-                'position': 'RB',
+                'player_name': 'Adoree Jackson',
+                'position': 'CB2',
                 'from_team': 'NYG',
-                'to_team': 'Phi',  # Changed to match team mappings
+                'to_team': 'Phi',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 1,
+                'contract_value': 1755000,
+                '2024_grade': 6.9,  # 69.0 PFF grade, ranked 58th
+                'projected_2025_grade': 7.0,
+                'snap_percentage_2024': 65.0,  # Started 5 of 14 games
+                'importance_to_old_team': 6.5,
+                'importance_to_new_team': 7.5,  # Replaces Slay depth
+                'impact_score': self._calculate_impact_score('CB2', 6.9, 65.0, 7.5)
+            },
+            {
+                'player_name': 'A.J. Dillon',
+                'position': 'RB',
+                'from_team': 'GB',
+                'to_team': 'Phi',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 1,
+                'contract_value': 1100000,
+                '2024_grade': 0.0,  # Missed entire season with neck injury
+                'projected_2025_grade': 6.5,  # Health unknown
+                'snap_percentage_2024': 0.0,
+                'importance_to_old_team': 3.0,
+                'importance_to_new_team': 5.0,  # Backup depth
+                'impact_score': self._calculate_impact_score('RB', 0.0, 0.0, 5.0)
+            },
+            {
+                'player_name': 'Harrison Bryant',
+                'position': 'TE',
+                'from_team': 'LV',
+                'to_team': 'Phi',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 1,
+                'contract_value': 1000000,
+                '2024_grade': 6.0,
+                'projected_2025_grade': 6.2,
+                'snap_percentage_2024': 45.0,
+                'importance_to_old_team': 5.0,
+                'importance_to_new_team': 6.0,  # TE depth
+                'impact_score': self._calculate_impact_score('TE', 6.0, 45.0, 6.0)
+            },
+
+            # EAGLES MAJOR LOSSES - Defensive exodus
+            {
+                'player_name': 'Josh Sweat',
+                'position': 'EDGE',
+                'from_team': 'Phi',
+                'to_team': 'Ari',
                 'move_type': 'Free Agent Loss',
                 'contract_years': 0,
                 'contract_value': 0,
-                '2024_grade': 8.7,
-                'projected_2025_grade': 0.0,  # Gone
-                'snap_percentage_2024': 87.0,
-                'importance_to_old_team': 9.5,  # MASSIVE loss
+                '2024_grade': 8.5,  # 8 sacks regular season + 2.5 in Super Bowl
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 59.0,  # Primary edge threat
+                'importance_to_old_team': 9.0,  # Team-leading pass rusher
                 'importance_to_new_team': 0.0,
-                'impact_score': -self._calculate_impact_score('RB', 8.7, 87.0, 9.5)  # Negative for loss
+                'impact_score': -self._calculate_impact_score('EDGE', 8.5, 59.0, 9.0)
             },
-            
-            # DRAFT PICKS
+            {
+                'player_name': 'Milton Williams',
+                'position': 'DT',
+                'from_team': 'Phi',
+                'to_team': 'NE',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 8.2,  # 5 sacks, 54 pressures, Super Bowl strip-sack
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 48.0,
+                'importance_to_old_team': 8.0,  # Key interior rusher
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('DT', 8.2, 48.0, 8.0)
+            },
+            {
+                'player_name': 'Oren Burks',
+                'position': 'LB',
+                'from_team': 'Phi',
+                'to_team': 'Cin',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 7.5,  # Playoff hero, 25 tackles in 3 games
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 14.0,  # Mostly special teams
+                'importance_to_old_team': 6.0,  # Special teams ace
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('LB', 7.5, 14.0, 6.0)
+            },
+            {
+                'player_name': 'Kenneth Gainwell',
+                'position': 'RB',
+                'from_team': 'Phi',
+                'to_team': 'Pit',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 6.8,
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 25.0,
+                'importance_to_old_team': 5.5,  # Backup RB
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('RB', 6.8, 25.0, 5.5)
+            },
+            {
+                'player_name': 'Avonte Maddox',
+                'position': 'CB2',
+                'from_team': 'Phi',
+                'to_team': 'Det',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 7.0,
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 42.0,
+                'importance_to_old_team': 6.5,  # Veteran depth
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('CB2', 7.0, 42.0, 6.5)
+            },
+
+            # EAGLES TRADES
+            {
+                'player_name': 'C.J. Gardner-Johnson',
+                'position': 'S',
+                'from_team': 'Phi',
+                'to_team': 'Hou',
+                'move_type': 'Trade',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 8.0,  # 6 interceptions, emotional leader
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 85.0,
+                'importance_to_old_team': 8.5,  # Defensive leader
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('S', 8.0, 85.0, 8.5)
+            },
+            {
+                'player_name': 'Kenyon Green',
+                'position': 'G',
+                'from_team': 'Hou',
+                'to_team': 'Phi',
+                'move_type': 'Trade',
+                'contract_years': 2,
+                'contract_value': 5000000,
+                '2024_grade': 6.0,
+                'projected_2025_grade': 6.5,
+                'snap_percentage_2024': 60.0,
+                'importance_to_old_team': 5.0,
+                'importance_to_new_team': 6.0,  # Interior line depth
+                'impact_score': self._calculate_impact_score('G', 6.0, 60.0, 6.0)
+            },
+            {
+                'player_name': 'Bryce Huff',
+                'position': 'EDGE',
+                'from_team': 'Phi',
+                'to_team': 'SF',
+                'move_type': 'Trade',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 5.5,  # Major disappointment, 2.5 sacks
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 55.0,
+                'importance_to_old_team': 4.0,  # Failed signing
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('EDGE', 5.5, 55.0, 4.0)
+            },
+
+            # EAGLES DRAFT PICKS - Defensive rebuild
+            {
+                'player_name': 'Jihaad Campbell',
+                'position': 'LB',
+                'from_team': 'DRAFT',
+                'to_team': 'Phi',
+                'move_type': '2025 Draft Pick #31',
+                'contract_years': 4,
+                'contract_value': 12000000,
+                '2024_grade': 0.0,  # College
+                'projected_2025_grade': 7.5,  # First-Team All-SEC
+                'snap_percentage_2024': 0.0,
+                'importance_to_old_team': 0.0,
+                'importance_to_new_team': 8.5,  # Immediate starter
+                'impact_score': self._calculate_impact_score('LB', 7.5, 85.0, 8.5)
+            },
+            {
+                'player_name': 'Andrew Mukuba',
+                'position': 'S',
+                'from_team': 'DRAFT',
+                'to_team': 'Phi',
+                'move_type': '2025 Draft Pick #45',
+                'contract_years': 4,
+                'contract_value': 8500000,
+                '2024_grade': 0.0,
+                'projected_2025_grade': 7.0,  # Led SEC with 5 INTs
+                'snap_percentage_2024': 0.0,
+                'importance_to_old_team': 0.0,
+                'importance_to_new_team': 8.0,  # Replaces CJGJ
+                'impact_score': self._calculate_impact_score('S', 7.0, 80.0, 8.0)
+            },
+            {
+                'player_name': 'Ty Robinson',
+                'position': 'DT',
+                'from_team': 'DRAFT',
+                'to_team': 'Phi',
+                'move_type': '2025 Draft Pick #112',
+                'contract_years': 4,
+                'contract_value': 4200000,
+                '2024_grade': 0.0,
+                'projected_2025_grade': 6.5,  # 12 TFL, 7 sacks at Nebraska
+                'snap_percentage_2024': 0.0,
+                'importance_to_old_team': 0.0,
+                'importance_to_new_team': 7.0,  # Replaces Milton Williams
+                'impact_score': self._calculate_impact_score('DT', 6.5, 70.0, 7.0)
+            },
+
+            # EAGLES RETIREMENTS
+            {
+                'player_name': 'Brandon Graham',
+                'position': 'EDGE',
+                'from_team': 'Phi',
+                'to_team': 'RETIRED',
+                'move_type': 'Retirement',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 7.5,  # Played through torn triceps in Super Bowl
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 45.0,
+                'importance_to_old_team': 8.0,  # Franchise legend, emotional leader
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('EDGE', 7.5, 45.0, 8.0)
+            },
+
+            # EAGLES POST-JUNE 1 CUTS
+            {
+                'player_name': 'Darius Slay',
+                'position': 'CB1',
+                'from_team': 'Phi',
+                'to_team': 'RELEASED',
+                'move_type': 'Post-June 1 Cut',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 7.8,  # Still productive veteran
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 80.0,
+                'importance_to_old_team': 7.5,  # Veteran leader
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('CB1', 7.8, 80.0, 7.5)
+            },
+            {
+                'player_name': 'James Bradberry',
+                'position': 'CB2',
+                'from_team': 'Phi',
+                'to_team': 'RELEASED',
+                'move_type': 'Post-June 1 Cut',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 7.2,
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 70.0,
+                'importance_to_old_team': 7.0,
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('CB2', 7.2, 70.0, 7.0)
+            },
+
+            # COMMANDERS FREE AGENT SIGNINGS - Major Additions
+            {
+                'player_name': 'Javon Kinlaw',
+                'position': 'DT',
+                'from_team': 'NYJ',
+                'to_team': 'Was',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 3,
+                'contract_value': 45000000,
+                '2024_grade': 6.5,
+                'projected_2025_grade': 7.2,
+                'snap_percentage_2024': 65.0,
+                'importance_to_old_team': 6.0,
+                'importance_to_new_team': 8.0,
+                'impact_score': self._calculate_impact_score('DT', 6.5, 65.0, 8.0)
+            },
+            {
+                'player_name': 'Will Harris',
+                'position': 'S',
+                'from_team': 'NO',
+                'to_team': 'Was',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 2,
+                'contract_value': 10000000,
+                '2024_grade': 6.0,
+                'projected_2025_grade': 6.5,
+                'snap_percentage_2024': 62.0,
+                'importance_to_old_team': 6.0,
+                'importance_to_new_team': 7.0,
+                'impact_score': self._calculate_impact_score('S', 6.0, 62.0, 7.0)
+            },
+            {
+                'player_name': 'Jonathan Jones',
+                'position': 'CB2',
+                'from_team': 'NE',
+                'to_team': 'Was',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 1,
+                'contract_value': 5500000,
+                '2024_grade': 6.0,
+                'projected_2025_grade': 6.2,
+                'snap_percentage_2024': 68.0,
+                'importance_to_old_team': 6.5,
+                'importance_to_new_team': 6.0,
+                'impact_score': self._calculate_impact_score('CB2', 6.0, 68.0, 6.0)
+            },
+            {
+                'player_name': 'Deatrich Wise Jr.',
+                'position': 'EDGE',
+                'from_team': 'NE',
+                'to_team': 'Was',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 1,
+                'contract_value': 5000000,
+                '2024_grade': 6.0,
+                'projected_2025_grade': 6.2,
+                'snap_percentage_2024': 54.0,
+                'importance_to_old_team': 5.5,
+                'importance_to_new_team': 5.0,
+                'impact_score': self._calculate_impact_score('EDGE', 6.0, 54.0, 5.0)
+            },
+            {
+                'player_name': 'Jacob Martin',
+                'position': 'EDGE',
+                'from_team': 'Chi',
+                'to_team': 'Was',
+                'move_type': 'Free Agent Signing',
+                'contract_years': 1,
+                'contract_value': 3000000,
+                '2024_grade': 5.0,
+                'projected_2025_grade': 5.5,
+                'snap_percentage_2024': 21.0,
+                'importance_to_old_team': 4.0,
+                'importance_to_new_team': 4.0,
+                'impact_score': self._calculate_impact_score('EDGE', 5.0, 21.0, 4.0)
+            },
+
+            # COMMANDERS RE-SIGNINGS
+            {
+                'player_name': 'Bobby Wagner',
+                'position': 'LB',
+                'from_team': 'Was',
+                'to_team': 'Was',
+                'move_type': 'Re-signing',
+                'contract_years': 1,
+                'contract_value': 9500000,
+                '2024_grade': 9.0,
+                'projected_2025_grade': 8.5,
+                'snap_percentage_2024': 94.0,
+                'importance_to_old_team': 10.0,
+                'importance_to_new_team': 10.0,
+                'impact_score': self._calculate_impact_score('LB', 9.0, 94.0, 10.0)
+            },
+            {
+                'player_name': 'Zach Ertz',
+                'position': 'TE',
+                'from_team': 'Was',
+                'to_team': 'Was',
+                'move_type': 'Re-signing',
+                'contract_years': 1,
+                'contract_value': 8000000,
+                '2024_grade': 8.0,
+                'projected_2025_grade': 7.5,
+                'snap_percentage_2024': 78.0,
+                'importance_to_old_team': 9.0,
+                'importance_to_new_team': 9.0,
+                'impact_score': self._calculate_impact_score('TE', 8.0, 78.0, 9.0)
+            },
+            {
+                'player_name': 'Marcus Mariota',
+                'position': 'QB',
+                'from_team': 'Was',
+                'to_team': 'Was',
+                'move_type': 'Re-signing',
+                'contract_years': 1,
+                'contract_value': 8000000,
+                '2024_grade': 7.0,
+                'projected_2025_grade': 7.0,
+                'snap_percentage_2024': 5.0,
+                'importance_to_old_team': 7.0,
+                'importance_to_new_team': 7.0,
+                'impact_score': self._calculate_impact_score('QB', 7.0, 5.0, 7.0)
+            },
+
+            # COMMANDERS MAJOR LOSSES
+            {
+                'player_name': 'Jonathan Allen',
+                'position': 'DT',
+                'from_team': 'Was',
+                'to_team': 'Min',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 5.0,
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 50.0,
+                'importance_to_old_team': 8.0,
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('DT', 5.0, 50.0, 8.0)
+            },
+            {
+                'player_name': 'Jeremy Chinn',
+                'position': 'S',
+                'from_team': 'Was',
+                'to_team': 'LV',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 8.0,
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 94.0,
+                'importance_to_old_team': 8.0,
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('S', 8.0, 94.0, 8.0)
+            },
+            {
+                'player_name': 'Dyami Brown',
+                'position': 'WR2',
+                'from_team': 'Was',
+                'to_team': 'Jac',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 7.0,
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 44.0,
+                'importance_to_old_team': 6.0,
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('WR2', 7.0, 44.0, 6.0)
+            },
+            {
+                'player_name': 'Olamide Zaccheaus',
+                'position': 'WR3',
+                'from_team': 'Was',
+                'to_team': 'Chi',
+                'move_type': 'Free Agent Loss',
+                'contract_years': 0,
+                'contract_value': 0,
+                '2024_grade': 7.0,
+                'projected_2025_grade': 0.0,
+                'snap_percentage_2024': 60.0,
+                'importance_to_old_team': 5.0,
+                'importance_to_new_team': 0.0,
+                'impact_score': -self._calculate_impact_score('WR3', 7.0, 60.0, 5.0)
+            },
+
+            # COMMANDERS TRADES - Major Acquisitions
+            {
+                'player_name': 'Laremy Tunsil',
+                'position': 'LT',
+                'from_team': 'Hou',
+                'to_team': 'Was',
+                'move_type': 'Trade',
+                'contract_years': 2,
+                'contract_value': 50000000,
+                '2024_grade': 10.0,
+                'projected_2025_grade': 9.5,
+                'snap_percentage_2024': 100.0,
+                'importance_to_old_team': 9.0,
+                'importance_to_new_team': 10.0,
+                'impact_score': self._calculate_impact_score('LT', 10.0, 100.0, 10.0)
+            },
+            {
+                'player_name': 'Deebo Samuel',
+                'position': 'WR1',
+                'from_team': 'SF',
+                'to_team': 'Was',
+                'move_type': 'Trade',
+                'contract_years': 1,
+                'contract_value': 17550000,
+                '2024_grade': 7.0,
+                'projected_2025_grade': 7.8,
+                'snap_percentage_2024': 85.0,
+                'importance_to_old_team': 7.5,
+                'importance_to_new_team': 8.0,
+                'impact_score': self._calculate_impact_score('WR1', 7.0, 85.0, 8.0)
+            },
+
+            # COMMANDERS DRAFT PICKS
+            {
+                'player_name': 'Josh Conerly Jr.',
+                'position': 'RT',
+                'from_team': 'DRAFT',
+                'to_team': 'Was',
+                'move_type': '2025 Draft Pick #29',
+                'contract_years': 4,
+                'contract_value': 15680000,
+                '2024_grade': 0.0,
+                'projected_2025_grade': 7.5,
+                'snap_percentage_2024': 0.0,
+                'importance_to_old_team': 0.0,
+                'importance_to_new_team': 8.5,
+                'impact_score': self._calculate_impact_score('RT', 7.5, 85.0, 8.5)
+            },
+            {
+                'player_name': 'Trey Amos',
+                'position': 'CB1',
+                'from_team': 'DRAFT',
+                'to_team': 'Was',
+                'move_type': '2025 Draft Pick #61',
+                'contract_years': 4,
+                'contract_value': 8000000,
+                '2024_grade': 0.0,
+                'projected_2025_grade': 7.0,
+                'snap_percentage_2024': 0.0,
+                'importance_to_old_team': 0.0,
+                'importance_to_new_team': 7.5,
+                'impact_score': self._calculate_impact_score('CB1', 7.0, 80.0, 7.5)
+            },
+            {
+                'player_name': 'Jaylin Lane',
+                'position': 'WR3',
+                'from_team': 'DRAFT',
+                'to_team': 'Was',
+                'move_type': '2025 Draft Pick #128',
+                'contract_years': 4,
+                'contract_value': 4500000,
+                '2024_grade': 0.0,
+                'projected_2025_grade': 6.0,
+                'snap_percentage_2024': 0.0,
+                'importance_to_old_team': 0.0,
+                'importance_to_new_team': 6.0,
+                'impact_score': self._calculate_impact_score('WR3', 6.0, 60.0, 6.0)
+            },
+
+            # OTHER TEAMS - Adding context from earlier framework
             {
                 'player_name': 'Cam Ward',
                 'position': 'QB',
                 'from_team': 'DRAFT',
-                'to_team': 'Ten',  # Changed to match team mappings
+                'to_team': 'Ten',
                 'move_type': '2025 Draft Pick #1',
                 'contract_years': 4,
                 'contract_value': 42000000,
-                '2024_grade': 0.0,  # College
-                'projected_2025_grade': 6.8,  # Rookie QB projection
+                '2024_grade': 0.0,
+                'projected_2025_grade': 6.8,
                 'snap_percentage_2024': 0.0,
                 'importance_to_old_team': 0.0,
-                'importance_to_new_team': 10.0,  # Franchise QB hope
+                'importance_to_new_team': 10.0,
                 'impact_score': self._calculate_impact_score('QB', 6.8, 100.0, 10.0)
             },
             {
                 'player_name': 'Travis Hunter',
                 'position': 'CB1',
                 'from_team': 'DRAFT',
-                'to_team': 'Cle',  # Changed to match team mappings
+                'to_team': 'Cle',
                 'move_type': '2025 Draft Pick #2',
                 'contract_years': 4,
                 'contract_value': 38000000,
                 '2024_grade': 0.0,
-                'projected_2025_grade': 7.5,  # Elite prospect
+                'projected_2025_grade': 7.5,
                 'snap_percentage_2024': 0.0,
                 'importance_to_old_team': 0.0,
                 'importance_to_new_team': 9.0,
                 'impact_score': self._calculate_impact_score('CB1', 7.5, 90.0, 9.0)
             },
-            
-            # FREE AGENT SIGNINGS
             {
                 'player_name': 'Russell Wilson',
                 'position': 'QB',
-                'from_team': 'Pit',  # Changed to match team mappings
+                'from_team': 'Pit',
                 'to_team': 'NYG',
                 'move_type': 'Free Agent Signing',
                 'contract_years': 2,
                 'contract_value': 25000000,
-                '2024_grade': 7.2,  # Decent season
-                'projected_2025_grade': 6.8,  # Aging
+                '2024_grade': 7.2,
+                'projected_2025_grade': 6.8,
                 'snap_percentage_2024': 100.0,
                 'importance_to_old_team': 8.5,
-                'importance_to_new_team': 9.5,  # Giants desperate for QB
+                'importance_to_new_team': 9.5,
                 'impact_score': self._calculate_impact_score('QB', 6.8, 100.0, 9.5)
             },
-            
-            # RETIREMENTS
             {
                 'player_name': 'Aaron Rodgers',
                 'position': 'QB',
@@ -152,62 +697,22 @@ class PlayerBridgeFramework:
                 'move_type': 'Retirement',
                 'contract_years': 0,
                 'contract_value': 0,
-                '2024_grade': 6.0,  # Declining
+                '2024_grade': 6.0,
                 'projected_2025_grade': 0.0,
                 'snap_percentage_2024': 100.0,
-                'importance_to_old_team': 9.0,  # Still their starter
+                'importance_to_old_team': 9.0,
                 'importance_to_new_team': 0.0,
                 'impact_score': -self._calculate_impact_score('QB', 6.0, 100.0, 9.0)
             }
         ]
         
         return pd.DataFrame(real_2025_moves)
-        
-    def add_player_move(self, player_bridge_df: pd.DataFrame, player_name: str, position: str, 
-                       from_team: str, to_team: str, move_type: str, grade_2024: float, 
-                       projected_2025: float, snap_pct: float, importance_old: float, 
-                       importance_new: float, contract_years: int = 0, contract_value: int = 0) -> pd.DataFrame:
-        """
-        Easily add a new player move to the bridge
-        
-        Example usage:
-        bridge = framework.add_player_move(
-            bridge, 'DeAndre Hopkins', 'WR1', 'ARI', 'TEN', 'Trade',
-            7.5, 7.2, 85.0, 8.0, 8.5, 2, 26000000
-        )
-        """
-        
-        new_move = {
-            'player_name': player_name,
-            'position': position,
-            'from_team': from_team,
-            'to_team': to_team,
-            'move_type': move_type,
-            'contract_years': contract_years,
-            'contract_value': contract_value,
-            '2024_grade': grade_2024,
-            'projected_2025_grade': projected_2025,
-            'snap_percentage_2024': snap_pct,
-            'importance_to_old_team': importance_old,
-            'importance_to_new_team': importance_new,
-            'impact_score': self._calculate_impact_score(position, grade_2024, snap_pct, importance_new)
-        }
-        
-        return pd.concat([player_bridge_df, pd.DataFrame([new_move])], ignore_index=True)
 
     def add_player_move(self, player_bridge_df: pd.DataFrame, player_name: str, position: str, 
                        from_team: str, to_team: str, move_type: str, grade_2024: float, 
                        projected_2025: float, snap_pct: float, importance_old: float, 
                        importance_new: float, contract_years: int = 0, contract_value: int = 0) -> pd.DataFrame:
-        """
-        Easily add a new player move to the bridge
-        
-        Example usage:
-        bridge = framework.add_player_move(
-            bridge, 'DeAndre Hopkins', 'WR1', 'ARI', 'TEN', 'Trade',
-            7.5, 7.2, 85.0, 8.0, 8.5, 2, 26000000
-        )
-        """
+        """Easily add a new player move to the bridge"""
         
         new_move = {
             'player_name': player_name,
@@ -239,7 +744,13 @@ class PlayerBridgeFramework:
         # Apply position weight
         weighted_impact = base_impact * pos_weight
         
-        return round(weighted_impact, 2)
+        # SCALE DOWN BY 3X to make more realistic
+        realistic_impact = weighted_impact / 3.0
+        
+        # Cap individual moves at 2.5 max impact
+        capped_impact = min(realistic_impact, 2.5)
+        
+        return round(capped_impact, 2)
 
     def calculate_team_net_changes(self, player_bridge_df: pd.DataFrame) -> pd.DataFrame:
         """Calculate net impact for each team from all player moves"""
@@ -272,137 +783,144 @@ class PlayerBridgeFramework:
             position = move['position']
             player_name = move['player_name']
             
-            # DEBUG: Print what we're processing
-            print(f"Processing: {player_name} from {from_team} to {to_team}, impact: {impact}")
-            
             # Determine which unit this position belongs to
             unit = self._get_position_unit(position)
             unit_key = f"{unit.lower()}_impact"
             
-            # Player leaving a team (loss) - make sure impact is negative
+            # Player leaving a team (loss)
             if from_team in team_impacts and from_team not in ['DRAFT', 'FA', 'RETIRED']:
-                print(f"  -> {from_team} loses {player_name}")
                 team_impacts[from_team]['players_lost'] += 1
-                loss_impact = abs(impact)  # Ensure positive value for loss calculation
+                loss_impact = abs(impact)
                 team_impacts[from_team]['impact_lost'] += loss_impact
-                team_impacts[from_team]['net_impact'] -= loss_impact  # Subtract from net
+                team_impacts[from_team]['net_impact'] -= loss_impact
                 team_impacts[from_team][unit_key] -= loss_impact
                 
-                if loss_impact >= 3.0:  # Significant loss
+                if loss_impact >= 3.0:
                     team_impacts[from_team]['key_losses'].append(f"{player_name} ({position})")
             
             # Player joining a team (gain)
             if to_team in team_impacts and to_team not in ['FA', 'RETIRED']:
-                print(f"  -> {to_team} gains {player_name}")
                 team_impacts[to_team]['players_gained'] += 1
-                gain_impact = abs(impact)  # Ensure positive value for gain calculation
+                gain_impact = abs(impact)
                 team_impacts[to_team]['impact_gained'] += gain_impact
-                team_impacts[to_team]['net_impact'] += gain_impact  # Add to net
+                team_impacts[to_team]['net_impact'] += gain_impact
                 team_impacts[to_team][unit_key] += gain_impact
                 
-                if gain_impact >= 3.0:  # Significant addition
+                if gain_impact >= 3.0:
                     team_impacts[to_team]['key_additions'].append(f"{player_name} ({position})")
-            else:
-                if to_team not in ['FA', 'RETIRED']:
-                    print(f"  -> WARNING: {to_team} not found in team_impacts!")
-                    print(f"     Available teams: {list(team_impacts.keys())[:5]}...")  # Show first 5
         
         return pd.DataFrame(list(team_impacts.values()))
 
     def _get_position_unit(self, position: str) -> str:
-        """Determine which unit (Offense/Defense/Special Teams) a position belongs to"""
+        """Determine which unit a position belongs to"""
         for unit, positions in self.position_units.items():
             if position in positions or any(pos in position for pos in positions):
                 return unit
-        return 'Defense'  # Default for defensive positions not explicitly listed
+        return 'Defense'
 
     def grade_team_changes(self, team_impacts_df: pd.DataFrame) -> pd.DataFrame:
         """Assign letter grades to team changes"""
         
-        # Create grading scale based on net impact
         def get_grade(net_impact):
-            if net_impact >= 8.0:
-                return 'A+'
-            elif net_impact >= 6.0:
-                return 'A'
-            elif net_impact >= 4.0:
-                return 'A-'
-            elif net_impact >= 2.0:
-                return 'B+'
-            elif net_impact >= 1.0:
-                return 'B'
-            elif net_impact >= 0.0:
-                return 'B-'
-            elif net_impact >= -1.0:
-                return 'C+'
-            elif net_impact >= -2.0:
-                return 'C'
-            elif net_impact >= -4.0:
-                return 'C-'
-            elif net_impact >= -6.0:
-                return 'D'
-            else:
-                return 'F'
+            if net_impact >= 8.0: return 'A+'
+            elif net_impact >= 6.0: return 'A'
+            elif net_impact >= 4.0: return 'A-'
+            elif net_impact >= 2.0: return 'B+'
+            elif net_impact >= 1.0: return 'B'
+            elif net_impact >= 0.0: return 'B-'
+            elif net_impact >= -1.0: return 'C+'
+            elif net_impact >= -2.0: return 'C'
+            elif net_impact >= -4.0: return 'C-'
+            elif net_impact >= -6.0: return 'D'
+            else: return 'F'
         
         team_impacts_df['offseason_grade'] = team_impacts_df['net_impact'].apply(get_grade)
-        
         return team_impacts_df.sort_values('net_impact', ascending=False)
 
-    def create_position_group_analysis(self, player_bridge_df: pd.DataFrame) -> Dict[str, pd.DataFrame]:
-        """Analyze changes by position group"""
+    def calculate_final_2025_rankings(self, team_impacts_df: pd.DataFrame) -> pd.DataFrame:
+        """Calculate final 2025 power rankings = Original + Offseason Impact"""
         
-        position_analysis = {}
+        final_rankings = []
         
-        for unit in ['Offense', 'Defense', 'Special Teams']:
-            # Filter moves for this unit
-            unit_positions = self.position_units[unit]
-            unit_moves = player_bridge_df[
-                player_bridge_df['position'].isin(unit_positions) |
-                player_bridge_df['position'].str.contains('|'.join(unit_positions), na=False)
-            ].copy()
+        for _, team in team_impacts_df.iterrows():
+            team_abbr = team['team']
+            original_rating = self.original_power_rankings.get(team_abbr, 75.0)  # Default if missing
+            offseason_impact = team['net_impact']
             
-            if len(unit_moves) > 0:
-                # Analyze by team for this unit
-                team_unit_impact = {}
-                
-                for team_data in self.team_mappings.values():
-                    team_abbr = team_data['abbreviation']
-                    
-                    # Calculate gains and losses for this unit
-                    gains = unit_moves[unit_moves['to_team'] == team_abbr]['impact_score'].sum()
-                    losses = unit_moves[unit_moves['from_team'] == team_abbr]['impact_score'].sum()
-                    
-                    team_unit_impact[team_abbr] = {
-                        'team': team_abbr,
-                        'unit': unit,
-                        'impact_gained': gains,
-                        'impact_lost': losses,
-                        'net_impact': gains - losses
-                    }
-                
-                position_analysis[unit] = pd.DataFrame(list(team_unit_impact.values()))
-                position_analysis[unit] = position_analysis[unit].sort_values('net_impact', ascending=False)
+            # Calculate final 2025 projection
+            final_rating = original_rating + offseason_impact
+            
+            # Determine ranking change
+            original_rank = self._get_original_rank(team_abbr)
+            
+            final_rankings.append({
+                'team': team_abbr,
+                'team_name': team['team_name'],
+                'original_2024_rating': original_rating,
+                'original_2024_rank': original_rank,
+                'offseason_impact': offseason_impact,
+                'final_2025_rating': final_rating,
+                'offseason_grade': team['offseason_grade'],
+                'key_additions': team['key_additions'],
+                'key_losses': team['key_losses'],
+                'offense_impact': team['offense_impact'],
+                'defense_impact': team['defense_impact']
+            })
         
-        return position_analysis
+        # Convert to DataFrame and sort by final rating
+        final_df = pd.DataFrame(final_rankings)
+        final_df = final_df.sort_values('final_2025_rating', ascending=False)
+        
+        # Add final 2025 rankings
+        final_df['final_2025_rank'] = range(1, len(final_df) + 1)
+        final_df['rank_change'] = final_df['original_2024_rank'] - final_df['final_2025_rank']
+        
+        return final_df
+
+    def _get_original_rank(self, team_abbr: str) -> int:
+        """Get original 2024 ranking for a team"""
+        sorted_teams = sorted(self.original_power_rankings.items(), 
+                            key=lambda x: x[1], reverse=True)
+        
+        for rank, (team, rating) in enumerate(sorted_teams, 1):
+            if team == team_abbr:
+                return rank
+        return 32  # Default if not found
 
     def generate_comprehensive_report(self):
-        """Generate complete player bridge analysis"""
+        """Generate complete player bridge analysis with final 2025 rankings"""
         
         print("🏈 NFL Player Bridge Framework Analysis")
         print("=" * 60)
         
-        # Create sample player bridge data
+        # Create player bridge data
         player_bridge = self.create_player_bridge_template()
-        
         print(f"📊 Tracking {len(player_bridge)} player moves")
+        
+        # Process each move for debugging
+        for _, move in player_bridge.iterrows():
+            impact = move['impact_score']
+            print(f"Processing: {move['player_name']} from {move['from_team']} to {move['to_team']}, impact: {impact}")
+        
         print()
         
         # Calculate team impacts
         team_impacts = self.calculate_team_net_changes(player_bridge)
         team_grades = self.grade_team_changes(team_impacts)
         
-        # Show top and bottom performers
-        print("🏆 BEST OFFSEASONS (Top 5)")
+        # Calculate final 2025 rankings
+        final_rankings = self.calculate_final_2025_rankings(team_grades)
+        
+        # Show 2025 FINAL POWER RANKINGS
+        print("🏆 2025 FINAL POWER RANKINGS")
+        print("=" * 50)
+        top_10 = final_rankings.head(10)
+        for _, team in top_10.iterrows():
+            rank_symbol = "🔺" if team['rank_change'] > 0 else "🔻" if team['rank_change'] < 0 else "➡️"
+            print(f"#{team['final_2025_rank']:2d} {team['team']:<4} {team['team_name']:<25} "
+                  f"Rating: {team['final_2025_rating']:5.1f} {rank_symbol}{abs(team['rank_change'])}")
+        
+        print("\n🏆 BEST OFFSEASONS (Top 5)")
         print("-" * 50)
         top_5 = team_grades.head(5)
         for _, team in top_5.iterrows():
@@ -418,44 +936,39 @@ class PlayerBridgeFramework:
             if team['key_losses']:
                 print(f"    Key Losses: {', '.join(team['key_losses'][:2])}")
         
-        # Position group analysis
-        position_analysis = self.create_position_group_analysis(player_bridge)
+        print(f"\n📈 BIGGEST RANKING CHANGES")
+        print("-" * 50)
+        biggest_movers = final_rankings.nlargest(5, 'rank_change')
+        for _, team in biggest_movers.iterrows():
+            print(f"🔺 {team['team']:<4} {team['team_name']:<25} "
+                  f"#{team['original_2024_rank']} → #{team['final_2025_rank']} (+{team['rank_change']})")
         
-        print(f"\n📈 UNIT ANALYSIS")
-        print("-" * 30)
-        for unit, unit_df in position_analysis.items():
-            if len(unit_df) > 0:
-                top_unit = unit_df.iloc[0]
-                bottom_unit = unit_df.iloc[-1]
-                print(f"{unit}:")
-                print(f"  Best: {top_unit['team']} ({top_unit['net_impact']:+.1f})")
-                print(f"  Worst: {bottom_unit['team']} ({bottom_unit['net_impact']:+.1f})")
+        print(f"\n📉 BIGGEST RANKING DROPS")
+        print("-" * 50)
+        biggest_drops = final_rankings.nsmallest(5, 'rank_change')
+        for _, team in biggest_drops.iterrows():
+            if team['rank_change'] < 0:
+                print(f"🔻 {team['team']:<4} {team['team_name']:<25} "
+                      f"#{team['original_2024_rank']} → #{team['final_2025_rank']} ({team['rank_change']})")
         
         # Save all data
-        self._save_results(player_bridge, team_grades, position_analysis)
+        self._save_results(player_bridge, team_grades, final_rankings)
         
-        return player_bridge, team_grades, position_analysis
+        return player_bridge, team_grades, final_rankings
 
-    def _save_results(self, player_bridge, team_grades, position_analysis):
+    def _save_results(self, player_bridge, team_grades, final_rankings):
         """Save all analysis to files"""
-        
-        # Save main datasets
         player_bridge.to_csv(self.output_path / "player_bridge_moves.csv", index=False)
         team_grades.to_csv(self.output_path / "team_offseason_grades.csv", index=False)
-        
-        # Save position analysis
-        for unit, unit_df in position_analysis.items():
-            unit_df.to_csv(self.output_path / f"{unit.lower()}_analysis.csv", index=False)
-        
+        final_rankings.to_csv(self.output_path / "final_2025_power_rankings.csv", index=False)
         print(f"\n💾 All analysis saved to: {self.output_path}")
 
 
 def main():
     framework = PlayerBridgeFramework()
-    player_bridge, team_grades, position_analysis = framework.generate_comprehensive_report()
-    
+    player_bridge, team_grades, final_rankings = framework.generate_comprehensive_report()
     print(f"\n✅ Player Bridge Framework created!")
-    print(f"📋 Ready to input real 2025 offseason data")
+    print(f"📋 Final 2025 Power Rankings calculated based on 2024 baseline + offseason moves")
 
 
 if __name__ == "__main__":
