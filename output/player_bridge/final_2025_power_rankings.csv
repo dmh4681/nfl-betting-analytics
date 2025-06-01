@@ -1,0 +1,33 @@
+team,team_name,original_2024_rating,original_2024_rank,offseason_impact,final_2025_rating,offseason_grade,key_additions,key_losses,offense_impact,defense_impact,final_2025_rank,rank_change
+Phi,Philadelphia Eagles,95.2,1,-1.3699999999999999,93.83,C,[],[],-1.0799999999999998,-0.2899999999999999,1,0
+Buf,Buffalo Bills,92.8,2,0.0,92.8,B-,[],[],0.0,0.0,2,0
+Was,Washington Commanders,86.8,8,4.64,91.44,A-,[],[],4.6499999999999995,-0.009999999999999787,3,5
+KC,Kansas City Chiefs,91.5,3,-0.2,91.3,C+,[],[],0.0,-0.2,4,-1
+SF,San Francisco 49ers,90.1,4,-0.63,89.47,C+,[],[],-0.87,0.24,5,-1
+Bal,Baltimore Ravens,89.3,5,0.0,89.3,B-,[],[],0.0,0.0,6,-1
+Det,Detroit Lions,88.7,6,0.22,88.92,B-,[],[],0.22,0.0,7,-1
+NYG,New York Giants,87.2,7,1.3299999999999998,88.53,B,[],[],1.7599999999999998,-0.43,8,-1
+Min,Minnesota Vikings,84.9,10,0.23,85.13000000000001,B-,[],[],0.0,0.23,9,1
+Hou,Houston Texans,85.4,9,-1.29,84.11,C,[],[],-2.0,0.71,10,-1
+LAC,Los Angeles Chargers,83.6,12,0.0,83.6,B-,[],[],0.0,0.0,11,1
+Mia,Miami Dolphins,82.8,13,0.0,82.8,B-,[],[],0.0,0.0,12,1
+Pit,Pittsburgh Steelers,84.2,11,-2.03,82.17,C-,[],[],-2.03,0.0,13,-2
+GB,Green Bay Packers,82.1,14,0.0,82.1,B-,[],[],0.0,0.0,14,0
+Atl,Atlanta Falcons,81.5,15,0.0,81.5,B-,[],[],0.0,0.0,15,0
+Cin,Cincinnati Bengals,80.9,16,0.09,80.99000000000001,B-,[],[],0.0,0.09,16,0
+TB,Tampa Bay Buccaneers,80.2,17,0.0,80.2,B-,[],[],0.0,0.0,17,0
+LAR,Los Angeles Rams,79.6,18,0.0,79.6,B-,[],[],0.0,0.0,18,0
+Cle,Cleveland Browns,78.1,20,1.22,79.32,B,[],[],1.22,0.0,19,1
+Sea,Seattle Seahawks,78.8,19,0.0,78.8,B-,[],[],0.0,0.0,20,-1
+NE,New England Patriots,77.4,21,-0.24,77.16000000000001,C+,[],[],-0.29,0.04999999999999999,21,0
+Jac,Jacksonville Jaguars,76.7,22,0.25,76.95,B-,[],[],0.25,0.0,22,0
+Ari,Arizona Cardinals,75.2,24,0.9,76.10000000000001,B-,[],[],0.0,0.9,23,1
+Ten,Tennessee Titans,73.8,26,2.27,76.07,B+,[],[],2.27,0.0,24,2
+Den,Denver Broncos,75.9,23,0.0,75.9,B-,[],[],0.0,0.0,25,-2
+Dal,Dallas Cowboys,75.0,32,0.0,75.0,B-,[],[],0.0,0.0,26,6
+Chi,Chicago Bears,74.5,25,0.06000000000000001,74.56,B-,[],[],0.14,-0.08,27,-2
+Ind,Indianapolis Colts,73.1,27,0.0,73.1,B-,[],[],0.0,0.0,28,-1
+Car,Carolina Panthers,71.6,29,0.0,71.6,B-,[],[],0.0,0.0,29,0
+LV,Las Vegas Raiders,69.9,31,0.78,70.68,B-,[],[],-0.22,1.0,30,1
+NO,New Orleans Saints,70.8,30,-0.43,70.36999999999999,C+,[],[],0.0,-0.43,31,-1
+NYJ,New York Jets,72.4,28,-2.19,70.21000000000001,C-,[],[],-1.8,-0.39,32,-4
