@@ -58,39 +58,191 @@ class OffseasonKnowledgeManager:
     
     def _parse_team_knowledge(self, file_path: Path) -> Dict:
         """Parse existing team offseason file to extract known moves"""
-        with open(file_path, 'r') as f:
+        with open(file_path, 'r', encoding='utf-8', errors='ignore') as f:
             content = f.read()
             
-        # Extract player moves using regex patterns
         moves = []
         
-        # Pattern for free agent signings
-        fa_pattern = r'\*\*(.*?)\*\*.*?signed.*?(\d+\s*year.*?\$.*?)\s'
-        fa_matches = re.findall(fa_pattern, content, re.IGNORECASE | re.DOTALL)
+        # Split content into sections by headers
+        sections = re.split(r'\n#+\s+', content)
         
-        for match in fa_matches:
-            moves.append({
-                'player_name': match[0].strip(),
-                'move_type': 'Free Agent Signing',
-                'contract': match[1].strip() if len(match) > 1 else 'Unknown'
-            })
+        for section in sections:
+            section_lower = section.lower()
             
-        # Pattern for trades
-        trade_pattern = r'\*\*(.*?)\*\*.*?trade.*?from\s*(.*?)\s*(?:for|to)'
-        trade_matches = re.findall(trade_pattern, content, re.IGNORECASE)
+            # Determine section type based on header keywords
+            if any(keyword in section_lower for keyword in ['free agent', 'signing', 'acquisition']):
+                section_type = 'Free Agent Signing'
+            elif any(keyword in section_lower for keyword in ['trade', 'acquired', 'from']):
+                section_type = 'Trade'
+            elif any(keyword in section_lower for keyword in ['draft', 'pick', 'round']):
+                section_type = 'Draft Pick'
+            elif any(keyword in section_lower for keyword in ['loss', 'departure', 'left']):
+                section_type = 'Free Agent Loss'
+            elif any(keyword in section_lower for keyword in ['retirement', 'retired']):
+                section_type = 'Retirement'
+            elif any(keyword in section_lower for keyword in ['release', 'cut']):
+                section_type = 'Release'
+            else:
+                continue  # Skip sections we can't categorize
+            
+            # Extract player names from this section
+            section_moves = self._extract_players_from_section(section, section_type)
+            moves.extend(section_moves)
         
-        for match in trade_matches:
-            moves.append({
-                'player_name': match[0].strip(),
-                'move_type': 'Trade',
-                'from_team': match[1].strip() if len(match) > 1 else 'Unknown'
-            })
-            
+        # Remove duplicates and clean up
+        unique_moves = self._clean_and_dedupe_moves(moves)
+        
         return {
-            "moves": moves,
+            "moves": unique_moves,
             "last_updated": datetime.now().isoformat(),
             "content_hash": hashlib.md5(content.encode()).hexdigest()
         }
+    
+    def _extract_players_from_section(self, section: str, section_type: str) -> List[Dict]:
+        """Extract player names from a specific section with known type"""
+        moves = []
+        
+        # Pattern 1: **Player Name (Position)** - most common in your files
+        pattern1 = r'\*\*([A-Za-z\'\.\s]{2,30})\s*\(([A-Z]{1,4})\)\*\*'
+        matches1 = re.findall(pattern1, section)
+        
+        for match in matches1:
+            player_name = match[0].strip()
+            position = match[1].strip()
+            
+            # Skip if this looks like a section header or random text
+            if self._is_valid_player_name(player_name):
+                moves.append({
+                    'player_name': player_name,
+                    'position': position,
+                    'move_type': section_type,
+                    'contract': self._extract_contract_from_context(section, player_name)
+                })
+        
+        # Pattern 2: **Player Name** followed by position info
+        pattern2 = r'\*\*([A-Za-z\'\.\s]{2,30})\*\*[^\n]*?(?:signed|acquired|traded|drafted)[^\n]*?(\([A-Z]{1,4}\)|\b[A-Z]{1,4}\b)'
+        matches2 = re.findall(pattern2, section, re.IGNORECASE)
+        
+        for match in matches2:
+            player_name = match[0].strip()
+            position_raw = match[1].strip()
+            position = re.sub(r'[^\w]', '', position_raw)  # Clean position
+            
+            if self._is_valid_player_name(player_name) and len(position) <= 4:
+                # Check if we already have this player
+                if not any(move['player_name'] == player_name for move in moves):
+                    moves.append({
+                        'player_name': player_name,
+                        'position': position,
+                        'move_type': section_type,
+                        'contract': self._extract_contract_from_context(section, player_name)
+                    })
+        
+        # Pattern 3: Draft picks with different format
+        if section_type == 'Draft Pick':
+            draft_pattern = r'(?:Round\s+\d+|Pick\s+#?\d+)[^\n]*?\*\*([A-Za-z\'\.\s]{2,30})\*\*[^\n]*?(?:\(([A-Z]{1,4}),|\b([A-Z]{1,4})\b)'
+            draft_matches = re.findall(draft_pattern, section, re.IGNORECASE)
+            
+            for match in draft_matches:
+                player_name = match[0].strip()
+                position = (match[1] or match[2]).strip()
+                
+                if self._is_valid_player_name(player_name):
+                    moves.append({
+                        'player_name': player_name,
+                        'position': position,
+                        'move_type': 'Draft Pick',
+                        'contract': 'Rookie Contract'
+                    })
+        
+        return moves
+    
+    def _is_valid_player_name(self, name: str) -> bool:
+        """Check if a string looks like a valid player name"""
+        name = name.strip()
+        
+        # Must be reasonable length
+        if len(name) < 3 or len(name) > 30:
+            return False
+        
+        # Must contain at least one letter
+        if not re.search(r'[A-Za-z]', name):
+            return False
+        
+        # Skip common false positives
+        skip_words = [
+            'signing', 'signed', 'contract', 'deal', 'year', 'million', 'guaranteed',
+            'previous', 'former', 'team', 'player', 'addition', 'departure', 'loss',
+            'analysis', 'context', 'overview', 'summary', 'grade', 'performance',
+            'addressed', 'remaining', 'coached', 'coordinator', 'assistant', 'hire',
+            'retained', 'fired', 'promoted', 'extension', 'restructure', 'cap',
+            'dead money', 'savings', 'space', 'budget', 'cost', 'value', 'price'
+        ]
+        
+        name_lower = name.lower()
+        if any(word in name_lower for word in skip_words):
+            return False
+        
+        # Must look like a person's name (at least 2 words or common single names)
+        words = name.split()
+        if len(words) == 1:
+            # Allow common single names or initials
+            if len(name) < 3 or name.isupper():
+                return False
+        
+        # Skip if it's mostly numbers or special characters
+        if len(re.sub(r'[A-Za-z\s\']', '', name)) > len(name) * 0.3:
+            return False
+        
+        return True
+    
+    def _extract_contract_from_context(self, section: str, player_name: str) -> str:
+        """Try to find contract details for a player in the section"""
+        # Look for contract info near the player's name
+        name_index = section.find(player_name)
+        if name_index == -1:
+            return 'Unknown'
+        
+        # Get text around the player's name (500 chars before and after)
+        start = max(0, name_index - 500)
+        end = min(len(section), name_index + 500)
+        context = section[start:end]
+        
+        # Look for contract patterns
+        contract_patterns = [
+            r'(\d+\s*years?\s*,?\s*\$[\d,\.]+(?:\s*million|M)?)',
+            r'(\$[\d,\.]+(?:\s*million|M)?(?:\s*over\s*\d+\s*years?)?)',
+            r'(\d+\-year[^\n]*?\$[\d,\.]+[^\n]*?)'
+        ]
+        
+        for pattern in contract_patterns:
+            match = re.search(pattern, context, re.IGNORECASE)
+            if match:
+                return match.group(1).strip()
+        
+        return 'Unknown'
+    
+    def _clean_and_dedupe_moves(self, moves: List[Dict]) -> List[Dict]:
+        """Remove duplicates and clean up the moves list"""
+        seen_players = set()
+        clean_moves = []
+        
+        for move in moves:
+            player_name = move['player_name'].strip()
+            player_key = player_name.lower()
+            
+            # Skip if we've already seen this player
+            if player_key in seen_players:
+                continue
+            
+            # Skip if player name is clearly invalid
+            if not self._is_valid_player_name(player_name):
+                continue
+            
+            seen_players.add(player_key)
+            clean_moves.append(move)
+        
+        return clean_moves
     
     def detect_new_moves(self, team: str, new_content: str) -> List[PlayerMove]:
         """Compare new content against existing knowledge to find new moves"""
@@ -205,11 +357,11 @@ class OffseasonKnowledgeManager:
         
         # Append to existing file or create new one
         if team_file.exists():
-            with open(team_file, 'a') as f:
+            with open(team_file, 'a', encoding='utf-8') as f:
                 f.write(new_section)
         else:
             # Create new file with header
-            with open(team_file, 'w') as f:
+            with open(team_file, 'w', encoding='utf-8') as f:
                 f.write(f"# {team} 2025 Offseason Moves\n\n")
                 f.write("*Automatically tracked and updated*\n")
                 f.write(new_section)

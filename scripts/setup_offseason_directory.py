@@ -85,7 +85,7 @@ Letter grade and rationale for team's offseason performance
 """
     
     template_path = project_path / "data/offseason_knowledge/templates/team_offseason_template.md"
-    with open(template_path, 'w') as f:
+    with open(template_path, 'w', encoding='utf-8') as f:
         f.write(template_content)
     print(f"✅ Created template: {template_path}")
     
