@@ -1,0 +1,43 @@
+# Denver Broncos reshape roster for Bo Nix's critical second season
+
+The Denver Broncos executed a calculated offseason strategy in 2025, investing $99.5 million in free agency while navigating the final year of Russell Wilson's $32 million dead cap hit. Their approach prioritized defensive reinforcements and offensive versatility, adding three injury-prone but elite talents in **Talanoa Hufanga** (3-year, $39M), **Dre Greenlaw** (3-year, $31.5M), and **Evan Engram** (2-year, $23M) while drafting seven players to support sophomore quarterback Bo Nix's development. The moves position Denver to challenge Kansas City's nine-year division dominance with an enhanced defense and expanded offensive toolkit, though questions remain about the durability of key acquisitions and wide receiver depth beyond Courtland Sutton.
+
+## Free agency brings elite talent with significant injury risk
+
+The Broncos' free agency approach reflected a clear philosophy: acquire proven talent willing to accept incentive-laden contracts due to injury concerns. Their marquee signing, **Talanoa Hufanga**, brings All-Pro credentials from his 2022 season when he recorded 97 tackles and four interceptions. However, the former 49er played just 17 games over the past two seasons due to ACL and wrist injuries. His 3-year, $39 million deal ($20M guaranteed) represents a calculated risk that his ball-hawking ability can transform Denver's secondary alongside Patrick Surtain II.
+
+Similarly, linebacker **Dre Greenlaw** arrives on a team-friendly structure (3-year, $31.5M with just $13.5M guaranteed) after missing 15 games recovering from a torn Achilles suffered in Super Bowl LVIII. When healthy, Greenlaw has proven elite with multiple 100-tackle seasons, but his contract essentially functions as a one-year prove-it deal with team options thereafter. The Broncos also added **Evan Engram** at tight end, paying $23 million over two years ($16.5M guaranteed) for Sean Payton's coveted "Joker" player—a versatile pass-catcher who can create mismatches despite missing eight games in 2024.
+
+The departures proved less impactful, with running back **Javonte Williams** signing a modest one-year, $3 million deal in Dallas after never recapturing his pre-ACL tear explosiveness. Backup quarterback **Zach Wilson** moved to Miami after a failed reclamation project, while punter **Riley Dixon** joined Tampa Bay and special teams ace **Tremon Smith** signed with Houston. These losses created opportunities for younger players and allowed strategic reinvestment in areas of greater need.
+
+## Draft class addresses immediate needs while building future depth
+
+Denver's draft strategy emphasized value extraction through **five trades** that allowed them to target specific players while maintaining seven total selections. Their crown jewel came at pick 20 with **Jahdae Barron**, the Jim Thorpe Award-winning cornerback from Texas who many viewed as a top-12 talent. Barron's versatility to play corner, slot, and safety provides Vance Joseph multiple deployment options in a defense that led the NFL with a 46.3% blitz rate in 2024.
+
+The Broncos then maneuvered to select running back **RJ Harvey** (Round 2, Pick 60), who rushed for 1,577 yards and 22 touchdowns at UCF while averaging 6.8 yards per carry. Harvey's elite speed and receiving ability directly address the void left by Williams' departure and complement power back Audric Estime. Third-round selections brought wide receiver **Pat Bryant** from Illinois—whom Payton compared to Michael Thomas—and defensive end **Sai'vion Jones** from LSU, providing both immediate depth and future starter potential.
+
+The draft philosophy clearly centered on supporting Nix's development. Harvey offers a dynamic receiving threat from the backfield, while Bryant's reliable hands (just one drop in 2024) and physical style provide the possession receiver Payton's system demands. Even seventh-round pick **Caleb Lohner**, a 6'7" former basketball player, represents the type of athletic upside project Payton successfully developed with Jimmy Graham in New Orleans.
+
+## Strategic extensions and coaching continuity shape organizational direction
+
+The Broncos' internal moves reflected equal importance to their external acquisitions. Defensive tackle **D.J. Jones** received a 3-year, $39 million extension ($26M guaranteed), ensuring the defensive line core remains intact after ranking among the NFL's best in 2024. Backup quarterback **Jarrett Stidham** returned on a 2-year, $12 million deal to maintain continuity in the quarterback room as Nix's primary mentor.
+
+The coaching staff underwent strategic enhancements rather than wholesale changes. **Darren Rizzi** reunited with Payton as special teams coordinator after serving in the same role during their Saints tenure, replacing the retired Mike Westhoff. Internal promotions elevated **Davis Webb** to offensive pass game coordinator—critical for Nix's continued development—while **Jim Leonhard** assumed defensive pass game coordinator duties. These moves maintain schematic continuity while adding coordinator-level expertise in crucial areas.
+
+Front office stability faced its first major test when assistant GM **Darren Mougey** departed to become Jets general manager. The Broncos responded by promoting **Reed Burckhardt** to assistant GM, maintaining George Paton's personnel philosophy through internal continuity. The organization also welcomed back **Jordan Dizon** from Philadelphia's front office, bringing fresh perspectives from Howie Roseman's operation while understanding Denver's evaluation system.
+
+## Financial constraints and injury concerns frame competitive window
+
+Operating with approximately **$16-17 million** in remaining cap space after their moves, the Broncos navigated the final year of Russell Wilson's crippling $32 million dead money hit. This financial albatross limited their flexibility but didn't prevent strategic investments. Paton and Payton avoided restructures that would push money into future years, maintaining a clean cap structure for when Wilson's money finally clears after 2025.
+
+The injury histories of key acquisitions represent the offseason's primary gamble. Hufanga and Greenlaw missed a combined 31 games over the past two seasons, while Engram's durability concerns persist. The Broncos clearly prioritized talent over health, betting that their medical staff and load management can maximize availability. This approach extends to the draft, where they selected players with injury concerns but elite talent when healthy.
+
+Denver's path to AFC West contention runs directly through Kansas City, where they've found recent success with consecutive home victories. The Chiefs remain heavy favorites at +115 to win their tenth straight division title, but Denver's +425 odds reflect realistic improvement expectations. The Broncos' league-leading 63 sacks in 2024 provide the formula for disrupting Patrick Mahomes, while Nix's development determines the offensive ceiling.
+
+## Broncos position themselves as legitimate contenders despite calculated risks
+
+Sean Payton's second full offseason produced a roster with clear strengths and concerning vulnerabilities. The additions of Hufanga, Greenlaw, and Barron create arguably the NFL's most talented defensive back seven when healthy. Engram finally provides the versatile tight end Payton's offense requires, while Harvey adds explosive playmaking potential to complement Nix's growth.
+
+Yet questions persist about wide receiver depth beyond Courtland Sutton, whose extension negotiations remain ongoing. The offensive line received minimal additions despite aging concerns, and the reliance on injury-prone free agents could backfire if health issues resurface. The Broncos bet heavily that talent trumps durability—a philosophy that will define their 2025 success.
+
+The organizational trajectory points toward sustainable competition. With Wilson's dead money expiring, Nix on a rookie contract through 2027, and a young defensive core locked in, Denver positioned itself for a multi-year window. The 2025 season represents the bridge between rebuilding and contending, with strategic moves designed to accelerate that timeline while maintaining long-term flexibility. If the injury dice roll favorably and Nix takes the expected sophomore leap, the Broncos could challenge Kansas City's division stranglehold sooner than expected.

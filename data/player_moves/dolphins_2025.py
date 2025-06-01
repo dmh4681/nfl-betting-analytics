@@ -524,3 +524,32 @@ DOLPHINS_2025_MOVES = [
         'importance_to_new_team': 5.5,  # O-line development
     },
 ]
+
+# DOLPHINS SUMMARY METRICS
+DOLPHINS_2025_SUMMARY = {
+    'total_moves': len(DOLPHINS_2025_MOVES),
+    'free_agent_signings': 12,
+    'major_losses': 7,
+    'draft_picks': 7,
+    'key_resignings': 3,
+    'cap_casualties': 3,
+    'retirements': 1,
+    'udfa_signings': 2,
+    'draft_trades': 1,
+    'total_guaranteed_money': 75000000,  # Conservative spending approach
+    'salary_cap_space_remaining': 13700000,  # After major restructures
+    'championship_window': '2025-2027',
+    'offseason_grade': 'B',
+    'key_philosophy': 'Trenches and protection focus after offensive line collapse'
+}
+
+if __name__ == "__main__":
+    print(f"Miami Dolphins 2025 Offseason: {DOLPHINS_2025_SUMMARY['total_moves']} moves")
+    print(f"Offseason Grade: {DOLPHINS_2025_SUMMARY['offseason_grade']}")
+    print(f"Championship Window: {DOLPHINS_2025_SUMMARY['championship_window']}")
+    print(f"Cap Space Remaining: ${DOLPHINS_2025_SUMMARY['salary_cap_space_remaining']:,}")
+    print(f"Philosophy: {DOLPHINS_2025_SUMMARY['key_philosophy']}")
+    print(f"Key Additions: Daniels (G), Grant (DT), Wilson (QB), Stonehouse (P)")
+    print(f"Key Losses: Armstead (retired), Holland (S), Campbell (DT)")
+    print(f"Focus Areas: O-line protection, backup QB, defensive trenches")
+    print(f"Draft Strategy: Moved up for Savaiinaea, 4 of 8 picks on trenches")

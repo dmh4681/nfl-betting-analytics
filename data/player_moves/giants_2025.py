@@ -402,3 +402,28 @@ GIANTS_2025_MOVES = [
         'importance_to_new_team': 6.0,  # System familiarity
     },
 ]
+
+# GIANTS SUMMARY METRICS
+GIANTS_2025_SUMMARY = {
+    'total_moves': len(GIANTS_2025_MOVES),
+    'free_agent_signings': 10,
+    'major_losses': 6,
+    'draft_picks': 5,
+    'key_resignings': 4,
+    'trades': 1,  # Draft day trade up for Dart
+    'total_guaranteed_money': 180000000,  # Includes Holland, Adebo, Wilson
+    'dead_money': 22200000,  # From Daniel Jones release
+    'championship_window': '2026-2029',
+    'offseason_grade': 'B+',
+    'key_philosophy': 'Complete rebuild around Jaxson Dart with veteran bridge'
+}
+
+if __name__ == "__main__":
+    print(f"New York Giants 2025 Offseason: {GIANTS_2025_SUMMARY['total_moves']} moves")
+    print(f"Offseason Grade: {GIANTS_2025_SUMMARY['offseason_grade']}")
+    print(f"Championship Window: {GIANTS_2025_SUMMARY['championship_window']}")
+    print(f"Dead Money: ${GIANTS_2025_SUMMARY['dead_money']:,}")
+    print(f"Philosophy: {GIANTS_2025_SUMMARY['key_philosophy']}")
+    print(f"Key Additions: Wilson (QB), Dart (QB draft), Carter (EDGE), Holland (S)")
+    print(f"Key Losses: Jones (released), Ojulari/Jackson (to Eagles)")
+    print(f"Strategy: Patient rebuild with franchise QB development")

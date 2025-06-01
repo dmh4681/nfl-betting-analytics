@@ -282,3 +282,30 @@ EAGLES_2025_MOVES = [
         'importance_to_new_team': 0.0,
     },
 ]
+
+# EAGLES SUMMARY METRICS
+EAGLES_2025_SUMMARY = {
+    'total_moves': len(EAGLES_2025_MOVES),
+    'free_agent_signings': 5,
+    'major_losses': 7,
+    'draft_picks': 3,
+    'key_resignings': 0,
+    'trades': 3,
+    'retirements': 1,
+    'post_june_cuts': 2,
+    'total_guaranteed_money': 25000000,  # Conservative one-year deals
+    'dead_money': 33560000,  # From Slay/Bradberry cuts
+    'championship_window': '2025-2027',
+    'offseason_grade': 'B-',
+    'key_philosophy': 'Youth movement with veteran leadership, defensive gamble'
+}
+
+if __name__ == "__main__":
+    print(f"Philadelphia Eagles 2025 Offseason: {EAGLES_2025_SUMMARY['total_moves']} moves")
+    print(f"Offseason Grade: {EAGLES_2025_SUMMARY['offseason_grade']}")
+    print(f"Championship Window: {EAGLES_2025_SUMMARY['championship_window']}")
+    print(f"Dead Money: ${EAGLES_2025_SUMMARY['dead_money']:,}")
+    print(f"Philosophy: {EAGLES_2025_SUMMARY['key_philosophy']}")
+    print(f"Key Additions: Ojulari (EDGE), Campbell (LB), Mukuba (S)")
+    print(f"Key Losses: Sweat (EDGE), Milton Williams (DT), Graham (retirement)")
+    print(f"Strategy: Betting on youth development over expensive veterans")

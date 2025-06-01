@@ -366,3 +366,30 @@ BILLS_2025_MOVES = [
         'importance_to_new_team': 7.0,  # Replaces fired Matthew Smiley
     },
 ]
+
+# BILLS SUMMARY METRICS
+BILLS_2025_SUMMARY = {
+    'total_moves': len(BILLS_2025_MOVES),
+    'free_agent_signings': 4,
+    'major_losses': 3,
+    'draft_picks': 8,
+    'key_extensions': 6,
+    'trades': 1,
+    'coaching_changes': 1,
+    'total_guaranteed_money': 625000000,  # Dominated by Allen's record $250M guaranteed
+    'salary_cap_constraints': True,  # Started $15.7M over cap
+    'championship_window': '2025-2030',
+    'offseason_grade': 'A-',
+    'key_philosophy': 'Defensive transformation to finally beat Kansas City'
+}
+
+if __name__ == "__main__":
+    print(f"Buffalo Bills 2025 Offseason: {BILLS_2025_SUMMARY['total_moves']} moves")
+    print(f"Offseason Grade: {BILLS_2025_SUMMARY['offseason_grade']}")
+    print(f"Championship Window: {BILLS_2025_SUMMARY['championship_window']}")
+    print(f"Total Guaranteed: ${BILLS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"Philosophy: {BILLS_2025_SUMMARY['key_philosophy']}")
+    print(f"Key Additions: Bosa (EDGE), Palmer (WR), Hairston (CB), Sanders (DT)")
+    print(f"Key Losses: Von Miller (released), Cooper (cap constraints)")
+    print(f"Historic Extensions: Allen ($330M), Shakir ($53M), Rousseau ($80M)")
+    print(f"Draft Strategy: Defense first 5 picks for KC-focused improvements")

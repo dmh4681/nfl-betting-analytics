@@ -252,3 +252,27 @@ COMMANDERS_2025_MOVES = [
         'importance_to_new_team': 10.0,
     }
 ]
+
+# COMMANDERS SUMMARY METRICS
+COMMANDERS_2025_SUMMARY = {
+    'total_moves': len(COMMANDERS_2025_MOVES),
+    'free_agent_signings': 4,
+    'major_losses': 4,
+    'draft_picks': 3,
+    'key_resignings': 3,
+    'trades': 2,
+    'total_guaranteed_money': 135000000,  # Includes Tunsil, Kinlaw, Samuel
+    'salary_cap_space_remaining': 22900000,
+    'championship_window': '2025-2027',
+    'offseason_grade': 'A-',
+    'key_philosophy': 'Building around Daniels with elite protection and weapons'
+}
+
+if __name__ == "__main__":
+    print(f"Washington Commanders 2025 Offseason: {COMMANDERS_2025_SUMMARY['total_moves']} moves")
+    print(f"Offseason Grade: {COMMANDERS_2025_SUMMARY['offseason_grade']}")
+    print(f"Championship Window: {COMMANDERS_2025_SUMMARY['championship_window']}")
+    print(f"Cap Space Remaining: ${COMMANDERS_2025_SUMMARY['salary_cap_space_remaining']:,}")
+    print(f"Philosophy: {COMMANDERS_2025_SUMMARY['key_philosophy']}")
+    print(f"Key Additions: Tunsil (LT), Samuel (WR), Kinlaw (DT)")
+    print(f"Key Losses: Jonathan Allen (DT), Jeremy Chinn (S)")

@@ -394,3 +394,29 @@ COWBOYS_2025_MOVES = [
         'importance_to_new_team': 8.5,  # Coordinator overhaul
     },
 ]
+
+# COWBOYS SUMMARY METRICS
+COWBOYS_2025_SUMMARY = {
+    'total_moves': len(COWBOYS_2025_MOVES),
+    'free_agent_signings': 7,
+    'major_losses': 7,
+    'draft_picks': 5,
+    'key_resignings': 2,
+    'trades': 4,
+    'coaching_changes': 2,
+    'total_guaranteed_money': 135000000,  # Includes Odighizuwa extension
+    'salary_cap_space_remaining': 38500000,
+    'championship_window': '2025-2026',
+    'offseason_grade': 'B+',
+    'key_philosophy': 'Conservative approach with strategic trades and coaching overhaul'
+}
+
+if __name__ == "__main__":
+    print(f"Dallas Cowboys 2025 Offseason: {COWBOYS_2025_SUMMARY['total_moves']} moves")
+    print(f"Offseason Grade: {COWBOYS_2025_SUMMARY['offseason_grade']}")
+    print(f"Championship Window: {COWBOYS_2025_SUMMARY['championship_window']}")
+    print(f"Cap Space Remaining: ${COWBOYS_2025_SUMMARY['salary_cap_space_remaining']:,}")
+    print(f"Philosophy: {COWBOYS_2025_SUMMARY['key_philosophy']}")
+    print(f"Key Additions: Pickens (WR), Booker (G), Ezeiruaku (EDGE)")
+    print(f"Key Losses: Lawrence (EDGE), Lewis (CB), Dowdle (RB)")
+    print(f"Coaching: Schottenheimer (HC), Eberflus (DC)")
