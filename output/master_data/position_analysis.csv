@@ -1,0 +1,9 @@
+position_group,total_moves,avg_impact,total_impact,avg_contract_value,most_active_position,highest_paid_player,highest_impact_player,free_agents,trades,draft_picks
+Offense - Skill,233,0.28171673819742493,65.64000000000001,13919527.896995708,QB,Josh Allen,Josh Allen,58,15,59
+Defense - Secondary,134,0.28007462686567164,37.53,10372425.373134328,S,Jaycee Horn,Derek Stingley Jr.,38,6,38
+Defense - Front,139,0.23071942446043164,32.07,13858776.978417266,DT,Myles Garrett,Maxx Crosby,38,4,41
+Offense - Line,73,0.3191780821917808,23.299999999999997,11506575.342465753,G,Dan Moore Jr.,Laremy Tunsil,22,4,17
+Defense - Second,70,0.248,17.36,8256857.142857143,LB,Fred Warner,Fred Warner,21,2,16
+Other,87,0.06022988505747127,5.24,6244597.7011494255,OT,T.J. Watt,T.J. Watt,10,5,16
+Special Teams,15,0.19733333333333333,2.96,5849333.333333333,P,Cameron Dicker,Cameron Dicker,3,0,3
+Coaching,39,0.02435897435897436,0.95,8925641.025641026,COACH,Mike Vrabel,Todd Monken,0,0,0
