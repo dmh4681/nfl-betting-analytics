@@ -40,6 +40,7 @@ except ImportError as e:
     print("📝 This is OK - we'll use fallback data")
 
 # Try to import your real player moves data
+# Try to import your real player moves data
 REAL_DATA_AVAILABLE = False
 try:
     # Add data directory to path
@@ -47,15 +48,15 @@ try:
     if DATA_PATH.exists():
         sys.path.insert(0, str(DATA_PATH))
         
-        # Import your actual team files
-        from eagles_2025 import EAGLES_2025_MOVES
-        from ravens_2025 import RAVENS_2025_MOVES  
-        from steelers_2025 import STEELERS_2025_MOVES
+        # Import ALL your team data
+        from player_moves import ALL_2025_MOVES, MOVES_BY_TEAM, get_top_additions_by_team, get_top_losses_by_team, TEAM_MOVE_COUNTS
         
         print("✅ Successfully imported real team data:")
-        print(f"   - Eagles: {len(EAGLES_2025_MOVES)} moves")
-        print(f"   - Ravens: {len(RAVENS_2025_MOVES)} moves") 
-        print(f"   - Steelers: {len(STEELERS_2025_MOVES)} moves")
+        print(f"   - Total moves: {len(ALL_2025_MOVES)}")
+        print(f"   - Teams covered: {len(MOVES_BY_TEAM)}")
+        for team, count in list(TEAM_MOVE_COUNTS.items())[:10]:  # Show first 10
+            if team not in ['Total', 'AFC Total', 'NFC East Total']:
+                print(f"   - {team}: {count} moves")
         
         REAL_DATA_AVAILABLE = True
     else:
@@ -152,80 +153,50 @@ def get_real_team_data():
     if not REAL_DATA_AVAILABLE:
         return get_sample_team_data()
     
-    # Process your real data into API format
+    # Process ALL your real data into API format
     teams_data = {}
     
-    # Process Eagles data
-    eagles_additions = [move['player_name'] + f" ({move['position']})" 
-                       for move in EAGLES_2025_MOVES 
-                       if move['to_team'] == 'Phi' and move['importance_to_new_team'] >= 7.0][:3]
-    
-    eagles_losses = [move['player_name'] + f" ({move['position']})" 
-                    for move in EAGLES_2025_MOVES 
-                    if move['from_team'] == 'Phi' and move['importance_to_old_team'] >= 7.0][:3]
-    
-    teams_data['PHI'] = {
-        'name': 'Philadelphia Eagles',
-        'offseasonGrade': 'B-',
-        'netImpact': '+2.8',
-        'keyAdditions': eagles_additions,
-        'keyLosses': eagles_losses,
-        'strengthDelta': {'offense': '+1.5', 'defense': '-2.1', 'specialTeams': '+0.4'},
-        'capSpace': '$18M',
-        'projectedWins': 12.5,
-        'spreadImpact': '+1.2',
-        'divisionRank': 1,
-        'finalRank': 2,
-        'rankChange': 3
-    }
-    
-    # Process Ravens data  
-    ravens_additions = [move['player_name'] + f" ({move['position']})" 
-                       for move in RAVENS_2025_MOVES 
-                       if move['to_team'] == 'Bal' and move['importance_to_new_team'] >= 8.0][:3]
-    
-    ravens_losses = [move['player_name'] + f" ({move['position']})" 
-                    for move in RAVENS_2025_MOVES 
-                    if move['from_team'] == 'Bal' and move['importance_to_old_team'] >= 7.0][:3]
-    
-    teams_data['BAL'] = {
-        'name': 'Baltimore Ravens',
-        'offseasonGrade': 'A-',
-        'netImpact': '+4.7',
-        'keyAdditions': ravens_additions,
-        'keyLosses': ravens_losses,
-        'strengthDelta': {'offense': '+2.1', 'defense': '+1.8', 'specialTeams': '+0.8'},
-        'capSpace': '$16.33M',
-        'projectedWins': 11.5,
-        'spreadImpact': '+1.2',
-        'divisionRank': 1,
-        'finalRank': 1,
-        'rankChange': 2
-    }
-    
-    # Process Steelers data
-    steelers_additions = [move['player_name'] + f" ({move['position']})" 
-                         for move in STEELERS_2025_MOVES 
-                         if move['to_team'] == 'Pit' and move['importance_to_new_team'] >= 8.0][:3]
-    
-    steelers_losses = [move['player_name'] + f" ({move['position']})" 
-                      for move in STEELERS_2025_MOVES 
-                      if move['from_team'] == 'Pit' and move['importance_to_old_team'] >= 7.5][:3]
-    
-    teams_data['PIT'] = {
-        'name': 'Pittsburgh Steelers',
-        'offseasonGrade': 'C+',
-        'netImpact': '+1.8',
-        'keyAdditions': steelers_additions,
-        'keyLosses': steelers_losses,
-        'strengthDelta': {'offense': '+3.2', 'defense': '+0.5', 'specialTeams': '+0.1'},
-        'capSpace': '$32M',
-        'projectedWins': 9.5,
-        'spreadImpact': '+0.6',
-        'divisionRank': 2,
-        'finalRank': 8,
-        'rankChange': -1
-    }
+    for team_abbr in MOVES_BY_TEAM.keys():
+        # Get top additions and losses for each team
+        additions = get_top_additions_by_team(team_abbr, min_importance=7.0, limit=3)
+        losses = get_top_losses_by_team(team_abbr, min_importance=7.0, limit=3)
+        
+        # Format for API
+        addition_strings = [f"{move['player_name']} ({move['position']})" for move in additions]
+        loss_strings = [f"{move['player_name']} ({move['position']})" for move in losses]
+        
+        # Calculate net impact (simplified)
+        total_additions = sum(move.get('importance_to_new_team', 0) for move in additions)
+        total_losses = sum(move.get('importance_to_old_team', 0) for move in losses)
+        net_impact = (total_additions - total_losses) / 10  # Scale down
+        
+        # Determine grade based on net impact
+        if net_impact >= 3: grade = 'A'
+        elif net_impact >= 2: grade = 'A-'
+        elif net_impact >= 1: grade = 'B+'
+        elif net_impact >= 0: grade = 'B'
+        elif net_impact >= -1: grade = 'B-'
+        elif net_impact >= -2: grade = 'C+'
+        else: grade = 'C'
+        
+        teams_data[team_abbr] = {
+            'name': create_team_mapping()[team_abbr],
+            'offseasonGrade': grade,
+            'netImpact': f'{net_impact:+.1f}',
+            'keyAdditions': addition_strings or ['No major additions'],
+            'keyLosses': loss_strings or ['No major losses'],
+            'strengthDelta': {
+                'offense': f'{net_impact * 0.4:+.1f}',
+                'defense': f'{net_impact * 0.4:+.1f}', 
+                'specialTeams': f'{net_impact * 0.2:+.1f}'
+            },
+            'capSpace': '$25M',  # You could calculate this from your data
+            'projectedWins': max(4, min(14, 8.5 + net_impact * 0.8)),
+            'spreadImpact': f'{net_impact * 0.3:+.1f}',
+            'divisionRank': 2,
+            'finalRank': 16,
+            'rankChange': 0
+        }
     
     return teams_data
 
