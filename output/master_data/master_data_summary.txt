@@ -1,25 +1,25 @@
 NFL MASTER DATA SUMMARY REPORT
 ==================================================
-Generated: 2025-06-02 01:16:23
+Generated: 2025-06-02 01:57:20
 
 📊 DATA TABLES CREATED:
 -------------------------
-PLAYERS MASTER: 790 rows
+PLAYERS MASTER: 876 rows
 TEAMS MASTER: 32 rows
-MOVES SUMMARY: 206 rows
+MOVES SUMMARY: 223 rows
 POSITION ANALYSIS: 8 rows
 DIVISION SUMMARY: 8 rows
 
 📋 OVERALL STATISTICS:
 -------------------------
-Total Player Moves: 790
+Total Player Moves: 876
 Teams Analyzed: 32
 Divisions Covered: 8
-Move Types: 206
+Move Types: 223
 Position Groups: 8
 
 🏆 KEY INSIGHTS:
 -------------------------
-Highest Impact Move: Josh Allen (2.50)
+Highest Impact Move: Jared Goff (2.50)
 Best 2025 Team: BAL - Baltimore Ravens
 Most Active Team: PIT

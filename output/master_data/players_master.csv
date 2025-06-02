@@ -1,37 +1,45 @@
 player_name,position,position_group,from_team,to_team,move_type,2024_grade,projected_2025_grade,grade_change,snap_percentage_2024,snap_tier,impact_score,impact_tier,importance_to_old_team,importance_to_new_team,contract_years,contract_value,aav,contract_tier,move_date,move_year
+Jared Goff,QB,Offense - Skill,Det,Det,Extension,8.8,8.8,0.0,95.0,Workhorse,2.5,Elite,10.0,10.0,4,212000000,53000000.0,Superstar,2025-06-02,2025
+Brock Purdy,QB,Offense - Skill,SF,SF,Extension,8.0,8.5,0.5,95.0,Workhorse,2.5,Elite,10.0,10.0,5,265000000,53000000.0,Superstar,2025-06-02,2025
+Jordan Love,QB,Offense - Skill,GB,GB,Extension,8.2,8.5,0.3000000000000007,95.0,Workhorse,2.5,Elite,10.0,10.0,4,220000000,55000000.0,Superstar,2025-06-02,2025
 Josh Allen,QB,Offense - Skill,Buf,Buf,Extension,9.5,9.5,0.0,100.0,Workhorse,2.5,Elite,10.0,10.0,6,330000000,55000000.0,Superstar,2025-06-02,2025
 Matthew Stafford,QB,Offense - Skill,LAR,LAR,Restructure,8.5,8.3,-0.1999999999999993,90.0,Workhorse,2.5,Elite,10.0,10.0,2,40000000,20000000.0,Star,2025-06-02,2025
 Geno Smith,QB,Offense - Skill,Sea,LV,Trade + Extension,8.0,8.2,0.1999999999999993,95.0,Workhorse,2.5,Elite,8.5,10.0,2,85500000,42750000.0,Superstar,2025-06-02,2025
-Brock Purdy,QB,Offense - Skill,SF,SF,Extension,8.0,8.5,0.5,95.0,Workhorse,2.5,Elite,10.0,10.0,5,265000000,53000000.0,Superstar,2025-06-02,2025
 Sam Darnold,QB,Offense - Skill,Min,Sea,Free Agent Signing,8.5,8.0,-0.5,90.0,Workhorse,2.42,Elite,8.5,9.5,3,100500000,33500000.0,Superstar,2025-06-02,2025
 Russell Wilson,QB,Offense - Skill,Pit,NYG,Free Agent Signing,7.2,6.8,-0.40000000000000036,100.0,Workhorse,2.28,Elite,8.5,9.5,1,10500000,10500000.0,Starter,2025-06-02,2025
-Aaron Rodgers,QB,Offense - Skill,UNSIGNED,Pit,Free Agent Pursuit,6.0,7.0,1.0,100.0,Workhorse,2.0,High,0.0,10.0,1,30000000,30000000.0,Star,2025-06-02,2025
 Laremy Tunsil,LT,Offense - Line,Hou,Was,Trade,10.0,9.5,-0.5,100.0,Workhorse,2.0,High,9.0,10.0,2,50000000,25000000.0,Star,2025-06-02,2025
+Aaron Rodgers,QB,Offense - Skill,UNSIGNED,Pit,Free Agent Pursuit,6.0,7.0,1.0,100.0,Workhorse,2.0,High,0.0,10.0,1,30000000,30000000.0,Star,2025-06-02,2025
+Maxx Crosby,EDGE,Defense - Front,LV,LV,Extension,9.5,9.2,-0.3000000000000007,90.0,Workhorse,1.71,High,10.0,10.0,3,106500000,35500000.0,Superstar,2025-06-02,2025
 Ja'Marr Chase,WR1,Offense - Skill,Cin,Cin,Extension,9.8,9.5,-0.3000000000000007,95.0,Workhorse,1.71,High,10.0,10.0,4,161000000,40250000.0,Superstar,2025-06-02,2025
 Derek Stingley Jr.,CB1,Defense - Secondary,Hou,Hou,Extension,9.0,9.2,0.1999999999999993,95.0,Workhorse,1.71,High,10.0,10.0,3,90000000,30000000.0,Star,2025-06-02,2025
-Maxx Crosby,EDGE,Defense - Front,LV,LV,Extension,9.5,9.2,-0.3000000000000007,90.0,Workhorse,1.71,High,10.0,10.0,3,106500000,35500000.0,Superstar,2025-06-02,2025
 Myles Garrett,EDGE,Defense - Front,Cle,Cle,Extension,9.5,9.3,-0.1999999999999993,85.0,Workhorse,1.61,High,10.0,10.0,4,160000000,40000000.0,Superstar,2025-06-02,2025
 Ronnie Stanley,LT,Offense - Line,Bal,Bal,Extension,8.5,8.3,-0.1999999999999993,95.0,Workhorse,1.61,High,10.0,10.0,3,60000000,20000000.0,Star,2025-06-02,2025
 L'Jarius Sneed,CB1,Defense - Secondary,Ten,Ten,Re-signing,8.0,8.2,0.1999999999999993,95.0,Workhorse,1.44,High,9.0,9.5,1,19500000,19500000.0,Star,2025-06-02,2025
 Khalil Mack,EDGE,Defense - Front,LAC,LAC,Extension,8.8,8.5,-0.3000000000000007,85.0,Workhorse,1.42,High,9.5,9.5,1,18000000,18000000.0,Star,2025-06-02,2025
 A.J. Terrell,CB1,Defense - Secondary,Atl,Atl,Contract Extension,8.5,8.5,0.0,90.0,Workhorse,1.38,High,9.0,9.0,4,81000000,20250000.0,Star,2025-06-02,2025
+Byron Murphy Jr.,CB1,Defense - Secondary,Min,Min,Extension,8.5,8.7,0.1999999999999993,90.0,Workhorse,1.38,High,9.0,9.0,3,66000000,22000000.0,Star,2025-06-02,2025
 Jaycee Horn,CB1,Defense - Secondary,Car,Car,Contract Extension,8.5,8.8,0.3000000000000007,85.0,Workhorse,1.37,High,9.0,9.5,4,100000000,25000000.0,Star,2025-06-02,2025
 Alaric Jackson,LT,Offense - Line,LAR,LAR,Extension,8.0,8.2,0.1999999999999993,95.0,Workhorse,1.37,High,9.0,9.0,3,57750000,19250000.0,Star,2025-06-02,2025
+Penei Sewell,RT,Offense - Line,Det,Det,Extension,9.0,9.0,0.0,95.0,Workhorse,1.35,High,9.5,9.5,4,112000000,28000000.0,Star,2025-06-02,2025
+Andrew Van Ginkel,EDGE,Defense - Front,Min,Min,Extension,8.8,8.5,-0.3000000000000007,85.0,Workhorse,1.35,High,9.0,9.0,1,23000000,23000000.0,Star,2025-06-02,2025
+Amon-Ra St. Brown,WR1,Offense - Skill,Det,Det,Extension,8.8,8.8,0.0,90.0,Workhorse,1.31,High,9.0,9.0,4,120000000,30000000.0,Star,2025-06-02,2025
 Trevor Lawrence,QB,Offense - Skill,Jac,Jac,Re-signing,6.8,7.8,1.0,60.0,Starter,1.29,High,9.5,9.5,1,55000000,55000000.0,Superstar,2025-06-02,2025
 Fred Warner,LB,Defense - Second,SF,SF,Extension,9.0,8.8,-0.1999999999999993,95.0,Workhorse,1.28,High,10.0,10.0,5,95000000,19000000.0,Star,2025-06-02,2025
 Bobby Wagner,LB,Defense - Second,Was,Was,Re-signing,9.0,8.5,-0.5,94.0,Workhorse,1.27,High,10.0,10.0,1,9500000,9500000.0,Starter,2025-06-02,2025
 Jake Matthews,LT,Offense - Line,Atl,Atl,Contract Extension,7.8,7.8,0.0,95.0,Workhorse,1.26,High,8.5,8.5,2,45000000,22500000.0,Star,2025-06-02,2025
 Dan Moore Jr.,LT,Offense - Line,Pit,Ten,Free Agent Signing,7.0,7.5,0.5,95.0,Workhorse,1.26,High,7.5,9.5,4,82000000,20500000.0,Star,2025-06-02,2025
 Charvarius Ward,CB1,Defense - Secondary,SF,Ind,Free Agent Signing,7.8,8.0,0.20000000000000018,90.0,Workhorse,1.26,High,8.0,9.0,3,60000000,20000000.0,Star,2025-06-02,2025
-Josh Hines-Allen,EDGE,Defense - Front,Jac,Jac,Re-signing,8.0,8.2,0.1999999999999993,85.0,Workhorse,1.22,High,9.0,9.0,2,35000000,17500000.0,Star,2025-06-02,2025
 Danielle Hunter,EDGE,Defense - Front,Hou,Hou,Extension,8.5,8.3,-0.1999999999999993,80.0,Workhorse,1.22,High,9.0,9.0,1,35600000,35600000.0,Superstar,2025-06-02,2025
+Josh Hines-Allen,EDGE,Defense - Front,Jac,Jac,Re-signing,8.0,8.2,0.1999999999999993,85.0,Workhorse,1.22,High,9.0,9.0,2,35000000,17500000.0,Star,2025-06-02,2025
 Davante Adams,WR1,Offense - Skill,NYJ,LAR,Free Agent Signing,8.2,8.5,0.3000000000000007,85.0,Workhorse,1.21,High,7.5,9.5,2,46000000,23000000.0,Star,2025-06-02,2025
 DK Metcalf,WR1,Offense - Skill,Sea,Pit,Trade,8.0,8.5,0.5,85.0,Workhorse,1.18,High,9.0,9.5,5,150000000,30000000.0,Star,2025-06-02,2025
 Calvin Ridley,WR1,Offense - Skill,Ten,Ten,Re-signing,7.8,8.0,0.20000000000000018,90.0,Workhorse,1.16,High,8.5,9.0,3,69000000,23000000.0,Star,2025-06-02,2025
+Kyler Gordon,CB1,Defense - Secondary,Chi,Chi,Extension,8.0,8.2,0.1999999999999993,85.0,Workhorse,1.16,High,8.5,8.5,3,40000000,13333333.333333334,Starter,2025-06-02,2025
+D.J. Reed,CB1,Defense - Secondary,NYJ,Det,Free Agent Signing,7.8,8.0,0.20000000000000018,85.0,Workhorse,1.13,High,7.5,8.5,3,48000000,16000000.0,Star,2025-06-02,2025
+Jamien Sherwood,LB,Defense - Second,NYJ,NYJ,Extension,8.5,8.8,0.3000000000000007,95.0,Workhorse,1.09,High,9.0,9.0,3,45000000,15000000.0,Starter,2025-06-02,2025
 George Pickens,WR1,Offense - Skill,Pit,Dal,Trade,7.8,8.2,0.39999999999999947,85.0,Workhorse,1.09,High,7.5,9.0,1,8000000,8000000.0,Starter,2025-06-02,2025
 Michael Pittman Jr.,WR1,Offense - Skill,Ind,Ind,Re-signing,7.8,8.0,0.20000000000000018,90.0,Workhorse,1.09,High,8.5,8.5,3,60000000,20000000.0,Star,2025-06-02,2025
 Ernest Jones IV,LB,Defense - Second,Sea,Sea,Extension,8.5,8.8,0.3000000000000007,90.0,Workhorse,1.09,High,9.0,9.5,3,33000000,11000000.0,Starter,2025-06-02,2025
-Jamien Sherwood,LB,Defense - Second,NYJ,NYJ,Extension,8.5,8.8,0.3000000000000007,95.0,Workhorse,1.09,High,9.0,9.0,3,45000000,15000000.0,Starter,2025-06-02,2025
 DeShon Elliott,S,Defense - Secondary,Pit,Pit,Extension (Projected),8.0,7.8,-0.20000000000000018,95.0,Workhorse,1.08,High,8.5,8.5,2,18500000,9250000.0,Starter,2025-06-02,2025
 Chase Young,EDGE,Defense - Front,NO,NO,Contract Extension,8.5,8.8,0.3000000000000007,70.0,Starter,1.07,High,8.5,9.0,3,51000000,17000000.0,Star,2025-06-02,2025
 Jeremy Chinn,S,Defense - Secondary,Was,LV,Free Agent Signing,8.0,7.8,-0.20000000000000018,94.0,Workhorse,1.07,High,8.0,8.5,2,16000000,8000000.0,Starter,2025-06-02,2025
@@ -39,314 +47,354 @@ Khalil Shakir,WR1,Offense - Skill,Buf,Buf,Extension,8.0,8.2,0.1999999999999993,8
 Justin Reid,S,Defense - Secondary,KC,NO,Free Agent Signing,8.2,8.0,-0.1999999999999993,85.0,Workhorse,1.05,High,8.0,9.0,3,31500000,10500000.0,Starter,2025-06-02,2025
 Tre'von Moehrig,S,Defense - Secondary,LV,Car,Free Agent Signing,7.8,8.0,0.20000000000000018,85.0,Workhorse,1.05,High,8.0,9.5,3,51000000,17000000.0,Star,2025-06-02,2025
 Chris Godwin,WR1,Offense - Skill,TB,TB,Contract Extension,8.5,8.5,0.0,70.0,Starter,1.04,High,9.5,9.5,3,66000000,22000000.0,Star,2025-06-02,2025
-Nick Bolton,LB,Defense - Second,KC,KC,Extension,8.5,8.7,0.1999999999999993,90.0,Workhorse,1.03,High,9.0,9.0,3,45000000,15000000.0,Starter,2025-06-02,2025
 Gardner Minshew,QB,Offense - Skill,LV,KC,Free Agent Signing,6.8,7.0,0.20000000000000018,65.0,Starter,1.03,High,7.5,7.0,1,1170000,1170000.0,Role Player,2025-06-02,2025
-Carlton Davis III,CB1,Defense - Secondary,Det,NE,Free Agent Signing,7.5,7.8,0.2999999999999998,80.0,Workhorse,1.02,High,7.5,8.5,3,60000000,20000000.0,Star,2025-06-02,2025
+Nick Bolton,LB,Defense - Second,KC,KC,Extension,8.5,8.7,0.1999999999999993,90.0,Workhorse,1.03,High,9.0,9.0,3,45000000,15000000.0,Starter,2025-06-02,2025
 Christian Benford,CB1,Defense - Secondary,Buf,Buf,Extension,7.5,7.8,0.2999999999999998,85.0,Workhorse,1.02,High,8.0,8.0,4,76000000,19000000.0,Star,2025-06-02,2025
-Leonard Floyd,EDGE,Defense - Front,SF,Atl,Free Agent Signing,8.0,8.2,0.1999999999999993,70.0,Starter,1.01,High,7.5,9.0,1,10000000,10000000.0,Starter,2025-06-02,2025
-Darius Slay,CB1,Defense - Secondary,Phi,Pit,Free Agent Signing,7.8,7.5,-0.2999999999999998,81.0,Workhorse,1.01,High,7.5,8.0,1,10000000,10000000.0,Starter,2025-06-02,2025
+Carlton Davis III,CB1,Defense - Secondary,Det,NE,Free Agent Signing,7.5,7.8,0.2999999999999998,80.0,Workhorse,1.02,High,7.5,8.5,3,60000000,20000000.0,Star,2025-06-02,2025
 Cam Bynum,S,Defense - Secondary,Min,Ind,Free Agent Signing,7.5,7.8,0.2999999999999998,95.0,Workhorse,1.01,High,7.5,8.5,3,45000000,15000000.0,Starter,2025-06-02,2025
+Darius Slay,CB1,Defense - Secondary,Phi,Pit,Free Agent Signing,7.8,7.5,-0.2999999999999998,81.0,Workhorse,1.01,High,7.5,8.0,1,10000000,10000000.0,Starter,2025-06-02,2025
+Leonard Floyd,EDGE,Defense - Front,SF,Atl,Free Agent Signing,8.0,8.2,0.1999999999999993,70.0,Starter,1.01,High,7.5,9.0,1,10000000,10000000.0,Starter,2025-06-02,2025
+Harold Landry,EDGE,Defense - Front,Ten,NE,Free Agent Signing,7.8,8.0,0.20000000000000018,75.0,Starter,0.99,Moderate,8.0,8.5,3,43500000,14500000.0,Starter,2025-06-02,2025
 Trey McBride,TE,Offense - Skill,Ari,Ari,Contract Extension,9.2,9.0,-0.1999999999999993,85.0,Workhorse,0.99,Moderate,9.5,9.5,4,76000000,19000000.0,Star,2025-06-02,2025
+Drew Dalman,C,Offense - Line,Atl,Chi,Free Agent Signing,7.8,8.0,0.20000000000000018,85.0,Workhorse,0.99,Moderate,7.5,9.0,3,42000000,14000000.0,Starter,2025-06-02,2025
 Derrick Henry,RB,Offense - Skill,Bal,Bal,Extension,9.2,8.8,-0.3999999999999986,85.0,Workhorse,0.99,Moderate,9.5,9.5,2,30000000,15000000.0,Starter,2025-06-02,2025
 Greg Rousseau,EDGE,Defense - Front,Buf,Buf,Extension,7.8,8.0,0.20000000000000018,75.0,Starter,0.99,Moderate,8.5,8.5,4,80000000,20000000.0,Star,2025-06-02,2025
-Harold Landry,EDGE,Defense - Front,Ten,NE,Free Agent Signing,7.8,8.0,0.20000000000000018,75.0,Starter,0.99,Moderate,8.0,8.5,3,43500000,14500000.0,Starter,2025-06-02,2025
 Mac Jones,QB,Offense - Skill,NE,SF,Free Agent Signing,6.0,7.0,1.0,70.0,Starter,0.98,Moderate,6.0,7.0,2,7000000,3500000.0,Role Player,2025-06-02,2025
 Lloyd Cushenberry III,C,Offense - Line,Den,Ten,Free Agent Signing,7.2,7.5,0.2999999999999998,95.0,Workhorse,0.97,Moderate,7.0,8.5,2,18000000,9000000.0,Starter,2025-06-02,2025
-Tyson Campbell,CB1,Defense - Secondary,Jac,Jac,Re-signing,7.5,7.8,0.2999999999999998,80.0,Workhorse,0.96,Moderate,7.5,8.0,1,16000000,16000000.0,Star,2025-06-02,2025
 C.J. Gardner-Johnson,S,Defense - Secondary,Phi,Hou,Trade,8.0,7.8,-0.20000000000000018,85.0,Workhorse,0.96,Moderate,8.5,8.5,1,8000000,8000000.0,Starter,2025-06-02,2025
+Tyson Campbell,CB1,Defense - Secondary,Jac,Jac,Re-signing,7.5,7.8,0.2999999999999998,80.0,Workhorse,0.96,Moderate,7.5,8.0,1,16000000,16000000.0,Star,2025-06-02,2025
 Josh Sweat,EDGE,Defense - Front,Phi,Ari,Free Agent Signing,8.5,8.8,0.3000000000000007,59.0,Starter,0.95,Moderate,9.0,9.5,4,76400000,19100000.0,Star,2025-06-02,2025
-Terrel Bernard,LB,Defense - Second,Buf,Buf,Extension,8.2,8.5,0.3000000000000007,90.0,Workhorse,0.94,Moderate,8.5,8.5,4,50000000,12500000.0,Starter,2025-06-02,2025
 Josh Jobe,CB1,Defense - Secondary,Sea,Sea,Re-signing,7.8,8.0,0.20000000000000018,75.0,Starter,0.94,Moderate,7.5,8.0,2,8000000,4000000.0,Role Player,2025-06-02,2025
+Terrel Bernard,LB,Defense - Second,Buf,Buf,Extension,8.2,8.5,0.3000000000000007,90.0,Workhorse,0.94,Moderate,8.5,8.5,4,50000000,12500000.0,Starter,2025-06-02,2025
 Tyrann Mathieu,S,Defense - Secondary,NO,NO,Restructured Contract,7.8,7.5,-0.2999999999999998,80.0,Workhorse,0.94,Moderate,8.5,9.0,1,8000000,8000000.0,Starter,2025-06-02,2025
-Justin Fields,QB,Offense - Skill,Pit,NYJ,Free Agent Signing,6.8,7.5,0.7000000000000002,45.0,Rotational,0.92,Moderate,6.5,9.0,2,40000000,20000000.0,Star,2025-06-02,2025
+T.J. Edwards,LB,Defense - Second,Chi,Chi,Extension,8.0,8.0,0.0,90.0,Workhorse,0.92,Moderate,8.5,8.5,2,20000000,10000000.0,Starter,2025-06-02,2025
 Tee Higgins,WR2,Offense - Skill,Cin,Cin,Extension,8.5,8.3,-0.1999999999999993,85.0,Workhorse,0.92,Moderate,9.5,9.5,4,115000000,28750000.0,Star,2025-06-02,2025
+Justin Fields,QB,Offense - Skill,Pit,NYJ,Free Agent Signing,6.8,7.5,0.7000000000000002,45.0,Rotational,0.92,Moderate,6.5,9.0,2,40000000,20000000.0,Star,2025-06-02,2025
 Ahkello Witherspoon,CB1,Defense - Secondary,LAR,LAR,Re-signing,7.5,7.3,-0.20000000000000018,80.0,Workhorse,0.9,Moderate,7.5,7.5,2,12000000,6000000.0,Starter,2025-06-02,2025
 Darius Slayton,WR1,Offense - Skill,NYG,NYG,Extension,7.5,7.8,0.2999999999999998,80.0,Workhorse,0.88,Moderate,8.0,8.0,3,36000000,12000000.0,Starter,2025-06-02,2025
 Deebo Samuel,WR1,Offense - Skill,SF,Was,Trade,7.0,7.8,0.7999999999999998,85.0,Workhorse,0.87,Moderate,7.5,8.0,1,17550000,17550000.0,Star,2025-06-02,2025
 JC Latham,RT,Offense - Line,Ten,Ten,Re-signing,6.8,7.5,0.7000000000000002,90.0,Workhorse,0.87,Moderate,7.5,8.5,1,8500000,8500000.0,Starter,2025-06-02,2025
+Coleman Shelton,C,Offense - Line,Chi,LAR,Free Agent Signing,7.2,7.5,0.2999999999999998,90.0,Workhorse,0.86,Moderate,6.0,8.0,2,7000000,3500000.0,Role Player,2025-06-02,2025
 Kristian Fulton,CB1,Defense - Secondary,LAC,KC,Free Agent Signing,7.2,7.5,0.2999999999999998,75.0,Starter,0.86,Moderate,7.0,8.0,2,20000000,10000000.0,Starter,2025-06-02,2025
 George Kittle,TE,Offense - Skill,SF,SF,Extension,8.5,8.3,-0.1999999999999993,80.0,Workhorse,0.86,Moderate,9.5,9.5,4,76000000,19000000.0,Star,2025-06-02,2025
-Coleman Shelton,C,Offense - Line,Chi,LAR,Free Agent Signing,7.2,7.5,0.2999999999999998,90.0,Workhorse,0.86,Moderate,6.0,8.0,2,7000000,3500000.0,Role Player,2025-06-02,2025
+Ryan Kelly,C,Offense - Line,Ind,Min,Free Agent Signing,7.5,7.8,0.2999999999999998,80.0,Workhorse,0.85,Moderate,7.5,8.5,2,18000000,9000000.0,Starter,2025-06-02,2025
 Jevon Holland,S,Defense - Secondary,Mia,NYG,Free Agent Signing,6.8,7.5,0.7000000000000002,85.0,Workhorse,0.82,Moderate,7.5,8.5,3,45300000,15100000.0,Star,2025-06-02,2025
+Dayo Odeyingbo,EDGE,Defense - Front,Ind,Chi,Free Agent Signing,7.2,7.5,0.2999999999999998,70.0,Starter,0.81,Moderate,7.0,8.0,3,48000000,16000000.0,Star,2025-06-02,2025
 Bradley Bozeman,C,Offense - Line,LAC,LAC,Extension,7.2,7.0,-0.20000000000000018,90.0,Workhorse,0.81,Moderate,7.5,7.5,2,12000000,6000000.0,Starter,2025-06-02,2025
 Paulson Adebo,CB1,Defense - Secondary,NO,NYG,Free Agent Signing,7.5,7.8,0.2999999999999998,60.0,Starter,0.81,Moderate,8.0,9.0,3,54000000,18000000.0,Star,2025-06-02,2025
-DeForest Buckner,DT,Defense - Front,Ind,Ind,Re-signing,8.5,8.2,-0.3000000000000007,85.0,Workhorse,0.8,Moderate,9.5,9.5,2,46000000,23000000.0,Star,2025-06-02,2025
 Markquese Bell,S,Defense - Secondary,Dal,Dal,Extension,7.5,7.8,0.2999999999999998,85.0,Workhorse,0.8,Moderate,7.5,7.5,3,12000000,4000000.0,Role Player,2025-06-02,2025
+DeForest Buckner,DT,Defense - Front,Ind,Ind,Re-signing,8.5,8.2,-0.3000000000000007,85.0,Workhorse,0.8,Moderate,9.5,9.5,2,46000000,23000000.0,Star,2025-06-02,2025
 Robert Hainsey,C,Offense - Line,TB,Jac,Free Agent Signing,7.0,7.5,0.5,85.0,Workhorse,0.79,Moderate,7.0,8.0,3,21000000,7000000.0,Starter,2025-06-02,2025
 Dante Fowler Jr.,EDGE,Defense - Front,Was,Dal,Re-signing,7.5,7.2,-0.2999999999999998,65.0,Starter,0.78,Moderate,7.0,8.0,1,6000000,6000000.0,Starter,2025-06-02,2025
 Brandon Stephens,CB1,Defense - Secondary,Bal,NYJ,Free Agent Signing,6.0,6.8,0.7999999999999998,85.0,Workhorse,0.77,Moderate,6.5,7.5,3,36000000,12000000.0,Starter,2025-06-02,2025
 Robert Spillane,LB,Defense - Second,Ten,NE,Free Agent Signing,7.5,7.8,0.2999999999999998,85.0,Workhorse,0.77,Moderate,8.0,8.0,3,37000000,12333333.333333334,Starter,2025-06-02,2025
-Zach Ertz,TE,Offense - Skill,Was,Was,Re-signing,8.0,7.5,-0.5,78.0,Workhorse,0.75,Moderate,9.0,9.0,1,8000000,8000000.0,Starter,2025-06-02,2025
 Damar Hamlin,S,Defense - Secondary,Buf,Buf,Re-signing,7.0,7.2,0.20000000000000018,80.0,Workhorse,0.75,Moderate,8.0,8.0,1,5000000,5000000.0,Role Player,2025-06-02,2025
 Morgan Moses,RT,Offense - Line,NYJ,NE,Free Agent Signing,7.0,7.2,0.20000000000000018,80.0,Workhorse,0.75,Moderate,7.0,8.0,3,24000000,8000000.0,Starter,2025-06-02,2025
+Zach Ertz,TE,Offense - Skill,Was,Was,Re-signing,8.0,7.5,-0.5,78.0,Workhorse,0.75,Moderate,9.0,9.0,1,8000000,8000000.0,Starter,2025-06-02,2025
 Patrick Mekari,G,Offense - Line,Bal,Jac,Free Agent Signing,7.5,8.0,0.5,100.0,Workhorse,0.74,Moderate,8.0,8.5,3,37500000,12500000.0,Starter,2025-06-02,2025
 Cam Robinson,LT,Offense - Line,Jac,Hou,Free Agent Signing,5.8,6.2,0.40000000000000036,75.0,Starter,0.74,Moderate,6.0,8.5,1,14500000,14500000.0,Starter,2025-06-02,2025
 Stefon Diggs,WR1,Offense - Skill,Hou,NE,Free Agent Signing,6.8,7.8,1.0,65.0,Starter,0.73,Moderate,7.0,9.0,3,69000000,23000000.0,Star,2025-06-02,2025
 Joey Bosa,EDGE,Defense - Front,LAC,Buf,Free Agent Signing,7.0,7.5,0.5,60.0,Starter,0.71,Moderate,8.0,8.5,1,12600000,12600000.0,Starter,2025-06-02,2025
 James Daniels,G,Offense - Line,Chi,Mia,Free Agent Signing,7.5,7.8,0.2999999999999998,90.0,Workhorse,0.71,Moderate,7.0,9.0,3,24000000,8000000.0,Starter,2025-06-02,2025
-Will Levis,QB,Offense - Skill,Ten,Ten,Re-signing,5.8,6.0,0.20000000000000018,60.0,Starter,0.7,Moderate,6.5,6.0,1,4500000,4500000.0,Role Player,2025-06-02,2025
 Elijah Molden,S,Defense - Secondary,LAC,LAC,Extension,7.5,7.8,0.2999999999999998,70.0,Starter,0.7,Moderate,8.0,8.0,3,18750000,6250000.0,Starter,2025-06-02,2025
+Will Levis,QB,Offense - Skill,Ten,Ten,Re-signing,5.8,6.0,0.20000000000000018,60.0,Starter,0.7,Moderate,6.5,6.0,1,4500000,4500000.0,Role Player,2025-06-02,2025
+Will Fries,G,Offense - Line,Ind,Min,Free Agent Signing,7.8,8.0,0.20000000000000018,85.0,Workhorse,0.7,Moderate,7.5,9.0,5,88000000,17600000.0,Star,2025-06-02,2025
 Patrick Jones II,EDGE,Defense - Front,Min,Car,Free Agent Signing,7.5,7.8,0.2999999999999998,55.0,Starter,0.7,Moderate,7.0,8.5,2,20000000,10000000.0,Starter,2025-06-02,2025
 Dalvin Tomlinson,DT,Defense - Front,Cle,Ari,Free Agent Signing,8.8,8.5,-0.3000000000000007,75.0,Starter,0.69,Moderate,8.5,9.0,2,29000000,14500000.0,Starter,2025-06-02,2025
-D.J. Jones,DT,Defense - Front,Den,Den,Extension,8.2,8.0,-0.1999999999999993,80.0,Workhorse,0.69,Moderate,9.0,9.0,3,39000000,13000000.0,Starter,2025-06-02,2025
 Kenneth Murray Jr.,LB,Defense - Second,Ten,Dal,Trade,7.2,7.5,0.2999999999999998,80.0,Workhorse,0.69,Moderate,7.0,8.0,1,15500000,15500000.0,Star,2025-06-02,2025
-Cameron Dicker,K,Special Teams,LAC,LAC,Extension,9.0,9.0,0.0,100.0,Workhorse,0.68,Moderate,9.0,9.0,4,22040000,5510000.0,Starter,2025-06-02,2025
+D.J. Jones,DT,Defense - Front,Den,Den,Extension,8.2,8.0,-0.1999999999999993,80.0,Workhorse,0.69,Moderate,9.0,9.0,3,39000000,13000000.0,Starter,2025-06-02,2025
 Kelvin Beachum,RT,Offense - Line,Ari,Ari,Re-signing,6.8,6.5,-0.2999999999999998,80.0,Workhorse,0.68,Moderate,7.0,7.5,2,5150000,2575000.0,Role Player,2025-06-02,2025
+Cameron Dicker,K,Special Teams,LAC,LAC,Extension,9.0,9.0,0.0,100.0,Workhorse,0.68,Moderate,9.0,9.0,4,22040000,5510000.0,Starter,2025-06-02,2025
 Cooper Kupp,WR1,Offense - Skill,LAR,Sea,Free Agent Signing,6.8,8.0,1.2000000000000002,60.0,Starter,0.67,Moderate,8.0,9.0,3,45000000,15000000.0,Starter,2025-06-02,2025
 Josh Myers,C,Offense - Line,GB,NYJ,Free Agent Signing,6.8,7.2,0.40000000000000036,85.0,Workhorse,0.67,Moderate,7.0,7.0,1,3500000,3500000.0,Role Player,2025-06-02,2025
-Jonathan Taylor,RB,Offense - Skill,Ind,Ind,Re-signing,8.0,7.8,-0.20000000000000018,70.0,Starter,0.67,Moderate,9.0,9.0,3,42000000,14000000.0,Starter,2025-06-02,2025
 Tyrel Dodson,LB,Defense - Second,Mia,Mia,Re-signing,7.5,7.8,0.2999999999999998,75.0,Starter,0.67,Moderate,8.0,8.0,2,8250000,4125000.0,Role Player,2025-06-02,2025
+Jonathan Taylor,RB,Offense - Skill,Ind,Ind,Re-signing,8.0,7.8,-0.20000000000000018,70.0,Starter,0.67,Moderate,9.0,9.0,3,42000000,14000000.0,Starter,2025-06-02,2025
 Baron Browning,EDGE,Defense - Front,Ari,Ari,Contract Extension,7.5,7.8,0.2999999999999998,55.0,Starter,0.66,Moderate,7.0,8.0,2,16000000,8000000.0,Starter,2025-06-02,2025
-Deebo Samuel,WR1,Offense - Skill,SF,Was,Trade,6.0,0.0,-6.0,75.0,Starter,0.66,Moderate,8.5,8.0,0,0,0.0,,2025-06-02,2025
 Najee Harris,RB,Offense - Skill,Pit,LAC,Free Agent Signing,7.8,8.0,0.20000000000000018,75.0,Starter,0.66,Moderate,8.0,8.5,1,9250000,9250000.0,Starter,2025-06-02,2025
-Jacoby Brissett,QB,Offense - Skill,NE,Ari,Free Agent Signing,7.0,7.0,0.0,35.0,Rotational,0.65,Moderate,6.0,8.0,2,12500000,6250000.0,Starter,2025-06-02,2025
+Deebo Samuel,WR1,Offense - Skill,SF,Was,Trade,6.0,0.0,-6.0,75.0,Starter,0.66,Moderate,8.5,8.0,0,0,0.0,,2025-06-02,2025
 Andy Dalton,QB,Offense - Skill,Car,Car,Re-signing,7.0,7.0,0.0,35.0,Rotational,0.65,Moderate,7.5,8.0,2,8000000,4000000.0,Role Player,2025-06-02,2025
+Jacoby Brissett,QB,Offense - Skill,NE,Ari,Free Agent Signing,7.0,7.0,0.0,35.0,Rotational,0.65,Moderate,6.0,8.0,2,12500000,6250000.0,Starter,2025-06-02,2025
 Poona Ford,DT,Defense - Front,LAC,LAR,Free Agent Signing,8.8,8.5,-0.3000000000000007,70.0,Starter,0.65,Moderate,8.5,9.0,3,29600000,9866666.666666666,Starter,2025-06-02,2025
 Garrett Bradbury,C,Offense - Line,Min,NE,Free Agent Signing,6.5,6.8,0.2999999999999998,85.0,Workhorse,0.64,Moderate,6.5,7.0,2,8000000,4000000.0,Role Player,2025-06-02,2025
 Juwan Johnson,TE,Offense - Skill,NO,NO,Contract Extension,7.5,7.8,0.2999999999999998,75.0,Starter,0.64,Moderate,8.0,8.5,3,30000000,10000000.0,Starter,2025-06-02,2025
-James Conner,RB,Offense - Skill,Ari,Ari,Contract Extension,8.0,7.8,-0.20000000000000018,70.0,Starter,0.63,Moderate,8.5,8.5,2,19000000,9500000.0,Starter,2025-06-02,2025
-Chauncey Golston,EDGE,Defense - Front,Dal,NYG,Free Agent Signing,7.0,7.2,0.20000000000000018,60.0,Starter,0.63,Moderate,7.0,7.5,3,19500000,6500000.0,Starter,2025-06-02,2025
 Greg Van Roten,G,Offense - Line,NYG,NYG,Re-signing,7.2,7.0,-0.20000000000000018,100.0,Workhorse,0.63,Moderate,7.5,7.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
+Derrick Barnes,LB,Defense - Second,Det,Det,Extension,7.5,7.8,0.2999999999999998,70.0,Starter,0.63,Moderate,8.0,8.0,3,25500000,8500000.0,Starter,2025-06-02,2025
+Chauncey Golston,EDGE,Defense - Front,Dal,NYG,Free Agent Signing,7.0,7.2,0.20000000000000018,60.0,Starter,0.63,Moderate,7.0,7.5,3,19500000,6500000.0,Starter,2025-06-02,2025
 Todd Monken,OC,Coaching,Bal,Bal,Coaching Extension,9.5,9.0,-0.5,100.0,Workhorse,0.63,Moderate,10.0,10.0,3,15000000,5000000.0,Role Player,2025-06-02,2025
+James Conner,RB,Offense - Skill,Ari,Ari,Contract Extension,8.0,7.8,-0.20000000000000018,70.0,Starter,0.63,Moderate,8.5,8.5,2,19000000,9500000.0,Starter,2025-06-02,2025
+Brandon McManus,K,Special Teams,GB,GB,Re-signing,8.8,8.5,-0.3000000000000007,100.0,Workhorse,0.62,Moderate,8.5,8.5,3,15300000,5100000.0,Starter,2025-06-02,2025
+Kirk Cousins,QB,Offense - Skill,Atl,Atl,Benched/Backup,5.5,6.0,0.5,85.0,Workhorse,0.62,Moderate,3.0,4.0,1,40000000,40000000.0,Superstar,2025-06-02,2025
+Aaron Jones,RB,Offense - Skill,Min,Min,Re-signing,7.8,7.5,-0.2999999999999998,75.0,Starter,0.62,Moderate,8.0,8.0,2,20000000,10000000.0,Starter,2025-06-02,2025
 Mekhi Becton,G,Offense - Line,Phi,Den,Free Agent Signing,7.8,7.5,-0.2999999999999998,85.0,Workhorse,0.62,Moderate,7.0,8.0,2,14000000,7000000.0,Starter,2025-06-02,2025
 Emmanuel Ogbah,EDGE,Defense - Front,Mia,Jac,Free Agent Signing,6.8,7.0,0.20000000000000018,65.0,Starter,0.62,Moderate,6.5,7.0,1,5000000,5000000.0,Role Player,2025-06-02,2025
-Kirk Cousins,QB,Offense - Skill,Atl,Atl,Benched/Backup,5.5,6.0,0.5,85.0,Workhorse,0.62,Moderate,3.0,4.0,1,40000000,40000000.0,Superstar,2025-06-02,2025
 Christian Elliss,LB,Defense - Second,NE,NE,Matched Offer Sheet,7.2,7.5,0.2999999999999998,75.0,Starter,0.61,Moderate,7.5,7.5,2,13500000,6750000.0,Starter,2025-06-02,2025
 Haason Reddick,EDGE,Defense - Front,NYJ,TB,Free Agent Signing,5.5,7.5,2.0,65.0,Starter,0.61,Moderate,4.0,8.5,1,14000000,14000000.0,Starter,2025-06-02,2025
+Grady Jarrett,DT,Defense - Front,Atl,Chi,Free Agent Signing,7.5,8.0,0.5,80.0,Workhorse,0.6,Moderate,8.0,8.5,3,43500000,14500000.0,Starter,2025-06-02,2025
 Jourdan Lewis,CB2,Defense - Secondary,Dal,Jac,Free Agent Signing,8.0,8.2,0.1999999999999993,75.0,Starter,0.6,Moderate,7.5,8.5,3,30000000,10000000.0,Starter,2025-06-02,2025
-Anthony Walker Jr.,LB,Defense - Second,Mia,TB,Free Agent Signing,7.0,7.2,0.20000000000000018,75.0,Starter,0.59,Moderate,6.5,7.5,2,6000000,3000000.0,Role Player,2025-06-02,2025
-Brandin Cooks,WR2,Offense - Skill,Dal,NO,Free Agent Signing,7.5,7.8,0.2999999999999998,70.0,Starter,0.59,Moderate,6.5,8.5,2,12000000,6000000.0,Starter,2025-06-02,2025
-Tony Pollard,RB,Offense - Skill,Ten,Ten,Re-signing,7.0,7.2,0.20000000000000018,75.0,Starter,0.59,Moderate,8.0,8.5,2,16000000,8000000.0,Starter,2025-06-02,2025
 Jauan Jennings,WR2,Offense - Skill,SF,SF,Extension,7.5,8.0,0.5,70.0,Starter,0.59,Moderate,8.0,8.5,3,21000000,7000000.0,Starter,2025-06-02,2025
 Rico Dowdle,RB,Offense - Skill,Dal,Car,Free Agent Signing,8.0,7.8,-0.20000000000000018,65.0,Starter,0.59,Moderate,7.5,8.5,1,6250000,6250000.0,Starter,2025-06-02,2025
+Tony Pollard,RB,Offense - Skill,Ten,Ten,Re-signing,7.0,7.2,0.20000000000000018,75.0,Starter,0.59,Moderate,8.0,8.5,2,16000000,8000000.0,Starter,2025-06-02,2025
 Christian Rozeboom,LB,Defense - Second,LAR,Car,Free Agent Signing,7.0,7.2,0.20000000000000018,70.0,Starter,0.59,Moderate,6.5,8.0,2,8000000,4000000.0,Role Player,2025-06-02,2025
-Daniel Jones,QB,Offense - Skill,Min,Ind,Free Agent Signing,6.8,7.0,0.20000000000000018,30.0,Rotational,0.58,Moderate,6.0,8.5,1,14000000,14000000.0,Starter,2025-06-02,2025
+Brandin Cooks,WR2,Offense - Skill,Dal,NO,Free Agent Signing,7.5,7.8,0.2999999999999998,70.0,Starter,0.59,Moderate,6.5,8.5,2,12000000,6000000.0,Starter,2025-06-02,2025
+Anthony Walker Jr.,LB,Defense - Second,Mia,TB,Free Agent Signing,7.0,7.2,0.20000000000000018,75.0,Starter,0.59,Moderate,6.5,7.5,2,6000000,3000000.0,Role Player,2025-06-02,2025
 Kareem Hunt,RB,Offense - Skill,KC,KC,Re-signing,7.8,7.5,-0.2999999999999998,70.0,Starter,0.58,Moderate,8.0,8.0,1,1500000,1500000.0,Role Player,2025-06-02,2025
+Daniel Jones,QB,Offense - Skill,Min,Ind,Free Agent Signing,6.8,7.0,0.20000000000000018,30.0,Rotational,0.58,Moderate,6.0,8.5,1,14000000,14000000.0,Starter,2025-06-02,2025
 Isaiah Pola-Mao,S,Defense - Secondary,LV,LV,Extension,7.0,7.2,0.20000000000000018,70.0,Starter,0.57,Moderate,7.0,7.0,2,8450000,4225000.0,Role Player,2025-06-02,2025
 Andre Cisco,S,Defense - Secondary,Jac,NYJ,Free Agent Signing,6.5,7.0,0.5,70.0,Starter,0.57,Moderate,6.5,7.5,1,10000000,10000000.0,Starter,2025-06-02,2025
 Evan Brown,G,Offense - Line,Ari,Ari,Re-signing,7.0,7.2,0.20000000000000018,85.0,Workhorse,0.56,Moderate,7.5,8.0,2,11400000,5700000.0,Starter,2025-06-02,2025
-Andre James,C,Offense - Line,LV,LAC,Free Agent Signing,6.5,6.8,0.2999999999999998,80.0,Workhorse,0.56,Moderate,7.0,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
 Mike Gesicki,TE,Offense - Skill,Cin,Cin,Extension,7.5,7.3,-0.20000000000000018,75.0,Starter,0.56,Moderate,7.5,7.5,3,18000000,6000000.0,Starter,2025-06-02,2025
 Eric Murray,S,Defense - Secondary,Hou,Jac,Free Agent Signing,6.5,6.8,0.2999999999999998,80.0,Workhorse,0.56,Moderate,7.0,6.5,2,8500000,4250000.0,Role Player,2025-06-02,2025
+Andre James,C,Offense - Line,LV,LAC,Free Agent Signing,6.5,6.8,0.2999999999999998,80.0,Workhorse,0.56,Moderate,7.0,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
 Osa Odighizuwa,DT,Defense - Front,Dal,Dal,Extension,8.0,8.2,0.1999999999999993,70.0,Starter,0.56,Moderate,8.5,8.5,4,80000000,20000000.0,Star,2025-06-02,2025
 Tershawn Wharton,DT,Defense - Front,KC,Car,Free Agent Signing,8.0,8.2,0.1999999999999993,65.0,Starter,0.55,Moderate,7.5,9.0,3,54000000,18000000.0,Star,2025-06-02,2025
 Alex Cappa,G,Offense - Line,Cin,LV,Free Agent Signing,7.2,7.0,-0.20000000000000018,85.0,Workhorse,0.54,Moderate,7.0,7.5,2,11000000,5500000.0,Starter,2025-06-02,2025
-Jerome Baker,LB,Defense - Second,Mia,Cle,Free Agent Signing,6.8,7.0,0.20000000000000018,70.0,Starter,0.54,Moderate,7.0,7.5,1,1420000,1420000.0,Role Player,2025-06-02,2025
 Christian Kirk,WR2,Offense - Skill,Jac,Hou,Trade,6.8,7.2,0.40000000000000036,75.0,Starter,0.54,Moderate,7.0,8.0,2,20000000,10000000.0,Starter,2025-06-02,2025
+Jerome Baker,LB,Defense - Second,Mia,Cle,Free Agent Signing,6.8,7.0,0.20000000000000018,70.0,Starter,0.54,Moderate,7.0,7.5,1,1420000,1420000.0,Role Player,2025-06-02,2025
 T.J. Watt,OLB,Other,Pit,Pit,Extension (Pending),9.5,9.3,-0.1999999999999993,85.0,Workhorse,0.54,Moderate,10.0,10.0,3,108000000,36000000.0,Superstar,2025-06-02,2025
-Devin White,LB,Defense - Second,Phi,LV,Free Agent Signing,6.8,7.5,0.7000000000000002,65.0,Starter,0.53,Moderate,6.0,8.0,1,5500000,5500000.0,Starter,2025-06-02,2025
 Mike Jackson,CB2,Defense - Secondary,Car,Car,Re-signing,7.5,7.5,0.0,75.0,Starter,0.53,Moderate,7.5,8.0,2,14500000,7250000.0,Starter,2025-06-02,2025
-Mike Hughes,CB2,Defense - Secondary,Atl,Atl,Re-signing,7.5,7.5,0.0,80.0,Workhorse,0.53,Moderate,7.5,7.5,3,18000000,6000000.0,Starter,2025-06-02,2025
+Joe Thuney,LG,Other,KC,Chi,Trade,8.8,8.8,0.0,95.0,Workhorse,0.53,Moderate,9.5,9.5,3,78000000,26000000.0,Star,2025-06-02,2025
+Devin White,LB,Defense - Second,Phi,LV,Free Agent Signing,6.8,7.5,0.7000000000000002,65.0,Starter,0.53,Moderate,6.0,8.0,1,5500000,5500000.0,Starter,2025-06-02,2025
 Trey Smith,RG,Other,KC,KC,Franchise Tag,8.8,8.8,0.0,95.0,Workhorse,0.53,Moderate,9.5,9.5,1,23400000,23400000.0,Star,2025-06-02,2025
+Mike Hughes,CB2,Defense - Secondary,Atl,Atl,Re-signing,7.5,7.5,0.0,80.0,Workhorse,0.53,Moderate,7.5,7.5,3,18000000,6000000.0,Starter,2025-06-02,2025
 Jaylon Moore,LT,Offense - Line,SF,KC,Free Agent Signing,6.8,7.2,0.40000000000000036,45.0,Rotational,0.52,Moderate,6.0,8.5,2,30000000,15000000.0,Starter,2025-06-02,2025
 T.J. Slaton,DT,Defense - Front,GB,Cin,Free Agent Signing,7.5,7.8,0.2999999999999998,70.0,Starter,0.52,Moderate,7.5,8.5,2,15100000,7550000.0,Starter,2025-06-02,2025
 B.J. Hill,DT,Defense - Front,Cin,Cin,Extension,7.8,7.5,-0.2999999999999998,70.0,Starter,0.51,Moderate,8.0,8.0,3,33000000,11000000.0,Starter,2025-06-02,2025
-Nate Landman,LB,Defense - Second,Atl,LAR,Free Agent Signing,7.0,7.2,0.20000000000000018,65.0,Starter,0.51,Moderate,6.5,7.5,2,8500000,4250000.0,Role Player,2025-06-02,2025
 Bill Callahan,OL_COACH,Other,Ten,Ten,Coaching Retention,8.0,8.5,0.5,100.0,Workhorse,0.51,Moderate,8.5,9.5,2,3500000,1750000.0,Role Player,2025-06-02,2025
+Nate Landman,LB,Defense - Second,Atl,LAR,Free Agent Signing,7.0,7.2,0.20000000000000018,65.0,Starter,0.51,Moderate,6.5,7.5,2,8500000,4250000.0,Role Player,2025-06-02,2025
 Evan Engram,TE,Offense - Skill,Jac,Den,Free Agent Signing,7.0,8.2,1.1999999999999993,60.0,Starter,0.5,Minimal,8.0,9.0,2,23000000,11500000.0,Starter,2025-06-02,2025
-Ifeatu Melifonwu,S,Defense - Secondary,Det,Mia,Free Agent Signing,6.5,7.0,0.5,60.0,Starter,0.49,Minimal,6.0,7.5,1,4000000,4000000.0,Role Player,2025-06-02,2025
-Austin Hooper,TE,Offense - Skill,NE,NE,Re-signing,7.0,7.2,0.20000000000000018,70.0,Starter,0.49,Minimal,7.5,7.5,1,7000000,7000000.0,Starter,2025-06-02,2025
-Jarran Reed,DT,Defense - Front,Sea,Sea,Extension,7.5,7.2,-0.2999999999999998,70.0,Starter,0.49,Minimal,8.0,8.0,3,25000000,8333333.333333333,Starter,2025-06-02,2025
 Akeem Davis-Gaither,LB,Defense - Second,Car,Ari,Free Agent Signing,7.2,7.5,0.2999999999999998,60.0,Starter,0.49,Minimal,6.5,7.5,2,11000000,5500000.0,Starter,2025-06-02,2025
+Jarran Reed,DT,Defense - Front,Sea,Sea,Extension,7.5,7.2,-0.2999999999999998,70.0,Starter,0.49,Minimal,8.0,8.0,3,25000000,8333333.333333333,Starter,2025-06-02,2025
+Nate Hobbs,CB2,Defense - Secondary,LV,GB,Free Agent Signing,7.0,7.8,0.7999999999999998,70.0,Starter,0.49,Minimal,7.5,8.5,4,48000000,12000000.0,Starter,2025-06-02,2025
+Austin Hooper,TE,Offense - Skill,NE,NE,Re-signing,7.0,7.2,0.20000000000000018,70.0,Starter,0.49,Minimal,7.5,7.5,1,7000000,7000000.0,Starter,2025-06-02,2025
+Ifeatu Melifonwu,S,Defense - Secondary,Det,Mia,Free Agent Signing,6.5,7.0,0.5,60.0,Starter,0.49,Minimal,6.0,7.5,1,4000000,4000000.0,Role Player,2025-06-02,2025
 Ben Brown,C,Offense - Line,NE,NE,Exclusive Rights Tender,6.8,7.0,0.20000000000000018,60.0,Starter,0.48,Minimal,7.0,7.0,1,1300000,1300000.0,Role Player,2025-06-02,2025
 Mike Williams,WR1,Offense - Skill,Pit,LAC,Free Agent Signing,6.0,7.5,1.5,55.0,Starter,0.48,Minimal,5.5,8.0,1,6000000,6000000.0,Starter,2025-06-02,2025
+Aaron Banks,LG,Other,SF,GB,Free Agent Signing,8.5,8.7,0.1999999999999993,95.0,Workhorse,0.48,Minimal,8.0,9.0,4,77000000,19250000.0,Star,2025-06-02,2025
 Elandon Roberts,LB,Defense - Second,Pit,LV,Free Agent Signing,7.0,7.2,0.20000000000000018,60.0,Starter,0.47,Minimal,6.5,7.5,1,3010000,3010000.0,Role Player,2025-06-02,2025
 Divine Deablo,LB,Defense - Second,LV,Atl,Free Agent Signing,6.8,7.0,0.20000000000000018,65.0,Starter,0.46,Minimal,6.5,7.0,2,7500000,3750000.0,Role Player,2025-06-02,2025
+Devonte Wyatt,DT,Defense - Front,GB,GB,5th Year Option,7.5,7.8,0.2999999999999998,70.0,Starter,0.46,Minimal,7.5,7.5,1,13920000,13920000.0,Starter,2025-06-02,2025
+Trent Brown,RT,Offense - Line,Cin,Hou,Free Agent Signing,6.5,6.8,0.2999999999999998,60.0,Starter,0.45,Minimal,6.0,7.0,1,8000000,8000000.0,Starter,2025-06-02,2025
+DeAndre Hopkins,WR2,Offense - Skill,Ten,Bal,Free Agent Signing,6.5,7.2,0.7000000000000002,65.0,Starter,0.45,Minimal,6.0,8.0,1,5000000,5000000.0,Role Player,2025-06-02,2025
+Maliek Collins,DT,Defense - Front,SF,Cle,Free Agent Signing,7.0,7.5,0.5,65.0,Starter,0.45,Minimal,7.0,8.5,2,20000000,10000000.0,Starter,2025-06-02,2025
+Jameis Winston,QB,Offense - Skill,Cle,NYG,Free Agent Signing,6.5,6.2,-0.2999999999999998,30.0,Rotational,0.45,Minimal,6.0,7.0,1,3500000,3500000.0,Role Player,2025-06-02,2025
+Josh Palmer,WR2,Offense - Skill,LAC,Buf,Free Agent Signing,7.0,7.2,0.20000000000000018,65.0,Starter,0.45,Minimal,6.5,7.5,3,36000000,12000000.0,Starter,2025-06-02,2025
 Denzel Perryman,LB,Defense - Second,LAC,LAC,Extension,7.2,7.0,-0.20000000000000018,60.0,Starter,0.45,Minimal,7.0,7.0,2,5000000,2500000.0,Role Player,2025-06-02,2025
 Luke Farrell,TE,Offense - Skill,Jac,SF,Free Agent Signing,7.0,7.5,0.5,60.0,Starter,0.45,Minimal,6.5,8.0,3,20250000,6750000.0,Starter,2025-06-02,2025
-Maliek Collins,DT,Defense - Front,SF,Cle,Free Agent Signing,7.0,7.5,0.5,65.0,Starter,0.45,Minimal,7.0,8.5,2,20000000,10000000.0,Starter,2025-06-02,2025
-Trent Brown,RT,Offense - Line,Cin,Hou,Free Agent Signing,6.5,6.8,0.2999999999999998,60.0,Starter,0.45,Minimal,6.0,7.0,1,8000000,8000000.0,Starter,2025-06-02,2025
-Jameis Winston,QB,Offense - Skill,Cle,NYG,Free Agent Signing,6.5,6.2,-0.2999999999999998,30.0,Rotational,0.45,Minimal,6.0,7.0,1,3500000,3500000.0,Role Player,2025-06-02,2025
-DeAndre Hopkins,WR2,Offense - Skill,Ten,Bal,Free Agent Signing,6.5,7.2,0.7000000000000002,65.0,Starter,0.45,Minimal,6.0,8.0,1,5000000,5000000.0,Role Player,2025-06-02,2025
-Josh Palmer,WR2,Offense - Skill,LAC,Buf,Free Agent Signing,7.0,7.2,0.20000000000000018,65.0,Starter,0.45,Minimal,6.5,7.5,3,36000000,12000000.0,Starter,2025-06-02,2025
+Jarrett Stidham,QB,Offense - Skill,Den,Den,Re-signing,7.0,7.0,0.0,25.0,Backup,0.44,Minimal,7.5,7.5,2,12000000,6000000.0,Starter,2025-06-02,2025
+Andre Cisco,S,Defense - Secondary,NYJ,LV,Free Agent Signing,6.8,6.5,-0.2999999999999998,60.0,Starter,0.44,Minimal,6.0,6.5,1,3200000,3200000.0,Role Player,2025-06-02,2025
 Isaac Yiadom,CB2,Defense - Secondary,SF,NO,Free Agent Signing,7.2,7.5,0.2999999999999998,65.0,Starter,0.44,Minimal,6.0,8.0,3,18000000,6000000.0,Starter,2025-06-02,2025
 Cooper Rush,QB,Offense - Skill,Dal,Bal,Free Agent Signing,7.0,7.0,0.0,25.0,Backup,0.44,Minimal,6.5,7.5,2,6200000,3100000.0,Role Player,2025-06-02,2025
-Andre Cisco,S,Defense - Secondary,NYJ,LV,Free Agent Signing,6.8,6.5,-0.2999999999999998,60.0,Starter,0.44,Minimal,6.0,6.5,1,3200000,3200000.0,Role Player,2025-06-02,2025
-Jarrett Stidham,QB,Offense - Skill,Den,Den,Re-signing,7.0,7.0,0.0,25.0,Backup,0.44,Minimal,7.5,7.5,2,12000000,6000000.0,Starter,2025-06-02,2025
-Azeez Ojulari,EDGE,Defense - Front,NYG,Phi,Free Agent Signing,7.2,7.8,0.5999999999999996,35.0,Rotational,0.43,Minimal,6.0,8.5,1,3000000,3000000.0,Role Player,2025-06-02,2025
 Ben Bredeson,LG,Other,TB,TB,Contract Extension,8.0,8.0,0.0,95.0,Workhorse,0.43,Minimal,8.5,8.5,3,22000000,7333333.333333333,Starter,2025-06-02,2025
+Will Harris,S,Defense - Secondary,NO,Was,Free Agent Signing,6.0,6.5,0.5,62.0,Starter,0.43,Minimal,6.0,7.0,2,10000000,5000000.0,Role Player,2025-06-02,2025
+Azeez Ojulari,EDGE,Defense - Front,NYG,Phi,Free Agent Signing,7.2,7.8,0.5999999999999996,35.0,Rotational,0.43,Minimal,6.0,8.5,1,3000000,3000000.0,Role Player,2025-06-02,2025
 Chris Rumph II,EDGE,Defense - Front,LAR,NO,Free Agent Signing,6.8,7.0,0.20000000000000018,45.0,Rotational,0.43,Minimal,5.5,7.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
 Adam Butler,DT,Defense - Front,LV,LV,Extension,7.5,7.2,-0.2999999999999998,65.0,Starter,0.43,Minimal,7.5,7.5,3,16500000,5500000.0,Starter,2025-06-02,2025
-Will Harris,S,Defense - Secondary,NO,Was,Free Agent Signing,6.0,6.5,0.5,62.0,Starter,0.43,Minimal,6.0,7.0,2,10000000,5000000.0,Role Player,2025-06-02,2025
-Ryan Stonehouse,P,Special Teams,Ten,Mia,Free Agent Signing,8.5,8.0,-0.5,100.0,Workhorse,0.42,Minimal,7.0,7.5,2,5000000,2500000.0,Role Player,2025-06-02,2025
 Juan Thornhill,S,Defense - Secondary,KC,Pit,Free Agent Signing,6.5,7.0,0.5,55.0,Starter,0.42,Minimal,6.0,7.0,1,3000000,3000000.0,Role Player,2025-06-02,2025
-Mason Rudolph,QB,Offense - Skill,Pit,Pit,Free Agent Signing,6.0,6.0,0.0,30.0,Rotational,0.42,Minimal,6.0,7.0,2,8000000,4000000.0,Role Player,2025-06-02,2025
 Donte Jackson,CB2,Defense - Secondary,Pit,LAC,Free Agent Signing,6.8,7.0,0.20000000000000018,70.0,Starter,0.42,Minimal,7.0,7.5,2,13000000,6500000.0,Starter,2025-06-02,2025
-Milton Williams,DT,Defense - Front,Phi,NE,Free Agent Signing,8.2,8.5,0.3000000000000007,48.0,Rotational,0.41,Minimal,8.0,9.0,4,104000000,26000000.0,Star,2025-06-02,2025
+Ryan Stonehouse,P,Special Teams,Ten,Mia,Free Agent Signing,8.5,8.0,-0.5,100.0,Workhorse,0.42,Minimal,7.0,7.5,2,5000000,2500000.0,Role Player,2025-06-02,2025
+Javon Hargrave,DT,Defense - Front,SF,Min,Free Agent Signing,7.0,8.2,1.1999999999999993,60.0,Starter,0.42,Minimal,7.5,8.5,2,30000000,15000000.0,Starter,2025-06-02,2025
+Mason Rudolph,QB,Offense - Skill,Pit,Pit,Free Agent Signing,6.0,6.0,0.0,30.0,Rotational,0.42,Minimal,6.0,7.0,2,8000000,4000000.0,Role Player,2025-06-02,2025
 Talanoa Hufanga,S,Defense - Secondary,SF,Den,Free Agent Signing,6.0,8.5,2.5,45.0,Rotational,0.41,Minimal,7.5,9.0,3,39000000,13000000.0,Starter,2025-06-02,2025
 Tyler Conklin,TE,Offense - Skill,NYJ,LAC,Free Agent Signing,6.8,7.0,0.20000000000000018,65.0,Starter,0.41,Minimal,7.0,7.0,1,3000000,3000000.0,Role Player,2025-06-02,2025
+Milton Williams,DT,Defense - Front,Phi,NE,Free Agent Signing,8.2,8.5,0.3000000000000007,48.0,Rotational,0.41,Minimal,8.0,9.0,4,104000000,26000000.0,Star,2025-06-02,2025
 Jack Gibbens,LB,Defense - Second,Ten,NE,Free Agent Signing,6.5,7.0,0.5,60.0,Starter,0.41,Minimal,6.5,7.0,2,5000000,2500000.0,Role Player,2025-06-02,2025
-Eric Stokes,CB2,Defense - Secondary,GB,LV,Free Agent Signing,6.5,7.0,0.5,70.0,Starter,0.4,Minimal,6.5,7.5,1,4000000,4000000.0,Role Player,2025-06-02,2025
+Isaiah Rodgers,CB2,Defense - Secondary,Phi,Min,Free Agent Signing,7.2,7.5,0.2999999999999998,65.0,Starter,0.41,Minimal,6.5,7.5,2,15000000,7500000.0,Starter,2025-06-02,2025
 Tre'Davious White,CB2,Defense - Secondary,LAR,Den,Free Agent Signing,6.5,7.2,0.7000000000000002,70.0,Starter,0.4,Minimal,6.5,7.5,1,6500000,6500000.0,Starter,2025-06-02,2025
-Will Harris,S,Defense - Secondary,NO,Ind,Free Agent Signing,6.0,6.5,0.5,60.0,Starter,0.39,Minimal,6.0,6.5,2,8000000,4000000.0,Role Player,2025-06-02,2025
+Eric Stokes,CB2,Defense - Secondary,GB,LV,Free Agent Signing,6.5,7.0,0.5,70.0,Starter,0.4,Minimal,6.5,7.5,1,4000000,4000000.0,Role Player,2025-06-02,2025
 Adoree Jackson,CB2,Defense - Secondary,NYG,Phi,Free Agent Signing,6.9,7.0,0.09999999999999964,65.0,Starter,0.39,Minimal,6.5,7.5,1,1755000,1755000.0,Role Player,2025-06-02,2025
+Will Harris,S,Defense - Secondary,NO,Ind,Free Agent Signing,6.0,6.5,0.5,60.0,Starter,0.39,Minimal,6.0,6.5,2,8000000,4000000.0,Role Player,2025-06-02,2025
+Javon Kinlaw,DT,Defense - Front,NYJ,Was,Free Agent Signing,6.5,7.2,0.7000000000000002,65.0,Starter,0.39,Minimal,6.0,8.0,3,45000000,15000000.0,Starter,2025-06-02,2025
 Jarran Reed,DT,Defense - Front,Sea,Ten,Free Agent Signing,6.8,7.0,0.20000000000000018,65.0,Starter,0.39,Minimal,6.5,7.5,1,10000000,10000000.0,Starter,2025-06-02,2025
 Javonte Williams,RB,Offense - Skill,Den,Dal,Free Agent Signing,6.5,7.0,0.5,60.0,Starter,0.39,Minimal,6.0,7.5,1,3500000,3500000.0,Role Player,2025-06-02,2025
 Mekhi Becton,LG,Other,Phi,LAC,Free Agent Signing,8.0,8.2,0.1999999999999993,85.0,Workhorse,0.39,Minimal,7.5,8.5,2,20000000,10000000.0,Starter,2025-06-02,2025
-Javon Kinlaw,DT,Defense - Front,NYJ,Was,Free Agent Signing,6.5,7.2,0.7000000000000002,65.0,Starter,0.39,Minimal,6.0,8.0,3,45000000,15000000.0,Starter,2025-06-02,2025
-Josh Dobbs,QB,Offense - Skill,SF,NE,Free Agent Signing,6.5,6.8,0.2999999999999998,25.0,Backup,0.38,Minimal,5.5,7.0,2,12000000,6000000.0,Starter,2025-06-02,2025
-Kenny Pickett,QB,Offense - Skill,Phi,Cle,Trade,6.0,6.8,0.7999999999999998,25.0,Backup,0.38,Minimal,5.0,7.5,2,8500000,4250000.0,Role Player,2025-06-02,2025
-Nick Westbrook-Ikhine,WR2,Offense - Skill,Ten,Mia,Free Agent Signing,6.8,7.0,0.20000000000000018,65.0,Starter,0.38,Minimal,6.5,6.5,2,6500000,3250000.0,Role Player,2025-06-02,2025
-Andy Dalton,QB,Offense - Skill,Car,Atl,Free Agent Signing,6.5,6.5,0.0,25.0,Backup,0.38,Minimal,6.0,7.0,1,3000000,3000000.0,Role Player,2025-06-02,2025
 J.K. Scott,P,Special Teams,LAC,LAC,Extension,7.5,7.5,0.0,100.0,Workhorse,0.38,Minimal,7.5,7.5,3,8500000,2833333.3333333335,Role Player,2025-06-02,2025
-Sebastian Joseph-Day,DT,Defense - Front,Ten,Ten,Re-signing,6.5,6.8,0.2999999999999998,70.0,Starter,0.37,Minimal,7.0,7.0,1,7500000,7500000.0,Starter,2025-06-02,2025
-Grover Stewart,DT,Defense - Front,Ind,Ind,Re-signing,7.0,7.0,0.0,65.0,Starter,0.37,Minimal,7.0,7.0,2,16000000,8000000.0,Starter,2025-06-02,2025
+Nick Westbrook-Ikhine,WR2,Offense - Skill,Ten,Mia,Free Agent Signing,6.8,7.0,0.20000000000000018,65.0,Starter,0.38,Minimal,6.5,6.5,2,6500000,3250000.0,Role Player,2025-06-02,2025
+Kenny Pickett,QB,Offense - Skill,Phi,Cle,Trade,6.0,6.8,0.7999999999999998,25.0,Backup,0.38,Minimal,5.0,7.5,2,8500000,4250000.0,Role Player,2025-06-02,2025
+Andy Dalton,QB,Offense - Skill,Car,Atl,Free Agent Signing,6.5,6.5,0.0,25.0,Backup,0.38,Minimal,6.0,7.0,1,3000000,3000000.0,Role Player,2025-06-02,2025
+Josh Dobbs,QB,Offense - Skill,SF,NE,Free Agent Signing,6.5,6.8,0.2999999999999998,25.0,Backup,0.38,Minimal,5.5,7.0,2,12000000,6000000.0,Starter,2025-06-02,2025
 Demarcus Robinson,WR2,Offense - Skill,LAR,SF,Free Agent Signing,6.8,7.2,0.40000000000000036,55.0,Starter,0.37,Minimal,6.0,7.5,2,9500000,4750000.0,Role Player,2025-06-02,2025
-Kevin Zeitler,RG,Other,Det,Ten,Free Agent Signing,7.8,7.5,-0.2999999999999998,90.0,Workhorse,0.37,Minimal,7.0,8.0,1,8500000,8500000.0,Starter,2025-06-02,2025
-AJ Cole,P,Special Teams,LV,LV,Extension,8.0,8.0,0.0,100.0,Workhorse,0.37,Minimal,7.0,7.0,4,15800000,3950000.0,Role Player,2025-06-02,2025
 Joe Flacco,QB,Offense - Skill,Cle,Cle,Re-signing,7.0,6.8,-0.20000000000000018,20.0,Backup,0.37,Minimal,7.5,8.0,1,4500000,4500000.0,Role Player,2025-06-02,2025
-Chidobe Awuzie,CB2,Defense - Secondary,Dal,Bal,Free Agent Signing,6.8,7.0,0.20000000000000018,60.0,Starter,0.36,Minimal,6.0,7.5,1,3500000,3500000.0,Role Player,2025-06-02,2025
+Grover Stewart,DT,Defense - Front,Ind,Ind,Re-signing,7.0,7.0,0.0,65.0,Starter,0.37,Minimal,7.0,7.0,2,16000000,8000000.0,Starter,2025-06-02,2025
+Kevin Zeitler,RG,Other,Det,Ten,Free Agent Signing,7.8,7.5,-0.2999999999999998,90.0,Workhorse,0.37,Minimal,7.0,8.0,1,8500000,8500000.0,Starter,2025-06-02,2025
+Sebastian Joseph-Day,DT,Defense - Front,Ten,Ten,Re-signing,6.5,6.8,0.2999999999999998,70.0,Starter,0.37,Minimal,7.0,7.0,1,7500000,7500000.0,Starter,2025-06-02,2025
+AJ Cole,P,Special Teams,LV,LV,Extension,8.0,8.0,0.0,100.0,Workhorse,0.37,Minimal,7.0,7.0,4,15800000,3950000.0,Role Player,2025-06-02,2025
 Raheem Mostert,RB,Offense - Skill,Mia,LV,Free Agent Signing,7.0,7.2,0.20000000000000018,55.0,Starter,0.36,Minimal,6.5,7.0,1,2100000,2100000.0,Role Player,2025-06-02,2025
 Jaylen Warren,RB,Offense - Skill,Pit,Pit,RFA Tender,7.5,7.8,0.2999999999999998,45.0,Rotational,0.36,Minimal,8.0,8.0,1,5346000,5346000.0,Starter,2025-06-02,2025
-Mack Hollins,WR2,Offense - Skill,Buf,NE,Free Agent Signing,6.8,7.0,0.20000000000000018,55.0,Starter,0.35,Minimal,6.5,7.0,2,8400000,4200000.0,Role Player,2025-06-02,2025
-K.J. Britt,LB,Defense - Second,TB,Mia,Free Agent Signing,6.5,6.8,0.2999999999999998,55.0,Starter,0.35,Minimal,6.0,6.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
-Josh Reynolds,WR2,Offense - Skill,Den,NYJ,Free Agent Signing,6.5,6.8,0.2999999999999998,60.0,Starter,0.35,Minimal,6.0,6.8,1,5000000,5000000.0,Role Player,2025-06-02,2025
-Riley Dixon,P,Special Teams,Sea,TB,Free Agent Signing,7.5,7.5,0.0,100.0,Workhorse,0.35,Minimal,7.0,7.0,2,4000000,2000000.0,Role Player,2025-06-02,2025
+Chidobe Awuzie,CB2,Defense - Secondary,Dal,Bal,Free Agent Signing,6.8,7.0,0.20000000000000018,60.0,Starter,0.36,Minimal,6.0,7.5,1,3500000,3500000.0,Role Player,2025-06-02,2025
 Benjamin St-Juste,CB2,Defense - Secondary,Was,LAC,Free Agent Signing,6.2,6.5,0.2999999999999998,75.0,Starter,0.35,Minimal,6.5,6.5,1,1800000,1800000.0,Role Player,2025-06-02,2025
-James Hudson III,RT,Offense - Line,Cin,NYG,Free Agent Signing,6.2,6.5,0.2999999999999998,50.0,Rotational,0.34,Minimal,6.0,6.5,2,12000000,6000000.0,Starter,2025-06-02,2025
+Riley Dixon,P,Special Teams,Sea,TB,Free Agent Signing,7.5,7.5,0.0,100.0,Workhorse,0.35,Minimal,7.0,7.0,2,4000000,2000000.0,Role Player,2025-06-02,2025
+Mack Hollins,WR2,Offense - Skill,Buf,NE,Free Agent Signing,6.8,7.0,0.20000000000000018,55.0,Starter,0.35,Minimal,6.5,7.0,2,8400000,4200000.0,Role Player,2025-06-02,2025
+Josh Reynolds,WR2,Offense - Skill,Den,NYJ,Free Agent Signing,6.5,6.8,0.2999999999999998,60.0,Starter,0.35,Minimal,6.0,6.8,1,5000000,5000000.0,Role Player,2025-06-02,2025
+K.J. Britt,LB,Defense - Second,TB,Mia,Free Agent Signing,6.5,6.8,0.2999999999999998,55.0,Starter,0.35,Minimal,6.0,6.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
 Morgan Fox,DT,Defense - Front,LAC,Atl,Free Agent Signing,7.0,7.2,0.20000000000000018,55.0,Starter,0.34,Minimal,6.0,7.5,2,8000000,4000000.0,Role Player,2025-06-02,2025
 Joe Tryon-Shoyinka,EDGE,Defense - Front,TB,Cle,Free Agent Signing,6.0,6.5,0.5,40.0,Rotational,0.34,Minimal,5.5,7.0,1,4750000,4750000.0,Role Player,2025-06-02,2025
-Dyami Brown,WR2,Offense - Skill,Was,Jac,Free Agent Signing,7.0,7.5,0.5,44.0,Rotational,0.33,Minimal,6.0,8.0,1,10000000,10000000.0,Starter,2025-06-02,2025
-Ashtyn Davis,S,Defense - Secondary,NYJ,Mia,Free Agent Signing,6.0,6.5,0.5,50.0,Rotational,0.33,Minimal,5.5,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Nick Mullens,QB,Offense - Skill,Min,Jac,Free Agent Signing,6.0,6.2,0.20000000000000018,25.0,Backup,0.33,Minimal,5.0,6.5,1,3500000,3500000.0,Role Player,2025-06-02,2025
-Sam Martin,P,Special Teams,Buf,Car,Free Agent Signing,7.5,7.5,0.0,100.0,Workhorse,0.33,Minimal,6.0,6.5,2,4000000,2000000.0,Role Player,2025-06-02,2025
+James Hudson III,RT,Offense - Line,Cin,NYG,Free Agent Signing,6.2,6.5,0.2999999999999998,50.0,Rotational,0.34,Minimal,6.0,6.5,2,12000000,6000000.0,Starter,2025-06-02,2025
 Marquez Valdes-Scantling,WR2,Offense - Skill,NO,Sea,Free Agent Signing,6.5,7.0,0.5,55.0,Starter,0.33,Minimal,6.0,7.0,1,4000000,4000000.0,Role Player,2025-06-02,2025
+Ashtyn Davis,S,Defense - Secondary,NYJ,Mia,Free Agent Signing,6.0,6.5,0.5,50.0,Rotational,0.33,Minimal,5.5,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
+Dyami Brown,WR2,Offense - Skill,Was,Jac,Free Agent Signing,7.0,7.5,0.5,44.0,Rotational,0.33,Minimal,6.0,8.0,1,10000000,10000000.0,Starter,2025-06-02,2025
+Sam Martin,P,Special Teams,Buf,Car,Free Agent Signing,7.5,7.5,0.0,100.0,Workhorse,0.33,Minimal,6.0,6.5,2,4000000,2000000.0,Role Player,2025-06-02,2025
+Nick Mullens,QB,Offense - Skill,Min,Jac,Free Agent Signing,6.0,6.2,0.20000000000000018,25.0,Backup,0.33,Minimal,5.0,6.5,1,3500000,3500000.0,Role Player,2025-06-02,2025
+Roy Lopez,DT,Defense - Front,Min,Det,Free Agent Signing,6.8,7.0,0.20000000000000018,55.0,Starter,0.33,Minimal,6.5,7.5,1,4650000,4650000.0,Role Player,2025-06-02,2025
 Chidobe Awuzie,CB2,Defense - Secondary,Dal,Ten,Free Agent Signing,6.8,7.0,0.20000000000000018,60.0,Starter,0.33,Minimal,6.0,7.0,1,4500000,4500000.0,Role Player,2025-06-02,2025
-Peter Skoronski,LG,Other,Ten,Ten,Re-signing,7.0,7.5,0.5,85.0,Workhorse,0.32,Minimal,7.5,8.0,1,12000000,12000000.0,Starter,2025-06-02,2025
 Deatrich Wise Jr.,EDGE,Defense - Front,NE,Was,Free Agent Signing,6.0,6.2,0.20000000000000018,54.0,Starter,0.32,Minimal,5.5,5.0,1,5000000,5000000.0,Role Player,2025-06-02,2025
-Quenton Nelson,LG,Other,Ind,Ind,Re-signing,7.5,7.8,0.2999999999999998,75.0,Starter,0.32,Minimal,8.5,8.5,1,18000000,18000000.0,Star,2025-06-02,2025
 Nick Holz,OC,Coaching,Ten,Ten,Coaching Retention,6.0,7.0,1.0,100.0,Workhorse,0.32,Minimal,7.0,8.0,2,4000000,2000000.0,Role Player,2025-06-02,2025
+Peter Skoronski,LG,Other,Ten,Ten,Re-signing,7.0,7.5,0.5,85.0,Workhorse,0.32,Minimal,7.5,8.0,1,12000000,12000000.0,Starter,2025-06-02,2025
+Jonathan Allen,DT,Defense - Front,Was,Min,Free Agent Signing,6.5,8.0,1.5,50.0,Rotational,0.32,Minimal,8.0,8.5,3,60000000,20000000.0,Star,2025-06-02,2025
+Quenton Nelson,LG,Other,Ind,Ind,Re-signing,7.5,7.8,0.2999999999999998,75.0,Starter,0.32,Minimal,8.5,8.5,1,18000000,18000000.0,Star,2025-06-02,2025
 Tyler Higbee,TE,Offense - Skill,LAR,Den,Free Agent Signing,6.8,6.5,-0.2999999999999998,55.0,Starter,0.32,Minimal,6.0,6.5,1,4200000,4200000.0,Role Player,2025-06-02,2025
-Michael Penix Jr.,QB,Offense - Skill,Atl,Atl,Rookie Transition to Starter,6.5,7.5,1.0,15.0,Backup,0.31,Minimal,8.5,9.5,3,12000000,4000000.0,Role Player,2025-06-02,2025
 Solomon Thomas,DT,Defense - Front,NYJ,Dal,Free Agent Signing,6.8,7.0,0.20000000000000018,55.0,Starter,0.31,Minimal,6.0,7.0,2,8000000,4000000.0,Role Player,2025-06-02,2025
+Michael Penix Jr.,QB,Offense - Skill,Atl,Atl,Rookie Transition to Starter,6.5,7.5,1.0,15.0,Backup,0.31,Minimal,8.5,9.5,3,12000000,4000000.0,Role Player,2025-06-02,2025
 Mario Edwards Jr.,DT,Defense - Front,Hou,Hou,Re-signing,6.8,7.0,0.20000000000000018,55.0,Starter,0.31,Minimal,7.0,7.0,2,9500000,4750000.0,Role Player,2025-06-02,2025
+Isaiah McDuffie,LB,Defense - Second,GB,GB,Re-signing,7.0,7.2,0.20000000000000018,40.0,Rotational,0.31,Minimal,7.5,7.5,2,8000000,4000000.0,Role Player,2025-06-02,2025
 Michael Hoecht,DT,Defense - Front,LAR,Buf,Free Agent Signing,6.8,0.0,-6.8,55.0,Starter,0.31,Minimal,6.0,7.0,2,24000000,12000000.0,Starter,2025-06-02,2025
-Bobby Brown III,DT,Defense - Front,LAR,Car,Free Agent Signing,7.2,7.5,0.2999999999999998,45.0,Rotational,0.3,Minimal,6.0,8.0,3,21000000,7000000.0,Starter,2025-06-02,2025
-Malik Harrison,LB,Defense - Second,Bal,Pit,Free Agent Signing,7.0,7.2,0.20000000000000018,38.0,Rotational,0.3,Minimal,7.5,7.5,2,10000000,5000000.0,Role Player,2025-06-02,2025
 Teven Jenkins,G,Offense - Line,Chi,Cle,Free Agent Signing,6.2,6.8,0.5999999999999996,60.0,Starter,0.3,Minimal,6.0,7.0,1,3500000,3500000.0,Role Player,2025-06-02,2025
+Bobby Brown III,DT,Defense - Front,LAR,Car,Free Agent Signing,7.2,7.5,0.2999999999999998,45.0,Rotational,0.3,Minimal,6.0,8.0,3,21000000,7000000.0,Starter,2025-06-02,2025
 Kyle Allen,QB,Offense - Skill,SF,Ten,Free Agent Signing,6.5,6.5,0.0,20.0,Backup,0.3,Minimal,5.0,7.0,1,3500000,3500000.0,Role Player,2025-06-02,2025
-Jack Sanborn,LB,Defense - Second,Chi,Dal,Free Agent Signing,6.2,7.0,0.7999999999999998,45.0,Rotational,0.29,Minimal,5.5,7.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Jonathan Jones,CB2,Defense - Secondary,NE,Was,Free Agent Signing,6.0,6.2,0.20000000000000018,68.0,Starter,0.29,Minimal,6.5,6.0,1,5500000,5500000.0,Starter,2025-06-02,2025
-Malcolm Koonce,EDGE,Defense - Front,LV,LV,Re-signing,6.5,7.5,1.0,30.0,Rotational,0.29,Minimal,7.0,7.5,1,12000000,12000000.0,Starter,2025-06-02,2025
-Troy Dye,LB,Defense - Second,LAC,LAC,Extension,7.0,7.0,0.0,40.0,Rotational,0.29,Minimal,7.0,7.0,2,5500000,2750000.0,Role Player,2025-06-02,2025
+Malik Harrison,LB,Defense - Second,Bal,Pit,Free Agent Signing,7.0,7.2,0.20000000000000018,38.0,Rotational,0.3,Minimal,7.5,7.5,2,10000000,5000000.0,Role Player,2025-06-02,2025
 Laken Tomlinson,LG,Other,NYJ,Hou,Free Agent Signing,6.8,7.0,0.20000000000000018,85.0,Workhorse,0.29,Minimal,7.0,7.5,2,12000000,6000000.0,Starter,2025-06-02,2025
-Derek Barnett,EDGE,Defense - Front,Phi,Hou,Free Agent Signing,6.0,6.3,0.2999999999999998,40.0,Rotational,0.29,Minimal,5.5,6.0,2,8500000,4250000.0,Role Player,2025-06-02,2025
 Larry Ogunjobi,DT,Defense - Front,Pit,Buf,Free Agent Signing,6.5,0.0,-6.5,58.0,Starter,0.29,Minimal,6.5,6.5,1,8500000,8500000.0,Starter,2025-06-02,2025
-Jaylinn Hawkins,S,Defense - Secondary,NE,NE,Re-signing,6.5,6.8,0.2999999999999998,40.0,Rotational,0.28,Minimal,6.5,6.5,1,2250000,2250000.0,Role Player,2025-06-02,2025
+Derek Barnett,EDGE,Defense - Front,Phi,Hou,Free Agent Signing,6.0,6.3,0.2999999999999998,40.0,Rotational,0.29,Minimal,5.5,6.0,2,8500000,4250000.0,Role Player,2025-06-02,2025
+Jonathan Jones,CB2,Defense - Secondary,NE,Was,Free Agent Signing,6.0,6.2,0.20000000000000018,68.0,Starter,0.29,Minimal,6.5,6.0,1,5500000,5500000.0,Starter,2025-06-02,2025
+Jack Sanborn,LB,Defense - Second,Chi,Dal,Free Agent Signing,6.2,7.0,0.7999999999999998,45.0,Rotational,0.29,Minimal,5.5,7.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
+Troy Dye,LB,Defense - Second,LAC,LAC,Extension,7.0,7.0,0.0,40.0,Rotational,0.29,Minimal,7.0,7.0,2,5500000,2750000.0,Role Player,2025-06-02,2025
+Malcolm Koonce,EDGE,Defense - Front,LV,LV,Re-signing,6.5,7.5,1.0,30.0,Rotational,0.29,Minimal,7.0,7.5,1,12000000,12000000.0,Starter,2025-06-02,2025
 Jamie Gillan,P,Special Teams,NYG,NYG,Extension,7.0,7.0,0.0,100.0,Workhorse,0.28,Minimal,6.0,6.0,3,10200000,3400000.0,Role Player,2025-06-02,2025
+Jaylinn Hawkins,S,Defense - Secondary,NE,NE,Re-signing,6.5,6.8,0.2999999999999998,40.0,Rotational,0.28,Minimal,6.5,6.5,1,2250000,2250000.0,Role Player,2025-06-02,2025
+Kindle Vildor,CB2,Defense - Secondary,Det,TB,Free Agent Signing,6.5,6.8,0.2999999999999998,55.0,Starter,0.27,Minimal,5.5,6.5,1,1200000,1200000.0,Role Player,2025-06-02,2025
+Jordan Mason,RB,Offense - Skill,SF,Min,Trade,7.0,6.8,-0.20000000000000018,45.0,Rotational,0.27,Minimal,6.0,6.5,1,3000000,3000000.0,Role Player,2025-06-02,2025
+Roy Robertson-Harris,DT,Defense - Front,Jac,NYG,Free Agent Signing,6.5,6.8,0.2999999999999998,55.0,Starter,0.27,Minimal,6.0,6.5,2,9000000,4500000.0,Role Player,2025-06-02,2025
 Jerome Britt,LB,Defense - Second,Car,Ind,Free Agent Signing,6.2,6.5,0.2999999999999998,45.0,Rotational,0.27,Minimal,6.0,6.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
 Jamin Davis,LB,Defense - Second,Was,NYJ,Free Agent Signing,6.0,6.5,0.5,50.0,Rotational,0.27,Minimal,5.5,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
-Kindle Vildor,CB2,Defense - Secondary,Det,TB,Free Agent Signing,6.5,6.8,0.2999999999999998,55.0,Starter,0.27,Minimal,5.5,6.5,1,1200000,1200000.0,Role Player,2025-06-02,2025
-Roy Robertson-Harris,DT,Defense - Front,Jac,NYG,Free Agent Signing,6.5,6.8,0.2999999999999998,55.0,Starter,0.27,Minimal,6.0,6.5,2,9000000,4500000.0,Role Player,2025-06-02,2025
 Ty Johnson,RB,Offense - Skill,Buf,Buf,Re-signing,7.0,7.0,0.0,40.0,Rotational,0.26,Minimal,7.0,7.0,1,2800000,2800000.0,Role Player,2025-06-02,2025
 Jerry Tillery,DT,Defense - Front,NE,KC,Free Agent Signing,6.0,6.3,0.2999999999999998,55.0,Starter,0.25,Minimal,6.0,6.5,1,1790000,1790000.0,Role Player,2025-06-02,2025
 Kenyon Green,G,Offense - Line,Hou,Phi,Trade,6.0,6.5,0.5,60.0,Starter,0.25,Minimal,5.0,6.0,2,5000000,2500000.0,Role Player,2025-06-02,2025
+DeMarcus Lawrence,EDGE,Defense - Front,Dal,Sea,Free Agent Signing,6.0,7.5,1.5,25.0,Backup,0.24,Minimal,7.5,8.0,3,42000000,14000000.0,Starter,2025-06-02,2025
+Samaje Perine,RB,Offense - Skill,Den,Cin,Free Agent Signing,6.8,7.0,0.20000000000000018,35.0,Rotational,0.24,Minimal,6.0,7.5,2,3800000,1900000.0,Role Player,2025-06-02,2025
 Payton Turner,EDGE,Defense - Front,NO,Dal,Free Agent Signing,5.8,6.5,0.7000000000000002,35.0,Rotational,0.24,Minimal,5.0,6.0,1,2800000,2800000.0,Role Player,2025-06-02,2025
 Tommy DeVito,QB,Offense - Skill,NYG,NYG,Exclusive Rights Tender,6.0,6.0,0.0,20.0,Backup,0.24,Minimal,6.0,6.0,1,1030000,1030000.0,Role Player,2025-06-02,2025
-Samaje Perine,RB,Offense - Skill,Den,Cin,Free Agent Signing,6.8,7.0,0.20000000000000018,35.0,Rotational,0.24,Minimal,6.0,7.5,2,3800000,1900000.0,Role Player,2025-06-02,2025
-DeMarcus Lawrence,EDGE,Defense - Front,Dal,Sea,Free Agent Signing,6.0,7.5,1.5,25.0,Backup,0.24,Minimal,7.5,8.0,3,42000000,14000000.0,Starter,2025-06-02,2025
-Zach Wilson,QB,Offense - Skill,Den,Mia,Free Agent Signing,6.0,6.5,0.5,15.0,Backup,0.24,Minimal,4.0,8.0,1,4000000,4000000.0,Role Player,2025-06-02,2025
 Demontrey Jacobs,OT,Other,NE,NE,Exclusive Rights Tender,6.5,6.8,0.2999999999999998,80.0,Workhorse,0.24,Minimal,7.0,7.0,1,960000,960000.0,Rookie/Minimum,2025-06-02,2025
+Case Keenum,QB,Offense - Skill,Buf,Chi,Free Agent Signing,6.5,7.0,0.5,15.0,Backup,0.24,Minimal,6.0,7.5,2,8000000,4000000.0,Role Player,2025-06-02,2025
+Sam Howell,QB,Offense - Skill,Sea,Min,Trade,6.5,6.8,0.2999999999999998,15.0,Backup,0.24,Minimal,6.0,7.5,2,4500000,2250000.0,Role Player,2025-06-02,2025
+Zach Wilson,QB,Offense - Skill,Den,Mia,Free Agent Signing,6.0,6.5,0.5,15.0,Backup,0.24,Minimal,4.0,8.0,1,4000000,4000000.0,Role Player,2025-06-02,2025
 Teair Tart,DT,Defense - Front,LAC,LAC,Extension,6.8,7.0,0.20000000000000018,45.0,Rotational,0.23,Minimal,6.5,6.5,2,6000000,3000000.0,Role Player,2025-06-02,2025
 Khyiris Tonga,DT,Defense - Front,Ari,NE,Free Agent Signing,6.0,6.5,0.5,50.0,Rotational,0.23,Minimal,6.0,6.5,2,6000000,3000000.0,Role Player,2025-06-02,2025
 Da'Shawn Hand,DT,Defense - Front,Mia,LAC,Free Agent Signing,6.0,6.3,0.2999999999999998,50.0,Rotational,0.23,Minimal,6.0,6.5,1,3350000,3350000.0,Role Player,2025-06-02,2025
-Willie Gay Jr.,LB,Defense - Second,KC,Mia,Free Agent Signing,6.0,6.5,0.5,40.0,Rotational,0.22,Minimal,5.0,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Harrison Bryant,TE,Offense - Skill,LV,Phi,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.22,Minimal,5.0,6.0,1,1000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 Pharaoh Brown,TE,Offense - Skill,Hou,Mia,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.22,Minimal,5.0,6.0,1,1500000,1500000.0,Role Player,2025-06-02,2025
+Willie Gay Jr.,LB,Defense - Second,KC,Mia,Free Agent Signing,6.0,6.5,0.5,40.0,Rotational,0.22,Minimal,5.0,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Royce Newman,G,Offense - Line,GB,Ari,Free Agent Signing,6.5,6.8,0.2999999999999998,45.0,Rotational,0.22,Minimal,5.0,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Cole Van Lanen,G,Offense - Line,Jac,Jac,RFA Tender,6.2,6.5,0.2999999999999998,45.0,Rotational,0.21,Minimal,6.0,6.5,1,3800000,3800000.0,Role Player,2025-06-02,2025
 Stone Forsythe,RT,Offense - Line,Mia,NYG,Free Agent Signing,5.8,6.0,0.20000000000000018,40.0,Rotational,0.21,Minimal,5.0,5.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
-Josh Reynolds,WR3,Offense - Skill,Det,Den,Free Agent Signing,7.0,7.2,0.20000000000000018,65.0,Starter,0.21,Minimal,7.0,7.0,1,3800000,3800000.0,Role Player,2025-06-02,2025
 Tutu Atwell,WR3,Offense - Skill,LAR,LAR,Extension,7.0,7.5,0.5,60.0,Starter,0.21,Minimal,7.0,7.5,2,10000000,5000000.0,Role Player,2025-06-02,2025
+Josh Reynolds,WR3,Offense - Skill,Det,Den,Free Agent Signing,7.0,7.2,0.20000000000000018,65.0,Starter,0.21,Minimal,7.0,7.0,1,3800000,3800000.0,Role Player,2025-06-02,2025
+Cole Van Lanen,G,Offense - Line,Jac,Jac,RFA Tender,6.2,6.5,0.2999999999999998,45.0,Rotational,0.21,Minimal,6.0,6.5,1,3800000,3800000.0,Role Player,2025-06-02,2025
+Artie Burns,CB2,Defense - Secondary,Sea,Mia,Free Agent Signing,6.2,6.5,0.2999999999999998,45.0,Rotational,0.2,Minimal,5.0,6.0,1,2200000,2200000.0,Role Player,2025-06-02,2025
 Joshua Uche,EDGE,Defense - Front,KC,Phi,Free Agent Signing,6.5,7.5,1.0,22.0,Backup,0.2,Minimal,4.0,7.0,1,1920000,1920000.0,Role Player,2025-06-02,2025
+Grant Stuard,LB,Defense - Second,TB,Det,Free Agent Signing,6.5,6.8,0.2999999999999998,30.0,Rotational,0.2,Minimal,6.0,7.0,1,1700000,1700000.0,Role Player,2025-06-02,2025
 Kene Nwangwu,RB,Offense - Skill,Min,NYJ,Free Agent Signing,7.0,7.2,0.20000000000000018,30.0,Rotational,0.2,Minimal,6.5,7.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Khalil Herbert,RB,Offense - Skill,Chi,Ind,Free Agent Signing,6.0,6.8,0.7999999999999998,35.0,Rotational,0.2,Minimal,5.5,7.0,1,3500000,3500000.0,Role Player,2025-06-02,2025
 Lucas Patrick,G,Offense - Line,GB,Cin,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.2,Minimal,5.5,6.5,1,2100000,2100000.0,Role Player,2025-06-02,2025
 Jack Stoll,TE,Offense - Skill,Phi,NO,Free Agent Signing,6.5,6.8,0.2999999999999998,35.0,Rotational,0.2,Minimal,4.5,6.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
-Artie Burns,CB2,Defense - Secondary,Sea,Mia,Free Agent Signing,6.2,6.5,0.2999999999999998,45.0,Rotational,0.2,Minimal,5.0,6.0,1,2200000,2200000.0,Role Player,2025-06-02,2025
+Khalil Herbert,RB,Offense - Skill,Chi,Ind,Free Agent Signing,6.0,6.8,0.7999999999999998,35.0,Rotational,0.2,Minimal,5.5,7.0,1,3500000,3500000.0,Role Player,2025-06-02,2025
 Jeremiah Ledbetter,DT,Defense - Front,Jac,NYG,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.19,Minimal,5.5,6.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Brandin Echols,CB2,Defense - Secondary,NYJ,Pit,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.19,Minimal,5.5,6.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
 Cornelius Lucas,OT,Other,Was,Cle,Free Agent Signing,6.5,6.8,0.2999999999999998,55.0,Starter,0.19,Minimal,6.0,8.0,2,10000000,5000000.0,Role Player,2025-06-02,2025
-Drew Lock,QB,Offense - Skill,NYG,Sea,Free Agent Signing,6.0,6.2,0.20000000000000018,15.0,Backup,0.19,Minimal,5.0,6.5,2,5000000,2500000.0,Role Player,2025-06-02,2025
 Isaiah Oliver,CB2,Defense - Secondary,SF,NYJ,Free Agent Signing,6.0,6.3,0.2999999999999998,45.0,Rotational,0.19,Minimal,5.5,6.0,1,2200000,2200000.0,Role Player,2025-06-02,2025
 JuJu Smith-Schuster,WR3,Offense - Skill,KC,KC,Re-signing,6.8,7.0,0.20000000000000018,60.0,Starter,0.19,Minimal,7.0,7.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
-D'Anthony Bell,S,Defense - Secondary,Was,Sea,Free Agent Signing,6.0,6.2,0.20000000000000018,30.0,Rotational,0.18,Minimal,5.0,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
-Chris Board,LB,Defense - Second,Det,NYG,Free Agent Signing,7.0,7.0,0.0,25.0,Backup,0.18,Minimal,6.5,7.0,2,6000000,3000000.0,Role Player,2025-06-02,2025
+Drew Lock,QB,Offense - Skill,NYG,Sea,Free Agent Signing,6.0,6.2,0.20000000000000018,15.0,Backup,0.19,Minimal,5.0,6.5,2,5000000,2500000.0,Role Player,2025-06-02,2025
+Brandin Echols,CB2,Defense - Secondary,NYJ,Pit,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.19,Minimal,5.5,6.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
 Shemar Jean-Charles,CB2,Defense - Secondary,LV,Sea,Free Agent Signing,6.0,6.5,0.5,40.0,Rotational,0.18,Minimal,5.5,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Cameron Moon,S,Defense - Secondary,Pit,NE,Free Agent Signing,6.0,6.2,0.20000000000000018,30.0,Rotational,0.18,Minimal,5.5,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
-Eric Saubert,TE,Offense - Skill,LV,Sea,Free Agent Signing,6.0,6.2,0.20000000000000018,35.0,Rotational,0.18,Minimal,5.0,6.5,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Hunter Long,TE,Offense - Skill,LAR,Jac,Free Agent Signing,5.5,6.0,0.5,40.0,Rotational,0.18,Minimal,5.0,6.0,2,4000000,2000000.0,Role Player,2025-06-02,2025
-Alexander Mattison,RB,Offense - Skill,LV,Mia,Free Agent Signing,6.2,6.5,0.2999999999999998,35.0,Rotational,0.17,Minimal,5.0,6.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Naquan Jones,DT,Defense - Front,Ten,LAC,Free Agent Signing,6.0,6.2,0.20000000000000018,40.0,Rotational,0.17,Minimal,5.5,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
-Liam Eichenberg,OL,Offense - Line,Mia,Mia,Re-signing,6.5,6.8,0.2999999999999998,60.0,Starter,0.17,Minimal,6.5,6.5,1,3000000,3000000.0,Role Player,2025-06-02,2025
-Breiden Fehoko,DT,Defense - Front,LAC,NE,Free Agent Signing,6.0,6.2,0.20000000000000018,40.0,Rotational,0.17,Minimal,5.5,6.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Patrick Ricard,FB,Other,Bal,Bal,Re-signing,8.0,7.8,-0.20000000000000018,40.0,Rotational,0.17,Minimal,8.0,8.0,1,2870000,2870000.0,Role Player,2025-06-02,2025
+D'Anthony Bell,S,Defense - Secondary,Was,Sea,Free Agent Signing,6.0,6.2,0.20000000000000018,30.0,Rotational,0.18,Minimal,5.0,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
+Eric Saubert,TE,Offense - Skill,LV,Sea,Free Agent Signing,6.0,6.2,0.20000000000000018,35.0,Rotational,0.18,Minimal,5.0,6.5,1,1800000,1800000.0,Role Player,2025-06-02,2025
+Cameron Moon,S,Defense - Secondary,Pit,NE,Free Agent Signing,6.0,6.2,0.20000000000000018,30.0,Rotational,0.18,Minimal,5.5,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
+Chris Board,LB,Defense - Second,Det,NYG,Free Agent Signing,7.0,7.0,0.0,25.0,Backup,0.18,Minimal,6.5,7.0,2,6000000,3000000.0,Role Player,2025-06-02,2025
 Nick Niemann,LB,Defense - Second,LV,Hou,Free Agent Signing,6.0,6.0,0.0,35.0,Rotational,0.17,Minimal,5.0,5.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
+Alexander Mattison,RB,Offense - Skill,LV,Mia,Free Agent Signing,6.2,6.5,0.2999999999999998,35.0,Rotational,0.17,Minimal,5.0,6.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
+Liam Eichenberg,OL,Offense - Line,Mia,Mia,Re-signing,6.5,6.8,0.2999999999999998,60.0,Starter,0.17,Minimal,6.5,6.5,1,3000000,3000000.0,Role Player,2025-06-02,2025
+Naquan Jones,DT,Defense - Front,Ten,LAC,Free Agent Signing,6.0,6.2,0.20000000000000018,40.0,Rotational,0.17,Minimal,5.5,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
+Patrick Ricard,FB,Other,Bal,Bal,Re-signing,8.0,7.8,-0.20000000000000018,40.0,Rotational,0.17,Minimal,8.0,8.0,1,2870000,2870000.0,Role Player,2025-06-02,2025
+Breiden Fehoko,DT,Defense - Front,LAC,NE,Free Agent Signing,6.0,6.2,0.20000000000000018,40.0,Rotational,0.17,Minimal,5.5,6.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
 Cedrick Wilson Jr.,WR3,Offense - Skill,NO,NO,Restructured Contract,6.8,7.0,0.20000000000000018,55.0,Starter,0.17,Minimal,6.5,7.0,2,6000000,3000000.0,Role Player,2025-06-02,2025
+Dare Ogunbowale,RB,Offense - Skill,Hou,Hou,Re-signing,6.5,6.5,0.0,30.0,Rotational,0.16,Minimal,6.0,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Del'Shawn Phillips,LB,Defense - Second,Bal,LAC,Free Agent Signing,6.0,6.2,0.20000000000000018,30.0,Rotational,0.16,Minimal,6.0,6.0,1,1500000,1500000.0,Role Player,2025-06-02,2025
 Ed Ingram,RG,Other,Min,Hou,Trade,6.0,6.5,0.5,60.0,Starter,0.16,Minimal,5.5,6.5,1,3000000,3000000.0,Role Player,2025-06-02,2025
-Dare Ogunbowale,RB,Offense - Skill,Hou,Hou,Re-signing,6.5,6.5,0.0,30.0,Rotational,0.16,Minimal,6.0,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Reid Ferguson,LS,Special Teams,Buf,Buf,Extension,7.5,7.5,0.0,100.0,Workhorse,0.15,Minimal,6.0,6.0,4,6000000,1500000.0,Role Player,2025-06-02,2025
-Tim Boyle,QB,Offense - Skill,Mia,Ind,Free Agent Signing,5.5,5.8,0.2999999999999998,15.0,Backup,0.15,Minimal,4.0,5.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Tim Boyle,QB,Offense - Skill,Mia,Ten,Free Agent Signing,5.5,5.8,0.2999999999999998,15.0,Backup,0.15,Minimal,4.0,5.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
-Kenneth Gainwell,RB,Offense - Skill,Phi,Pit,Free Agent Signing,6.8,7.0,0.20000000000000018,25.0,Backup,0.15,Minimal,5.5,6.5,1,1790000,1790000.0,Role Player,2025-06-02,2025
 Will Clapp,C,Offense - Line,LAC,NO,Free Agent Signing,6.0,6.2,0.20000000000000018,25.0,Backup,0.15,Minimal,4.0,6.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
-Joe Noteboom,OT,Other,LAR,Bal,Free Agent Signing,6.5,6.8,0.2999999999999998,45.0,Rotational,0.14,Minimal,5.5,7.0,1,2800000,2800000.0,Role Player,2025-06-02,2025
-Miles Sanders,RB,Offense - Skill,Car,Dal,Free Agent Signing,4.5,6.0,1.5,40.0,Rotational,0.14,Minimal,4.0,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
-John Ridgeway III,DT,Defense - Front,Was,NO,Trade,6.2,6.5,0.2999999999999998,30.0,Rotational,0.14,Minimal,4.0,6.5,2,3000000,1500000.0,Role Player,2025-06-02,2025
-Marquise Brown,WR2,Offense - Skill,KC,KC,Re-signing,5.5,7.0,1.5,25.0,Backup,0.14,Minimal,6.0,7.5,1,11000000,11000000.0,Starter,2025-06-02,2025
+Tim Boyle,QB,Offense - Skill,Mia,Ind,Free Agent Signing,5.5,5.8,0.2999999999999998,15.0,Backup,0.15,Minimal,4.0,5.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
+Kenneth Gainwell,RB,Offense - Skill,Phi,Pit,Free Agent Signing,6.8,7.0,0.20000000000000018,25.0,Backup,0.15,Minimal,5.5,6.5,1,1790000,1790000.0,Role Player,2025-06-02,2025
+Tim Boyle,QB,Offense - Skill,Mia,Ten,Free Agent Signing,5.5,5.8,0.2999999999999998,15.0,Backup,0.15,Minimal,4.0,5.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
 Jimmy Garoppolo,QB,Offense - Skill,LAR,LAR,Restructure,6.5,6.8,0.2999999999999998,10.0,Backup,0.14,Minimal,6.0,6.5,1,13500000,13500000.0,Starter,2025-06-02,2025
 Sterling Shepard,WR3,Offense - Skill,TB,TB,Re-signing,7.0,7.0,0.0,45.0,Rotational,0.14,Minimal,6.5,6.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
+Joe Noteboom,OT,Other,LAR,Bal,Free Agent Signing,6.5,6.8,0.2999999999999998,45.0,Rotational,0.14,Minimal,5.5,7.0,1,2800000,2800000.0,Role Player,2025-06-02,2025
+Marquise Brown,WR2,Offense - Skill,KC,KC,Re-signing,5.5,7.0,1.5,25.0,Backup,0.14,Minimal,6.0,7.5,1,11000000,11000000.0,Starter,2025-06-02,2025
+Miles Sanders,RB,Offense - Skill,Car,Dal,Free Agent Signing,4.5,6.0,1.5,40.0,Rotational,0.14,Minimal,4.0,6.0,1,2000000,2000000.0,Role Player,2025-06-02,2025
+John Ridgeway III,DT,Defense - Front,Was,NO,Trade,6.2,6.5,0.2999999999999998,30.0,Rotational,0.14,Minimal,4.0,6.5,2,3000000,1500000.0,Role Player,2025-06-02,2025
+Daniel Ekuale,DT,Defense - Front,Sea,Pit,Free Agent Signing,5.8,6.0,0.20000000000000018,35.0,Rotational,0.13,Minimal,5.0,5.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
 James Pierre,CB2,Defense - Secondary,Pit,Pit,Re-signing,6.0,6.0,0.0,30.0,Rotational,0.13,Minimal,5.5,6.0,1,1500000,1500000.0,Role Player,2025-06-02,2025
 Braxton Berrios,WR3,Offense - Skill,Mia,Hou,Free Agent Signing,6.2,6.5,0.2999999999999998,50.0,Rotational,0.13,Minimal,6.0,6.5,1,1800000,1800000.0,Role Player,2025-06-02,2025
-Daniel Ekuale,DT,Defense - Front,Sea,Pit,Free Agent Signing,5.8,6.0,0.20000000000000018,35.0,Rotational,0.13,Minimal,5.0,5.5,1,2000000,2000000.0,Role Player,2025-06-02,2025
 Tyler Stewart,S,Defense - Secondary,Hou,Hou,Re-signing,6.0,6.0,0.0,20.0,Backup,0.12,Minimal,6.0,6.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
-Kaiir Elam,CB2,Defense - Secondary,Buf,Dal,Trade,5.8,6.5,0.7000000000000002,25.0,Backup,0.11,Minimal,4.0,6.5,2,4000000,2000000.0,Role Player,2025-06-02,2025
 Charlie Heck,OT,Other,Ari,TB,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.11,Minimal,5.0,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
-Dre Greenlaw,LB,Defense - Second,SF,Den,Free Agent Signing,5.5,8.0,2.5,15.0,Backup,0.11,Minimal,8.0,8.5,3,31500000,10500000.0,Starter,2025-06-02,2025
-Josh Ross,LB,Defense - Second,Sea,Sea,Re-signing,6.0,6.2,0.20000000000000018,20.0,Backup,0.11,Minimal,5.5,6.0,1,1100000,1100000.0,Role Player,2025-06-02,2025
-Zach Pascal,WR3,Offense - Skill,Ari,NYG,Free Agent Signing,6.0,6.0,0.0,45.0,Rotational,0.11,Minimal,5.5,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Justin Watson,WR3,Offense - Skill,KC,Hou,Free Agent Signing,6.0,6.2,0.20000000000000018,45.0,Rotational,0.11,Minimal,5.5,6.0,1,2200000,2200000.0,Role Player,2025-06-02,2025
+Zach Pascal,WR3,Offense - Skill,Ari,NYG,Free Agent Signing,6.0,6.0,0.0,45.0,Rotational,0.11,Minimal,5.5,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
+Josh Ross,LB,Defense - Second,Sea,Sea,Re-signing,6.0,6.2,0.20000000000000018,20.0,Backup,0.11,Minimal,5.5,6.0,1,1100000,1100000.0,Role Player,2025-06-02,2025
+Dre Greenlaw,LB,Defense - Second,SF,Den,Free Agent Signing,5.5,8.0,2.5,15.0,Backup,0.11,Minimal,8.0,8.5,3,31500000,10500000.0,Starter,2025-06-02,2025
+Jonah Jackson,RG,Other,LAR,Chi,Trade,7.8,8.0,0.20000000000000018,25.0,Backup,0.11,Minimal,6.0,8.5,2,24000000,12000000.0,Starter,2025-06-02,2025
 Tucker Fisk,TE,Offense - Skill,NYJ,NYJ,Exclusive Rights Tender,6.0,6.2,0.20000000000000018,25.0,Backup,0.11,Minimal,5.5,5.5,1,1000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Kaiir Elam,CB2,Defense - Secondary,Buf,Dal,Trade,5.8,6.5,0.7000000000000002,25.0,Backup,0.11,Minimal,4.0,6.5,2,4000000,2000000.0,Role Player,2025-06-02,2025
 Larry Borom,OL,Offense - Line,Chi,Mia,Free Agent Signing,6.0,6.2,0.20000000000000018,40.0,Rotational,0.1,Minimal,5.0,6.5,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Justin Hinish,DT,Defense - Front,Hou,Hou,Re-signing,6.0,6.0,0.0,25.0,Backup,0.1,Minimal,5.5,5.5,1,1000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Jake Hummel,LB,Defense - Second,LAR,Bal,Free Agent Signing,6.0,6.2,0.20000000000000018,15.0,Backup,0.09,Minimal,5.0,6.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
-Lil'Jordan Humphrey,WR3,Offense - Skill,Den,Den,Re-signing,6.5,6.5,0.0,35.0,Rotational,0.09,Minimal,6.0,6.0,1,2800000,2800000.0,Role Player,2025-06-02,2025
-Isaiahh Loudermilk,DE,Other,Pit,Pit,Re-signing,5.8,6.0,0.20000000000000018,40.0,Rotational,0.09,Minimal,5.5,6.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
-Tremon Smith,CB2,Defense - Secondary,Den,Hou,Free Agent Signing,5.8,6.0,0.20000000000000018,25.0,Backup,0.09,Minimal,5.0,5.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
+Mecole Hardman,WR3,Offense - Skill,KC,GB,Free Agent Signing,6.0,6.8,0.7999999999999998,35.0,Rotational,0.1,Minimal,5.5,7.0,1,1500000,1500000.0,Role Player,2025-06-02,2025
 Nicholas Petit-Frere,OT,Other,Ten,SF,Free Agent Signing,5.8,6.2,0.40000000000000036,40.0,Rotational,0.09,Minimal,5.5,6.0,1,2800000,2800000.0,Role Player,2025-06-02,2025
+Isaiahh Loudermilk,DE,Other,Pit,Pit,Re-signing,5.8,6.0,0.20000000000000018,40.0,Rotational,0.09,Minimal,5.5,6.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
+Jake Hummel,LB,Defense - Second,LAR,Bal,Free Agent Signing,6.0,6.2,0.20000000000000018,15.0,Backup,0.09,Minimal,5.0,6.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
+Tremon Smith,CB2,Defense - Secondary,Den,Hou,Free Agent Signing,5.8,6.0,0.20000000000000018,25.0,Backup,0.09,Minimal,5.0,5.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
+Lil'Jordan Humphrey,WR3,Offense - Skill,Den,Den,Re-signing,6.5,6.5,0.0,35.0,Rotational,0.09,Minimal,6.0,6.0,1,2800000,2800000.0,Role Player,2025-06-02,2025
 Lil'Jordan Humphrey,WR3,Offense - Skill,Den,NYG,Free Agent Signing,5.8,6.0,0.20000000000000018,40.0,Rotational,0.09,Minimal,5.0,5.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
-Marcus Mariota,QB,Offense - Skill,Was,Was,Re-signing,7.0,7.0,0.0,5.0,Backup,0.08,Minimal,7.0,7.0,1,8000000,8000000.0,Starter,2025-06-02,2025
-Ben Skowronek,WR3,Offense - Skill,Pit,Pit,Re-signing,6.0,6.2,0.20000000000000018,35.0,Rotational,0.08,Minimal,5.5,6.0,2,3200000,1600000.0,Role Player,2025-06-02,2025
-Jacob Martin,EDGE,Defense - Front,Chi,Was,Free Agent Signing,5.0,5.5,0.5,21.0,Backup,0.08,Minimal,4.0,4.0,1,3000000,3000000.0,Role Player,2025-06-02,2025
-Brady Russell,S,Defense - Secondary,Sea,Sea,Re-signing,5.8,6.0,0.20000000000000018,15.0,Backup,0.08,Minimal,5.0,5.5,1,1000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Andre Dillard,OT,Other,GB,SF,Free Agent Signing,6.0,6.5,0.5,30.0,Rotational,0.08,Minimal,5.0,6.5,1,3500000,3500000.0,Role Player,2025-06-02,2025
-Jackson Carman,OT,Other,Mia,Mia,Re-signing,6.0,6.2,0.20000000000000018,30.0,Rotational,0.08,Minimal,5.5,7.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
-Parker Washington,WR3,Offense - Skill,Jac,Jac,Re-signing,6.0,6.5,0.5,35.0,Rotational,0.08,Minimal,5.5,6.0,1,2200000,2200000.0,Role Player,2025-06-02,2025
 Jalen Reagor,WR3,Offense - Skill,LAC,LAC,Extension,6.0,6.2,0.20000000000000018,35.0,Rotational,0.08,Minimal,6.0,6.0,2,4000000,2000000.0,Role Player,2025-06-02,2025
-Josh Jones,OT,Other,Bal,Sea,Free Agent Signing,6.0,6.5,0.5,25.0,Backup,0.07,Minimal,5.5,7.0,1,4750000,4750000.0,Role Player,2025-06-02,2025
+Ben Skowronek,WR3,Offense - Skill,Pit,Pit,Re-signing,6.0,6.2,0.20000000000000018,35.0,Rotational,0.08,Minimal,5.5,6.0,2,3200000,1600000.0,Role Player,2025-06-02,2025
+Jackson Carman,OT,Other,Mia,Mia,Re-signing,6.0,6.2,0.20000000000000018,30.0,Rotational,0.08,Minimal,5.5,7.0,1,2500000,2500000.0,Role Player,2025-06-02,2025
+Andre Dillard,OT,Other,GB,SF,Free Agent Signing,6.0,6.5,0.5,30.0,Rotational,0.08,Minimal,5.0,6.5,1,3500000,3500000.0,Role Player,2025-06-02,2025
+Parker Washington,WR3,Offense - Skill,Jac,Jac,Re-signing,6.0,6.5,0.5,35.0,Rotational,0.08,Minimal,5.5,6.0,1,2200000,2200000.0,Role Player,2025-06-02,2025
+Jacob Martin,EDGE,Defense - Front,Chi,Was,Free Agent Signing,5.0,5.5,0.5,21.0,Backup,0.08,Minimal,4.0,4.0,1,3000000,3000000.0,Role Player,2025-06-02,2025
+Marcus Mariota,QB,Offense - Skill,Was,Was,Re-signing,7.0,7.0,0.0,5.0,Backup,0.08,Minimal,7.0,7.0,1,8000000,8000000.0,Starter,2025-06-02,2025
+Brady Russell,S,Defense - Secondary,Sea,Sea,Re-signing,5.8,6.0,0.20000000000000018,15.0,Backup,0.08,Minimal,5.0,5.5,1,1000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 Raheem Blackshear,DEPTH,Other,Car,Car,Re-signing,7.8,7.8,0.0,25.0,Backup,0.07,Minimal,7.0,7.5,2,3000000,1500000.0,Role Player,2025-06-02,2025
 Tylan Wallace,WR3,Offense - Skill,Bal,Bal,Re-signing,6.5,6.8,0.2999999999999998,25.0,Backup,0.07,Minimal,6.0,6.0,1,1800000,1800000.0,Role Player,2025-06-02,2025
 Breiden Fehoko,DT,Defense - Front,Pit,Pit,Re-signing,5.5,5.8,0.2999999999999998,20.0,Backup,0.07,Minimal,5.0,5.5,1,900000,900000.0,Rookie/Minimum,2025-06-02,2025
+Josh Jones,OT,Other,Bal,Sea,Free Agent Signing,6.0,6.5,0.5,25.0,Backup,0.07,Minimal,5.5,7.0,1,4750000,4750000.0,Role Player,2025-06-02,2025
 Cameron Moon,LB,Defense - Second,Pit,Pit,Re-signing,5.5,5.8,0.2999999999999998,15.0,Backup,0.07,Minimal,5.0,5.5,1,1000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 Ben Cleveland,G,Offense - Line,Bal,Bal,Re-signing,6.0,6.2,0.20000000000000018,15.0,Backup,0.06,Minimal,5.5,6.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
-Kyle Trask,QB,Offense - Skill,TB,TB,Re-signing,6.0,6.0,0.0,5.0,Backup,0.06,Minimal,6.0,6.0,1,2787000,2787000.0,Role Player,2025-06-02,2025
-Cody White,WR3,Offense - Skill,Sea,Sea,Re-signing,6.0,6.2,0.20000000000000018,25.0,Backup,0.06,Minimal,5.5,6.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
 Joe Milton III,QB,Offense - Skill,NE,Dal,Trade,5.5,6.0,0.5,5.0,Backup,0.06,Minimal,4.0,6.0,3,3000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Kyle Trask,QB,Offense - Skill,TB,TB,Re-signing,6.0,6.0,0.0,5.0,Backup,0.06,Minimal,6.0,6.0,1,2787000,2787000.0,Role Player,2025-06-02,2025
 Parris Campbell,WR3,Offense - Skill,Dal,Dal,Re-signing,6.0,6.0,0.0,30.0,Rotational,0.06,Minimal,5.0,5.0,1,1500000,1500000.0,Role Player,2025-06-02,2025
-Deion Carter,CB,Other,Det,Cle,Free Agent Signing,5.8,6.0,0.20000000000000018,25.0,Backup,0.05,Minimal,4.5,5.5,1,800000,800000.0,Rookie/Minimum,2025-06-02,2025
+Cody White,WR3,Offense - Skill,Sea,Sea,Re-signing,6.0,6.2,0.20000000000000018,25.0,Backup,0.06,Minimal,5.5,6.0,1,1200000,1200000.0,Role Player,2025-06-02,2025
 Scotty Miller,WR3,Offense - Skill,Pit,Pit,Re-signing,5.8,6.0,0.20000000000000018,25.0,Backup,0.05,Minimal,5.0,5.5,1,1800000,1800000.0,Role Player,2025-06-02,2025
+Deion Carter,CB,Other,Det,Cle,Free Agent Signing,5.8,6.0,0.20000000000000018,25.0,Backup,0.05,Minimal,4.5,5.5,1,800000,800000.0,Rookie/Minimum,2025-06-02,2025
 Steven Sims Jr.,WR3,Offense - Skill,Hou,Sea,Free Agent Signing,5.8,6.0,0.20000000000000018,20.0,Backup,0.04,Minimal,4.5,5.5,1,1500000,1500000.0,Role Player,2025-06-02,2025
-Javon Baker,WR3,Offense - Skill,DRAFT,Jac,2025 Draft Pick #220,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,4400000,1100000.0,Role Player,2025-06-02,2025
-Joshua Mickens,S,Defense - Secondary,DRAFT,Jac,2025 Draft Pick #240,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Ty Robinson,DT,Defense - Front,DRAFT,Phi,2025 Draft Pick #112,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Liam Coen,HC,Coaching,TB,Jac,Coaching Hire,8.0,8.5,0.5,0.0,,0.0,Negative,8.0,9.5,5,35000000,7000000.0,Starter,2025-06-02,2025
-Joey Bosa,EDGE,Defense - Front,LAC,Buf,Release,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Poona Ford,DT,Defense - Front,LAC,LAR,Free Agent Loss,8.2,0.0,-8.2,80.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Joshua Palmer,WR2,Offense - Skill,LAC,Buf,Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Stone Smartt,TE,Offense - Skill,LAC,NYJ,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Nick Niemann,LB,Defense - Second,LAC,Hou,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Oronde Gadsden II,TE,Offense - Skill,DRAFT,LAC,Draft Trade Up (5th Round),0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4100000,1025000.0,Role Player,2025-06-02,2025
+Cam Skattebo,RB,Offense - Skill,DRAFT,NYG,2025 Draft Pick #105,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
+Robert Spillane,LB,Defense - Second,LV,NE,Free Agent Loss,7.5,0.0,-7.5,90.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+John Spytek,GM,Other,TB,LV,Front Office Hire,8.5,8.5,0.0,0.0,,0.0,Negative,8.0,9.5,4,12000000,3000000.0,Role Player,2025-06-02,2025
+Milton Williams,DT,Defense - Front,Phi,NE,Free Agent Loss,8.2,0.0,-8.2,48.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Oren Burks,LB,Defense - Second,Phi,Cin,Free Agent Loss,7.5,0.0,-7.5,14.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Kenneth Gainwell,RB,Offense - Skill,Phi,Pit,Free Agent Loss,6.8,0.0,-6.8,25.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Avonte Maddox,CB2,Defense - Secondary,Phi,Det,Free Agent Loss,7.0,0.0,-7.0,42.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+C.J. Gardner-Johnson,S,Defense - Secondary,Phi,Hou,Trade,8.0,0.0,-8.0,85.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Bryce Huff,EDGE,Defense - Front,Phi,SF,Trade,5.5,0.0,-5.5,55.0,Starter,0.0,Negative,4.0,0.0,0,0,0.0,,2025-06-02,2025
+Jihaad Campbell,LB,Defense - Second,DRAFT,Phi,2025 Draft Pick #31,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,12000000,3000000.0,Role Player,2025-06-02,2025
+Sai'vion Jones,EDGE,Defense - Front,DRAFT,Den,2025 Draft Pick #92,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,6200000,1550000.0,Role Player,2025-06-02,2025
+Harold Fannin Jr.,TE,Offense - Skill,DRAFT,Den,2025 Draft Pick #128,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
+A.J. Dillon,RB,Offense - Skill,GB,Phi,Free Agent Signing,0.0,6.5,6.5,0.0,,0.0,Negative,3.0,5.0,1,1100000,1100000.0,Role Player,2025-06-02,2025
+Pete Carroll,HC,Coaching,RETIRED,LV,Coaching Hire,0.0,9.0,9.0,0.0,,0.0,Negative,0.0,10.0,3,25000000,8333333.333333333,Starter,2025-06-02,2025
+Chip Kelly,OC,Coaching,UCLA,LV,Coaching Hire,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,3,8000000,2666666.6666666665,Role Player,2025-06-02,2025
+Patrick Graham,DC,Coaching,LV,LV,Coaching Retention,7.0,7.5,0.5,0.0,,0.0,Negative,7.5,7.5,2,5000000,2500000.0,Role Player,2025-06-02,2025
+Brennan Carroll,RB_COACH,Other,SEATTLE,LV,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,8.5,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
+James Bradberry,CB2,Defense - Secondary,Phi,RELEASED,Post-June 1 Cut,7.2,0.0,-7.2,70.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Dylan Roney,EDGE_COACH,Other,LAC,LAC,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,7.0,7.5,3,2000000,666666.6666666666,Rookie/Minimum,2025-06-02,2025
+Javonte Williams,RB,Offense - Skill,Den,Dal,Free Agent Loss,6.0,0.0,-6.0,55.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Zach Wilson,QB,Offense - Skill,Den,Mia,Free Agent Loss,5.5,0.0,-5.5,20.0,Backup,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Riley Dixon,P,Special Teams,Den,TB,Free Agent Loss,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Tremon Smith,S,Defense - Secondary,Den,Hou,Free Agent Loss,6.5,0.0,-6.5,30.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Jahdae Barron,CB1,Defense - Secondary,DRAFT,Den,2025 Draft Pick #20,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,22500000,5625000.0,Starter,2025-06-02,2025
+RJ Harvey,RB,Offense - Skill,DRAFT,Den,2025 Draft Pick #60,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,8500000,2125000.0,Role Player,2025-06-02,2025
+Pat Bryant,WR2,Offense - Skill,DRAFT,Den,2025 Draft Pick #85,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,6800000,1700000.0,Role Player,2025-06-02,2025
 Omarion Hampton,RB,Offense - Skill,DRAFT,LAC,2025 Draft Pick #22,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,18500000,4625000.0,Role Player,2025-06-02,2025
 Tre Harris,WR1,Offense - Skill,DRAFT,LAC,2025 Draft Pick #55,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,9800000,2450000.0,Role Player,2025-06-02,2025
 Jamaree Caldwell,DT,Defense - Front,DRAFT,LAC,2025 Draft Pick #86,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,6800000,1700000.0,Role Player,2025-06-02,2025
@@ -354,50 +402,90 @@ Kyle Kennard,EDGE,Defense - Front,DRAFT,LAC,2025 Draft Pick #125,0.0,6.8,6.8,0.0
 KeAndre Lambert-Smith,WR3,Offense - Skill,DRAFT,LAC,2025 Draft Pick #158,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4400000,1100000.0,Role Player,2025-06-02,2025
 Branson Taylor,OG,Other,DRAFT,LAC,2025 Draft Pick #188,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 R.J. Mickens,S,Defense - Secondary,DRAFT,LAC,2025 Draft Pick #214,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Jonathan Allen,DT,Defense - Front,Was,Min,Free Agent Loss,5.0,0.0,-5.0,50.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Josh Conerly Jr.,RT,Offense - Line,DRAFT,Was,2025 Draft Pick #29,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,15680000,3920000.0,Role Player,2025-06-02,2025
-Trey Amos,CB1,Defense - Secondary,DRAFT,Was,2025 Draft Pick #61,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,8000000,2000000.0,Role Player,2025-06-02,2025
-Jaylin Lane,WR3,Offense - Skill,DRAFT,Was,2025 Draft Pick #128,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
-Jason Pinnock,S,Defense - Secondary,NYG,SF,Free Agent Loss,6.2,0.0,-6.2,55.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Bryce Huff,EDGE,Defense - Front,Phi,SF,Trade,5.5,0.0,-5.5,55.0,Starter,0.0,Negative,4.0,0.0,0,0,0.0,,2025-06-02,2025
+Trikweze Bridges,CB2,Defense - Secondary,DRAFT,LAC,2025 Draft Pick #256,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,5.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
+Marcus Mbow,G,Offense - Line,DRAFT,NYG,2025 Draft Pick #154,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Joey Bosa,EDGE,Defense - Front,LAC,Buf,Release,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Poona Ford,DT,Defense - Front,LAC,LAR,Free Agent Loss,8.2,0.0,-8.2,80.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Joshua Palmer,WR2,Offense - Skill,LAC,Buf,Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Stone Smartt,TE,Offense - Skill,LAC,NYJ,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Nick Niemann,LB,Defense - Second,LAC,Hou,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Ty Robinson,DT,Defense - Front,DRAFT,Phi,2025 Draft Pick #112,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Sam Howell,QB,Offense - Skill,Sea,Min,Trade,6.0,0.0,-6.0,10.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Tyler Lockett,WR1,Offense - Skill,Sea,RELEASED,Release,8.0,0.0,-8.0,80.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Dre'Mont Jones,DT,Defense - Front,Sea,RELEASED,Release,7.0,0.0,-7.0,70.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Roy Robertson-Harris,DT,Defense - Front,Sea,RELEASED,Release,6.8,0.0,-6.8,50.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Rayshawn Jenkins,S,Defense - Secondary,Sea,RELEASED,Release,6.5,0.0,-6.5,75.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Laken Tomlinson,G,Offense - Line,Sea,Hou,Free Agent Loss,7.0,0.0,-7.0,90.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Tre Brown,CB2,Defense - Secondary,Sea,SF,Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Artie Burns,CB2,Defense - Secondary,Sea,Mia,Free Agent Loss,6.0,0.0,-6.0,45.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Naquan Jones,DT,Defense - Front,Ari,LAC,Free Agent Loss,6.0,0.0,-6.0,35.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Justin Frye,COACH,Coaching,OSU,Ari,Coaching Hire,8.0,8.2,0.1999999999999993,0.0,,0.0,Negative,0.0,8.0,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
+Winston DeLattiboudere III,COACH,Coaching,DRAFT,Ari,Coaching Hire,7.0,7.5,0.5,0.0,,0.0,Negative,0.0,7.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
+Von Miller,EDGE,Defense - Front,Buf,RELEASED,Release,5.5,0.0,-5.5,65.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Amari Cooper,WR1,Offense - Skill,Buf,FA,Free Agent Loss,6.0,0.0,-6.0,70.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Mack Hollins,WR3,Offense - Skill,Buf,NE,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Geno Smith,QB,Offense - Skill,Sea,LV,Trade,7.8,0.0,-7.8,95.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+DK Metcalf,WR1,Offense - Skill,Sea,Pit,Trade,8.2,0.0,-8.2,85.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
+Will Johnson,CB1,Defense - Secondary,DRAFT,Ari,2025 Draft Pick #47,0.0,8.5,8.5,0.0,,0.0,Negative,0.0,9.5,4,8800000,2200000.0,Role Player,2025-06-02,2025
+Jordan Burch,EDGE,Defense - Front,DRAFT,Ari,2025 Draft Pick #80,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,5200000,1300000.0,Role Player,2025-06-02,2025
+Cody Simon,LB,Defense - Second,DRAFT,Ari,2025 Draft Pick #115,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,4300000,1075000.0,Role Player,2025-06-02,2025
+Denzel Burke,CB2,Defense - Secondary,DRAFT,Ari,2025 Draft Pick #167,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,3700000,925000.0,Rookie/Minimum,2025-06-02,2025
+Hayden Conner,G,Offense - Line,DRAFT,Ari,2025 Draft Pick #172,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
+Kitan Crawford,DEPTH,Other,DRAFT,Ari,2025 Draft Pick #248,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
+Roy Lopez,DT,Defense - Front,Ari,FA,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Khyiris Tonga,DT,Defense - Front,Ari,Car,Free Agent Loss,6.8,0.0,-6.8,40.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Ty Hamilton,DT,Defense - Front,DRAFT,LAR,2025 Draft Pick #189,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Marcus Haynes,CB2,Defense - Secondary,DRAFT,LAR,2025 Draft Pick #220,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
+Drew Wilkins,PASS_RUSH_COORD,Other,BAL,LAR,Coaching Hire,8.0,8.2,0.1999999999999993,0.0,,0.0,Negative,7.0,8.0,2,2500000,1250000.0,Role Player,2025-06-02,2025
+Alex Van Pelt,OFF_ASSISTANT,Other,NE,LAR,Coaching Hire,7.5,7.8,0.2999999999999998,0.0,,0.0,Negative,6.5,7.0,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
+Nathan Scheelhaase,PASS_GAME_COORD,Other,LAR,LAR,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,7.5,3,4500000,1500000.0,Role Player,2025-06-02,2025
+2026 1st Round Pick,DRAFT_PICK,Other,Atl,LAR,Draft Trade (26th pick for 2025 2nd + 2026 1st),0.0,8.5,8.5,0.0,,0.0,Negative,8.0,9.5,0,15000000,15000000.0,Starter,2025-06-02,2025
+Multiple UDFAs,DEPTH,Other,COLLEGE,LAR,UDFA Signings,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,3,8000000,2666666.6666666665,Role Player,2025-06-02,2025
+Walter Nolen III,DT,Defense - Front,DRAFT,Ari,2025 Draft Pick #16,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,18500000,4625000.0,Role Player,2025-06-02,2025
 Jevon Holland,S,Defense - Secondary,Mia,NYG,Free Agent Loss,7.0,0.0,-7.0,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
 Calais Campbell,DT,Defense - Front,Mia,Ari,Free Agent Loss,7.2,0.0,-7.2,58.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
 Robert Jones,G,Offense - Line,Mia,Dal,Free Agent Loss,6.8,0.0,-6.8,85.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 Emmanuel Ogbah,EDGE,Defense - Front,Mia,Jac,Free Agent Loss,6.5,0.0,-6.5,55.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
 Anthony Walker Jr.,LB,Defense - Second,Mia,TB,Free Agent Loss,6.5,0.0,-6.5,70.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Jake Hummel,LB,Defense - Second,LAR,Bal,Free Agent Loss,6.0,0.0,-6.0,15.0,Backup,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Jonah Jackson,G,Offense - Line,LAR,Chi,Trade,5.5,0.0,-5.5,80.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Terrance Ferguson,TE,Offense - Skill,DRAFT,LAR,2025 Draft Pick #58 (via ATL trade),0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.5,4,9500000,2375000.0,Role Player,2025-06-02,2025
-Josaiah Stewart,EDGE,Defense - Front,DRAFT,LAR,2025 Draft Pick #87,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
-Jarquez Hunter,RB,Offense - Skill,DRAFT,LAR,2025 Draft Pick #118,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,7.5,4,5100000,1275000.0,Role Player,2025-06-02,2025
-Ryan Grubb,OC,Coaching,Sea,FIRED,Coaching Dismissal,6.5,0.0,-6.5,0.0,,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Klint Kubiak,OC,Coaching,NO,Sea,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,6.5,9.0,3,9000000,3000000.0,Role Player,2025-06-02,2025
-John Benton,OL_COACH,Other,NO,Sea,Coaching Hire,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,8.0,2,3000000,1500000.0,Role Player,2025-06-02,2025
-Rick Dennison,RUN_GAME_COORD,Other,NO,Sea,Coaching Hire,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,8.0,2,2500000,1250000.0,Role Player,2025-06-02,2025
-Multiple Defensive UDFAs,DEPTH,Other,COLLEGE,Sea,UDFA Signings (11 defensive players),0.0,5.5,5.5,0.0,,0.0,Negative,0.0,6.0,3,15000000,5000000.0,Role Player,2025-06-02,2025
-Amari Cooper,WR1,Offense - Skill,Buf,FA,Free Agent Loss,6.0,0.0,-6.0,70.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Mack Hollins,WR3,Offense - Skill,Buf,NE,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Kaiir Elam,CB2,Defense - Secondary,Buf,Dal,Trade,5.8,0.0,-5.8,25.0,Backup,0.0,Negative,4.0,0.0,0,0,0.0,,2025-06-02,2025
-Maxwell Hairston,CB1,Defense - Secondary,DRAFT,Buf,2025 Draft Pick #30,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,15200000,3800000.0,Role Player,2025-06-02,2025
+Da'Shawn Hand,DT,Defense - Front,Mia,LAC,Free Agent Loss,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
 T.J. Sanders,DT,Defense - Front,DRAFT,Buf,2025 Draft Pick #41 (via trade),0.0,7.2,7.2,0.0,,0.0,Negative,0.0,8.5,4,9800000,2450000.0,Role Player,2025-06-02,2025
 Landon Jackson,EDGE,Defense - Front,DRAFT,Buf,2025 Draft Pick #72,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,5800000,1450000.0,Role Player,2025-06-02,2025
 Deone Walker,DT,Defense - Front,DRAFT,Buf,2025 Draft Pick #105,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
 Jordan Hancock,S,Defense - Secondary,DRAFT,Buf,2025 Draft Pick #150 (from Elam trade),0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Naquan Jones,DT,Defense - Front,Ari,LAC,Free Agent Loss,6.0,0.0,-6.0,35.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Justin Frye,COACH,Coaching,OSU,Ari,Coaching Hire,8.0,8.2,0.1999999999999993,0.0,,0.0,Negative,0.0,8.0,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
-Winston DeLattiboudere III,COACH,Coaching,DRAFT,Ari,Coaching Hire,7.0,7.5,0.5,0.0,,0.0,Negative,0.0,7.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
-Von Miller,EDGE,Defense - Front,Buf,RELEASED,Release,5.5,0.0,-5.5,65.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Will Johnson,CB1,Defense - Secondary,DRAFT,Ari,2025 Draft Pick #47,0.0,8.5,8.5,0.0,,0.0,Negative,0.0,9.5,4,8800000,2200000.0,Role Player,2025-06-02,2025
-Jordan Burch,EDGE,Defense - Front,DRAFT,Ari,2025 Draft Pick #80,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,5200000,1300000.0,Role Player,2025-06-02,2025
-Cody Simon,LB,Defense - Second,DRAFT,Ari,2025 Draft Pick #115,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,4300000,1075000.0,Role Player,2025-06-02,2025
-Chris Tabor,COACH,Coaching,Cle,Buf,Special Teams Coordinator Hire,7.0,7.5,0.5,0.0,,0.0,Negative,0.0,7.0,3,0,0.0,,2025-06-02,2025
 Jackson Hawes,TE,Offense - Skill,DRAFT,Buf,2025 Draft Pick #173,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,5.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
 Chase Lundt,RT,Offense - Line,DRAFT,Buf,2025 Draft Pick #206,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.0,4,3400000,850000.0,Rookie/Minimum,2025-06-02,2025
 Kaden Prather,WR3,Offense - Skill,DRAFT,Buf,2025 Draft Pick #255,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,4,3200000,800000.0,Rookie/Minimum,2025-06-02,2025
-C.J. Dippre,TE,Offense - Skill,UDFA,NE,UDFA Signing,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,1000000,250000.0,Rookie/Minimum,2025-06-02,2025
+Chris Tabor,COACH,Coaching,Cle,Buf,Special Teams Coordinator Hire,7.0,7.5,0.5,0.0,,0.0,Negative,0.0,7.0,3,0,0.0,,2025-06-02,2025
+Tory Horton,WR3,Offense - Skill,DRAFT,Sea,2025 Draft Pick #166,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,4300000,1075000.0,Role Player,2025-06-02,2025
+Robbie Ouzts,FB,Other,DRAFT,Sea,2025 Draft Pick #175,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,7.0,4,4100000,1025000.0,Role Player,2025-06-02,2025
+Bryce Cabeldue,OT,Other,DRAFT,Sea,2025 Draft Pick #192,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,3900000,975000.0,Rookie/Minimum,2025-06-02,2025
+Damien Martinez,RB,Offense - Skill,DRAFT,Sea,2025 Draft Pick #223,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
+Mason Richman,OT,Other,DRAFT,Sea,2025 Draft Pick #234,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3400000,850000.0,Rookie/Minimum,2025-06-02,2025
+Ricky White III,WR3,Offense - Skill,DRAFT,Sea,2025 Draft Pick #238,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3300000,825000.0,Rookie/Minimum,2025-06-02,2025
+Kaiir Elam,CB2,Defense - Secondary,Buf,Dal,Trade,5.8,0.0,-5.8,25.0,Backup,0.0,Negative,4.0,0.0,0,0,0.0,,2025-06-02,2025
+Maxwell Hairston,CB1,Defense - Secondary,DRAFT,Buf,2025 Draft Pick #30,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,15200000,3800000.0,Role Player,2025-06-02,2025
+Stone Forsythe,OT,Other,Sea,Was,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Pharaoh Brown,TE,Offense - Skill,Sea,Mia,Free Agent Loss,6.5,0.0,-6.5,40.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Grey Zabel,G,Offense - Line,DRAFT,Sea,2025 Draft Pick #18,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,9.0,4,22500000,5625000.0,Starter,2025-06-02,2025
+Nick Emmanwori,S,Defense - Secondary,DRAFT,Sea,2025 Draft Pick #35 (traded up),0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,14200000,3550000.0,Role Player,2025-06-02,2025
+Elijah Arroyo,TE,Offense - Skill,DRAFT,Sea,2025 Draft Pick #50,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,10800000,2700000.0,Role Player,2025-06-02,2025
+Jalen Milroe,QB,Offense - Skill,DRAFT,Sea,2025 Draft Pick #92 (from Geno trade),0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6500000,1625000.0,Role Player,2025-06-02,2025
+Sione Takitaki,LB,Defense - Second,NE,RELEASED,Release,6.0,0.0,-6.0,40.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Davon Godchaux,DT,Defense - Front,NE,NO,Trade,6.5,0.0,-6.5,65.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Joe Milton III,QB,Offense - Skill,NE,Dal,Trade,6.8,0.0,-6.8,15.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Will Campbell,LT,Offense - Line,DRAFT,NE,2025 Draft Pick #4,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,9.0,4,38500000,9625000.0,Starter,2025-06-02,2025
+TreVeyon Henderson,RB,Offense - Skill,DRAFT,NE,2025 Draft Pick #36,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,12800000,3200000.0,Role Player,2025-06-02,2025
+Kyle Williams,WR2,Offense - Skill,DRAFT,NE,2025 Draft Pick #77,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,7.8,4,6800000,1700000.0,Role Player,2025-06-02,2025
+Jared Wilson,C,Offense - Line,DRAFT,NE,2025 Draft Pick #95,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,6200000,1550000.0,Role Player,2025-06-02,2025
+Joshua Farmer,DT,Defense - Front,DRAFT,NE,2025 Draft Pick #137,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,5000000,1250000.0,Role Player,2025-06-02,2025
 Efton Chism III,WR3,Offense - Skill,UDFA,NE,UDFA Signing,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,900000,225000.0,Rookie/Minimum,2025-06-02,2025
 Ben Wooldridge,QB,Offense - Skill,UDFA,NE,UDFA Signing,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,800000,200000.0,Rookie/Minimum,2025-06-02,2025
-Jordan Phillips,DT,Defense - Front,DRAFT,Mia,2025 Draft Pick #143,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Jonathan Jones,CB2,Defense - Secondary,NE,Was,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Deatrich Wise Jr.,EDGE,Defense - Front,NE,Was,Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+David Andrews,C,Offense - Line,NE,RETIRED,Release/Retirement,6.5,0.0,-6.5,70.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Ja'Whaun Bentley,LB,Defense - Second,NE,RELEASED,Release,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Joe Cardona,LS,Special Teams,NE,RELEASED,Release,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Jacoby Brissett,QB,Offense - Skill,NE,Ari,Free Agent Loss,6.5,0.0,-6.5,40.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
 Jason Marshall Jr.,CB2,Defense - Secondary,DRAFT,Mia,2025 Draft Pick #150,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
 Ollie Gordon II,RB,Offense - Skill,DRAFT,Mia,2025 Draft Pick #179,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
 Quinn Ewers,QB,Offense - Skill,DRAFT,Mia,2025 Draft Pick #231,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,4,3200000,800000.0,Rookie/Minimum,2025-06-02,2025
@@ -405,7 +493,7 @@ Zeek Biggers,DT,Defense - Front,DRAFT,Mia,2025 Draft Pick #253,0.0,5.8,5.8,0.0,,
 Draft Capital Trade,PICKS,Other,Mia,LV,Draft Trade,0.0,0.0,0.0,0.0,,0.0,Negative,-2.0,0.0,0,0,0.0,,2025-06-02,2025
 Andrew Armstrong,WR3,Offense - Skill,UDFA,Mia,UDFA Signing,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,3,2750000,916666.6666666666,Rookie/Minimum,2025-06-02,2025
 Josh Priebe,G,Offense - Line,UDFA,Mia,UDFA Signing,0.0,5.2,5.2,0.0,,0.0,Negative,0.0,5.5,3,2600000,866666.6666666666,Rookie/Minimum,2025-06-02,2025
-Da'Shawn Hand,DT,Defense - Front,Mia,LAC,Free Agent Loss,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+C.J. Dippre,TE,Offense - Skill,UDFA,NE,UDFA Signing,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,1000000,250000.0,Rookie/Minimum,2025-06-02,2025
 Siran Neal,CB2,Defense - Secondary,Mia,SF,Free Agent Loss,6.2,0.0,-6.2,40.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
 Kendall Fuller,CB1,Defense - Secondary,Mia,RELEASED,Cap Casualty,7.0,0.0,-7.0,80.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 Raheem Mostert,RB,Offense - Skill,Mia,RELEASED,Cap Casualty,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
@@ -413,51 +501,52 @@ Durham Smythe,TE,Offense - Skill,Mia,RELEASED,Cap Casualty,6.0,0.0,-6.0,50.0,Rot
 Terron Armstead,LT,Offense - Line,Mia,RETIRED,Retirement,7.8,0.0,-7.8,75.0,Starter,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
 Kenneth Grant,DT,Defense - Front,DRAFT,Mia,2025 Draft Pick #13,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,26500000,6625000.0,Starter,2025-06-02,2025
 Jonah Savaiinaea,G,Offense - Line,DRAFT,Mia,2025 Draft Pick #37 (via trade),0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,12000000,3000000.0,Role Player,2025-06-02,2025
-Keion White,CB2,Defense - Secondary,DRAFT,NE,2025 Draft Pick #248,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
-Mike Vrabel,HC,Coaching,Ten,NE,Head Coach Hire,8.0,8.5,0.5,0.0,,0.0,Negative,8.0,9.5,5,50000000,10000000.0,Starter,2025-06-02,2025
+Jordan Phillips,DT,Defense - Front,DRAFT,Mia,2025 Draft Pick #143,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Cameron Calhoun,LB,Defense - Second,DRAFT,SF,2025 Draft Pick #203,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Marcus Belton,S,Defense - Secondary,DRAFT,SF,2025 Draft Pick #235,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3400000,850000.0,Rookie/Minimum,2025-06-02,2025
+Robert Saleh,DC,Coaching,NYJ,SF,Coaching Hire,7.0,9.0,2.0,0.0,,0.0,Negative,0.0,9.5,3,12000000,4000000.0,Role Player,2025-06-02,2025
+Klay Kubiak,OC,Coaching,SF,SF,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,7.0,3,4500000,1500000.0,Role Player,2025-06-02,2025
+Multiple UDFAs,DEPTH,Other,COLLEGE,SF,UDFA Signings,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,3,12000000,4000000.0,Role Player,2025-06-02,2025
 Josh McDaniels,OC,Coaching,LV,NE,Offensive Coordinator Hire,7.5,8.0,0.5,0.0,,0.0,Negative,5.0,8.5,4,20000000,5000000.0,Role Player,2025-06-02,2025
 Terrell Williams,DC,Coaching,Ten,NE,Defensive Coordinator Hire,7.0,7.8,0.7999999999999998,0.0,,0.0,Negative,7.0,8.0,4,12000000,3000000.0,Role Player,2025-06-02,2025
 Jerod Mayo,HC,Coaching,NE,FIRED,Head Coach Firing,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
-Kyle Williams,WR2,Offense - Skill,DRAFT,NE,2025 Draft Pick #77,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,7.8,4,6800000,1700000.0,Role Player,2025-06-02,2025
-Jared Wilson,C,Offense - Line,DRAFT,NE,2025 Draft Pick #95,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,6200000,1550000.0,Role Player,2025-06-02,2025
-Joshua Farmer,DT,Defense - Front,DRAFT,NE,2025 Draft Pick #137,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,5000000,1250000.0,Role Player,2025-06-02,2025
+Mykel Williams,EDGE,Defense - Front,DRAFT,SF,2025 Draft Pick #11,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,9.0,4,28500000,7125000.0,Starter,2025-06-02,2025
+Alfred Collins,DT,Defense - Front,DRAFT,SF,2025 Draft Pick #43,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,8.5,4,12800000,3200000.0,Role Player,2025-06-02,2025
+Nick Martin,LB,Defense - Second,DRAFT,SF,2025 Draft Pick #75,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,7200000,1800000.0,Role Player,2025-06-02,2025
+Upton Stout,CB1,Defense - Secondary,DRAFT,SF,2025 Draft Pick #107,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,5800000,1450000.0,Role Player,2025-06-02,2025
+C.J. West,DT,Defense - Front,DRAFT,SF,2025 Draft Pick #139,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4900000,1225000.0,Role Player,2025-06-02,2025
+Jalen McLeod,WR3,Offense - Skill,DRAFT,SF,2025 Draft Pick #171,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Kyle Juszczyk,FB,Other,SF,RELEASED,Release,7.5,0.0,-7.5,40.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Javon Hargrave,DT,Defense - Front,SF,RELEASED,Release,7.8,0.0,-7.8,70.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Leonard Floyd,EDGE,Defense - Front,SF,FA,Free Agent Loss,7.5,0.0,-7.5,65.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Dre Greenlaw,LB,Defense - Second,SF,Den,Free Agent Loss,8.0,0.0,-8.0,45.0,Rotational,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Charvarius Ward,CB1,Defense - Secondary,SF,Ind,Free Agent Loss,7.8,0.0,-7.8,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Talanoa Hufanga,S,Defense - Secondary,SF,Den,Free Agent Loss,6.5,0.0,-6.5,35.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Maliek Collins,DT,Defense - Front,SF,Cle,Free Agent Loss,7.0,0.0,-7.0,55.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Aaron Banks,G,Offense - Line,SF,GB,Free Agent Loss,7.2,0.0,-7.2,90.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 Bradyn Swinson,EDGE,Defense - Front,DRAFT,NE,2025 Draft Pick #146,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
 Andres Borregales,K,Special Teams,DRAFT,NE,2025 Draft Pick #167,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4400000,1100000.0,Role Player,2025-06-02,2025
 Kam Dewberry,OG,Other,DRAFT,NE,2025 Draft Pick #204,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 Julian Ashby,LS,Special Teams,DRAFT,NE,2025 Draft Pick #226,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
 Cortez Mills,CB2,Defense - Secondary,DRAFT,NE,2025 Draft Pick #240,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
-Ja'Whaun Bentley,LB,Defense - Second,NE,RELEASED,Release,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Joe Cardona,LS,Special Teams,NE,RELEASED,Release,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Jacoby Brissett,QB,Offense - Skill,NE,Ari,Free Agent Loss,6.5,0.0,-6.5,40.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Rayshawn Jenkins,S,Defense - Secondary,Sea,RELEASED,Release,6.5,0.0,-6.5,75.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Laken Tomlinson,G,Offense - Line,Sea,Hou,Free Agent Loss,7.0,0.0,-7.0,90.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Tre Brown,CB2,Defense - Secondary,Sea,SF,Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Artie Burns,CB2,Defense - Secondary,Sea,Mia,Free Agent Loss,6.0,0.0,-6.0,45.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Stone Forsythe,OT,Other,Sea,Was,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Pharaoh Brown,TE,Offense - Skill,Sea,Mia,Free Agent Loss,6.5,0.0,-6.5,40.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Drew Wilkins,PASS_RUSH_COORD,Other,BAL,LAR,Coaching Hire,8.0,8.2,0.1999999999999993,0.0,,0.0,Negative,7.0,8.0,2,2500000,1250000.0,Role Player,2025-06-02,2025
-Alex Van Pelt,OFF_ASSISTANT,Other,NE,LAR,Coaching Hire,7.5,7.8,0.2999999999999998,0.0,,0.0,Negative,6.5,7.0,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
-Nathan Scheelhaase,PASS_GAME_COORD,Other,LAR,LAR,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,7.5,3,4500000,1500000.0,Role Player,2025-06-02,2025
-2026 1st Round Pick,DRAFT_PICK,Other,Atl,LAR,Draft Trade (26th pick for 2025 2nd + 2026 1st),0.0,8.5,8.5,0.0,,0.0,Negative,8.0,9.5,0,15000000,15000000.0,Starter,2025-06-02,2025
-Multiple UDFAs,DEPTH,Other,COLLEGE,LAR,UDFA Signings,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,3,8000000,2666666.6666666665,Role Player,2025-06-02,2025
-Chris Paul Jr.,LB,Defense - Second,DRAFT,LAR,2025 Draft Pick #147,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,4500000,1125000.0,Role Player,2025-06-02,2025
-Ty Hamilton,DT,Defense - Front,DRAFT,LAR,2025 Draft Pick #189,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Marcus Haynes,CB2,Defense - Secondary,DRAFT,LAR,2025 Draft Pick #220,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
-Cooper Kupp,WR1,Offense - Skill,LAR,Sea,Release/Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-Christian Rozeboom,LB,Defense - Second,LAR,FA,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Sione Takitaki,LB,Defense - Second,NE,RELEASED,Release,6.0,0.0,-6.0,40.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Davon Godchaux,DT,Defense - Front,NE,NO,Trade,6.5,0.0,-6.5,65.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Joe Milton III,QB,Offense - Skill,NE,Dal,Trade,6.8,0.0,-6.8,15.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Will Campbell,LT,Offense - Line,DRAFT,NE,2025 Draft Pick #4,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,9.0,4,38500000,9625000.0,Starter,2025-06-02,2025
-TreVeyon Henderson,RB,Offense - Skill,DRAFT,NE,2025 Draft Pick #36,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,12800000,3200000.0,Role Player,2025-06-02,2025
-Jonathan Jones,CB2,Defense - Secondary,NE,Was,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Deatrich Wise Jr.,EDGE,Defense - Front,NE,Was,Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-David Andrews,C,Offense - Line,NE,RETIRED,Release/Retirement,6.5,0.0,-6.5,70.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Keion White,CB2,Defense - Secondary,DRAFT,NE,2025 Draft Pick #248,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
+Mike Vrabel,HC,Coaching,Ten,NE,Head Coach Hire,8.0,8.5,0.5,0.0,,0.0,Negative,8.0,9.5,5,50000000,10000000.0,Starter,2025-06-02,2025
+Brandon Stephens,CB1,Defense - Secondary,Bal,NYJ,Free Agent Loss,5.5,0.0,-5.5,85.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Malik Harrison,LB,Defense - Second,Bal,Pit,Free Agent Loss,7.0,0.0,-7.0,38.0,Rotational,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Chris Board,LB,Defense - Second,Bal,NYG,Free Agent Loss,6.8,0.0,-6.8,20.0,Backup,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Josh Jones,OT,Other,Bal,Sea,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Malaki Starks,S,Defense - Secondary,DRAFT,Bal,2025 Draft Pick #27,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,18500000,4625000.0,Role Player,2025-06-02,2025
+Mike Green,EDGE,Defense - Front,DRAFT,Bal,2025 Draft Pick #59,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,9800000,2450000.0,Role Player,2025-06-02,2025
+Emery Jones Jr.,OT,Other,DRAFT,Bal,2025 Draft Pick #91,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
+Teddye Buchanan,LB,Defense - Second,DRAFT,Bal,2025 Draft Pick #129,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
+Darren Mougey,GM,Other,Den,NYJ,General Manager Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.0,5,25000000,5000000.0,Role Player,2025-06-02,2025
 Tanner Engstrand,OC,Coaching,Det,NYJ,Offensive Coordinator Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,8.0,4,12000000,3000000.0,Role Player,2025-06-02,2025
 Steve Wilks,DC,Coaching,SF,NYJ,Defensive Coordinator Hire,7.5,7.8,0.2999999999999998,0.0,,0.0,Negative,6.5,7.5,4,10000000,2500000.0,Role Player,2025-06-02,2025
 Chris Banjo,ST_COORD,Other,Car,NYJ,Special Teams Coordinator Hire,7.0,7.2,0.20000000000000018,0.0,,0.0,Negative,6.5,7.0,3,4500000,1500000.0,Role Player,2025-06-02,2025
 Robert Saleh,HC,Coaching,NYJ,FIRED,Head Coach Firing,4.5,0.0,-4.5,40.0,Rotational,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
 Joe Douglas,GM,Other,NYJ,FIRED,General Manager Firing,4.0,0.0,-4.0,70.0,Starter,0.0,Negative,4.5,0.0,0,0,0.0,,2025-06-02,2025
+Patrick Mekari,G,Offense - Line,Bal,Jac,Free Agent Loss,7.5,0.0,-7.5,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Armand Membou,RT,Offense - Line,DRAFT,NYJ,2025 Draft Pick #7,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,35000000,8750000.0,Starter,2025-06-02,2025
 Mason Taylor,TE,Offense - Skill,DRAFT,NYJ,2025 Draft Pick #42,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,11500000,2875000.0,Role Player,2025-06-02,2025
 Azareye'h Thomas,CB2,Defense - Secondary,DRAFT,NYJ,2025 Draft Pick #73,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,7200000,1800000.0,Role Player,2025-06-02,2025
 Arian Smith,WR3,Offense - Skill,DRAFT,NYJ,2025 Draft Pick #110,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.8,4,5800000,1450000.0,Role Player,2025-06-02,2025
@@ -465,7 +554,7 @@ Malachi Moore,S,Defense - Secondary,DRAFT,NYJ,2025 Draft Pick #130,0.0,6.8,6.8,0
 Francisco Mauigoa,LB,Defense - Second,DRAFT,NYJ,2025 Draft Pick #162,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,4600000,1150000.0,Role Player,2025-06-02,2025
 Tyler Baron,EDGE,Defense - Front,DRAFT,NYJ,2025 Draft Pick #176,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4400000,1100000.0,Role Player,2025-06-02,2025
 Aaron Glenn,HC,Coaching,Det,NYJ,Head Coach Hire,8.0,8.5,0.5,0.0,,0.0,Negative,8.0,9.5,5,40000000,8000000.0,Starter,2025-06-02,2025
-Darren Mougey,GM,Other,Den,NYJ,General Manager Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.0,5,25000000,5000000.0,Role Player,2025-06-02,2025
+Aaron Rodgers,QB,Offense - Skill,NYJ,RELEASED,Post-June 1 Cut,5.5,0.0,-5.5,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
 Davante Adams,WR1,Offense - Skill,NYJ,LAR,Free Agent Loss,7.0,0.0,-7.0,80.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 D.J. Reed,CB1,Defense - Secondary,NYJ,Det,Free Agent Loss,7.5,0.0,-7.5,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
 Haason Reddick,EDGE,Defense - Front,NYJ,TB,Free Agent Loss,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
@@ -473,32 +562,40 @@ Javon Kinlaw,DT,Defense - Front,NYJ,Was,Free Agent Loss,6.5,0.0,-6.5,65.0,Starte
 C.J. Mosley,LB,Defense - Second,NYJ,RELEASED,Post-June 1 Cut,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 Morgan Moses,RT,Offense - Line,NYJ,NE,Free Agent Loss,7.0,0.0,-7.0,80.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
 Mike Williams,WR2,Offense - Skill,NYJ,Pit,Trade,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Armand Membou,RT,Offense - Line,DRAFT,NYJ,2025 Draft Pick #7,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,35000000,8750000.0,Starter,2025-06-02,2025
-Aaron Rodgers,QB,Offense - Skill,NYJ,RELEASED,Post-June 1 Cut,5.5,0.0,-5.5,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Shaq Thompson,LB,Defense - Second,Car,FA,Free Agent Loss,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Johnny Hekker,P,Special Teams,Car,Ten,Free Agent Loss,7.2,0.0,-7.2,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Jordan Fuller,S,Defense - Secondary,Car,Atl,Free Agent Loss,6.5,0.0,-6.5,40.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Ian Thomas,TE,Offense - Skill,Car,LV,Free Agent Loss,6.0,0.0,-6.0,45.0,Rotational,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Diontae Johnson,WR,Other,Car,Bal,Trade,6.5,0.0,-6.5,65.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Jonathan Mingo,WR,Other,Car,Dal,Trade,5.5,0.0,-5.5,35.0,Rotational,0.0,Negative,4.0,0.0,0,0,0.0,,2025-06-02,2025
+Tetairoa McMillan,WR1,Offense - Skill,DRAFT,Car,2025 Draft Pick #8,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.5,4,35000000,8750000.0,Starter,2025-06-02,2025
+Nic Scourton,EDGE,Defense - Front,DRAFT,Car,2025 Draft Pick #51,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,9000000,2250000.0,Role Player,2025-06-02,2025
+Josh Grizzard,COACH,Coaching,TB,TB,Promotion to OC,7.5,8.0,0.5,0.0,,0.0,Negative,7.5,8.5,2,2000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Mike Caldwell,COACH,Coaching,FA,TB,Coaching Hire,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.0,2,1200000,600000.0,Rookie/Minimum,2025-06-02,2025
+Charlie Strong,COACH,Coaching,Alabama,TB,Coaching Hire,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,7.5,2,1000000,500000.0,Rookie/Minimum,2025-06-02,2025
+K.J. Britt,LB,Defense - Second,TB,FA,Free Agent Loss,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Liam Coen,COACH,Coaching,TB,Jac,Coaching Loss,8.5,0.0,-8.5,0.0,,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Miles Sanders,RB,Offense - Skill,Car,RELEASED,Released,5.5,0.0,-5.5,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Jadeveon Clowney,EDGE,Defense - Front,Car,RELEASED,Released,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Xavier Woods,S,Defense - Secondary,Car,Ten,Free Agent Loss,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
 Chuck Pagano,DB_COACH,Other,RETIRED,Bal,Coaching Hire,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,8.5,2,3000000,1500000.0,Role Player,2025-06-02,2025
 Tyler Santucci,LB_COACH,Other,COLLEGE,Bal,Coaching Hire,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.0,2,1500000,750000.0,Rookie/Minimum,2025-06-02,2025
-Donald D'Alesio,DB_COACH,Other,KC,Bal,Coaching Hire,8.0,8.0,0.0,0.0,,0.0,Negative,7.0,7.5,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
-Anthony Levine Sr.,ST_COACH,Other,RETIRED,Bal,Coaching Hire,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
-Jay Higgins,LB,Defense - Second,COLLEGE,Bal,UDFA Signing,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,3,2700000,900000.0,Rookie/Minimum,2025-06-02,2025
-Jahmal Banks,WR3,Offense - Skill,COLLEGE,Bal,UDFA Signing,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
-Keondre Jackson,CB2,Defense - Secondary,COLLEGE,Bal,UDFA Signing,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,3,2400000,800000.0,Rookie/Minimum,2025-06-02,2025
-Robert Longerbeam,CB2,Defense - Secondary,DRAFT,Bal,2025 Draft Pick #212,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
-Garrett Dellinger,G,Offense - Line,DRAFT,Bal,2025 Draft Pick #243,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3200000,800000.0,Rookie/Minimum,2025-06-02,2025
-Mike Green,EDGE,Defense - Front,DRAFT,Bal,2025 Draft Pick #59,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,9800000,2450000.0,Role Player,2025-06-02,2025
-Emery Jones Jr.,OT,Other,DRAFT,Bal,2025 Draft Pick #91,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
-Teddye Buchanan,LB,Defense - Second,DRAFT,Bal,2025 Draft Pick #129,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
+Emeka Egbuka,WR2,Offense - Skill,DRAFT,TB,2025 Draft Pick #19,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,15500000,3875000.0,Role Player,2025-06-02,2025
+Benjamin Morrison,CB1,Defense - Secondary,DRAFT,TB,2025 Draft Pick #56,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.5,4,6800000,1700000.0,Role Player,2025-06-02,2025
+Jacob Parrish,CB2,Defense - Secondary,DRAFT,TB,2025 Draft Pick #87,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,4500000,1125000.0,Role Player,2025-06-02,2025
+David Walker,EDGE,Defense - Front,DRAFT,TB,2025 Draft Pick #124,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Elijah Roberts,EDGE,Defense - Front,DRAFT,TB,2025 Draft Pick #156,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
 Carson Vinson,OT,Other,DRAFT,Bal,2025 Draft Pick #141,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
 Bilhal Kone,CB2,Defense - Secondary,DRAFT,Bal,2025 Draft Pick #178,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,4200000,1050000.0,Role Player,2025-06-02,2025
 Tyler Loop,K,Special Teams,DRAFT,Bal,2025 Draft Pick #186,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,5.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 LaJohntay Wester,WR3,Offense - Skill,DRAFT,Bal,2025 Draft Pick #203,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
 Aeneas Peebles,DT,Defense - Front,DRAFT,Bal,2025 Draft Pick #210,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
-Patrick Mekari,G,Offense - Line,Bal,Jac,Free Agent Loss,7.5,0.0,-7.5,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Brandon Stephens,CB1,Defense - Secondary,Bal,NYJ,Free Agent Loss,5.5,0.0,-5.5,85.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Malik Harrison,LB,Defense - Second,Bal,Pit,Free Agent Loss,7.0,0.0,-7.0,38.0,Rotational,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Chris Board,LB,Defense - Second,Bal,NYG,Free Agent Loss,6.8,0.0,-6.8,20.0,Backup,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Josh Jones,OT,Other,Bal,Sea,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Malaki Starks,S,Defense - Secondary,DRAFT,Bal,2025 Draft Pick #27,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,18500000,4625000.0,Role Player,2025-06-02,2025
+Robert Longerbeam,CB2,Defense - Secondary,DRAFT,Bal,2025 Draft Pick #212,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
+Garrett Dellinger,G,Offense - Line,DRAFT,Bal,2025 Draft Pick #243,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3200000,800000.0,Rookie/Minimum,2025-06-02,2025
+Donte Kent,CB2,Defense - Secondary,DRAFT,Pit,2025 Draft Pick #226,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
 Gerald Alexander,DB_COACH,Other,LV,Pit,Coaching Hire,6.5,7.0,0.5,0.0,,0.0,Negative,6.0,7.0,2,1200000,600000.0,Rookie/Minimum,2025-06-02,2025
+Scott McCurry,LB_COACH,Other,Pit,Pit,Internal Promotion,6.0,6.5,0.5,0.0,,0.0,Negative,6.0,6.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
+Mike Williams,WR2,Offense - Skill,Pit,NYJ,Free Agent Loss,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
 George Pickens,WR2,Offense - Skill,Pit,Dal,Trade,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 Derrick Harmon,DT,Defense - Front,DRAFT,Pit,2025 Draft Pick #21,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,21500000,5375000.0,Starter,2025-06-02,2025
 Kaleb Johnson,RB,Offense - Skill,DRAFT,Pit,2025 Draft Pick #84,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,5800000,1450000.0,Role Player,2025-06-02,2025
@@ -506,286 +603,275 @@ Jack Sawyer,OLB,Other,DRAFT,Pit,2025 Draft Pick #115,0.0,6.8,6.8,0.0,,0.0,Negati
 Yahya Black,DT,Defense - Front,DRAFT,Pit,2025 Draft Pick #164,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,4100000,1025000.0,Role Player,2025-06-02,2025
 Will Howard,QB,Offense - Skill,DRAFT,Pit,2025 Draft Pick #185,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,6.0,4,3900000,975000.0,Rookie/Minimum,2025-06-02,2025
 Carson Bruener,LB,Defense - Second,DRAFT,Pit,2025 Draft Pick #217,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
-Donte Kent,CB2,Defense - Secondary,DRAFT,Pit,2025 Draft Pick #226,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
+Justin Fields,QB,Offense - Skill,Pit,NYJ,Free Agent Loss,7.5,0.0,-7.5,60.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Russell Wilson,QB,Offense - Skill,Pit,NYG,Free Agent Loss,7.2,0.0,-7.2,70.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
 Dan Moore Jr.,LT,Offense - Line,Pit,Ten,Free Agent Loss,6.8,0.0,-6.8,95.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 James Daniels,G,Offense - Line,Pit,Mia,Free Agent Loss,7.0,0.0,-7.0,90.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
 Najee Harris,RB,Offense - Skill,Pit,LAC,Free Agent Loss,6.5,0.0,-6.5,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Mykel Williams,EDGE,Defense - Front,DRAFT,SF,2025 Draft Pick #11,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,9.0,4,28500000,7125000.0,Starter,2025-06-02,2025
-Alfred Collins,DT,Defense - Front,DRAFT,SF,2025 Draft Pick #43,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,8.5,4,12800000,3200000.0,Role Player,2025-06-02,2025
-Nick Martin,LB,Defense - Second,DRAFT,SF,2025 Draft Pick #75,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,7200000,1800000.0,Role Player,2025-06-02,2025
-Upton Stout,CB1,Defense - Secondary,DRAFT,SF,2025 Draft Pick #107,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,5800000,1450000.0,Role Player,2025-06-02,2025
-C.J. West,DT,Defense - Front,DRAFT,SF,2025 Draft Pick #139,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4900000,1225000.0,Role Player,2025-06-02,2025
-Leonard Floyd,EDGE,Defense - Front,SF,FA,Free Agent Loss,7.5,0.0,-7.5,65.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Dre Greenlaw,LB,Defense - Second,SF,Den,Free Agent Loss,8.0,0.0,-8.0,45.0,Rotational,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Charvarius Ward,CB1,Defense - Secondary,SF,Ind,Free Agent Loss,7.8,0.0,-7.8,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Talanoa Hufanga,S,Defense - Secondary,SF,Den,Free Agent Loss,6.5,0.0,-6.5,35.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Maliek Collins,DT,Defense - Front,SF,Cle,Free Agent Loss,7.0,0.0,-7.0,55.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Aaron Banks,G,Offense - Line,SF,GB,Free Agent Loss,7.2,0.0,-7.2,90.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Mason Richman,OT,Other,DRAFT,Sea,2025 Draft Pick #234,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3400000,850000.0,Rookie/Minimum,2025-06-02,2025
-Ricky White III,WR3,Offense - Skill,DRAFT,Sea,2025 Draft Pick #238,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3300000,825000.0,Rookie/Minimum,2025-06-02,2025
-Grey Zabel,G,Offense - Line,DRAFT,Sea,2025 Draft Pick #18,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,9.0,4,22500000,5625000.0,Starter,2025-06-02,2025
-Nick Emmanwori,S,Defense - Secondary,DRAFT,Sea,2025 Draft Pick #35 (traded up),0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,14200000,3550000.0,Role Player,2025-06-02,2025
-Elijah Arroyo,TE,Offense - Skill,DRAFT,Sea,2025 Draft Pick #50,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,10800000,2700000.0,Role Player,2025-06-02,2025
-Jalen Milroe,QB,Offense - Skill,DRAFT,Sea,2025 Draft Pick #92 (from Geno trade),0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6500000,1625000.0,Role Player,2025-06-02,2025
-Tory Horton,WR3,Offense - Skill,DRAFT,Sea,2025 Draft Pick #166,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,4300000,1075000.0,Role Player,2025-06-02,2025
-Robbie Ouzts,FB,Other,DRAFT,Sea,2025 Draft Pick #175,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,7.0,4,4100000,1025000.0,Role Player,2025-06-02,2025
-Bryce Cabeldue,OT,Other,DRAFT,Sea,2025 Draft Pick #192,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,3900000,975000.0,Rookie/Minimum,2025-06-02,2025
-Damien Martinez,RB,Offense - Skill,DRAFT,Sea,2025 Draft Pick #223,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
 Donte Jackson,CB2,Defense - Secondary,Pit,LAC,Free Agent Loss,6.8,0.0,-6.8,70.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
 Larry Ogunjobi,DT,Defense - Front,Pit,Buf,Release/Free Agent Loss,6.5,0.0,-6.5,65.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
 Van Jefferson,WR3,Offense - Skill,Pit,Ten,Free Agent Loss,5.8,0.0,-5.8,40.0,Rotational,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
-Mike Williams,WR2,Offense - Skill,Pit,NYJ,Free Agent Loss,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Justin Fields,QB,Offense - Skill,Pit,NYJ,Free Agent Loss,7.5,0.0,-7.5,60.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Russell Wilson,QB,Offense - Skill,Pit,NYG,Free Agent Loss,7.2,0.0,-7.2,70.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Tommy Rees,OC,Coaching,INTERNAL,Cle,Promotion,6.5,7.0,0.5,0.0,,0.0,Negative,6.5,8.0,3,3600000,1200000.0,Role Player,2025-06-02,2025
+Princely Umanmielen,EDGE,Defense - Front,DRAFT,Car,2025 Draft Pick #77,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,5500000,1375000.0,Role Player,2025-06-02,2025
+Trevor Etienne,RB,Offense - Skill,DRAFT,Car,2025 Draft Pick #124,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Lathan Ransom,S,Defense - Secondary,DRAFT,Car,2025 Draft Pick #158,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Donald D'Alesio,DB_COACH,Other,KC,Bal,Coaching Hire,8.0,8.0,0.0,0.0,,0.0,Negative,7.0,7.5,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
+Anthony Levine Sr.,ST_COACH,Other,RETIRED,Bal,Coaching Hire,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
+Jay Higgins,LB,Defense - Second,COLLEGE,Bal,UDFA Signing,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,3,2700000,900000.0,Rookie/Minimum,2025-06-02,2025
+Jahmal Banks,WR3,Offense - Skill,COLLEGE,Bal,UDFA Signing,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
+Keondre Jackson,CB2,Defense - Secondary,COLLEGE,Bal,UDFA Signing,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,3,2400000,800000.0,Rookie/Minimum,2025-06-02,2025
+Arthur Smith,COACH,Coaching,Atl,FIRED,Coaching Departure,4.0,0.0,-4.0,0.0,,0.0,Negative,2.0,0.0,0,0,0.0,,2025-06-02,2025
+2026 1st Round Pick,DRAFT,Other,Atl,Hou,Draft Capital Trade,0.0,0.0,0.0,0.0,,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+DeMarcus Lawrence,EDGE,Defense - Front,Dal,Sea,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
 Mike Bloomgren,OL_COACH,Other,COLLEGE,Cle,Coaching Hire,6.0,6.8,0.7999999999999998,0.0,,0.0,Negative,0.0,7.5,2,1200000,600000.0,Rookie/Minimum,2025-06-02,2025
 Zack Martin,G,Offense - Line,Cle,RETIRED,Retirement,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
 Sam Hubbard,EDGE,Defense - Front,Cin,RETIRED,Retirement,7.0,0.0,-7.0,65.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Mason Graham,DT,Defense - Front,DRAFT,Cle,2025 Draft Pick #5,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,9.0,4,42000000,10500000.0,Starter,2025-06-02,2025
-Carson Schwesinger,LB,Defense - Second,DRAFT,Cle,2025 Draft Pick #33,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,12500000,3125000.0,Role Player,2025-06-02,2025
+Akeem Davis-Gaither,LB,Defense - Second,Cin,Ari,Free Agent Loss,6.8,0.0,-6.8,30.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Shemar Stewart,EDGE,Defense - Front,DRAFT,Cin,2025 Draft Pick #17,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,7.0,4,25200000,6300000.0,Starter,2025-06-02,2025
+Grady Jarrett,DT,Defense - Front,Atl,RELEASED,Cap Casualty Release,7.8,0.0,-7.8,85.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Drew Dalman,C,Offense - Line,Atl,Chi,Free Agent Loss,7.5,0.0,-7.5,95.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Jalon Walker,EDGE,Defense - Front,DRAFT,Atl,2025 Draft Pick #15,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.5,4,18500000,4625000.0,Role Player,2025-06-02,2025
+James Pearce Jr.,EDGE,Defense - Front,DRAFT,Atl,2025 Draft Pick #26 (Traded Up),0.0,7.2,7.2,0.0,,0.0,Negative,0.0,8.5,4,16000000,4000000.0,Role Player,2025-06-02,2025
+Xavier Watts,S,Defense - Secondary,DRAFT,Atl,2025 Draft Pick #88,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4800000,1200000.0,Role Player,2025-06-02,2025
+Billy Bowman Jr.,S,Defense - Secondary,DRAFT,Atl,2025 Draft Pick #142,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
+Raheem Morris,COACH,Coaching,LAR,Atl,Head Coach Hire,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.5,4,20000000,5000000.0,Role Player,2025-06-02,2025
+Jeff Ulbrich,COACH,Coaching,NYJ,Atl,Defensive Coordinator Hire,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,3,6000000,2000000.0,Role Player,2025-06-02,2025
 Quinshon Judkins,RB,Offense - Skill,DRAFT,Cle,2025 Draft Pick #36,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,8.5,4,11800000,2950000.0,Role Player,2025-06-02,2025
 Harold Fannin Jr.,TE,Offense - Skill,DRAFT,Cle,2025 Draft Pick #67,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,5200000,1300000.0,Role Player,2025-06-02,2025
 Dillon Gabriel,QB,Offense - Skill,DRAFT,Cle,2025 Draft Pick #94,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4800000,1200000.0,Role Player,2025-06-02,2025
 Dylan Sampson,RB,Offense - Skill,DRAFT,Cle,2025 Draft Pick #126,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
 Shedeur Sanders,QB,Offense - Skill,DRAFT,Cle,2025 Draft Pick #144,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,4100000,1025000.0,Role Player,2025-06-02,2025
-Darius Slay,CB1,Defense - Secondary,Phi,RELEASED,Post-June 1 Cut,7.8,0.0,-7.8,80.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Tommy Rees,OC,Coaching,INTERNAL,Cle,Promotion,6.5,7.0,0.5,0.0,,0.0,Negative,6.5,8.0,3,3600000,1200000.0,Role Player,2025-06-02,2025
+Dennis Allen,COACH,Coaching,NO,Chi,Coaching Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Kellen Moore,COACH,Coaching,Phi,NO,Coaching Hire,9.0,8.5,-0.5,0.0,,0.0,Negative,0.0,9.5,4,25000000,6250000.0,Starter,2025-06-02,2025
+Jourdan Lewis,CB2,Defense - Secondary,Dal,Jac,Free Agent Loss,8.0,0.0,-8.0,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
 Amari Cooper,WR1,Offense - Skill,Cle,Buf,Trade,8.0,0.0,-8.0,90.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
 Za'Darius Smith,EDGE,Defense - Front,Cle,Det,Trade,7.5,0.0,-7.5,70.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
 Juan Thornhill,S,Defense - Secondary,Cle,Pit,Release/Free Agent Loss,5.5,0.0,-5.5,55.0,Starter,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
 Dalvin Tomlinson,DT,Defense - Front,Cle,Ari,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 Jameis Winston,QB,Offense - Skill,Cle,NYG,Free Agent Loss,6.5,0.0,-6.5,40.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Scott McCurry,LB_COACH,Other,Pit,Pit,Internal Promotion,6.0,6.5,0.5,0.0,,0.0,Negative,6.0,6.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
-James Bradberry,CB2,Defense - Secondary,Phi,RELEASED,Post-June 1 Cut,7.2,0.0,-7.2,70.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Sai'vion Jones,EDGE,Defense - Front,DRAFT,Den,2025 Draft Pick #92,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,6200000,1550000.0,Role Player,2025-06-02,2025
-Harold Fannin Jr.,TE,Offense - Skill,DRAFT,Den,2025 Draft Pick #128,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
-Marion Hobby,DL_COACH,Other,Cin,FIRED,Coaching Departure,5.0,0.0,-5.0,0.0,,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-James Bettcher,LB_COACH,Other,Cin,FIRED,Coaching Departure,5.0,0.0,-5.0,0.0,,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Tyre West,S,Defense - Secondary,DRAFT,Den,2025 Draft Pick #165,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Caleb Lohner,TE,Offense - Skill,DRAFT,Den,2025 Draft Pick #238,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3200000,800000.0,Rookie/Minimum,2025-06-02,2025
-Barrett Carter,LB,Defense - Second,DRAFT,Cin,2025 Draft Pick #118,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
-Jalen Rivers,OL,Offense - Line,DRAFT,Cin,2025 Draft Pick #156,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Tahj Brooks,RB,Offense - Skill,DRAFT,Cin,2025 Draft Pick #189,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Miles Sanders,RB,Offense - Skill,Car,RELEASED,Released,5.5,0.0,-5.5,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Jadeveon Clowney,EDGE,Defense - Front,Car,RELEASED,Released,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Xavier Woods,S,Defense - Secondary,Car,Ten,Free Agent Loss,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Shaq Thompson,LB,Defense - Second,Car,FA,Free Agent Loss,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Johnny Hekker,P,Special Teams,Car,Ten,Free Agent Loss,7.2,0.0,-7.2,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Mike Caldwell,COACH,Coaching,FA,TB,Coaching Hire,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.0,2,1200000,600000.0,Rookie/Minimum,2025-06-02,2025
-Charlie Strong,COACH,Coaching,Alabama,TB,Coaching Hire,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,7.5,2,1000000,500000.0,Rookie/Minimum,2025-06-02,2025
-K.J. Britt,LB,Defense - Second,TB,FA,Free Agent Loss,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Liam Coen,COACH,Coaching,TB,Jac,Coaching Loss,8.5,0.0,-8.5,0.0,,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Klay Kubiak,OC,Coaching,SF,SF,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,7.0,3,4500000,1500000.0,Role Player,2025-06-02,2025
-Multiple UDFAs,DEPTH,Other,COLLEGE,SF,UDFA Signings,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,3,12000000,4000000.0,Role Player,2025-06-02,2025
-Geno Smith,QB,Offense - Skill,Sea,LV,Trade,7.8,0.0,-7.8,95.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-DK Metcalf,WR1,Offense - Skill,Sea,Pit,Trade,8.2,0.0,-8.2,85.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
-Sam Howell,QB,Offense - Skill,Sea,Min,Trade,6.0,0.0,-6.0,10.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Tyler Lockett,WR1,Offense - Skill,Sea,RELEASED,Release,8.0,0.0,-8.0,80.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-Dre'Mont Jones,DT,Defense - Front,Sea,RELEASED,Release,7.0,0.0,-7.0,70.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Roy Robertson-Harris,DT,Defense - Front,Sea,RELEASED,Release,6.8,0.0,-6.8,50.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Jalen McLeod,WR3,Offense - Skill,DRAFT,SF,2025 Draft Pick #171,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Cameron Calhoun,LB,Defense - Second,DRAFT,SF,2025 Draft Pick #203,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Marcus Belton,S,Defense - Secondary,DRAFT,SF,2025 Draft Pick #235,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3400000,850000.0,Rookie/Minimum,2025-06-02,2025
-Robert Saleh,DC,Coaching,NYJ,SF,Coaching Hire,7.0,9.0,2.0,0.0,,0.0,Negative,0.0,9.5,3,12000000,4000000.0,Role Player,2025-06-02,2025
-Darren Rizzi,ST_COACH,Other,NO,Den,Coaching Hire,8.0,8.0,0.0,0.0,,0.0,Negative,7.0,7.5,3,4500000,1500000.0,Role Player,2025-06-02,2025
-Javonte Williams,RB,Offense - Skill,Den,Dal,Free Agent Loss,6.0,0.0,-6.0,55.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Al Golden,DC,Coaching,NOTRE_DAME,Cin,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.0,3,4500000,1500000.0,Role Player,2025-06-02,2025
-Sean Desai,SENIOR_DEF_ASST,Other,LAR,Cin,Coaching Hire,7.0,7.2,0.20000000000000018,0.0,,0.0,Negative,6.5,7.5,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
-Jerry Montgomery,DL_COACH,Other,GB,Cin,Coaching Hire,7.5,7.8,0.2999999999999998,0.0,,0.0,Negative,7.5,8.0,2,1200000,600000.0,Rookie/Minimum,2025-06-02,2025
-Lou Anarumo,DC,Coaching,Cin,FIRED,Coaching Departure,4.0,0.0,-4.0,0.0,,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
-Frank Pollack,OL_COACH,Other,Cin,FIRED,Coaching Departure,5.0,0.0,-5.0,0.0,,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Akeem Davis-Gaither,LB,Defense - Second,Cin,Ari,Free Agent Loss,6.8,0.0,-6.8,30.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Shemar Stewart,EDGE,Defense - Front,DRAFT,Cin,2025 Draft Pick #17,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,7.0,4,25200000,6300000.0,Starter,2025-06-02,2025
-Demetrius Knight Jr.,LB,Defense - Second,DRAFT,Cin,2025 Draft Pick #49,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,9800000,2450000.0,Role Player,2025-06-02,2025
-Dylan Fairchild,G,Offense - Line,DRAFT,Cin,2025 Draft Pick #81,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,5600000,1400000.0,Role Player,2025-06-02,2025
-Ryan Kelly,C,Offense - Line,Ind,RELEASED,Release,6.5,0.0,-6.5,85.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-E.J. Speed,LB,Defense - Second,Ind,FA,Free Agent Loss,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Julian Blackmon,S,Defense - Secondary,Ind,FA,Free Agent Loss,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Calvin Ridley,WR1,Offense - Skill,Ind,FA,Free Agent Loss,7.2,0.0,-7.2,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Josh Downs,WR2,Offense - Skill,Ind,FA,Free Agent Loss,7.0,0.0,-7.0,70.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Tyler Warren,TE,Offense - Skill,DRAFT,Ind,2025 Draft Pick #14,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,28500000,7125000.0,Starter,2025-06-02,2025
-Jake Tuimoloau,EDGE,Defense - Front,DRAFT,Ind,2025 Draft Pick #45,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,12500000,3125000.0,Role Player,2025-06-02,2025
-Chris Strausser,OL_COACH,Other,Hou,FIRED,Coaching Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Cole Popovich,OL_COACH,Other,Hou,Hou,Promotion,6.5,7.0,0.5,0.0,,0.0,Negative,6.0,7.0,2,2500000,1250000.0,Role Player,2025-06-02,2025
-Jayden Higgins,WR1,Offense - Skill,DRAFT,Hou,2025 Draft Pick #34,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,12800000,3200000.0,Role Player,2025-06-02,2025
-Aireontae Ersery,OT,Other,DRAFT,Hou,2025 Draft Pick #48,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,9200000,2300000.0,Role Player,2025-06-02,2025
-Jaylin Noel,WR3,Offense - Skill,DRAFT,Hou,2025 Draft Pick #79,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6100000,1525000.0,Role Player,2025-06-02,2025
-USC Smith,CB2,Defense - Secondary,DRAFT,Hou,2025 Draft Pick #124,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4600000,1150000.0,Role Player,2025-06-02,2025
-D.J. Marks,RB,Offense - Skill,DRAFT,Hou,2025 Draft Pick #156,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Bobby Slowik,OC,Coaching,Hou,FIRED,Coaching Change,6.0,0.0,-6.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Nick Caley,OC,Coaching,LAR,Hou,Coaching Hire,7.5,7.8,0.2999999999999998,0.0,,0.0,Negative,7.0,8.5,3,8000000,2666666.6666666665,Role Player,2025-06-02,2025
-Laremy Tunsil,LT,Offense - Line,Hou,Was,Trade,9.0,0.0,-9.0,100.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
-Kenyon Green,RG,Other,Hou,Phi,Trade,5.5,0.0,-5.5,70.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Shaq Mason,RG,Other,Hou,RELEASED,Release,5.2,0.0,-5.2,85.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Stefon Diggs,WR1,Offense - Skill,Hou,RELEASED,Release,6.8,0.0,-6.8,65.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Robert Woods,WR2,Offense - Skill,Hou,RELEASED,Release,6.0,0.0,-6.0,55.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Eric Murray,S,Defense - Secondary,Hou,FA,Free Agent Loss,6.5,0.0,-6.5,80.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Nick Westbrook-Ikhine,WR2,Offense - Skill,Ten,Mia,Free Agent Loss,6.5,0.0,-6.5,65.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Jerome Baker,LB,Defense - Second,Ten,FA,Free Agent Loss,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Mason Rudolph,QB,Offense - Skill,Ten,Pit,Free Agent Loss,6.0,0.0,-6.0,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Cam Ward,QB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #1,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,10.0,4,42000000,10500000.0,Starter,2025-06-02,2025
-Oluwafemi Oladejo,EDGE,Defense - Front,DRAFT,Ten,2025 Draft Pick #52,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.5,4,11200000,2800000.0,Role Player,2025-06-02,2025
-Kevin Winston Jr.,S,Defense - Secondary,DRAFT,Ten,2025 Draft Pick #82,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,7400000,1850000.0,Role Player,2025-06-02,2025
-Braylon Braxton,QB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #118,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,4,5600000,1400000.0,Role Player,2025-06-02,2025
-Kam Kinchens,S,Defense - Secondary,DRAFT,Ten,2025 Draft Pick #154,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,5200000,1300000.0,Role Player,2025-06-02,2025
-Derrick Henry,RB,Offense - Skill,Ten,Bal,Free Agent Loss,9.2,0.0,-9.2,85.0,Workhorse,0.0,Negative,10.0,0.0,0,0,0.0,,2025-06-02,2025
-Ryan Tannehill,QB,Offense - Skill,Ten,RETIRED,Retirement,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Jeffery Simmons,DT,Defense - Front,Ten,FA,Free Agent Loss,8.5,0.0,-8.5,85.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
-Harold Landry III,EDGE,Defense - Front,Ten,RELEASED,Release,6.8,0.0,-6.8,70.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Kenneth Murray Jr.,LB,Defense - Second,Ten,Hou,Trade,7.0,0.0,-7.0,80.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Lou Anarumo,DC,Coaching,Cin,Ind,Coaching Hire,6.5,7.5,1.0,0.0,,0.0,Negative,7.0,8.0,3,12000000,4000000.0,Role Player,2025-06-02,2025
-Raheem Morris,COACH,Coaching,LAR,Atl,Head Coach Hire,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.5,4,20000000,5000000.0,Role Player,2025-06-02,2025
-Jeff Ulbrich,COACH,Coaching,NYJ,Atl,Defensive Coordinator Hire,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,3,6000000,2000000.0,Role Player,2025-06-02,2025
-Arthur Smith,COACH,Coaching,Atl,FIRED,Coaching Departure,4.0,0.0,-4.0,0.0,,0.0,Negative,2.0,0.0,0,0,0.0,,2025-06-02,2025
-Grady Jarrett,DT,Defense - Front,Atl,RELEASED,Cap Casualty Release,7.8,0.0,-7.8,85.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-Drew Dalman,C,Offense - Line,Atl,Chi,Free Agent Loss,7.5,0.0,-7.5,95.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Jalon Walker,EDGE,Defense - Front,DRAFT,Atl,2025 Draft Pick #15,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.5,4,18500000,4625000.0,Role Player,2025-06-02,2025
-James Pearce Jr.,EDGE,Defense - Front,DRAFT,Atl,2025 Draft Pick #26 (Traded Up),0.0,7.2,7.2,0.0,,0.0,Negative,0.0,8.5,4,16000000,4000000.0,Role Player,2025-06-02,2025
-Lathan Ransom,S,Defense - Secondary,DRAFT,Car,2025 Draft Pick #158,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Kris Thornton,DT,Defense - Front,DRAFT,Jac,2025 Draft Pick #255,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Kyle Juszczyk,FB,Other,SF,RELEASED,Release,7.5,0.0,-7.5,40.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Javon Hargrave,DT,Defense - Front,SF,RELEASED,Release,7.8,0.0,-7.8,70.0,Starter,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Jordan Fuller,S,Defense - Secondary,Car,Atl,Free Agent Loss,6.5,0.0,-6.5,40.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Ian Thomas,TE,Offense - Skill,Car,LV,Free Agent Loss,6.0,0.0,-6.0,45.0,Rotational,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
-Diontae Johnson,WR,Other,Car,Bal,Trade,6.5,0.0,-6.5,65.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Jonathan Mingo,WR,Other,Car,Dal,Trade,5.5,0.0,-5.5,35.0,Rotational,0.0,Negative,4.0,0.0,0,0,0.0,,2025-06-02,2025
-Tetairoa McMillan,WR1,Offense - Skill,DRAFT,Car,2025 Draft Pick #8,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.5,4,35000000,8750000.0,Starter,2025-06-02,2025
-Nic Scourton,EDGE,Defense - Front,DRAFT,Car,2025 Draft Pick #51,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,9000000,2250000.0,Role Player,2025-06-02,2025
-Princely Umanmielen,EDGE,Defense - Front,DRAFT,Car,2025 Draft Pick #77,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,5500000,1375000.0,Role Player,2025-06-02,2025
-Trevor Etienne,RB,Offense - Skill,DRAFT,Car,2025 Draft Pick #124,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Shavon Revel Jr.,CB2,Defense - Secondary,DRAFT,Ind,2025 Draft Pick #80,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6800000,1700000.0,Role Player,2025-06-02,2025
-Anthony Gould,WR3,Offense - Skill,DRAFT,Ind,2025 Draft Pick #116,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,5200000,1300000.0,Role Player,2025-06-02,2025
-Matt Lee,C,Offense - Line,DRAFT,Ind,2025 Draft Pick #152,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,7.0,4,4600000,1150000.0,Role Player,2025-06-02,2025
-Kyren Lacy,WR3,Offense - Skill,DRAFT,Ind,2025 Draft Pick #190,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Cooper Flanagan,LB,Defense - Second,DRAFT,Ind,2025 Draft Pick #234,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Mitch Morse,C,Offense - Line,Jac,RETIRED,Retirement,7.0,0.0,-7.0,85.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Brandon Scherff,G,Offense - Line,Jac,FA,Free Agent Loss,6.8,0.0,-6.8,80.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Ronald Darby,CB1,Defense - Secondary,Jac,RELEASED,Release,6.5,0.0,-6.5,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Devin Duvernay,KR,Other,Jac,FA,Free Agent Loss,6.8,0.0,-6.8,30.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Gabe Davis,WR2,Offense - Skill,Jac,RELEASED,Release,5.8,0.0,-5.8,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Travis Hunter,WR1,Offense - Skill,DRAFT,Jac,2025 Draft Pick #2 (via trade),0.0,8.5,8.5,0.0,,0.0,Negative,0.0,10.0,4,49000000,12250000.0,Starter,2025-06-02,2025
-Wyatt Milum,OT,Other,DRAFT,Jac,2025 Draft Pick #104,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
-Jalen McLeod,LB,Defense - Second,DRAFT,Jac,2025 Draft Pick #200,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4800000,1200000.0,Role Player,2025-06-02,2025
-Matt House,DEF_ASST,Other,Jac,KC,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,6.0,7.5,2,2000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Christian Kirk,WR2,Offense - Skill,Jac,Hou,Trade,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Evan Engram,TE,Offense - Skill,Jac,RELEASED,Release,7.2,0.0,-7.2,80.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Mike Borgonzi,GM,Other,KC,Ten,Front Office Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.0,5,25000000,5000000.0,Role Player,2025-06-02,2025
-Ran Carthon,GM,Other,Ten,FIRED,Front Office Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Mason Graham,DT,Defense - Front,DRAFT,Cle,2025 Draft Pick #5,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,9.0,4,42000000,10500000.0,Starter,2025-06-02,2025
+Carson Schwesinger,LB,Defense - Second,DRAFT,Cle,2025 Draft Pick #33,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,12500000,3125000.0,Role Player,2025-06-02,2025
 Paulson Adebo,CB1,Defense - Secondary,NO,NYG,Free Agent Loss,7.8,0.0,-7.8,80.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
 Will Harris,S,Defense - Secondary,NO,Was,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
 Payton Turner,EDGE,Defense - Front,NO,Dal,Free Agent Loss,6.0,0.0,-6.0,40.0,Rotational,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
 Jamaal Williams,RB,Offense - Skill,NO,RELEASED,Released,6.5,0.0,-6.5,35.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
 Marshon Lattimore,CB1,Defense - Secondary,NO,Was,Trade,8.0,0.0,-8.0,70.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Jeremy Chinn,S,Defense - Secondary,Was,LV,Free Agent Loss,8.0,0.0,-8.0,94.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Dyami Brown,WR2,Offense - Skill,Was,Jac,Free Agent Loss,7.0,0.0,-7.0,44.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Olamide Zaccheaus,WR3,Offense - Skill,Was,Chi,Free Agent Loss,7.0,0.0,-7.0,60.0,Starter,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
-Daniel Jones,QB,Offense - Skill,NYG,RELEASED,Release,4.5,0.0,-4.5,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Dylan Roney,EDGE_COACH,Other,LAC,LAC,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,7.0,7.5,3,2000000,666666.6666666666,Rookie/Minimum,2025-06-02,2025
-Emeka Egbuka,WR2,Offense - Skill,DRAFT,TB,2025 Draft Pick #19,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,15500000,3875000.0,Role Player,2025-06-02,2025
-Benjamin Morrison,CB1,Defense - Secondary,DRAFT,TB,2025 Draft Pick #56,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.5,4,6800000,1700000.0,Role Player,2025-06-02,2025
-Jacob Parrish,CB2,Defense - Secondary,DRAFT,TB,2025 Draft Pick #87,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,4500000,1125000.0,Role Player,2025-06-02,2025
-David Walker,EDGE,Defense - Front,DRAFT,TB,2025 Draft Pick #124,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Elijah Roberts,EDGE,Defense - Front,DRAFT,TB,2025 Draft Pick #156,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Josh Grizzard,COACH,Coaching,TB,TB,Promotion to OC,7.5,8.0,0.5,0.0,,0.0,Negative,7.5,8.5,2,2000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-2026 1st Round Pick,DRAFT,Other,Atl,Hou,Draft Capital Trade,0.0,0.0,0.0,0.0,,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Chauncey Golston,EDGE,Defense - Front,Dal,NYG,Free Agent Loss,7.0,0.0,-7.0,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Xavier Watts,S,Defense - Secondary,DRAFT,Atl,2025 Draft Pick #88,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4800000,1200000.0,Role Player,2025-06-02,2025
-Billy Bowman Jr.,S,Defense - Secondary,DRAFT,Atl,2025 Draft Pick #142,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
-Dillon Johnson,RB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #189,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
-Marcus Ratcliffe,OT,Other,DRAFT,Ten,2025 Draft Pick #225,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,4400000,1100000.0,Role Player,2025-06-02,2025
-Quinshon Judkins,RB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #261,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Derrick Nnadi,DT,Defense - Front,KC,NYJ,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Tommy Townsend,P,Special Teams,KC,Hou,Free Agent Loss,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-Tershawn Wharton,DT,Defense - Front,KC,Car,Free Agent Loss,6.8,0.0,-6.8,50.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-D.J. Humphries,LT,Offense - Line,KC,SF,Free Agent Loss,6.0,0.0,-6.0,30.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-DeAndre Hopkins,WR1,Offense - Skill,KC,Bal,Free Agent Loss,7.2,0.0,-7.2,58.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
-L'Jarius Sneed,CB1,Defense - Secondary,KC,Ten,Trade,8.5,0.0,-8.5,90.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-Joe Thuney,LG,Other,KC,Chi,Trade,8.8,0.0,-8.8,95.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
-Josh Simmons,LT,Offense - Line,DRAFT,KC,2025 Draft Pick #32,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,15200000,3800000.0,Role Player,2025-06-02,2025
-Kenneth Gainwell,RB,Offense - Skill,Phi,Pit,Free Agent Loss,6.8,0.0,-6.8,25.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Justin Reid,S,Defense - Secondary,KC,NO,Free Agent Loss,8.0,0.0,-8.0,85.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Nick Allegretti,G,Offense - Line,KC,Was,Free Agent Loss,7.5,0.0,-7.5,60.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-James Gladstone,GM,Other,LAR,Jac,Front Office Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.5,5,30000000,6000000.0,Starter,2025-06-02,2025
-Tony Boselli,EVP,Other,RETIRED,Jac,Front Office Hire,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,3,15000000,5000000.0,Role Player,2025-06-02,2025
-Doug Pederson,HC,Coaching,Jac,FIRED,Coaching Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Abdul Carter,EDGE,Defense - Front,DRAFT,NYG,2025 Draft Pick #3,0.0,8.5,8.5,0.0,,0.0,Negative,0.0,9.5,4,45260000,11315000.0,Starter,2025-06-02,2025
-Darius Alexander,DT,Defense - Front,DRAFT,NYG,2025 Draft Pick #65,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,6500000,1625000.0,Role Player,2025-06-02,2025
-Cam Skattebo,RB,Offense - Skill,DRAFT,NYG,2025 Draft Pick #105,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
-Marcus Mbow,G,Offense - Line,DRAFT,NYG,2025 Draft Pick #154,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-Avonte Maddox,CB2,Defense - Secondary,Phi,Det,Free Agent Loss,7.0,0.0,-7.0,42.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Quincy Riley,CB2,Defense - Secondary,DRAFT,NO,2025 Draft Pick #131,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
-Azeez Ojulari,EDGE,Defense - Front,NYG,Phi,Free Agent Loss,7.2,0.0,-7.2,35.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Adoree Jackson,CB2,Defense - Secondary,NYG,Phi,Free Agent Loss,6.9,0.0,-6.9,65.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Isaiah Simmons,LB,Defense - Second,NYG,GB,Free Agent Loss,6.0,0.0,-6.0,17.0,Backup,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
-Drew Lock,QB,Offense - Skill,NYG,Sea,Free Agent Loss,5.5,0.0,-5.5,10.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
-Dennis Allen,COACH,Coaching,NO,Chi,Coaching Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-Kellen Moore,COACH,Coaching,Phi,NO,Coaching Hire,9.0,8.5,-0.5,0.0,,0.0,Negative,0.0,9.5,4,25000000,6250000.0,Starter,2025-06-02,2025
-Devin Neal,RB,Offense - Skill,DRAFT,NO,2025 Draft Pick #184,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
 Kelvin Banks Jr.,LT,Offense - Line,DRAFT,NO,2025 Draft Pick #9,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.5,4,33000000,8250000.0,Starter,2025-06-02,2025
 Tyler Shough,QB,Offense - Skill,DRAFT,NO,2025 Draft Pick #40,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,9.0,4,9500000,2375000.0,Role Player,2025-06-02,2025
 Vernon Broughton,DT,Defense - Front,DRAFT,NO,2025 Draft Pick #71,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,5800000,1450000.0,Role Player,2025-06-02,2025
+Zah Frazier,CB2,Defense - Secondary,DRAFT,Chi,2025 Draft Pick #151,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4300000,1075000.0,Role Player,2025-06-02,2025
+Luke Newman,G,Offense - Line,DRAFT,Chi,2025 Draft Pick #183,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Kyle Monangai,RB,Offense - Skill,DRAFT,Chi,2025 Draft Pick #247,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
+Ben Johnson,HC,Coaching,Det,Chi,Coaching Hire,9.5,9.5,0.0,0.0,,0.0,Negative,9.5,10.0,5,40000000,8000000.0,Starter,2025-06-02,2025
+Dennis Allen,DC,Coaching,NO,Chi,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,8.5,4,20000000,5000000.0,Role Player,2025-06-02,2025
+Declan Doyle,OC,Coaching,Den,Chi,Coaching Hire,6.5,7.5,1.0,0.0,,0.0,Negative,6.0,7.5,3,6000000,2000000.0,Role Player,2025-06-02,2025
+J.T. Barrett,QB_COACH,Other,OSU,Chi,Coaching Hire,6.0,7.0,1.0,0.0,,0.0,Negative,5.0,7.5,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
+Derek Carr,QB,Offense - Skill,NO,RETIRED,Retirement,7.5,0.0,-7.5,85.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Lou Anarumo,DC,Coaching,Cin,FIRED,Coaching Departure,4.0,0.0,-4.0,0.0,,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Frank Pollack,OL_COACH,Other,Cin,FIRED,Coaching Departure,5.0,0.0,-5.0,0.0,,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Marion Hobby,DL_COACH,Other,Cin,FIRED,Coaching Departure,5.0,0.0,-5.0,0.0,,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+James Bettcher,LB_COACH,Other,Cin,FIRED,Coaching Departure,5.0,0.0,-5.0,0.0,,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Rico Dowdle,RB,Offense - Skill,Dal,Car,Free Agent Loss,8.2,0.0,-8.2,75.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Ozzy Trapilo,LT,Offense - Line,DRAFT,Chi,2025 Draft Pick #56,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,8900000,2225000.0,Role Player,2025-06-02,2025
+Shemar Turner,DT,Defense - Front,DRAFT,Chi,2025 Draft Pick #62,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,7200000,1800000.0,Role Player,2025-06-02,2025
+Ruben Hyppolite II,LB,Defense - Second,DRAFT,Chi,2025 Draft Pick #118,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
+Demetrius Knight Jr.,LB,Defense - Second,DRAFT,Cin,2025 Draft Pick #49,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,9800000,2450000.0,Role Player,2025-06-02,2025
+Dylan Fairchild,G,Offense - Line,DRAFT,Cin,2025 Draft Pick #81,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,5600000,1400000.0,Role Player,2025-06-02,2025
+Barrett Carter,LB,Defense - Second,DRAFT,Cin,2025 Draft Pick #118,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
+Jalen Rivers,OL,Offense - Line,DRAFT,Cin,2025 Draft Pick #156,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Tahj Brooks,RB,Offense - Skill,DRAFT,Cin,2025 Draft Pick #189,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Al Golden,DC,Coaching,NOTRE_DAME,Cin,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.0,3,4500000,1500000.0,Role Player,2025-06-02,2025
+Sean Desai,SENIOR_DEF_ASST,Other,LAR,Cin,Coaching Hire,7.0,7.2,0.20000000000000018,0.0,,0.0,Negative,6.5,7.5,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
+Jerry Montgomery,DL_COACH,Other,GB,Cin,Coaching Hire,7.5,7.8,0.2999999999999998,0.0,,0.0,Negative,7.5,8.0,2,1200000,600000.0,Rookie/Minimum,2025-06-02,2025
+Garrett Bradbury,C,Offense - Line,Min,FA,Release (Post-June 1),6.0,0.0,-6.0,85.0,Workhorse,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Donovan Jackson,G,Offense - Line,DRAFT,Min,2025 Draft Pick #24,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,18500000,4625000.0,Role Player,2025-06-02,2025
+Tai Felton,WR2,Offense - Skill,DRAFT,Min,2025 Draft Pick #78,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,6800000,1700000.0,Role Player,2025-06-02,2025
+Kobe King,LB,Defense - Second,DRAFT,Min,2025 Draft Pick #185,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4100000,1025000.0,Role Player,2025-06-02,2025
+Kevin O'Connell,HC,Coaching,Min,Min,Extension,9.0,9.0,0.0,0.0,,0.0,Negative,10.0,10.0,5,35000000,7000000.0,Starter,2025-06-02,2025
+Kwesi Adofo-Mensah,GM,Other,Min,Min,Extension,8.5,8.5,0.0,0.0,,0.0,Negative,9.5,9.5,4,20000000,5000000.0,Role Player,2025-06-02,2025
+Teven Jenkins,G,Offense - Line,Chi,Cle,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Jack Sanborn,LB,Defense - Second,Chi,Dal,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Bobby Slowik,OC,Coaching,Hou,FIRED,Coaching Change,6.0,0.0,-6.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Nick Caley,OC,Coaching,LAR,Hou,Coaching Hire,7.5,7.8,0.2999999999999998,0.0,,0.0,Negative,7.0,8.5,3,8000000,2666666.6666666665,Role Player,2025-06-02,2025
+Chris Strausser,OL_COACH,Other,Hou,FIRED,Coaching Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Cole Popovich,OL_COACH,Other,Hou,Hou,Promotion,6.5,7.0,0.5,0.0,,0.0,Negative,6.0,7.0,2,2500000,1250000.0,Role Player,2025-06-02,2025
+Ryan Kelly,C,Offense - Line,Ind,RELEASED,Release,6.5,0.0,-6.5,85.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Sam Darnold,QB,Offense - Skill,Min,Sea,Free Agent Loss,8.2,0.0,-8.2,95.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Daniel Jones,QB,Offense - Skill,Min,Ind,Free Agent Loss,6.0,0.0,-6.0,10.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Nick Mullens,QB,Offense - Skill,Min,Jac,Free Agent Loss,5.5,0.0,-5.5,5.0,Backup,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Stefon Diggs,WR1,Offense - Skill,Hou,RELEASED,Release,6.8,0.0,-6.8,65.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Robert Woods,WR2,Offense - Skill,Hou,RELEASED,Release,6.0,0.0,-6.0,55.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Eric Murray,S,Defense - Secondary,Hou,FA,Free Agent Loss,6.5,0.0,-6.5,80.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Jayden Higgins,WR1,Offense - Skill,DRAFT,Hou,2025 Draft Pick #34,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,12800000,3200000.0,Role Player,2025-06-02,2025
+Aireontae Ersery,OT,Other,DRAFT,Hou,2025 Draft Pick #48,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.5,4,9200000,2300000.0,Role Player,2025-06-02,2025
+Jaylin Noel,WR3,Offense - Skill,DRAFT,Hou,2025 Draft Pick #79,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6100000,1525000.0,Role Player,2025-06-02,2025
+USC Smith,CB2,Defense - Secondary,DRAFT,Hou,2025 Draft Pick #124,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4600000,1150000.0,Role Player,2025-06-02,2025
+D.J. Marks,RB,Offense - Skill,DRAFT,Hou,2025 Draft Pick #156,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
 Jonas Sanker,S,Defense - Secondary,DRAFT,NO,2025 Draft Pick #93,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,7.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
 Danny Stutsman,LB,Defense - Second,DRAFT,NO,2025 Draft Pick #112,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Jaxson Dart,QB,Offense - Skill,DRAFT,NYG,2025 Draft Pick #25 (via trade),0.0,6.8,6.8,0.0,,0.0,Negative,0.0,9.0,4,16977000,4244250.0,Role Player,2025-06-02,2025
+Quincy Riley,CB2,Defense - Secondary,DRAFT,NO,2025 Draft Pick #131,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Devin Neal,RB,Offense - Skill,DRAFT,NO,2025 Draft Pick #184,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
+Chauncey Golston,EDGE,Defense - Front,Dal,NYG,Free Agent Loss,7.0,0.0,-7.0,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Laremy Tunsil,LT,Offense - Line,Hou,Was,Trade,9.0,0.0,-9.0,100.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
+Kenyon Green,RG,Other,Hou,Phi,Trade,5.5,0.0,-5.5,70.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Shaq Mason,RG,Other,Hou,RELEASED,Release,5.2,0.0,-5.2,85.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Oluwafemi Oladejo,EDGE,Defense - Front,DRAFT,Ten,2025 Draft Pick #52,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.5,4,11200000,2800000.0,Role Player,2025-06-02,2025
+Kevin Winston Jr.,S,Defense - Secondary,DRAFT,Ten,2025 Draft Pick #82,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,7400000,1850000.0,Role Player,2025-06-02,2025
+Braylon Braxton,QB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #118,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.0,4,5600000,1400000.0,Role Player,2025-06-02,2025
+Kam Kinchens,S,Defense - Secondary,DRAFT,Ten,2025 Draft Pick #154,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,5200000,1300000.0,Role Player,2025-06-02,2025
+Dillon Johnson,RB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #189,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
+Marcus Ratcliffe,OT,Other,DRAFT,Ten,2025 Draft Pick #225,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,4400000,1100000.0,Role Player,2025-06-02,2025
+Quinshon Judkins,RB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #261,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Mike Borgonzi,GM,Other,KC,Ten,Front Office Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.0,5,25000000,5000000.0,Role Player,2025-06-02,2025
+Ryan Tannehill,QB,Offense - Skill,Ten,RETIRED,Retirement,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Jeffery Simmons,DT,Defense - Front,Ten,FA,Free Agent Loss,8.5,0.0,-8.5,85.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
+Harold Landry III,EDGE,Defense - Front,Ten,RELEASED,Release,6.8,0.0,-6.8,70.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Kenneth Murray Jr.,LB,Defense - Second,Ten,Hou,Trade,7.0,0.0,-7.0,80.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Nick Westbrook-Ikhine,WR2,Offense - Skill,Ten,Mia,Free Agent Loss,6.5,0.0,-6.5,65.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Jerome Baker,LB,Defense - Second,Ten,FA,Free Agent Loss,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Mason Rudolph,QB,Offense - Skill,Ten,Pit,Free Agent Loss,6.0,0.0,-6.0,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Cam Ward,QB,Offense - Skill,DRAFT,Ten,2025 Draft Pick #1,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,10.0,4,42000000,10500000.0,Starter,2025-06-02,2025
+Jake Tuimoloau,EDGE,Defense - Front,DRAFT,Ind,2025 Draft Pick #45,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,12500000,3125000.0,Role Player,2025-06-02,2025
+Shavon Revel Jr.,CB2,Defense - Secondary,DRAFT,Ind,2025 Draft Pick #80,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6800000,1700000.0,Role Player,2025-06-02,2025
+Anthony Gould,WR3,Offense - Skill,DRAFT,Ind,2025 Draft Pick #116,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.5,4,5200000,1300000.0,Role Player,2025-06-02,2025
+Matt Lee,C,Offense - Line,DRAFT,Ind,2025 Draft Pick #152,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,7.0,4,4600000,1150000.0,Role Player,2025-06-02,2025
+Kyren Lacy,WR3,Offense - Skill,DRAFT,Ind,2025 Draft Pick #190,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Cooper Flanagan,LB,Defense - Second,DRAFT,Ind,2025 Draft Pick #234,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Lou Anarumo,DC,Coaching,Cin,Ind,Coaching Hire,6.5,7.5,1.0,0.0,,0.0,Negative,7.0,8.0,3,12000000,4000000.0,Role Player,2025-06-02,2025
+Derrick Henry,RB,Offense - Skill,Ten,Bal,Free Agent Loss,9.2,0.0,-9.2,85.0,Workhorse,0.0,Negative,10.0,0.0,0,0,0.0,,2025-06-02,2025
+Keenan Allen,WR1,Offense - Skill,Chi,FA,Free Agent Loss,6.0,0.0,-6.0,60.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Brandin Cooks,WR1,Offense - Skill,Dal,NO,Free Agent Loss,7.5,0.0,-7.5,80.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Luther Burden III,WR2,Offense - Skill,DRAFT,Chi,2025 Draft Pick #39,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,12800000,3200000.0,Role Player,2025-06-02,2025
+E.J. Speed,LB,Defense - Second,Ind,FA,Free Agent Loss,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Julian Blackmon,S,Defense - Secondary,Ind,FA,Free Agent Loss,6.5,0.0,-6.5,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Calvin Ridley,WR1,Offense - Skill,Ind,FA,Free Agent Loss,7.2,0.0,-7.2,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Josh Downs,WR2,Offense - Skill,Ind,FA,Free Agent Loss,7.0,0.0,-7.0,70.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Tyler Warren,TE,Offense - Skill,DRAFT,Ind,2025 Draft Pick #14,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,28500000,7125000.0,Starter,2025-06-02,2025
+Donovan Kaufman,S,Defense - Secondary,DRAFT,Det,2025 Draft Pick #101,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,5600000,1400000.0,Role Player,2025-06-02,2025
+Ahmed Hassanein,EDGE,Defense - Front,DRAFT,Det,2025 Draft Pick #188,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Connor Colby,TE,Offense - Skill,DRAFT,Det,2025 Draft Pick #214,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Isaiah Cross,WR3,Offense - Skill,DRAFT,Det,2025 Draft Pick #238,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
+John Morton,OC,Coaching,Det,Det,Promotion,8.0,8.5,0.5,0.0,,0.0,Negative,8.5,8.5,3,8000000,2666666.6666666665,Role Player,2025-06-02,2025
+Kelvin Sheppard,DC,Coaching,Det,Det,Promotion,7.5,8.0,0.5,0.0,,0.0,Negative,8.0,8.0,3,6000000,2000000.0,Role Player,2025-06-02,2025
+David Shaw,PASS_COORD,Other,Stanford,Det,Coaching Hire,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,7.5,2,3000000,1500000.0,Role Player,2025-06-02,2025
+Ronald Darby,CB1,Defense - Secondary,Jac,RELEASED,Release,6.5,0.0,-6.5,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Aaron Glenn,DC,Coaching,Det,NYJ,Coaching Loss,8.5,0.0,-8.5,0.0,,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Carlton Davis III,CB1,Defense - Secondary,Det,NE,Free Agent Loss,7.5,0.0,-7.5,80.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Za'Darius Smith,EDGE,Defense - Front,Det,RELEASED,Release,7.0,0.0,-7.0,60.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Kevin Zeitler,RG,Other,Det,Ten,Free Agent Loss,8.0,0.0,-8.0,90.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Ifeatu Melifonwu,S,Defense - Secondary,Det,Mia,Free Agent Loss,6.8,0.0,-6.8,55.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Tyleik Williams,DT,Defense - Front,DRAFT,Det,2025 Draft Pick #29,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,4,16200000,4050000.0,Role Player,2025-06-02,2025
+Tate Ratledge,RG,Other,DRAFT,Det,2025 Draft Pick #48,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,11400000,2850000.0,Role Player,2025-06-02,2025
+Isaac TeSlaa,WR2,Offense - Skill,DRAFT,Det,2025 Draft Pick #70,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,7000000,1750000.0,Role Player,2025-06-02,2025
+Barryn Sorrell,EDGE,Defense - Front,DRAFT,GB,2025 Draft Pick #122,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,4700000,1175000.0,Role Player,2025-06-02,2025
+Kalen DeBoer Jr.,S,Defense - Secondary,DRAFT,GB,2025 Draft Pick #155,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Marcus Mbow,G,Offense - Line,DRAFT,GB,2025 Draft Pick #187,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3900000,975000.0,Rookie/Minimum,2025-06-02,2025
+Connor Colby,TE,Offense - Skill,DRAFT,GB,2025 Draft Pick #221,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,3700000,925000.0,Rookie/Minimum,2025-06-02,2025
+Cam Johnson,LB,Defense - Second,DRAFT,GB,2025 Draft Pick #254,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
+DeMarcus Covington,DL_COACH,Other,NE,GB,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,8.0,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
+Luke Getsy,OFF_ASST,Other,LV,GB,Coaching Hire,6.5,7.5,1.0,0.0,,0.0,Negative,5.0,7.0,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
+Ben Johnson,OC,Coaching,Det,Chi,Coaching Loss,9.5,0.0,-9.5,0.0,,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
+Ran Carthon,GM,Other,Ten,FIRED,Front Office Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Cooper Rush,QB,Offense - Skill,Dal,Bal,Free Agent Loss,6.5,0.0,-6.5,15.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Christian Kirk,WR2,Offense - Skill,Jac,Hou,Trade,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Evan Engram,TE,Offense - Skill,Jac,RELEASED,Release,7.2,0.0,-7.2,80.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Mitch Morse,C,Offense - Line,Jac,RETIRED,Retirement,7.0,0.0,-7.0,85.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Brandon Scherff,G,Offense - Line,Jac,FA,Free Agent Loss,6.8,0.0,-6.8,80.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Anthony Belton,RT,Offense - Line,DRAFT,GB,2025 Draft Pick #56,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,8900000,2225000.0,Role Player,2025-06-02,2025
+Savion Williams,WR2,Offense - Skill,DRAFT,GB,2025 Draft Pick #89,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,6100000,1525000.0,Role Player,2025-06-02,2025
+Jeremy Chinn,S,Defense - Secondary,Was,LV,Free Agent Loss,8.0,0.0,-8.0,94.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Dyami Brown,WR2,Offense - Skill,Was,Jac,Free Agent Loss,7.0,0.0,-7.0,44.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Olamide Zaccheaus,WR3,Offense - Skill,Was,Chi,Free Agent Loss,7.0,0.0,-7.0,60.0,Starter,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Chuma Edoga,RT,Offense - Line,Dal,Jac,Free Agent Loss,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Josh Myers,C,Offense - Line,GB,NYJ,Free Agent Loss,6.8,0.0,-6.8,75.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+T.J. Slaton,DT,Defense - Front,GB,Cin,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Eric Stokes,CB2,Defense - Secondary,GB,LV,Free Agent Loss,4.5,0.0,-4.5,30.0,Rotational,0.0,Negative,4.0,0.0,0,0,0.0,,2025-06-02,2025
+AJ Dillon,RB,Offense - Skill,GB,Phi,Free Agent Loss,0.0,0.0,0.0,0.0,,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Derrick Nnadi,DT,Defense - Front,KC,NYJ,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Tommy Townsend,P,Special Teams,KC,Hou,Free Agent Loss,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Josh Conerly Jr.,RT,Offense - Line,DRAFT,Was,2025 Draft Pick #29,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,15680000,3920000.0,Role Player,2025-06-02,2025
+Trey Amos,CB1,Defense - Secondary,DRAFT,Was,2025 Draft Pick #61,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,8000000,2000000.0,Role Player,2025-06-02,2025
+Jaylin Lane,WR3,Offense - Skill,DRAFT,Was,2025 Draft Pick #128,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4500000,1125000.0,Role Player,2025-06-02,2025
+Tyler Booker,G,Offense - Line,DRAFT,Dal,2025 Draft Pick #12,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,28000000,7000000.0,Starter,2025-06-02,2025
+Tyre West,S,Defense - Secondary,DRAFT,Den,2025 Draft Pick #165,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Jonathan Allen,DT,Defense - Front,Was,Min,Free Agent Loss,5.0,0.0,-5.0,50.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Liam Coen,HC,Coaching,TB,Jac,Coaching Hire,8.0,8.5,0.5,0.0,,0.0,Negative,8.0,9.5,5,35000000,7000000.0,Starter,2025-06-02,2025
+James Gladstone,GM,Other,LAR,Jac,Front Office Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,9.5,5,30000000,6000000.0,Starter,2025-06-02,2025
+Tony Boselli,EVP,Other,RETIRED,Jac,Front Office Hire,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.0,3,15000000,5000000.0,Role Player,2025-06-02,2025
+Doug Pederson,HC,Coaching,Jac,FIRED,Coaching Change,4.0,0.0,-4.0,100.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Trent Baalke,GM,Other,Jac,FIRED,Front Office Change,3.5,0.0,-3.5,100.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Elijah Mitchell,RB,Offense - Skill,SF,KC,Free Agent Signing,0.0,6.5,6.5,0.0,,0.0,Negative,5.0,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
+Justin Reid,S,Defense - Secondary,KC,NO,Free Agent Loss,8.0,0.0,-8.0,85.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
+Nick Allegretti,G,Offense - Line,KC,Was,Free Agent Loss,7.5,0.0,-7.5,60.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Devin Duvernay,KR,Other,Jac,FA,Free Agent Loss,6.8,0.0,-6.8,30.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Gabe Davis,WR2,Offense - Skill,Jac,RELEASED,Release,5.8,0.0,-5.8,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Travis Hunter,WR1,Offense - Skill,DRAFT,Jac,2025 Draft Pick #2 (via trade),0.0,8.5,8.5,0.0,,0.0,Negative,0.0,10.0,4,49000000,12250000.0,Starter,2025-06-02,2025
+Wyatt Milum,OT,Other,DRAFT,Jac,2025 Draft Pick #104,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
+Colston Loveland,TE,Offense - Skill,DRAFT,Chi,2025 Draft Pick #10,0.0,7.8,7.8,0.0,,0.0,Negative,0.0,8.5,4,28500000,7125000.0,Starter,2025-06-02,2025
+Javon Baker,WR3,Offense - Skill,DRAFT,Jac,2025 Draft Pick #220,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,4400000,1100000.0,Role Player,2025-06-02,2025
+Joshua Mickens,S,Defense - Secondary,DRAFT,Jac,2025 Draft Pick #240,0.0,5.5,5.5,0.0,,0.0,Negative,0.0,5.5,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Kris Thornton,DT,Defense - Front,DRAFT,Jac,2025 Draft Pick #255,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,5.5,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Cooper Kupp,WR1,Offense - Skill,LAR,Sea,Release/Free Agent Loss,6.8,0.0,-6.8,60.0,Starter,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Christian Rozeboom,LB,Defense - Second,LAR,FA,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Jake Hummel,LB,Defense - Second,LAR,Bal,Free Agent Loss,6.0,0.0,-6.0,15.0,Backup,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Jonah Jackson,G,Offense - Line,LAR,Chi,Trade,5.5,0.0,-5.5,80.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Terrance Ferguson,TE,Offense - Skill,DRAFT,LAR,2025 Draft Pick #58 (via ATL trade),0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.5,4,9500000,2375000.0,Role Player,2025-06-02,2025
+Josaiah Stewart,EDGE,Defense - Front,DRAFT,LAR,2025 Draft Pick #87,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
+Jarquez Hunter,RB,Offense - Skill,DRAFT,LAR,2025 Draft Pick #118,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,7.5,4,5100000,1275000.0,Role Player,2025-06-02,2025
+Andrew Mukuba,S,Defense - Secondary,DRAFT,Phi,2025 Draft Pick #45,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,8500000,2125000.0,Role Player,2025-06-02,2025
+Josh Sweat,EDGE,Defense - Front,Phi,Ari,Free Agent Loss,8.5,0.0,-8.5,59.0,Starter,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Caleb Lohner,TE,Offense - Skill,DRAFT,Den,2025 Draft Pick #238,0.0,5.8,5.8,0.0,,0.0,Negative,0.0,6.0,4,3200000,800000.0,Rookie/Minimum,2025-06-02,2025
 Omarr Norman-Lott,DT,Defense - Front,DRAFT,KC,2025 Draft Pick #63,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,8100000,2025000.0,Role Player,2025-06-02,2025
-Ashton Gillotte,EDGE,Defense - Front,DRAFT,KC,2025 Draft Pick #66,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,7800000,1950000.0,Role Player,2025-06-02,2025
-Nohl Williams,CB2,Defense - Secondary,DRAFT,KC,2025 Draft Pick #85,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
-Jalen Royals,WR2,Offense - Skill,DRAFT,KC,2025 Draft Pick #133,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
-Jeffrey Bassa,LB,Defense - Second,DRAFT,KC,2025 Draft Pick #156,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
-Brashard Smith,RB,Offense - Skill,DRAFT,KC,2025 Draft Pick #228,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
-C.J. Gardner-Johnson,S,Defense - Secondary,Phi,Hou,Trade,8.0,0.0,-8.0,85.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Chris Orr,DEF_QC,Other,JSU,KC,Coaching Hire,6.5,7.0,0.5,0.0,,0.0,Negative,5.0,6.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
-Pete Carroll,HC,Coaching,RETIRED,LV,Coaching Hire,0.0,9.0,9.0,0.0,,0.0,Negative,0.0,10.0,3,25000000,8333333.333333333,Starter,2025-06-02,2025
-Chip Kelly,OC,Coaching,UCLA,LV,Coaching Hire,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,3,8000000,2666666.6666666665,Role Player,2025-06-02,2025
-Patrick Graham,DC,Coaching,LV,LV,Coaching Retention,7.0,7.5,0.5,0.0,,0.0,Negative,7.5,7.5,2,5000000,2500000.0,Role Player,2025-06-02,2025
-Brennan Carroll,RB_COACH,Other,SEATTLE,LV,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,7.0,8.5,3,2500000,833333.3333333334,Rookie/Minimum,2025-06-02,2025
+Ryan Grubb,OC,Coaching,Sea,FIRED,Coaching Dismissal,6.5,0.0,-6.5,0.0,,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Klint Kubiak,OC,Coaching,NO,Sea,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,6.5,9.0,3,9000000,3000000.0,Role Player,2025-06-02,2025
+John Benton,OL_COACH,Other,NO,Sea,Coaching Hire,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,8.0,2,3000000,1500000.0,Role Player,2025-06-02,2025
+Rick Dennison,RUN_GAME_COORD,Other,NO,Sea,Coaching Hire,7.0,7.5,0.5,0.0,,0.0,Negative,6.0,8.0,2,2500000,1250000.0,Role Player,2025-06-02,2025
+Multiple Defensive UDFAs,DEPTH,Other,COLLEGE,Sea,UDFA Signings (11 defensive players),0.0,5.5,5.5,0.0,,0.0,Negative,0.0,6.0,3,15000000,5000000.0,Role Player,2025-06-02,2025
+Nate Hobbs,CB2,Defense - Secondary,LV,GB,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Aidan O'Connell,QB,Offense - Skill,LV,RELEASED,Cut,5.5,0.0,-5.5,40.0,Rotational,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
 Ashton Jeanty,RB,Offense - Skill,DRAFT,LV,2025 Draft Pick #6,0.0,8.5,8.5,0.0,,0.0,Negative,0.0,9.5,4,38500000,9625000.0,Starter,2025-06-02,2025
 Jack Bech,WR2,Offense - Skill,DRAFT,LV,2025 Draft Pick #42,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,12800000,3200000.0,Role Player,2025-06-02,2025
 Darien Porter,CB1,Defense - Secondary,DRAFT,LV,2025 Draft Pick #65,0.0,7.2,7.2,0.0,,0.0,Negative,0.0,8.0,4,8200000,2050000.0,Role Player,2025-06-02,2025
 Charles Grant,OT,Other,DRAFT,LV,2025 Draft Pick #78,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6800000,1700000.0,Role Player,2025-06-02,2025
 Caleb Rogers,G,Offense - Line,DRAFT,LV,2025 Draft Pick #89,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
 Dont'e Thornton Jr.,WR3,Offense - Skill,DRAFT,LV,2025 Draft Pick #115,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,4800000,1200000.0,Role Player,2025-06-02,2025
-Oren Burks,LB,Defense - Second,Phi,Cin,Free Agent Loss,7.5,0.0,-7.5,14.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Milton Williams,DT,Defense - Front,Phi,NE,Free Agent Loss,8.2,0.0,-8.2,48.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Derek Carr,QB,Offense - Skill,NO,RETIRED,Retirement,7.5,0.0,-7.5,85.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-Trent Baalke,GM,Other,Jac,FIRED,Front Office Change,3.5,0.0,-3.5,100.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Tyler Booker,G,Offense - Line,DRAFT,Dal,2025 Draft Pick #12,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,28000000,7000000.0,Starter,2025-06-02,2025
-Josh Sweat,EDGE,Defense - Front,Phi,Ari,Free Agent Loss,8.5,0.0,-8.5,59.0,Starter,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
-A.J. Dillon,RB,Offense - Skill,GB,Phi,Free Agent Signing,0.0,6.5,6.5,0.0,,0.0,Negative,3.0,5.0,1,1100000,1100000.0,Role Player,2025-06-02,2025
-Elijah Mitchell,RB,Offense - Skill,SF,KC,Free Agent Signing,0.0,6.5,6.5,0.0,,0.0,Negative,5.0,6.5,1,2500000,2500000.0,Role Player,2025-06-02,2025
-John Spytek,GM,Other,TB,LV,Front Office Hire,8.5,8.5,0.0,0.0,,0.0,Negative,8.0,9.5,4,12000000,3000000.0,Role Player,2025-06-02,2025
-DeMarcus Lawrence,EDGE,Defense - Front,Dal,Sea,Free Agent Loss,6.0,0.0,-6.0,25.0,Backup,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Jourdan Lewis,CB2,Defense - Secondary,Dal,Jac,Free Agent Loss,8.0,0.0,-8.0,85.0,Workhorse,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
-Rico Dowdle,RB,Offense - Skill,Dal,Car,Free Agent Loss,8.2,0.0,-8.2,75.0,Starter,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Andrew Mukuba,S,Defense - Secondary,DRAFT,Phi,2025 Draft Pick #45,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,8500000,2125000.0,Role Player,2025-06-02,2025
-Zach Wilson,QB,Offense - Skill,Den,Mia,Free Agent Loss,5.5,0.0,-5.5,20.0,Backup,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
-Riley Dixon,P,Special Teams,Den,TB,Free Agent Loss,7.0,0.0,-7.0,100.0,Workhorse,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Tremon Smith,S,Defense - Secondary,Den,Hou,Free Agent Loss,6.5,0.0,-6.5,30.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Jahdae Barron,CB1,Defense - Secondary,DRAFT,Den,2025 Draft Pick #20,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,22500000,5625000.0,Starter,2025-06-02,2025
-RJ Harvey,RB,Offense - Skill,DRAFT,Den,2025 Draft Pick #60,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,8500000,2125000.0,Role Player,2025-06-02,2025
-Pat Bryant,WR2,Offense - Skill,DRAFT,Den,2025 Draft Pick #85,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,8.0,4,6800000,1700000.0,Role Player,2025-06-02,2025
-Trikweze Bridges,CB2,Defense - Secondary,DRAFT,LAC,2025 Draft Pick #256,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,5.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
-Jihaad Campbell,LB,Defense - Second,DRAFT,Phi,2025 Draft Pick #31,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,12000000,3000000.0,Role Player,2025-06-02,2025
-Tre'von Moehrig,S,Defense - Secondary,LV,Car,Free Agent Loss,7.0,0.0,-7.0,85.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Robert Spillane,LB,Defense - Second,LV,NE,Free Agent Loss,7.5,0.0,-7.5,90.0,Workhorse,0.0,Negative,8.5,0.0,0,0,0.0,,2025-06-02,2025
-Nate Hobbs,CB2,Defense - Secondary,LV,GB,Free Agent Loss,7.0,0.0,-7.0,75.0,Starter,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Aidan O'Connell,QB,Offense - Skill,LV,RELEASED,Cut,5.5,0.0,-5.5,40.0,Rotational,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Chris Paul Jr.,LB,Defense - Second,DRAFT,LAR,2025 Draft Pick #147,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,4500000,1125000.0,Role Player,2025-06-02,2025
+Darren Rizzi,ST_COACH,Other,NO,Den,Coaching Hire,8.0,8.0,0.0,0.0,,0.0,Negative,7.0,7.5,3,4500000,1500000.0,Role Player,2025-06-02,2025
 Davis Webb,QB_COACH,Other,Den,Den,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,7.0,8.0,2,2000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 Jim Leonhard,DB_COACH,Other,Den,Den,Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,7.0,7.5,2,1800000,900000.0,Rookie/Minimum,2025-06-02,2025
 Reed Burckhardt,AGM,Other,Den,Den,Promotion,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.0,3,3000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 Jordan Dizon,SCOUT,Other,Phi,Den,Front Office Hire,7.5,7.5,0.0,0.0,,0.0,Negative,6.5,6.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
-Donovan Ezeiruaku,EDGE,Defense - Front,DRAFT,Dal,2025 Draft Pick #44,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,8500000,2125000.0,Role Player,2025-06-02,2025
+Tre'von Moehrig,S,Defense - Secondary,LV,Car,Free Agent Loss,7.0,0.0,-7.0,85.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Darius Slay,CB1,Defense - Secondary,Phi,RELEASED,Post-June 1 Cut,7.8,0.0,-7.8,80.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
+Isaiah Simmons,LB,Defense - Second,NYG,GB,Free Agent Loss,6.0,0.0,-6.0,17.0,Backup,0.0,Negative,5.0,0.0,0,0,0.0,,2025-06-02,2025
+Drew Lock,QB,Offense - Skill,NYG,Sea,Free Agent Loss,5.5,0.0,-5.5,10.0,Backup,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+Jason Pinnock,S,Defense - Secondary,NYG,SF,Free Agent Loss,6.2,0.0,-6.2,55.0,Starter,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Daniel Jones,QB,Offense - Skill,NYG,RELEASED,Release,4.5,0.0,-4.5,60.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+Jaxson Dart,QB,Offense - Skill,DRAFT,NYG,2025 Draft Pick #25 (via trade),0.0,6.8,6.8,0.0,,0.0,Negative,0.0,9.0,4,16977000,4244250.0,Role Player,2025-06-02,2025
+Abdul Carter,EDGE,Defense - Front,DRAFT,NYG,2025 Draft Pick #3,0.0,8.5,8.5,0.0,,0.0,Negative,0.0,9.5,4,45260000,11315000.0,Starter,2025-06-02,2025
+Darius Alexander,DT,Defense - Front,DRAFT,NYG,2025 Draft Pick #65,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,6500000,1625000.0,Role Player,2025-06-02,2025
+Brandon Graham,EDGE,Defense - Front,Phi,RETIRED,Retirement,7.5,0.0,-7.5,45.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
 Shavon Revel Jr.,CB1,Defense - Secondary,DRAFT,Dal,2025 Draft Pick #76,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,5500000,1375000.0,Role Player,2025-06-02,2025
 Jaydon Blue,RB,Offense - Skill,DRAFT,Dal,2025 Draft Pick #149,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.0,4,4000000,1000000.0,Rookie/Minimum,2025-06-02,2025
 Shemar James,LB,Defense - Second,DRAFT,Dal,2025 Draft Pick #152,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
 Brian Schottenheimer,COACH,Coaching,PROMOTION,Dal,Head Coach Promotion,7.0,7.5,0.5,0.0,,0.0,Negative,0.0,9.0,4,0,0.0,,2025-06-02,2025
 Matt Eberflus,COACH,Coaching,Chi,Dal,Defensive Coordinator Hire,6.5,8.0,1.5,0.0,,0.0,Negative,0.0,8.5,3,0,0.0,,2025-06-02,2025
-Brandin Cooks,WR1,Offense - Skill,Dal,NO,Free Agent Loss,7.5,0.0,-7.5,80.0,Workhorse,0.0,Negative,7.5,0.0,0,0,0.0,,2025-06-02,2025
-Cooper Rush,QB,Offense - Skill,Dal,Bal,Free Agent Loss,6.5,0.0,-6.5,15.0,Backup,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Chuma Edoga,RT,Offense - Line,Dal,Jac,Free Agent Loss,6.0,0.0,-6.0,50.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Denzel Burke,CB2,Defense - Secondary,DRAFT,Ari,2025 Draft Pick #167,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,3700000,925000.0,Rookie/Minimum,2025-06-02,2025
-Hayden Conner,G,Offense - Line,DRAFT,Ari,2025 Draft Pick #172,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,3600000,900000.0,Rookie/Minimum,2025-06-02,2025
-Kitan Crawford,DEPTH,Other,DRAFT,Ari,2025 Draft Pick #248,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,3500000,875000.0,Rookie/Minimum,2025-06-02,2025
-Roy Lopez,DT,Defense - Front,Ari,FA,Free Agent Loss,6.5,0.0,-6.5,45.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
-Khyiris Tonga,DT,Defense - Front,Ari,Car,Free Agent Loss,6.8,0.0,-6.8,40.0,Rotational,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
-Walter Nolen III,DT,Defense - Front,DRAFT,Ari,2025 Draft Pick #16,0.0,8.0,8.0,0.0,,0.0,Negative,0.0,9.0,4,18500000,4625000.0,Role Player,2025-06-02,2025
-Brandon Graham,EDGE,Defense - Front,Phi,RETIRED,Retirement,7.5,0.0,-7.5,45.0,Rotational,0.0,Negative,8.0,0.0,0,0,0.0,,2025-06-02,2025
+Oronde Gadsden II,TE,Offense - Skill,DRAFT,LAC,Draft Trade Up (5th Round),0.0,6.5,6.5,0.0,,0.0,Negative,0.0,7.0,4,4100000,1025000.0,Role Player,2025-06-02,2025
+Azeez Ojulari,EDGE,Defense - Front,NYG,Phi,Free Agent Loss,7.2,0.0,-7.2,35.0,Rotational,0.0,Negative,6.0,0.0,0,0,0.0,,2025-06-02,2025
+Adoree Jackson,CB2,Defense - Secondary,NYG,Phi,Free Agent Loss,6.9,0.0,-6.9,65.0,Starter,0.0,Negative,6.5,0.0,0,0,0.0,,2025-06-02,2025
+Ashton Gillotte,EDGE,Defense - Front,DRAFT,KC,2025 Draft Pick #66,0.0,7.0,7.0,0.0,,0.0,Negative,0.0,7.5,4,7800000,1950000.0,Role Player,2025-06-02,2025
+Nohl Williams,CB2,Defense - Secondary,DRAFT,KC,2025 Draft Pick #85,0.0,6.8,6.8,0.0,,0.0,Negative,0.0,7.0,4,6200000,1550000.0,Role Player,2025-06-02,2025
+Jalen Royals,WR2,Offense - Skill,DRAFT,KC,2025 Draft Pick #133,0.0,6.5,6.5,0.0,,0.0,Negative,0.0,6.5,4,4800000,1200000.0,Role Player,2025-06-02,2025
+Jeffrey Bassa,LB,Defense - Second,DRAFT,KC,2025 Draft Pick #156,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4200000,1050000.0,Role Player,2025-06-02,2025
+Brashard Smith,RB,Offense - Skill,DRAFT,KC,2025 Draft Pick #228,0.0,6.2,6.2,0.0,,0.0,Negative,0.0,6.0,4,3800000,950000.0,Rookie/Minimum,2025-06-02,2025
+Matt House,DEF_ASST,Other,Jac,KC,Coaching Hire,7.5,8.0,0.5,0.0,,0.0,Negative,6.0,7.5,2,2000000,1000000.0,Rookie/Minimum,2025-06-02,2025
+Chris Orr,DEF_QC,Other,JSU,KC,Coaching Hire,6.5,7.0,0.5,0.0,,0.0,Negative,5.0,6.5,2,800000,400000.0,Rookie/Minimum,2025-06-02,2025
+Donovan Ezeiruaku,EDGE,Defense - Front,DRAFT,Dal,2025 Draft Pick #44,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,8500000,2125000.0,Role Player,2025-06-02,2025
+Matthew Golden,WR1,Offense - Skill,DRAFT,GB,2025 Draft Pick #23,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,17800000,4450000.0,Role Player,2025-06-02,2025
+Tershawn Wharton,DT,Defense - Front,KC,Car,Free Agent Loss,6.8,0.0,-6.8,50.0,Rotational,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+D.J. Humphries,LT,Offense - Line,KC,SF,Free Agent Loss,6.0,0.0,-6.0,30.0,Rotational,0.0,Negative,5.5,0.0,0,0,0.0,,2025-06-02,2025
+DeAndre Hopkins,WR1,Offense - Skill,KC,Bal,Free Agent Loss,7.2,0.0,-7.2,58.0,Starter,0.0,Negative,7.0,0.0,0,0,0.0,,2025-06-02,2025
+L'Jarius Sneed,CB1,Defense - Secondary,KC,Ten,Trade,8.5,0.0,-8.5,90.0,Workhorse,0.0,Negative,9.0,0.0,0,0,0.0,,2025-06-02,2025
+Joe Thuney,LG,Other,KC,Chi,Trade,8.8,0.0,-8.8,95.0,Workhorse,0.0,Negative,9.5,0.0,0,0,0.0,,2025-06-02,2025
+Josh Simmons,LT,Offense - Line,DRAFT,KC,2025 Draft Pick #32,0.0,7.5,7.5,0.0,,0.0,Negative,0.0,8.5,4,15200000,3800000.0,Role Player,2025-06-02,2025
+Jalen McLeod,LB,Defense - Second,DRAFT,Jac,2025 Draft Pick #200,0.0,6.0,6.0,0.0,,0.0,Negative,0.0,6.0,4,4800000,1200000.0,Role Player,2025-06-02,2025

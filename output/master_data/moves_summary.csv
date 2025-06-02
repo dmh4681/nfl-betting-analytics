@@ -1,9 +1,9 @@
 move_type,total_moves,avg_impact,total_impact,avg_contract_value,total_contract_value,avg_2024_grade,avg_projected_grade,top_player,top_impact
-Free Agent Signing,190,0.44578947368421046,84.69999999999999,13062921.05263158,2481955000,6.598421052631578,6.921052631578948,Sam Darnold,2.42
-Extension,43,0.9148837209302325,39.339999999999996,55688139.53488372,2394590000,8.023255813953488,8.051162790697672,Brock Purdy,2.5
-Re-signing,62,0.44209677419354837,27.41,10566241.935483871,655107000,6.861290322580646,7.001612903225807,L'Jarius Sneed,1.44
+Free Agent Signing,205,0.4525365853658537,92.77000000000001,14708804.878048781,3015305000,6.640487804878049,6.97609756097561,Sam Darnold,2.42
+Extension,54,0.9711111111111109,52.43999999999999,60890555.55555555,3288090000,8.112962962962962,8.148148148148147,Jordan Love,2.5
+Re-signing,65,0.4455384615384615,28.959999999999997,10744723.076923076,698407000,6.907692307692308,7.035384615384616,L'Jarius Sneed,1.44
+Trade,40,0.256,10.24,10126250.0,405050000,7.014999999999999,3.1424999999999996,Laremy Tunsil,2.0
 Contract Extension,10,0.9470000000000001,9.47,50600000.0,506000000,8.2,8.28,A.J. Terrell,1.38
-Trade,36,0.2525,9.09,8209722.222222222,295550000,6.958333333333333,2.647222222222222,Laremy Tunsil,2.0
 Restructure,2,1.32,2.64,26750000.0,53500000,7.5,7.550000000000001,Matthew Stafford,2.5
 Trade + Extension,1,2.5,2.5,85500000.0,85500000,8.0,8.2,Geno Smith,2.5
 Free Agent Pursuit,1,2.0,2.0,30000000.0,30000000,6.0,7.0,Aaron Rodgers,2.0
@@ -17,102 +17,125 @@ Matched Offer Sheet,1,0.61,0.61,13500000.0,13500000,7.2,7.5,Christian Elliss,0.6
 RFA Tender,2,0.285,0.57,4573000.0,9146000,6.85,7.15,Jaylen Warren,0.36
 Extension (Pending),1,0.54,0.54,108000000.0,108000000,9.5,9.3,T.J. Watt,0.54
 Franchise Tag,1,0.53,0.53,23400000.0,23400000,8.8,8.8,Trey Smith,0.53
+5th Year Option,1,0.46,0.46,13920000.0,13920000,7.5,7.8,Devonte Wyatt,0.46
 Rookie Transition to Starter,1,0.31,0.31,12000000.0,12000000,6.5,7.5,Michael Penix Jr.,0.31
-Post-June 1 Cut,4,0.0,0.0,0.0,0,6.825,0.0,Darius Slay,0.0
-2025 Draft Pick #12,1,0.0,0.0,28000000.0,28000000,0.0,8.0,Tyler Booker,0.0
-2025 Draft Pick #44,1,0.0,0.0,8500000.0,8500000,0.0,7.5,Donovan Ezeiruaku,0.0
+2025 Draft Pick #65,2,0.0,0.0,7350000.0,14700000,0.0,7.1,Darius Alexander,0.0
+2025 Draft Pick #3,1,0.0,0.0,45260000.0,45260000,0.0,8.5,Abdul Carter,0.0
+Defensive Coordinator Hire,4,0.0,0.0,7000000.0,28000000,5.25,7.775,Matt Eberflus,0.0
 2025 Draft Pick #152,2,0.0,0.0,4200000.0,8400000,0.0,6.35,Shemar James,0.0
 2025 Draft Pick #149,1,0.0,0.0,4000000.0,4000000,0.0,6.5,Jaydon Blue,0.0
-2025 Draft Pick #76,1,0.0,0.0,5500000.0,5500000,0.0,7.0,Shavon Revel Jr.,0.0
-2025 Draft Pick #61,1,0.0,0.0,8000000.0,8000000,0.0,7.0,Trey Amos,0.0
-2025 Draft Pick #25 (via trade),1,0.0,0.0,16977000.0,16977000,0.0,6.8,Jaxson Dart,0.0
-2025 Draft Pick #3,1,0.0,0.0,45260000.0,45260000,0.0,8.5,Abdul Carter,0.0
-2025 Draft Pick #65,2,0.0,0.0,7350000.0,14700000,0.0,7.1,Darius Alexander,0.0
-Release,20,0.0,0.0,0.0,0,6.5200000000000005,0.0,Daniel Jones,0.0
-2025 Draft Pick #40,1,0.0,0.0,9500000.0,9500000,0.0,7.5,Tyler Shough,0.0
-2025 Draft Pick #9,1,0.0,0.0,33000000.0,33000000,0.0,8.0,Kelvin Banks Jr.,0.0
-Released,3,0.0,0.0,0.0,0,6.166666666666667,0.0,Jamaal Williams,0.0
+Head Coach Promotion,1,0.0,0.0,0.0,0,7.0,7.5,Brian Schottenheimer,0.0
+Post-June 1 Cut,4,0.0,0.0,0.0,0,6.825,0.0,Darius Slay,0.0
+Retirement,7,0.0,0.0,0.0,0,7.042857142857143,0.0,Brandon Graham,0.0
+2025 Draft Pick #112,2,0.0,0.0,4200000.0,8400000,0.0,7.15,Ty Robinson,0.0
+2025 Draft Pick #12,1,0.0,0.0,28000000.0,28000000,0.0,8.0,Tyler Booker,0.0
+2025 Draft Pick #45,2,0.0,0.0,10500000.0,21000000,0.0,7.0,Andrew Mukuba,0.0
+2025 Draft Pick #89,2,0.0,0.0,6150000.0,12300000,0.0,6.65,Savion Williams,0.0
+2025 Draft Pick #56,3,0.0,0.0,8200000.0,24600000,0.0,6.833333333333333,Anthony Belton,0.0
+2025 Draft Pick #23,1,0.0,0.0,17800000.0,17800000,0.0,7.5,Matthew Golden,0.0
 2025 Draft Pick #128,2,0.0,0.0,4500000.0,9000000,0.0,6.25,Jaylin Lane,0.0
+2025 Draft Pick #122,1,0.0,0.0,4700000.0,4700000,0.0,7.0,Barryn Sorrell,0.0
+2025 Draft Pick #155,1,0.0,0.0,4200000.0,4200000,0.0,6.5,Kalen DeBoer Jr.,0.0
+2025 Draft Pick #187,1,0.0,0.0,3900000.0,3900000,0.0,6.0,Marcus Mbow,0.0
+2025 Draft Pick #221,1,0.0,0.0,3700000.0,3700000,0.0,6.2,Connor Colby,0.0
+2025 Draft Pick #70,1,0.0,0.0,7000000.0,7000000,0.0,6.8,Isaac TeSlaa,0.0
+2025 Draft Pick #101,1,0.0,0.0,5600000.0,5600000,0.0,6.5,Donovan Kaufman,0.0
+2025 Draft Pick #188,2,0.0,0.0,4000000.0,8000000,0.0,6.5,Ahmed Hassanein,0.0
+2025 Draft Pick #214,2,0.0,0.0,3800000.0,7600000,0.0,6.1,Connor Colby,0.0
+2025 Draft Pick #254,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Cam Johnson,0.0
+Coaching Hire,36,0.0,0.0,6997222.222222222,251900000,5.902777777777778,7.772222222222222,DeMarcus Covington,0.0
+Coaching Loss,3,0.0,0.0,0.0,0,8.833333333333334,0.0,Ben Johnson,0.0
+2025 Draft Pick #48,2,0.0,0.0,10300000.0,20600000,0.0,7.3,Tate Ratledge,0.0
+2025 Draft Pick #78,2,0.0,0.0,6800000.0,13600000,0.0,6.75,Tai Felton,0.0
+2025 Draft Pick #185,2,0.0,0.0,4000000.0,8000000,0.0,6.15,Kobe King,0.0
+2025 Draft Pick #10,1,0.0,0.0,28500000.0,28500000,0.0,7.8,Colston Loveland,0.0
+2025 Draft Pick #39,1,0.0,0.0,12800000.0,12800000,0.0,7.5,Luther Burden III,0.0
+2025 Draft Pick #62,1,0.0,0.0,7200000.0,7200000,0.0,6.8,Shemar Turner,0.0
+2025 Draft Pick #118,4,0.0,0.0,5000000.0,20000000,0.0,6.3,Ruben Hyppolite II,0.0
+2025 Draft Pick #151,1,0.0,0.0,4300000.0,4300000,0.0,6.5,Zah Frazier,0.0
+2025 Draft Pick #183,1,0.0,0.0,4000000.0,4000000,0.0,6.2,Luke Newman,0.0
+2025 Draft Pick #247,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Kyle Monangai,0.0
+Released,3,0.0,0.0,0.0,0,6.166666666666667,0.0,Jamaal Williams,0.0
+2025 Draft Pick #9,1,0.0,0.0,33000000.0,33000000,0.0,8.0,Kelvin Banks Jr.,0.0
+2025 Draft Pick #40,1,0.0,0.0,9500000.0,9500000,0.0,7.5,Tyler Shough,0.0
+2025 Draft Pick #238,3,0.0,0.0,3366666.6666666665,10100000,0.0,5.866666666666667,Isaiah Cross,0.0
+Promotion,10,0.0,0.0,3790000.0,37900000,6.35,7.5,John Morton,0.0
+Release (Post-June 1),1,0.0,0.0,0.0,0,6.0,0.0,Garrett Bradbury,0.0
+2025 Draft Pick #24,1,0.0,0.0,18500000.0,18500000,0.0,7.5,Donovan Jackson,0.0
 2025 Draft Pick #184,1,0.0,0.0,3600000.0,3600000,0.0,6.5,Devin Neal,0.0
 2025 Draft Pick #131,1,0.0,0.0,4000000.0,4000000,0.0,6.8,Quincy Riley,0.0
-Defensive Coordinator Hire,4,0.0,0.0,7000000.0,28000000,5.25,7.775,Matt Eberflus,0.0
-Head Coach Promotion,1,0.0,0.0,0.0,0,7.0,7.5,Brian Schottenheimer,0.0
-2025 Draft Pick #105,2,0.0,0.0,4500000.0,9000000,0.0,6.65,Cam Skattebo,0.0
-2025 Draft Pick #154,2,0.0,0.0,4500000.0,9000000,0.0,6.0,Marcus Mbow,0.0
-2025 Draft Pick #29,1,0.0,0.0,15680000.0,15680000,0.0,7.5,Josh Conerly Jr.,0.0
+2025 Draft Pick #93,1,0.0,0.0,4800000.0,4800000,0.0,7.2,Jonas Sanker,0.0
+2025 Draft Pick #71,1,0.0,0.0,5800000.0,5800000,0.0,7.0,Vernon Broughton,0.0
 Cap Casualty Release,1,0.0,0.0,0.0,0,7.8,0.0,Grady Jarrett,0.0
+2025 Draft Pick #15,1,0.0,0.0,18500000.0,18500000,0.0,7.0,Jalon Walker,0.0
 2025 Draft Pick #26 (Traded Up),1,0.0,0.0,16000000.0,16000000,0.0,7.2,James Pearce Jr.,0.0
+Coaching Change,4,0.0,0.0,0.0,0,4.5,0.0,Dennis Allen,0.0
 2025 Draft Pick #88,1,0.0,0.0,4800000.0,4800000,0.0,6.8,Xavier Watts,0.0
 2025 Draft Pick #142,1,0.0,0.0,3600000.0,3600000,0.0,6.5,Billy Bowman Jr.,0.0
 Head Coach Hire,3,0.0,0.0,36666666.666666664,110000000,5.333333333333333,8.333333333333334,Raheem Morris,0.0
 Coaching Departure,5,0.0,0.0,0.0,0,4.6,0.0,Arthur Smith,0.0
 Draft Capital Trade,1,0.0,0.0,0.0,0,0.0,0.0,2026 1st Round Pick,0.0
 2025 Draft Pick #19,1,0.0,0.0,15500000.0,15500000,0.0,7.5,Emeka Egbuka,0.0
-2025 Draft Pick #56,1,0.0,0.0,6800000.0,6800000,0.0,7.0,Benjamin Morrison,0.0
 2025 Draft Pick #87,2,0.0,0.0,5350000.0,10700000,0.0,6.8,Jacob Parrish,0.0
 2025 Draft Pick #124,3,0.0,0.0,4266666.666666667,12800000,0.0,6.333333333333333,David Walker,0.0
 2025 Draft Pick #156,4,0.0,0.0,4100000.0,16400000,0.0,6.2,Elijah Roberts,0.0
 Promotion to OC,1,0.0,0.0,2000000.0,2000000,7.5,8.0,Josh Grizzard,0.0
-Coaching Loss,1,0.0,0.0,0.0,0,8.5,0.0,Liam Coen,0.0
 2025 Draft Pick #8,1,0.0,0.0,35000000.0,35000000,0.0,8.0,Tetairoa McMillan,0.0
 2025 Draft Pick #51,1,0.0,0.0,9000000.0,9000000,0.0,7.5,Nic Scourton,0.0
 2025 Draft Pick #77,2,0.0,0.0,6150000.0,12300000,0.0,7.1,Princely Umanmielen,0.0
 2025 Draft Pick #158,2,0.0,0.0,4100000.0,8200000,0.0,6.65,Lathan Ransom,0.0
-2025 Draft Pick #11,1,0.0,0.0,28500000.0,28500000,0.0,7.5,Mykel Williams,0.0
-2025 Draft Pick #43,1,0.0,0.0,12800000.0,12800000,0.0,7.2,Alfred Collins,0.0
-2025 Draft Pick #75,1,0.0,0.0,7200000.0,7200000,0.0,7.0,Nick Martin,0.0
-2025 Draft Pick #107,1,0.0,0.0,5800000.0,5800000,0.0,7.0,Upton Stout,0.0
-2025 Draft Pick #139,1,0.0,0.0,4900000.0,4900000,0.0,6.5,C.J. West,0.0
-2025 Draft Pick #171,1,0.0,0.0,4200000.0,4200000,0.0,6.0,Jalen McLeod,0.0
-2025 Draft Pick #203,2,0.0,0.0,3800000.0,7600000,0.0,6.0,Cameron Calhoun,0.0
-2025 Draft Pick #235,1,0.0,0.0,3400000.0,3400000,0.0,5.8,Marcus Belton,0.0
-Promotion,8,0.0,0.0,2987500.0,23900000,6.0,7.3125,Klay Kubiak,0.0
-2025 Draft Pick #71,1,0.0,0.0,5800000.0,5800000,0.0,7.0,Vernon Broughton,0.0
-2025 Draft Pick #93,1,0.0,0.0,4800000.0,4800000,0.0,7.2,Jonas Sanker,0.0
-Coaching Hire,29,0.0,0.0,6072413.793103448,176100000,5.586206896551724,7.751724137931035,Kellen Moore,0.0
-Coaching Change,4,0.0,0.0,0.0,0,4.5,0.0,Dennis Allen,0.0
-2025 Draft Pick #15,1,0.0,0.0,18500000.0,18500000,0.0,7.0,Jalon Walker,0.0
-Retirement,7,0.0,0.0,0.0,0,7.042857142857143,0.0,Brandon Graham,0.0
-2025 Draft Pick #112,2,0.0,0.0,4200000.0,8400000,0.0,7.15,Ty Robinson,0.0
-Free Agent Loss,110,0.0,0.0,0.0,0,6.82,0.0,Josh Sweat,0.0
-2025 Draft Pick #45,2,0.0,0.0,10500000.0,21000000,0.0,7.0,Andrew Mukuba,0.0
+Release,21,0.0,0.0,0.0,0,6.542857142857143,0.0,Daniel Jones,0.0
+2025 Draft Pick #25 (via trade),1,0.0,0.0,16977000.0,16977000,0.0,6.8,Jaxson Dart,0.0
+2025 Draft Pick #154,2,0.0,0.0,4500000.0,9000000,0.0,6.0,Marcus Mbow,0.0
+2025 Draft Pick #105,2,0.0,0.0,4500000.0,9000000,0.0,6.65,Cam Skattebo,0.0
+2025 Draft Pick #61,1,0.0,0.0,8000000.0,8000000,0.0,7.0,Trey Amos,0.0
+2025 Draft Pick #29,2,0.0,0.0,15940000.0,31880000,0.0,7.5,Josh Conerly Jr.,0.0
+2025 Draft Pick #44,1,0.0,0.0,8500000.0,8500000,0.0,7.5,Donovan Ezeiruaku,0.0
+2025 Draft Pick #76,1,0.0,0.0,5500000.0,5500000,0.0,7.0,Shavon Revel Jr.,0.0
 2025 Draft Pick #31,1,0.0,0.0,12000000.0,12000000,0.0,7.5,Jihaad Campbell,0.0
-2025 Draft Pick #234,2,0.0,0.0,3600000.0,7200000,0.0,5.65,Mason Richman,0.0
-2025 Draft Pick #223,1,0.0,0.0,3500000.0,3500000,0.0,6.0,Damien Martinez,0.0
-2025 Draft Pick #192,1,0.0,0.0,3900000.0,3900000,0.0,6.0,Bryce Cabeldue,0.0
-2025 Draft Pick #175,1,0.0,0.0,4100000.0,4100000,0.0,6.0,Robbie Ouzts,0.0
-2025 Draft Pick #166,1,0.0,0.0,4300000.0,4300000,0.0,6.2,Tory Horton,0.0
-2025 Draft Pick #92 (from Geno trade),1,0.0,0.0,6500000.0,6500000,0.0,6.5,Jalen Milroe,0.0
-2025 Draft Pick #50,1,0.0,0.0,10800000.0,10800000,0.0,7.0,Elijah Arroyo,0.0
-2025 Draft Pick #35 (traded up),1,0.0,0.0,14200000.0,14200000,0.0,7.8,Nick Emmanwori,0.0
+Free Agent Loss,123,0.0,0.0,0.0,0,6.7439024390243905,0.0,Josh Sweat,0.0
 2025 Draft Pick #18,1,0.0,0.0,22500000.0,22500000,0.0,7.5,Grey Zabel,0.0
 UDFA Signings,2,0.0,0.0,10000000.0,20000000,0.0,5.5,Multiple UDFAs,0.0
-UDFA Signings (11 defensive players),1,0.0,0.0,15000000.0,15000000,0.0,5.5,Multiple Defensive UDFAs,0.0
-2025 Draft Pick #238,2,0.0,0.0,3250000.0,6500000,0.0,5.8,Ricky White III,0.0
-2025 Draft Pick #58 (via ATL trade),1,0.0,0.0,9500000.0,9500000,0.0,7.0,Terrance Ferguson,0.0
-2025 Draft Pick #118,3,0.0,0.0,5066666.666666667,15200000,0.0,6.233333333333333,Jarquez Hunter,0.0
-2025 Draft Pick #147,1,0.0,0.0,4500000.0,4500000,0.0,7.0,Chris Paul Jr.,0.0
-Coaching Dismissal,1,0.0,0.0,0.0,0,6.5,0.0,Ryan Grubb,0.0
-2025 Draft Pick #172,1,0.0,0.0,3600000.0,3600000,0.0,6.5,Hayden Conner,0.0
-2025 Draft Pick #248,2,0.0,0.0,3500000.0,7000000,0.0,5.75,Kitan Crawford,0.0
-2025 Draft Pick #30,1,0.0,0.0,15200000.0,15200000,0.0,7.0,Maxwell Hairston,0.0
-2025 Draft Pick #41 (via trade),1,0.0,0.0,9800000.0,9800000,0.0,7.2,T.J. Sanders,0.0
-2025 Draft Pick #72,1,0.0,0.0,5800000.0,5800000,0.0,6.8,Landon Jackson,0.0
-2025 Draft Pick #150 (from Elam trade),1,0.0,0.0,3800000.0,3800000,0.0,6.2,Jordan Hancock,0.0
-2025 Draft Pick #173,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Jackson Hawes,0.0
-2025 Draft Pick #206,1,0.0,0.0,3400000.0,3400000,0.0,5.8,Chase Lundt,0.0
-2025 Draft Pick #189,3,0.0,0.0,4133333.3333333335,12400000,0.0,6.066666666666666,Ty Hamilton,0.0
-2025 Draft Pick #220,2,0.0,0.0,3950000.0,7900000,0.0,5.9,Marcus Haynes,0.0
+2025 Draft Pick #235,1,0.0,0.0,3400000.0,3400000,0.0,5.8,Marcus Belton,0.0
+2025 Draft Pick #203,2,0.0,0.0,3800000.0,7600000,0.0,6.0,Cameron Calhoun,0.0
+2025 Draft Pick #171,1,0.0,0.0,4200000.0,4200000,0.0,6.0,Jalen McLeod,0.0
+2025 Draft Pick #139,1,0.0,0.0,4900000.0,4900000,0.0,6.5,C.J. West,0.0
+2025 Draft Pick #107,1,0.0,0.0,5800000.0,5800000,0.0,7.0,Upton Stout,0.0
+2025 Draft Pick #75,1,0.0,0.0,7200000.0,7200000,0.0,7.0,Nick Martin,0.0
+2025 Draft Pick #43,1,0.0,0.0,12800000.0,12800000,0.0,7.2,Alfred Collins,0.0
+2025 Draft Pick #11,1,0.0,0.0,28500000.0,28500000,0.0,7.5,Mykel Williams,0.0
+2025 Draft Pick #92 (from Geno trade),1,0.0,0.0,6500000.0,6500000,0.0,6.5,Jalen Milroe,0.0
+2025 Draft Pick #35 (traded up),1,0.0,0.0,14200000.0,14200000,0.0,7.8,Nick Emmanwori,0.0
+2025 Draft Pick #175,1,0.0,0.0,4100000.0,4100000,0.0,6.0,Robbie Ouzts,0.0
+2025 Draft Pick #192,1,0.0,0.0,3900000.0,3900000,0.0,6.0,Bryce Cabeldue,0.0
+2025 Draft Pick #223,1,0.0,0.0,3500000.0,3500000,0.0,6.0,Damien Martinez,0.0
+2025 Draft Pick #50,1,0.0,0.0,10800000.0,10800000,0.0,7.0,Elijah Arroyo,0.0
 Draft Trade (26th pick for 2025 2nd + 2026 1st),1,0.0,0.0,15000000.0,15000000,0.0,8.5,2026 1st Round Pick,0.0
 2025 Draft Pick #16,1,0.0,0.0,18500000.0,18500000,0.0,8.0,Walter Nolen III,0.0
 2025 Draft Pick #47,1,0.0,0.0,8800000.0,8800000,0.0,8.5,Will Johnson,0.0
 2025 Draft Pick #80,2,0.0,0.0,6000000.0,12000000,0.0,6.75,Jordan Burch,0.0
 2025 Draft Pick #115,3,0.0,0.0,4600000.0,13800000,0.0,7.033333333333334,Cody Simon,0.0
+2025 Draft Pick #167,2,0.0,0.0,4050000.0,8100000,0.0,6.4,Denzel Burke,0.0
+2025 Draft Pick #172,1,0.0,0.0,3600000.0,3600000,0.0,6.5,Hayden Conner,0.0
+2025 Draft Pick #248,2,0.0,0.0,3500000.0,7000000,0.0,5.75,Kitan Crawford,0.0
+2025 Draft Pick #234,2,0.0,0.0,3600000.0,7200000,0.0,5.65,Mason Richman,0.0
+Coaching Dismissal,1,0.0,0.0,0.0,0,6.5,0.0,Ryan Grubb,0.0
 Release/Free Agent Loss,3,0.0,0.0,0.0,0,6.266666666666667,0.0,Cooper Kupp,0.0
+UDFA Signings (11 defensive players),1,0.0,0.0,15000000.0,15000000,0.0,5.5,Multiple Defensive UDFAs,0.0
+2025 Draft Pick #58 (via ATL trade),1,0.0,0.0,9500000.0,9500000,0.0,7.0,Terrance Ferguson,0.0
+2025 Draft Pick #147,1,0.0,0.0,4500000.0,4500000,0.0,7.0,Chris Paul Jr.,0.0
+2025 Draft Pick #189,3,0.0,0.0,4133333.3333333335,12400000,0.0,6.066666666666666,Ty Hamilton,0.0
+2025 Draft Pick #166,1,0.0,0.0,4300000.0,4300000,0.0,6.2,Tory Horton,0.0
+Special Teams Coordinator Hire,2,0.0,0.0,2250000.0,4500000,7.0,7.35,Chris Tabor,0.0
+Cap Casualty,3,0.0,0.0,0.0,0,6.5,0.0,Kendall Fuller,0.0
+2025 Draft Pick #37 (via trade),1,0.0,0.0,12000000.0,12000000,0.0,7.0,Jonah Savaiinaea,0.0
+2025 Draft Pick #13,1,0.0,0.0,26500000.0,26500000,0.0,7.5,Kenneth Grant,0.0
+2025 Draft Pick #150,1,0.0,0.0,3800000.0,3800000,0.0,6.2,Jason Marshall Jr.,0.0
 2025 Draft Pick #179,1,0.0,0.0,3500000.0,3500000,0.0,6.5,Ollie Gordon II,0.0
 2025 Draft Pick #231,1,0.0,0.0,3200000.0,3200000,0.0,5.5,Quinn Ewers,0.0
-Draft Trade,1,0.0,0.0,0.0,0,0.0,0.0,Draft Capital Trade,0.0
+2025 Draft Pick #143,1,0.0,0.0,4000000.0,4000000,0.0,6.0,Jordan Phillips,0.0
 2025 Draft Pick #253,1,0.0,0.0,3100000.0,3100000,0.0,5.8,Zeek Biggers,0.0
+Draft Trade,1,0.0,0.0,0.0,0,0.0,0.0,Draft Capital Trade,0.0
 UDFA Signing,8,0.0,0.0,1956250.0,15650000,0.0,5.6,Andrew Armstrong,0.0
 Release/Retirement,1,0.0,0.0,0.0,0,6.5,0.0,David Andrews,0.0
 2025 Draft Pick #4,1,0.0,0.0,38500000.0,38500000,0.0,7.8,Will Campbell,0.0
@@ -127,36 +150,35 @@ Offensive Coordinator Hire,2,0.0,0.0,16000000.0,32000000,7.5,8.0,Josh McDaniels,
 Head Coach Firing,2,0.0,0.0,0.0,0,4.25,0.0,Jerod Mayo,0.0
 2025 Draft Pick #7,1,0.0,0.0,35000000.0,35000000,0.0,7.8,Armand Membou,0.0
 2025 Draft Pick #42,2,0.0,0.0,12150000.0,24300000,0.0,7.0,Mason Taylor,0.0
-2025 Draft Pick #73,1,0.0,0.0,7200000.0,7200000,0.0,6.8,Azareye'h Thomas,0.0
-2025 Draft Pick #110,1,0.0,0.0,5800000.0,5800000,0.0,6.5,Arian Smith,0.0
-2025 Draft Pick #130,1,0.0,0.0,5200000.0,5200000,0.0,6.8,Malachi Moore,0.0
-2025 Draft Pick #162,1,0.0,0.0,4600000.0,4600000,0.0,6.2,Francisco Mauigoa,0.0
-2025 Draft Pick #176,1,0.0,0.0,4400000.0,4400000,0.0,6.5,Tyler Baron,0.0
-General Manager Hire,1,0.0,0.0,25000000.0,25000000,7.5,8.0,Darren Mougey,0.0
+2025 Draft Pick #30,1,0.0,0.0,15200000.0,15200000,0.0,7.0,Maxwell Hairston,0.0
+2025 Draft Pick #41 (via trade),1,0.0,0.0,9800000.0,9800000,0.0,7.2,T.J. Sanders,0.0
+2025 Draft Pick #72,1,0.0,0.0,5800000.0,5800000,0.0,6.8,Landon Jackson,0.0
+2025 Draft Pick #150 (from Elam trade),1,0.0,0.0,3800000.0,3800000,0.0,6.2,Jordan Hancock,0.0
+2025 Draft Pick #173,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Jackson Hawes,0.0
+2025 Draft Pick #206,1,0.0,0.0,3400000.0,3400000,0.0,5.8,Chase Lundt,0.0
 2025 Draft Pick #255,2,0.0,0.0,3600000.0,7200000,0.0,5.65,Kaden Prather,0.0
-Special Teams Coordinator Hire,2,0.0,0.0,2250000.0,4500000,7.0,7.35,Chris Tabor,0.0
-Cap Casualty,3,0.0,0.0,0.0,0,6.5,0.0,Kendall Fuller,0.0
-2025 Draft Pick #13,1,0.0,0.0,26500000.0,26500000,0.0,7.5,Kenneth Grant,0.0
-2025 Draft Pick #37 (via trade),1,0.0,0.0,12000000.0,12000000,0.0,7.0,Jonah Savaiinaea,0.0
-2025 Draft Pick #143,1,0.0,0.0,4000000.0,4000000,0.0,6.0,Jordan Phillips,0.0
-2025 Draft Pick #150,1,0.0,0.0,3800000.0,3800000,0.0,6.2,Jason Marshall Jr.,0.0
-2025 Draft Pick #167,2,0.0,0.0,4050000.0,8100000,0.0,6.4,Denzel Burke,0.0
-2025 Draft Pick #186,1,0.0,0.0,4000000.0,4000000,0.0,6.0,Tyler Loop,0.0
-2025 Draft Pick #178,1,0.0,0.0,4200000.0,4200000,0.0,6.2,Bilhal Kone,0.0
-2025 Draft Pick #141,1,0.0,0.0,4500000.0,4500000,0.0,6.0,Carson Vinson,0.0
-2025 Draft Pick #129,1,0.0,0.0,4800000.0,4800000,0.0,6.5,Teddye Buchanan,0.0
-2025 Draft Pick #91,1,0.0,0.0,6200000.0,6200000,0.0,6.8,Emery Jones Jr.,0.0
-2025 Draft Pick #59,1,0.0,0.0,9800000.0,9800000,0.0,7.5,Mike Green,0.0
+2025 Draft Pick #220,2,0.0,0.0,3950000.0,7900000,0.0,5.9,Marcus Haynes,0.0
 2025 Draft Pick #27,1,0.0,0.0,18500000.0,18500000,0.0,8.0,Malaki Starks,0.0
 General Manager Firing,1,0.0,0.0,0.0,0,4.0,0.0,Joe Douglas,0.0
-2025 Draft Pick #185,1,0.0,0.0,3900000.0,3900000,0.0,5.5,Will Howard,0.0
-2025 Draft Pick #164,1,0.0,0.0,4100000.0,4100000,0.0,6.0,Yahya Black,0.0
-2025 Draft Pick #84,1,0.0,0.0,5800000.0,5800000,0.0,7.0,Kaleb Johnson,0.0
-2025 Draft Pick #21,1,0.0,0.0,21500000.0,21500000,0.0,7.5,Derrick Harmon,0.0
-Internal Promotion,1,0.0,0.0,800000.0,800000,6.0,6.5,Scott McCurry,0.0
-2025 Draft Pick #210,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Aeneas Peebles,0.0
+General Manager Hire,1,0.0,0.0,25000000.0,25000000,7.5,8.0,Darren Mougey,0.0
+2025 Draft Pick #176,1,0.0,0.0,4400000.0,4400000,0.0,6.5,Tyler Baron,0.0
+2025 Draft Pick #162,1,0.0,0.0,4600000.0,4600000,0.0,6.2,Francisco Mauigoa,0.0
+2025 Draft Pick #130,1,0.0,0.0,5200000.0,5200000,0.0,6.8,Malachi Moore,0.0
+2025 Draft Pick #110,1,0.0,0.0,5800000.0,5800000,0.0,6.5,Arian Smith,0.0
+2025 Draft Pick #73,1,0.0,0.0,7200000.0,7200000,0.0,6.8,Azareye'h Thomas,0.0
 2025 Draft Pick #212,1,0.0,0.0,3500000.0,3500000,0.0,5.8,Robert Longerbeam,0.0
+2025 Draft Pick #210,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Aeneas Peebles,0.0
+2025 Draft Pick #21,1,0.0,0.0,21500000.0,21500000,0.0,7.5,Derrick Harmon,0.0
 2025 Draft Pick #243,1,0.0,0.0,3200000.0,3200000,0.0,6.0,Garrett Dellinger,0.0
+2025 Draft Pick #84,1,0.0,0.0,5800000.0,5800000,0.0,7.0,Kaleb Johnson,0.0
+2025 Draft Pick #178,1,0.0,0.0,4200000.0,4200000,0.0,6.2,Bilhal Kone,0.0
+2025 Draft Pick #59,1,0.0,0.0,9800000.0,9800000,0.0,7.5,Mike Green,0.0
+2025 Draft Pick #91,1,0.0,0.0,6200000.0,6200000,0.0,6.8,Emery Jones Jr.,0.0
+Internal Promotion,1,0.0,0.0,800000.0,800000,6.0,6.5,Scott McCurry,0.0
+2025 Draft Pick #217,1,0.0,0.0,3600000.0,3600000,0.0,5.8,Carson Bruener,0.0
+2025 Draft Pick #164,1,0.0,0.0,4100000.0,4100000,0.0,6.0,Yahya Black,0.0
+2025 Draft Pick #5,1,0.0,0.0,42000000.0,42000000,0.0,7.8,Mason Graham,0.0
+2025 Draft Pick #33,1,0.0,0.0,12500000.0,12500000,0.0,7.0,Carson Schwesinger,0.0
 2025 Draft Pick #67,1,0.0,0.0,5200000.0,5200000,0.0,6.8,Harold Fannin Jr.,0.0
 2025 Draft Pick #94,1,0.0,0.0,4800000.0,4800000,0.0,6.5,Dillon Gabriel,0.0
 2025 Draft Pick #126,1,0.0,0.0,4200000.0,4200000,0.0,6.5,Dylan Sampson,0.0
@@ -165,43 +187,38 @@ Internal Promotion,1,0.0,0.0,800000.0,800000,6.0,6.5,Scott McCurry,0.0
 2025 Draft Pick #49,1,0.0,0.0,9800000.0,9800000,0.0,6.2,Demetrius Knight Jr.,0.0
 2025 Draft Pick #81,1,0.0,0.0,5600000.0,5600000,0.0,7.5,Dylan Fairchild,0.0
 2025 Draft Pick #34,1,0.0,0.0,12800000.0,12800000,0.0,7.0,Jayden Higgins,0.0
-2025 Draft Pick #48,1,0.0,0.0,9200000.0,9200000,0.0,6.8,Aireontae Ersery,0.0
-2025 Draft Pick #79,1,0.0,0.0,6100000.0,6100000,0.0,6.5,Jaylin Noel,0.0
-2025 Draft Pick #14,1,0.0,0.0,28500000.0,28500000,0.0,7.5,Tyler Warren,0.0
+2025 Draft Pick #186,1,0.0,0.0,4000000.0,4000000,0.0,6.0,Tyler Loop,0.0
+2025 Draft Pick #129,1,0.0,0.0,4800000.0,4800000,0.0,6.5,Teddye Buchanan,0.0
+2025 Draft Pick #141,1,0.0,0.0,4500000.0,4500000,0.0,6.0,Carson Vinson,0.0
 2025 Draft Pick #116,1,0.0,0.0,5200000.0,5200000,0.0,6.0,Anthony Gould,0.0
+2025 Draft Pick #14,1,0.0,0.0,28500000.0,28500000,0.0,7.5,Tyler Warren,0.0
+2025 Draft Pick #79,1,0.0,0.0,6100000.0,6100000,0.0,6.5,Jaylin Noel,0.0
 2025 Draft Pick #190,1,0.0,0.0,4200000.0,4200000,0.0,5.8,Kyren Lacy,0.0
-2025 Draft Pick #217,1,0.0,0.0,3600000.0,3600000,0.0,5.8,Carson Bruener,0.0
-2025 Draft Pick #5,1,0.0,0.0,42000000.0,42000000,0.0,7.8,Mason Graham,0.0
-2025 Draft Pick #33,1,0.0,0.0,12500000.0,12500000,0.0,7.0,Carson Schwesinger,0.0
-2025 Draft Pick #82,1,0.0,0.0,7400000.0,7400000,0.0,6.8,Kevin Winston Jr.,0.0
+2025 Draft Pick #225,1,0.0,0.0,4400000.0,4400000,0.0,5.8,Marcus Ratcliffe,0.0
+2025 Draft Pick #261,1,0.0,0.0,4000000.0,4000000,0.0,6.5,Quinshon Judkins,0.0
 2025 Draft Pick #52,1,0.0,0.0,11200000.0,11200000,0.0,6.5,Oluwafemi Oladejo,0.0
 2025 Draft Pick #1,1,0.0,0.0,42000000.0,42000000,0.0,6.8,Cam Ward,0.0
-Front Office Hire,5,0.0,0.0,16560000.0,82800000,6.2,7.9,Mike Borgonzi,0.0
 Front Office Change,2,0.0,0.0,0.0,0,3.75,0.0,Ran Carthon,0.0
-2025 Draft Pick #2 (via trade),1,0.0,0.0,49000000.0,49000000,0.0,8.5,Travis Hunter,0.0
+Front Office Hire,5,0.0,0.0,16560000.0,82800000,6.2,7.9,Mike Borgonzi,0.0
 2025 Draft Pick #104,1,0.0,0.0,6200000.0,6200000,0.0,6.5,Wyatt Milum,0.0
-2025 Draft Pick #225,1,0.0,0.0,4400000.0,4400000,0.0,5.8,Marcus Ratcliffe,0.0
+2025 Draft Pick #2 (via trade),1,0.0,0.0,49000000.0,49000000,0.0,8.5,Travis Hunter,0.0
 2025 Draft Pick #200,1,0.0,0.0,4800000.0,4800000,0.0,6.0,Jalen McLeod,0.0
 2025 Draft Pick #32,1,0.0,0.0,15200000.0,15200000,0.0,7.5,Josh Simmons,0.0
 2025 Draft Pick #63,1,0.0,0.0,8100000.0,8100000,0.0,6.8,Omarr Norman-Lott,0.0
+2025 Draft Pick #82,1,0.0,0.0,7400000.0,7400000,0.0,6.8,Kevin Winston Jr.,0.0
 2025 Draft Pick #66,1,0.0,0.0,7800000.0,7800000,0.0,7.0,Ashton Gillotte,0.0
 2025 Draft Pick #85,2,0.0,0.0,6500000.0,13000000,0.0,6.9,Nohl Williams,0.0
-2025 Draft Pick #133,1,0.0,0.0,4800000.0,4800000,0.0,6.5,Jalen Royals,0.0
 2025 Draft Pick #228,1,0.0,0.0,3800000.0,3800000,0.0,6.2,Brashard Smith,0.0
-2025 Draft Pick #261,1,0.0,0.0,4000000.0,4000000,0.0,6.5,Quinshon Judkins,0.0
-Draft Trade Up (5th Round),1,0.0,0.0,4100000.0,4100000,0.0,6.5,Oronde Gadsden II,0.0
+2025 Draft Pick #133,1,0.0,0.0,4800000.0,4800000,0.0,6.5,Jalen Royals,0.0
 2025 Draft Pick #22,1,0.0,0.0,18500000.0,18500000,0.0,7.8,Omarion Hampton,0.0
-2025 Draft Pick #86,1,0.0,0.0,6800000.0,6800000,0.0,7.0,Jamaree Caldwell,0.0
 2025 Draft Pick #55,1,0.0,0.0,9800000.0,9800000,0.0,7.5,Tre Harris,0.0
-2025 Draft Pick #188,1,0.0,0.0,4000000.0,4000000,0.0,6.2,Branson Taylor,0.0
-2025 Draft Pick #214,1,0.0,0.0,3800000.0,3800000,0.0,6.0,R.J. Mickens,0.0
-2025 Draft Pick #256,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Trikweze Bridges,0.0
+2025 Draft Pick #86,1,0.0,0.0,6800000.0,6800000,0.0,7.0,Jamaree Caldwell,0.0
+Draft Trade Up (5th Round),1,0.0,0.0,4100000.0,4100000,0.0,6.5,Oronde Gadsden II,0.0
 2025 Draft Pick #125,1,0.0,0.0,5200000.0,5200000,0.0,6.8,Kyle Kennard,0.0
-2025 Draft Pick #20,1,0.0,0.0,22500000.0,22500000,0.0,8.0,Jahdae Barron,0.0
+2025 Draft Pick #256,1,0.0,0.0,3600000.0,3600000,0.0,6.0,Trikweze Bridges,0.0
 2025 Draft Pick #60,1,0.0,0.0,8500000.0,8500000,0.0,7.5,RJ Harvey,0.0
+2025 Draft Pick #20,1,0.0,0.0,22500000.0,22500000,0.0,8.0,Jahdae Barron,0.0
 2025 Draft Pick #92,1,0.0,0.0,6200000.0,6200000,0.0,6.8,Sai'vion Jones,0.0
 2025 Draft Pick #165,1,0.0,0.0,4000000.0,4000000,0.0,6.0,Tyre West,0.0
 Cut,1,0.0,0.0,0.0,0,5.5,0.0,Aidan O'Connell,0.0
 2025 Draft Pick #6,1,0.0,0.0,38500000.0,38500000,0.0,8.5,Ashton Jeanty,0.0
-2025 Draft Pick #78,1,0.0,0.0,6800000.0,6800000,0.0,6.5,Charles Grant,0.0
-2025 Draft Pick #89,1,0.0,0.0,6200000.0,6200000,0.0,6.5,Caleb Rogers,0.0

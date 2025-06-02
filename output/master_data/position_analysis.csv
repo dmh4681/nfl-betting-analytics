@@ -1,9 +1,9 @@
 position_group,total_moves,avg_impact,total_impact,avg_contract_value,most_active_position,highest_paid_player,highest_impact_player,free_agents,trades,draft_picks
-Offense - Skill,233,0.28171673819742493,65.64000000000001,13919527.896995708,QB,Josh Allen,Josh Allen,58,15,59
-Defense - Secondary,134,0.28007462686567164,37.53,10372425.373134328,S,Jaycee Horn,Derek Stingley Jr.,38,6,38
-Defense - Front,139,0.23071942446043164,32.07,13858776.978417266,DT,Myles Garrett,Maxx Crosby,38,4,41
-Offense - Line,73,0.3191780821917808,23.299999999999997,11506575.342465753,G,Dan Moore Jr.,Laremy Tunsil,22,4,17
-Defense - Second,70,0.248,17.36,8256857.142857143,LB,Fred Warner,Fred Warner,21,2,16
-Other,87,0.06022988505747127,5.24,6244597.7011494255,OT,T.J. Watt,T.J. Watt,10,5,16
-Special Teams,15,0.19733333333333333,2.96,5849333.333333333,P,Cameron Dicker,Cameron Dicker,3,0,3
-Coaching,39,0.02435897435897436,0.95,8925641.025641026,COACH,Mike Vrabel,Todd Monken,0,0,0
+Offense - Skill,256,0.28679687500000006,73.42000000000002,15335742.1875,QB,Josh Allen,Jared Goff,60,17,69
+Defense - Secondary,145,0.2903448275862069,42.1,11179344.827586208,S,Jaycee Horn,Derek Stingley Jr.,41,6,41
+Defense - Front,152,0.23921052631578946,36.36,14352236.842105264,DT,Myles Garrett,Maxx Crosby,43,4,45
+Offense - Line,85,0.3198823529411765,27.19,13460941.176470589,G,Penei Sewell,Laremy Tunsil,25,4,22
+Defense - Second,78,0.248974358974359,19.42,8277948.717948718,LB,Fred Warner,Fred Warner,22,2,19
+Other,97,0.06556701030927835,6.359999999999999,7870927.835051547,OT,T.J. Watt,T.J. Watt,11,7,17
+Special Teams,16,0.22375,3.58,6440000.0,P,Cameron Dicker,Cameron Dicker,3,0,3
+Coaching,47,0.020212765957446806,0.95,9853191.489361702,COACH,Mike Vrabel,Todd Monken,0,0,0
