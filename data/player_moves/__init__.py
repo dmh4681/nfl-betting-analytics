@@ -1,7 +1,7 @@
 """
 NFL Player Bridge Data - 2025 Offseason Moves
 Organized by team for easy maintenance and updates
-DEBUG VERSION - Shows what files exist and what's being imported
+COMPLETE VERSION - All 32 NFL teams
 """
 import os
 import sys
@@ -18,39 +18,51 @@ current_dir = Path(__file__).parent
 if str(current_dir) not in sys.path:
     sys.path.insert(0, str(current_dir))
 
-print(f"🔍 DEBUG: Current directory: {current_dir}")
-print(f"🔍 DEBUG: Python path includes: {str(current_dir) in sys.path}")
-
-# List all Python files in the current directory
-py_files = list(current_dir.glob("*.py"))
-print(f"🔍 DEBUG: Found Python files: {[f.name for f in py_files]}")
-
-# Define all possible team files (updated with correct variable names)
+# Define ALL 32 NFL team files with correct variable names
 TEAM_FILES = {
-    # NFC West (you have 49ers)
-    'SF': ('49ers_2025', 'NINERS_2025_MOVES'),
-    
-    # AFC East (you have bills)
-    'BUF': ('bills_2025', 'BILLS_2025_MOVES'),
-    
-    # AFC North (you have bengals)
-    'CIN': ('bengals_2025', 'BENGALS_2025_MOVES'),
-    
-    # Other teams (add as you create them)
+    # NFC East
     'PHI': ('eagles_2025', 'EAGLES_2025_MOVES'),
     'DAL': ('cowboys_2025', 'COWBOYS_2025_MOVES'),
     'NYG': ('giants_2025', 'GIANTS_2025_MOVES'),
     'WAS': ('commanders_2025', 'COMMANDERS_2025_MOVES'),
+    
+    # NFC North
+    'GB': ('packers_2025', 'PACKERS_2025_MOVES'),
+    'DET': ('lions_2025', 'LIONS_2025_MOVES'),
+    'MIN': ('vikings_2025', 'VIKINGS_2025_MOVES'),
+    'CHI': ('bears_2025', 'BEARS_2025_MOVES'),
+    
+    # NFC South
+    'NO': ('saints_2025', 'SAINTS_2025_MOVES'),
+    'ATL': ('falcons_2025', 'FALCONS_2025_MOVES'),
+    'TB': ('bucs_2025', 'BUCS_2025_MOVES'),  # Note: BUCCANEERS not BUCS
+    'CAR': ('panthers_2025', 'PANTHERS_2025_MOVES'),
+    
+    # NFC West
+    'SF': ('49ers_2025', 'NINERS_2025_MOVES'),
+    'SEA': ('seahawks_2025', 'SEAHAWKS_2025_MOVES'),
+    'LAR': ('rams_2025', 'RAMS_2025_MOVES'),
+    'ARI': ('cardinals_2025', 'CARDINALS_2025_MOVES'),
+    
+    # AFC East
+    'BUF': ('bills_2025', 'BILLS_2025_MOVES'),
     'MIA': ('dolphins_2025', 'DOLPHINS_2025_MOVES'),
     'NE': ('patriots_2025', 'PATRIOTS_2025_MOVES'),
     'NYJ': ('jets_2025', 'JETS_2025_MOVES'),
+    
+    # AFC North
     'BAL': ('ravens_2025', 'RAVENS_2025_MOVES'),
     'PIT': ('steelers_2025', 'STEELERS_2025_MOVES'),
     'CLE': ('browns_2025', 'BROWNS_2025_MOVES'),
+    'CIN': ('bengals_2025', 'BENGALS_2025_MOVES'),
+    
+    # AFC South
     'HOU': ('texans_2025', 'TEXANS_2025_MOVES'),
     'IND': ('colts_2025', 'COLTS_2025_MOVES'),
     'TEN': ('titans_2025', 'TITANS_2025_MOVES'),
     'JAC': ('jaguars_2025', 'JAGUARS_2025_MOVES'),
+    
+    # AFC West
     'KC': ('chiefs_2025', 'CHIEFS_2025_MOVES'),
     'LAC': ('chargers_2025', 'CHARGERS_2025_MOVES'),
     'DEN': ('broncos_2025', 'BRONCOS_2025_MOVES'),
@@ -67,13 +79,9 @@ missing_teams = []
 
 for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
     file_path = current_dir / f"{module_name}.py"
-    print(f"🔍 DEBUG: Checking {team_abbr} -> {file_path}")
-    print(f"🔍 DEBUG: File exists? {file_path.exists()}")
     
     try:
         if file_path.exists():
-            print(f"🔍 DEBUG: Attempting to import {module_name}")
-            
             # Import the module using importlib for better error handling
             import importlib.util
             spec = importlib.util.spec_from_file_location(module_name, file_path)
@@ -85,14 +93,9 @@ for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
             module = importlib.util.module_from_spec(spec)
             spec.loader.exec_module(module)
             
-            print(f"🔍 DEBUG: Module {module_name} loaded successfully")
-            print(f"🔍 DEBUG: Module attributes: {dir(module)}")
-            print(f"🔍 DEBUG: Looking for variable: {moves_var}")
-            
             # Check if the variable exists
             if hasattr(module, moves_var):
                 moves = getattr(module, moves_var)
-                print(f"🔍 DEBUG: Found {moves_var} with {len(moves) if moves else 0} moves")
                 
                 # Store the data
                 MOVES_BY_TEAM[team_abbr] = moves
@@ -103,7 +106,7 @@ for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
                 print(f"✅ {team_abbr}: {len(moves)} moves")
             else:
                 print(f"❌ {team_abbr}: Variable {moves_var} not found in {module_name}")
-                print(f"🔍 DEBUG: Available variables: {[attr for attr in dir(module) if not attr.startswith('_')]}")
+                print(f"🔍 Available variables: {[attr for attr in dir(module) if not attr.startswith('_')]}")
                 missing_teams.append(team_abbr)
         else:
             missing_teams.append(team_abbr)
@@ -112,9 +115,6 @@ for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
     except Exception as e:
         missing_teams.append(team_abbr)
         print(f"❌ {team_abbr}: Error loading - {e}")
-        import traceback
-        print(f"🔍 DEBUG: Full error traceback:")
-        traceback.print_exc()
 
 # =============================================================================
 # SUMMARY STATISTICS
@@ -122,15 +122,17 @@ for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
 
 TEAM_MOVE_COUNTS['Total'] = len(ALL_2025_MOVES)
 
-# Division organization (only include teams we actually loaded)
+# ALL 8 NFL DIVISIONS - Complete coverage
 DIVISIONS = {}
 division_mapping = {
+    'NFC East': ['PHI', 'DAL', 'NYG', 'WAS'],
+    'NFC North': ['GB', 'DET', 'MIN', 'CHI'],
+    'NFC South': ['NO', 'ATL', 'TB', 'CAR'],
+    'NFC West': ['SF', 'SEA', 'LAR', 'ARI'],
     'AFC East': ['BUF', 'MIA', 'NE', 'NYJ'],
     'AFC North': ['BAL', 'PIT', 'CLE', 'CIN'],
     'AFC South': ['HOU', 'IND', 'TEN', 'JAC'],
-    'AFC West': ['KC', 'LAC', 'DEN', 'LV'],
-    'NFC East': ['PHI', 'DAL', 'NYG', 'WAS'],
-    'NFC West': ['SF', 'SEA', 'LAR', 'ARI']
+    'AFC West': ['KC', 'LAC', 'DEN', 'LV']
 }
 
 for div_name, teams in division_mapping.items():
@@ -178,15 +180,39 @@ def get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5):
     losses.sort(key=lambda x: x.get('importance_to_old_team', 0), reverse=True)
     return losses[:limit]
 
+def get_division_summary():
+    """Get summary of all divisions and their teams"""
+    summary = {}
+    for div_name, teams in DIVISIONS.items():
+        total_moves = sum(len(MOVES_BY_TEAM.get(team, [])) for team in teams)
+        summary[div_name] = {
+            'teams': teams,
+            'teams_loaded': len(teams),
+            'total_moves': total_moves
+        }
+    return summary
+
+def get_league_summary():
+    """Get overall NFL summary"""
+    return {
+        'total_teams': len(TEAM_FILES),
+        'teams_loaded': len(loaded_teams),
+        'teams_missing': len(missing_teams),
+        'total_moves': len(ALL_2025_MOVES),
+        'divisions_loaded': len(DIVISIONS),
+        'coverage_percentage': round((len(loaded_teams) / len(TEAM_FILES)) * 100, 1)
+    }
+
 # =============================================================================
 # STARTUP SUMMARY
 # =============================================================================
 
 print(f"\n🏈 NFL Player Bridge Data Summary:")
-print(f"✅ Teams loaded: {len(loaded_teams)} ({', '.join(loaded_teams)})")
-print(f"❌ Teams missing: {len(missing_teams)} ({', '.join(missing_teams) if missing_teams else 'None'})")
+print(f"✅ Teams loaded: {len(loaded_teams)}/32 ({', '.join(sorted(loaded_teams))})")
+print(f"❌ Teams missing: {len(missing_teams)} ({', '.join(sorted(missing_teams)) if missing_teams else 'None'})")
 print(f"📋 Total moves: {len(ALL_2025_MOVES)}")
-print(f"🏟️ Divisions: {len(DIVISIONS)}")
+print(f"🏟️ Divisions: {len(DIVISIONS)}/8")
+print(f"📊 Coverage: {len(loaded_teams)}/32 teams ({(len(loaded_teams)/32)*100:.1f}%)")
 
 if loaded_teams:
     print(f"\n📈 Top teams by move count:")
@@ -194,5 +220,12 @@ if loaded_teams:
                            if team != 'Total'], key=lambda x: x[1], reverse=True)
     for i, (team, count) in enumerate(sorted_counts[:5], 1):
         print(f"  {i}. {team}: {count} moves")
+
+# Division breakdown
+if DIVISIONS:
+    print(f"\n🏟️ Division Coverage:")
+    for div_name, teams in DIVISIONS.items():
+        total_moves = sum(len(MOVES_BY_TEAM.get(team, [])) for team in teams)
+        print(f"  {div_name}: {len(teams)}/4 teams, {total_moves} moves")
 
 print(f"\n✅ Ready for API integration!")
