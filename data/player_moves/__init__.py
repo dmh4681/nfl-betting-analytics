@@ -1,8 +1,10 @@
 """
 NFL Player Bridge Data - 2025 Offseason Moves
 Organized by team for easy maintenance and updates
+DEBUG VERSION - Shows what files exist and what's being imported
 """
 import os
+import sys
 from pathlib import Path
 
 # =============================================================================
@@ -12,33 +14,43 @@ from pathlib import Path
 # Get current directory
 current_dir = Path(__file__).parent
 
-# Define all possible team files
+# Add current directory to Python path for imports
+if str(current_dir) not in sys.path:
+    sys.path.insert(0, str(current_dir))
+
+print(f"🔍 DEBUG: Current directory: {current_dir}")
+print(f"🔍 DEBUG: Python path includes: {str(current_dir) in sys.path}")
+
+# List all Python files in the current directory
+py_files = list(current_dir.glob("*.py"))
+print(f"🔍 DEBUG: Found Python files: {[f.name for f in py_files]}")
+
+# Define all possible team files (updated with correct variable names)
 TEAM_FILES = {
-    # NFC East
+    # NFC West (you have 49ers)
+    'SF': ('49ers_2025', 'NINERS_2025_MOVES'),
+    
+    # AFC East (you have bills)
+    'BUF': ('bills_2025', 'BILLS_2025_MOVES'),
+    
+    # AFC North (you have bengals)
+    'CIN': ('bengals_2025', 'BENGALS_2025_MOVES'),
+    
+    # Other teams (add as you create them)
     'PHI': ('eagles_2025', 'EAGLES_2025_MOVES'),
     'DAL': ('cowboys_2025', 'COWBOYS_2025_MOVES'),
     'NYG': ('giants_2025', 'GIANTS_2025_MOVES'),
     'WAS': ('commanders_2025', 'COMMANDERS_2025_MOVES'),
-    
-    # AFC East
-    'BUF': ('bills_2025', 'BILLS_2025_MOVES'),
     'MIA': ('dolphins_2025', 'DOLPHINS_2025_MOVES'),
     'NE': ('patriots_2025', 'PATRIOTS_2025_MOVES'),
     'NYJ': ('jets_2025', 'JETS_2025_MOVES'),
-    
-    # AFC North
     'BAL': ('ravens_2025', 'RAVENS_2025_MOVES'),
     'PIT': ('steelers_2025', 'STEELERS_2025_MOVES'),
     'CLE': ('browns_2025', 'BROWNS_2025_MOVES'),
-    'CIN': ('bengals_2025', 'BENGALS_2025_MOVES'),
-    
-    # AFC South
     'HOU': ('texans_2025', 'TEXANS_2025_MOVES'),
     'IND': ('colts_2025', 'COLTS_2025_MOVES'),
     'TEN': ('titans_2025', 'TITANS_2025_MOVES'),
     'JAC': ('jaguars_2025', 'JAGUARS_2025_MOVES'),
-    
-    # AFC West
     'KC': ('chiefs_2025', 'CHIEFS_2025_MOVES'),
     'LAC': ('chargers_2025', 'CHARGERS_2025_MOVES'),
     'DEN': ('broncos_2025', 'BRONCOS_2025_MOVES'),
@@ -54,21 +66,45 @@ loaded_teams = []
 missing_teams = []
 
 for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
+    file_path = current_dir / f"{module_name}.py"
+    print(f"🔍 DEBUG: Checking {team_abbr} -> {file_path}")
+    print(f"🔍 DEBUG: File exists? {file_path.exists()}")
+    
     try:
-        # Check if file exists
-        file_path = current_dir / f"{module_name}.py"
         if file_path.exists():
-            # Dynamic import
-            module = __import__(module_name)
-            moves = getattr(module, moves_var)
+            print(f"🔍 DEBUG: Attempting to import {module_name}")
             
-            # Store the data
-            MOVES_BY_TEAM[team_abbr] = moves
-            ALL_2025_MOVES.extend(moves)
-            TEAM_MOVE_COUNTS[module_name.replace('_2025', '').title()] = len(moves)
+            # Import the module using importlib for better error handling
+            import importlib.util
+            spec = importlib.util.spec_from_file_location(module_name, file_path)
+            if spec is None:
+                print(f"❌ {team_abbr}: Could not create spec for {module_name}")
+                missing_teams.append(team_abbr)
+                continue
+                
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
             
-            loaded_teams.append(team_abbr)
-            print(f"✅ {team_abbr}: {len(moves)} moves")
+            print(f"🔍 DEBUG: Module {module_name} loaded successfully")
+            print(f"🔍 DEBUG: Module attributes: {dir(module)}")
+            print(f"🔍 DEBUG: Looking for variable: {moves_var}")
+            
+            # Check if the variable exists
+            if hasattr(module, moves_var):
+                moves = getattr(module, moves_var)
+                print(f"🔍 DEBUG: Found {moves_var} with {len(moves) if moves else 0} moves")
+                
+                # Store the data
+                MOVES_BY_TEAM[team_abbr] = moves
+                ALL_2025_MOVES.extend(moves)
+                TEAM_MOVE_COUNTS[module_name.replace('_2025', '').title()] = len(moves)
+                
+                loaded_teams.append(team_abbr)
+                print(f"✅ {team_abbr}: {len(moves)} moves")
+            else:
+                print(f"❌ {team_abbr}: Variable {moves_var} not found in {module_name}")
+                print(f"🔍 DEBUG: Available variables: {[attr for attr in dir(module) if not attr.startswith('_')]}")
+                missing_teams.append(team_abbr)
         else:
             missing_teams.append(team_abbr)
             print(f"❌ {team_abbr}: File {module_name}.py not found")
@@ -76,6 +112,9 @@ for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
     except Exception as e:
         missing_teams.append(team_abbr)
         print(f"❌ {team_abbr}: Error loading - {e}")
+        import traceback
+        print(f"🔍 DEBUG: Full error traceback:")
+        traceback.print_exc()
 
 # =============================================================================
 # SUMMARY STATISTICS
@@ -90,7 +129,8 @@ division_mapping = {
     'AFC North': ['BAL', 'PIT', 'CLE', 'CIN'],
     'AFC South': ['HOU', 'IND', 'TEN', 'JAC'],
     'AFC West': ['KC', 'LAC', 'DEN', 'LV'],
-    'NFC East': ['PHI', 'DAL', 'NYG', 'WAS']
+    'NFC East': ['PHI', 'DAL', 'NYG', 'WAS'],
+    'NFC West': ['SF', 'SEA', 'LAR', 'ARI']
 }
 
 for div_name, teams in division_mapping.items():

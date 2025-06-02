@@ -128,31 +128,102 @@ class PlayerBridgeFramework:
         """Create template for tracking player moves - NOW LOADS FROM EXTERNAL DATA!"""
         
         try:
-            # Add project root to path for imports
+            # Get the correct path to the data directory
+            current_dir = Path(__file__).parent  # src/analytics
+            project_root = current_dir.parent.parent  # nfl-betting-analytics
+            data_dir = project_root / "data" / "player_moves"
+            
+            # Add the data directory to Python path for imports
             import sys
-            project_root = self.project_root
-            if str(project_root) not in sys.path:
-                sys.path.append(str(project_root))
+            if str(data_dir) not in sys.path:
+                sys.path.insert(0, str(data_dir))
             
-            # Load moves from external data sources
-            from data.player_moves import ALL_2025_MOVES
-            real_2025_moves = ALL_2025_MOVES.copy()  # Make a copy to avoid modifying original
+            # Try to import the __init__.py from the data directory
+            try:
+                import importlib.util
+                init_path = data_dir / "__init__.py"
+                
+                
+                if init_path.exists():
+                    spec = importlib.util.spec_from_file_location("player_moves_init", init_path)
+                    player_moves_module = importlib.util.module_from_spec(spec)
+                    spec.loader.exec_module(player_moves_module)
+                    
+                    # Get the ALL_2025_MOVES from the __init__ module
+                    real_2025_moves = getattr(player_moves_module, 'ALL_2025_MOVES', []).copy()
+                    logger.info(f"✅ Loaded {len(real_2025_moves)} moves from {init_path}")
+                    
+                    # Also get team counts for reporting
+                    team_counts = getattr(player_moves_module, 'TEAM_MOVE_COUNTS', {})
+                    loaded_teams = getattr(player_moves_module, 'loaded_teams', [])
+                    logger.info(f"✅ Teams loaded: {len(loaded_teams)} ({', '.join(loaded_teams)})")
+                    
+                else:
+                    logger.warning(f"__init__.py not found at {init_path}")
+                    real_2025_moves = []
+                    
+            except Exception as e:
+                logger.error(f"❌ Error importing from {init_path}: {e}")
+                # Try alternative approach - direct team file imports
+                try:
+                    real_2025_moves = []
+                    
+                    # List of team files we know exist
+                    team_files = [
+                        ('49ers_2025', 'NINERS_2025_MOVES'),
+                        ('bills_2025', 'BILLS_2025_MOVES'),
+                        ('bengals_2025', 'BENGALS_2025_MOVES'),
+                        ('eagles_2025', 'EAGLES_2025_MOVES'),
+                        ('cowboys_2025', 'COWBOYS_2025_MOVES'),
+                        ('giants_2025', 'GIANTS_2025_MOVES'),
+                        ('commanders_2025', 'COMMANDERS_2025_MOVES'),
+                        ('dolphins_2025', 'DOLPHINS_2025_MOVES'),
+                        ('patriots_2025', 'PATRIOTS_2025_MOVES'),
+                        ('jets_2025', 'JETS_2025_MOVES'),
+                        ('ravens_2025', 'RAVENS_2025_MOVES'),
+                        ('steelers_2025', 'STEELERS_2025_MOVES'),
+                        ('browns_2025', 'BROWNS_2025_MOVES'),
+                        ('texans_2025', 'TEXANS_2025_MOVES'),
+                        ('colts_2025', 'COLTS_2025_MOVES'),
+                        ('titans_2025', 'TITANS_2025_MOVES'),
+                        ('jaguars_2025', 'JAGUARS_2025_MOVES'),
+                        ('chiefs_2025', 'CHIEFS_2025_MOVES'),
+                        ('chargers_2025', 'CHARGERS_2025_MOVES'),
+                        ('broncos_2025', 'BRONCOS_2025_MOVES'),
+                        ('raiders_2025', 'RAIDERS_2025_MOVES')
+                    ]
+                    
+                    for module_name, moves_var in team_files:
+                        file_path = data_dir / f"{module_name}.py"
+                        if file_path.exists():
+                            try:
+                                spec = importlib.util.spec_from_file_location(module_name, file_path)
+                                module = importlib.util.module_from_spec(spec)
+                                spec.loader.exec_module(module)
+                                
+                                moves = getattr(module, moves_var, [])
+                                real_2025_moves.extend(moves)
+                                logger.info(f"✅ Loaded {len(moves)} moves from {module_name}")
+                            except Exception as file_error:
+                                logger.warning(f"⚠️ Could not load {module_name}: {file_error}")
+                    
+                    if real_2025_moves:
+                        logger.info(f"✅ Total loaded from individual files: {len(real_2025_moves)} moves")
+                    else:
+                        logger.warning("No moves found in individual team files")
+                        
+                except Exception as e2:
+                    logger.error(f"❌ Error loading individual team files: {e2}")
+                    real_2025_moves = []
             
-            logger.info(f"✅ Loaded {len(real_2025_moves)} moves from external data files")
-            
-        except ImportError as e:
-            logger.error(f"❌ Could not import player moves: {e}")
-            logger.warning("Falling back to inline data")
-            # If import fails, fall back to your current inline data
-            real_2025_moves = self._get_fallback_moves()
         except Exception as e:
-            logger.error(f"❌ Unexpected error loading player moves: {e}")
+            logger.error(f"❌ Critical error in import process: {e}")
             logger.warning("Falling back to inline data")
             real_2025_moves = self._get_fallback_moves()
         
         if not real_2025_moves:
-            logger.warning("No player moves loaded - using empty dataset")
-            return pd.DataFrame()
+            logger.warning("No player moves loaded - using fallback data")
+            real_2025_moves = self._get_fallback_moves()
         
         # Calculate impact scores for each move
         for move in real_2025_moves:
@@ -235,17 +306,20 @@ class PlayerBridgeFramework:
         
         team_impacts = {}
         
-        # Initialize all teams using the loaded rankings
-        for team in self.original_power_rankings.keys():
+        # Initialize all teams using the loaded rankings - FIXED: Use consistent abbreviations
+        for team_abbr in self.original_power_rankings.keys():
+            # Normalize team abbreviation to handle inconsistencies
+            normalized_abbr = self._normalize_team_abbr(team_abbr)
+            
+            # Skip if we already have this team (prevents duplicates)
+            if normalized_abbr in team_impacts:
+                continue
+                
             # Get the team's full name from mappings
-            full_name = team
-            for team_data in self.team_mappings.values():
-                if team_data['abbreviation'] == team or team == team_data['caps']:
-                    full_name = team_data['full_name']
-                    break
+            full_name = self._get_team_full_name(normalized_abbr)
                     
-            team_impacts[team] = {
-                'team': team,
+            team_impacts[normalized_abbr] = {
+                'team': normalized_abbr,
                 'team_name': full_name,
                 'players_gained': 0,
                 'players_lost': 0,
@@ -255,22 +329,22 @@ class PlayerBridgeFramework:
                 'offense_impact': 0.0,
                 'defense_impact': 0.0,
                 'special_teams_impact': 0.0,
-                'coaching_impact': 0.0,  # FIXED - Added coaching impact
+                'coaching_impact': 0.0,
                 'key_additions': [],
                 'key_losses': []
             }
         
         # Process each player move
         for _, move in player_bridge_df.iterrows():
-            from_team = move['from_team']
-            to_team = move['to_team']
+            from_team = self._normalize_team_abbr(move['from_team'])
+            to_team = self._normalize_team_abbr(move['to_team'])
             impact = move['impact_score']
             position = move['position']
             player_name = move['player_name']
             
             # Determine which unit this position belongs to
             unit = self._get_position_unit(position)
-            unit_key = f"{unit.lower().replace(' ', '_')}_impact"  # FIXED - Replace spaces with underscores
+            unit_key = f"{unit.lower().replace(' ', '_')}_impact"
             
             # Player leaving a team (loss)
             if from_team in team_impacts and from_team not in ['DRAFT', 'FA', 'RETIRED', 'RELEASED', 'PROMOTION']:
@@ -279,11 +353,11 @@ class PlayerBridgeFramework:
                 team_impacts[from_team]['impact_lost'] += loss_impact
                 team_impacts[from_team]['net_impact'] -= loss_impact
                 
-                # FIXED - Check if unit_key exists before accessing
+                # Apply unit-specific impact
                 if unit_key in team_impacts[from_team]:
                     team_impacts[from_team][unit_key] -= loss_impact
                 
-                if loss_impact >= 0.5:  # Lower threshold for key moves
+                if loss_impact >= 0.5:  # Threshold for key moves
                     team_impacts[from_team]['key_losses'].append(f"{player_name} ({position})")
             
             # Player joining a team (gain)
@@ -293,14 +367,75 @@ class PlayerBridgeFramework:
                 team_impacts[to_team]['impact_gained'] += gain_impact
                 team_impacts[to_team]['net_impact'] += gain_impact
                 
-                # FIXED - Check if unit_key exists before accessing
+                # Apply unit-specific impact
                 if unit_key in team_impacts[to_team]:
                     team_impacts[to_team][unit_key] += gain_impact
                 
-                if gain_impact >= 0.5:  # Lower threshold for key moves
+                if gain_impact >= 0.5:  # Threshold for key moves
                     team_impacts[to_team]['key_additions'].append(f"{player_name} ({position})")
         
         return pd.DataFrame(list(team_impacts.values()))
+
+    def _normalize_team_abbr(self, team_abbr: str) -> str:
+        """Normalize team abbreviations to handle inconsistencies"""
+        if pd.isna(team_abbr) or team_abbr in ['DRAFT', 'FA', 'RETIRED', 'RELEASED', 'PROMOTION']:
+            return team_abbr
+            
+        team_abbr = str(team_abbr).strip().upper()
+        
+        # Handle common abbreviation mappings
+        abbr_mappings = {
+            'JAX': 'JAC',
+            'WSH': 'WAS',
+            'NO': 'NO',
+            'NE': 'NE',
+            'TB': 'TB',
+            'LV': 'LV',
+            'LAR': 'LAR',
+            'LAC': 'LAC'
+        }
+        
+        return abbr_mappings.get(team_abbr, team_abbr)
+
+    def _get_team_full_name(self, team_abbr: str) -> str:
+        """Get full team name from abbreviation"""
+        # Team name mappings
+        team_names = {
+            'PHI': 'Philadelphia Eagles',
+            'BAL': 'Baltimore Ravens', 
+            'DET': 'Detroit Lions',
+            'BUF': 'Buffalo Bills',
+            'GB': 'Green Bay Packers',
+            'SF': 'San Francisco 49ers',
+            'KC': 'Kansas City Chiefs',
+            'MIN': 'Minnesota Vikings',
+            'CIN': 'Cincinnati Bengals',
+            'HOU': 'Houston Texans',
+            'NYJ': 'New York Jets',
+            'LAC': 'Los Angeles Chargers',
+            'PIT': 'Pittsburgh Steelers',
+            'MIA': 'Miami Dolphins',
+            'WAS': 'Washington Commanders',
+            'ATL': 'Atlanta Falcons',
+            'CLE': 'Cleveland Browns',
+            'TB': 'Tampa Bay Buccaneers',
+            'LAR': 'Los Angeles Rams',
+            'SEA': 'Seattle Seahawks',
+            'NYG': 'New York Giants',
+            'IND': 'Indianapolis Colts',
+            'ARI': 'Arizona Cardinals',
+            'CHI': 'Chicago Bears',
+            'TEN': 'Tennessee Titans',
+            'JAC': 'Jacksonville Jaguars',
+            'DEN': 'Denver Broncos',
+            'DAL': 'Dallas Cowboys',
+            'NE': 'New England Patriots',
+            'CAR': 'Carolina Panthers',
+            'NO': 'New Orleans Saints',
+            'LV': 'Las Vegas Raiders'
+        }
+        
+        return team_names.get(team_abbr, team_abbr)
 
     def _get_position_unit(self, position: str) -> str:
         """Determine which unit a position belongs to - FIXED VERSION"""
@@ -335,9 +470,17 @@ class PlayerBridgeFramework:
         """Calculate final 2025 power rankings = Original + Offseason Impact"""
         
         final_rankings = []
+        processed_teams = set()  # Track processed teams to avoid duplicates
         
         for _, team in team_impacts_df.iterrows():
-            team_abbr = team['team']
+            team_abbr = self._normalize_team_abbr(team['team'])
+            
+            # Skip if we've already processed this team
+            if team_abbr in processed_teams:
+                continue
+            processed_teams.add(team_abbr)
+            
+            # Get original ratings with fallback
             original_rating = self.original_power_rankings.get(team_abbr, 80.0)
             original_rank = self.original_ranks.get(team_abbr, 16)
             offseason_impact = team['net_impact']
@@ -353,8 +496,8 @@ class PlayerBridgeFramework:
                 'offseason_impact': offseason_impact,
                 'final_2025_rating': final_rating,
                 'offseason_grade': team['offseason_grade'],
-                'key_additions': team['key_additions'],
-                'key_losses': team['key_losses'],
+                'key_additions': ', '.join(team['key_additions'][:3]) if team['key_additions'] else '',
+                'key_losses': ', '.join(team['key_losses'][:3]) if team['key_losses'] else '',
                 'offense_impact': team['offense_impact'],
                 'defense_impact': team['defense_impact']
             })

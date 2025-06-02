@@ -17,7 +17,7 @@ NINERS_2025_MOVES = [
         'projected_2025_grade': 0.0,
         'snap_percentage_2024': 75.0,  # Still primary receiver despite issues
         'importance_to_old_team': 8.5,  # Former All-Pro, $31.5M dead money hit
-        'importance_to_new_team': 0.0,
+        'importance_to_new_team': 8.0,
     },
     {
         'player_name': 'Kyle Juszczyk',

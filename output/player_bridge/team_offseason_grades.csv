@@ -1,35 +1,33 @@
 team,team_name,players_gained,players_lost,impact_gained,impact_lost,net_impact,offense_impact,defense_impact,special_teams_impact,coaching_impact,key_additions,key_losses,offseason_grade
-PHI,Philadelphia Eagles,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-BAL,Baltimore Ravens,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-DET,Detroit Lions,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-BUF,Buffalo Bills,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-GB,Green Bay Packers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-SF,San Francisco 49ers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-KC,Kansas City Chiefs,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-MIN,Minnesota Vikings,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CIN,Cincinnati Bengals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-HOU,Houston Texans,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-NYJ,New York Jets,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-WAS,WAS,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-LAC,Los Angeles Chargers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-MIA,Miami Dolphins,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-TB,Tampa Bay Buccaneers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-SEA,Seattle Seahawks,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-ARI,Arizona Cardinals,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+NYG,New York Giants,26,12,8.41,2.8500000000000005,5.56,4.1,1.4599999999999997,0.0,0.0,"['Russell Wilson (QB)', 'Jevon Holland (S)', 'Paulson Adebo (CB1)', 'Chauncey Golston (EDGE)', 'Darius Slayton (WR1)', 'Greg Van Roten (G)']","['Darius Slayton (WR1)', 'Greg Van Roten (G)']",A-
+NE,New England Patriots,39,20,9.129999999999999,4.0,5.130000000000001,3.21,1.92,0.0,0.0,"['Stefon Diggs (WR1)', 'Carlton Davis III (CB1)', 'Harold Landry (EDGE)', 'Robert Spillane (LB)', 'Morgan Moses (RT)', 'Garrett Bradbury (C)', 'Christian Elliss (LB)']","['Mac Jones (QB)', 'Christian Elliss (LB)']",A-
+LV,Las Vegas Raiders,26,17,9.68,5.5200000000000005,4.159999999999999,1.82,2.3400000000000003,0.0,0.0,"['Geno Smith (QB)', 'Jeremy Chinn (S)', 'Devin White (LB)', 'Alex Cappa (G)', 'Maxx Crosby (EDGE)', 'Isaiah Pola-Mao (S)']","['Gardner Minshew (QB)', 'Andre James (C)', 'Maxx Crosby (EDGE)', 'Isaiah Pola-Mao (S)']",A-
+IND,Indianapolis Colts,21,10,7.11,3.2500000000000004,3.8600000000000003,2.19,1.67,0.0,0.0,"['Daniel Jones (QB)', 'Charvarius Ward (CB1)', 'Cam Bynum (S)', 'DeForest Buckner (DT)', 'Jonathan Taylor (RB)', 'Michael Pittman Jr. (WR1)']","['DeForest Buckner (DT)', 'Jonathan Taylor (RB)', 'Michael Pittman Jr. (WR1)']",B+
+WAS,Washington Commanders,19,13,7.140000000000001,5.09,2.05,2.7600000000000002,-0.71,0.0,0.0,"['Deebo Samuel (WR1)', 'Deebo Samuel (WR1)', 'Bobby Wagner (LB)', 'Zach Ertz (TE)', 'Laremy Tunsil (LT)']","['Dante Fowler Jr. (EDGE)', 'Bobby Wagner (LB)', 'Zach Ertz (TE)', 'Jeremy Chinn (S)']",B+
+CLE,Cleveland Browns,19,10,4.23,2.43,1.8000000000000003,0.62,1.18,0.0,0.0,"['Jerome Baker (LB)', 'Myles Garrett (EDGE)']",['Myles Garrett (EDGE)'],B
+DAL,Dallas Cowboys,25,15,5.5200000000000005,3.7800000000000002,1.7400000000000007,0.4500000000000003,1.29,0.0,0.0,"['Dante Fowler Jr. (EDGE)', 'George Pickens (WR1)', 'Kenneth Murray Jr. (LB)', 'Osa Odighizuwa (DT)', 'Markquese Bell (S)']","['Osa Odighizuwa (DT)', 'Markquese Bell (S)', 'Chauncey Golston (EDGE)', 'Jourdan Lewis (CB2)']",B
+KC,Kansas City Chiefs,19,20,5.130000000000001,3.42,1.71,2.1,-0.3899999999999999,0.0,0.0,"['Jaylon Moore (LT)', 'Kristian Fulton (CB1)', 'Gardner Minshew (QB)', 'Nick Bolton (LB)', 'Trey Smith (RG)', 'Kareem Hunt (RB)']","['Nick Bolton (LB)', 'Trey Smith (RG)', 'Kareem Hunt (RB)']",B
+LAC,Los Angeles Chargers,32,19,8.869999999999997,7.2299999999999995,1.6400000000000001,1.25,0.39,0.0,0.0,"['Najee Harris (RB)', 'Andre James (C)', 'Khalil Mack (EDGE)', 'Elijah Molden (S)', 'Bradley Bozeman (C)', 'Cameron Dicker (K)']","['Joey Bosa (EDGE)', 'Kristian Fulton (CB1)', 'Khalil Mack (EDGE)', 'Elijah Molden (S)', 'Bradley Bozeman (C)', 'Cameron Dicker (K)']",B
+BUF,Buffalo Bills,25,14,9.43,8.13,1.2999999999999998,0.6999999999999998,0.6,0.0,0.0,"['Joey Bosa (EDGE)', 'Josh Allen (QB)', 'Khalil Shakir (WR1)', 'Greg Rousseau (EDGE)', 'Terrel Bernard (LB)', 'Christian Benford (CB1)', 'Damar Hamlin (S)']","['Josh Allen (QB)', 'Khalil Shakir (WR1)', 'Greg Rousseau (EDGE)', 'Terrel Bernard (LB)', 'Christian Benford (CB1)', 'Damar Hamlin (S)']",B
+JAC,Jacksonville Jaguars,27,22,7.909999999999999,7.02,0.8900000000000006,1.36,-0.47,0.0,0.0,"['Patrick Mekari (G)', 'Robert Hainsey (C)', 'Jourdan Lewis (CB2)', 'Eric Murray (S)', 'Emmanuel Ogbah (EDGE)', 'Trevor Lawrence (QB)', 'Josh Hines-Allen (EDGE)', 'Tyson Campbell (CB1)']","['Andre Cisco (S)', 'Cam Robinson (LT)', 'Christian Kirk (WR2)', 'Trevor Lawrence (QB)', 'Josh Hines-Allen (EDGE)', 'Tyson Campbell (CB1)', 'Evan Engram (TE)']",B-
+NYJ,New York Jets,27,21,5.140000000000001,4.3100000000000005,0.8300000000000003,1.4600000000000002,-0.6300000000000001,0.0,0.0,"['Justin Fields (QB)', 'Brandon Stephens (CB1)', 'Andre Cisco (S)', 'Josh Myers (C)', 'Jamien Sherwood (LB)']","['Morgan Moses (RT)', 'Jamien Sherwood (LB)']",B-
+MIA,Miami Dolphins,27,24,4.75,4.13,0.62,0.30000000000000027,-0.1,0.42,0.0,"['James Daniels (G)', 'Tyrel Dodson (LB)']","['Jevon Holland (S)', 'Tyrel Dodson (LB)', 'Jerome Baker (LB)', 'Emmanuel Ogbah (EDGE)']",B-
+DEN,Denver Broncos,24,18,3.7899999999999996,3.59,0.19999999999999996,-0.32000000000000006,0.52,0.0,0.0,"['Evan Engram (TE)', 'Mekhi Becton (G)', 'D.J. Jones (DT)']","['Lloyd Cushenberry III (C)', 'D.J. Jones (DT)']",B-
+HOU,Houston Texans,30,20,7.55,7.379999999999999,0.1700000000000006,-0.39999999999999936,0.5699999999999998,0.0,0.0,"['Cam Robinson (LT)', 'Derek Stingley Jr. (CB1)', 'Danielle Hunter (EDGE)', 'Christian Kirk (WR2)', 'C.J. Gardner-Johnson (S)']","['Laremy Tunsil (LT)', 'Stefon Diggs (WR1)', 'Derek Stingley Jr. (CB1)', 'Danielle Hunter (EDGE)', 'Eric Murray (S)']",B-
 ATL,Atlanta Falcons,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-PIT,Pittsburgh Steelers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-LAR,Los Angeles Rams,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-DEN,Denver Broncos,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-IND,Indianapolis Colts,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CHI,Chicago Bears,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-TEN,Tennessee Titans,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-JAC,JAC,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-DAL,Dallas Cowboys,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CLE,Cleveland Browns,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-NO,New Orleans Saints,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-LV,Las Vegas Raiders,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-NE,New England Patriots,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-NYG,New York Giants,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-CAR,Carolina Panthers,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-Jac,Jacksonville Jaguars,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
-Was,Washington Commanders,0,0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,[],[],B-
+ARI,Arizona Cardinals,5,2,0.0,0.34,-0.34,-0.11,-0.23,0.0,0.0,[],[],C+
+CIN,Cincinnati Bengals,17,14,4.66,5.03,-0.37000000000000016,-0.8900000000000001,0.52,0.0,0.0,"['T.J. Slaton (DT)', ""Ja'Marr Chase (WR1)"", 'Tee Higgins (WR2)', 'B.J. Hill (DT)', 'Mike Gesicki (TE)']","[""Ja'Marr Chase (WR1)"", 'Tee Higgins (WR2)', 'B.J. Hill (DT)', 'Mike Gesicki (TE)', 'Alex Cappa (G)']",C+
+CAR,Carolina Panthers,3,3,0.0,0.41000000000000003,-0.41000000000000003,-0.14,-0.27,0.0,0.0,[],[],C+
+BAL,Baltimore Ravens,32,15,5.01,5.5,-0.49,-0.26,-0.22999999999999998,0.0,0.0,"['Ronnie Stanley (LT)', 'Derrick Henry (RB)', 'Todd Monken (OC)']","['Brandon Stephens (CB1)', 'Ronnie Stanley (LT)', 'Derrick Henry (RB)', 'Todd Monken (OC)', 'Patrick Mekari (G)']",C+
+TEN,Tennessee Titans,28,29,10.049999999999999,10.65,-0.6000000000000004,1.5599999999999998,-1.7399999999999998,-0.42,0.0,"['Dan Moore Jr. (LT)', 'Lloyd Cushenberry III (C)', 'Tony Pollard (RB)', 'Calvin Ridley (WR1)', 'Will Levis (QB)', ""L'Jarius Sneed (CB1)"", 'JC Latham (RT)', 'Bill Callahan (OL_COACH)']","['Kenneth Murray Jr. (LB)', 'Harold Landry (EDGE)', 'Robert Spillane (LB)', 'Tony Pollard (RB)', 'Calvin Ridley (WR1)', 'Will Levis (QB)', ""L'Jarius Sneed (CB1)"", 'JC Latham (RT)', 'Bill Callahan (OL_COACH)']",C+
+TB,Tampa Bay Buccaneers,3,5,0.0,1.48,-1.48,-1.1300000000000001,-0.35,0.0,0.0,[],['Robert Hainsey (C)'],C
+CHI,Chicago Bears,2,7,0.0,1.6800000000000002,-1.6800000000000002,-1.2899999999999998,-0.39,0.0,0.0,[],['James Daniels (G)'],C
+LAR,Los Angeles Rams,2,10,0.0,1.8099999999999998,-1.8099999999999998,-1.27,-0.54,0.0,0.0,[],[],C
+NO,New Orleans Saints,3,5,0.0,1.87,-1.87,-1.05,-0.8200000000000001,0.0,0.0,[],['Paulson Adebo (CB1)'],C
+GB,Green Bay Packers,3,7,0.0,1.87,-1.87,-1.27,-0.6,0.0,0.0,[],"['T.J. Slaton (DT)', 'Josh Myers (C)']",C
+DET,Detroit Lions,3,8,0.0,2.32,-2.32,-1.65,-0.6699999999999999,0.0,0.0,[],['Carlton Davis III (CB1)'],C-
+PIT,Pittsburgh Steelers,32,31,8.27,10.940000000000003,-2.6700000000000017,-2.5800000000000005,-0.08999999999999997,0.0,0.0,"['Darius Slay (CB1)', 'DK Metcalf (WR1)', 'T.J. Watt (OLB)', 'DeShon Elliott (S)', 'Aaron Rodgers (QB)']","['George Pickens (WR1)', 'Russell Wilson (QB)', 'Justin Fields (QB)', 'T.J. Watt (OLB)', 'DeShon Elliott (S)', 'Dan Moore Jr. (LT)', 'Najee Harris (RB)']",C-
+MIN,Minnesota Vikings,1,6,0.0,2.92,-2.92,-1.9100000000000001,-1.01,0.0,0.0,[],"['Garrett Bradbury (C)', 'Daniel Jones (QB)', 'Cam Bynum (S)']",C-
+SF,San Francisco 49ers,24,25,7.200000000000001,10.38,-3.1799999999999997,-2.38,-0.8,0.0,0.0,"['Mac Jones (QB)', 'Brock Purdy (QB)', 'Fred Warner (LB)', 'George Kittle (TE)', 'Jauan Jennings (WR2)']","['Deebo Samuel (WR1)', 'Brock Purdy (QB)', 'Fred Warner (LB)', 'George Kittle (TE)', 'Jauan Jennings (WR2)', 'Deebo Samuel (WR1)', 'Charvarius Ward (CB1)', 'Jaylon Moore (LT)']",C-
+PHI,Philadelphia Eagles,12,20,1.49,4.74,-3.25,-1.35,-1.9,0.0,0.0,[],"['Darius Slay (CB1)', 'C.J. Gardner-Johnson (S)', 'Mekhi Becton (G)', 'Devin White (LB)']",C-
+SEA,Seattle Seahawks,3,5,0.0,4.4,-4.4,-3.88,-0.52,0.0,0.0,[],"['DK Metcalf (WR1)', 'Geno Smith (QB)']",D

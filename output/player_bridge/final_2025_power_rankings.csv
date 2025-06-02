@@ -1,35 +1,33 @@
 team,team_name,original_2024_rating,original_2024_rank,offseason_impact,final_2025_rating,offseason_grade,key_additions,key_losses,offense_impact,defense_impact,final_2025_rank,rank_change
-PHI,Philadelphia Eagles,95.0,1,0.0,95.0,B-,[],[],0.0,0.0,1,0
-BAL,Baltimore Ravens,94.2,2,0.0,94.2,B-,[],[],0.0,0.0,2,0
-DET,Detroit Lions,93.4,3,0.0,93.4,B-,[],[],0.0,0.0,3,0
-BUF,Buffalo Bills,92.6,4,0.0,92.6,B-,[],[],0.0,0.0,4,0
-GB,Green Bay Packers,91.8,5,0.0,91.8,B-,[],[],0.0,0.0,5,0
-SF,San Francisco 49ers,91.0,6,0.0,91.0,B-,[],[],0.0,0.0,6,0
-KC,Kansas City Chiefs,90.2,7,0.0,90.2,B-,[],[],0.0,0.0,7,0
-MIN,Minnesota Vikings,89.4,8,0.0,89.4,B-,[],[],0.0,0.0,8,0
-CIN,Cincinnati Bengals,88.5,9,0.0,88.5,B-,[],[],0.0,0.0,9,0
-HOU,Houston Texans,87.7,10,0.0,87.7,B-,[],[],0.0,0.0,10,0
-NYJ,New York Jets,86.9,11,0.0,86.9,B-,[],[],0.0,0.0,11,0
-WAS,WAS,86.1,12,0.0,86.1,B-,[],[],0.0,0.0,12,0
-Was,Washington Commanders,86.1,12,0.0,86.1,B-,[],[],0.0,0.0,13,-1
-LAC,Los Angeles Chargers,85.3,13,0.0,85.3,B-,[],[],0.0,0.0,14,-1
-MIA,Miami Dolphins,84.5,14,0.0,84.5,B-,[],[],0.0,0.0,15,-1
-TB,Tampa Bay Buccaneers,83.7,15,0.0,83.7,B-,[],[],0.0,0.0,16,-1
-SEA,Seattle Seahawks,82.9,16,0.0,82.9,B-,[],[],0.0,0.0,17,-1
-ARI,Arizona Cardinals,82.1,17,0.0,82.1,B-,[],[],0.0,0.0,18,-1
-ATL,Atlanta Falcons,81.3,18,0.0,81.3,B-,[],[],0.0,0.0,19,-1
-PIT,Pittsburgh Steelers,80.5,19,0.0,80.5,B-,[],[],0.0,0.0,20,-1
-LAR,Los Angeles Rams,79.7,20,0.0,79.7,B-,[],[],0.0,0.0,21,-1
-DEN,Denver Broncos,78.9,21,0.0,78.9,B-,[],[],0.0,0.0,22,-1
-IND,Indianapolis Colts,78.1,22,0.0,78.1,B-,[],[],0.0,0.0,23,-1
-CHI,Chicago Bears,77.3,23,0.0,77.3,B-,[],[],0.0,0.0,24,-1
-TEN,Tennessee Titans,76.5,24,0.0,76.5,B-,[],[],0.0,0.0,25,-1
-JAC,JAC,75.6,25,0.0,75.6,B-,[],[],0.0,0.0,26,-1
-Jac,Jacksonville Jaguars,75.6,25,0.0,75.6,B-,[],[],0.0,0.0,27,-2
-DAL,Dallas Cowboys,74.8,26,0.0,74.8,B-,[],[],0.0,0.0,28,-2
-CLE,Cleveland Browns,74.0,27,0.0,74.0,B-,[],[],0.0,0.0,29,-2
-NO,New Orleans Saints,73.2,28,0.0,73.2,B-,[],[],0.0,0.0,30,-2
-LV,Las Vegas Raiders,72.4,29,0.0,72.4,B-,[],[],0.0,0.0,31,-2
-NE,New England Patriots,71.6,30,0.0,71.6,B-,[],[],0.0,0.0,32,-2
-NYG,New York Giants,70.8,31,0.0,70.8,B-,[],[],0.0,0.0,33,-2
-CAR,Carolina Panthers,70.0,32,0.0,70.0,B-,[],[],0.0,0.0,34,-2
+BUF,Buffalo Bills,92.6,4,1.2999999999999998,93.89999999999999,B,"Joey Bosa (EDGE), Josh Allen (QB), Khalil Shakir (WR1)","Josh Allen (QB), Khalil Shakir (WR1), Greg Rousseau (EDGE)",0.6999999999999998,0.6,1,3
+BAL,Baltimore Ravens,94.2,2,-0.49,93.71000000000001,C+,"Ronnie Stanley (LT), Derrick Henry (RB), Todd Monken (OC)","Brandon Stephens (CB1), Ronnie Stanley (LT), Derrick Henry (RB)",-0.26,-0.22999999999999998,2,0
+KC,Kansas City Chiefs,90.2,7,1.71,91.91,B,"Jaylon Moore (LT), Kristian Fulton (CB1), Gardner Minshew (QB)","Nick Bolton (LB), Trey Smith (RG), Kareem Hunt (RB)",2.1,-0.3899999999999999,3,4
+PHI,Philadelphia Eagles,95.0,1,-3.25,91.75,C-,,"Darius Slay (CB1), C.J. Gardner-Johnson (S), Mekhi Becton (G)",-1.35,-1.9,4,-3
+DET,Detroit Lions,93.4,3,-2.32,91.08000000000001,C-,,Carlton Davis III (CB1),-1.65,-0.6699999999999999,5,-2
+GB,Green Bay Packers,91.8,5,-1.87,89.92999999999999,C,,"T.J. Slaton (DT), Josh Myers (C)",-1.27,-0.6,6,-1
+WAS,Washington Commanders,86.1,12,2.05,88.14999999999999,B+,"Deebo Samuel (WR1), Deebo Samuel (WR1), Bobby Wagner (LB)","Dante Fowler Jr. (EDGE), Bobby Wagner (LB), Zach Ertz (TE)",2.7600000000000002,-0.71,7,5
+CIN,Cincinnati Bengals,88.5,9,-0.37000000000000016,88.13,C+,"T.J. Slaton (DT), Ja'Marr Chase (WR1), Tee Higgins (WR2)","Ja'Marr Chase (WR1), Tee Higgins (WR2), B.J. Hill (DT)",-0.8900000000000001,0.52,8,1
+HOU,Houston Texans,87.7,10,0.1700000000000006,87.87,B-,"Cam Robinson (LT), Derek Stingley Jr. (CB1), Danielle Hunter (EDGE)","Laremy Tunsil (LT), Stefon Diggs (WR1), Derek Stingley Jr. (CB1)",-0.39999999999999936,0.5699999999999998,9,1
+SF,San Francisco 49ers,91.0,6,-3.1799999999999997,87.82,C-,"Mac Jones (QB), Brock Purdy (QB), Fred Warner (LB)","Deebo Samuel (WR1), Brock Purdy (QB), Fred Warner (LB)",-2.38,-0.8,10,-4
+NYJ,New York Jets,86.9,11,0.8300000000000003,87.73,B-,"Justin Fields (QB), Brandon Stephens (CB1), Andre Cisco (S)","Morgan Moses (RT), Jamien Sherwood (LB)",1.4600000000000002,-0.6300000000000001,11,0
+LAC,Los Angeles Chargers,85.3,13,1.6400000000000001,86.94,B,"Najee Harris (RB), Andre James (C), Khalil Mack (EDGE)","Joey Bosa (EDGE), Kristian Fulton (CB1), Khalil Mack (EDGE)",1.25,0.39,12,1
+MIN,Minnesota Vikings,89.4,8,-2.92,86.48,C-,,"Garrett Bradbury (C), Daniel Jones (QB), Cam Bynum (S)",-1.9100000000000001,-1.01,13,-5
+MIA,Miami Dolphins,84.5,14,0.62,85.12,B-,"James Daniels (G), Tyrel Dodson (LB)","Jevon Holland (S), Tyrel Dodson (LB), Jerome Baker (LB)",0.30000000000000027,-0.1,14,0
+TB,Tampa Bay Buccaneers,83.7,15,-1.48,82.22,C,,Robert Hainsey (C),-1.1300000000000001,-0.35,15,0
+IND,Indianapolis Colts,78.1,22,3.8600000000000003,81.96,B+,"Daniel Jones (QB), Charvarius Ward (CB1), Cam Bynum (S)","DeForest Buckner (DT), Jonathan Taylor (RB), Michael Pittman Jr. (WR1)",2.19,1.67,16,6
+ARI,Arizona Cardinals,82.1,17,-0.34,81.75999999999999,C+,,,-0.11,-0.23,17,0
+ATL,Atlanta Falcons,81.3,18,0.0,81.3,B-,,,0.0,0.0,18,0
+DEN,Denver Broncos,78.9,21,0.19999999999999996,79.10000000000001,B-,"Evan Engram (TE), Mekhi Becton (G), D.J. Jones (DT)","Lloyd Cushenberry III (C), D.J. Jones (DT)",-0.32000000000000006,0.52,19,2
+SEA,Seattle Seahawks,82.9,16,-4.4,78.5,D,,"DK Metcalf (WR1), Geno Smith (QB)",-3.88,-0.52,20,-4
+LAR,Los Angeles Rams,79.7,20,-1.8099999999999998,77.89,C,,,-1.27,-0.54,21,-1
+PIT,Pittsburgh Steelers,80.5,19,-2.6700000000000017,77.83,C-,"Darius Slay (CB1), DK Metcalf (WR1), T.J. Watt (OLB)","George Pickens (WR1), Russell Wilson (QB), Justin Fields (QB)",-2.5800000000000005,-0.08999999999999997,22,-3
+NE,New England Patriots,71.6,30,5.130000000000001,76.72999999999999,A-,"Stefon Diggs (WR1), Carlton Davis III (CB1), Harold Landry (EDGE)","Mac Jones (QB), Christian Elliss (LB)",3.21,1.92,23,7
+LV,Las Vegas Raiders,72.4,29,4.159999999999999,76.56,A-,"Geno Smith (QB), Jeremy Chinn (S), Devin White (LB)","Gardner Minshew (QB), Andre James (C), Maxx Crosby (EDGE)",1.82,2.3400000000000003,24,5
+DAL,Dallas Cowboys,74.8,26,1.7400000000000007,76.53999999999999,B,"Dante Fowler Jr. (EDGE), George Pickens (WR1), Kenneth Murray Jr. (LB)","Osa Odighizuwa (DT), Markquese Bell (S), Chauncey Golston (EDGE)",0.4500000000000003,1.29,25,1
+JAC,Jacksonville Jaguars,75.6,25,0.8900000000000006,76.49,B-,"Patrick Mekari (G), Robert Hainsey (C), Jourdan Lewis (CB2)","Andre Cisco (S), Cam Robinson (LT), Christian Kirk (WR2)",1.36,-0.47,26,-1
+NYG,New York Giants,70.8,31,5.56,76.36,A-,"Russell Wilson (QB), Jevon Holland (S), Paulson Adebo (CB1)","Darius Slayton (WR1), Greg Van Roten (G)",4.1,1.4599999999999997,27,4
+TEN,Tennessee Titans,76.5,24,-0.6000000000000004,75.9,C+,"Dan Moore Jr. (LT), Lloyd Cushenberry III (C), Tony Pollard (RB)","Kenneth Murray Jr. (LB), Harold Landry (EDGE), Robert Spillane (LB)",1.5599999999999998,-1.7399999999999998,28,-4
+CLE,Cleveland Browns,74.0,27,1.8000000000000003,75.8,B,"Jerome Baker (LB), Myles Garrett (EDGE)",Myles Garrett (EDGE),0.62,1.18,29,-2
+CHI,Chicago Bears,77.3,23,-1.6800000000000002,75.61999999999999,C,,James Daniels (G),-1.2899999999999998,-0.39,30,-7
+NO,New Orleans Saints,73.2,28,-1.87,71.33,C,,Paulson Adebo (CB1),-1.05,-0.8200000000000001,31,-3
+CAR,Carolina Panthers,70.0,32,-0.41000000000000003,69.59,C+,,,-0.14,-0.27,32,0
