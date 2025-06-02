@@ -281,6 +281,10 @@ const NFLAnalyticsDashboard = () => {
                     <span className="text-white font-medium">{bridgeAnalysis.totalMoves}</span>
                   </div>
                   <div className="flex justify-between">
+                    <span className="text-slate-400">Teams Covered</span>
+                    <span className="text-white font-medium">{Object.keys(teamsData).length}</span>
+                  </div>
+                  <div className="flex justify-between">
                     <span className="text-slate-400">Last Updated</span>
                     <span className="text-white font-medium">
                       {new Date(bridgeAnalysis.lastUpdated).toLocaleDateString()}

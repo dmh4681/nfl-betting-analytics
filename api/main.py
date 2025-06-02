@@ -41,33 +41,124 @@ except ImportError as e:
 
 # Try to import your real player moves data
 # Try to import your real player moves data
+# Try to import your real player moves data
 REAL_DATA_AVAILABLE = False
+ALL_2025_MOVES = []
+MOVES_BY_TEAM = {}
+TEAM_MOVE_COUNTS = {}
+
 try:
-    # Add data directory to path
-    DATA_PATH = PROJECT_ROOT / "data" / "player_moves"
-    if DATA_PATH.exists():
-        sys.path.insert(0, str(DATA_PATH))
+    # Direct file loading approach
+    PLAYER_MOVES_PATH = PROJECT_ROOT / "data" / "player_moves"
+    print(f"🔍 Looking for team files in: {PLAYER_MOVES_PATH}")
+    
+    if PLAYER_MOVES_PATH.exists():
+        # Add the player_moves directory to Python path
+        sys.path.insert(0, str(PLAYER_MOVES_PATH))
         
-        # Import ALL your team data
-        from player_moves import ALL_2025_MOVES, MOVES_BY_TEAM, get_top_additions_by_team, get_top_losses_by_team, TEAM_MOVE_COUNTS
+        # Define all team files you have
+        team_files = {
+            'PHI': 'eagles_2025',
+            'DAL': 'cowboys_2025', 
+            'NYG': 'giants_2025',
+            'WAS': 'commanders_2025',
+            'BUF': 'bills_2025',
+            'MIA': 'dolphins_2025',
+            'NE': 'patriots_2025',
+            'NYJ': 'jets_2025',
+            'BAL': 'ravens_2025',
+            'PIT': 'steelers_2025',
+            'CLE': 'browns_2025',
+            'CIN': 'bengals_2025',
+            'HOU': 'texans_2025',
+            'IND': 'colts_2025',
+            'TEN': 'titans_2025',
+            'JAC': 'jaguars_2025',
+            'KC': 'chiefs_2025',
+            'LAC': 'chargers_2025',
+            'DEN': 'broncos_2025',
+            'LV': 'raiders_2025'
+        }
         
-        print("✅ Successfully imported real team data:")
-        print(f"   - Total moves: {len(ALL_2025_MOVES)}")
-        print(f"   - Teams covered: {len(MOVES_BY_TEAM)}")
-        for team, count in list(TEAM_MOVE_COUNTS.items())[:10]:  # Show first 10
-            if team not in ['Total', 'AFC Total', 'NFC East Total']:
-                print(f"   - {team}: {count} moves")
+        # Load each team file directly
+        loaded_count = 0
+        for team_abbr, module_name in team_files.items():
+            try:
+                # Check if file exists
+                file_path = PLAYER_MOVES_PATH / f"{module_name}.py"
+                if file_path.exists():
+                    # Load the file as text and execute it
+                    with open(file_path, 'r', encoding='utf-8') as f:
+                        file_content = f.read()
+                    
+                    # Create a namespace to execute the file in
+                    namespace = {}
+                    exec(file_content, namespace)
+                    
+                    # Get the moves data
+                    moves_var_name = f"{module_name.upper()}_MOVES"
+                    if moves_var_name in namespace:
+                        team_moves = namespace[moves_var_name]
+                        MOVES_BY_TEAM[team_abbr] = team_moves
+                        ALL_2025_MOVES.extend(team_moves)
+                        loaded_count += 1
+                        print(f"✅ {team_abbr}: {len(team_moves)} moves")
+                    else:
+                        print(f"❌ {team_abbr}: Variable {moves_var_name} not found in file")
+                else:
+                    print(f"❌ {team_abbr}: File {module_name}.py not found")
+                    
+            except Exception as e:
+                print(f"❌ {team_abbr}: Error loading - {e}")
         
-        REAL_DATA_AVAILABLE = True
+        if loaded_count > 0:
+            # Create utility functions
+            def get_top_additions_by_team(team_abbr, min_importance=8.0, limit=5):
+                team_moves = MOVES_BY_TEAM.get(team_abbr.upper(), [])
+                additions = [move for move in team_moves 
+                            if move.get('to_team', '').upper() == team_abbr.upper() 
+                            and move.get('importance_to_new_team', 0) >= min_importance]
+                additions.sort(key=lambda x: x.get('importance_to_new_team', 0), reverse=True)
+                return additions[:limit]
+            
+            def get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5):
+                team_moves = MOVES_BY_TEAM.get(team_abbr.upper(), [])
+                losses = [move for move in team_moves 
+                         if move.get('from_team', '').upper() == team_abbr.upper() 
+                         and move.get('importance_to_old_team', 0) >= min_importance]
+                losses.sort(key=lambda x: x.get('importance_to_old_team', 0), reverse=True)
+                return losses[:limit]
+            
+            # Create team move counts
+            TEAM_MOVE_COUNTS = {
+                team_abbr: len(moves) for team_abbr, moves in MOVES_BY_TEAM.items()
+            }
+            TEAM_MOVE_COUNTS['Total'] = len(ALL_2025_MOVES)
+            
+            REAL_DATA_AVAILABLE = True
+            
+            print(f"\n✅ Successfully loaded real team data:")
+            print(f"   - Teams loaded: {loaded_count}")
+            print(f"   - Total moves: {len(ALL_2025_MOVES)}")
+            print(f"   - Top teams by moves:")
+            sorted_teams = sorted(TEAM_MOVE_COUNTS.items(), key=lambda x: x[1], reverse=True)
+            for team, count in sorted_teams[:5]:
+                if team != 'Total':
+                    print(f"     * {team}: {count} moves")
+        else:
+            print("❌ No team files could be loaded")
     else:
-        print(f"❌ Data path not found: {DATA_PATH}")
+        print(f"❌ Player moves directory not found: {PLAYER_MOVES_PATH}")
         
-except ImportError as e:
-    print(f"❌ Could not import real team data: {e}")
-    print("📝 Will use sample data")
 except Exception as e:
     print(f"❌ Error loading team data: {e}")
     print("📝 Will use sample data")
+
+print(f"\n🔧 REAL_DATA_AVAILABLE: {REAL_DATA_AVAILABLE}")
+if REAL_DATA_AVAILABLE:
+    print(f"🎯 Ready to serve real data for {len(MOVES_BY_TEAM)} teams!")
+else:
+    print("⚠️ Will use sample/fallback data")
 
 # =============================================================================
 # FASTAPI APP SETUP
@@ -150,16 +241,20 @@ def load_playoff_rankings():
 
 def get_real_team_data():
     """Get real team data from your actual files"""
-    if not REAL_DATA_AVAILABLE:
+    if not REAL_DATA_AVAILABLE or not MOVES_BY_TEAM:
         return get_sample_team_data()
+    
+    print(f"🔄 Processing real data for {len(MOVES_BY_TEAM)} teams...")
     
     # Process ALL your real data into API format
     teams_data = {}
+    team_mapping = create_team_mapping()
     
+    # First pass: Calculate all teams' data
     for team_abbr in MOVES_BY_TEAM.keys():
         # Get top additions and losses for each team
-        additions = get_top_additions_by_team(team_abbr, min_importance=7.0, limit=3)
-        losses = get_top_losses_by_team(team_abbr, min_importance=7.0, limit=3)
+        additions = get_top_additions_by_team(team_abbr, min_importance=7.0, limit=5)
+        losses = get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5)
         
         # Format for API
         addition_strings = [f"{move['player_name']} ({move['position']})" for move in additions]
@@ -171,16 +266,21 @@ def get_real_team_data():
         net_impact = (total_additions - total_losses) / 10  # Scale down
         
         # Determine grade based on net impact
-        if net_impact >= 3: grade = 'A'
+        if net_impact >= 3: grade = 'A+'
+        elif net_impact >= 2.5: grade = 'A'
         elif net_impact >= 2: grade = 'A-'
-        elif net_impact >= 1: grade = 'B+'
-        elif net_impact >= 0: grade = 'B'
-        elif net_impact >= -1: grade = 'B-'
-        elif net_impact >= -2: grade = 'C+'
-        else: grade = 'C'
+        elif net_impact >= 1.5: grade = 'B+'
+        elif net_impact >= 1: grade = 'B'
+        elif net_impact >= 0: grade = 'B-'
+        elif net_impact >= -1: grade = 'C+'
+        elif net_impact >= -2: grade = 'C'
+        else: grade = 'C-'
+        
+        # Get team move count
+        team_move_count = TEAM_MOVE_COUNTS.get(team_abbr, 0)
         
         teams_data[team_abbr] = {
-            'name': create_team_mapping()[team_abbr],
+            'name': team_mapping.get(team_abbr, team_abbr),
             'offseasonGrade': grade,
             'netImpact': f'{net_impact:+.1f}',
             'keyAdditions': addition_strings or ['No major additions'],
@@ -190,14 +290,27 @@ def get_real_team_data():
                 'defense': f'{net_impact * 0.4:+.1f}', 
                 'specialTeams': f'{net_impact * 0.2:+.1f}'
             },
-            'capSpace': '$25M',  # You could calculate this from your data
+            'capSpace': '$25M',
             'projectedWins': max(4, min(14, 8.5 + net_impact * 0.8)),
             'spreadImpact': f'{net_impact * 0.3:+.1f}',
             'divisionRank': 2,
-            'finalRank': 16,
-            'rankChange': 0
+            'totalMoves': team_move_count,
+            'net_impact_raw': net_impact  # For sorting
         }
     
+    # Second pass: Calculate rankings based on net impact
+    sorted_teams = sorted(teams_data.items(), key=lambda x: x[1]['net_impact_raw'], reverse=True)
+    
+    for rank, (team_abbr, team_data) in enumerate(sorted_teams, 1):
+        teams_data[team_abbr]['finalRank'] = rank
+        # Calculate rank change (for now, set to 0 since we don't have historical data)
+        teams_data[team_abbr]['rankChange'] = 0
+        # Remove the raw value we used for sorting
+        del teams_data[team_abbr]['net_impact_raw']
+        
+        print(f"✅ {team_abbr}: Rank #{rank}, {len(team_data['keyAdditions'])} additions, {team_data['totalMoves']} total moves")
+    
+    print(f"🎯 Successfully processed {len(teams_data)} teams with real rankings")
     return teams_data
 
 def get_sample_team_data():
@@ -300,19 +413,33 @@ async def get_all_teams():
     """Get all teams data"""
     print("📊 Loading all teams data...")
     
-    # Try to load from your playoff rankings first
+    # Try to use real data first, then fall back to CSV
+    if REAL_DATA_AVAILABLE and MOVES_BY_TEAM:
+        print(f"✅ Using real player move data ({len(ALL_2025_MOVES)} moves)")
+        
+        # Use your real team data
+        teams_data = get_real_team_data()
+        
+        return {
+            "source": "real_player_moves",
+            "teams": teams_data,
+            "lastUpdated": datetime.now().isoformat(),
+            "frameworkAvailable": FRAMEWORK_AVAILABLE,
+            "totalTeams": len(teams_data),
+            "totalMoves": len(ALL_2025_MOVES),
+            "dataStats": {
+                "topTeamsByMoves": sorted(TEAM_MOVE_COUNTS.items(), key=lambda x: x[1], reverse=True)[:5]
+            }
+        }
+    
+    # Fallback to CSV data
     rankings_df = load_playoff_rankings()
     team_mapping = create_team_mapping()
-    # Try to use real data first, fall back to sample
-    real_data = get_real_team_data()
-    sample_data = get_sample_team_data()
-    
-    teams_data = {**sample_data, **real_data}  # Real data overwrites sample
-    
-    teams_data = {}
     
     if rankings_df is not None:
-        # Use actual data from CSV
+        print("⚠️ Falling back to playoff rankings CSV")
+        teams_data = {}
+        
         for _, row in rankings_df.iterrows():
             team = str(row['team']).strip().upper()
             if team in team_mapping:
@@ -331,18 +458,25 @@ async def get_all_teams():
                     'spreadImpact': '+0.0',
                     'divisionRank': 2
                 }
-        print(f"✅ Loaded {len(teams_data)} teams from playoff rankings")
-    else:
-        # Use sample data
-        teams_data = sample_data
-        print("⚠️ Using sample team data")
+        
+        return {
+            "source": "playoff_adjusted_rankings.csv",
+            "teams": teams_data,
+            "lastUpdated": datetime.now().isoformat(),
+            "frameworkAvailable": FRAMEWORK_AVAILABLE,
+            "totalTeams": len(teams_data)
+        }
+    
+    # Final fallback to sample data
+    print("⚠️ Using sample data")
+    sample_data = get_sample_team_data()
     
     return {
-        "source": "playoff_adjusted_rankings.csv" if rankings_df is not None else "sample_data",
-        "teams": teams_data,
+        "source": "sample_data",
+        "teams": sample_data,
         "lastUpdated": datetime.now().isoformat(),
         "frameworkAvailable": FRAMEWORK_AVAILABLE,
-        "totalTeams": len(teams_data)
+        "totalTeams": len(sample_data)
     }
 
 @app.get("/api/teams/{team}")
@@ -402,14 +536,28 @@ async def get_bridge_analysis():
     """Get analysis from your player bridge framework"""
     print("🔍 Getting bridge analysis...")
     
+    if REAL_DATA_AVAILABLE and MOVES_BY_TEAM:
+        # Use your real data
+        teams_list = list(get_real_team_data().values())
+        
+        # Sort by net impact for top/bottom teams
+        sorted_teams = sorted(teams_list, key=lambda x: float(x['netImpact'].replace('+', '')), reverse=True)
+        
+        return BridgeAnalysis(
+            totalMoves=len(ALL_2025_MOVES),  # This should be 583
+            lastUpdated=datetime.now().isoformat(),
+            topTeams=sorted_teams[:5],
+            bottomTeams=sorted_teams[-3:],
+            frameworkAvailable=FRAMEWORK_AVAILABLE
+        )
+    
+    # Fallback for when real data isn't available
     sample_data = get_sample_team_data()
     teams_list = list(sample_data.values())
-    
-    # Sort by projected wins for top/bottom teams
     sorted_teams = sorted(teams_list, key=lambda x: x['projectedWins'], reverse=True)
     
     return BridgeAnalysis(
-        totalMoves=487,  # Sample number
+        totalMoves=487,  # This is the old fallback number
         lastUpdated=datetime.now().isoformat(),
         topTeams=sorted_teams[:5],
         bottomTeams=sorted_teams[-3:],

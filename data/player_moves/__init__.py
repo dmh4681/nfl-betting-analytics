@@ -2,167 +2,101 @@
 NFL Player Bridge Data - 2025 Offseason Moves
 Organized by team for easy maintenance and updates
 """
+import os
+from pathlib import Path
 
 # =============================================================================
-# IMPORT ALL TEAM MOVE DATA
+# DYNAMIC IMPORTS - Only import files that exist
 # =============================================================================
 
-# NFC East (you already have these)
-from .eagles_2025 import EAGLES_2025_MOVES
-from .cowboys_2025 import COWBOYS_2025_MOVES
-from .giants_2025 import GIANTS_2025_MOVES
-from .commanders_2025 import COMMANDERS_2025_MOVES
+# Get current directory
+current_dir = Path(__file__).parent
 
-# AFC East
-from .bills_2025 import BILLS_2025_MOVES
-from .dolphins_2025 import DOLPHINS_2025_MOVES
-from .patriots_2025 import PATRIOTS_2025_MOVES
-from .jets_2025 import JETS_2025_MOVES
-
-# AFC North
-from .ravens_2025 import RAVENS_2025_MOVES
-from .steelers_2025 import STEELERS_2025_MOVES
-from .browns_2025 import BROWNS_2025_MOVES
-from .bengals_2025 import BENGALS_2025_MOVES
-
-# AFC South
-from .texans_2025 import TEXANS_2025_MOVES
-from .colts_2025 import COLTS_2025_MOVES
-from .titans_2025 import TITANS_2025_MOVES
-from .jaguars_2025 import JAGUARS_2025_MOVES
-
-# AFC West
-from .chiefs_2025 import CHIEFS_2025_MOVES
-from .chargers_2025 import CHARGERS_2025_MOVES
-from .broncos_2025 import BRONCOS_2025_MOVES
-from .raiders_2025 import RAIDERS_2025_MOVES
-
-# =============================================================================
-# COMBINE ALL MOVES
-# =============================================================================
-
-# Master list of all moves
-ALL_2025_MOVES = (
+# Define all possible team files
+TEAM_FILES = {
     # NFC East
-    EAGLES_2025_MOVES +
-    COWBOYS_2025_MOVES +
-    GIANTS_2025_MOVES +
-    COMMANDERS_2025_MOVES +
+    'PHI': ('eagles_2025', 'EAGLES_2025_MOVES'),
+    'DAL': ('cowboys_2025', 'COWBOYS_2025_MOVES'),
+    'NYG': ('giants_2025', 'GIANTS_2025_MOVES'),
+    'WAS': ('commanders_2025', 'COMMANDERS_2025_MOVES'),
     
     # AFC East
-    BILLS_2025_MOVES +
-    DOLPHINS_2025_MOVES +
-    PATRIOTS_2025_MOVES +
-    JETS_2025_MOVES +
+    'BUF': ('bills_2025', 'BILLS_2025_MOVES'),
+    'MIA': ('dolphins_2025', 'DOLPHINS_2025_MOVES'),
+    'NE': ('patriots_2025', 'PATRIOTS_2025_MOVES'),
+    'NYJ': ('jets_2025', 'JETS_2025_MOVES'),
     
     # AFC North
-    RAVENS_2025_MOVES +
-    STEELERS_2025_MOVES +
-    BROWNS_2025_MOVES +
-    BENGALS_2025_MOVES +
+    'BAL': ('ravens_2025', 'RAVENS_2025_MOVES'),
+    'PIT': ('steelers_2025', 'STEELERS_2025_MOVES'),
+    'CLE': ('browns_2025', 'BROWNS_2025_MOVES'),
+    'CIN': ('bengals_2025', 'BENGALS_2025_MOVES'),
     
     # AFC South
-    TEXANS_2025_MOVES +
-    COLTS_2025_MOVES +
-    TITANS_2025_MOVES +
-    JAGUARS_2025_MOVES +
+    'HOU': ('texans_2025', 'TEXANS_2025_MOVES'),
+    'IND': ('colts_2025', 'COLTS_2025_MOVES'),
+    'TEN': ('titans_2025', 'TITANS_2025_MOVES'),
+    'JAC': ('jaguars_2025', 'JAGUARS_2025_MOVES'),
     
     # AFC West
-    CHIEFS_2025_MOVES +
-    CHARGERS_2025_MOVES +
-    BRONCOS_2025_MOVES +
-    RAIDERS_2025_MOVES
-)
-
-# =============================================================================
-# ORGANIZE BY TEAM (for API usage)
-# =============================================================================
-
-MOVES_BY_TEAM = {
-    # NFC East
-    'PHI': EAGLES_2025_MOVES,
-    'DAL': COWBOYS_2025_MOVES,
-    'NYG': GIANTS_2025_MOVES,
-    'WAS': COMMANDERS_2025_MOVES,
-    
-    # AFC East
-    'BUF': BILLS_2025_MOVES,
-    'MIA': DOLPHINS_2025_MOVES,
-    'NE': PATRIOTS_2025_MOVES,
-    'NYJ': JETS_2025_MOVES,
-    
-    # AFC North
-    'BAL': RAVENS_2025_MOVES,
-    'PIT': STEELERS_2025_MOVES,
-    'CLE': BROWNS_2025_MOVES,
-    'CIN': BENGALS_2025_MOVES,
-    
-    # AFC South
-    'HOU': TEXANS_2025_MOVES,
-    'IND': COLTS_2025_MOVES,
-    'TEN': TITANS_2025_MOVES,
-    'JAC': JAGUARS_2025_MOVES,
-    
-    # AFC West
-    'KC': CHIEFS_2025_MOVES,
-    'LAC': CHARGERS_2025_MOVES,
-    'DEN': BRONCOS_2025_MOVES,
-    'LV': RAIDERS_2025_MOVES
+    'KC': ('chiefs_2025', 'CHIEFS_2025_MOVES'),
+    'LAC': ('chargers_2025', 'CHARGERS_2025_MOVES'),
+    'DEN': ('broncos_2025', 'BRONCOS_2025_MOVES'),
+    'LV': ('raiders_2025', 'RAIDERS_2025_MOVES')
 }
 
+# Dynamic imports
+MOVES_BY_TEAM = {}
+ALL_2025_MOVES = []
+TEAM_MOVE_COUNTS = {}
+
+loaded_teams = []
+missing_teams = []
+
+for team_abbr, (module_name, moves_var) in TEAM_FILES.items():
+    try:
+        # Check if file exists
+        file_path = current_dir / f"{module_name}.py"
+        if file_path.exists():
+            # Dynamic import
+            module = __import__(module_name)
+            moves = getattr(module, moves_var)
+            
+            # Store the data
+            MOVES_BY_TEAM[team_abbr] = moves
+            ALL_2025_MOVES.extend(moves)
+            TEAM_MOVE_COUNTS[module_name.replace('_2025', '').title()] = len(moves)
+            
+            loaded_teams.append(team_abbr)
+            print(f"✅ {team_abbr}: {len(moves)} moves")
+        else:
+            missing_teams.append(team_abbr)
+            print(f"❌ {team_abbr}: File {module_name}.py not found")
+            
+    except Exception as e:
+        missing_teams.append(team_abbr)
+        print(f"❌ {team_abbr}: Error loading - {e}")
+
 # =============================================================================
-# TEAM STATISTICS AND METADATA
+# SUMMARY STATISTICS
 # =============================================================================
 
-# Team move counts for reference
-TEAM_MOVE_COUNTS = {
-    # NFC East
-    'Eagles': len(EAGLES_2025_MOVES),
-    'Cowboys': len(COWBOYS_2025_MOVES),
-    'Giants': len(GIANTS_2025_MOVES),
-    'Commanders': len(COMMANDERS_2025_MOVES),
-    
-    # AFC East
-    'Bills': len(BILLS_2025_MOVES),
-    'Dolphins': len(DOLPHINS_2025_MOVES),
-    'Patriots': len(PATRIOTS_2025_MOVES),
-    'Jets': len(JETS_2025_MOVES),
-    
-    # AFC North
-    'Ravens': len(RAVENS_2025_MOVES),
-    'Steelers': len(STEELERS_2025_MOVES),
-    'Browns': len(BROWNS_2025_MOVES),
-    'Bengals': len(BENGALS_2025_MOVES),
-    
-    # AFC South
-    'Texans': len(TEXANS_2025_MOVES),
-    'Colts': len(COLTS_2025_MOVES),
-    'Titans': len(TITANS_2025_MOVES),
-    'Jaguars': len(JAGUARS_2025_MOVES),
-    
-    # AFC West
-    'Chiefs': len(CHIEFS_2025_MOVES),
-    'Chargers': len(CHARGERS_2025_MOVES),
-    'Broncos': len(BRONCOS_2025_MOVES),
-    'Raiders': len(RAIDERS_2025_MOVES),
-    
-    # Totals
-    'Total': len(ALL_2025_MOVES),
-    'AFC Total': (len(BILLS_2025_MOVES) + len(DOLPHINS_2025_MOVES) + len(PATRIOTS_2025_MOVES) + len(JETS_2025_MOVES) +
-                  len(RAVENS_2025_MOVES) + len(STEELERS_2025_MOVES) + len(BROWNS_2025_MOVES) + len(BENGALS_2025_MOVES) +
-                  len(TEXANS_2025_MOVES) + len(COLTS_2025_MOVES) + len(TITANS_2025_MOVES) + len(JAGUARS_2025_MOVES) +
-                  len(CHIEFS_2025_MOVES) + len(CHARGERS_2025_MOVES) + len(BRONCOS_2025_MOVES) + len(RAIDERS_2025_MOVES)),
-    'NFC East Total': (len(EAGLES_2025_MOVES) + len(COWBOYS_2025_MOVES) + len(GIANTS_2025_MOVES) + len(COMMANDERS_2025_MOVES))
-}
+TEAM_MOVE_COUNTS['Total'] = len(ALL_2025_MOVES)
 
-# Division organization for analysis
-DIVISIONS = {
+# Division organization (only include teams we actually loaded)
+DIVISIONS = {}
+division_mapping = {
     'AFC East': ['BUF', 'MIA', 'NE', 'NYJ'],
     'AFC North': ['BAL', 'PIT', 'CLE', 'CIN'],
     'AFC South': ['HOU', 'IND', 'TEN', 'JAC'],
     'AFC West': ['KC', 'LAC', 'DEN', 'LV'],
     'NFC East': ['PHI', 'DAL', 'NYG', 'WAS']
 }
+
+for div_name, teams in division_mapping.items():
+    loaded_div_teams = [team for team in teams if team in loaded_teams]
+    if loaded_div_teams:  # Only include divisions with at least one loaded team
+        DIVISIONS[div_name] = loaded_div_teams
 
 # =============================================================================
 # UTILITY FUNCTIONS FOR API
@@ -186,7 +120,7 @@ def get_top_additions_by_team(team_abbr, min_importance=8.0, limit=5):
     """Get top additions for a team by importance"""
     team_moves = get_team_moves(team_abbr)
     additions = [move for move in team_moves 
-                if move['to_team'].upper() == team_abbr.upper() 
+                if move.get('to_team', '').upper() == team_abbr.upper() 
                 and move.get('importance_to_new_team', 0) >= min_importance]
     
     # Sort by importance
@@ -197,7 +131,7 @@ def get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5):
     """Get top losses for a team by importance"""
     team_moves = get_team_moves(team_abbr)
     losses = [move for move in team_moves 
-             if move['from_team'].upper() == team_abbr.upper() 
+             if move.get('from_team', '').upper() == team_abbr.upper() 
              and move.get('importance_to_old_team', 0) >= min_importance]
     
     # Sort by importance  
@@ -205,24 +139,20 @@ def get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5):
     return losses[:limit]
 
 # =============================================================================
-# STARTUP LOGGING
+# STARTUP SUMMARY
 # =============================================================================
 
-print(f"🏈 NFL Player Bridge Data Loaded:")
-print(f"📊 Total Teams: {len(MOVES_BY_TEAM)}")
-print(f"📋 Total Moves: {TEAM_MOVE_COUNTS['Total']}")
-print(f"🏟️ AFC Moves: {TEAM_MOVE_COUNTS['AFC Total']}")
-print(f"🏟️ NFC East Moves: {TEAM_MOVE_COUNTS['NFC East Total']}")
-print()
+print(f"\n🏈 NFL Player Bridge Data Summary:")
+print(f"✅ Teams loaded: {len(loaded_teams)} ({', '.join(loaded_teams)})")
+print(f"❌ Teams missing: {len(missing_teams)} ({', '.join(missing_teams) if missing_teams else 'None'})")
+print(f"📋 Total moves: {len(ALL_2025_MOVES)}")
+print(f"🏟️ Divisions: {len(DIVISIONS)}")
 
-# Show top teams by move count
-sorted_teams = sorted([(team, count) for team, count in TEAM_MOVE_COUNTS.items() 
-                      if team not in ['Total', 'AFC Total', 'NFC East Total']], 
-                     key=lambda x: x[1], reverse=True)
+if loaded_teams:
+    print(f"\n📈 Top teams by move count:")
+    sorted_counts = sorted([(team, count) for team, count in TEAM_MOVE_COUNTS.items() 
+                           if team != 'Total'], key=lambda x: x[1], reverse=True)
+    for i, (team, count) in enumerate(sorted_counts[:5], 1):
+        print(f"  {i}. {team}: {count} moves")
 
-print("📈 Top Teams by Move Count:")
-for i, (team, count) in enumerate(sorted_teams[:10], 1):
-    print(f"  {i:2d}. {team}: {count} moves")
-
-print()
-print("✅ Ready for API integration!")
+print(f"\n✅ Ready for API integration!")
