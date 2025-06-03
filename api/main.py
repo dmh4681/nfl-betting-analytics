@@ -310,13 +310,14 @@ async def get_player_moves(
     position: Optional[str] = None,
     move_type: Optional[str] = None,
     min_impact: Optional[float] = None,
-    limit: Optional[int] = Query(50, le=500)
+    limit: Optional[int] = Query(200, le=1000)
 ):
     """Get player moves with optional filters"""
     if NFL_DATA is None:
         raise HTTPException(status_code=500, detail="Data not loaded")
     
     moves_df = NFL_DATA['players_master'].copy()
+    original_count = len(moves_df)
     
     # Apply filters
     if team:
@@ -325,20 +326,39 @@ async def get_player_moves(
             (moves_df['from_team'] == team_upper) | 
             (moves_df['to_team'] == team_upper)
         ]
+        print(f"After team filter ({team_upper}): {len(moves_df)} moves")
     
     if position:
-        moves_df = moves_df[moves_df['position_group'].str.contains(position, case=False, na=False)]
+        if position == "OL":
+            # Offensive Line includes multiple positions
+            moves_df = moves_df[moves_df['position'].isin(['LT', 'LG', 'C', 'RG', 'RT', 'G', 'T', 'OL'])]
+        elif position == "DL":
+            # Defensive Line
+            moves_df = moves_df[moves_df['position'].isin(['DE', 'DT', 'NT', 'EDGE', 'DL'])]
+        elif position == "DB":
+            # Defensive Backs
+            moves_df = moves_df[moves_df['position'].isin(['CB', 'CB1', 'CB2', 'S', 'FS', 'SS', 'DB'])]
+        else:
+            # Exact position match or position group
+            moves_df = moves_df[
+                (moves_df['position_group'].str.contains(position, case=False, na=False)) |
+                (moves_df['position'].str.contains(position, case=False, na=False))
+            ]
+        print(f"After position filter ({position}): {len(moves_df)} moves")
     
     if move_type:
         moves_df = moves_df[moves_df['move_type'].str.contains(move_type, case=False, na=False)]
+        print(f"After move_type filter ({move_type}): {len(moves_df)} moves")
     
     if min_impact:
         moves_df = moves_df[moves_df['impact_score'] >= min_impact]
+        print(f"After min_impact filter ({min_impact}): {len(moves_df)} moves")
     
     # Sort by impact score descending
     moves_df = moves_df.sort_values('impact_score', ascending=False)
     
     # Limit results
+    filtered_count = len(moves_df)
     moves_df = moves_df.head(limit)
     
     # Convert to PlayerMove objects
@@ -362,12 +382,15 @@ async def get_player_moves(
     
     return {
         "moves": moves,
-        "total_found": len(moves_df),
+        "total_found": filtered_count,
+        "total_displayed": len(moves),
+        "original_total": original_count,
         "filters_applied": {
             "team": team,
             "position": position,
             "move_type": move_type,
-            "min_impact": min_impact
+            "min_impact": min_impact,
+            "limit": limit
         }
     }
 

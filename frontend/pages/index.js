@@ -86,6 +86,7 @@ const NFLAnalyticsDashboard = () => {
   const [filterPosition, setFilterPosition] = useState('');
   const [filterMoveType, setFilterMoveType] = useState('');
   const [recentMoves, setRecentMoves] = useState([]);
+  const [movesStats, setMovesStats] = useState({ total_found: 0, total_displayed: 0 });
 
   // API base URL
   const API_BASE = 'http://localhost:8000';
@@ -138,16 +139,22 @@ const NFLAnalyticsDashboard = () => {
 
   const loadFilteredMoves = async (team = '', position = '', moveType = '', minImpact = null) => {
     try {
-      let url = `${API_BASE}/api/moves?limit=100`;
+      let url = `${API_BASE}/api/moves?limit=500`;  // Increased limit
       
       if (team) url += `&team=${team}`;
       if (position) url += `&position=${position}`;
       if (moveType) url += `&move_type=${encodeURIComponent(moveType)}`;
       if (minImpact !== null) url += `&min_impact=${minImpact}`;
       
+      console.log('Loading moves with URL:', url);
       const response = await fetch(url);
       const data = await response.json();
+      console.log('Moves loaded:', data.total_found, 'found,', data.total_displayed, 'displayed');
       setRecentMoves(data.moves || []);
+      setMovesStats({
+        total_found: data.total_found || 0,
+        total_displayed: data.total_displayed || data.moves?.length || 0
+      });
     } catch (error) {
       console.error('Error loading filtered moves:', error);
     }
@@ -438,8 +445,13 @@ const NFLAnalyticsDashboard = () => {
                   <p className="text-slate-400">All 876 moves with impact scoring and filtering</p>
                 </div>
                 <div className="text-right">
-                  <div className="text-2xl font-bold text-blue-400">{recentMoves.length}</div>
-                  <p className="text-slate-400 text-sm">High-Impact Moves</p>
+                  <div className="text-2xl font-bold text-blue-400">{movesStats.total_found}</div>
+                  <p className="text-slate-400 text-sm">
+                    {movesStats.total_displayed < movesStats.total_found 
+                      ? `Showing ${movesStats.total_displayed} of ${movesStats.total_found}`
+                      : 'Total Moves Found'
+                    }
+                  </p>
                 </div>
               </div>
               
