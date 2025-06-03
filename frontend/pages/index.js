@@ -83,6 +83,8 @@ const NFLAnalyticsDashboard = () => {
   const [currentTeamData, setCurrentTeamData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [view, setView] = useState('rankings'); // 'rankings', 'team', 'division', 'moves'
+  const [selectedDivision, setSelectedDivision] = useState('AFC North');
+  const [divisionData, setDivisionData] = useState(null);
   const [filterPosition, setFilterPosition] = useState('');
   const [filterMoveType, setFilterMoveType] = useState('');
   const [recentMoves, setRecentMoves] = useState([]);
@@ -161,12 +163,60 @@ const NFLAnalyticsDashboard = () => {
     }
   };
 
+  // Load division data when selection changes
+  useEffect(() => {
+    if (selectedDivision && view === 'division') {
+      loadDivisionData(selectedDivision);
+    }
+  }, [selectedDivision, view]);
+
+  const loadDivisionData = async (division) => {
+    try {
+      const response = await fetch(`${API_BASE}/api/divisions/${encodeURIComponent(division)}`);
+      const data = await response.json();
+      setDivisionData(data);
+    } catch (error) {
+      console.error('Error loading division data:', error);
+    }
+  };
+
   // Load filtered moves when filters change
   useEffect(() => {
     if (view === 'moves') {
       loadFilteredMoves(selectedTeam, filterPosition, filterMoveType);
     }
   }, [view, selectedTeam, filterPosition, filterMoveType]);
+
+  const getDivisionTeamMoves = async (teamAbbr) => {
+    try {
+      const response = await fetch(`${API_BASE}/api/moves?team=${teamAbbr}&limit=200`);
+      const data = await response.json();
+      return data.moves || [];
+    } catch (error) {
+      console.error('Error loading team moves:', error);
+      return [];
+    }
+  };
+
+  // Load division moves when division data loads
+  useEffect(() => {
+    if (divisionData && view === 'division') {
+      loadDivisionMoves();
+    }
+  }, [divisionData, view]);
+
+  const [divisionMoves, setDivisionMoves] = useState({});
+
+  const loadDivisionMoves = async () => {
+    if (!divisionData?.teams) return;
+    
+    const movesData = {};
+    for (const team of divisionData.teams) {
+      const teamMoves = await getDivisionTeamMoves(team.team);
+      movesData[team.team] = teamMoves;
+    }
+    setDivisionMoves(movesData);
+  };
 
   const getRankingMovementIcon = (rankChange) => {
     if (rankChange > 0) return <ArrowUp className="w-4 h-4 text-green-400" />;
@@ -239,6 +289,7 @@ const NFLAnalyticsDashboard = () => {
                 {[
                   { key: 'rankings', label: 'Rankings', icon: BarChart3 },
                   { key: 'team', label: 'Teams', icon: Users },
+                  { key: 'division', label: 'Divisions', icon: Target },
                   { key: 'moves', label: 'Moves', icon: TrendingUp }
                 ].map(({ key, label, icon: Icon }) => (
                   <button
@@ -431,6 +482,307 @@ const NFLAnalyticsDashboard = () => {
                 </CardContent>
               </Card>
             </div>
+          </div>
+        )}
+
+        {/* Division Analysis View */}
+        {view === 'division' && (
+          <div className="space-y-6">
+            
+            {/* Division Header & Selector */}
+            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-lg border p-6" style={{backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#334155'}}>
+              <div className="flex items-center justify-between mb-4">
+                <div>
+                  <h1 className="text-3xl font-bold text-white">Division Analysis</h1>
+                  <p className="text-slate-400">Competitive balance and head-to-head offseason comparisons</p>
+                </div>
+                <div className="text-right">
+                  <select 
+                    value={selectedDivision}
+                    onChange={(e) => setSelectedDivision(e.target.value)}
+                    className="px-4 py-2 rounded-lg text-white text-lg font-medium"
+                    style={{backgroundColor: '#334155', borderColor: '#475569'}}
+                  >
+                    <option value="AFC North">AFC North</option>
+                    <option value="AFC East">AFC East</option>
+                    <option value="AFC South">AFC South</option>
+                    <option value="AFC West">AFC West</option>
+                    <option value="NFC East">NFC East</option>
+                    <option value="NFC North">NFC North</option>
+                    <option value="NFC South">NFC South</option>
+                    <option value="NFC West">NFC West</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            {/* Division Overview Cards */}
+            {divisionData && (
+              <>
+                <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                  <Card className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border-blue-500/30">
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-blue-400 text-sm font-medium">Division Winner</p>
+                          <p className="text-xl font-bold text-white">{divisionData.division_info.best_team}</p>
+                        </div>
+                        <Trophy className="w-8 h-8 text-blue-400" />
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-to-r from-green-500/20 to-green-600/20 border-green-500/30">
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-green-400 text-sm font-medium">Best Offseason</p>
+                          <p className="text-xl font-bold text-white">{divisionData.division_info.best_offseason}</p>
+                        </div>
+                        <Star className="w-8 h-8 text-green-400" />
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-to-r from-purple-500/20 to-purple-600/20 border-purple-500/30">
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-purple-400 text-sm font-medium">Most Active</p>
+                          <p className="text-xl font-bold text-white">{divisionData.division_info.most_active}</p>
+                        </div>
+                        <Users className="w-8 h-8 text-purple-400" />
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-yellow-500/30">
+                    <CardContent className="p-4">
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <p className="text-yellow-400 text-sm font-medium">Total Moves</p>
+                          <p className="text-xl font-bold text-white">{divisionData.division_info.total_moves}</p>
+                        </div>
+                        <TrendingUp className="w-8 h-8 text-yellow-400" />
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                {/* Division Teams Comparison */}
+                <Card className="backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center">
+                      <Target className="w-5 h-5 mr-2 text-purple-400" />
+                      {selectedDivision} Head-to-Head Comparison
+                      <span className="ml-auto text-sm text-slate-400">
+                        Competitive Balance: {divisionData.division_info.competitive_balance.toFixed(1)}/10
+                      </span>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="overflow-x-auto">
+                      <table className="w-full" style={{backgroundColor: 'transparent'}}>
+                        <thead>
+                          <tr className="border-b" style={{borderColor: '#334155'}}>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Team</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">2025 Rank</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Offseason Grade</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Net Impact</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Key Addition</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Division Outlook</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {divisionData.teams.map((team, idx) => {
+                            const teamRanking = powerRankings.find(r => r.team === team.team);
+                            return (
+                              <tr 
+                                key={team.team} 
+                                className="border-b hover:bg-slate-700/30 cursor-pointer transition-colors"
+                                style={{borderColor: 'rgba(51, 65, 85, 0.5)'}}
+                                onClick={() => {
+                                  setSelectedTeam(team.team);
+                                  setView('team');
+                                }}
+                              >
+                                <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="flex items-center space-x-3">
+                                    <div className={`w-8 h-8 rounded flex items-center justify-center text-xs font-bold text-white ${
+                                      idx === 0 ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' :
+                                      idx === 1 ? 'bg-gradient-to-r from-gray-400 to-gray-500' :
+                                      idx === 2 ? 'bg-gradient-to-r from-orange-600 to-orange-700' :
+                                      'bg-gradient-to-r from-red-600 to-red-700'
+                                    }`}>
+                                      {team.team}
+                                    </div>
+                                    <div>
+                                      <div className="text-white font-medium">{team.team_name}</div>
+                                      <div className="text-xs text-slate-400">
+                                        {idx === 0 ? '🏆 Division Leader' :
+                                         idx === 1 ? '🥈 Wild Card Hope' :
+                                         idx === 2 ? '🥉 Fighting for .500' :
+                                         '💀 Rebuild Mode'}
+                                      </div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="text-white font-bold text-lg">#{team.final_rank}</div>
+                                  {teamRanking && (
+                                    <div className="flex items-center space-x-1 text-xs">
+                                      {getRankingMovementIcon(teamRanking.rank_change)}
+                                      <span className={teamRanking.rank_change > 0 ? 'text-green-400' : teamRanking.rank_change < 0 ? 'text-red-400' : 'text-slate-400'}>
+                                        {teamRanking.rank_change > 0 ? '+' : ''}{teamRanking.rank_change}
+                                      </span>
+                                    </div>
+                                  )}
+                                </td>
+                                <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <span className={`px-3 py-1 rounded-full text-sm font-medium ${getGradeColor(team.offseason_grade)}`}>
+                                    {team.offseason_grade}
+                                  </span>
+                                </td>
+                                <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="flex items-center space-x-2">
+                                    <span className={`font-bold text-lg ${
+                                      team.net_impact > 2 ? 'text-green-400' : 
+                                      team.net_impact > 0 ? 'text-blue-400' : 
+                                      team.net_impact > -2 ? 'text-yellow-400' : 'text-red-400'
+                                    }`}>
+                                      {formatImpact(team.net_impact)}
+                                    </span>
+                                    <div className="w-12 bg-slate-700 rounded-full h-2">
+                                      <div 
+                                        className={`h-2 rounded-full ${
+                                          team.net_impact > 2 ? 'bg-green-400' : 
+                                          team.net_impact > 0 ? 'bg-blue-400' : 
+                                          team.net_impact > -2 ? 'bg-yellow-400' : 'bg-red-400'
+                                        }`}
+                                        style={{width: `${Math.min(100, Math.max(10, (team.net_impact + 5) * 10))}%`}}
+                                      ></div>
+                                    </div>
+                                  </div>
+                                </td>
+                                <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="text-white text-sm">
+                                    {teamRanking?.key_additions?.[0] || 'No major additions'}
+                                  </div>
+                                </td>
+                                <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="text-sm">
+                                    {idx === 0 ? (
+                                      <span className="text-green-400 font-medium">Division Favorite</span>
+                                    ) : idx === 1 ? (
+                                      <span className="text-blue-400 font-medium">Playoff Contender</span>
+                                    ) : idx === 2 ? (
+                                      <span className="text-yellow-400 font-medium">Middling Team</span>
+                                    ) : (
+                                      <span className="text-red-400 font-medium">Bottom Feeder</span>
+                                    )}
+                                    <div className="text-xs text-slate-400 mt-1">
+                                      Strength: {divisionData.division_info.strength_rating.toFixed(1)}/10
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Division Storylines */}
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  
+                  {/* Key Storylines */}
+                  <Card className="backdrop-blur-sm">
+                    <CardHeader>
+                      <CardTitle className="text-white flex items-center">
+                        <AlertCircle className="w-5 h-5 mr-2 text-blue-400" />
+                        {selectedDivision} Key Storylines
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        <div className="p-4 rounded-lg" style={{backgroundColor: 'rgba(59, 130, 246, 0.1)', borderColor: 'rgba(59, 130, 246, 0.3)', border: '1px solid'}}>
+                          <h4 className="text-blue-400 font-medium mb-2">Division Winner Prediction</h4>
+                          <p className="text-white text-sm">
+                            <strong>{divisionData.division_info.best_team}</strong> emerges as the clear favorite after their strong offseason. 
+                            With {formatImpact(divisionData.division_info.avg_net_impact)} average net impact across the division, 
+                            competitive balance is {divisionData.division_info.competitive_balance < 5 ? 'low' : 'high'}.
+                          </p>
+                        </div>
+                        
+                        <div className="p-4 rounded-lg" style={{backgroundColor: 'rgba(34, 197, 94, 0.1)', borderColor: 'rgba(34, 197, 94, 0.3)', border: '1px solid'}}>
+                          <h4 className="text-green-400 font-medium mb-2">Biggest Offseason Winner</h4>
+                          <p className="text-white text-sm">
+                            <strong>{divisionData.division_info.best_offseason}</strong> had the most impactful offseason in the division, 
+                            positioning themselves for a potential breakthrough season.
+                          </p>
+                        </div>
+                        
+                        <div className="p-4 rounded-lg" style={{backgroundColor: 'rgba(168, 85, 247, 0.1)', borderColor: 'rgba(168, 85, 247, 0.3)', border: '1px solid'}}>
+                          <h4 className="text-purple-400 font-medium mb-2">Most Active Front Office</h4>
+                          <p className="text-white text-sm">
+                            <strong>{divisionData.division_info.most_active}</strong> led the division with the most roster moves, 
+                            showing an aggressive approach to improvement.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  {/* Division Moves Summary */}
+                  <Card className="backdrop-blur-sm">
+                    <CardHeader>
+                      <CardTitle className="text-white flex items-center">
+                        <BarChart3 className="w-5 h-5 mr-2 text-green-400" />
+                        Division Move Analysis
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-4">
+                        {divisionData.teams.map((team, idx) => {
+                          const teamMoves = divisionMoves[team.team] || [];
+                          const highImpactMoves = teamMoves.filter(m => m.impact_score >= 1.5);
+                          
+                          return (
+                            <div key={team.team} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(51, 65, 85, 0.5)'}}>
+                              <div className="flex items-center space-x-3">
+                                <div className={`w-6 h-6 rounded flex items-center justify-center text-xs font-bold text-white ${
+                                  idx === 0 ? 'bg-yellow-500' : idx === 1 ? 'bg-gray-400' : idx === 2 ? 'bg-orange-600' : 'bg-red-600'
+                                }`}>
+                                  {team.team}
+                                </div>
+                                <span className="text-white font-medium">{team.team_name}</span>
+                              </div>
+                              <div className="text-right">
+                                <div className="text-white font-bold">{highImpactMoves.length} high-impact</div>
+                                <div className="text-xs text-slate-400">{teamMoves.length} total moves</div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                        
+                        <div className="mt-4 p-3 border-t" style={{borderColor: '#334155'}}>
+                          <div className="flex justify-between text-sm">
+                            <span className="text-slate-400">Division Total:</span>
+                            <span className="text-white font-medium">{divisionData.division_info.total_moves} moves</span>
+                          </div>
+                          <div className="flex justify-between text-sm mt-1">
+                            <span className="text-slate-400">Avg Impact:</span>
+                            <span className="text-blue-400 font-medium">{formatImpact(divisionData.division_info.avg_net_impact)}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </>
+            )}
           </div>
         )}
 
