@@ -1,6 +1,13 @@
+/* Add this to your globals.css file in styles/globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Force dark theme styles */
+* {
+  box-sizing: border-box;
+}
 
 html,
 body {
@@ -8,13 +15,158 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: #0f172a !important;
+  color: #ffffff !important;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* Override any conflicting styles */
+.bg-gradient-to-br {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%) !important;
 }
 
+.bg-slate-800\/50 {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.bg-slate-700 {
+  background-color: #334155 !important;
+}
+
+.border-slate-700 {
+  border-color: #334155 !important;
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+.text-blue-400 {
+  color: #60a5fa !important;
+}
+
+.text-green-400 {
+  color: #4ade80 !important;
+}
+
+.text-red-400 {
+  color: #f87171 !important;
+}
+
+.text-purple-400 {
+  color: #c084fc !important;
+}
+
+.text-yellow-400 {
+  color: #facc15 !important;
+}
+
+/* Card styles */
+.bg-card {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+  border: 1px solid #334155 !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Button styles */
+.bg-blue-600 {
+  background-color: #2563eb !important;
+}
+
+.hover\:bg-slate-600:hover {
+  background-color: #475569 !important;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-to-r.from-blue-500\/20 {
+  background: linear-gradient(90deg, rgba(59, 130, 246, 0.2) 0%, rgba(37, 99, 235, 0.2) 100%) !important;
+}
+
+.bg-gradient-to-r.from-green-500\/20 {
+  background: linear-gradient(90deg, rgba(34, 197, 94, 0.2) 0%, rgba(22, 163, 74, 0.2) 100%) !important;
+}
+
+.bg-gradient-to-r.from-purple-500\/20 {
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%) !important;
+}
+
+.bg-gradient-to-r.from-yellow-500\/20 {
+  background: linear-gradient(90deg, rgba(234, 179, 8, 0.2) 0%, rgba(202, 138, 4, 0.2) 100%) !important;
+}
+
+/* Grade color backgrounds */
+.bg-green-400\/20 {
+  background-color: rgba(74, 222, 128, 0.2) !important;
+}
+
+.bg-blue-400\/20 {
+  background-color: rgba(96, 165, 250, 0.2) !important;
+}
+
+.bg-yellow-400\/20 {
+  background-color: rgba(250, 204, 21, 0.2) !important;
+}
+
+.bg-orange-400\/20 {
+  background-color: rgba(251, 146, 60, 0.2) !important;
+}
+
+.bg-red-400\/20 {
+  background-color: rgba(248, 113, 113, 0.2) !important;
+}
+
+/* Hover effects */
+.hover\:bg-slate-700\/30:hover {
+  background-color: rgba(51, 65, 85, 0.3) !important;
+}
+
+/* Override any default table styles */
+table {
+  background-color: transparent !important;
+  color: #ffffff !important;
+}
+
+th {
+  color: #94a3b8 !important;
+  background-color: transparent !important;
+}
+
+td {
+  color: #ffffff !important;
+  background-color: transparent !important;
+}
+
+/* Input styles */
+input {
+  background-color: #334155 !important;
+  border-color: #475569 !important;
+  color: #ffffff !important;
+}
+
+input::placeholder {
+  color: #94a3b8 !important;
+}
+
+input:focus {
+  ring-color: #2563eb !important;
+  border-color: transparent !important;
+}
+
+/* Make sure all text is visible */
 * {
-  box-sizing: border-box;
+  color: inherit;
+}
+
+/* Fix any remaining white backgrounds */
+div, span, p, h1, h2, h3, h4, h5, h6 {
+  background-color: transparent !important;
+}
+
+/* Ensure proper contrast */
+.border-slate-700\/50 {
+  border-color: rgba(51, 65, 85, 0.5) !important;
 }
