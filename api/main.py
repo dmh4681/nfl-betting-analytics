@@ -310,7 +310,7 @@ async def get_player_moves(
     position: Optional[str] = None,
     move_type: Optional[str] = None,
     min_impact: Optional[float] = None,
-    limit: Optional[int] = Query(200, le=1000)
+    limit: Optional[int] = Query(1000, le=1000)
 ):
     """Get player moves with optional filters"""
     if NFL_DATA is None:
@@ -322,11 +322,28 @@ async def get_player_moves(
     # Apply filters
     if team:
         team_upper = team.upper()
+        # Debug: Check what teams exist in the data
+        unique_from_teams = moves_df['from_team'].unique()
+        unique_to_teams = moves_df['to_team'].unique()
+        all_teams = set(list(unique_from_teams) + list(unique_to_teams))
+        
+        print(f"Looking for team: {team_upper}")
+        print(f"Available teams sample: {sorted(list(all_teams))[:10]}")
+        
+        # More flexible team matching - handle common abbreviation variations
+        team_variations = [team_upper]
+        if team_upper == 'JAC': team_variations.append('JAX')
+        if team_upper == 'JAX': team_variations.append('JAC')
+        if team_upper == 'WAS': team_variations.extend(['WSH', 'WFT'])
+        if team_upper == 'WSH': team_variations.extend(['WAS', 'WFT'])
+        if team_upper == 'NE': team_variations.append('NEP')
+        if team_upper == 'NO': team_variations.append('NOS')
+        
         moves_df = moves_df[
-            (moves_df['from_team'] == team_upper) | 
-            (moves_df['to_team'] == team_upper)
+            (moves_df['from_team'].isin(team_variations)) | 
+            (moves_df['to_team'].isin(team_variations))
         ]
-        print(f"After team filter ({team_upper}): {len(moves_df)} moves")
+        print(f"After team filter ({team_variations}): {len(moves_df)} moves")
     
     if position:
         if position == "OL":
@@ -391,6 +408,10 @@ async def get_player_moves(
             "move_type": move_type,
             "min_impact": min_impact,
             "limit": limit
+        },
+        "debug_info": {
+            "team_variations_used": team_variations if team else None,
+            "available_teams_sample": sorted(list(all_teams))[:20] if team else None
         }
     }
 

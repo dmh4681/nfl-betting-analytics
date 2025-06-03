@@ -139,7 +139,7 @@ const NFLAnalyticsDashboard = () => {
 
   const loadFilteredMoves = async (team = '', position = '', moveType = '', minImpact = null) => {
     try {
-      let url = `${API_BASE}/api/moves?limit=500`;  // Increased limit
+      let url = `${API_BASE}/api/moves?limit=1000`;  // Increased to 1000
       
       if (team) url += `&team=${team}`;
       if (position) url += `&position=${position}`;
@@ -150,6 +150,7 @@ const NFLAnalyticsDashboard = () => {
       const response = await fetch(url);
       const data = await response.json();
       console.log('Moves loaded:', data.total_found, 'found,', data.total_displayed, 'displayed');
+      console.log('Debug info:', data.debug_info);
       setRecentMoves(data.moves || []);
       setMovesStats({
         total_found: data.total_found || 0,
