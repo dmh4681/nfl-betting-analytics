@@ -1,0 +1,26 @@
+{
+    "meta": {
+      "last_updated": "2025-06-03",
+      "version": "1.0",
+      "total_teams": 32,
+      "active_research_week": "2025_week_23"
+    },
+    "research_schedule": {
+      "monday": "priority_scan",
+      "tuesday_thursday": "detailed_research", 
+      "friday": "file_updates"
+    },
+    "priority_indicators": [
+      "major_signing",
+      "surprise_cut",
+      "trade_completion",
+      "coaching_change",
+      "starter_injury",
+      "contract_extension"
+    ],
+    "minimum_thresholds": {
+      "contract_value": 2000000,
+      "player_grade_2024": 6.0,
+      "importance_rating": 6.0
+    }
+  }
