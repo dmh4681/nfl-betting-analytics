@@ -85,10 +85,13 @@ const NFLAnalyticsDashboard = () => {
   const [view, setView] = useState('rankings'); // 'rankings', 'team', 'division', 'moves'
   const [selectedDivision, setSelectedDivision] = useState('AFC North');
   const [divisionData, setDivisionData] = useState(null);
+  const [bridgeSortBy, setBridgeSortBy] = useState('final_2025_rank'); // Default sort by 2025 rank
+  const [bridgeSortOrder, setBridgeSortOrder] = useState('asc'); // asc = #1 first, desc = #32 first
   const [filterPosition, setFilterPosition] = useState('');
   const [filterMoveType, setFilterMoveType] = useState('');
   const [recentMoves, setRecentMoves] = useState([]);
   const [movesStats, setMovesStats] = useState({ total_found: 0, total_displayed: 0 });
+  const [divisionMoves, setDivisionMoves] = useState({});
 
   // API base URL
   const API_BASE = 'http://localhost:8000';
@@ -187,13 +190,73 @@ const NFLAnalyticsDashboard = () => {
     }
   }, [view, selectedTeam, filterPosition, filterMoveType]);
 
+  const handleBridgeSort = (column) => {
+    if (bridgeSortBy === column) {
+      // Same column - toggle order
+      setBridgeSortOrder(bridgeSortOrder === 'asc' ? 'desc' : 'asc');
+    } else {
+      // New column - set appropriate default order
+      setBridgeSortBy(column);
+      // For ranks, default to ascending (#1 first), for impacts default to descending (best first)
+      setBridgeSortOrder(column.includes('rank') ? 'asc' : 'desc');
+    }
+  };
+
+  const getSortedPowerRankings = () => {
+    const sorted = [...powerRankings].sort((a, b) => {
+      let aVal, bVal;
+      
+      switch(bridgeSortBy) {
+        case 'original_2024_rank':
+          aVal = a.original_2024_rank;
+          bVal = b.original_2024_rank;
+          break;
+        case 'final_2025_rank':
+          aVal = a.final_2025_rank;
+          bVal = b.final_2025_rank;
+          break;
+        case 'offseason_impact':
+          aVal = a.offseason_impact;
+          bVal = b.offseason_impact;
+          break;
+        case 'rank_change':
+          aVal = a.rank_change;
+          bVal = b.rank_change;
+          break;
+        case 'team_name':
+          aVal = a.team_name;
+          bVal = b.team_name;
+          break;
+        default:
+          aVal = a.final_2025_rank;
+          bVal = b.final_2025_rank;
+      }
+      
+      if (typeof aVal === 'string') {
+        return bridgeSortOrder === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
+      }
+      
+      return bridgeSortOrder === 'asc' ? aVal - bVal : bVal - aVal;
+    });
+    
+    return sorted;
+  };
+
+  const getSortIcon = (column) => {
+    if (bridgeSortBy !== column) return null;
+    return bridgeSortOrder === 'asc' ? '↑' : '↓';
+  };
+
   const getDivisionTeamMoves = async (teamAbbr) => {
     try {
+      console.log(`Fetching moves for team: ${teamAbbr}`);
       const response = await fetch(`${API_BASE}/api/moves?team=${teamAbbr}&limit=200`);
       const data = await response.json();
+      console.log(`Team ${teamAbbr} moves:`, data.total_found, 'found,', data.moves?.length, 'returned');
+      console.log(`Debug info for ${teamAbbr}:`, data.debug_info);
       return data.moves || [];
     } catch (error) {
-      console.error('Error loading team moves:', error);
+      console.error(`Error loading moves for ${teamAbbr}:`, error);
       return [];
     }
   };
@@ -204,8 +267,6 @@ const NFLAnalyticsDashboard = () => {
       loadDivisionMoves();
     }
   }, [divisionData, view]);
-
-  const [divisionMoves, setDivisionMoves] = useState({});
 
   const loadDivisionMoves = async () => {
     if (!divisionData?.teams) return;
@@ -288,9 +349,10 @@ const NFLAnalyticsDashboard = () => {
               <div className="flex rounded-lg p-1" style={{backgroundColor: '#334155'}}>
                 {[
                   { key: 'rankings', label: 'Rankings', icon: BarChart3 },
+                  { key: 'bridge', label: 'Bridge', icon: TrendingUp },
                   { key: 'team', label: 'Teams', icon: Users },
                   { key: 'division', label: 'Divisions', icon: Target },
-                  { key: 'moves', label: 'Moves', icon: TrendingUp }
+                  { key: 'moves', label: 'Moves', icon: Filter }
                 ].map(({ key, label, icon: Icon }) => (
                   <button
                     key={key}
@@ -478,6 +540,370 @@ const NFLAnalyticsDashboard = () => {
                         <div className="text-xs text-blue-400 mt-1">{move.move_type}</div>
                       </div>
                     ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        )}
+
+        {/* Bridge Analysis View */}
+        {view === 'bridge' && (
+          <div className="space-y-6">
+            
+            {/* Bridge Header */}
+            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-lg border p-6" style={{backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#334155'}}>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-3xl font-bold text-white">2024 → 2025 Bridge Analysis</h1>
+                  <p className="text-slate-400">Complete journey: Previous rankings → Offseason impact → Final 2025 projections</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-purple-400">32 Teams</div>
+                  <p className="text-slate-400 text-sm">Complete NFL Bridge</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Bridge Overview Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+              <Card className="bg-gradient-to-r from-green-500/20 to-green-600/20 border-green-500/30">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-green-400 text-sm font-medium">Biggest Climber</p>
+                      <p className="text-xl font-bold text-white">
+                        {powerRankings.reduce((max, team) => 
+                          team.rank_change > max.rank_change ? team : max, powerRankings[0] || {})?.team || 'N/A'}
+                      </p>
+                    </div>
+                    <ArrowUp className="w-8 h-8 text-green-400" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-red-500/20 to-red-600/20 border-red-500/30">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-red-400 text-sm font-medium">Biggest Drop</p>
+                      <p className="text-xl font-bold text-white">
+                        {powerRankings.reduce((min, team) => 
+                          team.rank_change < min.rank_change ? team : min, powerRankings[0] || {})?.team || 'N/A'}
+                      </p>
+                    </div>
+                    <ArrowDown className="w-8 h-8 text-red-400" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border-blue-500/30">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-blue-400 text-sm font-medium">Best Offseason</p>
+                      <p className="text-xl font-bold text-white">
+                        {powerRankings.reduce((max, team) => 
+                          team.offseason_impact > max.offseason_impact ? team : max, powerRankings[0] || {})?.team || 'N/A'}
+                      </p>
+                    </div>
+                    <Star className="w-8 h-8 text-blue-400" />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-gradient-to-r from-purple-500/20 to-purple-600/20 border-purple-500/30">
+                <CardContent className="p-4">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-purple-400 text-sm font-medium">Total Impact</p>
+                      <p className="text-xl font-bold text-white">
+                        {powerRankings.reduce((sum, team) => sum + Math.abs(team.offseason_impact), 0).toFixed(1)}
+                      </p>
+                    </div>
+                    <Target className="w-8 h-8 text-purple-400" />
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Complete Bridge Table */}
+            <Card className="backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <TrendingUp className="w-5 h-5 mr-2 text-purple-400" />
+                  Complete 2024 → 2025 Bridge Analysis
+                  <span className="ml-auto text-sm text-slate-400">All 32 teams ranked by 2025 projection</span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <table className="w-full" style={{backgroundColor: 'transparent'}}>
+                    <thead>
+                      <tr className="border-b" style={{borderColor: '#334155'}}>
+                        <th 
+                          className="text-left py-3 px-2 text-slate-400 font-medium cursor-pointer hover:text-blue-400 transition-colors"
+                          onClick={() => handleBridgeSort('original_2024_rank')}
+                        >
+                          2024 Rank {getSortIcon('original_2024_rank')}
+                        </th>
+                        <th 
+                          className="text-left py-3 px-2 text-slate-400 font-medium cursor-pointer hover:text-blue-400 transition-colors"
+                          onClick={() => handleBridgeSort('team_name')}
+                        >
+                          Team {getSortIcon('team_name')}
+                        </th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Offseason Grade</th>
+                        <th 
+                          className="text-left py-3 px-2 text-slate-400 font-medium cursor-pointer hover:text-blue-400 transition-colors"
+                          onClick={() => handleBridgeSort('offseason_impact')}
+                        >
+                          Net Impact {getSortIcon('offseason_impact')}
+                        </th>
+                        <th 
+                          className="text-left py-3 px-2 text-slate-400 font-medium cursor-pointer hover:text-blue-400 transition-colors"
+                          onClick={() => handleBridgeSort('final_2025_rank')}
+                        >
+                          2025 Rank {getSortIcon('final_2025_rank')}
+                        </th>
+                        <th 
+                          className="text-left py-3 px-2 text-slate-400 font-medium cursor-pointer hover:text-blue-400 transition-colors"
+                          onClick={() => handleBridgeSort('rank_change')}
+                        >
+                          Movement {getSortIcon('rank_change')}
+                        </th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Bridge Visual</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {getSortedPowerRankings().map((team, idx) => {
+                        const isClimber = team.rank_change > 0;
+                        const isDropper = team.rank_change < 0;
+                        const isNeutral = team.rank_change === 0;
+                        
+                        return (
+                          <tr 
+                            key={team.team} 
+                            className="border-b hover:bg-slate-700/30 cursor-pointer transition-colors"
+                            style={{borderColor: 'rgba(51, 65, 85, 0.5)'}}
+                            onClick={() => {
+                              setSelectedTeam(team.team);
+                              setView('team');
+                            }}
+                          >
+                            <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                              <div className="flex items-center space-x-2">
+                                <span className="text-slate-400 font-bold">#{team.original_2024_rank}</span>
+                                <div className="w-8 h-8 bg-gradient-to-r from-slate-600 to-slate-700 rounded flex items-center justify-center text-xs font-bold text-slate-300">
+                                  {team.team}
+                                </div>
+                              </div>
+                            </td>
+                            <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                              <div>
+                                <div className="text-white font-medium">{team.team_name}</div>
+                                <div className="text-xs text-slate-400">
+                                  Rating: {team.original_2024_rating.toFixed(1)} → {team.final_2025_rating.toFixed(1)}
+                                </div>
+                              </div>
+                            </td>
+                            <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                              <span className={`px-3 py-1 rounded-full text-sm font-medium ${getGradeColor(team.offseason_grade)}`}>
+                                {team.offseason_grade}
+                              </span>
+                            </td>
+                            <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                              <div className="flex items-center space-x-2">
+                                <span className={`font-bold text-lg ${
+                                  team.offseason_impact > 2 ? 'text-green-400' : 
+                                  team.offseason_impact > 0 ? 'text-blue-400' : 
+                                  team.offseason_impact > -2 ? 'text-yellow-400' : 'text-red-400'
+                                }`}>
+                                  {formatImpact(team.offseason_impact)}
+                                </span>
+                                <div className="w-16 bg-slate-700 rounded-full h-2">
+                                  <div 
+                                    className={`h-2 rounded-full ${
+                                      team.offseason_impact > 2 ? 'bg-green-400' : 
+                                      team.offseason_impact > 0 ? 'bg-blue-400' : 
+                                      team.offseason_impact > -2 ? 'bg-yellow-400' : 'bg-red-400'
+                                    }`}
+                                    style={{width: `${Math.min(100, Math.max(10, (team.offseason_impact + 5) * 10))}%`}}
+                                  ></div>
+                                </div>
+                              </div>
+                            </td>
+                            <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                              <div className="flex items-center space-x-2">
+                                <div className={`w-8 h-8 rounded flex items-center justify-center text-xs font-bold text-white ${
+                                  team.final_2025_rank <= 5 ? 'bg-gradient-to-r from-yellow-500 to-yellow-600' :
+                                  team.final_2025_rank <= 12 ? 'bg-gradient-to-r from-green-500 to-green-600' :
+                                  team.final_2025_rank <= 20 ? 'bg-gradient-to-r from-blue-500 to-blue-600' :
+                                  team.final_2025_rank <= 28 ? 'bg-gradient-to-r from-orange-500 to-orange-600' :
+                                  'bg-gradient-to-r from-red-500 to-red-600'
+                                }`}>
+                                  {team.team}
+                                </div>
+                                <span className="text-white font-bold">#{team.final_2025_rank}</span>
+                              </div>
+                            </td>
+                            <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                              <div className="flex items-center space-x-2">
+                                {getRankingMovementIcon(team.rank_change)}
+                                <span className={`font-bold text-lg ${
+                                  isClimber ? 'text-green-400' : isDropper ? 'text-red-400' : 'text-slate-400'
+                                }`}>
+                                  {team.rank_change > 0 ? `+${team.rank_change}` : team.rank_change}
+                                </span>
+                                <span className="text-xs text-slate-400">
+                                  {isClimber ? 'spots up' : isDropper ? 'spots down' : 'no change'}
+                                </span>
+                              </div>
+                            </td>
+                            <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                              <div className="flex items-center space-x-1">
+                                {/* 2024 Position */}
+                                <div className="w-3 h-3 bg-slate-500 rounded-full"></div>
+                                
+                                {/* Bridge Line */}
+                                <div className="flex-1 h-0.5 relative" style={{
+                                  background: `linear-gradient(90deg, 
+                                    #64748b 0%, 
+                                    ${team.offseason_impact > 0 ? '#4ade80' : team.offseason_impact < 0 ? '#f87171' : '#94a3b8'} 50%, 
+                                    ${team.final_2025_rank <= 10 ? '#fbbf24' : team.final_2025_rank <= 20 ? '#60a5fa' : '#f87171'} 100%)`
+                                }}>
+                                  {/* Impact indicator */}
+                                  <div 
+                                    className={`absolute w-2 h-2 rounded-full top-1/2 transform -translate-y-1/2 ${
+                                      team.offseason_impact > 1 ? 'bg-green-400' : 
+                                      team.offseason_impact > 0 ? 'bg-blue-400' : 
+                                      team.offseason_impact > -1 ? 'bg-yellow-400' : 'bg-red-400'
+                                    }`}
+                                    style={{left: '50%', transform: 'translateX(-50%) translateY(-50%)'}}
+                                  ></div>
+                                </div>
+                                
+                                {/* 2025 Position */}
+                                <div className={`w-3 h-3 rounded-full ${
+                                  team.final_2025_rank <= 10 ? 'bg-yellow-400' : 
+                                  team.final_2025_rank <= 20 ? 'bg-blue-400' : 'bg-red-400'
+                                }`}></div>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Bridge Insights */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              
+              {/* Biggest Climbers */}
+              <Card className="backdrop-blur-sm">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center">
+                    <ArrowUp className="w-5 h-5 mr-2 text-green-400" />
+                    Biggest Climbers
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {powerRankings
+                      .filter(team => team.rank_change > 0)
+                      .sort((a, b) => b.rank_change - a.rank_change)
+                      .slice(0, 5)
+                      .map((team, idx) => (
+                        <div key={team.team} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(34, 197, 94, 0.1)'}}>
+                          <div className="flex items-center space-x-3">
+                            <span className="text-green-400 font-bold">#{idx + 1}</span>
+                            <div>
+                              <div className="text-white font-medium">{team.team}</div>
+                              <div className="text-xs text-slate-400">
+                                #{team.original_2024_rank} → #{team.final_2025_rank}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-green-400 font-bold">+{team.rank_change}</div>
+                            <div className="text-xs text-slate-400">{team.offseason_grade}</div>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Biggest Drops */}
+              <Card className="backdrop-blur-sm">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center">
+                    <ArrowDown className="w-5 h-5 mr-2 text-red-400" />
+                    Biggest Drops
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {powerRankings
+                      .filter(team => team.rank_change < 0)
+                      .sort((a, b) => a.rank_change - b.rank_change)
+                      .slice(0, 5)
+                      .map((team, idx) => (
+                        <div key={team.team} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(239, 68, 68, 0.1)'}}>
+                          <div className="flex items-center space-x-3">
+                            <span className="text-red-400 font-bold">#{idx + 1}</span>
+                            <div>
+                              <div className="text-white font-medium">{team.team}</div>
+                              <div className="text-xs text-slate-400">
+                                #{team.original_2024_rank} → #{team.final_2025_rank}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className="text-red-400 font-bold">{team.rank_change}</div>
+                            <div className="text-xs text-slate-400">{team.offseason_grade}</div>
+                          </div>
+                        </div>
+                      ))}
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Most Impactful Offseasons */}
+              <Card className="backdrop-blur-sm">
+                <CardHeader>
+                  <CardTitle className="text-white flex items-center">
+                    <Star className="w-5 h-5 mr-2 text-blue-400" />
+                    Most Impactful Offseasons
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3">
+                    {powerRankings
+                      .sort((a, b) => Math.abs(b.offseason_impact) - Math.abs(a.offseason_impact))
+                      .slice(0, 5)
+                      .map((team, idx) => (
+                        <div key={team.team} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(59, 130, 246, 0.1)'}}>
+                          <div className="flex items-center space-x-3">
+                            <span className="text-blue-400 font-bold">#{idx + 1}</span>
+                            <div>
+                              <div className="text-white font-medium">{team.team}</div>
+                              <div className="text-xs text-slate-400">
+                                Grade: {team.offseason_grade}
+                              </div>
+                            </div>
+                          </div>
+                          <div className="text-right">
+                            <div className={`font-bold ${team.offseason_impact > 0 ? 'text-green-400' : 'text-red-400'}`}>
+                              {formatImpact(team.offseason_impact)}
+                            </div>
+                            <div className="text-xs text-slate-400">impact</div>
+                          </div>
+                        </div>
+                      ))}
                   </div>
                 </CardContent>
               </Card>
@@ -681,7 +1107,7 @@ const NFLAnalyticsDashboard = () => {
                                       <span className="text-red-400 font-medium">Bottom Feeder</span>
                                     )}
                                     <div className="text-xs text-slate-400 mt-1">
-                                      Strength: {divisionData.division_info.strength_rating.toFixed(1)}/10
+                                      Team Rating: {teamRanking?.final_2025_rating?.toFixed(1) || 'N/A'}/100
                                     </div>
                                   </div>
                                 </td>

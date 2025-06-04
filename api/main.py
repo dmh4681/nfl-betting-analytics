@@ -328,21 +328,31 @@ async def get_player_moves(
         all_teams = set(list(unique_from_teams) + list(unique_to_teams))
         
         print(f"Looking for team: {team_upper}")
-        print(f"Available teams sample: {sorted(list(all_teams))[:10]}")
+        print(f"Available from_teams: {sorted(list(unique_from_teams))}")
+        print(f"Available to_teams: {sorted(list(unique_to_teams))}")
         
-        # More flexible team matching - handle common abbreviation variations
-        team_variations = [team_upper]
-        if team_upper == 'JAC': team_variations.append('JAX')
-        if team_upper == 'JAX': team_variations.append('JAC')
-        if team_upper == 'WAS': team_variations.extend(['WSH', 'WFT'])
-        if team_upper == 'WSH': team_variations.extend(['WAS', 'WFT'])
-        if team_upper == 'NE': team_variations.append('NEP')
-        if team_upper == 'NO': team_variations.append('NOS')
+        # More flexible team matching - handle common abbreviation variations AND case differences
+        team_variations = [team_upper, team_upper.lower(), team_upper.capitalize()]
+        if team_upper == 'JAC': team_variations.extend(['JAX', 'Jax', 'jax'])
+        if team_upper == 'JAX': team_variations.extend(['JAC', 'Jac', 'jac'])
+        if team_upper == 'WAS': team_variations.extend(['WSH', 'WFT', 'Was', 'wsh', 'wft'])
+        if team_upper == 'WSH': team_variations.extend(['WAS', 'WFT', 'Was', 'was', 'wft'])
+        if team_upper == 'NE': team_variations.extend(['NEP', 'Ne', 'nep'])
+        if team_upper == 'NO': team_variations.extend(['NOS', 'No', 'nos'])
         
-        moves_df = moves_df[
-            (moves_df['from_team'].isin(team_variations)) | 
-            (moves_df['to_team'].isin(team_variations))
-        ]
+        # Check if team exists before filtering
+        team_exists = any(var in all_teams for var in team_variations)
+        print(f"Team variations: {team_variations}, exists: {team_exists}")
+        
+        if team_exists:
+            moves_df = moves_df[
+                (moves_df['from_team'].isin(team_variations)) | 
+                (moves_df['to_team'].isin(team_variations))
+            ]
+        else:
+            print(f"WARNING: Team {team_upper} not found in data!")
+            print(f"Sample of available teams: {sorted(list(all_teams))[:20]}")
+            
         print(f"After team filter ({team_variations}): {len(moves_df)} moves")
     
     if position:
