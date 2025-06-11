@@ -327,6 +327,12 @@ const NFLAnalyticsDashboard = () => {
       setLoading(true);
       const response = await fetch(`${API_BASE}/api/rankings`);
       const data = await response.json();
+      
+      // DEBUG: Let's see what we're actually getting
+      console.log('🔍 Raw rankings API response:', data);
+      console.log('🔍 First team data:', data.rankings?.[0]);
+      console.log('🔍 Sample team properties:', Object.keys(data.rankings?.[0] || {}));
+      
       setPowerRankings(data.rankings || []);
       setLoading(false);
     } catch (error) {
@@ -635,8 +641,11 @@ const NFLAnalyticsDashboard = () => {
                             <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
                               <div className="flex items-center space-x-1">
                                 {getRankingMovementIcon(team.rank_change)}
-                                <span className={team.rank_change > 0 ? 'text-green-400' : team.rank_change < 0 ? 'text-red-400' : 'text-slate-400'}>
-                                  {Math.abs(team.rank_change)}
+                                <span className={
+                                  team.rank_change > 0 ? 'text-green-400' : 
+                                  team.rank_change < 0 ? 'text-red-400' : 'text-slate-400'
+                                }>
+                                  {team.rank_change === 0 ? '—' : Math.abs(team.rank_change)}
                                 </span>
                               </div>
                             </td>

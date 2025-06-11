@@ -278,6 +278,57 @@ def load_playoff_rankings():
         print(f"❌ Error loading playoff rankings: {e}")
         return None
 
+def calculate_unit_impacts(team_moves):
+    """Calculate actual offense/defense/ST impacts based on position groups"""
+    
+    # Position group mappings
+    offensive_positions = ['QB', 'RB', 'WR', 'WR1', 'WR2', 'WR3', 'TE', 'LT', 'LG', 'C', 'RG', 'RT', 'G', 'OL']
+    defensive_positions = ['EDGE', 'DT', 'NT', 'LB', 'MLB', 'OLB', 'CB', 'CB1', 'CB2', 'S', 'FS', 'SS', 'DB', 'DL']
+    special_teams_positions = ['K', 'P', 'LS', 'KR', 'PR']
+    
+    offense_impact = 0.0
+    defense_impact = 0.0
+    special_teams_impact = 0.0
+    
+    for move in team_moves:
+        position = move.get('position', '').upper()
+        importance_gained = move.get('importance_to_new_team', 0) if move.get('to_team') else 0
+        importance_lost = move.get('importance_to_old_team', 0) if move.get('from_team') else 0
+        
+        # Net impact for this move (positive = gain, negative = loss)
+        move_impact = (importance_gained - importance_lost) / 10
+        
+        # Assign to unit based on position
+        if any(pos in position for pos in offensive_positions):
+            offense_impact += move_impact
+        elif any(pos in position for pos in defensive_positions):
+            defense_impact += move_impact
+        elif any(pos in position for pos in special_teams_positions):
+            special_teams_impact += move_impact
+        elif 'COACH' in position or 'HC' in position or 'OC' in position:
+            # Offensive coordinators impact offense, defensive coordinators impact defense
+            if 'OC' in position or 'OFFENSIVE' in position:
+                offense_impact += move_impact * 0.5  # Coaches have moderate impact
+            elif 'DC' in position or 'DEFENSIVE' in position:
+                defense_impact += move_impact * 0.5
+            else:
+                # Head coach impacts both
+                offense_impact += move_impact * 0.3
+                defense_impact += move_impact * 0.3
+        else:
+            # Unknown position - distribute evenly
+            offense_impact += move_impact * 0.4
+            defense_impact += move_impact * 0.4
+            special_teams_impact += move_impact * 0.2
+    
+    return {
+        'offense': offense_impact,
+        'defense': defense_impact,
+        'specialTeams': special_teams_impact
+    }
+
+# Updated get_real_team_data() function with realistic unit impacts:
+
 def get_real_team_data():
     """Get real team data from your actual files"""
     if not REAL_DATA_AVAILABLE or not MOVES_BY_TEAM:
@@ -288,7 +339,25 @@ def get_real_team_data():
     teams_data = {}
     team_mapping = create_team_mapping()
     
+    # Load original 2024 rankings if available
+    original_2024_ranks = {}
+    try:
+        rankings_path = OUTPUT_PATH / "playoff_adjusted_rankings.csv"
+        if rankings_path.exists():
+            import pandas as pd
+            df = pd.read_csv(rankings_path)
+            for _, row in df.iterrows():
+                team = str(row['team']).strip().upper()
+                rank = int(row.get('rank', 16))
+                original_2024_ranks[team] = rank
+            print(f"✅ Loaded original 2024 ranks for {len(original_2024_ranks)} teams")
+    except Exception as e:
+        print(f"❌ Error loading original rankings: {e}")
+    
     for team_abbr in MOVES_BY_TEAM.keys():
+        # Get all moves for this team to calculate unit impacts
+        team_moves = MOVES_BY_TEAM.get(team_abbr, [])
+        
         additions = get_top_additions_by_team(team_abbr, min_importance=7.0, limit=5)
         losses = get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5)
         
@@ -311,6 +380,12 @@ def get_real_team_data():
         
         team_move_count = TEAM_MOVE_COUNTS.get(team_abbr, 0)
         
+        # Get original 2024 rank for this team
+        original_rank = original_2024_ranks.get(team_abbr, 16)
+        
+        # CALCULATE REALISTIC UNIT IMPACTS
+        unit_impacts = calculate_unit_impacts(team_moves)
+        
         teams_data[team_abbr] = {
             'name': team_mapping.get(team_abbr, team_abbr),
             'offseasonGrade': grade,
@@ -318,29 +393,39 @@ def get_real_team_data():
             'keyAdditions': addition_strings or ['No major additions'],
             'keyLosses': loss_strings or ['No major losses'],
             'strengthDelta': {
-                'offense': f'{net_impact * 0.4:+.1f}',
-                'defense': f'{net_impact * 0.4:+.1f}', 
-                'specialTeams': f'{net_impact * 0.2:+.1f}'
+                'offense': f'{unit_impacts["offense"]:+.1f}',        # REALISTIC calculation
+                'defense': f'{unit_impacts["defense"]:+.1f}',        # REALISTIC calculation
+                'specialTeams': f'{unit_impacts["specialTeams"]:+.1f}'  # REALISTIC calculation
             },
             'capSpace': '$25M',
             'projectedWins': max(4, min(14, 8.5 + net_impact * 0.8)),
             'spreadImpact': f'{net_impact * 0.3:+.1f}',
             'divisionRank': 2,
             'totalMoves': team_move_count,
-            'net_impact_raw': net_impact
+            'net_impact_raw': net_impact,
+            'original_2024_rank': original_rank
         }
     
+    # Rest of your existing sorting/ranking code stays the same...
     sorted_teams = sorted(teams_data.items(), key=lambda x: x[1]['net_impact_raw'], reverse=True)
     
     for rank, (team_abbr, team_data) in enumerate(sorted_teams, 1):
-        teams_data[team_abbr]['finalRank'] = rank
-        teams_data[team_abbr]['rankChange'] = 0
+        original_rank = team_data['original_2024_rank']
+        new_rank = rank
+        rank_change = original_rank - new_rank
+        
+        teams_data[team_abbr]['finalRank'] = new_rank
+        teams_data[team_abbr]['rankChange'] = rank_change
         del teams_data[team_abbr]['net_impact_raw']
         
-        print(f"✅ {team_abbr}: Rank #{rank}, {len(team_data['keyAdditions'])} additions, {team_data['totalMoves']} total moves")
+        # Show unit breakdown in logs
+        o_impact = unit_impacts["offense"]
+        d_impact = unit_impacts["defense"]
+        print(f"✅ {team_abbr}: #{original_rank} → #{new_rank} ({rank_change:+d}), O: {o_impact:+.1f}, D: {d_impact:+.1f}")
     
-    print(f"🎯 Successfully processed {len(teams_data)} teams with real rankings")
+    print(f"🎯 Successfully processed {len(teams_data)} teams with realistic unit impacts")
     return teams_data
+
 
 def get_sample_team_data():
     """Fallback sample team data"""
