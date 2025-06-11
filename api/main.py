@@ -46,12 +46,56 @@ try:
     if PLAYER_MOVES_PATH.exists():
         sys.path.insert(0, str(PLAYER_MOVES_PATH))
         
+        # REPLACE the team_files dictionary in your main.py (around line 50) with this:
+
         team_files = {
-            'PHI': 'eagles_2025', 'DAL': 'cowboys_2025', 'NYG': 'giants_2025', 'WAS': 'commanders_2025',
-            'BUF': 'bills_2025', 'MIA': 'dolphins_2025', 'NE': 'patriots_2025', 'NYJ': 'jets_2025',
-            'BAL': 'ravens_2025', 'PIT': 'steelers_2025', 'CLE': 'browns_2025', 'CIN': 'bengals_2025',
-            'HOU': 'texans_2025', 'IND': 'colts_2025', 'TEN': 'titans_2025', 'JAC': 'jaguars_2025',
-            'KC': 'chiefs_2025', 'LAC': 'chargers_2025', 'DEN': 'broncos_2025', 'LV': 'raiders_2025'
+            # AFC East
+            'BUF': 'bills_2025',
+            'MIA': 'dolphins_2025', 
+            'NE': 'patriots_2025',
+            'NYJ': 'jets_2025',
+            
+            # AFC North
+            'BAL': 'ravens_2025',
+            'PIT': 'steelers_2025',
+            'CLE': 'browns_2025',
+            'CIN': 'bengals_2025',
+            
+            # AFC South
+            'HOU': 'texans_2025',
+            'IND': 'colts_2025',
+            'TEN': 'titans_2025',
+            'JAC': 'jaguars_2025',
+            
+            # AFC West
+            'KC': 'chiefs_2025',
+            'LAC': 'chargers_2025',
+            'DEN': 'broncos_2025',
+            'LV': 'raiders_2025',
+            
+            # NFC East
+            'PHI': 'eagles_2025',
+            'DAL': 'cowboys_2025',
+            'NYG': 'giants_2025',
+            'WAS': 'commanders_2025',
+            
+            # NFC North
+            'CHI': 'bears_2025',
+            'DET': 'lions_2025',
+            'GB': 'packers_2025',
+            'MIN': 'vikings_2025',
+            
+            # NFC South
+            'ATL': 'falcons_2025',
+            'CAR': 'panthers_2025',
+            'NO': 'saints_2025',
+            'TB': 'bucs_2025',
+            
+            # NFC West
+            'ARI': 'cardinals_2025',
+            'LAR': 'rams_2025',
+            'SF': '49ers_2025',
+            'SEA': 'seahawks_2025'
         }
         
         loaded_count = 0
@@ -65,7 +109,12 @@ try:
                     namespace = {}
                     exec(file_content, namespace)
                     
-                    moves_var_name = f"{module_name.upper()}_MOVES"
+                    # Special case for 49ers file
+                    if module_name == '49ers_2025':
+                        moves_var_name = 'NINERS_2025_MOVES'
+                    else:
+                        moves_var_name = f"{module_name.upper()}_MOVES"
+                    
                     if moves_var_name in namespace:
                         team_moves = namespace[moves_var_name]
                         MOVES_BY_TEAM[team_abbr] = team_moves
@@ -496,6 +545,276 @@ async def get_bridge_analysis():
         bottomTeams=sorted_teams[-3:],
         frameworkAvailable=FRAMEWORK_AVAILABLE
     )
+
+# ADD THESE ENDPOINTS TO YOUR main.py 
+# Place them right after your existing ESPN endpoints (around line 400)
+
+# =============================================================================
+# MISSING ENDPOINTS FOR YOUR DASHBOARD VIEWS
+# =============================================================================
+
+@app.get("/api/rankings")
+async def get_power_rankings():
+    """Get power rankings for the rankings view"""
+    try:
+        # Use your existing team data to create rankings
+        real_data = get_real_team_data()
+        
+        rankings = []
+        for team_abbr, team_data in real_data.items():
+            rankings.append({
+                'team': team_abbr,
+                'team_name': team_data['name'],
+                'final_2025_rank': team_data.get('finalRank', 16),
+                'original_2024_rank': team_data.get('finalRank', 16) - team_data.get('rankChange', 0),
+                'rank_change': team_data.get('rankChange', 0),
+                'offseason_grade': team_data['offseasonGrade'],
+                'offseason_impact': float(team_data['netImpact'].replace('+', '')),
+                'final_2025_rating': 80.0 + float(team_data['netImpact'].replace('+', '')),
+                'original_2024_rating': 80.0,
+                'offense_impact': float(team_data['strengthDelta'].get('offense', '+0.0').replace('+', '')),
+                'defense_impact': float(team_data['strengthDelta'].get('defense', '+0.0').replace('+', '')),
+                'key_additions': team_data['keyAdditions'],
+                'key_losses': team_data['keyLosses']
+            })
+        
+        # Sort by final rank
+        rankings.sort(key=lambda x: x['final_2025_rank'])
+        
+        return {
+            "status": "success",
+            "rankings": rankings,
+            "total_teams": len(rankings),
+            "last_updated": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        print(f"❌ Error getting rankings: {e}")
+        return {"status": "error", "message": str(e)}
+
+@app.get("/api/moves")
+async def get_player_moves(
+    team: str = "", 
+    position: str = "", 
+    move_type: str = "", 
+    min_impact: float = 0.0,
+    limit: int = 100
+):
+    """Get player moves with filtering"""
+    try:
+        # Use your real moves data
+        if not REAL_DATA_AVAILABLE or not ALL_2025_MOVES:
+            return {
+                "status": "error",
+                "message": "No moves data available",
+                "moves": [],
+                "total_found": 0,
+                "total_displayed": 0
+            }
+        
+        filtered_moves = []
+        
+        for move in ALL_2025_MOVES:
+            # Apply filters
+            if team and team.upper() not in [move.get('from_team', '').upper(), move.get('to_team', '').upper()]:
+                continue
+            if position and position.upper() != move.get('position', '').upper():
+                continue
+            if move_type and move_type not in move.get('move_type', ''):
+                continue
+            
+            # Calculate impact score if not present
+            if 'impact_score' not in move:
+                importance = move.get('importance_to_new_team', 0)
+                grade = move.get('2024_grade', 0)
+                snap_pct = move.get('snap_percentage_2024', 0)
+                move['impact_score'] = (importance * grade * snap_pct) / 1000
+            
+            if move['impact_score'] >= min_impact:
+                filtered_moves.append(move)
+        
+        # Sort by impact score
+        filtered_moves.sort(key=lambda x: x.get('impact_score', 0), reverse=True)
+        
+        # Limit results
+        displayed_moves = filtered_moves[:limit]
+        
+        return {
+            "status": "success",
+            "moves": displayed_moves,
+            "total_found": len(filtered_moves),
+            "total_displayed": len(displayed_moves),
+            "debug_info": {
+                "team_filter": team,
+                "position_filter": position,
+                "move_type_filter": move_type,
+                "min_impact": min_impact,
+                "total_moves_in_db": len(ALL_2025_MOVES)
+            }
+        }
+        
+    except Exception as e:
+        print(f"❌ Error getting moves: {e}")
+        return {
+            "status": "error", 
+            "message": str(e),
+            "moves": [],
+            "total_found": 0,
+            "total_displayed": 0
+        }
+
+@app.get("/api/divisions/{division}")
+async def get_division_analysis(division: str):
+    """Get division analysis"""
+    try:
+        # Division mappings
+        division_teams = {
+            'AFC North': ['BAL', 'PIT', 'CIN', 'CLE'],
+            'AFC East': ['BUF', 'MIA', 'NE', 'NYJ'],
+            'AFC South': ['HOU', 'IND', 'TEN', 'JAC'],
+            'AFC West': ['KC', 'LAC', 'DEN', 'LV'],
+            'NFC East': ['PHI', 'DAL', 'NYG', 'WAS'],
+            'NFC North': ['CHI', 'DET', 'GB', 'MIN'],
+            'NFC South': ['ATL', 'CAR', 'NO', 'TB'],
+            'NFC West': ['ARI', 'LAR', 'SF', 'SEA']
+        }
+        
+        if division not in division_teams:
+            raise HTTPException(status_code=404, detail=f"Division {division} not found")
+        
+        team_abbrs = division_teams[division]
+        real_data = get_real_team_data()
+        
+        teams = []
+        total_moves = 0
+        best_impact = -999
+        best_team = ""
+        most_moves = 0
+        most_active = ""
+        
+        for i, team_abbr in enumerate(team_abbrs):
+            team_data = real_data.get(team_abbr, {})
+            net_impact = float(team_data.get('netImpact', '0.0').replace('+', ''))
+            team_moves = team_data.get('totalMoves', 0)
+            
+            teams.append({
+                'team': team_abbr,
+                'team_name': team_data.get('name', team_abbr),
+                'final_rank': team_data.get('finalRank', 16),
+                'offseason_grade': team_data.get('offseasonGrade', 'B'),
+                'net_impact': net_impact,
+                'total_moves': team_moves
+            })
+            
+            total_moves += team_moves
+            
+            if net_impact > best_impact:
+                best_impact = net_impact
+                best_team = team_abbr
+                
+            if team_moves > most_moves:
+                most_moves = team_moves
+                most_active = team_abbr
+        
+        # Sort teams by final rank
+        teams.sort(key=lambda x: x['final_rank'])
+        
+        return {
+            "status": "success",
+            "division": division,
+            "teams": teams,
+            "division_info": {
+                "best_team": teams[0]['team'],  # Best ranked team
+                "best_offseason": best_team,
+                "most_active": most_active,
+                "total_moves": total_moves,
+                "avg_net_impact": sum(t['net_impact'] for t in teams) / len(teams),
+                "competitive_balance": 10 - abs(max(t['net_impact'] for t in teams) - min(t['net_impact'] for t in teams))
+            }
+        }
+        
+    except Exception as e:
+        print(f"❌ Error getting division analysis: {e}")
+        raise HTTPException(status_code=500, detail=f"Error getting division analysis: {str(e)}")
+
+@app.get("/api/teams/{team}/detailed")
+async def get_detailed_team_analysis(team: str):
+    """Get detailed team analysis for team view"""
+    try:
+        team_upper = team.upper()
+        real_data = get_real_team_data()
+        team_mapping = create_team_mapping()
+        
+        if team_upper not in team_mapping:
+            raise HTTPException(status_code=404, detail=f"Team {team} not found")
+        
+        team_data = real_data.get(team_upper)
+        if not team_data:
+            raise HTTPException(status_code=404, detail=f"No data found for team {team}")
+        
+        # Calculate additional metrics
+        net_impact = float(team_data['netImpact'].replace('+', ''))
+        total_moves = team_data.get('totalMoves', 0)
+        
+        # Determine division/conference (you can expand this mapping)
+        division_mapping = {
+            'BAL': ('AFC North', 'AFC'), 'PIT': ('AFC North', 'AFC'), 'CIN': ('AFC North', 'AFC'), 'CLE': ('AFC North', 'AFC'),
+            'BUF': ('AFC East', 'AFC'), 'MIA': ('AFC East', 'AFC'), 'NE': ('AFC East', 'AFC'), 'NYJ': ('AFC East', 'AFC'),
+            'HOU': ('AFC South', 'AFC'), 'IND': ('AFC South', 'AFC'), 'TEN': ('AFC South', 'AFC'), 'JAC': ('AFC South', 'AFC'),
+            'KC': ('AFC West', 'AFC'), 'LAC': ('AFC West', 'AFC'), 'DEN': ('AFC West', 'AFC'), 'LV': ('AFC West', 'AFC'),
+            'PHI': ('NFC East', 'NFC'), 'DAL': ('NFC East', 'NFC'), 'NYG': ('NFC East', 'NFC'), 'WAS': ('NFC East', 'NFC'),
+            'CHI': ('NFC North', 'NFC'), 'DET': ('NFC North', 'NFC'), 'GB': ('NFC North', 'NFC'), 'MIN': ('NFC North', 'NFC'),
+            'ATL': ('NFC South', 'NFC'), 'CAR': ('NFC South', 'NFC'), 'NO': ('NFC South', 'NFC'), 'TB': ('NFC South', 'NFC'),
+            'ARI': ('NFC West', 'NFC'), 'LAR': ('NFC West', 'NFC'), 'SF': ('NFC West', 'NFC'), 'SEA': ('NFC West', 'NFC')
+        }
+        
+        division, conference = division_mapping.get(team_upper, ("Unknown Division", "Unknown Conference"))
+        
+        return {
+            "status": "success",
+            "team": team_upper,
+            "team_name": team_data['name'],
+            "division": division,
+            "conference": conference,
+            "offseason_grade": team_data['offseasonGrade'],
+            "net_impact": net_impact,
+            "total_moves": total_moves,
+            "players_gained": len([a for a in team_data['keyAdditions'] if a != 'No major additions']),
+            "players_lost": len([l for l in team_data['keyLosses'] if l != 'No major losses']),
+            "key_additions": team_data['keyAdditions'],
+            "key_losses": team_data['keyLosses'],
+            "unit_impacts": {
+                "offense": float(team_data['strengthDelta'].get('offense', '+0.0').replace('+', '')),
+                "defense": float(team_data['strengthDelta'].get('defense', '+0.0').replace('+', '')),
+                "special_teams": float(team_data['strengthDelta'].get('specialTeams', '+0.0').replace('+', ''))
+            },
+            "ranking_info": {
+                "final_2025_rank": team_data.get('finalRank', 16),
+                "rank_change": team_data.get('rankChange', 0)
+            },
+            "move_efficiency": net_impact / max(total_moves, 1),
+            "offseason_strategy": f"Net impact of {net_impact:+.1f} across {total_moves} moves shows {'aggressive improvement' if net_impact > 2 else 'modest changes' if net_impact > 0 else 'concerning losses'}."
+        }
+        
+    except HTTPException:
+        raise
+    except Exception as e:
+        print(f"❌ Error getting detailed team analysis: {e}")
+        raise HTTPException(status_code=500, detail=f"Error getting team analysis: {str(e)}")
+
+# DEBUGGING ENDPOINT - You can remove this later
+@app.get("/api/debug/data")
+async def debug_data_status():
+    """Debug endpoint to check data availability"""
+    return {
+        "framework_available": FRAMEWORK_AVAILABLE,
+        "real_data_available": REAL_DATA_AVAILABLE,
+        "total_moves": len(ALL_2025_MOVES) if REAL_DATA_AVAILABLE else 0,
+        "teams_loaded": len(MOVES_BY_TEAM) if REAL_DATA_AVAILABLE else 0,
+        "team_list": list(MOVES_BY_TEAM.keys()) if REAL_DATA_AVAILABLE else [],
+        "sample_team_data": get_real_team_data().get('BAL', {}) if REAL_DATA_AVAILABLE else {},
+        "espn_integration_working": espn_integration is not None
+    }
 
 @app.post("/api/chat")
 async def chat_with_gpt(request: ChatRequest):

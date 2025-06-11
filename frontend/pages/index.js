@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, TrendingUp, TrendingDown, Users, DollarSign, Brain, Target, AlertCircle, ChevronRight, Star, Filter, Loader2, Trophy, BarChart3, ArrowUp, ArrowDown, Minus } from 'lucide-react';
+import { Search, TrendingUp, TrendingDown, Users, DollarSign, Brain, Target, AlertCircle, ChevronRight, Star, Filter, Loader2, Trophy, BarChart3, ArrowUp, ArrowDown, Minus, Activity, Zap } from 'lucide-react';
 
 const styleOverrides = `
   body { 
@@ -96,6 +96,10 @@ const NFLAnalyticsDashboard = () => {
   const [customRankings, setCustomRankings] = useState([]);
   const [isCustomMode, setIsCustomMode] = useState(false);
   const [draggedItem, setDraggedItem] = useState(null);
+  const [liveGames, setLiveGames] = useState([]);
+  const [bettingEdges, setBettingEdges] = useState([]);
+  const [weeklyReport, setWeeklyReport] = useState(null);
+  const [espnLoading, setEspnLoading] = useState(false);
 
   // API base URL
   const API_BASE = 'http://localhost:8000';
@@ -108,6 +112,7 @@ const NFLAnalyticsDashboard = () => {
   };
 
   const getGradeColor = (grade) => {
+    if (!grade || typeof grade !== 'string') return 'text-slate-400 bg-slate-400/20'; // ADDED NULL CHECK
     if (grade.startsWith('A')) return 'text-green-400 bg-green-400/20';
     if (grade.startsWith('B')) return 'text-blue-400 bg-blue-400/20';
     if (grade.startsWith('C')) return 'text-yellow-400 bg-yellow-400/20';
@@ -127,6 +132,31 @@ const NFLAnalyticsDashboard = () => {
       climbers: sorted.filter(team => team.rank_change > 0).slice(0, 3),
       drops: sorted.filter(team => team.rank_change < 0).slice(-3).reverse()
     };
+  };
+
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', {
+      weekday: 'short',
+      month: 'short', 
+      day: 'numeric',
+      hour: 'numeric',
+      minute: '2-digit'
+    });
+  };
+  
+  const getConfidenceColor = (confidence) => {
+    if (confidence >= 85) return 'text-green-400 bg-green-400/20';
+    if (confidence >= 70) return 'text-blue-400 bg-blue-400/20';
+    if (confidence >= 55) return 'text-yellow-400 bg-yellow-400/20';
+    return 'text-red-400 bg-red-400/20';
+  };
+  
+  const getEdgeColor = (edgeSize) => {
+    if (edgeSize >= 10) return 'text-green-400 bg-green-400/20';
+    if (edgeSize >= 5) return 'text-blue-400 bg-blue-400/20';
+    if (edgeSize >= 3) return 'text-yellow-400 bg-yellow-400/20';
+    return 'text-orange-400 bg-orange-400/20';
   };
 
   // Custom rankings functions
@@ -370,6 +400,34 @@ const NFLAnalyticsDashboard = () => {
     setDivisionMoves(movesData);
   };
 
+  const loadLivePredictions = async () => {
+    try {
+      setEspnLoading(true);
+      
+      // Get current week's games with predictions
+      const currentWeekResponse = await fetch(`${API_BASE}/api/schedule/current`);
+      const currentWeekData = await currentWeekResponse.json();
+      
+      if (currentWeekData.status === 'success') {
+        setWeeklyReport(currentWeekData.data);
+        setLiveGames(currentWeekData.data.all_games || []);
+      }
+      
+      // Get betting edges
+      const edgesResponse = await fetch(`${API_BASE}/api/betting/edges?min_edge=2.0`);
+      const edgesData = await edgesResponse.json();
+      
+      if (edgesData.status === 'success') {
+        setBettingEdges(edgesData.edges || []);
+      }
+      
+      setEspnLoading(false);
+    } catch (error) {
+      console.error('Error loading ESPN data:', error);
+      setEspnLoading(false);
+    }
+  };
+
   // Effects
   useEffect(() => {
     loadPowerRankings();
@@ -405,6 +463,12 @@ const NFLAnalyticsDashboard = () => {
       initializeCustomRankings();
     }
   }, [view, powerRankings]);
+
+  useEffect(() => {
+    if (view === 'live' || view === 'edges') {
+      loadLivePredictions();
+    }
+  }, [view]);
 
   const filteredRankings = powerRankings.filter(team => 
     !searchQuery || 
@@ -446,14 +510,16 @@ const NFLAnalyticsDashboard = () => {
             {/* Navigation */}
             <div className="flex items-center space-x-4">
               <div className="flex rounded-lg p-1" style={{backgroundColor: '#334155'}}>
-                {[
-                  { key: 'rankings', label: 'Rankings', icon: BarChart3 },
-                  { key: 'bridge', label: 'Bridge', icon: TrendingUp },
-                  { key: 'custom', label: 'My Rankings', icon: Star },
-                  { key: 'team', label: 'Teams', icon: Users },
-                  { key: 'division', label: 'Divisions', icon: Target },
-                  { key: 'moves', label: 'Moves', icon: Filter }
-                ].map(({ key, label, icon: Icon }) => (
+              {[
+                { key: 'rankings', label: 'Rankings', icon: BarChart3 },
+                { key: 'bridge', label: 'Bridge', icon: TrendingUp },
+                { key: 'custom', label: 'My Rankings', icon: Star },
+                { key: 'live', label: 'Live Games', icon: Activity }, // NEW
+                { key: 'edges', label: 'Betting Edges', icon: Zap }, // NEW
+                { key: 'team', label: 'Teams', icon: Users },
+                { key: 'division', label: 'Divisions', icon: Target },
+                { key: 'moves', label: 'Moves', icon: Filter }
+              ].map(({ key, label, icon: Icon }) => (
                   <button
                     key={key}
                     onClick={() => setView(key)}
@@ -1275,6 +1341,288 @@ const NFLAnalyticsDashboard = () => {
           </div>
         )}
 
+        {/* Live Games View - NEW */}
+        {view === 'live' && (
+          <div className="space-y-6">
+            
+            {/* Live Header */}
+            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-lg border p-6" style={{backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#334155'}}>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-3xl font-bold text-white flex items-center">
+                    <Activity className="w-8 h-8 mr-3 text-green-400" />
+                    Live NFL Predictions
+                  </h1>
+                  <p className="text-slate-400">Real-time games with your bridge framework projections vs Vegas</p>
+                </div>
+                <div className="text-right">
+                  {weeklyReport && (
+                    <>
+                      <div className="text-2xl font-bold text-green-400">{weeklyReport.week_summary.total_games}</div>
+                      <p className="text-slate-400 text-sm">Games This Week</p>
+                      <div className="text-lg font-bold text-blue-400 mt-2">{weeklyReport.week_summary.betting_edges_found}</div>
+                      <p className="text-slate-400 text-xs">Betting Edges Found</p>
+                    </>
+                  )}
+                </div>
+              </div>
+            </div>
+
+            {/* Live Games Table */}
+            <Card className="backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <Activity className="w-5 h-5 mr-2 text-green-400" />
+                  This Week's Games with Bridge Predictions
+                  <span className="ml-auto text-sm text-slate-400">
+                    Your Analysis vs Vegas Lines
+                  </span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {espnLoading ? (
+                  <div className="text-center py-8">
+                    <Loader2 className="w-6 h-6 animate-spin mx-auto mb-4 text-blue-400" />
+                    <p className="text-slate-400">Loading live predictions...</p>
+                  </div>
+                ) : (
+                  <div className="overflow-x-auto">
+                    <table className="w-full" style={{backgroundColor: 'transparent'}}>
+                      <thead>
+                        <tr className="border-b" style={{borderColor: '#334155'}}>
+                          <th className="text-left py-3 px-2 text-slate-400 font-medium">Game</th>
+                          <th className="text-left py-3 px-2 text-slate-400 font-medium">Date</th>
+                          <th className="text-left py-3 px-2 text-slate-400 font-medium">Our Prediction</th>
+                          <th className="text-left py-3 px-2 text-slate-400 font-medium">Vegas Line</th>
+                          <th className="text-left py-3 px-2 text-slate-400 font-medium">Confidence</th>
+                          <th className="text-left py-3 px-2 text-slate-400 font-medium">Edge</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {liveGames.map((game, idx) => {
+                          const ourSpread = game.bridge_predictions.projected_spread;
+                          const vegasSpread = game.espn_data.odds?.spread;
+                          const hasEdge = game.betting_edge;
+                          
+                          return (
+                            <tr 
+                              key={game.game_id} 
+                              className="border-b hover:bg-slate-700/30 transition-colors"
+                              style={{borderColor: 'rgba(51, 65, 85, 0.5)'}}
+                            >
+                              <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                <div className="flex items-center space-x-3">
+                                  <div className="text-white font-medium">
+                                    {game.away_team.name} @ {game.home_team.name}
+                                  </div>
+                                </div>
+                              </td>
+                              <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                <div className="text-white text-sm">{formatDate(game.date)}</div>
+                                <div className="text-xs text-slate-400">{game.espn_data.broadcast?.network}</div>
+                              </td>
+                              <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                <div className="text-white font-bold">
+                                  {ourSpread > 0 ? game.home_team.bridge_abbr : game.away_team.bridge_abbr} {Math.abs(ourSpread).toFixed(1)}
+                                </div>
+                                <div className="text-xs text-slate-400">
+                                  {(game.bridge_predictions.home_win_probability * 100).toFixed(0)}% win prob
+                                </div>
+                              </td>
+                              <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                {vegasSpread !== null ? (
+                                  <div className="text-white">
+                                    {vegasSpread > 0 ? game.home_team.bridge_abbr : game.away_team.bridge_abbr} {Math.abs(vegasSpread).toFixed(1)}
+                                  </div>
+                                ) : (
+                                  <div className="text-slate-400 text-sm">No line yet</div>
+                                )}
+                                <div className="text-xs text-slate-400">
+                                  O/U: {game.espn_data.odds?.over_under || 'N/A'}
+                                </div>
+                              </td>
+                              <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                <span className={`px-2 py-1 rounded text-xs font-medium ${getConfidenceColor(game.bridge_predictions.confidence)}`}>
+                                  {game.bridge_predictions.confidence}%
+                                </span>
+                              </td>
+                              <td className="py-4 px-2" style={{backgroundColor: 'transparent'}}>
+                                {hasEdge ? (
+                                  <div>
+                                    <span className={`px-2 py-1 rounded text-xs font-bold ${getEdgeColor(hasEdge.edge_size)}`}>
+                                      {hasEdge.edge_size.toFixed(1)} pts
+                                    </span>
+                                    <div className="text-xs text-white mt-1">
+                                      Bet {hasEdge.recommendation}
+                                    </div>
+                                  </div>
+                                ) : (
+                                  <div className="text-slate-400 text-sm">No edge</div>
+                                )}
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
+        {/* Betting Edges View - NEW */}
+        {view === 'edges' && (
+          <div className="space-y-6">
+            
+            {/* Edges Header */}
+            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-lg border p-6" style={{backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#334155'}}>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h1 className="text-3xl font-bold text-white flex items-center">
+                    <Zap className="w-8 h-8 mr-3 text-yellow-400" />
+                    Betting Edges Alert 🚨
+                  </h1>
+                  <p className="text-slate-400">Games where your bridge framework finds value vs Vegas</p>
+                </div>
+                <div className="text-right">
+                  <div className="text-2xl font-bold text-yellow-400">{bettingEdges.length}</div>
+                  <p className="text-slate-400 text-sm">Edges Found (2+ pts)</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Top 3 Betting Edges as Featured Cards */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              {bettingEdges.slice(0, 3).map((edge, idx) => (
+                <Card key={edge.game_id} className="backdrop-blur-sm border-2" style={{borderColor: idx === 0 ? '#eab308' : idx === 1 ? '#94a3b8' : '#ea580c'}}>
+                  <CardHeader>
+                    <CardTitle className="text-white flex items-center justify-between">
+                      <div className="flex items-center">
+                        <span className={`w-8 h-8 rounded-full flex items-center justify-center text-white font-bold mr-3 ${
+                          idx === 0 ? 'bg-yellow-500' : idx === 1 ? 'bg-gray-400' : 'bg-orange-500'
+                        }`}>
+                          #{idx + 1}
+                        </span>
+                        <div>
+                          <div className="text-lg font-bold">{edge.away_team.bridge_abbr} @ {edge.home_team.bridge_abbr}</div>
+                          <div className="text-sm text-slate-400">{edge.away_team.name} @ {edge.home_team.name}</div>
+                        </div>
+                      </div>
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="text-center">
+                        <div className={`inline-block px-4 py-2 rounded-full text-xl font-bold ${getEdgeColor(edge.betting_edge.edge_size)}`}>
+                          {edge.betting_edge.edge_size.toFixed(1)} POINT EDGE
+                        </div>
+                      </div>
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        <div className="text-center">
+                          <p className="text-slate-400 text-sm">Our Prediction</p>
+                          <p className="text-white font-bold text-lg">
+                            {edge.betting_edge.bridge_spread > 0 ? edge.home_team.bridge_abbr : edge.away_team.bridge_abbr} {Math.abs(edge.betting_edge.bridge_spread).toFixed(1)}
+                          </p>
+                        </div>
+                        <div className="text-center">
+                          <p className="text-slate-400 text-sm">Vegas Line</p>
+                          <p className="text-white font-bold text-lg">
+                            {edge.betting_edge.vegas_spread > 0 ? edge.home_team.bridge_abbr : edge.away_team.bridge_abbr} {Math.abs(edge.betting_edge.vegas_spread).toFixed(1)}
+                          </p>
+                        </div>
+                      </div>
+                      
+                      <div className="p-3 rounded-lg" style={{backgroundColor: 'rgba(34, 197, 94, 0.15)', border: '1px solid rgba(34, 197, 94, 0.4)'}}>
+                        <div className="text-center">
+                          <div className="text-green-400 font-bold text-lg">BET {edge.betting_edge.recommendation}</div>
+                          <div className="text-slate-300 text-sm">{edge.betting_edge.confidence}% confidence</div>
+                        </div>
+                      </div>
+                      
+                      <div className="text-xs text-slate-400 text-center">
+                        {formatDate(edge.date)} • {edge.espn_data.broadcast?.network}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+
+            {/* All Edges Table */}
+            <Card className="backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <Target className="w-5 h-5 mr-2 text-purple-400" />
+                  All Betting Edges ({bettingEdges.length} found)
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="overflow-x-auto">
+                  <table className="w-full" style={{backgroundColor: 'transparent'}}>
+                    <thead>
+                      <tr className="border-b" style={{borderColor: '#334155'}}>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Rank</th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Game</th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Edge Size</th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Our Line</th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Vegas Line</th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Recommendation</th>
+                        <th className="text-left py-3 px-2 text-slate-400 font-medium">Confidence</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {bettingEdges.map((edge, idx) => (
+                        <tr 
+                          key={edge.game_id} 
+                          className="border-b hover:bg-slate-700/30 transition-colors"
+                          style={{borderColor: 'rgba(51, 65, 85, 0.5)'}}
+                        >
+                          <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                            <span className={`w-6 h-6 rounded-full flex items-center justify-center text-white text-sm font-bold ${
+                              idx < 3 ? 'bg-yellow-500' : idx < 8 ? 'bg-blue-500' : 'bg-slate-500'
+                            }`}>
+                              {idx + 1}
+                            </span>
+                          </td>
+                          <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                            <div className="text-white font-medium">{edge.away_team.bridge_abbr} @ {edge.home_team.bridge_abbr}</div>
+                          </td>
+                          <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                            <span className={`px-2 py-1 rounded font-bold ${getEdgeColor(edge.betting_edge.edge_size)}`}>
+                              {edge.betting_edge.edge_size.toFixed(1)} pts
+                            </span>
+                          </td>
+                          <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                            <div className="text-white">
+                              {edge.betting_edge.bridge_spread > 0 ? edge.home_team.bridge_abbr : edge.away_team.bridge_abbr} {Math.abs(edge.betting_edge.bridge_spread).toFixed(1)}
+                            </div>
+                          </td>
+                          <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                            <div className="text-white">
+                              {edge.betting_edge.vegas_spread > 0 ? edge.home_team.bridge_abbr : edge.away_team.bridge_abbr} {Math.abs(edge.betting_edge.vegas_spread).toFixed(1)}
+                            </div>
+                          </td>
+                          <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                            <span className="text-green-400 font-bold">BET {edge.betting_edge.recommendation}</span>
+                          </td>
+                          <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                            <span className={`px-2 py-1 rounded text-xs ${getConfidenceColor(edge.betting_edge.confidence)}`}>
+                              {edge.betting_edge.confidence}%
+                            </span>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        )}
+
         {/* Team Detail View */}
         {view === 'team' && currentTeamData && (
           <div className="space-y-6">
@@ -1302,14 +1650,16 @@ const NFLAnalyticsDashboard = () => {
 
             {/* Team Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-              <Card className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border-blue-500/30">
+              <Card className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-yellow-500/30">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-blue-400 text-sm font-medium">Final Rank</p>
-                      <p className="text-2xl font-bold text-white">#{currentTeamData.ranking_info.final_2025_rank}</p>
+                      <p className="text-yellow-400 text-sm font-medium">Final Rank</p>
+                      <p className="text-2xl font-bold text-white">
+                      #{currentTeam.finalRank || currentTeam.ranking_info?.final_2025_rank || '16'}
+                      </p>
                     </div>
-                    <Trophy className="w-8 h-8 text-blue-400" />
+                    <Trophy className="w-8 h-8 text-yellow-400" />
                   </div>
                 </CardContent>
               </Card>
