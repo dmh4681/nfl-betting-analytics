@@ -121,7 +121,21 @@ const NFLAnalyticsDashboard = () => {
   };
 
   const formatImpact = (impact) => {
-    return impact > 0 ? `+${impact.toFixed(1)}` : impact.toFixed(1);
+    // Handle undefined, null, or non-numeric values
+    if (impact === undefined || impact === null || isNaN(impact)) {
+      return 'N/A';
+    }
+    
+    // Convert to number if it's a string
+    const numericImpact = typeof impact === 'string' ? parseFloat(impact) : impact;
+    
+    // Handle case where parseFloat returns NaN
+    if (isNaN(numericImpact)) {
+      return 'N/A';
+    }
+    
+    // Format with proper sign
+    return numericImpact > 0 ? `+${numericImpact.toFixed(1)}` : numericImpact.toFixed(1);
   };
 
   const getTopMovers = () => {
@@ -1624,6 +1638,9 @@ const NFLAnalyticsDashboard = () => {
         )}
 
         {/* Team Detail View */}
+        // Replace the entire Team Detail View section in your index.js
+        // This adds proper null checking for all the undefined properties
+
         {view === 'team' && currentTeamData && (
           <div className="space-y-6">
             
@@ -1635,13 +1652,13 @@ const NFLAnalyticsDashboard = () => {
                     {currentTeamData.team}
                   </div>
                   <div>
-                    <h1 className="text-3xl font-bold text-white">{currentTeamData.team_name}</h1>
-                    <p className="text-slate-400">{currentTeamData.division} • {currentTeamData.conference}</p>
+                    <h1 className="text-3xl font-bold text-white">{currentTeamData.team_name || currentTeamData.name}</h1>
+                    <p className="text-slate-400">{currentTeamData.division || 'Unknown Division'} • {currentTeamData.conference || 'Unknown Conference'}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className={`inline-block px-4 py-2 rounded-lg text-xl font-bold ${getGradeColor(currentTeamData.offseason_grade)}`}>
-                    {currentTeamData.offseason_grade}
+                  <div className={`inline-block px-4 py-2 rounded-lg text-xl font-bold ${getGradeColor(currentTeamData.offseason_grade || currentTeamData.offseasonGrade)}`}>
+                    {currentTeamData.offseason_grade || currentTeamData.offseasonGrade || 'N/A'}
                   </div>
                   <p className="text-slate-400 text-sm mt-1">Offseason Grade</p>
                 </div>
@@ -1656,7 +1673,7 @@ const NFLAnalyticsDashboard = () => {
                     <div>
                       <p className="text-yellow-400 text-sm font-medium">Final Rank</p>
                       <p className="text-2xl font-bold text-white">
-                      #{currentTeam.finalRank || currentTeam.ranking_info?.final_2025_rank || '16'}
+                        #{currentTeamData.finalRank || currentTeamData.final_2025_rank || currentTeamData.ranking_info?.final_2025_rank || '16'}
                       </p>
                     </div>
                     <Trophy className="w-8 h-8 text-yellow-400" />
@@ -1669,7 +1686,9 @@ const NFLAnalyticsDashboard = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-green-400 text-sm font-medium">Net Impact</p>
-                      <p className="text-2xl font-bold text-white">{formatImpact(currentTeamData.net_impact)}</p>
+                      <p className="text-2xl font-bold text-white">
+                        {formatImpact(currentTeamData.net_impact || currentTeamData.netImpact || currentTeamData.offseason_impact)}
+                      </p>
                     </div>
                     <TrendingUp className="w-8 h-8 text-green-400" />
                   </div>
@@ -1681,7 +1700,9 @@ const NFLAnalyticsDashboard = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-purple-400 text-sm font-medium">Total Moves</p>
-                      <p className="text-2xl font-bold text-white">{currentTeamData.total_moves}</p>
+                      <p className="text-2xl font-bold text-white">
+                        {currentTeamData.total_moves || currentTeamData.totalMoves || 'N/A'}
+                      </p>
                     </div>
                     <Users className="w-8 h-8 text-purple-400" />
                   </div>
@@ -1693,7 +1714,9 @@ const NFLAnalyticsDashboard = () => {
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-yellow-400 text-sm font-medium">Efficiency</p>
-                      <p className="text-2xl font-bold text-white">{currentTeamData.move_efficiency.toFixed(1)}</p>
+                      <p className="text-2xl font-bold text-white">
+                        {currentTeamData.move_efficiency?.toFixed(1) || 'N/A'}
+                      </p>
                     </div>
                     <Target className="w-8 h-8 text-yellow-400" />
                   </div>
@@ -1714,30 +1737,42 @@ const NFLAnalyticsDashboard = () => {
                     <div>
                       <h4 className="text-green-400 font-medium mb-3 flex items-center">
                         <TrendingUp className="w-4 h-4 mr-2" />
-                        Major Additions ({currentTeamData.players_gained})
+                        Major Additions ({currentTeamData.players_gained || 0})
                       </h4>
                       <div className="space-y-2">
-                        {currentTeamData.key_additions.slice(0, 5).map((addition, idx) => (
+                        {(currentTeamData.key_additions || currentTeamData.keyAdditions || []).slice(0, 5).map((addition, idx) => (
                           <div key={idx} className="flex items-center justify-between p-3 border rounded" style={{backgroundColor: 'rgba(34, 197, 94, 0.1)', borderColor: 'rgba(34, 197, 94, 0.2)'}}>
                             <span className="text-white text-sm">{addition}</span>
                             <ChevronRight className="w-4 h-4 text-green-400" />
                           </div>
                         ))}
+                        {(!currentTeamData.key_additions && !currentTeamData.keyAdditions) || 
+                        (currentTeamData.key_additions || currentTeamData.keyAdditions || []).length === 0 ? (
+                          <div className="text-center py-4">
+                            <p className="text-slate-400 text-sm">No major additions found</p>
+                          </div>
+                        ) : null}
                       </div>
                     </div>
 
                     <div>
                       <h4 className="text-red-400 font-medium mb-3 flex items-center">
                         <TrendingDown className="w-4 h-4 mr-2" />
-                        Key Departures ({currentTeamData.players_lost})
+                        Key Departures ({currentTeamData.players_lost || 0})
                       </h4>
                       <div className="space-y-2">
-                        {currentTeamData.key_losses.slice(0, 5).map((loss, idx) => (
+                        {(currentTeamData.key_losses || currentTeamData.keyLosses || []).slice(0, 5).map((loss, idx) => (
                           <div key={idx} className="flex items-center justify-between p-3 border rounded" style={{backgroundColor: 'rgba(239, 68, 68, 0.1)', borderColor: 'rgba(239, 68, 68, 0.2)'}}>
                             <span className="text-white text-sm">{loss}</span>
                             <ChevronRight className="w-4 h-4 text-red-400" />
                           </div>
                         ))}
+                        {(!currentTeamData.key_losses && !currentTeamData.keyLosses) || 
+                        (currentTeamData.key_losses || currentTeamData.keyLosses || []).length === 0 ? (
+                          <div className="text-center py-4">
+                            <p className="text-slate-400 text-sm">No major departures found</p>
+                          </div>
+                        ) : null}
                       </div>
                     </div>
                   </div>
@@ -1751,29 +1786,52 @@ const NFLAnalyticsDashboard = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    {Object.entries(currentTeamData.unit_impacts).map(([unit, impact]) => (
-                      <div key={unit} className="flex items-center justify-between p-4 rounded-lg" style={{backgroundColor: 'rgba(51, 65, 85, 0.5)'}}>
-                        <div className="flex items-center space-x-3">
-                          <div className={`w-3 h-3 rounded-full ${impact > 0 ? 'bg-green-400' : impact < 0 ? 'bg-red-400' : 'bg-slate-400'}`}></div>
-                          <span className="text-white capitalize font-medium">
-                            {unit.replace('_', ' ')}
-                          </span>
-                        </div>
-                        <span className={`font-bold text-lg ${impact > 0 ? 'text-green-400' : impact < 0 ? 'text-red-400' : 'text-slate-400'}`}>
-                          {formatImpact(impact)}
-                        </span>
-                      </div>
-                    ))}
+                    {/* Handle different possible data structures for unit impacts */}
+                    {(() => {
+                      const unitImpacts = currentTeamData.unit_impacts || 
+                                        currentTeamData.strengthDelta || 
+                                        {
+                                          offense: currentTeamData.offense_impact || 0,
+                                          defense: currentTeamData.defense_impact || 0,
+                                          special_teams: currentTeamData.special_teams_impact || currentTeamData.specialTeams || 0
+                                        };
+
+                      return Object.entries(unitImpacts).map(([unit, impact]) => {
+                        // Convert string impacts to numbers
+                        const numericImpact = typeof impact === 'string' ? 
+                          parseFloat(impact.replace('+', '')) : 
+                          (impact || 0);
+
+                        return (
+                          <div key={unit} className="flex items-center justify-between p-4 rounded-lg" style={{backgroundColor: 'rgba(51, 65, 85, 0.5)'}}>
+                            <div className="flex items-center space-x-3">
+                              <div className={`w-3 h-3 rounded-full ${numericImpact > 0 ? 'bg-green-400' : numericImpact < 0 ? 'bg-red-400' : 'bg-slate-400'}`}></div>
+                              <span className="text-white capitalize font-medium">
+                                {unit.replace('_', ' ').replace('special_teams', 'Special Teams')}
+                              </span>
+                            </div>
+                            <span className={`font-bold text-lg ${numericImpact > 0 ? 'text-green-400' : numericImpact < 0 ? 'text-red-400' : 'text-slate-400'}`}>
+                              {formatImpact(numericImpact)}
+                            </span>
+                          </div>
+                        );
+                      });
+                    })()}
 
                     <div className="mt-6 p-4 border rounded-lg" style={{backgroundColor: 'rgba(59, 130, 246, 0.1)', borderColor: 'rgba(59, 130, 246, 0.3)'}}>
                       <div className="flex items-center mb-2">
                         <AlertCircle className="w-5 h-5 text-blue-400 mr-2" />
                         <span className="text-blue-400 font-medium">Strategy Assessment</span>
                       </div>
-                      <p className="text-white text-sm mb-2">{currentTeamData.offseason_strategy}</p>
+                      <p className="text-white text-sm mb-2">
+                        {currentTeamData.offseason_strategy || 
+                        `This team made ${currentTeamData.total_moves || currentTeamData.totalMoves || 0} moves with a net impact of ${formatImpact(currentTeamData.net_impact || currentTeamData.netImpact || 0)}.`}
+                      </p>
                       <div className="flex items-center justify-between text-xs">
                         <span className="text-slate-400">Move Efficiency:</span>
-                        <span className="text-blue-400 font-medium">{currentTeamData.move_efficiency.toFixed(2)}</span>
+                        <span className="text-blue-400 font-medium">
+                          {currentTeamData.move_efficiency?.toFixed(2) || 'N/A'}
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -2082,10 +2140,13 @@ const NFLAnalyticsDashboard = () => {
         )}
 
         {/* Moves View */}
+        // Replace the moves view section in your index.js (around line 1400+)
+        // This goes where you currently have the placeholder "Moves table implementation continues here..."
+
         {view === 'moves' && (
           <div className="space-y-6">
             
-            {/* Moves Header & Filters */}
+            {/* Moves Header & Filters - keep your existing header */}
             <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-lg border p-6" style={{backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#334155'}}>
               <div className="flex items-center justify-between mb-4">
                 <div>
@@ -2103,7 +2164,7 @@ const NFLAnalyticsDashboard = () => {
                 </div>
               </div>
               
-              {/* Filters */}
+              {/* Keep your existing filters section */}
               <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-slate-400 mb-2">Team</label>
@@ -2176,10 +2237,227 @@ const NFLAnalyticsDashboard = () => {
               </div>
             </div>
 
-            {/* Rest of moves view... */}
-            <div className="text-center py-8">
-              <p className="text-slate-400">Moves table implementation continues here...</p>
-            </div>
+            {/* ACTUAL MOVES TABLE - This is what was missing! */}
+            <Card className="backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <Filter className="w-5 h-5 mr-2 text-purple-400" />
+                  Player Moves ({recentMoves.length} found)
+                  <span className="ml-auto text-sm text-slate-400">
+                    Impact scoring enabled
+                  </span>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                {recentMoves.length === 0 ? (
+                  <div className="text-center py-8">
+                    <AlertCircle className="w-12 h-12 mx-auto mb-4 text-slate-400" />
+                    <p className="text-slate-400 text-lg">No moves found matching your filters</p>
+                    <p className="text-slate-500 text-sm mt-2">Try adjusting your filters or search criteria</p>
+                  </div>
+                ) : (
+                  <>
+                    {/* Pagination Info */}
+                    <div className="flex justify-between items-center mb-4">
+                      <p className="text-slate-400 text-sm">
+                        Showing {recentMoves.length} of {movesStats.total_found} total moves
+                      </p>
+                      <div className="flex items-center space-x-2">
+                        <span className="text-slate-400 text-sm">Sort:</span>
+                        <select 
+                          className="px-2 py-1 rounded text-white text-sm"
+                          style={{backgroundColor: '#334155'}}
+                          onChange={(e) => {
+                            const sortBy = e.target.value;
+                            let sorted = [...recentMoves];
+                            
+                            if (sortBy === 'impact') {
+                              sorted.sort((a, b) => (b.impact_score || 0) - (a.impact_score || 0));
+                            } else if (sortBy === 'name') {
+                              sorted.sort((a, b) => (a.player_name || '').localeCompare(b.player_name || ''));
+                            } else if (sortBy === 'team') {
+                              sorted.sort((a, b) => (a.to_team || '').localeCompare(b.to_team || ''));
+                            } else if (sortBy === 'type') {
+                              sorted.sort((a, b) => (a.move_type || '').localeCompare(b.move_type || ''));
+                            }
+                            
+                            setRecentMoves(sorted);
+                          }}
+                        >
+                          <option value="impact">Impact Score</option>
+                          <option value="name">Player Name</option>
+                          <option value="team">Team</option>
+                          <option value="type">Move Type</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    {/* Moves Table */}
+                    <div className="overflow-x-auto">
+                      <table className="w-full" style={{backgroundColor: 'transparent'}}>
+                        <thead>
+                          <tr className="border-b" style={{borderColor: '#334155'}}>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Player</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Move</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Teams</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Contract</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">Impact</th>
+                            <th className="text-left py-3 px-2 text-slate-400 font-medium">2024 Stats</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {recentMoves.slice(0, 50).map((move, idx) => {
+                            const impactScore = move.impact_score || 0;
+                            const contractValue = move.contract_value || 0;
+                            const contractYears = move.contract_years || 0;
+                            
+                            return (
+                              <tr 
+                                key={`${move.player_name}-${idx}`}
+                                className="border-b hover:bg-slate-700/30 transition-colors"
+                                style={{borderColor: 'rgba(51, 65, 85, 0.5)'}}
+                              >
+                                {/* Player Info */}
+                                <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div>
+                                    <div className="text-white font-medium">{move.player_name || 'Unknown'}</div>
+                                    <div className="text-xs text-slate-400">
+                                      {move.position || 'N/A'} • Age {move.age || 'N/A'}
+                                    </div>
+                                  </div>
+                                </td>
+
+                                {/* Move Type */}
+                                <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="flex items-center space-x-2">
+                                    <span className={`w-2 h-2 rounded-full ${
+                                      move.move_type === 'Free Agent Signing' ? 'bg-green-400' :
+                                      move.move_type === 'Trade' ? 'bg-blue-400' :
+                                      move.move_type === 'Draft Pick' || move.move_type?.includes('Draft') ? 'bg-yellow-400' :
+                                      move.move_type === 'Extension' ? 'bg-purple-400' :
+                                      move.move_type === 'Release' ? 'bg-red-400' :
+                                      'bg-slate-400'
+                                    }`}></span>
+                                    <span className="text-white text-sm">{move.move_type || 'Unknown'}</span>
+                                  </div>
+                                </td>
+
+                                {/* Teams */}
+                                <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="flex items-center space-x-2">
+                                    <span className="text-slate-300">{move.from_team || 'N/A'}</span>
+                                    <span className="text-slate-500">→</span>
+                                    <span className="text-white font-medium">{move.to_team || 'N/A'}</span>
+                                  </div>
+                                </td>
+
+                                {/* Contract */}
+                                <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                                  {contractValue > 0 ? (
+                                    <div>
+                                      <div className="text-white font-medium">
+                                        ${contractValue >= 1000000 ? 
+                                          `${(contractValue / 1000000).toFixed(1)}M` : 
+                                          contractValue >= 1000 ?
+                                          `${(contractValue / 1000).toFixed(0)}K` :
+                                          contractValue.toLocaleString()
+                                        }
+                                      </div>
+                                      <div className="text-xs text-slate-400">
+                                        {contractYears > 0 ? `${contractYears} years` : 'Unknown term'}
+                                      </div>
+                                    </div>
+                                  ) : (
+                                    <span className="text-slate-400 text-sm">N/A</span>
+                                  )}
+                                </td>
+
+                                {/* Impact Score */}
+                                <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="flex items-center space-x-2">
+                                    <span className={`font-bold text-lg ${
+                                      impactScore >= 2 ? 'text-green-400' :
+                                      impactScore >= 1 ? 'text-blue-400' :
+                                      impactScore >= 0.5 ? 'text-yellow-400' :
+                                      'text-slate-400'
+                                    }`}>
+                                      {impactScore.toFixed(1)}
+                                    </span>
+                                    <div className="w-8 bg-slate-700 rounded-full h-1">
+                                      <div 
+                                        className={`h-1 rounded-full ${
+                                          impactScore >= 2 ? 'bg-green-400' :
+                                          impactScore >= 1 ? 'bg-blue-400' :
+                                          impactScore >= 0.5 ? 'bg-yellow-400' :
+                                          'bg-slate-400'
+                                        }`}
+                                        style={{width: `${Math.min(100, (impactScore / 3) * 100)}%`}}
+                                      ></div>
+                                    </div>
+                                  </div>
+                                </td>
+
+                                {/* 2024 Stats */}
+                                <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
+                                  <div className="text-sm">
+                                    <div className="text-white">
+                                      Grade: {move['2024_grade'] || 'N/A'}
+                                    </div>
+                                    <div className="text-xs text-slate-400">
+                                      {move.snap_percentage_2024 ? `${move.snap_percentage_2024}% snaps` : 'No snap data'}
+                                    </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            );
+                          })}
+                        </tbody>
+                      </table>
+                    </div>
+
+                    {/* Show more button if there are more moves */}
+                    {recentMoves.length > 50 && (
+                      <div className="text-center mt-6">
+                        <button 
+                          className="px-6 py-2 bg-blue-600 hover:bg-blue-500 rounded-lg text-white transition-colors"
+                          onClick={() => {
+                            // You could implement pagination here
+                            console.log('Show more moves - implement pagination');
+                          }}
+                        >
+                          Show More Moves ({recentMoves.length - 50} remaining)
+                        </button>
+                      </div>
+                    )}
+                  </>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Move Type Legend */}
+            <Card className="backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-white text-lg">Move Type Legend</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+                  {[
+                    {type: 'Free Agent Signing', color: 'bg-green-400', count: recentMoves.filter(m => m.move_type === 'Free Agent Signing').length},
+                    {type: 'Trade', color: 'bg-blue-400', count: recentMoves.filter(m => m.move_type === 'Trade').length},
+                    {type: 'Draft Pick', color: 'bg-yellow-400', count: recentMoves.filter(m => m.move_type?.includes('Draft')).length},
+                    {type: 'Extension', color: 'bg-purple-400', count: recentMoves.filter(m => m.move_type === 'Extension').length},
+                    {type: 'Release', color: 'bg-red-400', count: recentMoves.filter(m => m.move_type === 'Release').length},
+                    {type: 'Other', color: 'bg-slate-400', count: recentMoves.filter(m => !['Free Agent Signing', 'Trade', 'Extension', 'Release'].includes(m.move_type) && !m.move_type?.includes('Draft')).length}
+                  ].map(({type, color, count}) => (
+                    <div key={type} className="flex items-center space-x-2">
+                      <div className={`w-3 h-3 rounded-full ${color}`}></div>
+                      <span className="text-white text-sm">{type}</span>
+                      <span className="text-slate-400 text-xs">({count})</span>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
         )}
       </div>
