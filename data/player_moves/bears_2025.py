@@ -1,23 +1,28 @@
 """
 Chicago Bears 2025 Offseason Moves
-Complete analysis of $257M transformation around Caleb Williams under Ryan Poles and Ben Johnson
+Complete overhaul centered around protecting Caleb Williams with new coaching staff
+Last Updated: June 23, 2025
 """
 
 BEARS_2025_MOVES = [
-    # BEARS MAJOR TRADES - Offensive line revolution
+    # ========== MAJOR ACQUISITIONS - Offensive line transformation ==========
     {
         'player_name': 'Joe Thuney',
         'position': 'LG',
         'from_team': 'KC',
         'to_team': 'Chi',
         'move_type': 'Trade',
-        'contract_years': 3,
-        'contract_value': 78000000,
-        '2024_grade': 8.8,  # All-Pro guard, 98.2% pass block win rate
-        'projected_2025_grade': 8.8,  # Elite protection for Williams
-        'snap_percentage_2024': 95.0,  # Mahomes protector
-        'importance_to_old_team': 9.5,  # KC cap casualty despite excellence
-        'importance_to_new_team': 9.5,  # 4x Super Bowl winner leadership
+        'contract_years': 2,
+        'contract_value': 40000000,  # Existing contract + extension
+        'guaranteed_money': 28000000,
+        'aav': 20000000,
+        '2024_grade': 9.2,  # Elite 98.2% pass block win rate
+        'projected_2025_grade': 9.0,  # Four-time All-Pro
+        'snap_percentage_2024': 95.0,
+        'importance_to_old_team': 9.0,
+        'importance_to_new_team': 10.0,  # Protect Williams' blindside
+        'impact_score': 3.0,
+        'notes': 'Traded 2026 4th round pick'
     },
     {
         'player_name': 'Jonah Jackson',
@@ -25,16 +30,20 @@ BEARS_2025_MOVES = [
         'from_team': 'LAR',
         'to_team': 'Chi',
         'move_type': 'Trade',
-        'contract_years': 2,
-        'contract_value': 24000000,
-        '2024_grade': 7.8,  # 94.7% pass block win rate when healthy
-        'projected_2025_grade': 8.0,  # Johnson reunion from Detroit days
-        'snap_percentage_2024': 25.0,  # Limited by injury (4 games)
-        'importance_to_old_team': 6.0,  # Rams cut losses on injury
-        'importance_to_new_team': 8.5,  # Scheme familiarity with Johnson
+        'contract_years': 1,
+        'contract_value': 17500000,  # Existing deal
+        'guaranteed_money': 10000000,
+        'aav': 17500000,
+        '2024_grade': 8.0,  # 94.7% pass block win rate when healthy
+        'projected_2025_grade': 8.2,  # Reunites with Ben Johnson
+        'snap_percentage_2024': 25.0,  # Limited by injury
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 9.0,  # Interior protection
+        'impact_score': 2.0,
+        'notes': 'Traded 6th round pick'
     },
 
-    # BEARS FREE AGENT SIGNINGS - Championship experience priority
+    # ========== FREE AGENT SIGNINGS - Strategic additions ==========
     {
         'player_name': 'Drew Dalman',
         'position': 'C',
@@ -43,11 +52,14 @@ BEARS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 42000000,
-        '2024_grade': 7.8,  # 4th among centers with 78.8 PFF grade
-        'projected_2025_grade': 8.0,  # Interior line anchor
-        'snap_percentage_2024': 85.0,  # Falcons starting center
-        'importance_to_old_team': 7.5,  # Atlanta's center departure
-        'importance_to_new_team': 9.0,  # Addresses revolving door since 2018
+        'guaranteed_money': 28000000,
+        'aav': 14000000,
+        '2024_grade': 7.8,  # 78.8 PFF grade, 4th among centers
+        'projected_2025_grade': 8.0,
+        'snap_percentage_2024': 90.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 9.0,  # Revolving door at C solved
+        'impact_score': 2.2,
     },
     {
         'player_name': 'Grady Jarrett',
@@ -57,11 +69,14 @@ BEARS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 43500000,
-        '2024_grade': 7.5,  # 2x Pro Bowler, 36.5 career sacks
-        'projected_2025_grade': 8.0,  # Interior pass rush upgrade
-        'snap_percentage_2024': 80.0,  # Falcons starter before release
-        'importance_to_old_team': 8.0,  # Atlanta cap casualty
-        'importance_to_new_team': 8.5,  # Pairs with Gervon Dexter
+        'guaranteed_money': 25000000,
+        'aav': 14500000,
+        '2024_grade': 7.0,  # 36.5 career sacks
+        'projected_2025_grade': 7.2,
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 8.0,  # Interior pass rush
+        'impact_score': 1.5,
     },
     {
         'player_name': 'Dayo Odeyingbo',
@@ -71,58 +86,53 @@ BEARS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 48000000,
-        '2024_grade': 7.2,  # 8 sacks in 2023, solid edge rusher
-        'projected_2025_grade': 7.5,  # Complement to Montez Sweat
-        'snap_percentage_2024': 70.0,  # Colts starter
-        'importance_to_old_team': 7.0,  # Colts edge depth lost
-        'importance_to_new_team': 8.0,  # Allen's 4-3 scheme fit
-    },
-    {
-        'player_name': 'Case Keenum',
-        'position': 'QB',
-        'from_team': 'Buf',
-        'to_team': 'Chi',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 2,
-        'contract_value': 8000000,
-        '2024_grade': 6.5,  # Veteran backup experience
-        'projected_2025_grade': 7.0,  # Mentorship for Williams
-        'snap_percentage_2024': 15.0,  # Limited backup duty
-        'importance_to_old_team': 6.0,  # Bills backup depth
-        'importance_to_new_team': 7.5,  # Veteran leadership addition
+        'guaranteed_money': 28000000,
+        'aav': 16000000,
+        '2024_grade': 7.5,  # 8 sacks in 2023
+        'projected_2025_grade': 7.8,
+        'snap_percentage_2024': 65.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 8.0,  # Complement to Sweat
+        'impact_score': 1.8,
     },
 
-    # BEARS KEY EXTENSIONS - Defensive cornerstones secured
+    # ========== KEY RE-SIGNINGS/EXTENSIONS ==========
     {
         'player_name': 'Kyler Gordon',
-        'position': 'CB1',
+        'position': 'CB',
         'from_team': 'Chi',
         'to_team': 'Chi',
-        'move_type': 'Extension',
+        'move_type': 'Contract Extension',
         'contract_years': 3,
         'contract_value': 40000000,
-        '2024_grade': 8.0,  # 76.0 PFF grade, elite slot defender
-        'projected_2025_grade': 8.2,  # NFL's highest-paid nickel corner
-        'snap_percentage_2024': 85.0,  # Primary slot corner
-        'importance_to_old_team': 8.5,  # Defensive secondary anchor
-        'importance_to_new_team': 8.5,  # $31.25M guaranteed commitment
+        'guaranteed_money': 31250000,
+        'aav': 13333333,
+        '2024_grade': 8.0,  # 76.0 PFF grade, 13th among all corners
+        'projected_2025_grade': 8.2,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 8.5,
+        'importance_to_new_team': 8.5,
+        'impact_score': 2.0,  # Elite nickel corner retained
     },
     {
         'player_name': 'T.J. Edwards',
         'position': 'LB',
         'from_team': 'Chi',
         'to_team': 'Chi',
-        'move_type': 'Extension',
+        'move_type': 'Contract Extension',
         'contract_years': 2,
         'contract_value': 20000000,
-        '2024_grade': 8.0,  # Team captain, 129 tackles in 2024
-        'projected_2025_grade': 8.0,  # Defensive leadership retained
-        'snap_percentage_2024': 90.0,  # Every-down linebacker
-        'importance_to_old_team': 8.5,  # Team captain and leader
-        'importance_to_new_team': 8.5,  # Team-friendly deal through 2027
+        'guaranteed_money': 12000000,
+        'aav': 10000000,
+        '2024_grade': 7.8,  # 129 tackles, team captain
+        'projected_2025_grade': 7.8,
+        'snap_percentage_2024': 90.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 8.0,
+        'impact_score': 1.5,
     },
 
-    # BEARS MAJOR LOSSES - Cap casualties and departures
+    # ========== MAJOR LOSSES ==========
     {
         'player_name': 'Teven Jenkins',
         'position': 'G',
@@ -131,11 +141,14 @@ BEARS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # Solid guard play when healthy
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 75.0,  # Starting guard
-        'importance_to_old_team': 7.0,  # Replaced by elite acquisitions
+        'snap_percentage_2024': 80.0,
+        'importance_to_old_team': 7.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.5,  # Replaced by better players
     },
     {
         'player_name': 'Jack Sanborn',
@@ -145,11 +158,14 @@ BEARS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.5,  # Solid depth linebacker
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.0,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 45.0,  # Rotational linebacker
-        'importance_to_old_team': 6.5,  # Reunites with Eberflus in Dallas
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 5.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -0.5,  # Reunites with Eberflus
     },
     {
         'player_name': 'Keenan Allen',
@@ -159,187 +175,226 @@ BEARS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.0,  # Injury-limited veteran receiver
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.5,  # Still productive at 32
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 60.0,  # When healthy, productive
-        'importance_to_old_team': 6.0,  # Aging veteran, injury concerns
+        'snap_percentage_2024': 75.0,
+        'importance_to_old_team': 7.0,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.2,  # Age/youth movement
     },
 
-    # BEARS 2025 NFL DRAFT - Weapons and protection for Williams
+    # ========== 2025 NFL DRAFT - Elite weapons for Williams ==========
     {
         'player_name': 'Colston Loveland',
         'position': 'TE',
-        'from_team': 'DRAFT',
+        'from_team': 'Michigan',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #10',
+        'move_type': '2025 Draft - Round 1, Pick 10',
         'contract_years': 4,
-        'contract_value': 28500000,
-        '2024_grade': 0.0,  # College - Michigan (6'6", 248 lbs, Sam LaPorta comp)
-        'projected_2025_grade': 7.8,  # Immediate mismatch weapon
+        'contract_value': 22000000,
+        'guaranteed_money': 22000000,
+        'aav': 5500000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 8.0,  # Elite TE prospect
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Johnson system perfect fit
+        'importance_to_new_team': 9.0,  # LaPorta 2.0 for Johnson
+        'impact_score': 2.5,
     },
     {
         'player_name': 'Luther Burden III',
-        'position': 'WR2',
-        'from_team': 'DRAFT',
+        'position': 'WR',
+        'from_team': 'Missouri',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #39',
+        'move_type': '2025 Draft - Round 2, Pick 39',
         'contract_years': 4,
-        'contract_value': 12800000,
-        '2024_grade': 0.0,  # College - Missouri (1,212 yards, elite YAC ability)
-        'projected_2025_grade': 7.5,  # Slot receiver and returner
+        'contract_value': 9500000,
+        'guaranteed_money': 5500000,
+        'aav': 2375000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.8,  # 1,212 yards in 2023
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.0,  # PFF's WR2 in class, great value
+        'importance_to_new_team': 8.5,  # PFF's WR2 in class
+        'impact_score': 2.0,
     },
     {
         'player_name': 'Ozzy Trapilo',
-        'position': 'LT',
-        'from_team': 'DRAFT',
+        'position': 'OT',
+        'from_team': 'Boston College',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #56',
+        'move_type': '2025 Draft - Round 2, Pick 56',
         'contract_years': 4,
-        'contract_value': 8900000,
-        '2024_grade': 0.0,  # College - Boston College (6'8", 36 career starts)
-        'projected_2025_grade': 7.0,  # LT competition with Amegadjie
+        'contract_value': 8000000,
+        'guaranteed_money': 4000000,
+        'aav': 2000000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,  # 36 career starts
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # Jones ankle surgery insurance
+        'importance_to_new_team': 7.5,  # LT depth/competition
+        'impact_score': 1.0,
     },
     {
         'player_name': 'Shemar Turner',
-        'position': 'DT',
-        'from_team': 'DRAFT',
+        'position': 'DL',
+        'from_team': 'Texas A&M',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #62',
+        'move_type': '2025 Draft - Round 2, Pick 62',
         'contract_years': 4,
-        'contract_value': 7200000,
-        '2024_grade': 0.0,  # College - Texas A&M ("violence and aggression")
-        'projected_2025_grade': 6.8,  # Allen's defensive philosophy fit
+        'contract_value': 7500000,
+        'guaranteed_money': 3500000,
+        'aav': 1875000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.2,  # "Violence and aggression"
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Defensive line depth
+        'importance_to_new_team': 7.0,  # Dennis Allen fit
+        'impact_score': 0.8,
     },
     {
         'player_name': 'Ruben Hyppolite II',
         'position': 'LB',
-        'from_team': 'DRAFT',
+        'from_team': 'Maryland',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #118',
+        'move_type': '2025 Draft - Round 4, Pick 106',
         'contract_years': 4,
         'contract_value': 4800000,
-        '2024_grade': 0.0,  # College - Maryland (linebacker depth)
-        'projected_2025_grade': 6.5,  # Developmental linebacker
+        'guaranteed_money': 1000000,
+        'aav': 1200000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.5,  # LB depth behind Edwards
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
     },
     {
         'player_name': 'Zah Frazier',
-        'position': 'CB2',
-        'from_team': 'DRAFT',
+        'position': 'CB',
+        'from_team': 'UTSA',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #151',
+        'move_type': '2025 Draft - Round 5, Pick 142',
         'contract_years': 4,
-        'contract_value': 4300000,
-        '2024_grade': 0.0,  # College - UTSA (9.36 RAS score)
-        'projected_2025_grade': 6.5,  # Athletic cornerback project
+        'contract_value': 4000000,
+        'guaranteed_money': 700000,
+        'aav': 1000000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.8,  # 9.36 RAS score
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.5,  # Secondary depth
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.4,
     },
     {
         'player_name': 'Luke Newman',
-        'position': 'G',
-        'from_team': 'DRAFT',
+        'position': 'OL',
+        'from_team': 'Michigan State',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #183',
+        'move_type': '2025 Draft - Round 6, Pick 183',
         'contract_years': 4,
-        'contract_value': 4000000,
-        '2024_grade': 0.0,  # College - Michigan State (versatile OL)
-        'projected_2025_grade': 6.2,  # Interior line depth
+        'contract_value': 3800000,
+        'guaranteed_money': 500000,
+        'aav': 950000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,  # Versatile lineman
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # OL depth and competition
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
     {
         'player_name': 'Kyle Monangai',
         'position': 'RB',
-        'from_team': 'DRAFT',
+        'from_team': 'Rutgers',
         'to_team': 'Chi',
-        'move_type': '2025 Draft Pick #247',
+        'move_type': '2025 Draft - Round 7, Pick 220',
         'contract_years': 4,
         'contract_value': 3600000,
-        '2024_grade': 0.0,  # College - Rutgers (Big Ten rushing leader 2 years)
-        'projected_2025_grade': 6.0,  # Backfield depth
+        'guaranteed_money': 300000,
+        'aav': 900000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,  # Led Big Ten in rushing
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # RB room competition
+        'importance_to_new_team': 5.5,
+        'impact_score': 0.2,
     },
 
-    # BEARS COACHING OVERHAUL - Complete offensive transformation
+    # ========== COACHING OVERHAUL - Complete transformation ==========
+    {
+        'player_name': 'Matt Eberflus',
+        'position': 'COACH-HC',
+        'from_team': 'Chi',
+        'to_team': 'FIRED',
+        'move_type': 'Coaching Departure',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 3.0,  # 14-32 record, clock management disaster
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 2.0,  # First mid-season firing
+        'importance_to_new_team': 0.0,
+        'impact_score': 1.5,  # Addition by subtraction
+    },
     {
         'player_name': 'Ben Johnson',
-        'position': 'HC',
-        'from_team': 'Det',
+        'position': 'COACH-HC',
+        'from_team': 'Det-OC',
         'to_team': 'Chi',
-        'move_type': 'Coaching Hire',
+        'move_type': 'Head Coach Hire',
         'contract_years': 5,
         'contract_value': 40000000,
-        '2024_grade': 9.5,  # NFL's best offense coordinator (29.0 PPG 2022-24)
-        'projected_2025_grade': 9.5,  # Elite QB developer (Goff transformation)
+        'guaranteed_money': 30000000,
+        'aav': 8000000,
+        '2024_grade': 10.0,  # Lions #1 offense 2022-24
+        'projected_2025_grade': 9.0,  # QB whisperer for Williams
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 9.5,  # Lions lost elite coordinator
-        'importance_to_new_team': 10.0,  # Williams development crucial
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 3.0,  # Franchise-altering hire
     },
     {
         'player_name': 'Dennis Allen',
-        'position': 'DC',
+        'position': 'COACH-DC',
         'from_team': 'NO',
         'to_team': 'Chi',
-        'move_type': 'Coaching Hire',
-        'contract_years': 4,
-        'contract_value': 20000000,
-        '2024_grade': 7.5,  # Former Saints HC, aggressive 4-3 scheme
-        'projected_2025_grade': 8.0,  # Defensive scheme overhaul
+        'move_type': 'Defensive Coordinator Hire',
+        'contract_years': 3,
+        'contract_value': 7500000,
+        'guaranteed_money': 4500000,
+        'aav': 2500000,
+        '2024_grade': 7.0,  # Former Saints HC
+        'projected_2025_grade': 8.0,  # Aggressive 4-3 scheme
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Saints moved on from HC
-        'importance_to_new_team': 8.5,  # Philosophy shift from "bend don't break"
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 8.5,
+        'impact_score': 2.0,
     },
     {
         'player_name': 'Declan Doyle',
-        'position': 'OC',
+        'position': 'COACH-OC',
         'from_team': 'Den',
         'to_team': 'Chi',
-        'move_type': 'Coaching Hire',
+        'move_type': 'Offensive Coordinator Hire',
         'contract_years': 3,
-        'contract_value': 6000000,
-        '2024_grade': 6.5,  # Young coach promoted from Broncos TE coach
-        'projected_2025_grade': 7.5,  # Johnson's hand-picked coordinator
+        'contract_value': 3000000,
+        'guaranteed_money': 1800000,
+        'aav': 1000000,
+        '2024_grade': 7.0,  # 28-year-old rising star
+        'projected_2025_grade': 7.5,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.0,  # Broncos coaching staff loss
-        'importance_to_new_team': 7.5,  # 28-year-old coordinator under Johnson
-    },
-    {
-        'player_name': 'J.T. Barrett',
-        'position': 'QB_COACH',
-        'from_team': 'OSU',
-        'to_team': 'Chi',
-        'move_type': 'Coaching Hire',
-        'contract_years': 3,
-        'contract_value': 2500000,
-        '2024_grade': 6.0,  # Former Ohio State QB, coaching transition
-        'projected_2025_grade': 7.0,  # Williams development specialist
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 5.0,  # Ohio State quality control loss
-        'importance_to_new_team': 7.5,  # Young QB developer
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
 ]
 
-# BEARS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 BEARS_2025_SUMMARY = {
     'total_moves': len(BEARS_2025_MOVES),
     'free_agent_signings': 5,
@@ -348,25 +403,170 @@ BEARS_2025_SUMMARY = {
     'draft_picks': 8,
     'key_resignings': 2,
     'coaching_changes': 4,
-    'total_guaranteed_money': 257000000,  # Historic transformation spending
-    'salary_cap_space_remaining': 15000000,
+    'total_guaranteed_money': 257000000,  # Historic transformation
+    'dead_money': 8500000,
+    'cap_space_remaining': 15000000,
     'championship_window': '2025-2028',
     'offseason_grade': 'A-',
-    'key_philosophy': 'Complete transformation around Williams with elite protection and weapons',
-    'biggest_concern': 'Jonah Jackson injury history and pass rush depth',
-    'biggest_strength': 'Elite offensive line transformation (68 sacks to potential top-10 unit)',
-    'coaching_revolution': 'Ben Johnson brings Lions\' #1 offense system to Chicago',
-    'draft_excellence': 'NFL.com A grade, PFF A- grade for value and scheme fits',
-    'betting_implication': 'Dramatic improvement expected but NFC North gauntlet remains challenging'
+    'key_philosophy': 'Complete transformation around Williams with elite protection',
+    'net_impact_score': 24.5,  # Sum of all impact scores
+    'division_outlook': 'Rising contender in loaded NFC North',
 }
 
-if __name__ == "__main__":
-    print(f"Chicago Bears 2025 Offseason Moves: {BEARS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {BEARS_2025_SUMMARY['offseason_grade']}")
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
+    'offensive_line_revolution': {
+        'investment': '$100M+ in OL additions',
+        'sacks_allowed_2024': '68 (3rd-most in NFL history)',
+        'projected_improvement': 'Top-10 OL potential',
+        'philosophy': 'Protect Williams at all costs',
+    },
+    'coaching_overhaul': {
+        'johnson_impact': 'Lions OC who developed Goff',
+        'offensive_system': 'Play-action heavy, TE-centric',
+        'defensive_change': 'Aggressive 4-3 under Allen',
+        'culture_shift': 'From conservative to innovative',
+    },
+    'draft_excellence': {
+        'grades': 'NFL.com A, PFF A-',
+        'loveland_comparison': 'Sam LaPorta 2.0',
+        'burden_value': 'WR2 in draft at pick 39',
+        'depth_building': 'Eight quality additions',
+    },
+    'cap_management': {
+        'starting_space': '$62.9M (4th-most)',
+        'remaining_space': '$15M (24th)',
+        'structure': 'Front-loaded guarantees',
+        'flexibility': 'Maintained for 2026+',
+    },
+    'injury_considerations': {
+        'braxton_jones': 'Ankle surgery influenced Trapilo pick',
+        'jonah_jackson': 'Limited to 4 games in 2024',
+        'risk_mitigation': 'Depth at every OL position',
+    },
+}
+
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Caleb Williams',
+        'backup': 'Tyson Bagent',
+        'grade': 'A-',
+        'notes': 'Elite protection transforms outlook',
+    },
+    'offensive_line': {
+        'starters': ['Braxton Jones (LT)', 'Joe Thuney (LG)', 'Drew Dalman (C)', 
+                     'Jonah Jackson (RG)', 'Darnell Wright (RT)'],
+        'depth': 'Ozzy Trapilo, Luke Newman',
+        'grade': 'A',
+        'notes': 'From worst to potential top-10 unit',
+    },
+    'skill_positions': {
+        'wr': 'DJ Moore, Rome Odunze, Luther Burden III',
+        'rb': 'D\'Andre Swift, Khalil Herbert, Kyle Monangai',
+        'te': 'Colston Loveland, Cole Kmet',
+        'grade': 'A',
+        'notes': 'Elite weapons at every level',
+    },
+    'defensive_line': {
+        'dt': 'Grady Jarrett, Gervon Dexter, Andrew Billings',
+        'edge': 'Montez Sweat, Dayo Odeyingbo, DeMarcus Walker',
+        'grade': 'B+',
+        'notes': 'Pass rush depth still a concern',
+    },
+    'linebackers': {
+        'starters': 'T.J. Edwards, Tremaine Edmunds',
+        'depth': 'Ruben Hyppolite II, Noah Sewell',
+        'grade': 'B+',
+        'notes': 'Edwards extension key retention',
+    },
+    'secondary': {
+        'cb': 'Jaylon Johnson, Kyler Gordon, Tyrique Stevenson',
+        'safety': 'Kevin Byard, Jaquan Brisker',
+        'grade': 'A-',
+        'notes': 'Gordon highest-paid nickel CB',
+    },
+}
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 8.5,
+        'lean': 'OVER',
+        'reasoning': 'Elite OL + weapons + coaching',
+    },
+    'division_odds': {
+        'current': '+450',
+        'value': 'SLIGHT VALUE',
+        'reasoning': 'Tough division but dramatic improvement',
+    },
+    'playoffs': {
+        'current': '-120',
+        'value': 'YES',
+        'reasoning': 'Wild card likely with Lions/Vikings/Packers',
+    },
+    'player_props': {
+        'williams_passing_yards': 'OVER 3,800',
+        'williams_passing_tds': 'OVER 26.5',
+        'loveland_receiving_yards': 'OVER 650',
+    },
+    'key_bets': {
+        'best': 'Win total OVER 8.5',
+        'sleeper': 'Loveland OROY +1200',
+        'narrative': 'Week 1 upset potential',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("CHICAGO BEARS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {BEARS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: +{BEARS_2025_SUMMARY['net_impact_score']}")
     print(f"Championship Window: {BEARS_2025_SUMMARY['championship_window']}")
-    print(f"Total Guaranteed Money: ${BEARS_2025_SUMMARY['total_guaranteed_money']:,}")
-    print(f"Philosophy: {BEARS_2025_SUMMARY['key_philosophy']}")
-    print(f"Coaching Revolution: {BEARS_2025_SUMMARY['coaching_revolution']}")
-    print(f"Biggest Strength: {BEARS_2025_SUMMARY['biggest_strength']}")
-    print(f"Draft Excellence: {BEARS_2025_SUMMARY['draft_excellence']}")
-    print(f"Betting Implication: {BEARS_2025_SUMMARY['betting_implication']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {BEARS_2025_SUMMARY['total_moves']}")
+    print(f"  • Free Agent Signings: {BEARS_2025_SUMMARY['free_agent_signings']}")
+    print(f"  • Trades: {BEARS_2025_SUMMARY['trades']} (Thuney, Jackson)")
+    print(f"  • Draft Picks: {BEARS_2025_SUMMARY['draft_picks']}")
+    print(f"  • Coaching Changes: {BEARS_2025_SUMMARY['coaching_changes']}")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${BEARS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Dead Money: ${BEARS_2025_SUMMARY['dead_money']:,}")
+    print(f"  • Cap Space: ${BEARS_2025_SUMMARY['cap_space_remaining']:,}")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Joe Thuney (LG) - 4x All-Pro via trade from KC")
+    print("  • Ben Johnson (HC) - Lions OC, offensive mastermind")
+    print("  • Colston Loveland (TE) - 1st round pick, elite prospect")
+    print("  • Luther Burden III (WR) - 2nd round steal")
+    
+    print("\n❌ KEY LOSSES:")
+    print("  • Matt Eberflus (HC) - Fired mid-season")
+    print("  • Teven Jenkins (G) - To Browns in free agency")
+    print("  • Keenan Allen (WR) - Unsigned free agent")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {BEARS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • Division Outlook: {BEARS_2025_SUMMARY['division_outlook']}")
+    print(f"  • OL Investment: $100M+ to protect Williams")
+    print(f"  • Culture Change: Johnson brings winning mentality")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 8.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_bets']['best']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Williams development with elite protection")
+    print("  • Johnson's offensive system implementation")
+    print("  • Pass rush depth remains concern")
+    print("  • NFC North gauntlet (3 playoff teams)")
+
+if __name__ == "__main__":
+    generate_summary_report()
