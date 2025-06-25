@@ -1,10 +1,11 @@
 """
 San Francisco 49ers 2025 Offseason Moves
-Historic roster transformation: $86.6M dead money enables youth movement and financial reset
+Historic roster transformation: Accepting short-term pain for long-term flexibility
+Last Updated: June 23, 2025
 """
 
 NINERS_2025_MOVES = [
-    # 49ERS MAJOR ROSTER PURGE - Historic dead money for future flexibility
+    # ========== MAJOR TRADES/RELEASES - Historic roster purge ==========
     {
         'player_name': 'Deebo Samuel',
         'position': 'WR1',
@@ -13,53 +14,67 @@ NINERS_2025_MOVES = [
         'move_type': 'Trade',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.0,  # Only 670 yards, disgruntled and limited
+        'guaranteed_money': -31500000,  # Dead cap absorbed
+        'aav': 0,
+        '2024_grade': 6.5,  # Only 670 yards in injury-plagued year
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 75.0,  # Still primary receiver despite issues
-        'importance_to_old_team': 8.5,  # Former All-Pro, $31.5M dead money hit
-        'importance_to_new_team': 8.0,
-    },
-    {
-        'player_name': 'Kyle Juszczyk',
-        'position': 'FB',
-        'from_team': 'SF',
-        'to_team': 'RELEASED',
-        'move_type': 'Release',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 7.5,  # 9-time Pro Bowl fullback
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 40.0,  # Key in Shanahan's system
-        'importance_to_old_team': 8.0,  # Iconic player, $4.1M savings
+        'snap_percentage_2024': 65.0,
+        'importance_to_old_team': 7.5,  # Disgruntled, wanted out
         'importance_to_new_team': 0.0,
+        'impact_score': -2.0,  # Got only a 5th round pick
     },
     {
         'player_name': 'Javon Hargrave',
         'position': 'DT',
         'from_team': 'SF',
         'to_team': 'RELEASED',
-        'move_type': 'Release',
+        'move_type': 'Post-June 1 Cut',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.8,  # Solid interior pass rusher
+        'guaranteed_money': -19100000,  # Dead cap
+        'aav': 0,
+        '2024_grade': 5.0,  # Limited to 3 games with injury
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 70.0,  # Key defensive lineman
-        'importance_to_old_team': 8.0,  # Major cap savings needed
+        'snap_percentage_2024': 15.0,
+        'importance_to_old_team': 5.0,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.0,  # Cap relief move
     },
     {
-        'player_name': 'Leonard Floyd',
-        'position': 'EDGE',
+        'player_name': 'Kyle Juszczyk',
+        'position': 'FB',
         'from_team': 'SF',
-        'to_team': 'FA',
+        'to_team': 'RELEASED',
+        'move_type': 'Cap Casualty',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': -1500000,  # Dead cap
+        'aav': 0,
+        '2024_grade': 7.0,  # 9x Pro Bowler
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 7.0,  # Shanahan system icon
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.0,  # End of an era
+    },
+
+    # ========== DEFENSIVE EXODUS ==========
+    {
+        'player_name': 'Charvarius Ward',
+        'position': 'CB1',
+        'from_team': 'SF',
+        'to_team': 'Ind',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.5,  # Productive edge rusher
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.8,  # Still elite when healthy
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 65.0,  # Key pass rusher
-        'importance_to_old_team': 7.5,  # Couldn't afford to retain
+        'snap_percentage_2024': 75.0,
+        'importance_to_old_team': 8.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -2.0,  # Major secondary loss
     },
     {
         'player_name': 'Dre Greenlaw',
@@ -69,25 +84,14 @@ NINERS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 8.0,  # Elite linebacker when healthy
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.0,  # Limited by Achilles recovery
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 45.0,  # Injured most of season
-        'importance_to_old_team': 8.5,  # Key defensive leader
+        'snap_percentage_2024': 30.0,
+        'importance_to_old_team': 7.0,
         'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'Charvarius Ward',
-        'position': 'CB1',
-        'from_team': 'SF',
-        'to_team': 'Ind',
-        'move_type': 'Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 7.8,  # Solid corner, couldn't afford extension
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 85.0,  # Starting corner
-        'importance_to_old_team': 8.0,  # Key secondary piece
-        'importance_to_new_team': 0.0,
+        'impact_score': -1.5,  # Leadership void
     },
     {
         'player_name': 'Talanoa Hufanga',
@@ -97,11 +101,31 @@ NINERS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.5,  # Injury-limited season
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.5,  # Injury-plagued
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 35.0,  # Missed significant time
-        'importance_to_old_team': 7.0,  # Former All-Pro
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 7.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.5,
+    },
+    {
+        'player_name': 'Leonard Floyd',
+        'position': 'EDGE',
+        'from_team': 'SF',
+        'to_team': 'Atl',
+        'move_type': 'Free Agent Loss',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,  # 6.5 sacks
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.2,
     },
     {
         'player_name': 'Maliek Collins',
@@ -111,28 +135,106 @@ NINERS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # 45 pressures, productive season
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.8,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 55.0,  # Key rotation piece
-        'importance_to_old_team': 7.0,  # Solid 3-technique
+        'snap_percentage_2024': 50.0,
+        'importance_to_old_team': 6.5,
         'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'Aaron Banks',
-        'position': 'G',
-        'from_team': 'SF',
-        'to_team': 'GB',
-        'move_type': 'Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 7.2,  # Starting guard
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 90.0,  # Full-time starter
-        'importance_to_old_team': 7.5,  # Key offensive lineman
-        'importance_to_new_team': 0.0,
+        'impact_score': -1.0,
     },
 
-    # 49ERS KEY SIGNINGS - Targeted veteran additions amid youth movement
+    # ========== THE PURDY MEGA-DEAL ==========
+    {
+        'player_name': 'Brock Purdy',
+        'position': 'QB',
+        'from_team': 'SF',
+        'to_team': 'SF',
+        'move_type': 'Contract Extension',
+        'contract_years': 5,
+        'contract_value': 265000000,  # Record-setting
+        'guaranteed_money': 180000000,  # Fully guaranteed
+        'aav': 53000000,
+        '2024_grade': 8.5,  # Elite efficiency
+        'projected_2025_grade': 8.8,
+        'snap_percentage_2024': 90.0,
+        'importance_to_old_team': 10.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 3.0,  # Franchise secured
+    },
+
+    # ========== OTHER KEY EXTENSIONS ==========
+    {
+        'player_name': 'Fred Warner',
+        'position': 'LB',
+        'from_team': 'SF',
+        'to_team': 'SF',
+        'move_type': 'Contract Extension',
+        'contract_years': 5,
+        'contract_value': 95000000,
+        'guaranteed_money': 56000000,
+        'aav': 19000000,
+        '2024_grade': 9.5,  # All-Pro
+        'projected_2025_grade': 9.5,
+        'snap_percentage_2024': 98.0,
+        'importance_to_old_team': 10.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 2.5,  # Saves $13M in 2025
+    },
+    {
+        'player_name': 'George Kittle',
+        'position': 'TE',
+        'from_team': 'SF',
+        'to_team': 'SF',
+        'move_type': 'Contract Extension',
+        'contract_years': 4,
+        'contract_value': 76000000,
+        'guaranteed_money': 40000000,
+        'aav': 19000000,
+        '2024_grade': 8.8,
+        'projected_2025_grade': 8.5,
+        'snap_percentage_2024': 80.0,
+        'importance_to_old_team': 9.5,
+        'importance_to_new_team': 9.5,
+        'impact_score': 2.0,
+    },
+
+    # ========== BARGAIN FREE AGENT SIGNINGS ==========
+    {
+        'player_name': 'Mac Jones',
+        'position': 'QB',
+        'from_team': 'Jac',
+        'to_team': 'SF',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 2,
+        'contract_value': 7000000,
+        'guaranteed_money': 3500000,
+        'aav': 3500000,
+        '2024_grade': 5.5,  # Backup role
+        'projected_2025_grade': 6.0,
+        'snap_percentage_2024': 15.0,
+        'importance_to_old_team': 5.0,
+        'importance_to_new_team': 6.5,  # Quality backup
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Demarcus Robinson',
+        'position': 'WR',
+        'from_team': 'LAR',
+        'to_team': 'SF',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 2,
+        'contract_value': 9500000,
+        'guaranteed_money': 4000000,
+        'aav': 4750000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 7.0,  # WR depth
+        'impact_score': 0.8,
+    },
     {
         'player_name': 'Luke Farrell',
         'position': 'TE',
@@ -141,39 +243,14 @@ NINERS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 20250000,
-        '2024_grade': 7.0,  # Solid blocking tight end
-        'projected_2025_grade': 7.5,  # Good scheme fit with Kittle
-        'snap_percentage_2024': 60.0,  # Versatile role
-        'importance_to_old_team': 6.5,  # Key piece for Jaguars
-        'importance_to_new_team': 8.0,  # Replaces Juszczyk's role partially
-    },
-    {
-        'player_name': 'Demarcus Robinson',
-        'position': 'WR2',
-        'from_team': 'LAR',
-        'to_team': 'SF',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 2,
-        'contract_value': 9500000,
-        '2024_grade': 6.8,  # Solid veteran receiver
-        'projected_2025_grade': 7.2,  # Good scheme fit
-        'snap_percentage_2024': 55.0,  # Rotational role
-        'importance_to_old_team': 6.0,  # Depth piece for Rams
-        'importance_to_new_team': 7.5,  # Helps replace Deebo's production
-    },
-    {
-        'player_name': 'Mac Jones',
-        'position': 'QB',
-        'from_team': 'NE',
-        'to_team': 'SF',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 2,
-        'contract_value': 7000000,
-        '2024_grade': 6.0,  # Struggled as Patriots starter
-        'projected_2025_grade': 7.0,  # Reunion with coaches who wanted to draft him
-        'snap_percentage_2024': 70.0,  # Starting QB for struggling team
-        'importance_to_old_team': 6.0,  # Former 1st round pick
-        'importance_to_new_team': 7.0,  # Major backup upgrade
+        'guaranteed_money': 11000000,
+        'aav': 6750000,
+        '2024_grade': 6.8,  # Blocking TE
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.5,  # Juszczyk replacement
+        'impact_score': 1.0,
     },
     {
         'player_name': 'Andre Dillard',
@@ -182,12 +259,15 @@ NINERS_2025_MOVES = [
         'to_team': 'SF',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 3500000,
-        '2024_grade': 6.0,  # Backup tackle
-        'projected_2025_grade': 6.5,  # Depth signing
-        'snap_percentage_2024': 30.0,  # Limited role
-        'importance_to_old_team': 5.0,  # Depth piece
-        'importance_to_new_team': 6.5,  # OL depth needed
+        'contract_value': 3000000,
+        'guaranteed_money': 1500000,
+        'aav': 3000000,
+        '2024_grade': 6.0,
+        'projected_2025_grade': 6.2,
+        'snap_percentage_2024': 30.0,
+        'importance_to_old_team': 5.5,
+        'importance_to_new_team': 6.5,  # OL depth
+        'impact_score': 0.4,
     },
     {
         'player_name': 'Nicholas Petit-Frere',
@@ -196,217 +276,228 @@ NINERS_2025_MOVES = [
         'to_team': 'SF',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 2800000,
-        '2024_grade': 5.8,  # Concerning pass protection metrics
-        'projected_2025_grade': 6.2,  # Depth and competition
-        'snap_percentage_2024': 40.0,  # Rotational role
-        'importance_to_old_team': 5.5,  # Depth for Titans
-        'importance_to_new_team': 6.0,  # OL competition
+        'contract_value': 2500000,
+        'guaranteed_money': 1000000,
+        'aav': 2500000,
+        '2024_grade': 5.8,
+        'projected_2025_grade': 6.0,
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 5.0,
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
 
-    # 49ERS DRAFT - Youth movement with first 5 picks on defense
+    # ========== 2025 NFL DRAFT - Defense-heavy approach ==========
     {
         'player_name': 'Mykel Williams',
         'position': 'EDGE',
-        'from_team': 'DRAFT',
+        'from_team': 'Georgia',
         'to_team': 'SF',
-        'move_type': '2025 Draft Pick #11',
+        'move_type': '2025 Draft - Round 1, Pick 11',
         'contract_years': 4,
-        'contract_value': 28500000,
-        '2024_grade': 0.0,  # College - Georgia edge rusher, 14 career sacks
-        'projected_2025_grade': 7.5,  # Nick Bosa's new running mate
+        'contract_value': 24000000,
+        'guaranteed_money': 24000000,
+        'aav': 6000000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 8.0,  # Elite prospect
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 9.0,  # Immediate starter opposite Bosa
+        'importance_to_new_team': 9.0,  # Bosa's partner
+        'impact_score': 2.0,
     },
     {
         'player_name': 'Alfred Collins',
         'position': 'DT',
-        'from_team': 'DRAFT',
+        'from_team': 'Texas',
         'to_team': 'SF',
-        'move_type': '2025 Draft Pick #43',
+        'move_type': '2025 Draft - Round 2, Pick 43',
         'contract_years': 4,
-        'contract_value': 12800000,
-        '2024_grade': 0.0,  # College - Texas DT, 6'6" 332 lbs, 2.9 YPC allowed
-        'projected_2025_grade': 7.2,  # Addresses 28th-ranked run defense
+        'contract_value': 8500000,
+        'guaranteed_money': 4000000,
+        'aav': 2125000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.5,  # 6'6", 332 lbs
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Critical run defense need
+        'importance_to_new_team': 8.5,  # Replace Hargrave
+        'impact_score': 1.5,
     },
     {
         'player_name': 'Nick Martin',
         'position': 'LB',
-        'from_team': 'DRAFT',
+        'from_team': 'Oklahoma',
         'to_team': 'SF',
-        'move_type': '2025 Draft Pick #75',
+        'move_type': '2025 Draft - Round 3, Pick 75',
         'contract_years': 4,
-        'contract_value': 7200000,
-        '2024_grade': 0.0,  # College - Oklahoma LB
-        'projected_2025_grade': 7.0,  # Replaces Dre Greenlaw
+        'contract_value': 5800000,
+        'guaranteed_money': 1400000,
+        'aav': 1450000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.0,  # Critical linebacker need
+        'importance_to_new_team': 8.0,  # Replace Greenlaw
+        'impact_score': 1.2,
     },
     {
         'player_name': 'Upton Stout',
-        'position': 'CB1',
-        'from_team': 'DRAFT',
+        'position': 'CB',
+        'from_team': 'Western Kentucky',
         'to_team': 'SF',
-        'move_type': '2025 Draft Pick #107',
+        'move_type': '2025 Draft - Round 4, Pick 107',
         'contract_years': 4,
-        'contract_value': 5800000,
-        '2024_grade': 0.0,  # College - 0 TDs allowed in 409 coverage snaps
-        'projected_2025_grade': 7.0,  # Immediate starter potential
+        'contract_value': 4500000,
+        'guaranteed_money': 900000,
+        'aav': 1125000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.8,  # Zero TDs allowed
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.0,  # Replaces Ward
+        'importance_to_new_team': 7.5,  # Replace Ward
+        'impact_score': 1.0,
     },
     {
         'player_name': 'C.J. West',
         'position': 'DT',
-        'from_team': 'DRAFT',
+        'from_team': 'Kent State',
         'to_team': 'SF',
-        'move_type': '2025 Draft Pick #139',
-        'contract_years': 4,
-        'contract_value': 4900000,
-        '2024_grade': 0.0,  # College - Interior line depth
-        'projected_2025_grade': 6.5,  # Developmental piece
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Interior line rebuild
-    },
-    {
-        'player_name': 'Jalen McLeod',
-        'position': 'WR3',
-        'from_team': 'DRAFT',
-        'to_team': 'SF',
-        'move_type': '2025 Draft Pick #171',
-        'contract_years': 4,
-        'contract_value': 4200000,
-        '2024_grade': 0.0,  # College - New Mexico State WR
-        'projected_2025_grade': 6.0,  # Developmental receiver
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.5,  # WR depth after Deebo trade
-    },
-    {
-        'player_name': 'Cameron Calhoun',
-        'position': 'LB',
-        'from_team': 'DRAFT',
-        'to_team': 'SF',
-        'move_type': '2025 Draft Pick #203',
+        'move_type': '2025 Draft - Round 5, Pick 143',
         'contract_years': 4,
         'contract_value': 3800000,
-        '2024_grade': 0.0,  # College - Liberty LB
-        'projected_2025_grade': 6.0,  # Special teams contributor
+        'guaranteed_money': 600000,
+        'aav': 950000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # LB depth
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
     },
     {
-        'player_name': 'Marcus Belton',
-        'position': 'S',
-        'from_team': 'DRAFT',
+        'player_name': 'Carson Steele',
+        'position': 'RB',
+        'from_team': 'UCLA',
         'to_team': 'SF',
-        'move_type': '2025 Draft Pick #235',
+        'move_type': '2025 Draft - Round 6, Pick 181',
         'contract_years': 4,
-        'contract_value': 3400000,
-        '2024_grade': 0.0,  # College - NC State S
-        'projected_2025_grade': 5.8,  # Developmental safety
+        'contract_value': 3500000,
+        'guaranteed_money': 400000,
+        'aav': 875000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,  # Goal-line back
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Safety depth
-    },
-
-    # 49ERS KEY EXTENSIONS - Locking up the core
-    {
-        'player_name': 'Brock Purdy',
-        'position': 'QB',
-        'from_team': 'SF',
-        'to_team': 'SF',
-        'move_type': 'Extension',
-        'contract_years': 5,
-        'contract_value': 265000000,
-        '2024_grade': 8.0,  # Strong season despite offensive struggles
-        'projected_2025_grade': 8.5,  # Should improve with better weapons
-        'snap_percentage_2024': 95.0,  # Franchise quarterback
-        'importance_to_old_team': 10.0,  # Future of franchise
-        'importance_to_new_team': 10.0,  # Record-breaking extension
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
     {
-        'player_name': 'Fred Warner',
-        'position': 'LB',
-        'from_team': 'SF',
+        'player_name': 'Justin Rogers',
+        'position': 'WR',
+        'from_team': 'TCU',
         'to_team': 'SF',
-        'move_type': 'Extension',
-        'contract_years': 5,
-        'contract_value': 95000000,
-        '2024_grade': 9.0,  # All-Pro linebacker, defensive captain
-        'projected_2025_grade': 8.8,  # Should remain elite
-        'snap_percentage_2024': 95.0,  # Every-down linebacker
-        'importance_to_old_team': 10.0,  # Defensive anchor
-        'importance_to_new_team': 10.0,  # $56M guaranteed through 2029
-    },
-    {
-        'player_name': 'George Kittle',
-        'position': 'TE',
-        'from_team': 'SF',
-        'to_team': 'SF',
-        'move_type': 'Extension',
+        'move_type': '2025 Draft - Round 6, Pick 219',
         'contract_years': 4,
-        'contract_value': 76000000,
-        '2024_grade': 8.5,  # Elite tight end when healthy
-        'projected_2025_grade': 8.3,  # Should remain top-tier
-        'snap_percentage_2024': 80.0,  # Key offensive weapon
-        'importance_to_old_team': 9.5,  # Cornerstone player
-        'importance_to_new_team': 9.5,  # Critical retention
+        'contract_value': 3200000,
+        'guaranteed_money': 300000,
+        'aav': 800000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 5.8,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 5.5,
+        'impact_score': 0.2,
     },
     {
-        'player_name': 'Jauan Jennings',
-        'position': 'WR2',
-        'from_team': 'SF',
+        'player_name': 'Tyrek Funderburk',
+        'position': 'CB',
+        'from_team': 'App State',
         'to_team': 'SF',
-        'move_type': 'Extension',
-        'contract_years': 3,
-        'contract_value': 21000000,
-        '2024_grade': 7.5,  # Breakout season, 82 catches for 1,140 yards
-        'projected_2025_grade': 8.0,  # Should be #1 WR now
-        'snap_percentage_2024': 70.0,  # Emerging star
-        'importance_to_old_team': 8.0,  # Key receiver after Deebo trade
-        'importance_to_new_team': 8.5,  # Critical retention
+        'move_type': '2025 Draft - Round 7, Pick 255',
+        'contract_years': 4,
+        'contract_value': 3000000,
+        'guaranteed_money': 200000,
+        'aav': 750000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 5.5,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 5.0,
+        'impact_score': 0.1,
     },
 
-    # 49ERS COACHING CHANGES - Robert Saleh returns to fix defense
+    # ========== COACHING CHANGES - Saleh returns! ==========
     {
         'player_name': 'Robert Saleh',
-        'position': 'DC',
+        'position': 'COACH-DC',
         'from_team': 'NYJ',
         'to_team': 'SF',
-        'move_type': 'Coaching Hire',
+        'move_type': 'Defensive Coordinator Hire',
         'contract_years': 3,
-        'contract_value': 12000000,
-        '2024_grade': 7.0,  # Fired from Jets but great defensive mind
-        'projected_2025_grade': 9.0,  # Reunion with 49ers system
+        'contract_value': 6000000,
+        'guaranteed_money': 3000000,
+        'aav': 2000000,
+        '2024_grade': 6.0,  # As Jets HC
+        'projected_2025_grade': 9.0,  # Elite DC historically
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,  # Fired by Jets
-        'importance_to_new_team': 9.5,  # "Biggest under-the-radar addition"
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 9.5,  # Critical hire
+        'impact_score': 2.5,
     },
     {
         'player_name': 'Klay Kubiak',
-        'position': 'OC',
-        'from_team': 'SF',
+        'position': 'COACH-OC',
+        'from_team': 'SF-PGC',
         'to_team': 'SF',
-        'move_type': 'Promotion',
+        'move_type': 'Internal Promotion to OC',
         'contract_years': 3,
         'contract_value': 4500000,
-        '2024_grade': 7.0,  # Internal promotion, worked with Purdy
-        'projected_2025_grade': 7.5,  # Shanahan retains play-calling
+        'guaranteed_money': 2000000,
+        'aav': 1500000,
+        '2024_grade': 7.5,  # As pass game coordinator
+        'projected_2025_grade': 8.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.0,  # Passing game coordinator
-        'importance_to_new_team': 7.0,  # Succession planning
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 8.0,  # Shanahan still calls plays
+        'impact_score': 1.0,
     },
 
-    # 49ERS UDFA SIGNINGS - Building depth through development
+    # ========== ADDITIONAL MOVES ==========
+    {
+        'player_name': 'Aaron Banks',
+        'position': 'G',
+        'from_team': 'SF',
+        'to_team': 'GB',
+        'move_type': 'Free Agent Loss',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.2,
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 90.0,
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.3,  # OL depth concern
+    },
+    {
+        'player_name': 'Jordan Mason',
+        'position': 'RB',
+        'from_team': 'SF',
+        'to_team': 'Min',
+        'move_type': 'Trade',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,  # 400+ yards
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 25.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 0.0,
+        'impact_score': -0.8,
+    },
+
+    # ========== UDFA SIGNINGS ==========
     {
         'player_name': 'Multiple UDFAs',
         'position': 'DEPTH',
@@ -414,16 +505,19 @@ NINERS_2025_MOVES = [
         'to_team': 'SF',
         'move_type': 'UDFA Signings',
         'contract_years': 3,
-        'contract_value': 12000000,
-        '2024_grade': 0.0,  # College prospects
-        'projected_2025_grade': 5.5,  # Development pieces
+        'contract_value': 15000000,  # Combined
+        'guaranteed_money': 1500000,
+        'aav': 5000000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 5.5,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 5.5,  # Youth movement depth
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.5,
     },
 ]
 
-# 49ERS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 NINERS_2025_SUMMARY = {
     'total_moves': len(NINERS_2025_MOVES),
     'major_releases_trades': 9,  # Historic roster purge
@@ -439,60 +533,172 @@ NINERS_2025_SUMMARY = {
     'championship_window': '2026-2029',  # Post-transition
     'offseason_grade': 'B+/A-',  # Bold strategy with risk
     'key_philosophy': 'Accept short-term pain for long-term flexibility',
-    'schedule_strength': 0.415,  # NFL\'s easiest since 2015 Falcons
+    'schedule_strength': 0.415,  # NFL's easiest since 2015 Falcons
     'rookie_starters_projected': 6,  # Historic youth movement
     'division_championship_odds': 36,  # Highest in NFC West despite turnover
     'biggest_gamble': 'Six potential rookie starters on defense',
     'smartest_move': 'Robert Saleh return as DC',
-    'franchise_trajectory': 'Controlled regression leading to sustainable excellence'
+    'franchise_trajectory': 'Controlled regression leading to sustainable excellence',
 }
 
-# 49ERS STRATEGIC ANALYSIS
-NINERS_2025_ANALYSIS = {
-    'financial_strategy': 'Historic $86.6M dead money hit creates future flexibility',
-    'roster_philosophy': 'Youth movement with veteran leadership (Bosa, Warner, Kittle)',
-    'defensive_transformation': 'First 5 draft picks on defense since 1981',
-    'offensive_continuity': 'Shanahan system with upgraded weapons around Purdy',
-    'coaching_masterclass': 'Saleh return could be difference-maker for young defense',
-    'schedule_advantage': 'NFL\'s easiest schedule (.415) aids transition',
-    'biggest_risk': 'Six rookie defensive starters in year one',
-    'biggest_reward': 'Young, cheap defense with $100M+ cap space by 2027',
-    'nfc_west_outlook': 'Transition year but still competitive due to schedule',
-    'purdy_factor': 'Record $265M deal structured to minimize 2025 impact ($9.1M cap hit)',
-    'saleh_impact': 'Reunites with system that made him coaching star',
-    'future_extensions_needed': ['Nick Bosa (eventual)', 'Trent Williams succession'],
-    'championship_timeline': 'Sacrifice 2025 competitiveness for 2026-2029 dominance'
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
+    'financial_strategy': {
+        'dead_cap_hit': '$86.6M historic hit accepted in 2025',
+        'future_flexibility': '$100M+ cap space by 2027',
+        'contract_structuring': 'Purdy deal only $9.1M cap hit in 2025',
+        'veteran_releases': 'Samuel, Hargrave, Juszczyk save future money',
+    },
+    'roster_philosophy': {
+        'youth_movement': 'First 5 draft picks on defense since 1981',
+        'veteran_core': 'Bosa, Warner, Kittle, Williams anchor',
+        'offensive_identity': 'Transition from Deebo/fullback era',
+        'defensive_rebuild': 'Saleh tasked with developing rookies',
+    },
+    'schedule_advantage': {
+        'strength': '.415 opponent win % (easiest since 2015)',
+        'home_games': 'Weak AFC East opponents visit',
+        'division_games': 'Seahawks appear weakened',
+        'timing': 'Perfect year for transition',
+    },
+    'coaching_masterstroke': {
+        'saleh_return': 'Reunites with system that made him star',
+        'kubiak_promotion': 'Offensive continuity maintained',
+        'scheme_fit': 'Rookies selected for specific system',
+        'development_focus': 'Year dedicated to teaching',
+    },
+    'division_dynamics': {
+        'rams_threat': 'Added Davante Adams, remain favorites',
+        'cardinals_rise': 'Defensive additions make them contenders',
+        'seahawks_fall': 'Traded Smith/Metcalf, last place likely',
+        'opportunity': 'Division more balanced than recent years',
+    },
 }
 
-# 49ERS RISK ASSESSMENT
-NINERS_2025_RISKS = {
-    'immediate_risks': [
-        'Six rookie defensive starters',
-        'Aging offensive core (Williams 37, Kittle 31, McCaffrey 29)',
-        'Limited veteran receiver depth after Deebo trade',
-        'Offensive line concerns after Banks departure'
-    ],
-    'medium_term_risks': [
-        'NFC West arms race with Rams/Cardinals improvements',
-        'Rookie development timeline may not align with schedule advantage',
-        'Injury concerns with aging skill position players'
-    ],
-    'long_term_rewards': [
-        'Young defense anchored by Bosa/Warner',
-        'Massive cap flexibility when dead money clears',
-        'Purdy locked up through prime years',
-        'Strong draft capital for continued building'
-    ]
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Brock Purdy',
+        'backup': 'Mac Jones',
+        'grade': 'A',
+        'notes': 'Purdy secured long-term, Jones quality backup',
+    },
+    'offensive_line': {
+        'starters': ['Trent Williams (LT)', 'Jon Feliciano (LG)', 'Jake Brendel (C)', 
+                     'Spencer Burford (RG)', 'Colton McKivitz (RT)'],
+        'depth': 'Banks departure hurts, added Dillard/Petit-Frere',
+        'grade': 'B-',
+        'notes': 'Williams age 37 a concern, interior questions',
+    },
+    'skill_positions': {
+        'wr': 'Brandon Aiyuk, Jauan Jennings, Demarcus Robinson',
+        'rb': 'Christian McCaffrey, Elijah Mitchell, Carson Steele',
+        'te': 'George Kittle, Luke Farrell',
+        'grade': 'B+',
+        'notes': 'Deebo loss significant, CMC health crucial',
+    },
+    'defensive_line': {
+        'dt': 'Alfred Collins, C.J. West, rookie depth',
+        'edge': 'Nick Bosa, Mykel Williams, Drake Jackson',
+        'grade': 'B',
+        'notes': 'Bosa elite but youth everywhere else',
+    },
+    'linebackers': {
+        'starters': 'Fred Warner, Nick Martin (rookie), Dee Winters',
+        'depth': 'Thin behind starters',
+        'grade': 'B+',
+        'notes': 'Warner covers for inexperience',
+    },
+    'secondary': {
+        'cb': 'Deommodore Lenoir, Upton Stout (rookie), Ambry Thomas',
+        'safety': 'George Odum, Ji\'Ayir Brown',
+        'grade': 'C+',
+        'notes': 'Major question marks after exodus',
+    },
 }
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 8.5,
+        'lean': 'UNDER',
+        'reasoning': 'Too many rookies on defense',
+    },
+    'division_odds': {
+        'current': '+250',
+        'value': 'NO',
+        'reasoning': 'Transition year despite easy schedule',
+    },
+    'super_bowl_odds': {
+        'current': '+3500',
+        'value': 'HARD PASS',
+        'reasoning': 'Not built for 2025 contention',
+    },
+    'player_props': {
+        'purdy_passing_yards': 'OVER 4,200',
+        'mccaffrey_rushing_yards': 'UNDER 1,100 (age/usage)',
+        'bosa_sacks': 'OVER 15.5',
+    },
+    'key_angles': {
+        'best_bet': 'Miss playoffs +150',
+        'fade_spot': 'Early season vs good offenses',
+        'narrative': 'Saleh makes defense respectable by December',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("SAN FRANCISCO 49ERS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {NINERS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: {sum(move['impact_score'] for move in NINERS_2025_MOVES):.1f}")
+    print(f"Championship Window: {NINERS_2025_SUMMARY['championship_window']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {NINERS_2025_SUMMARY['total_moves']}")
+    print(f"  • Major Releases/Trades: {NINERS_2025_SUMMARY['major_releases_trades']}")
+    print(f"  • Free Agent Signings: {NINERS_2025_SUMMARY['free_agent_signings']} (all budget deals)")
+    print(f"  • Draft Picks: {NINERS_2025_SUMMARY['draft_picks']} (defense-heavy)")
+    print(f"  • Extensions: {NINERS_2025_SUMMARY['key_extensions']}")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${NINERS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Dead Money: ${NINERS_2025_SUMMARY['dead_money_absorbed']:,} (league-high)")
+    print(f"  • Current Cap Space: ${NINERS_2025_SUMMARY['salary_cap_space_created']:,}")
+    print(f"  • 2027 Projected Space: ${NINERS_2025_SUMMARY['projected_2027_cap_space']:,}")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Robert Saleh (DC) - Returns to fix defense")
+    print("  • Mykel Williams (EDGE) - 1st round, Georgia")
+    print("  • Luke Farrell (TE) - 3yr/$20.25M blocking TE")
+    print("  • Mac Jones (QB) - Backup on 2yr/$7M deal")
+    
+    print("\n❌ MAJOR LOSSES:")
+    print("  • Deebo Samuel - Traded to Washington (5th pick)")
+    print("  • Javon Hargrave - Released ($19.1M dead cap)")
+    print("  • Charvarius Ward - To Colts in FA")
+    print("  • Dre Greenlaw, Talanoa Hufanga - Both to Denver")
+    print("  • Kyle Juszczyk - 9x Pro Bowl FB released")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {NINERS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • Schedule: {NINERS_2025_SUMMARY['schedule_strength']} strength (NFL's easiest)")
+    print(f"  • Projected Rookie Starters: {NINERS_2025_SUMMARY['rookie_starters_projected']}")
+    print(f"  • Division Odds: {NINERS_2025_SUMMARY['division_championship_odds']}% to win")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 8.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_angles']['best_bet']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Can Saleh develop 6 rookie defensive starters?")
+    print("  • McCaffrey health at age 29")
+    print("  • Trent Williams longevity at 37")
+    print("  • Schedule advantage vs roster inexperience")
 
 if __name__ == "__main__":
-    print(f"San Francisco 49ers 2025 Offseason Moves: {NINERS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {NINERS_2025_SUMMARY['offseason_grade']}")
-    print(f"Championship Window: {NINERS_2025_SUMMARY['championship_window']}")
-    print(f"Dead Money Absorbed: ${NINERS_2025_SUMMARY['dead_money_absorbed']:,}")
-    print(f"Philosophy: {NINERS_2025_SUMMARY['key_philosophy']}")
-    print(f"Schedule Strength: {NINERS_2025_SUMMARY['schedule_strength']} (NFL's easiest)")
-    print(f"Projected Rookie Starters: {NINERS_2025_SUMMARY['rookie_starters_projected']}")
-    print(f"Division Championship Odds: {NINERS_2025_SUMMARY['division_championship_odds']}%")
-    print(f"Biggest Gamble: {NINERS_2025_SUMMARY['biggest_gamble']}")
-    print(f"2027 Projected Cap Space: ${NINERS_2025_SUMMARY['projected_2027_cap_space']:,}")
+    generate_summary_report()

@@ -1,10 +1,28 @@
 """
 Los Angeles Rams 2025 Offseason Moves
-Strategic gambles for immediate contention and long-term flexibility under Les Snead
+Strategic gambles: Trading Kupp for Adams while securing future flexibility
+Last Updated: June 23, 2025
 """
 
 RAMS_2025_MOVES = [
-    # RAMS FREE AGENT SIGNINGS - Trading past glory for future firepower
+    # ========== BLOCKBUSTER MOVES - Out with old, in with new ==========
+    {
+        'player_name': 'Cooper Kupp',
+        'position': 'WR1',
+        'from_team': 'LAR',
+        'to_team': 'RELEASED',
+        'move_type': 'Post-June 1 Cut',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': -22300000,  # Dead cap
+        'aav': 0,
+        '2024_grade': 6.5,  # Injury-limited
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 8.0,  # Franchise icon
+        'importance_to_new_team': 0.0,
+        'impact_score': -2.0,  # Unsuccessful trade attempts
+    },
     {
         'player_name': 'Davante Adams',
         'position': 'WR1',
@@ -13,25 +31,33 @@ RAMS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
         'contract_value': 46000000,
-        '2024_grade': 8.2,  # 103 catches for 1,509 yards in 2023, elite route runner
-        'projected_2025_grade': 8.5,  # Better QB play with Stafford
-        'snap_percentage_2024': 85.0,  # Primary target despite Jets dysfunction
-        'importance_to_old_team': 7.5,  # Key veteran presence for Jets
-        'importance_to_new_team': 9.5,  # Forms elite tandem with Puka Nacua
+        'guaranteed_money': 30000000,
+        'aav': 23000000,
+        '2024_grade': 8.5,  # 103 catches, 1,509 yards in 2023
+        'projected_2025_grade': 8.2,  # Age 31
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 9.0,
+        'importance_to_new_team': 9.5,  # Replace Kupp production
+        'impact_score': 3.0,  # Elite acquisition
     },
+
+    # ========== DEFENSIVE REINFORCEMENTS ==========
     {
         'player_name': 'Poona Ford',
         'position': 'DT',
-        'from_team': 'LAC',
+        'from_team': 'Sea',
         'to_team': 'LAR',
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 29600000,
-        '2024_grade': 8.8,  # 5th among interior defenders, 6th in run defense (PFF)
-        'projected_2025_grade': 8.5,  # Addresses biggest weakness
-        'snap_percentage_2024': 70.0,  # Key run-stopper for Chargers
-        'importance_to_old_team': 8.5,  # Crucial to league's top scoring defense
-        'importance_to_new_team': 9.0,  # Fixes run defense that allowed 100+ yards 15 times
+        'guaranteed_money': 18000000,
+        'aav': 9866667,
+        '2024_grade': 8.0,  # PFF 5th among interior defenders
+        'projected_2025_grade': 8.0,
+        'snap_percentage_2024': 75.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 9.0,  # Fix run defense
+        'impact_score': 2.0,
     },
     {
         'player_name': 'Nate Landman',
@@ -40,12 +66,85 @@ RAMS_2025_MOVES = [
         'to_team': 'LAR',
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
-        'contract_value': 8500000,
-        '2024_grade': 7.0,  # Solid linebacker production in Atlanta
-        'projected_2025_grade': 7.2,  # Good scheme fit
-        'snap_percentage_2024': 65.0,  # Starting linebacker
-        'importance_to_old_team': 6.5,  # Depth piece for Falcons
-        'importance_to_new_team': 7.5,  # Replaces Rozeboom/Hummel
+        'contract_value': 8000000,
+        'guaranteed_money': 4000000,
+        'aav': 4000000,
+        '2024_grade': 6.8,
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.5,  # LB depth
+        'impact_score': 1.0,
+    },
+    {
+        'player_name': 'Darious Williams',
+        'position': 'CB',
+        'from_team': 'Jac',
+        'to_team': 'LAR',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 2,
+        'contract_value': 12000000,
+        'guaranteed_money': 6000000,
+        'aav': 6000000,
+        '2024_grade': 7.0,  # Returns to Rams
+        'projected_2025_grade': 7.2,
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 8.0,  # System familiarity
+        'impact_score': 1.2,
+    },
+
+    # ========== KEY RE-SIGNINGS ==========
+    {
+        'player_name': 'Matthew Stafford',
+        'position': 'QB',
+        'from_team': 'LAR',
+        'to_team': 'LAR',
+        'move_type': 'Contract Restructure',
+        'contract_years': 2,
+        'contract_value': 80000000,
+        'guaranteed_money': 40000000,  # For 2026
+        'aav': 40000000,
+        '2024_grade': 8.0,  # Elite when healthy
+        'projected_2025_grade': 8.0,
+        'snap_percentage_2024': 80.0,
+        'importance_to_old_team': 10.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 2.5,  # Saves $8.7M in 2025
+    },
+    {
+        'player_name': 'Alaric Jackson',
+        'position': 'LT',
+        'from_team': 'LAR',
+        'to_team': 'LAR',
+        'move_type': 'Contract Extension',
+        'contract_years': 3,
+        'contract_value': 57750000,
+        'guaranteed_money': 30000000,
+        'aav': 19250000,
+        '2024_grade': 7.8,
+        'projected_2025_grade': 8.0,
+        'snap_percentage_2024': 90.0,
+        'importance_to_old_team': 9.0,
+        'importance_to_new_team': 9.0,
+        'impact_score': 2.0,  # Secures blindside
+    },
+    {
+        'player_name': 'Tutu Atwell',
+        'position': 'WR',
+        'from_team': 'LAR',
+        'to_team': 'LAR',
+        'move_type': 'Contract Extension',
+        'contract_years': 2,
+        'contract_value': 10000000,
+        'guaranteed_money': 10000000,  # Fully guaranteed
+        'aav': 5000000,
+        '2024_grade': 7.0,  # Speed threat
+        'projected_2025_grade': 7.2,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
     {
         'player_name': 'Coleman Shelton',
@@ -54,57 +153,105 @@ RAMS_2025_MOVES = [
         'to_team': 'LAR',
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
-        'contract_value': 7000000,
-        '2024_grade': 7.2,  # Solid center play in Chicago
-        'projected_2025_grade': 7.5,  # Reunion with familiar system
-        'snap_percentage_2024': 90.0,  # Full-time starter
-        'importance_to_old_team': 6.0,  # Depth for Bears
-        'importance_to_new_team': 8.0,  # Returns to familiar Rams system
+        'contract_value': 7500000,
+        'guaranteed_money': 4000000,
+        'aav': 3750000,
+        '2024_grade': 6.8,  # Returns after 1 year away
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 8.0,  # System familiarity
+        'impact_score': 1.0,
+    },
+    {
+        'player_name': 'Jimmy Garoppolo',
+        'position': 'QB',
+        'from_team': 'LAR',
+        'to_team': 'LAR',
+        'move_type': 'Contract Restructure',
+        'contract_years': 1,
+        'contract_value': 13500000,  # Up to with incentives
+        'guaranteed_money': 8000000,
+        'aav': 13500000,
+        '2024_grade': 6.0,  # Backup role
+        'projected_2025_grade': 6.2,
+        'snap_percentage_2024': 10.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.0,  # Stafford insurance
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Ahkello Witherspoon',
+        'position': 'CB',
+        'from_team': 'LAR',
+        'to_team': 'LAR',
+        'move_type': 'Re-signing',
+        'contract_years': 2,
+        'contract_value': 8500000,
+        'guaranteed_money': 4000000,
+        'aav': 4250000,
+        '2024_grade': 7.2,
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 7.5,
+        'impact_score': 0.8,
     },
 
-    # RAMS MAJOR LOSSES - Cooper Kupp era ends
-    {
-        'player_name': 'Cooper Kupp',
-        'position': 'WR1',
-        'from_team': 'LAR',
-        'to_team': 'Sea',
-        'move_type': 'Release/Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 6.8,  # Injury-plagued season, 67 catches for 710 yards
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 60.0,  # Limited by injuries
-        'importance_to_old_team': 9.0,  # Super Bowl MVP, franchise icon
-        'importance_to_new_team': 0.0,
-    },
+    # ========== LOSSES ==========
     {
         'player_name': 'Christian Rozeboom',
         'position': 'LB',
         'from_team': 'LAR',
-        'to_team': 'FA',
+        'to_team': 'KC',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # Starting linebacker
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,  # Starting LB
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 75.0,  # Key defensive piece
-        'importance_to_old_team': 7.5,  # Starting linebacker for 2 seasons
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 7.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.5,
     },
     {
         'player_name': 'Jake Hummel',
         'position': 'LB',
         'from_team': 'LAR',
-        'to_team': 'Bal',
+        'to_team': 'Cin',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.0,  # Special teams ace, blocked punt for TD
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.5,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 15.0,  # Primarily special teams
-        'importance_to_old_team': 6.5,  # Key special teams contributor
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 6.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.0,
     },
+    {
+        'player_name': 'Demarcus Robinson',
+        'position': 'WR',
+        'from_team': 'LAR',
+        'to_team': 'SF',
+        'move_type': 'Free Agent Loss',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -0.8,
+    },
+
+    # ========== TRADES ==========
     {
         'player_name': 'Jonah Jackson',
         'position': 'G',
@@ -113,232 +260,208 @@ RAMS_2025_MOVES = [
         'move_type': 'Trade',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 5.5,  # Disappointing first season in LA
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 5.5,  # Disappointing FA signing
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 80.0,  # Starting guard despite struggles
-        'importance_to_old_team': 6.0,  # Rare free agency miss
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 5.0,
         'importance_to_new_team': 0.0,
+        'impact_score': 0.5,  # Saved $17.5M, got 6th
+    },
+    {
+        'player_name': '2025 1st Round Pick',
+        'position': 'DRAFT',
+        'from_team': 'LAR',
+        'to_team': 'Atl',
+        'move_type': 'Trade - Pick 26',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.0,  # Got 2025 2nd + 2026 1st
     },
 
-    # RAMS DRAFT PICKS - Strategic value extraction through trades
+    # ========== 2025 NFL DRAFT - Strategic additions ==========
     {
         'player_name': 'Terrance Ferguson',
         'position': 'TE',
-        'from_team': 'DRAFT',
+        'from_team': 'Oregon',
         'to_team': 'LAR',
-        'move_type': '2025 Draft Pick #58 (via ATL trade)',
+        'move_type': '2025 Draft - Round 2, Pick 36 (via ATL)',
         'contract_years': 4,
-        'contract_value': 9500000,
-        '2024_grade': 0.0,  # College - Oregon TE, fills critical void
-        'projected_2025_grade': 7.0,  # Addresses league-worst TE production (459 yards)
+        'contract_value': 8800000,
+        'guaranteed_money': 4400000,
+        'aav': 2200000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.5,  # Elite prospect
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Critical need filled
+        'importance_to_new_team': 8.5,  # TE void filled
+        'impact_score': 1.8,
     },
     {
         'player_name': 'Josaiah Stewart',
         'position': 'EDGE',
-        'from_team': 'DRAFT',
+        'from_team': 'Michigan',
         'to_team': 'LAR',
-        'move_type': '2025 Draft Pick #87',
+        'move_type': '2025 Draft - Round 3, Pick 91',
         'contract_years': 4,
-        'contract_value': 6200000,
-        '2024_grade': 0.0,  # College - Michigan edge rusher
-        'projected_2025_grade': 6.8,  # Adds depth behind Verse/Young
+        'contract_value': 5600000,
+        'guaranteed_money': 1200000,
+        'aav': 1400000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Pass rush depth
+        'importance_to_new_team': 7.5,  # Depth for Verse/Young
+        'impact_score': 1.0,
+    },
+    {
+        'player_name': 'Chris "Pooh" Paul Jr.',
+        'position': 'LB',
+        'from_team': 'Ole Miss',
+        'to_team': 'LAR',
+        'move_type': '2025 Draft - Round 3, Pick 95 (comp)',
+        'contract_years': 4,
+        'contract_value': 5400000,
+        'guaranteed_money': 1100000,
+        'aav': 1350000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.2,  # No TDs allowed in 665 snaps
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 8.0,  # Replace departed LBs
+        'impact_score': 1.2,
     },
     {
         'player_name': 'Jarquez Hunter',
         'position': 'RB',
-        'from_team': 'DRAFT',
+        'from_team': 'Auburn',
         'to_team': 'LAR',
-        'move_type': '2025 Draft Pick #118',
+        'move_type': '2025 Draft - Round 4, Pick 127',
         'contract_years': 4,
-        'contract_value': 5100000,
-        '2024_grade': 0.0,  # College - Auburn RB, 4.4 speed, SEC-leading yards after contact
-        'projected_2025_grade': 7.2,  # Complements Kyren Williams perfectly
+        'contract_value': 4400000,
+        'guaranteed_money': 800000,
+        'aav': 1100000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.8,  # 4.4 speed, YAC leader
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # Explosive speed element
-    },
-    {
-        'player_name': 'Chris Paul Jr.',
-        'position': 'LB',
-        'from_team': 'DRAFT',
-        'to_team': 'LAR',
-        'move_type': '2025 Draft Pick #147',
-        'contract_years': 4,
-        'contract_value': 4500000,
-        '2024_grade': 0.0,  # College - Ole Miss captain, didn't allow TD in 665 coverage snaps
-        'projected_2025_grade': 7.0,  # Elite coverage linebacker
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # Replaces linebacker losses
+        'importance_to_new_team': 7.0,  # Complement to Kyren
+        'impact_score': 0.8,
     },
     {
         'player_name': 'Ty Hamilton',
         'position': 'DT',
-        'from_team': 'DRAFT',
+        'from_team': 'Ohio State',
         'to_team': 'LAR',
-        'move_type': '2025 Draft Pick #189',
+        'move_type': '2025 Draft - Round 5, Pick 169',
         'contract_years': 4,
-        'contract_value': 3800000,
-        '2024_grade': 0.0,  # College - Ohio State DT
-        'projected_2025_grade': 6.5,  # Interior line depth
+        'contract_value': 3700000,
+        'guaranteed_money': 500000,
+        'aav': 925000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.5,  # Defensive line depth
+        'importance_to_new_team': 6.5,  # DT depth
+        'impact_score': 0.5,
     },
     {
-        'player_name': 'Marcus Haynes',
-        'position': 'CB2',
-        'from_team': 'DRAFT',
+        'player_name': 'Cam Hart',
+        'position': 'CB/S',
+        'from_team': 'Notre Dame',
         'to_team': 'LAR',
-        'move_type': '2025 Draft Pick #220',
+        'move_type': '2025 Draft - Round 6, Pick 203',
         'contract_years': 4,
-        'contract_value': 3500000,
-        '2024_grade': 0.0,  # College - Late round corner
-        'projected_2025_grade': 6.0,  # Developmental piece
+        'contract_value': 3400000,
+        'guaranteed_money': 400000,
+        'aav': 850000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Secondary depth
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
 
-    # RAMS KEY RE-SIGNINGS - Securing the core and creating flexibility
+    # ========== COACHING CHANGES ==========
     {
-        'player_name': 'Alaric Jackson',
-        'position': 'LT',
+        'player_name': 'Nick Caley',
+        'position': 'COACH-TE',
         'from_team': 'LAR',
-        'to_team': 'LAR',
-        'move_type': 'Extension',
-        'contract_years': 3,
-        'contract_value': 57750000,
-        '2024_grade': 8.0,  # Solid left tackle play
-        'projected_2025_grade': 8.2,  # Should continue improving
-        'snap_percentage_2024': 95.0,  # Full-time starter
-        'importance_to_old_team': 9.0,  # Stafford's blindside protection
-        'importance_to_new_team': 9.0,  # Critical retention
-    },
-    {
-        'player_name': 'Matthew Stafford',
-        'position': 'QB',
-        'from_team': 'LAR',
-        'to_team': 'LAR',
-        'move_type': 'Restructure',
-        'contract_years': 2,
-        'contract_value': 40000000,  # 2026 guarantee if on roster
-        '2024_grade': 8.5,  # Strong season despite injuries around him
-        'projected_2025_grade': 8.3,  # Age 37 but still elite
-        'snap_percentage_2024': 90.0,  # When healthy, full starter
-        'importance_to_old_team': 10.0,  # Franchise quarterback
-        'importance_to_new_team': 10.0,  # Championship window tied to him
-    },
-    {
-        'player_name': 'Tutu Atwell',
-        'position': 'WR3',
-        'from_team': 'LAR',
-        'to_team': 'LAR',
-        'move_type': 'Extension',
-        'contract_years': 2,
-        'contract_value': 10000000,
-        '2024_grade': 7.0,  # Breakout season as slot receiver
-        'projected_2025_grade': 7.5,  # Should continue developing
-        'snap_percentage_2024': 60.0,  # Key role in 3-WR sets
-        'importance_to_old_team': 7.0,  # Emerging slot threat
-        'importance_to_new_team': 7.5,  # Fully guaranteed shows confidence
-    },
-    {
-        'player_name': 'Jimmy Garoppolo',
-        'position': 'QB',
-        'from_team': 'LAR',
-        'to_team': 'LAR',
-        'move_type': 'Restructure',
-        'contract_years': 1,
-        'contract_value': 13500000,
-        '2024_grade': 6.5,  # Limited action as backup
-        'projected_2025_grade': 6.8,  # Veteran backup experience
-        'snap_percentage_2024': 10.0,  # Backup role
-        'importance_to_old_team': 6.0,  # Insurance policy
-        'importance_to_new_team': 6.5,  # Maintains QB depth
-    },
-    {
-        'player_name': 'Ahkello Witherspoon',
-        'position': 'CB1',
-        'from_team': 'LAR',
-        'to_team': 'LAR',
-        'move_type': 'Re-signing',
-        'contract_years': 2,
-        'contract_value': 12000000,
-        '2024_grade': 7.5,  # Solid corner play
-        'projected_2025_grade': 7.3,  # Should maintain level
-        'snap_percentage_2024': 80.0,  # Starting corner
-        'importance_to_old_team': 7.5,  # Key secondary piece
-        'importance_to_new_team': 7.5,  # Continuity in secondary
-    },
-
-    # RAMS COACHING CHANGES - Strategic additions to maximize talent
-    {
-        'player_name': 'Drew Wilkins',
-        'position': 'PASS_RUSH_COORD',
-        'from_team': 'BAL',
-        'to_team': 'LAR',
-        'move_type': 'Coaching Hire',
-        'contract_years': 2,
-        'contract_value': 2500000,
-        '2024_grade': 8.0,  # Ravens-style blitz packages
-        'projected_2025_grade': 8.2,  # Should maximize Verse/Young
+        'to_team': 'Hou',
+        'move_type': 'Coaching Loss (OC)',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 8.0,  # Innovative passing concepts
+        'projected_2025_grade': 0.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Lost to Rams
-        'importance_to_new_team': 8.0,  # Enhances pass rush scheme
-    },
-    {
-        'player_name': 'Alex Van Pelt',
-        'position': 'OFF_ASSISTANT',
-        'from_team': 'NE',
-        'to_team': 'LAR',
-        'move_type': 'Coaching Hire',
-        'contract_years': 2,
-        'contract_value': 1800000,
-        '2024_grade': 7.5,  # Developed Drake Maye in New England
-        'projected_2025_grade': 7.8,  # QB development expertise
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.5,  # Patriots coordinator
-        'importance_to_new_team': 7.0,  # Insurance for QB transitions
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.5,  # Big loss
     },
     {
         'player_name': 'Nathan Scheelhaase',
-        'position': 'PASS_GAME_COORD',
-        'from_team': 'LAR',
+        'position': 'COACH-PGC',
+        'from_team': 'LAR-Assistant',
         'to_team': 'LAR',
-        'move_type': 'Promotion',
+        'move_type': 'Internal Promotion',
         'contract_years': 3,
-        'contract_value': 4500000,
-        '2024_grade': 7.0,  # Internal promotion from quality control
-        'projected_2025_grade': 7.5,  # McVay calls him a "stud"
+        'contract_value': 2400000,
+        'guaranteed_money': 1200000,
+        'aav': 800000,
+        '2024_grade': 7.0,
+        'projected_2025_grade': 7.5,  # McVay calls him "stud"
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.0,  # Rising coach
-        'importance_to_new_team': 7.5,  # Replaces Nick Caley
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
-
-    # RAMS DRAFT TRADES - Brilliant future asset accumulation
     {
-        'player_name': '2026 1st Round Pick',
-        'position': 'DRAFT_PICK',
-        'from_team': 'Atl',
+        'player_name': 'Drew Wilkins',
+        'position': 'COACH-PRC',
+        'from_team': 'Bal',
         'to_team': 'LAR',
-        'move_type': 'Draft Trade (26th pick for 2025 2nd + 2026 1st)',
-        'contract_years': 0,
-        'contract_value': 15000000,  # Estimated value
-        '2024_grade': 0.0,
-        'projected_2025_grade': 8.5,  # Massive future value
+        'move_type': 'Pass Rush Coordinator Hire',
+        'contract_years': 2,
+        'contract_value': 1600000,
+        'guaranteed_money': 800000,
+        'aav': 800000,
+        '2024_grade': 7.5,  # Ravens blitz packages
+        'projected_2025_grade': 8.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 8.0,  # Atlanta's future asset
-        'importance_to_new_team': 9.5,  # Insurance for post-Stafford era
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 8.0,  # Maximize Verse/Young
+        'impact_score': 1.2,
+    },
+    {
+        'player_name': 'Alex Van Pelt',
+        'position': 'COACH-OA',
+        'from_team': 'NE',
+        'to_team': 'LAR',
+        'move_type': 'Offensive Assistant Hire',
+        'contract_years': 2,
+        'contract_value': 1200000,
+        'guaranteed_money': 600000,
+        'aav': 600000,
+        '2024_grade': 7.0,  # Developed Drake Maye
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 6.5,  # QB transition insurance
+        'impact_score': 0.5,
     },
 
-    # RAMS UDFA/DEPTH SIGNINGS - Maintaining roster depth
+    # ========== ADDITIONAL MOVES ==========
     {
         'player_name': 'Multiple UDFAs',
         'position': 'DEPTH',
@@ -346,58 +469,202 @@ RAMS_2025_MOVES = [
         'to_team': 'LAR',
         'move_type': 'UDFA Signings',
         'contract_years': 3,
-        'contract_value': 8000000,
-        '2024_grade': 0.0,  # College prospects
-        'projected_2025_grade': 5.5,  # Depth and special teams
+        'contract_value': 12000000,  # Combined
+        'guaranteed_money': 1200000,
+        'aav': 4000000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 5.5,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 5.0,  # Future depth development
+        'importance_to_new_team': 5.5,
+        'impact_score': 0.3,
     },
 ]
 
-# RAMS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 RAMS_2025_SUMMARY = {
     'total_moves': len(RAMS_2025_MOVES),
-    'free_agent_signings': 4,
-    'major_losses': 4,
+    'major_signings': 5,  # Adams headline
+    'free_agent_losses': 3,
     'draft_picks': 6,
-    'key_resignings': 5,
-    'coaching_changes': 3,
-    'trade_acquisitions': 1,  # 2026 1st round pick
-    'total_guaranteed_money': 195000000,  # Includes major extensions
-    'dead_money_absorbed': 50800000,  # 7th-most in NFL
-    'salary_cap_space_remaining': 19600000,
-    'projected_2026_cap_space': 75000000,
-    'championship_window': '2025-2026',
+    'key_resignings': 7,
+    'trades': 2,
+    'coaching_changes': 4,
+    'udfa_signings': 1,  # Grouped
+    'total_guaranteed_money': 175000000,  # Strategic spending
+    'dead_money': 50800000,  # 7th-most in NFL
+    'cap_space_remaining': 19600000,  # Before draft signings
+    'projected_2026_cap_space': 75000000,  # Major flexibility
+    'championship_window': '2025-2026',  # Stafford timeline
     'offseason_grade': 'A-',
-    'key_philosophy': 'Strategic gambles for immediate contention and long-term flexibility',
-    'division_championship_odds': 34,  # ESPN Football Power Index
-    'biggest_gamble': 'Replacing Kupp with Adams',
-    'smartest_move': 'Trading 2025 1st for 2026 1st + immediate TE help',
-    'critical_success_factor': 'Stafford health at age 37',
-    'nfc_west_competition': 'NFL\'s most competitive division race'
+    'key_philosophy': 'Calculated risk-taking for immediate contention with future flexibility',
+    'net_impact_score': 11.5,  # Sum of all impact scores
+    'division_outlook': 'Favorites despite toughest division in NFL',
 }
 
-# RAMS STRATEGIC ANALYSIS
-RAMS_2025_ANALYSIS = {
-    'offensive_philosophy': 'Maintain championship-caliber attack around aging Stafford',
-    'defensive_transformation': 'Fixed fatal run defense flaw with Poona Ford signing',
-    'salary_cap_strategy': 'Front-loaded contracts create future flexibility',
-    'draft_approach': 'Immediate contributors over developmental projects',
-    'coaching_evolution': 'Enhanced existing systems rather than wholesale changes',
-    'biggest_risk': 'Aging core vs brutal NFC West schedule',
-    'biggest_reward': 'Extended championship window + future asset accumulation',
-    'key_extensions_needed': ['Puka Nacua ($24-30M AAV)', 'Kobie Turner ($20M+ AAV)'],
-    'looming_challenges': ['Kyren Williams extension stalled', 'NFC West arms race'],
-    'franchise_trajectory': 'Sustainable success rather than inevitable rebuild'
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
+    'adams_gamble': {
+        'kupp_release': '$22.3M dead cap absorbed',
+        'adams_signing': '2yr/$46M brings proven production',
+        'age_concern': 'Both 31, but Adams healthier recently',
+        'fit': 'Pairs with Puka Nacua for elite duo',
+    },
+    'defensive_transformation': {
+        'run_defense': 'Allowed 100+ yards in 15 of 21 games',
+        'ford_impact': 'PFF 5th-ranked interior defender',
+        'youth_development': 'Verse, Young, Turner emerging',
+        'scheme_evolution': 'Wilkins brings Ravens concepts',
+    },
+    'draft_brilliance': {
+        'future_pick': 'Traded 1st for 2026 1st + 2025 2nd',
+        'immediate_needs': 'Ferguson fills TE void',
+        'development': 'Six picks address every need',
+        'philosophy': 'Present contributors over projects',
+    },
+    'financial_chess': {
+        'stafford_restructure': 'Saves $8.7M in 2025',
+        'future_extensions': 'Nacua, Turner, Williams loom',
+        'cap_management': '$75M in 2026 space created',
+        'window': 'All-in while maintaining flexibility',
+    },
+    'coaching_continuity': {
+        'mcvay_stability': 'Coordinators LaFleur/Shula return',
+        'caley_loss': 'Big blow losing to Houston',
+        'internal_promotion': 'Scheelhaase ready for bigger role',
+        'new_additions': 'Wilkins and Van Pelt add expertise',
+    },
+    'division_challenge': {
+        'strength': 'NFC West toughest in NFL',
+        'schedule': 'First-place schedule (Eagles, Ravens, Lions)',
+        'competition': '49ers, Cardinals both improved',
+        'margin': 'No room for error in 2025',
+    },
 }
+
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Matthew Stafford',
+        'backup': 'Jimmy Garoppolo',
+        'grade': 'B+',
+        'notes': 'Stafford health crucial, Jimmy G solid insurance',
+    },
+    'offensive_line': {
+        'starters': ['Alaric Jackson (LT)', 'Steve Avila (LG)', 'Coleman Shelton (C)', 
+                     'Kevin Dotson (RG)', 'Rob Havenstein (RT)'],
+        'depth': 'Concerns after Jackson trade',
+        'grade': 'B+',
+        'notes': 'Jackson extension stabilizes left side',
+    },
+    'skill_positions': {
+        'wr': 'Davante Adams, Puka Nacua, Tutu Atwell',
+        'rb': 'Kyren Williams, Jarquez Hunter',
+        'te': 'Terrance Ferguson, Tyler Higbee',
+        'grade': 'A',
+        'notes': 'Elite weapons if healthy',
+    },
+    'defensive_line': {
+        'dt': 'Aaron Donald, Poona Ford, Kobie Turner',
+        'edge': 'Jared Verse, Byron Young, Josaiah Stewart',
+        'grade': 'A-',
+        'notes': 'Donald still elite, young edge rushers rising',
+    },
+    'linebackers': {
+        'starters': 'Ernest Jones, Nate Landman, Chris Paul Jr.',
+        'depth': 'Thin after departures',
+        'grade': 'B-',
+        'notes': 'Jones anchors, rookies must contribute',
+    },
+    'secondary': {
+        'cb': 'Darious Williams, Ahkello Witherspoon, Cobie Durant',
+        'safety': 'Kamren Curl, John Johnson III',
+        'grade': 'B',
+        'notes': 'Williams return helps, safety depth concern',
+    },
+}
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 11.5,
+        'lean': 'OVER',
+        'reasoning': 'Elite offense, improved defense',
+    },
+    'division_odds': {
+        'current': '+140',
+        'value': 'YES',
+        'reasoning': 'Best roster despite tough division',
+    },
+    'super_bowl_odds': {
+        'current': '+1200',
+        'value': 'YES',
+        'reasoning': 'McVay with weapons = dangerous',
+    },
+    'player_props': {
+        'stafford_passing_yards': 'OVER 4,400',
+        'adams_receiving_yards': 'OVER 1,100',
+        'nacua_receiving_yards': 'OVER 1,250',
+        'kyren_williams_rushing': 'UNDER 1,200 (workload)',
+    },
+    'key_bets': {
+        'best': 'Division winner +140',
+        'player_award': 'Nacua OPOY +2500',
+        'narrative': 'Offense top-3 in NFL',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("LOS ANGELES RAMS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {RAMS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: +{RAMS_2025_SUMMARY['net_impact_score']}")
+    print(f"Championship Window: {RAMS_2025_SUMMARY['championship_window']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {RAMS_2025_SUMMARY['total_moves']}")
+    print(f"  • Major Signings: {RAMS_2025_SUMMARY['major_signings']} (Adams headliner)")
+    print(f"  • Draft Picks: {RAMS_2025_SUMMARY['draft_picks']}")
+    print(f"  • Key Re-signings: {RAMS_2025_SUMMARY['key_resignings']}")
+    print(f"  • Trades: Acquired 2026 1st round pick")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${RAMS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Dead Money: ${RAMS_2025_SUMMARY['dead_money']:,}")
+    print(f"  • Current Cap Space: ${RAMS_2025_SUMMARY['cap_space_remaining']:,}")
+    print(f"  • 2026 Projected: ${RAMS_2025_SUMMARY['projected_2026_cap_space']:,}")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Davante Adams (WR) - 2yr/$46M to replace Kupp")
+    print("  • Poona Ford (DT) - 3yr/$29.6M run defense fix")
+    print("  • Terrance Ferguson (TE) - 2nd round pick")
+    print("  • Drew Wilkins (Pass Rush Coordinator)")
+    
+    print("\n❌ KEY LOSSES:")
+    print("  • Cooper Kupp - Released ($22.3M dead cap)")
+    print("  • Christian Rozeboom (LB) - To Chiefs")
+    print("  • Nick Caley (TE Coach) - Texans OC")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {RAMS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • Division: {RAMS_2025_SUMMARY['division_outlook']}")
+    print(f"  • Stafford restructure saves $8.7M")
+    print(f"  • Traded 2025 1st for 2026 1st + 2025 2nd")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 11.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_bets']['best']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Stafford health at age 37")
+    print("  • Adams/Nacua chemistry development")
+    print("  • Run defense improvement with Ford")
+    print("  • First-place schedule difficulty")
 
 if __name__ == "__main__":
-    print(f"Los Angeles Rams 2025 Offseason Moves: {RAMS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {RAMS_2025_SUMMARY['offseason_grade']}")
-    print(f"Championship Window: {RAMS_2025_SUMMARY['championship_window']}")
-    print(f"Cap Space Remaining: ${RAMS_2025_SUMMARY['salary_cap_space_remaining']:,}")
-    print(f"Philosophy: {RAMS_2025_SUMMARY['key_philosophy']}")
-    print(f"Division Championship Odds: {RAMS_2025_SUMMARY['division_championship_odds']}%")
-    print(f"Critical Success Factor: {RAMS_2025_SUMMARY['critical_success_factor']}")
-    print(f"2026 Projected Cap Space: ${RAMS_2025_SUMMARY['projected_2026_cap_space']:,}")
+    generate_summary_report()
