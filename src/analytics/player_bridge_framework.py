@@ -1,7 +1,7 @@
 """
 NFL Player Bridge Framework - Track all offseason moves and grade impact
 Updated to use playoff_adjusted_rankings.csv with point differentials
-FIXED VERSION - Keeps ALL data, just fixes the KeyError
+FIXED VERSION - Properly scaled impact scores to prevent unrealistic rankings
 """
 
 import pandas as pd
@@ -29,21 +29,37 @@ class PlayerBridgeFramework:
         # LOAD PLAYOFF ADJUSTED RANKINGS FROM CSV
         self.original_power_rankings, self.original_ranks, self.point_differentials = self._load_playoff_adjusted_rankings()
         
-        # Position importance weights - FIXED: Added COACH
+        # Position importance weights - FURTHER REDUCED & EXTENSIONS DAMPENED
         self.position_weights = {
-            'QB': 10.0, 'LT': 6.0, 'EDGE': 6.0, 'CB1': 6.0,
-            'WR1': 5.5, 'RT': 5.0, 'C': 5.0, 'S': 5.0,
-            'LB': 4.5, 'RB': 4.0, 'WR2': 4.0, 'TE': 4.0,
-            'G': 3.5, 'CB2': 3.5, 'DT': 3.5, 'K': 2.5,
-            'WR3': 2.0, 'P': 2.0, 'LS': 1.0, 'DEPTH': 1.5, 'COACH': 2.0
+            'QB': 5.0,    # Reduced from 8.0 (was 10.0)
+            'LT': 3.5,    # Reduced from 5.0 (was 6.0)
+            'EDGE': 3.5,  # Reduced from 5.0 (was 6.0)
+            'CB1': 3.5,   # Reduced from 5.0 (was 6.0)
+            'WR1': 3.0,   # Reduced from 4.5 (was 5.5)
+            'RT': 2.5,    # Reduced from 4.0 (was 5.0)
+            'C': 2.5,     # Reduced from 4.0 (was 5.0)
+            'S': 2.5,     # Reduced from 4.0 (was 5.0)
+            'LB': 2.0,    # Reduced from 3.5 (was 4.5)
+            'RB': 2.0,    # Reduced from 3.0 (was 4.0)
+            'WR2': 2.0,   # Reduced from 3.0 (was 4.0)
+            'TE': 2.0,    # Reduced from 3.0 (was 4.0)
+            'G': 1.5,     # Reduced from 2.5 (was 3.5)
+            'CB2': 1.5,   # Reduced from 2.5 (was 3.5)
+            'DT': 1.5,    # Reduced from 2.5 (was 3.5)
+            'K': 1.0,     # Reduced from 2.0 (was 2.5)
+            'WR3': 1.0,   # Reduced from 1.5 (was 2.0)
+            'P': 1.0,     # Reduced from 1.5 (was 2.0)
+            'LS': 0.5,    # Reduced from 0.8 (was 1.0)
+            'DEPTH': 0.5, # Reduced from 1.0 (was 1.5)
+            'COACH': 2.0  # Reduced from 1.5 (was 2.0)
         }
         
         # Unit classifications - FIXED: Added Coaching and G
         self.position_units = {
-            'Offense': ['QB', 'RB', 'WR1', 'WR2', 'WR3', 'TE', 'LT', 'LG', 'C', 'RG', 'RT', 'G'],
-            'Defense': ['EDGE', 'DT', 'LB', 'CB1', 'CB2', 'S'],
+            'Offense': ['QB', 'RB', 'WR1', 'WR2', 'WR3', 'TE', 'LT', 'LG', 'C', 'RG', 'RT', 'G', 'OT', 'OL'],
+            'Defense': ['EDGE', 'DE', 'DT', 'LB', 'CB1', 'CB2', 'CB', 'S', 'DB', 'CB/S'],
             'Special Teams': ['K', 'P', 'LS'],
-            'Coaching': ['COACH', 'HC', 'OC', 'DC']
+            'Coaching': ['COACH', 'HC', 'OC', 'DC', 'COACH-DC', 'COACH-OC', 'COACH-ST', 'COACH-LB', 'COACH-DL']
         }
 
     def _load_playoff_adjusted_rankings(self) -> Tuple[Dict[str, float], Dict[str, int], Dict[str, float]]:
@@ -225,14 +241,14 @@ class PlayerBridgeFramework:
             logger.warning("No player moves loaded - using fallback data")
             real_2025_moves = self._get_fallback_moves()
         
-        # Calculate impact scores for each move
+        # Use pre-calculated impact scores when available, otherwise calculate
         for move in real_2025_moves:
-            if 'impact_score' not in move:
+            if 'impact_score' not in move or pd.isna(move.get('impact_score')):
                 move['impact_score'] = self._calculate_impact_score(
-                    move['position'],
-                    move['2024_grade'],
-                    move['snap_percentage_2024'],
-                    move['importance_to_new_team']
+                    move.get('position', ''),
+                    move.get('2024_grade', 0),
+                    move.get('snap_percentage_2024', 0),
+                    move.get('importance_to_new_team', 0)
                 )
         
         return pd.DataFrame(real_2025_moves)
@@ -282,10 +298,21 @@ class PlayerBridgeFramework:
         return pd.concat([player_bridge_df, pd.DataFrame([new_move])], ignore_index=True)
 
     def _calculate_impact_score(self, position: str, grade: float, snap_pct: float, importance: float) -> float:
-        """Calculate weighted impact score for a player move"""
+        """Calculate weighted impact score for a player move - PROPERLY SCALED"""
         
-        # Get position weight
-        pos_weight = self.position_weights.get(position, 2.0)
+        # Position mappings
+        position_mappings = {
+            'EDGE': 'EDGE', 'DE': 'EDGE', 
+            'CB': 'CB1', 'CB/S': 'CB1',
+            'WR': 'WR1', 'WR1': 'WR1', 'WR2': 'WR2', 'WR3': 'WR3',
+            'OT': 'RT', 'OL': 'G', 'C': 'C',
+            'COACH-DC': 'COACH', 'COACH-OC': 'COACH', 'COACH-ST': 'COACH',
+            'COACH-LB': 'COACH', 'COACH-DL': 'COACH'
+        }
+        
+        # Map position to weight
+        mapped_position = position_mappings.get(position, position)
+        pos_weight = self.position_weights.get(mapped_position, 2.0)
         
         # Calculate base impact (grade * snap percentage * importance)
         base_impact = (grade / 10.0) * (snap_pct / 100.0) * (importance / 10.0)
@@ -293,20 +320,20 @@ class PlayerBridgeFramework:
         # Apply position weight
         weighted_impact = base_impact * pos_weight
         
-        # SCALE DOWN BY 3X to make more realistic
-        realistic_impact = weighted_impact / 3.0
+        # SCALE DOWN BY 10X (not 3X) to make more realistic
+        realistic_impact = weighted_impact / 10.0
         
-        # Cap individual moves at 2.5 max impact
-        capped_impact = min(realistic_impact, 2.5)
+        # Cap individual moves at 0.8 max impact (not 2.5)
+        capped_impact = min(realistic_impact, 0.8)
         
         return round(capped_impact, 2)
 
     def calculate_team_net_changes(self, player_bridge_df: pd.DataFrame) -> pd.DataFrame:
-        """Calculate net impact for each team from all player moves"""
+        """Calculate net impact for each team from all player moves - FIXED SCALING"""
         
         team_impacts = {}
         
-        # Initialize all teams using the loaded rankings - FIXED: Use consistent abbreviations
+        # Initialize all teams using the loaded rankings
         for team_abbr in self.original_power_rankings.keys():
             # Normalize team abbreviation to handle inconsistencies
             normalized_abbr = self._normalize_team_abbr(team_abbr)
@@ -331,54 +358,109 @@ class PlayerBridgeFramework:
                 'special_teams_impact': 0.0,
                 'coaching_impact': 0.0,
                 'key_additions': [],
-                'key_losses': []
+                'key_losses': [],
+                'total_guaranteed': 0,
+                'dead_money': 0,
+                'cap_efficiency': 0.0
             }
         
         # Process each player move
         for _, move in player_bridge_df.iterrows():
             from_team = self._normalize_team_abbr(move['from_team'])
             to_team = self._normalize_team_abbr(move['to_team'])
-            impact = move['impact_score']
+            
+            # Use pre-calculated impact_score if available BUT SCALE IT DOWN
+            if 'impact_score' in move and pd.notna(move['impact_score']):
+                # Scale down pre-calculated scores by 5x
+                impact = move['impact_score'] / 5.0
+            else:
+                impact = self._calculate_impact_score(
+                    move['position'],
+                    move.get('2024_grade', 0),
+                    move.get('snap_percentage_2024', 0),
+                    move.get('importance_to_new_team', 0)
+                )
+            
+            # Cap individual move impact
+            impact = min(abs(impact), 0.8)
+            
             position = move['position']
             player_name = move['player_name']
+            move_type = move.get('move_type', '')
+            
+            # Skip internal moves (extensions, re-signings)
+            if from_team == to_team and move_type in ['Contract Extension', 'Extension', 'Re-signing']:
+                # Still track financial impact
+                if to_team in team_impacts:
+                    team_impacts[to_team]['total_guaranteed'] += move.get('guaranteed_money', 0)
+                continue
             
             # Determine which unit this position belongs to
             unit = self._get_position_unit(position)
             unit_key = f"{unit.lower().replace(' ', '_')}_impact"
             
             # Player leaving a team (loss)
-            if from_team in team_impacts and from_team not in ['DRAFT', 'FA', 'RETIRED', 'RELEASED', 'PROMOTION']:
+            if from_team in team_impacts and from_team not in ['DRAFT', 'FA', 'RETIRED', 'RELEASED', 'PROMOTION', 'FIRED', 'UNSIGNED', 'COLLEGE']:
                 team_impacts[from_team]['players_lost'] += 1
-                loss_impact = abs(impact)
+                loss_impact = impact  # Already capped
                 team_impacts[from_team]['impact_lost'] += loss_impact
                 team_impacts[from_team]['net_impact'] -= loss_impact
+                
+                # Track dead money
+                if move.get('guaranteed_money', 0) < 0:
+                    team_impacts[from_team]['dead_money'] += abs(move['guaranteed_money'])
                 
                 # Apply unit-specific impact
                 if unit_key in team_impacts[from_team]:
                     team_impacts[from_team][unit_key] -= loss_impact
                 
-                if loss_impact >= 0.5:  # Threshold for key moves
+                if loss_impact >= 0.3:  # Lower threshold for key moves
                     team_impacts[from_team]['key_losses'].append(f"{player_name} ({position})")
             
             # Player joining a team (gain)
-            if to_team in team_impacts and to_team not in ['FA', 'RETIRED', 'RELEASED']:
+            if to_team in team_impacts and to_team not in ['FA', 'RETIRED', 'RELEASED', 'FIRED', 'UNSIGNED']:
                 team_impacts[to_team]['players_gained'] += 1
-                gain_impact = abs(impact)
+                gain_impact = impact  # Already capped
                 team_impacts[to_team]['impact_gained'] += gain_impact
                 team_impacts[to_team]['net_impact'] += gain_impact
+                
+                # Track guaranteed money
+                team_impacts[to_team]['total_guaranteed'] += max(0, move.get('guaranteed_money', 0))
                 
                 # Apply unit-specific impact
                 if unit_key in team_impacts[to_team]:
                     team_impacts[to_team][unit_key] += gain_impact
                 
-                if gain_impact >= 0.5:  # Threshold for key moves
+                if gain_impact >= 0.3:  # Lower threshold for key moves
                     team_impacts[to_team]['key_additions'].append(f"{player_name} ({position})")
+        
+        # Apply diminishing returns for teams with many moves
+        for team_abbr, team_data in team_impacts.items():
+            total_moves = team_data['players_gained'] + team_data['players_lost']
+            if total_moves > 20:
+                # Apply logarithmic scaling for teams with excessive moves
+                scaling_factor = 1.0 + (np.log10(20) / np.log10(total_moves))
+                team_data['net_impact'] *= scaling_factor
+                team_data['offense_impact'] *= scaling_factor
+                team_data['defense_impact'] *= scaling_factor
+                team_data['special_teams_impact'] *= scaling_factor
+            
+            # Hard cap total net impact at +/- 8.0
+            team_data['net_impact'] = max(-8.0, min(8.0, team_data['net_impact']))
+        
+        # Calculate cap efficiency for each team
+        for team_data in team_impacts.values():
+            if team_data['impact_gained'] > 0 and team_data['total_guaranteed'] > 0:
+                # Efficiency = impact per million guaranteed
+                team_data['cap_efficiency'] = round(
+                    team_data['impact_gained'] / (team_data['total_guaranteed'] / 1000000), 2
+                )
         
         return pd.DataFrame(list(team_impacts.values()))
 
     def _normalize_team_abbr(self, team_abbr: str) -> str:
         """Normalize team abbreviations to handle inconsistencies"""
-        if pd.isna(team_abbr) or team_abbr in ['DRAFT', 'FA', 'RETIRED', 'RELEASED', 'PROMOTION']:
+        if pd.isna(team_abbr) or team_abbr in ['DRAFT', 'FA', 'RETIRED', 'RELEASED', 'PROMOTION', 'FIRED', 'UNSIGNED', 'COLLEGE']:
             return team_abbr
             
         team_abbr = str(team_abbr).strip().upper()
@@ -448,19 +530,20 @@ class PlayerBridgeFramework:
         return 'Defense'
 
     def grade_team_changes(self, team_impacts_df: pd.DataFrame) -> pd.DataFrame:
-        """Assign letter grades to team changes"""
+        """Assign letter grades to team changes - ADJUSTED SCALE"""
         
         def get_grade(net_impact):
-            if net_impact >= 8.0: return 'A+'
-            elif net_impact >= 6.0: return 'A'
-            elif net_impact >= 4.0: return 'A-'
+            # More reasonable grade scale
+            if net_impact >= 6.0: return 'A+'
+            elif net_impact >= 4.5: return 'A'
+            elif net_impact >= 3.0: return 'A-'
             elif net_impact >= 2.0: return 'B+'
             elif net_impact >= 1.0: return 'B'
             elif net_impact >= 0.0: return 'B-'
             elif net_impact >= -1.0: return 'C+'
             elif net_impact >= -2.0: return 'C'
-            elif net_impact >= -4.0: return 'C-'
-            elif net_impact >= -6.0: return 'D'
+            elif net_impact >= -3.0: return 'C-'
+            elif net_impact >= -4.5: return 'D'
             else: return 'F'
         
         team_impacts_df['offseason_grade'] = team_impacts_df['net_impact'].apply(get_grade)
@@ -611,7 +694,7 @@ def main():
     print(f"📋 Final 2025 Power Rankings calculated based on:")
     print(f"   - 2024 playoff-adjusted rankings (point differentials)")
     print(f"   - Offseason player movement impacts")
-    print(f"   - Position-weighted importance scores")
+    print(f"   - Position-weighted importance scores (properly scaled)")
 
 
 if __name__ == "__main__":
