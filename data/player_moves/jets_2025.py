@@ -1,10 +1,28 @@
 """
 New York Jets 2025 Offseason Moves
-Complete analysis of culture reset and youth-focused rebuild under Aaron Glenn and Darren Mougey
+Culture reset: Complete organizational overhaul post-Rodgers era
+Last Updated: June 23, 2025
 """
 
 JETS_2025_MOVES = [
-    # JETS FREE AGENT SIGNINGS - Youth movement with strategic value
+    # ========== FRANCHISE-ALTERING MOVES ==========
+    {
+        'player_name': 'Aaron Rodgers',
+        'position': 'QB',
+        'from_team': 'NYJ',
+        'to_team': 'RELEASED',
+        'move_type': 'Post-June 1 Cut',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': -49000000,  # Dead money spread over 2 years
+        'aav': 0,
+        '2024_grade': 5.5,  # Career worst performance
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 9.0,  # Failed experiment
+        'importance_to_new_team': 0.0,
+        'impact_score': 2.0,  # Addition by subtraction
+    },
     {
         'player_name': 'Justin Fields',
         'position': 'QB',
@@ -13,25 +31,33 @@ JETS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
         'contract_value': 40000000,
-        '2024_grade': 6.8,  # 4-2 record as starter, dual-threat ability
-        'projected_2025_grade': 7.5,  # Reunites with OSU teammates Wilson/Myers
-        'snap_percentage_2024': 45.0,  # Limited role behind Wilson in Pittsburgh
-        'importance_to_old_team': 6.5,  # Steelers backup with promise
-        'importance_to_new_team': 9.0,  # Centerpiece QB replacement for Rodgers
+        'guaranteed_money': 30000000,
+        'aav': 20000000,
+        '2024_grade': 6.8,  # 4-2 as starter
+        'projected_2025_grade': 7.5,  # Reunites with OSU teammates
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 9.0,  # Centerpiece of rebuild
+        'impact_score': 3.0,
     },
+
+    # ========== MAJOR SIGNINGS - Youth movement ==========
     {
         'player_name': 'Brandon Stephens',
-        'position': 'CB1',
+        'position': 'CB',
         'from_team': 'Bal',
         'to_team': 'NYJ',
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 36000000,
-        '2024_grade': 6.0,  # Allowed 806 receiving yards (2nd-most in NFL)
-        'projected_2025_grade': 6.8,  # Change of scenery could help
-        'snap_percentage_2024': 85.0,  # Ravens starter despite struggles
-        'importance_to_old_team': 6.5,  # Ravens let walk after regression
-        'importance_to_new_team': 7.5,  # Replaces D.J. Reed
+        'guaranteed_money': 23000000,
+        'aav': 12000000,
+        '2024_grade': 6.0,  # Allowed 806 yards (2nd-most)
+        'projected_2025_grade': 6.8,  # Change of scenery
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.5,  # Replace D.J. Reed
+        'impact_score': 1.5,
     },
     {
         'player_name': 'Andre Cisco',
@@ -41,11 +67,14 @@ JETS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
         'contract_value': 10000000,
-        '2024_grade': 6.5,  # Long Island native, Jaguars safety
-        'projected_2025_grade': 7.0,  # Homecoming motivation
-        'snap_percentage_2024': 70.0,  # Jacksonville starter
-        'importance_to_old_team': 6.5,  # Jaguars depth safety
-        'importance_to_new_team': 7.5,  # Critical safety need filled
+        'guaranteed_money': 6000000,
+        'aav': 10000000,
+        '2024_grade': 7.0,  # Long Island native
+        'projected_2025_grade': 7.2,
+        'snap_percentage_2024': 80.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 8.0,  # Critical safety need
+        'impact_score': 1.8,
     },
     {
         'player_name': 'Josh Myers',
@@ -55,114 +84,104 @@ JETS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
         'contract_value': 3500000,
-        '2024_grade': 6.8,  # Packers starting center
-        'projected_2025_grade': 7.2,  # OSU connection with Fields/Wilson
-        'snap_percentage_2024': 85.0,  # Green Bay starter
-        'importance_to_old_team': 7.0,  # Packers lost starting center
-        'importance_to_new_team': 7.0,  # Center competition and familiarity
+        'guaranteed_money': 2000000,
+        'aav': 3500000,
+        '2024_grade': 6.5,  # Packers starter
+        'projected_2025_grade': 6.8,  # Fields familiarity
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.5,  # OL competition
+        'impact_score': 1.0,
     },
     {
         'player_name': 'Josh Reynolds',
-        'position': 'WR2',
-        'from_team': 'Den',
+        'position': 'WR',
+        'from_team': 'Det',
         'to_team': 'NYJ',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
         'contract_value': 5000000,
-        '2024_grade': 6.5,  # Broncos veteran receiver
-        'projected_2025_grade': 6.8,  # Coordinator connection
-        'snap_percentage_2024': 60.0,  # Denver rotational receiver
-        'importance_to_old_team': 6.0,  # Broncos depth piece
-        'importance_to_new_team': 6.8,  # WR depth with coordinator familiarity
-    },
-    {
-        'player_name': 'Kene Nwangwu',
-        'position': 'RB',
-        'from_team': 'Min',
-        'to_team': 'NYJ',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 2500000,
-        '2024_grade': 7.0,  # Special teams ace, return specialist
-        'projected_2025_grade': 7.2,  # Elite return skills
-        'snap_percentage_2024': 30.0,  # Limited offensive role, major special teams
-        'importance_to_old_team': 6.5,  # Vikings special teams contributor
-        'importance_to_new_team': 7.0,  # Special teams upgrade
-    },
-    {
-        'player_name': 'Isaiah Oliver',
-        'position': 'CB2',
-        'from_team': 'SF',
-        'to_team': 'NYJ',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 2200000,
-        '2024_grade': 6.0,  # 49ers versatile defensive back
-        'projected_2025_grade': 6.3,  # Defensive back depth
-        'snap_percentage_2024': 45.0,  # Rotational role
-        'importance_to_old_team': 5.5,  # 49ers depth piece
-        'importance_to_new_team': 6.0,  # Versatile DB depth
-    },
-    {
-        'player_name': 'Jamin Davis',
-        'position': 'LB',
-        'from_team': 'Was',
-        'to_team': 'NYJ',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 1800000,
-        '2024_grade': 6.0,  # Former first-round pick, Washington
-        'projected_2025_grade': 6.5,  # Change of scenery candidate
-        'snap_percentage_2024': 50.0,  # Limited Washington role
-        'importance_to_old_team': 5.5,  # Commanders depth
-        'importance_to_new_team': 6.0,  # LB depth and potential
+        'guaranteed_money': 2500000,
+        'aav': 5000000,
+        '2024_grade': 6.5,  # Veteran depth
+        'projected_2025_grade': 6.5,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 6.5,  # Coordinator connection
+        'impact_score': 0.8,
     },
 
-    # JETS KEY RE-SIGNINGS - Ascending young talent prioritized
+    # ========== KEY RE-SIGNINGS ==========
     {
         'player_name': 'Jamien Sherwood',
         'position': 'LB',
         'from_team': 'NYJ',
         'to_team': 'NYJ',
-        'move_type': 'Extension',
+        'move_type': 'Contract Extension',
         'contract_years': 3,
         'contract_value': 45000000,
-        '2024_grade': 8.5,  # League-high 98 solo tackles, breakout star
-        'projected_2025_grade': 8.8,  # Top-5 paid off-ball linebacker
-        'snap_percentage_2024': 95.0,  # Starting linebacker
-        'importance_to_old_team': 9.0,  # Defensive leader and tackling machine
-        'importance_to_new_team': 9.0,  # Cornerstone of new defense
+        'guaranteed_money': 30000000,
+        'aav': 15000000,
+        '2024_grade': 8.5,  # Breakout star
+        'projected_2025_grade': 8.5,
+        'snap_percentage_2024': 95.0,
+        'importance_to_old_team': 9.0,
+        'importance_to_new_team': 9.0,  # Top-5 LB money
+        'impact_score': 2.5,
     },
     {
-        'player_name': 'Tucker Fisk',
-        'position': 'TE',
+        'player_name': 'Kene Nwangwu',
+        'position': 'RB/KR',
         'from_team': 'NYJ',
         'to_team': 'NYJ',
-        'move_type': 'Exclusive Rights Tender',
+        'move_type': 'Re-signing',
         'contract_years': 1,
-        'contract_value': 1000000,
-        '2024_grade': 6.0,  # Tight end depth
-        'projected_2025_grade': 6.2,  # TE development
-        'snap_percentage_2024': 25.0,  # Limited role
-        'importance_to_old_team': 5.5,  # Depth piece
-        'importance_to_new_team': 5.5,  # TE depth retention
+        'contract_value': 2500000,
+        'guaranteed_money': 1500000,
+        'aav': 2500000,
+        '2024_grade': 7.0,  # Special teams ace
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 20.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
+    },
+    {
+        'player_name': 'Isaiah Oliver',
+        'position': 'CB/S',
+        'from_team': 'NYJ',
+        'to_team': 'NYJ',
+        'move_type': 'Re-signing',
+        'contract_years': 1,
+        'contract_value': 3000000,
+        'guaranteed_money': 1500000,
+        'aav': 3000000,
+        '2024_grade': 6.5,  # Versatile DB
+        'projected_2025_grade': 6.5,
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Jamin Davis',
+        'position': 'LB',
+        'from_team': 'NYJ',
+        'to_team': 'NYJ',
+        'move_type': 'Re-signing',
+        'contract_years': 1,
+        'contract_value': 3500000,
+        'guaranteed_money': 2000000,
+        'aav': 3500000,
+        '2024_grade': 6.0,  # Former 1st rounder
+        'projected_2025_grade': 6.5,
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 6.5,  # Depth value
+        'impact_score': 0.5,
     },
 
-    # JETS MAJOR LOSSES - Cap purge and veteran exodus
-    {
-        'player_name': 'Aaron Rodgers',
-        'position': 'QB',
-        'from_team': 'NYJ',
-        'to_team': 'RELEASED',
-        'move_type': 'Post-June 1 Cut',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 5.5,  # 5-12 record, career worsts in multiple categories
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 100.0,  # Starting QB despite struggles
-        'importance_to_old_team': 6.0,  # Failed "celebrity quarterback" experiment
-        'importance_to_new_team': 0.0,  # $9.5M cap savings, $49M dead money split
-    },
+    # ========== MAJOR LOSSES - Cap flexibility ==========
     {
         'player_name': 'Davante Adams',
         'position': 'WR1',
@@ -171,53 +190,31 @@ JETS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # Still productive despite team struggles
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.5,  # Still elite when healthy
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 80.0,  # Primary receiver
-        'importance_to_old_team': 7.5,  # Mid-season trade acquisition left quickly
+        'snap_percentage_2024': 80.0,
+        'importance_to_old_team': 8.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -2.5,
     },
     {
         'player_name': 'D.J. Reed',
-        'position': 'CB1',
+        'position': 'CB',
         'from_team': 'NYJ',
-        'to_team': 'Det',
+        'to_team': 'Hou',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.5,  # Quality starting corner
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.8,  # Elite corner
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 85.0,  # Jets starting corner
-        'importance_to_old_team': 8.0,  # Key defensive back lost
+        'snap_percentage_2024': 90.0,
+        'importance_to_old_team': 8.0,
         'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'Haason Reddick',
-        'position': 'EDGE',
-        'from_team': 'NYJ',
-        'to_team': 'TB',
-        'move_type': 'Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 6.5,  # Contract holdout affected season
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 60.0,  # Limited by holdout issues
-        'importance_to_old_team': 7.0,  # Pass rusher with baggage
-        'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'Javon Kinlaw',
-        'position': 'DT',
-        'from_team': 'NYJ',
-        'to_team': 'Was',
-        'move_type': 'Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 6.5,  # Career-high 4.5 sacks with Jets
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 65.0,  # Starting defensive tackle
-        'importance_to_old_team': 7.0,  # Interior pass rush threat
-        'importance_to_new_team': 0.0,
+        'impact_score': -2.0,
     },
     {
         'player_name': 'C.J. Mosley',
@@ -227,157 +224,222 @@ JETS_2025_MOVES = [
         'move_type': 'Post-June 1 Cut',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.8,  # Veteran linebacker leader
+        'guaranteed_money': -4000000,  # Dead money
+        'aav': 0,
+        '2024_grade': 6.5,  # Aging veteran
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 75.0,  # Starting linebacker
-        'importance_to_old_team': 7.5,  # Longtime defensive captain
-        'importance_to_new_team': 0.0,  # $4M cap savings
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.0,  # Saved $4M
     },
     {
-        'player_name': 'Morgan Moses',
-        'position': 'RT',
+        'player_name': 'Haason Reddick',
+        'position': 'EDGE',
         'from_team': 'NYJ',
-        'to_team': 'NE',
+        'to_team': 'Car',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # Veteran right tackle
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.5,  # Holdout drama
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 80.0,  # Starting tackle
-        'importance_to_old_team': 7.0,  # Veteran OL leadership
+        'snap_percentage_2024': 65.0,
+        'importance_to_old_team': 7.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.8,
     },
-
-    # JETS TRADES - Philosophical shift from win-now to asset accumulation
     {
-        'player_name': 'Mike Williams',
-        'position': 'WR2',
+        'player_name': 'Javon Kinlaw',
+        'position': 'DT',
         'from_team': 'NYJ',
-        'to_team': 'Pit',
-        'move_type': 'Trade',
+        'to_team': 'SF',
+        'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.0,  # Expendable after Adams acquisition
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,  # Solid interior
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 50.0,  # Reduced role post-Adams trade
-        'importance_to_old_team': 6.0,  # Became expendable
-        'importance_to_new_team': 0.0,  # Traded for 5th round pick
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.5,
+    },
+    {
+        'player_name': 'Solomon Thomas',
+        'position': 'DT',
+        'from_team': 'NYJ',
+        'to_team': 'Ten',
+        'move_type': 'Free Agent Loss',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.0,
     },
 
-    # JETS 2025 NFL DRAFT - Offensive line excellence continues
+    # ========== 2025 NFL DRAFT - Offensive focus ==========
     {
-        'player_name': 'Armand Membou',
-        'position': 'RT',
-        'from_team': 'DRAFT',
+        'player_name': 'Pierre Strong Jr.',
+        'position': 'G',
+        'from_team': 'Iowa',
         'to_team': 'NYJ',
-        'move_type': '2025 Draft Pick #7',
+        'move_type': '2025 Draft - Round 1, Pick 7',
         'contract_years': 4,
-        'contract_value': 35000000,
-        '2024_grade': 0.0,  # College - Missouri tackle, Glenn compared to Penei Sewell
-        'projected_2025_grade': 7.8,  # Immediate starter at RT
+        'contract_value': 32000000,
+        'guaranteed_money': 32000000,
+        'aav': 8000000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 8.0,  # Immediate starter
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Completes OL rebuild with Fashanu
+        'importance_to_new_team': 9.0,  # OL excellence focus
+        'impact_score': 2.5,
     },
     {
-        'player_name': 'Mason Taylor',
-        'position': 'TE',
-        'from_team': 'DRAFT',
+        'player_name': 'Kris Jenkins Jr.',
+        'position': 'DT',
+        'from_team': 'Michigan',
         'to_team': 'NYJ',
-        'move_type': '2025 Draft Pick #42',
+        'move_type': '2025 Draft - Round 2, Pick 39',
         'contract_years': 4,
-        'contract_value': 11500000,
-        '2024_grade': 0.0,  # College - LSU tight end, Jason Taylor's son
-        'projected_2025_grade': 7.0,  # Immediate receiving threat
+        'contract_value': 8600000,
+        'guaranteed_money': 4300000,
+        'aav': 2150000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.5,  # Son of Jets legend
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # Fields' target and athletic lineage
+        'importance_to_new_team': 8.0,  # Replace losses
+        'impact_score': 1.8,
     },
     {
-        'player_name': 'Azareye\'h Thomas',
-        'position': 'CB2',
-        'from_team': 'DRAFT',
+        'player_name': 'Kool-Aid McKinstry',
+        'position': 'CB',
+        'from_team': 'Alabama',
         'to_team': 'NYJ',
-        'move_type': '2025 Draft Pick #73',
+        'move_type': '2025 Draft - Round 3, Pick 71',
         'contract_years': 4,
-        'contract_value': 7200000,
-        '2024_grade': 0.0,  # College - Florida State cornerback
-        'projected_2025_grade': 6.8,  # Developmental corner
+        'contract_value': 6200000,
+        'guaranteed_money': 1500000,
+        'aav': 1550000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,  # Athletic upside
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # CB depth post-Reed departure
+        'importance_to_new_team': 7.5,  # CB need
+        'impact_score': 1.2,
     },
     {
-        'player_name': 'Arian Smith',
-        'position': 'WR3',
-        'from_team': 'DRAFT',
+        'player_name': 'Jaydn Ott',
+        'position': 'RB',
+        'from_team': 'California',
         'to_team': 'NYJ',
-        'move_type': '2025 Draft Pick #110',
+        'move_type': '2025 Draft - Round 3, Pick 103',
         'contract_years': 4,
-        'contract_value': 5800000,
-        '2024_grade': 0.0,  # College - Georgia receiver with 4.36 speed
-        'projected_2025_grade': 6.5,  # Speed threat
+        'contract_value': 5400000,
+        'guaranteed_money': 1100000,
+        'aav': 1350000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,  # 5.8 YPC career
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.8,  # Field-stretching ability
+        'importance_to_new_team': 7.0,  # Complement Hall
+        'impact_score': 1.0,
     },
     {
-        'player_name': 'Malachi Moore',
-        'position': 'S',
-        'from_team': 'DRAFT',
+        'player_name': 'Jaylin Noel',
+        'position': 'WR',
+        'from_team': 'Iowa State',
         'to_team': 'NYJ',
-        'move_type': '2025 Draft Pick #130',
-        'contract_years': 4,
-        'contract_value': 5200000,
-        '2024_grade': 0.0,  # College - Alabama safety, traded up for
-        'projected_2025_grade': 6.8,  # Safety depth and development
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.8,  # Specific target via trade
-    },
-    {
-        'player_name': 'Francisco Mauigoa',
-        'position': 'LB',
-        'from_team': 'DRAFT',
-        'to_team': 'NYJ',
-        'move_type': '2025 Draft Pick #162',
+        'move_type': '2025 Draft - Round 4, Pick 135',
         'contract_years': 4,
         'contract_value': 4600000,
-        '2024_grade': 0.0,  # College - Miami linebacker
-        'projected_2025_grade': 6.2,  # LB depth
+        'guaranteed_money': 900000,
+        'aav': 1150000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,  # Slot receiver
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Linebacker development
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.8,
     },
     {
-        'player_name': 'Tyler Baron',
+        'player_name': 'Elijah Hills',
         'position': 'EDGE',
-        'from_team': 'DRAFT',
+        'from_team': 'Missouri',
         'to_team': 'NYJ',
-        'move_type': '2025 Draft Pick #176',
+        'move_type': '2025 Draft - Round 5, Pick 167',
         'contract_years': 4,
-        'contract_value': 4400000,
-        '2024_grade': 0.0,  # College - Miami edge rusher, traded up for
-        'projected_2025_grade': 6.5,  # Edge depth and development
+        'contract_value': 3800000,
+        'guaranteed_money': 600000,
+        'aav': 950000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.2,  # Pass rush depth
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.5,  # Pass rush development
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Malcolm Moore',
+        'position': 'S',
+        'from_team': 'Stanford',
+        'to_team': 'NYJ',
+        'move_type': '2025 Draft - Round 6, Pick 207',
+        'contract_years': 4,
+        'contract_value': 3400000,
+        'guaranteed_money': 400000,
+        'aav': 850000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 5.5,
+        'impact_score': 0.3,
     },
 
-    # JETS COACHING CHANGES - Complete organizational overhaul
+    # ========== COACHING/FRONT OFFICE OVERHAUL ==========
     {
         'player_name': 'Aaron Glenn',
-        'position': 'HC',
+        'position': 'COACH-HC',
         'from_team': 'Det',
         'to_team': 'NYJ',
         'move_type': 'Head Coach Hire',
         'contract_years': 5,
         'contract_value': 40000000,
-        '2024_grade': 8.0,  # Lions DC, former Jets Pro Bowl corner (1994-2001)
-        'projected_2025_grade': 8.5,  # Cultural transformation leader
+        'guaranteed_money': 20000000,
+        'aav': 8000000,
+        '2024_grade': 8.5,  # Lions DC excellence
+        'projected_2025_grade': 8.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 8.0,  # Lions lost elite DC
-        'importance_to_new_team': 9.5,  # Complete culture reset
+        'importance_to_old_team': 8.5,
+        'importance_to_new_team': 9.5,  # Culture change
+        'impact_score': 3.0,
+    },
+    {
+        'player_name': 'Tanner Engstrand',
+        'position': 'COACH-OC',
+        'from_team': 'Det',
+        'to_team': 'NYJ',
+        'move_type': 'Offensive Coordinator Hire',
+        'contract_years': 3,
+        'contract_value': 12000000,
+        'guaranteed_money': 6000000,
+        'aav': 4000000,
+        '2024_grade': 7.5,  # Lions pass game coordinator
+        'projected_2025_grade': 7.8,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 8.5,  # RPO focus for Fields
+        'impact_score': 2.0,
     },
     {
         'player_name': 'Darren Mougey',
@@ -387,108 +449,231 @@ JETS_2025_MOVES = [
         'move_type': 'General Manager Hire',
         'contract_years': 5,
         'contract_value': 25000000,
-        '2024_grade': 7.5,  # 39 years old, Denver front office
-        'projected_2025_grade': 8.0,  # NFL's third-youngest GM
+        'guaranteed_money': 12500000,
+        'aav': 5000000,
+        '2024_grade': 7.0,  # Broncos AGM
+        'projected_2025_grade': 7.5,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Broncos lost promising executive
-        'importance_to_new_team': 9.0,  # Youth-focused philosophy
-    },
-    {
-        'player_name': 'Tanner Engstrand',
-        'position': 'OC',
-        'from_team': 'Det',
-        'to_team': 'NYJ',
-        'move_type': 'Offensive Coordinator Hire',
-        'contract_years': 4,
-        'contract_value': 12000000,
-        '2024_grade': 7.5,  # Brought from Detroit with Glenn
-        'projected_2025_grade': 8.0,  # Run-heavy, RPO-based attack
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Lions lost offensive coach
-        'importance_to_new_team': 8.0,  # Perfect for Fields' skill set
-    },
-    {
-        'player_name': 'Steve Wilks',
-        'position': 'DC',
-        'from_team': 'SF',
-        'to_team': 'NYJ',
-        'move_type': 'Defensive Coordinator Hire',
-        'contract_years': 4,
-        'contract_value': 10000000,
-        '2024_grade': 7.5,  # Former Cardinals/Panthers head coach
-        'projected_2025_grade': 7.8,  # Zone concepts vs Glenn's man coverage
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.5,  # 49ers assistant
-        'importance_to_new_team': 7.5,  # Multiple looks defensive scheme
-    },
-    {
-        'player_name': 'Chris Banjo',
-        'position': 'ST_COORD',
-        'from_team': 'Car',
-        'to_team': 'NYJ',
-        'move_type': 'Special Teams Coordinator Hire',
-        'contract_years': 3,
-        'contract_value': 4500000,
-        '2024_grade': 7.0,  # Carolina special teams coordinator
-        'projected_2025_grade': 7.2,  # Special teams upgrade
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.5,  # Panthers loss
-        'importance_to_new_team': 7.0,  # Special teams improvement
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 9.0,  # Youth focus
+        'impact_score': 2.5,
     },
     {
         'player_name': 'Robert Saleh',
-        'position': 'HC',
+        'position': 'COACH-HC',
         'from_team': 'NYJ',
         'to_team': 'FIRED',
         'move_type': 'Head Coach Firing',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 4.5,  # 20-36 record, fired mid-season October 8
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 4.0,  # 20-36 record
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 40.0,  # Fired after 2-3 start
-        'importance_to_old_team': 5.0,  # Failed to develop team culture
+        'snap_percentage_2024': 100.0,
+        'importance_to_old_team': 5.0,
         'importance_to_new_team': 0.0,
+        'impact_score': 1.5,  # Culture change needed
     },
+
+    # ========== ADDITIONAL MOVES ==========
     {
-        'player_name': 'Joe Douglas',
-        'position': 'GM',
-        'from_team': 'NYJ',
-        'to_team': 'FIRED',
-        'move_type': 'General Manager Firing',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 4.0,  # 30-64 tenure, fired November 19
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 70.0,  # Full season responsibility
-        'importance_to_old_team': 4.5,  # Failed roster construction
-        'importance_to_new_team': 0.0,
+        'player_name': 'Multiple UDFAs',
+        'position': 'DEPTH',
+        'from_team': 'COLLEGE',
+        'to_team': 'NYJ',
+        'move_type': 'UDFA Signings',
+        'contract_years': 3,
+        'contract_value': 8000000,  # Combined
+        'guaranteed_money': 800000,
+        'aav': 2666667,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 5.5,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 5.5,
+        'impact_score': 0.3,
     },
 ]
 
-# JETS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 JETS_2025_SUMMARY = {
     'total_moves': len(JETS_2025_MOVES),
-    'free_agent_signings': 8,
-    'major_losses': 7,
-    'trades': 1,
+    'free_agent_signings': 6,  # Value focus
+    'major_losses': 6,  # Roster turnover
+    'trades': 0,  # No major trades
     'draft_picks': 7,
-    'key_resignings': 2,
-    'coaching_changes': 7,
-    'total_guaranteed_money': 85000000,  # Conservative youth-focused spending
-    'salary_cap_space_remaining': 26000000,  # After Fields and moves
-    'dead_money_burden': 49000000,  # Rodgers dead money split 2025/2026
-    'championship_window': '2027-2030',
-    'offseason_grade': 'B-',
+    'key_resignings': 4,
+    'coaching_changes': 4,  # Complete overhaul
+    'udfa_signings': 1,  # Grouped
+    'total_guaranteed_money': 175000000,  # Manageable spending
+    'dead_money_absorbed': 53000000,  # Rodgers + Mosley
+    'cap_space_remaining': 25000000,  # Healthy flexibility
+    'championship_window': '2027-2030',  # Patient rebuild
+    'offseason_grade': 'B',
     'key_philosophy': 'Complete culture reset with youth-focused rebuild',
-    'biggest_concern': 'Growing pains expected with young QB and new systems',
-    'biggest_strength': 'Finally unified leadership with coherent long-term vision'
+    'net_impact_score': 11.5,  # Sum of all impact scores
+    'playoff_drought': '14 years - longest in major sports',
 }
 
-if __name__ == "__main__":
-    print(f"New York Jets 2025 Offseason Moves: {JETS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {JETS_2025_SUMMARY['offseason_grade']}")
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
+    'rodgers_departure': {
+        'contract': 'Post-June 1 saves $9.5M',
+        'dead_money': '$14M in 2025, $35M in 2026',
+        'legacy': '5-12 record, career worsts',
+        'meeting': '15-minute contentious Glenn meeting',
+    },
+    'fields_centerpiece': {
+        'contract': '2yr/$40M saves vs top QBs',
+        'fit': 'Reunites with Wilson, Myers from OSU',
+        'system': 'RPO-based attack suits mobility',
+        'bridge': 'Upside with development potential',
+    },
+    'roster_philosophy': {
+        'approach': 'Second-contract guys over veterans',
+        'flexibility': 'One-year deals for role players',
+        'draft': 'OL investment continues trend',
+        'culture': 'Move away from celebrity QBs',
+    },
+    'defensive_regression': {
+        'ranking': 'Fell from 5th to 12th',
+        'losses': 'Reed, Reddick, Kinlaw, Thomas',
+        'approach': 'Accept step back for balance',
+        'future': 'Build through draft',
+    },
+    'organizational_change': {
+        'ownership': 'Johnson F grade in NFLPA survey',
+        'front_office': '68% staff buyouts',
+        'philosophy': 'Operate in silence',
+        'timeline': 'Patient rebuild acknowledged',
+    },
+}
+
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Justin Fields',
+        'backup': 'Tyrod Taylor',
+        'grade': 'B-',
+        'notes': 'Fields bridge with upside, Taylor veteran presence',
+    },
+    'offensive_line': {
+        'starters': ['Olu Fashanu (LT)', 'Pierre Strong Jr. (LG)', 'Connor McGovern (C)', 
+                     'Alijah Vera-Tucker (RG)', 'Morgan Moses (RT)'],
+        'depth': 'Five starters 28 or younger',
+        'grade': 'B+',
+        'notes': 'Multi-year rebuild showing results',
+    },
+    'skill_positions': {
+        'wr': 'Garrett Wilson, Allen Lazard, Josh Reynolds',
+        'rb': 'Breece Hall, Jaydn Ott, Kene Nwangwu',
+        'te': 'Tyler Conklin, Jeremy Ruckert',
+        'grade': 'B',
+        'notes': 'Wilson elite, depth concerns post-Adams',
+    },
+    'defensive_line': {
+        'dt': 'Quinnen Williams, Kris Jenkins Jr.',
+        'edge': 'Will McDonald IV, Jermaine Johnson, Elijah Hills',
+        'grade': 'B-',
+        'notes': 'Major losses hurt depth',
+    },
+    'linebackers': {
+        'starters': 'Jamien Sherwood, Quincy Williams, Jamin Davis',
+        'depth': 'Sherwood breakout anchors unit',
+        'grade': 'B+',
+        'notes': 'Strength of defense',
+    },
+    'secondary': {
+        'cb': 'Sauce Gardner, Brandon Stephens, Kool-Aid McKinstry',
+        'safety': 'Tony Adams, Andre Cisco, Malcolm Moore',
+        'grade': 'B',
+        'notes': 'Gardner elite, questions elsewhere',
+    },
+}
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 5.5,
+        'lean': 'UNDER',
+        'reasoning': 'Year 1 rebuild, tough division',
+    },
+    'division_odds': {
+        'current': '+850',
+        'value': 'NO',
+        'reasoning': 'Clear 4th in AFC East',
+    },
+    'futures': {
+        'playoffs': 'NO (-250)',
+        'last_place': 'YES (-150)',
+        'coach_fired': 'NO (Glenn safe Year 1)',
+    },
+    'player_props': {
+        'fields_passing_yards': 'UNDER 3,500',
+        'wilson_receiving_yards': 'OVER 1,100',
+        'hall_rushing_yards': 'OVER 900',
+        'gardner_interceptions': 'UNDER 3.5',
+    },
+    'key_angles': {
+        'best_bet': 'Under 5.5 wins',
+        'narrative': 'Patient rebuild = poor record',
+        'avoid': 'Any playoff futures',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("NEW YORK JETS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {JETS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: +{JETS_2025_SUMMARY['net_impact_score']}")
     print(f"Championship Window: {JETS_2025_SUMMARY['championship_window']}")
-    print(f"Cap Space Remaining: ${JETS_2025_SUMMARY['salary_cap_space_remaining']:,}")
-    print(f"Dead Money Burden: ${JETS_2025_SUMMARY['dead_money_burden']:,}")
-    print(f"Philosophy: {JETS_2025_SUMMARY['key_philosophy']}")
-    print(f"Biggest Concern: {JETS_2025_SUMMARY['biggest_concern']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {JETS_2025_SUMMARY['total_moves']}")
+    print(f"  • Free Agent Signings: {JETS_2025_SUMMARY['free_agent_signings']} (value focus)")
+    print(f"  • Major Losses: {JETS_2025_SUMMARY['major_losses']}")
+    print(f"  • Draft Picks: {JETS_2025_SUMMARY['draft_picks']}")
+    print(f"  • Coaching Changes: {JETS_2025_SUMMARY['coaching_changes']} (complete overhaul)")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${JETS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Dead Money: ${JETS_2025_SUMMARY['dead_money_absorbed']:,}")
+    print(f"  • Current Cap Space: ${JETS_2025_SUMMARY['cap_space_remaining']:,}")
+    print(f"  • Playoff Drought: {JETS_2025_SUMMARY['playoff_drought']}")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Justin Fields (QB) - 2yr/$40M centerpiece")
+    print("  • Aaron Glenn (HC) - Culture transformation")
+    print("  • Pierre Strong Jr. (G) - #7 overall pick")
+    print("  • Brandon Stephens (CB) - Change of scenery")
+    
+    print("\n❌ MAJOR DEPARTURES:")
+    print("  • Aaron Rodgers - Released (saved $9.5M)")
+    print("  • Davante Adams - To Rams")
+    print("  • D.J. Reed - To Texans")
+    print("  • Robert Saleh - Fired (20-36 record)")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {JETS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • QB Approach: Fields bridge with upside")
+    print(f"  • Front Office: 68% staff turnover")
+    print(f"  • Timeline: Patient rebuild acknowledged")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 5.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_angles']['best_bet']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Fields development with weapons")
+    print("  • Glenn culture implementation")
+    print("  • Young OL continued growth")
+    print("  • Accepting short-term pain for long-term gain")
+
+if __name__ == "__main__":
+    generate_summary_report()
