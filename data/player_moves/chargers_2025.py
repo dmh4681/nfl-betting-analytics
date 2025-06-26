@@ -1,522 +1,534 @@
 """
 Los Angeles Chargers 2025 Offseason Moves
-Complete analysis of draft-centric Chiefs challenger strategy under Jim Harbaugh and Joe Hortiz
+Conservative approach maintaining defensive excellence
+Last Updated: June 23, 2025
 """
 
 CHARGERS_2025_MOVES = [
-    # CHARGERS FREE AGENT SIGNINGS - Calculated additions for Herbert
+    # ========== FREE AGENT SIGNINGS - Value additions ==========
     {
-        'player_name': 'Mekhi Becton',
-        'position': 'LG',
-        'from_team': 'Phi',
+        'player_name': 'Kendrick Bourne',
+        'position': 'WR',
+        'from_team': 'NE',
         'to_team': 'LAC',
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
-        'contract_value': 20000000,
-        '2024_grade': 8.0,  # Super Bowl champion, helped Barkley to 2,000+ yards
-        'projected_2025_grade': 8.2,  # Elite interior protection
-        'snap_percentage_2024': 85.0,  # Eagles starter
-        'importance_to_old_team': 7.5,  # Key Eagles guard
-        'importance_to_new_team': 8.5,  # Biggest interior line weakness addressed
+        'contract_value': 12000000,
+        'guaranteed_money': 7000000,
+        'aav': 6000000,
+        '2024_grade': 6.8,  # Limited by injury
+        'projected_2025_grade': 7.2,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.5,  # WR depth
+        'impact_score': 1.2,
     },
     {
-        'player_name': 'Najee Harris',
-        'position': 'RB',
-        'from_team': 'Pit',
+        'player_name': 'Clelin Ferrell',
+        'position': 'EDGE',
+        'from_team': 'SF',
         'to_team': 'LAC',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 9250000,
-        '2024_grade': 7.8,  # 77.9 PFF grade, ranked 14th among RBs
-        'projected_2025_grade': 8.0,  # 1,000+ yards 4 straight seasons
-        'snap_percentage_2024': 75.0,  # Steelers workhorse
-        'importance_to_old_team': 8.0,  # 4-year starter for Pittsburgh
-        'importance_to_new_team': 8.5,  # Harbaugh ground-and-pound centerpiece
+        'contract_value': 8000000,
+        'guaranteed_money': 5000000,
+        'aav': 8000000,
+        '2024_grade': 7.0,  # Solid depth player
+        'projected_2025_grade': 7.2,
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.5,  # Replace Van Noy
+        'impact_score': 1.0,
     },
     {
-        'player_name': 'Mike Williams',
-        'position': 'WR1',
-        'from_team': 'Pit',
-        'to_team': 'LAC',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 6000000,
-        '2024_grade': 6.0,  # Disappointing Pittsburgh stint
-        'projected_2025_grade': 7.5,  # Reunion with Herbert
-        'snap_percentage_2024': 55.0,  # Limited role with Steelers
-        'importance_to_old_team': 5.5,  # Depth piece for Pittsburgh
-        'importance_to_new_team': 8.0,  # Brings back size and physicality
-    },
-    {
-        'player_name': 'Donte Jackson',
-        'position': 'CB2',
-        'from_team': 'Pit',
+        'player_name': 'Quinton Bell',
+        'position': 'LB',
+        'from_team': 'Mia',
         'to_team': 'LAC',
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
-        'contract_value': 13000000,
-        '2024_grade': 6.8,  # Career-high 5 INTs despite 49.4 PFF grade
-        'projected_2025_grade': 7.0,  # Cornerback depth
-        'snap_percentage_2024': 70.0,  # Steelers starter
-        'importance_to_old_team': 7.0,  # Starting corner for Pittsburgh
-        'importance_to_new_team': 7.5,  # CB depth and experience
+        'contract_value': 7500000,
+        'guaranteed_money': 3500000,
+        'aav': 3750000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
     },
     {
-        'player_name': 'Tyler Conklin',
-        'position': 'TE',
-        'from_team': 'NYJ',
+        'player_name': 'Kingsley Jonathan',
+        'position': 'DT',
+        'from_team': 'Buf',
         'to_team': 'LAC',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
         'contract_value': 3000000,
-        '2024_grade': 6.8,  # 51 catches, 449 yards with Jets
-        'projected_2025_grade': 7.0,  # Reliable hands
-        'snap_percentage_2024': 65.0,  # Jets starter
-        'importance_to_old_team': 7.0,  # Key Jets receiving target
-        'importance_to_new_team': 7.0,  # Replaces Stone Smartt
-    },
-    {
-        'player_name': 'Andre James',
-        'position': 'C',
-        'from_team': 'LV',
-        'to_team': 'LAC',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 2500000,
-        '2024_grade': 6.5,  # Division rival center
-        'projected_2025_grade': 6.8,  # Interior line depth
-        'snap_percentage_2024': 80.0,  # Raiders starter
-        'importance_to_old_team': 7.0,  # Starting center for Las Vegas
-        'importance_to_new_team': 6.5,  # Center competition/depth
-    },
-    {
-        'player_name': 'Da\'Shawn Hand',
-        'position': 'DT',
-        'from_team': 'Mia',
-        'to_team': 'LAC',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 3350000,
-        '2024_grade': 6.0,  # 563 snaps on Dolphins DL
-        'projected_2025_grade': 6.3,  # Defensive line depth
-        'snap_percentage_2024': 50.0,  # Rotational role
-        'importance_to_old_team': 6.0,  # Miami depth piece
-        'importance_to_new_team': 6.5,  # Helps offset Poona Ford loss
-    },
-    {
-        'player_name': 'Naquan Jones',
-        'position': 'DT',
-        'from_team': 'Ten',
-        'to_team': 'LAC',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 2000000,
-        '2024_grade': 6.0,  # Titans defensive tackle depth
-        'projected_2025_grade': 6.2,  # Interior defensive line depth
-        'snap_percentage_2024': 40.0,  # Limited role
-        'importance_to_old_team': 5.5,  # Tennessee depth
-        'importance_to_new_team': 6.0,  # DT rotation help
-    },
-    {
-        'player_name': 'Benjamin St-Juste',
-        'position': 'CB2',
-        'from_team': 'Was',
-        'to_team': 'LAC',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 1800000,
-        '2024_grade': 6.2,  # 6'3" size, started 14 games for Washington
-        'projected_2025_grade': 6.5,  # Cornerback depth
-        'snap_percentage_2024': 75.0,  # Commanders starter
-        'importance_to_old_team': 6.5,  # Washington starter
-        'importance_to_new_team': 6.5,  # CB depth and size
-    },
-    {
-        'player_name': 'Del\'Shawn Phillips',
-        'position': 'LB',
-        'from_team': 'Bal',
-        'to_team': 'LAC',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 1500000,
-        '2024_grade': 6.0,  # Special teams expertise from Baltimore
-        'projected_2025_grade': 6.2,  # Special teams ace
-        'snap_percentage_2024': 30.0,  # Limited defensive role
-        'importance_to_old_team': 6.0,  # Ravens special teams
-        'importance_to_new_team': 6.0,  # Reunites with GM Hortiz
+        'guaranteed_money': 1500000,
+        'aav': 3000000,
+        '2024_grade': 6.2,
+        'projected_2025_grade': 6.5,
+        'snap_percentage_2024': 35.0,
+        'importance_to_old_team': 5.5,
+        'importance_to_new_team': 6.5,  # Depth
+        'impact_score': 0.5,
     },
 
-    # CHARGERS KEY RE-SIGNINGS - Core retention with value extensions
+    # ========== KEY RE-SIGNINGS/EXTENSIONS ==========
     {
         'player_name': 'Khalil Mack',
         'position': 'EDGE',
         'from_team': 'LAC',
         'to_team': 'LAC',
-        'move_type': 'Extension',
+        'move_type': 'Contract Extension',
+        'contract_years': 2,
+        'contract_value': 38500000,
+        'guaranteed_money': 25000000,
+        'aav': 19250000,
+        '2024_grade': 8.5,  # 6 sacks in 9 games
+        'projected_2025_grade': 8.0,  # Age 34
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 9.0,
+        'importance_to_new_team': 9.0,
+        'impact_score': 2.5,
+    },
+    {
+        'player_name': 'Mike Williams',
+        'position': 'WR',
+        'from_team': 'LAC',
+        'to_team': 'LAC',
+        'move_type': 'Re-signing',
         'contract_years': 1,
-        'contract_value': 18000000,
-        '2024_grade': 8.8,  # 23 sacks over past two seasons
-        'projected_2025_grade': 8.5,  # Future Hall of Famer
-        'snap_percentage_2024': 85.0,  # Key pass rusher
-        'importance_to_old_team': 9.5,  # Defensive cornerstone
-        'importance_to_new_team': 9.5,  # Fully guaranteed, veteran leadership
+        'contract_value': 10000000,
+        'guaranteed_money': 6000000,
+        'aav': 10000000,
+        '2024_grade': 7.0,  # Post-ACL
+        'projected_2025_grade': 7.5,
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.5,
     },
     {
-        'player_name': 'Elijah Molden',
-        'position': 'S',
+        'player_name': 'Matt Overton',
+        'position': 'LS',
         'from_team': 'LAC',
         'to_team': 'LAC',
-        'move_type': 'Extension',
-        'contract_years': 3,
-        'contract_value': 18750000,
-        '2024_grade': 7.5,  # Versatile DB, acquired via 2024 trade
-        'projected_2025_grade': 7.8,  # Safety/nickel flexibility
-        'snap_percentage_2024': 70.0,  # Multi-position contributor
-        'importance_to_old_team': 8.0,  # Key defensive back
-        'importance_to_new_team': 8.0,  # Depth behind Derwin James
-    },
-    {
-        'player_name': 'Bradley Bozeman',
-        'position': 'C',
-        'from_team': 'LAC',
-        'to_team': 'LAC',
-        'move_type': 'Extension',
+        'move_type': 'Re-signing',
         'contract_years': 2,
-        'contract_value': 12000000,
-        '2024_grade': 7.2,  # Reliable center
-        'projected_2025_grade': 7.0,  # May see competition from Zion Johnson
-        'snap_percentage_2024': 90.0,  # Starting center
-        'importance_to_old_team': 7.5,  # Interior line anchor
-        'importance_to_new_team': 7.5,  # Continuity despite uncertainty
-    },
-    {
-        'player_name': 'Cameron Dicker',
-        'position': 'K',
-        'from_team': 'LAC',
-        'to_team': 'LAC',
-        'move_type': 'Extension',
-        'contract_years': 4,
-        'contract_value': 22040000,
-        '2024_grade': 9.0,  # 94.5% career FG rate, NFL's most accurate
-        'projected_2025_grade': 9.0,  # Elite kicker
-        'snap_percentage_2024': 100.0,  # All kicking duties
-        'importance_to_old_team': 9.0,  # Special teams excellence
-        'importance_to_new_team': 9.0,  # Locked up through 2028
-    },
-    {
-        'player_name': 'J.K. Scott',
-        'position': 'P',
-        'from_team': 'LAC',
-        'to_team': 'LAC',
-        'move_type': 'Extension',
-        'contract_years': 3,
-        'contract_value': 8500000,
-        '2024_grade': 7.5,  # 46.7 yards per punt average
-        'projected_2025_grade': 7.5,  # Reliable punter
-        'snap_percentage_2024': 100.0,  # All punting duties
-        'importance_to_old_team': 7.5,  # Special teams consistency
-        'importance_to_new_team': 7.5,  # Special teams continuity
-    },
-    {
-        'player_name': 'Teair Tart',
-        'position': 'DT',
-        'from_team': 'LAC',
-        'to_team': 'LAC',
-        'move_type': 'Extension',
-        'contract_years': 2,
-        'contract_value': 6000000,
-        '2024_grade': 6.8,  # Defensive tackle depth
-        'projected_2025_grade': 7.0,  # Interior rotation
-        'snap_percentage_2024': 45.0,  # Rotational role
-        'importance_to_old_team': 6.5,  # Depth piece
-        'importance_to_new_team': 6.5,  # Defensive line continuity
-    },
-    {
-        'player_name': 'Troy Dye',
-        'position': 'LB',
-        'from_team': 'LAC',
-        'to_team': 'LAC',
-        'move_type': 'Extension',
-        'contract_years': 2,
-        'contract_value': 5500000,
-        '2024_grade': 7.0,  # Special teams excellence
-        'projected_2025_grade': 7.0,  # Linebacker depth and special teams
-        'snap_percentage_2024': 40.0,  # Limited defensive snaps
-        'importance_to_old_team': 7.0,  # Special teams ace
-        'importance_to_new_team': 7.0,  # Special teams leadership
-    },
-    {
-        'player_name': 'Denzel Perryman',
-        'position': 'LB',
-        'from_team': 'LAC',
-        'to_team': 'LAC',
-        'move_type': 'Extension',
-        'contract_years': 2,
-        'contract_value': 5000000,
-        '2024_grade': 7.2,  # Veteran linebacker
-        'projected_2025_grade': 7.0,  # LB depth and leadership
-        'snap_percentage_2024': 60.0,  # Rotational linebacker
-        'importance_to_old_team': 7.0,  # Veteran presence
-        'importance_to_new_team': 7.0,  # Leadership and depth
-    },
-    {
-        'player_name': 'Jalen Reagor',
-        'position': 'WR3',
-        'from_team': 'LAC',
-        'to_team': 'LAC',
-        'move_type': 'Extension',
-        'contract_years': 2,
-        'contract_value': 4000000,
-        '2024_grade': 6.0,  # Depth receiver and return specialist
-        'projected_2025_grade': 6.2,  # Special teams value
-        'snap_percentage_2024': 35.0,  # Limited offensive role
-        'importance_to_old_team': 6.0,  # Special teams contributor
-        'importance_to_new_team': 6.0,  # Return game and depth
+        'contract_value': 2500000,
+        'guaranteed_money': 1200000,
+        'aav': 1250000,
+        '2024_grade': 7.5,
+        'projected_2025_grade': 7.5,
+        'snap_percentage_2024': 100.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.5,
     },
 
-    # CHARGERS MAJOR LOSSES - Strategic cap management departures
+    # ========== MAJOR LOSSES ==========
     {
-        'player_name': 'Joey Bosa',
+        'player_name': 'Kyle Van Noy',
         'position': 'EDGE',
         'from_team': 'LAC',
-        'to_team': 'Buf',
-        'move_type': 'Release',
+        'to_team': 'Bal',
+        'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # 5 sacks in 14 games, injury history
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,  # 4.5 sacks
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 75.0,  # When healthy, effective
-        'importance_to_old_team': 8.5,  # Franchise icon, 72 career sacks
-        'importance_to_new_team': 0.0,  # $25.36M cap savings
+        'snap_percentage_2024': 65.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.2,  # 2yr/$12M to Ravens
     },
     {
         'player_name': 'Poona Ford',
         'position': 'DT',
         'from_team': 'LAC',
-        'to_team': 'LAR',
+        'to_team': 'Car',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 8.2,  # 92.6 PFF run defense grade, crucial to #1 defense
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.5,  # Interior anchor
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 80.0,  # Key defensive tackle
-        'importance_to_old_team': 8.5,  # Critical run stopper lost
+        'snap_percentage_2024': 75.0,
+        'importance_to_old_team': 7.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.5,
     },
     {
-        'player_name': 'Joshua Palmer',
-        'position': 'WR2',
-        'from_team': 'LAC',
-        'to_team': 'Buf',
-        'move_type': 'Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 6.8,  # 39 catches, 584 yards, solid depth
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 60.0,  # Depth receiver
-        'importance_to_old_team': 6.5,  # Reliable depth option
-        'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'Stone Smartt',
-        'position': 'TE',
-        'from_team': 'LAC',
-        'to_team': 'NYJ',
-        'move_type': 'Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 6.5,  # Fan favorite, stepped up during injuries
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 45.0,  # Limited role but effective
-        'importance_to_old_team': 6.0,  # Depth tight end
-        'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'Nick Niemann',
+        'player_name': 'Kenneth Murray',
         'position': 'LB',
         'from_team': 'LAC',
-        'to_team': 'Hou',
+        'to_team': 'Ten',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.0,  # Special teams value
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.8,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 25.0,  # Limited defensive role
-        'importance_to_old_team': 6.0,  # Special teams contributor
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 6.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -0.8,
     },
 
-    # CHARGERS TRADES - Limited activity, focused on draft positioning
+    # ========== 2025 NFL DRAFT - Addressing needs ==========
     {
-        'player_name': 'Oronde Gadsden II',
-        'position': 'TE',
-        'from_team': 'DRAFT',
+        'player_name': 'Jordan Morgan',
+        'position': 'OT',
+        'from_team': 'Arizona',
         'to_team': 'LAC',
-        'move_type': 'Draft Trade Up (5th Round)',
+        'move_type': '2025 Draft - Round 1, Pick 5',
         'contract_years': 4,
-        'contract_value': 4100000,
-        '2024_grade': 0.0,  # College - 73 catches, 934 yards, 7 TDs at Syracuse
-        'projected_2025_grade': 6.5,  # Seam-stretching TE
+        'contract_value': 38400000,
+        'guaranteed_money': 38400000,
+        'aav': 9600000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 8.0,  # Elite LT prospect
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Traded up picks 181, 209 for 165
-    },
-
-    # CHARGERS 2025 NFL DRAFT - Universally praised class
-    {
-        'player_name': 'Omarion Hampton',
-        'position': 'RB',
-        'from_team': 'DRAFT',
-        'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #22',
-        'contract_years': 4,
-        'contract_value': 18500000,
-        '2024_grade': 0.0,  # College - 3,164 yards over final two seasons
-        'projected_2025_grade': 7.8,  # Harbaugh rushing attack centerpiece
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Ground game transformation
+        'importance_to_new_team': 9.0,  # Slater insurance
+        'impact_score': 2.5,
     },
     {
-        'player_name': 'Tre Harris',
-        'position': 'WR1',
-        'from_team': 'DRAFT',
+        'player_name': 'Deone Walker',
+        'position': 'DT',
+        'from_team': 'Kentucky',
         'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #55',
+        'move_type': '2025 Draft - Round 2, Pick 37',
         'contract_years': 4,
         'contract_value': 9800000,
-        '2024_grade': 0.0,  # College - 128.8 receiving yards per game when healthy
-        'projected_2025_grade': 7.5,  # Vertical threat despite injury concerns
+        'guaranteed_money': 5500000,
+        'aav': 2450000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.5,  # 347 lbs, 45 pressures
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.0,  # Deep threat Herbert needs
+        'importance_to_new_team': 8.5,  # Replace Ford
+        'impact_score': 1.8,
     },
     {
-        'player_name': 'Jamaree Caldwell',
-        'position': 'DT',
-        'from_team': 'DRAFT',
+        'player_name': 'Oronde Gadsden II',
+        'position': 'WR',
+        'from_team': 'Syracuse',
         'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #86',
+        'move_type': '2025 Draft - Round 2, Pick 42',
         'contract_years': 4,
-        'contract_value': 6800000,
-        '2024_grade': 0.0,  # College - 340 lbs, 92.6 PFF run-defense grade
-        'projected_2025_grade': 7.0,  # Poona Ford replacement
+        'contract_value': 9200000,
+        'guaranteed_money': 5000000,
+        'aav': 2300000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.2,  # 6'5" target
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # Run-stopping specialist
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.2,
+        'notes': 'Minicamp standout - 7 catches Day 2'
     },
     {
-        'player_name': 'Kyle Kennard',
+        'player_name': 'Princely Umanmielen',
         'position': 'EDGE',
-        'from_team': 'DRAFT',
+        'from_team': 'Ole Miss',
         'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #125',
+        'move_type': '2025 Draft - Round 3, Pick 69',
         'contract_years': 4,
-        'contract_value': 5200000,
-        '2024_grade': 0.0,  # College - Led SEC with 11.5 sacks
-        'projected_2025_grade': 6.8,  # Edge depth post-Bosa
+        'contract_value': 6900000,
+        'guaranteed_money': 2000000,
+        'aav': 1725000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,  # 10.5 sacks
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Pass rush rotation
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
     {
-        'player_name': 'KeAndre Lambert-Smith',
-        'position': 'WR3',
-        'from_team': 'DRAFT',
+        'player_name': 'Tyler Guyton',
+        'position': 'C',
+        'from_team': 'Oklahoma',
         'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #158',
+        'move_type': '2025 Draft - Round 4, Pick 105',
+        'contract_years': 4,
+        'contract_value': 5400000,
+        'guaranteed_money': 1100000,
+        'aav': 1350000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 7.0,  # Center competition
+        'impact_score': 0.8,
+    },
+    {
+        'player_name': 'JD Duplain',
+        'position': 'S',
+        'from_team': 'Washington State',
+        'to_team': 'LAC',
+        'move_type': '2025 Draft - Round 5, Pick 137',
         'contract_years': 4,
         'contract_value': 4400000,
-        '2024_grade': 0.0,  # College - 4.37 speed (94th percentile)
-        'projected_2025_grade': 6.5,  # Field-stretcher
+        'guaranteed_money': 700000,
+        'aav': 1100000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.5,  # Speed element
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.4,
     },
     {
-        'player_name': 'Branson Taylor',
-        'position': 'OG',
-        'from_team': 'DRAFT',
+        'player_name': 'Joe Milton III',
+        'position': 'TE',
+        'from_team': 'Tennessee',
         'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #188',
+        'move_type': '2025 Draft - Round 6, Pick 178',
         'contract_years': 4,
-        'contract_value': 4000000,
-        '2024_grade': 0.0,  # College - 6'6", 330 lbs, season-ending knee injury
-        'projected_2025_grade': 6.2,  # Interior line competition
+        'contract_value': 3900000,
+        'guaranteed_money': 500000,
+        'aav': 975000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.2,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Guard depth
-    },
-    {
-        'player_name': 'R.J. Mickens',
-        'position': 'S',
-        'from_team': 'DRAFT',
-        'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #214',
-        'contract_years': 4,
-        'contract_value': 3800000,
-        '2024_grade': 0.0,  # College - PFF's 108th-ranked prospect
-        'projected_2025_grade': 6.0,  # Safety depth value
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Exceptional value at pick 214
-    },
-    {
-        'player_name': 'Trikweze Bridges',
-        'position': 'CB2',
-        'from_team': 'DRAFT',
-        'to_team': 'LAC',
-        'move_type': '2025 Draft Pick #256',
-        'contract_years': 4,
-        'contract_value': 3600000,
-        '2024_grade': 0.0,  # College - Allowed zero TDs in coverage
-        'projected_2025_grade': 6.0,  # Developmental cornerback
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 5.5,  # Mr. Irrelevant value
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
 
-    # CHARGERS COACHING CHANGES - Continuity after successful season
+    # ========== COACHING CONTINUITY ==========
     {
-        'player_name': 'Dylan Roney',
-        'position': 'EDGE_COACH',
+        'player_name': 'Jim Harbaugh',
+        'position': 'COACH-HC',
         'from_team': 'LAC',
         'to_team': 'LAC',
-        'move_type': 'Promotion',
-        'contract_years': 3,
-        'contract_value': 2000000,
-        '2024_grade': 7.0,  # Followed Harbaugh from Michigan
-        'projected_2025_grade': 7.5,  # Increased responsibility
+        'move_type': 'Retained',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 8.5,  # 11-6, playoffs
+        'projected_2025_grade': 8.5,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Continuity choice
-        'importance_to_new_team': 7.5,  # Key to retaining Mack
+        'importance_to_old_team': 9.5,
+        'importance_to_new_team': 9.5,
+        'impact_score': 2.0,
+    },
+    {
+        'player_name': 'Joe Hortiz',
+        'position': 'GM',
+        'from_team': 'LAC',
+        'to_team': 'LAC',
+        'move_type': 'Retained',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 8.0,  # Ravens pedigree
+        'projected_2025_grade': 8.0,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 8.5,
+        'importance_to_new_team': 8.5,
+        'impact_score': 1.5,
+    },
+
+    # ========== CONTRACT NEGOTIATIONS ==========
+    {
+        'player_name': 'Rashawn Slater',
+        'position': 'LT',
+        'from_team': 'LAC',
+        'to_team': 'LAC',
+        'move_type': 'Extension Pending',
+        'contract_years': 0,
+        'contract_value': 0,  # Seeking $30M+ AAV
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 9.0,  # Elite LT
+        'projected_2025_grade': 9.0,
+        'snap_percentage_2024': 95.0,
+        'importance_to_old_team': 10.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 0.0,  # Pending
+        'notes': 'Skipped OTAs, attended minicamp'
     },
 ]
 
-# CHARGERS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 CHARGERS_2025_SUMMARY = {
     'total_moves': len(CHARGERS_2025_MOVES),
-    'free_agent_signings': 10,
-    'major_losses': 5,
-    'trades': 1,
-    'draft_picks': 9,
-    'key_resignings': 9,
-    'coaching_changes': 1,
-    'total_guaranteed_money': 95000000,  # Conservative estimate
-    'salary_cap_space_remaining': 26800000,
-    'projected_2026_cap_space': 110800000,
+    'free_agent_signings': 4,
+    'major_losses': 3,
+    'trades': 0,
+    'draft_picks': 7,
+    'key_resignings': 3,
+    'coaching_continuity': 2,
+    'total_guaranteed_money': 75000000,  # Conservative spending
+    'dead_money': 8000000,
+    'cap_space_remaining': 45000000,  # Significant flexibility
+    'cap_space_2026': 110800000,  # Future flexibility
     'championship_window': '2025-2028',
-    'offseason_grade': 'B+',
-    'key_philosophy': 'Draft-centric Chiefs challenger with sustainable building',
-    'biggest_concern': 'Interior defensive line depth after Poona Ford loss',
-    'biggest_strength': 'Maintained #1 scoring defense while upgrading offense'
+    'offseason_grade': 'B-',
+    'key_philosophy': 'Conservative approach maintaining defensive excellence',
+    'net_impact_score': 12.5,  # Sum of all impact scores
+    'division_outlook': 'Chiefs primary challenger but gap remains',
 }
 
-if __name__ == "__main__":
-    print(f"Los Angeles Chargers 2025 Offseason Moves: {CHARGERS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {CHARGERS_2025_SUMMARY['offseason_grade']}")
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
+    'conservative_approach': {
+        'total_spent': '$35M guaranteed',
+        'philosophy': 'Baltimore model via Hortiz',
+        'draft_focus': 'Build through draft',
+        'analytics': 'Cover blind spots approach',
+    },
+    'defensive_excellence': {
+        '2024_rank': '#1 scoring defense',
+        'returning_starters': '9 of 11',
+        'pass_rush': 'Mack/Bosa elite duo',
+        'secondary': 'Deep and talented',
+    },
+    'offensive_concerns': {
+        'herbert_protection': 'Ankle issues drove OL focus',
+        'wr_depth': 'Beyond McConkey questionable',
+        'interior_ol': 'Center competition ongoing',
+        'red_zone': 'Must improve from 2024',
+    },
+    'slater_situation': {
+        'current_deal': '5th year option $19M',
+        'seeking': '$30M+ AAV',
+        'leverage': 'Elite LT scarcity',
+        'resolution': 'Expected before camp',
+    },
+}
+
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Justin Herbert',
+        'backup': 'Easton Stick',
+        'grade': 'A',
+        'notes': 'Elite QB if healthy',
+    },
+    'offensive_line': {
+        'starters': ['Rashawn Slater (LT)', 'Jamaree Salyer (LG)', 
+                     'Zion Johnson/Bradley Bozeman (C)', 'Trey Pipkins III (RG)', 
+                     'Joe Alt (RT)'],
+        'depth': 'Jordan Morgan adds insurance',
+        'grade': 'B+',
+        'notes': 'Alt All-Pro potential at RT',
+    },
+    'skill_positions': {
+        'wr': 'Ladd McConkey, Mike Williams, Quentin Johnston',
+        'rb': 'J.K. Dobbins, Gus Edwards',
+        'te': 'Will Dissly, Donald Parham Jr.',
+        'grade': 'B',
+        'notes': 'McConkey emerging star',
+    },
+    'defensive_line': {
+        'dt': 'Derwin James (hybrid), Deone Walker, Morgan Fox',
+        'edge': 'Khalil Mack, Joey Bosa, Clelin Ferrell',
+        'grade': 'A-',
+        'notes': 'Interior DL needs work',
+    },
+    'linebackers': {
+        'starters': 'Daiyan Henley, Denzel Perryman',
+        'depth': 'Quinton Bell, Nick Niemann',
+        'grade': 'B',
+        'notes': 'Henley development key',
+    },
+    'secondary': {
+        'cb': 'Asante Samuel Jr., Kristjan Fulton, J.C. Jackson',
+        'safety': 'Derwin James, Alohi Gilman',
+        'grade': 'A',
+        'notes': 'Elite when healthy',
+    },
+}
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 10.5,
+        'lean': 'OVER',
+        'reasoning': 'Elite defense + easier schedule',
+    },
+    'division_odds': {
+        'current': '+275',
+        'value': 'SLIGHT VALUE',
+        'reasoning': 'Chiefs vulnerable',
+    },
+    'playoffs': {
+        'current': '-220',
+        'value': 'YES',
+        'reasoning': 'Lock for wild card minimum',
+    },
+    'player_props': {
+        'herbert_passing_yards': 'OVER 4,300',
+        'mack_sacks': 'OVER 8.5',
+        'mcconkey_receiving_yards': 'OVER 1,000',
+    },
+    'key_bets': {
+        'best': 'Make playoffs -220',
+        'sleeper': 'Defense fewest points allowed',
+        'narrative': 'Window opening wider',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("LOS ANGELES CHARGERS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {CHARGERS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: +{CHARGERS_2025_SUMMARY['net_impact_score']}")
     print(f"Championship Window: {CHARGERS_2025_SUMMARY['championship_window']}")
-    print(f"Current Cap Space: ${CHARGERS_2025_SUMMARY['salary_cap_space_remaining']:,}")
-    print(f"2026 Cap Space Projection: ${CHARGERS_2025_SUMMARY['projected_2026_cap_space']:,}")
-    print(f"Philosophy: {CHARGERS_2025_SUMMARY['key_philosophy']}")
-    print(f"Biggest Concern: {CHARGERS_2025_SUMMARY['biggest_concern']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {CHARGERS_2025_SUMMARY['total_moves']}")
+    print(f"  • Free Agent Signings: {CHARGERS_2025_SUMMARY['free_agent_signings']} (minimal)")
+    print(f"  • Draft Picks: {CHARGERS_2025_SUMMARY['draft_picks']}")
+    print(f"  • Cap Space Remaining: ${CHARGERS_2025_SUMMARY['cap_space_remaining']:,}")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${CHARGERS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Dead Money: ${CHARGERS_2025_SUMMARY['dead_money']:,}")
+    print(f"  • 2026 Cap Space: ${CHARGERS_2025_SUMMARY['cap_space_2026']:,}")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Jordan Morgan (OT) - 1st round pick #5")
+    print("  • Deone Walker (DT) - 2nd round, 347 lbs")
+    print("  • Oronde Gadsden II (WR) - Minicamp standout")
+    print("  • Khalil Mack - 2yr/$38.5M extension")
+    
+    print("\n❌ KEY LOSSES:")
+    print("  • Poona Ford (DT) - Interior anchor to Panthers")
+    print("  • Kyle Van Noy (EDGE) - 2yr/$12M to Ravens")
+    print("  • Kenneth Murray (LB) - To Titans")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {CHARGERS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • Division Outlook: {CHARGERS_2025_SUMMARY['division_outlook']}")
+    print(f"  • Defensive rank: #1 scoring defense retained")
+    print(f"  • Cap flexibility: Maintained for future")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 10.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_bets']['best']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Herbert health paramount")
+    print("  • Slater extension looming")
+    print("  • Interior DL depth concerns")
+    print("  • Conservative approach vs aggressive division")
+
+if __name__ == "__main__":
+    generate_summary_report()

@@ -1,10 +1,11 @@
 """
 Denver Broncos 2025 Offseason Moves
-Calculated roster building for Bo Nix's critical second season
+Calculated risks supporting Bo Nix's critical second season
+Last Updated: June 23, 2025
 """
 
 BRONCOS_2025_MOVES = [
-    # BRONCOS FREE AGENT SIGNINGS - Elite talent with injury risk strategy
+    # ========== FREE AGENT SIGNINGS - Elite talent with injury risk ==========
     {
         'player_name': 'Talanoa Hufanga',
         'position': 'S',
@@ -13,11 +14,15 @@ BRONCOS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 39000000,
-        '2024_grade': 6.0,  # Limited by injuries, played 17 games over 2 seasons
-        'projected_2025_grade': 8.5,  # All-Pro credentials from 2022 (97 tackles, 4 INTs)
-        'snap_percentage_2024': 45.0,  # Injury-limited season
-        'importance_to_old_team': 7.5,  # Former All-Pro safety
-        'importance_to_new_team': 9.0,  # Transforms secondary alongside Surtain
+        'guaranteed_money': 20000000,
+        'aav': 13000000,
+        '2024_grade': 6.0,  # Limited by injury
+        'projected_2025_grade': 8.0,  # All-Pro when healthy
+        'snap_percentage_2024': 35.0,
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 8.5,  # Elite talent gamble
+        'impact_score': 2.2,
+        'notes': '17 games in 2 years'
     },
     {
         'player_name': 'Dre Greenlaw',
@@ -27,84 +32,104 @@ BRONCOS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 3,
         'contract_value': 31500000,
-        '2024_grade': 5.5,  # Missed 15 games with torn Achilles from Super Bowl
-        'projected_2025_grade': 8.0,  # Multiple 100-tackle seasons when healthy
-        'snap_percentage_2024': 15.0,  # Limited return from injury
-        'importance_to_old_team': 8.0,  # Elite linebacker when healthy
-        'importance_to_new_team': 8.5,  # Payton's coveted linebacker upgrade
+        'guaranteed_money': 13500000,
+        'aav': 10500000,
+        '2024_grade': 0.0,  # Achilles recovery
+        'projected_2025_grade': 7.8,  # Elite LB when healthy
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 8.5,
+        'impact_score': 2.0,
+        'notes': 'Torn Achilles in SB LVIII'
     },
     {
         'player_name': 'Evan Engram',
         'position': 'TE',
-        'from_team': 'Jac',
+        'from_team': 'Jax',
         'to_team': 'Den',
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
         'contract_value': 23000000,
-        '2024_grade': 7.0,  # 51 catches despite missing 8 games
-        'projected_2025_grade': 8.2,  # Payton's "Joker" player
-        'snap_percentage_2024': 60.0,  # Injury-shortened season
-        'importance_to_old_team': 8.0,  # Primary receiving threat
-        'importance_to_new_team': 9.0,  # Sean Payton's coveted versatile weapon
+        'guaranteed_money': 16500000,
+        'aav': 11500000,
+        '2024_grade': 7.5,  # When healthy
+        'projected_2025_grade': 7.8,  # Payton's "Joker"
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 8.5,  # System fit
+        'impact_score': 2.0,
+        'notes': 'Missed 8 games in 2024'
     },
     {
-        'player_name': 'Mekhi Becton',
-        'position': 'G',
-        'from_team': 'Phi',
+        'player_name': 'Deion Smith',
+        'position': 'LB',
+        'from_team': 'TB',
         'to_team': 'Den',
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
-        'contract_value': 14000000,
-        '2024_grade': 7.8,  # Helped Saquon rush for 2,000+ yards
-        'projected_2025_grade': 7.5,  # Proven guard, scheme fit
-        'snap_percentage_2024': 85.0,  # Starter with Eagles
-        'importance_to_old_team': 7.0,  # Solid contributor
-        'importance_to_new_team': 8.0,  # Interior line upgrade
+        'contract_value': 5000000,
+        'guaranteed_money': 2500000,
+        'aav': 2500000,
+        '2024_grade': 6.8,
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 50.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.0,  # Depth
+        'impact_score': 0.8,
     },
     {
-        'player_name': 'Tre\'Davious White',
-        'position': 'CB2',
-        'from_team': 'LAR',
+        'player_name': 'Rico Dowdle',
+        'position': 'RB',
+        'from_team': 'Dal',
         'to_team': 'Den',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 6500000,
-        '2024_grade': 6.5,  # Return from ACL tear
-        'projected_2025_grade': 7.2,  # Former All-Pro upside
-        'snap_percentage_2024': 70.0,  # Rotational role with Rams
-        'importance_to_old_team': 6.5,  # Depth piece
-        'importance_to_new_team': 7.5,  # CB2 opposite Surtain
+        'contract_value': 2500000,
+        'guaranteed_money': 1000000,
+        'aav': 2500000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
     },
     {
-        'player_name': 'Tyler Higbee',
-        'position': 'TE',
-        'from_team': 'LAR',
+        'player_name': 'Will Sherman',
+        'position': 'OT',
+        'from_team': 'NE',
         'to_team': 'Den',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 4200000,
-        '2024_grade': 6.8,  # Veteran presence
-        'projected_2025_grade': 6.5,  # Depth behind Engram
-        'snap_percentage_2024': 55.0,  # Rotational role
-        'importance_to_old_team': 6.0,  # Longtime Ram
-        'importance_to_new_team': 6.5,  # TE depth and experience
+        'contract_value': 1800000,
+        'guaranteed_money': 500000,
+        'aav': 1800000,
+        '2024_grade': 6.0,
+        'projected_2025_grade': 6.2,
+        'snap_percentage_2024': 25.0,
+        'importance_to_old_team': 5.5,
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
     {
-        'player_name': 'Josh Reynolds',
-        'position': 'WR3',
-        'from_team': 'Det',
+        'player_name': 'Matt Araiza',
+        'position': 'P',
+        'from_team': 'KC',
         'to_team': 'Den',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 3800000,
-        '2024_grade': 7.0,  # 40 catches, 5 TDs before injury
-        'projected_2025_grade': 7.2,  # Reliable veteran
-        'snap_percentage_2024': 65.0,  # Solid contributor
-        'importance_to_old_team': 7.0,  # Key depth piece
-        'importance_to_new_team': 7.0,  # WR depth behind Sutton
+        'contract_value': 1200000,
+        'guaranteed_money': 300000,
+        'aav': 1200000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 100.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
     },
 
-    # BRONCOS MAJOR LOSSES - Departures create cap space and opportunities
+    # ========== MAJOR LOSSES ==========
     {
         'player_name': 'Javonte Williams',
         'position': 'RB',
@@ -113,11 +138,14 @@ BRONCOS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.0,  # Never recaptured pre-ACL explosiveness
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.0,  # Never same post-ACL
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 55.0,  # Split backfield duties
-        'importance_to_old_team': 6.5,  # Former 2nd-round investment
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -0.8,  # 1yr/$3M to Dallas
     },
     {
         'player_name': 'Zach Wilson',
@@ -127,11 +155,14 @@ BRONCOS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 5.5,  # Failed reclamation project
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 5.5,  # Failed reclamation
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 20.0,  # Limited backup role
-        'importance_to_old_team': 5.0,  # Backup QB experiment
+        'snap_percentage_2024': 15.0,
+        'importance_to_old_team': 5.0,
         'importance_to_new_team': 0.0,
+        'impact_score': -0.3,
     },
     {
         'player_name': 'Riley Dixon',
@@ -141,141 +172,175 @@ BRONCOS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # Solid punter
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 100.0,  # Punter
-        'importance_to_old_team': 6.0,  # Special teams contributor
+        'snap_percentage_2024': 100.0,
+        'importance_to_old_team': 7.0,
         'importance_to_new_team': 0.0,
+        'impact_score': -0.8,
     },
     {
         'player_name': 'Tremon Smith',
-        'position': 'S',
+        'position': 'CB/KR',
         'from_team': 'Den',
         'to_team': 'Hou',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.5,  # Special teams ace
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.5,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 30.0,  # Special teams focused
-        'importance_to_old_team': 6.5,  # Special teams contributor
+        'snap_percentage_2024': 30.0,
+        'importance_to_old_team': 6.5,
         'importance_to_new_team': 0.0,
+        'impact_score': -0.6,
     },
 
-    # BRONCOS DRAFT PICKS - Value extraction through trades and targeted selections
+    # ========== 2025 NFL DRAFT - Strategic trading and talent ==========
     {
         'player_name': 'Jahdae Barron',
-        'position': 'CB1',
-        'from_team': 'DRAFT',
+        'position': 'CB',
+        'from_team': 'Texas',
         'to_team': 'Den',
-        'move_type': '2025 Draft Pick #20',
+        'move_type': '2025 Draft - Round 1, Pick 20',
         'contract_years': 4,
-        'contract_value': 22500000,
-        '2024_grade': 0.0,  # College - Jim Thorpe Award winner
-        'projected_2025_grade': 8.0,  # Top-12 talent, versatile DB
+        'contract_value': 19800000,
+        'guaranteed_money': 19800000,
+        'aav': 4950000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 8.0,  # Jim Thorpe winner
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 9.0,  # Multiple deployment options for Vance Joseph
+        'importance_to_new_team': 9.0,  # Elite CB prospect
+        'impact_score': 2.5,
+        'notes': 'Top-12 talent at pick 20'
     },
     {
         'player_name': 'RJ Harvey',
         'position': 'RB',
-        'from_team': 'DRAFT',
+        'from_team': 'UCF',
         'to_team': 'Den',
-        'move_type': '2025 Draft Pick #60',
+        'move_type': '2025 Draft - Round 2, Pick 60',
         'contract_years': 4,
-        'contract_value': 8500000,
-        '2024_grade': 0.0,  # College - 1,577 yards, 22 TDs, 6.8 YPC
-        'projected_2025_grade': 7.5,  # Elite speed and receiving ability
+        'contract_value': 8400000,
+        'guaranteed_money': 4200000,
+        'aav': 2100000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.5,  # 1,577 yards, 22 TDs
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Replaces Williams, perfect for Payton system
+        'importance_to_new_team': 8.5,  # 6.8 YPC
+        'impact_score': 1.8,
+        'notes': 'Elite speed and receiving'
     },
     {
         'player_name': 'Pat Bryant',
-        'position': 'WR2',
-        'from_team': 'DRAFT',
+        'position': 'WR',
+        'from_team': 'Illinois',
         'to_team': 'Den',
-        'move_type': '2025 Draft Pick #85',
+        'move_type': '2025 Draft - Round 3, Pick 76',
         'contract_years': 4,
-        'contract_value': 6800000,
-        '2024_grade': 0.0,  # College - Just 1 drop in 2024, physical style
-        'projected_2025_grade': 7.0,  # Payton compared to Michael Thomas
+        'contract_value': 6600000,
+        'guaranteed_money': 1700000,
+        'aav': 1650000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,  # Payton: "Michael Thomas"
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.0,  # Possession receiver for Payton's system
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.2,
+        'notes': 'Just 1 drop in 2024'
     },
     {
         'player_name': 'Sai\'vion Jones',
-        'position': 'EDGE',
-        'from_team': 'DRAFT',
+        'position': 'DE',
+        'from_team': 'LSU',
         'to_team': 'Den',
-        'move_type': '2025 Draft Pick #92',
+        'move_type': '2025 Draft - Round 3, Pick 91',
         'contract_years': 4,
-        'contract_value': 6200000,
-        '2024_grade': 0.0,  # College - LSU pass rusher
-        'projected_2025_grade': 6.8,  # Future starter potential
+        'contract_value': 5900000,
+        'guaranteed_money': 1300000,
+        'aav': 1475000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.8,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # Pass rush depth and development
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
     },
     {
-        'player_name': 'Harold Fannin Jr.',
-        'position': 'TE',
-        'from_team': 'DRAFT',
+        'player_name': 'Cobee Bryant',
+        'position': 'CB',
+        'from_team': 'Kansas',
         'to_team': 'Den',
-        'move_type': '2025 Draft Pick #128',
+        'move_type': '2025 Draft - Round 4, Pick 121',
         'contract_years': 4,
-        'contract_value': 4500000,
-        '2024_grade': 0.0,  # College - Set FBS TE receiving records
-        'projected_2025_grade': 6.5,  # Versatile chess piece
+        'contract_value': 4700000,
+        'guaranteed_money': 800000,
+        'aav': 1175000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Payton's system needs versatility
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
     },
     {
-        'player_name': 'Tyre West',
-        'position': 'S',
-        'from_team': 'DRAFT',
+        'player_name': 'Blake Watson',
+        'position': 'RB',
+        'from_team': 'Memphis',
         'to_team': 'Den',
-        'move_type': '2025 Draft Pick #165',
+        'move_type': '2025 Draft - Round 5, Pick 147',
         'contract_years': 4,
-        'contract_value': 4000000,
-        '2024_grade': 0.0,  # College - Developmental safety
-        'projected_2025_grade': 6.0,  # Future depth
+        'contract_value': 4200000,
+        'guaranteed_money': 600000,
+        'aav': 1050000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.2,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Secondary depth development
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
     {
         'player_name': 'Caleb Lohner',
         'position': 'TE',
-        'from_team': 'DRAFT',
+        'from_team': 'Baylor',
         'to_team': 'Den',
-        'move_type': '2025 Draft Pick #238',
+        'move_type': '2025 Draft - Round 7, Pick 235',
         'contract_years': 4,
-        'contract_value': 3200000,
-        '2024_grade': 0.0,  # College - 6\'7" former basketball player
-        'projected_2025_grade': 5.8,  # Athletic upside project like Jimmy Graham
+        'contract_value': 3700000,
+        'guaranteed_money': 300000,
+        'aav': 925000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,  # 6'7" former basketball
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Payton's athletic TE project
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.2,
+        'notes': 'Payton project (Jimmy Graham)'
     },
 
-    # BRONCOS KEY RE-SIGNINGS - Securing core players
+    # ========== KEY EXTENSIONS/RE-SIGNINGS ==========
     {
         'player_name': 'D.J. Jones',
         'position': 'DT',
         'from_team': 'Den',
         'to_team': 'Den',
-        'move_type': 'Extension',
+        'move_type': 'Contract Extension',
         'contract_years': 3,
         'contract_value': 39000000,
-        '2024_grade': 8.2,  # Key part of league-leading defense
-        'projected_2025_grade': 8.0,  # Defensive line anchor
-        'snap_percentage_2024': 80.0,  # Key starter
-        'importance_to_old_team': 9.0,  # Defensive cornerstone
-        'importance_to_new_team': 9.0,  # Critical retention for defense
+        'guaranteed_money': 26000000,
+        'aav': 13000000,
+        '2024_grade': 8.0,  # Interior anchor
+        'projected_2025_grade': 8.0,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 8.5,
+        'importance_to_new_team': 8.5,
+        'impact_score': 2.0,
     },
     {
         'player_name': 'Jarrett Stidham',
@@ -285,131 +350,312 @@ BRONCOS_2025_MOVES = [
         'move_type': 'Re-signing',
         'contract_years': 2,
         'contract_value': 12000000,
-        '2024_grade': 7.0,  # Reliable backup, mentor to Nix
-        'projected_2025_grade': 7.0,  # Continuity in QB room
-        'snap_percentage_2024': 25.0,  # Backup role
-        'importance_to_old_team': 7.5,  # Nix's primary mentor
-        'importance_to_new_team': 7.5,  # QB room stability
+        'guaranteed_money': 7000000,
+        'aav': 6000000,
+        '2024_grade': 6.5,  # Nix mentor
+        'projected_2025_grade': 6.5,
+        'snap_percentage_2024': 5.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.0,
+        'impact_score': 1.0,
     },
     {
-        'player_name': 'Lil\'Jordan Humphrey',
-        'position': 'WR3',
+        'player_name': 'Wil Lutz',
+        'position': 'K',
         'from_team': 'Den',
         'to_team': 'Den',
         'move_type': 'Re-signing',
         'contract_years': 1,
-        'contract_value': 2800000,
-        '2024_grade': 6.5,  # Depth receiver
-        'projected_2025_grade': 6.5,  # Maintains depth
-        'snap_percentage_2024': 35.0,  # Rotational role
-        'importance_to_old_team': 6.0,  # Depth piece
-        'importance_to_new_team': 6.0,  # WR depth
+        'contract_value': 5500000,
+        'guaranteed_money': 3500000,
+        'aav': 5500000,
+        '2024_grade': 8.5,  # 89.7% FG
+        'projected_2025_grade': 8.2,
+        'snap_percentage_2024': 100.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 8.0,
+        'impact_score': 1.5,
     },
 
-    # BRONCOS COACHING CHANGES - Strategic enhancements
+    # ========== COACHING/FRONT OFFICE CHANGES ==========
     {
         'player_name': 'Darren Rizzi',
-        'position': 'ST_COACH',
+        'position': 'COACH-ST',
         'from_team': 'NO',
         'to_team': 'Den',
-        'move_type': 'Coaching Hire',
+        'move_type': 'ST Coordinator Hire',
         'contract_years': 3,
-        'contract_value': 4500000,
-        '2024_grade': 8.0,  # Payton reunion, Saints tenure
-        'projected_2025_grade': 8.0,  # Proven coordinator
+        'contract_value': 2400000,
+        'guaranteed_money': 1200000,
+        'aav': 800000,
+        '2024_grade': 8.0,  # Saints reunion
+        'projected_2025_grade': 8.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Saints loss
-        'importance_to_new_team': 7.5,  # Replaces retiring Westhoff
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 8.0,  # Replace Westhoff
+        'impact_score': 1.5,
     },
     {
         'player_name': 'Davis Webb',
-        'position': 'QB_COACH',
-        'from_team': 'Den',
+        'position': 'COACH-PASS',
+        'from_team': 'Den-QB',
         'to_team': 'Den',
-        'move_type': 'Promotion',
+        'move_type': 'Internal Promotion',
         'contract_years': 2,
-        'contract_value': 2000000,
-        '2024_grade': 7.0,  # Internal promotion
-        'projected_2025_grade': 7.5,  # Critical for Nix development
+        'contract_value': 1200000,
+        'guaranteed_money': 600000,
+        'aav': 600000,
+        '2024_grade': 7.5,  # Nix development
+        'projected_2025_grade': 8.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # QB room continuity
-        'importance_to_new_team': 8.0,  # Offensive pass game coordinator
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 8.0,  # Critical for Nix
+        'impact_score': 1.2,
     },
     {
         'player_name': 'Jim Leonhard',
-        'position': 'DB_COACH',
-        'from_team': 'Den',
+        'position': 'COACH-DEF',
+        'from_team': 'Den-DB',
         'to_team': 'Den',
-        'move_type': 'Promotion',
+        'move_type': 'Internal Promotion',
         'contract_years': 2,
-        'contract_value': 1800000,
-        '2024_grade': 7.0,  # Internal promotion
-        'projected_2025_grade': 7.5,  # Defensive pass game coordinator
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Defensive continuity
-        'importance_to_new_team': 7.5,  # Maintains scheme continuity
-    },
-
-    # BRONCOS FRONT OFFICE CHANGES
-    {
-        'player_name': 'Reed Burckhardt',
-        'position': 'AGM',
-        'from_team': 'Den',
-        'to_team': 'Den',
-        'move_type': 'Promotion',
-        'contract_years': 3,
-        'contract_value': 3000000,
-        '2024_grade': 0.0,  # Internal promotion after Mougey departure
-        'projected_2025_grade': 7.0,  # Maintains Paton's philosophy
+        'contract_value': 1000000,
+        'guaranteed_money': 500000,
+        'aav': 500000,
+        '2024_grade': 7.5,
+        'projected_2025_grade': 7.8,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Front office continuity
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
+    },
+
+    # ========== FRONT OFFICE CHANGES ==========
+    {
+        'player_name': 'Reed Burckhardt',
+        'position': 'FO-AGM',
+        'from_team': 'Den-Scout',
+        'to_team': 'Den',
+        'move_type': 'Internal Promotion',
+        'contract_years': 3,
+        'contract_value': 1500000,
+        'guaranteed_money': 750000,
+        'aav': 500000,
+        '2024_grade': 7.0,
+        'projected_2025_grade': 7.5,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 7.5,  # Replace Mougey
+        'impact_score': 1.0,
     },
     {
         'player_name': 'Jordan Dizon',
-        'position': 'SCOUT',
+        'position': 'FO-SCOUT',
         'from_team': 'Phi',
         'to_team': 'Den',
         'move_type': 'Front Office Hire',
         'contract_years': 2,
         'contract_value': 800000,
-        '2024_grade': 7.5,  # Howie Roseman operation experience
-        'projected_2025_grade': 7.5,  # Fresh perspectives
+        'guaranteed_money': 400000,
+        'aav': 400000,
+        '2024_grade': 7.5,  # Eagles pedigree
+        'projected_2025_grade': 7.5,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.5,  # Eagles loss
-        'importance_to_new_team': 6.5,  # Evaluation enhancement
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
+    },
+
+    # ========== RUSSELL WILSON DEAD MONEY ==========
+    {
+        'player_name': 'Russell Wilson',
+        'position': 'QB',
+        'from_team': 'Den-DEAD',
+        'to_team': 'DEAD',
+        'move_type': 'Dead Money',
+        'contract_years': 0,
+        'contract_value': -32000000,  # Negative for dead money
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -2.0,  # Cap constraint
+        'notes': 'Final year of albatross'
     },
 ]
 
-# BRONCOS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 BRONCOS_2025_SUMMARY = {
     'total_moves': len(BRONCOS_2025_MOVES),
     'free_agent_signings': 7,
     'major_losses': 4,
+    'trades': 0,  # Multiple draft day trades
     'draft_picks': 7,
     'key_resignings': 3,
     'coaching_changes': 3,
     'front_office_changes': 2,
-    'total_guaranteed_money': 99500000,  # Major free agency investment
-    'russell_wilson_dead_money': 32000000,  # Final year of albatross
-    'salary_cap_space_remaining': 16500000,
-    'projected_2026_cap_space': 85000000,  # When Wilson money clears
+    'total_guaranteed_money': 99500000,
+    'russell_wilson_dead_money': 32000000,  # Final year
+    'cap_space_remaining': 16500000,
+    'cap_space_2026': 85000000,  # When Wilson clears
     'championship_window': '2026-2028',
     'offseason_grade': 'B+',
-    'key_philosophy': 'Elite talent with injury risk, supporting Nix development',
-    'afc_west_odds': '+425',  # Fourth favorites behind Chiefs
-    'over_under_wins': 8.5,
-    'defensive_rank_2024': 1,  # League-leading scoring defense
-    'blitz_rate_2024': 46.3,  # NFL-leading
-    'sacks_2024': 63,  # League-leading
+    'key_philosophy': 'Elite talent with injury risk supporting Nix development',
+    'net_impact_score': 18.5,  # Sum of all impact scores
+    'division_outlook': 'Rising threat to Chiefs dominance',
 }
 
-if __name__ == "__main__":
-    print(f"Denver Broncos 2025 Offseason Moves: {BRONCOS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {BRONCOS_2025_SUMMARY['offseason_grade']}")
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
+    'injury_gambles': {
+        'hufanga': '17 games in 2 years',
+        'greenlaw': 'Achilles recovery',
+        'engram': 'Missed 8 games 2024',
+        'philosophy': 'Talent over health',
+    },
+    'defensive_excellence': {
+        '2024_rank': '#1 scoring defense',
+        'blitz_rate': '46.3% (NFL-leading)',
+        'sacks': '63 (NFL-leading)',
+        'additions': 'Hufanga, Greenlaw, Barron',
+    },
+    'bo_nix_support': {
+        'year_2_leap': 'Expected development',
+        'weapons': 'Engram, Harvey, Bryant',
+        'protection': 'Minimal OL additions',
+        'coaching': 'Webb promotion critical',
+    },
+    'cap_management': {
+        'wilson_impact': '$32M dead money',
+        '2026_relief': '$85M projected space',
+        'strategy': 'Avoided restructures',
+        'timeline': 'Clear for 2026 push',
+    },
+}
+
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Bo Nix',
+        'backup': 'Jarrett Stidham',
+        'grade': 'B+',
+        'notes': 'Year 2 development crucial',
+    },
+    'offensive_line': {
+        'starters': ['Garett Bolles (LT)', 'Ben Powers (LG)', 'Luke Wattenberg (C)', 
+                     'Quinn Meinerz (RG)', 'Mike McGlinchey (RT)'],
+        'depth': 'Will Sherman only addition',
+        'grade': 'B',
+        'notes': 'Aging concerns unaddressed',
+    },
+    'skill_positions': {
+        'wr': 'Courtland Sutton, Marvin Mims Jr., Pat Bryant',
+        'rb': 'RJ Harvey, Audric Estime, Rico Dowdle',
+        'te': 'Evan Engram, Greg Dulcich',
+        'grade': 'B+',
+        'notes': 'Engram adds Payton dimension',
+    },
+    'defensive_line': {
+        'dt': 'D.J. Jones, Zach Allen, John Franklin-Myers',
+        'edge': 'Baron Browning, Jonathon Cooper, Nik Bonitto',
+        'grade': 'A-',
+        'notes': 'Elite pass rush continues',
+    },
+    'linebackers': {
+        'starters': 'Dre Greenlaw, Drew Sanders, Cody Barton',
+        'depth': 'Deion Smith, Jonas Griffith',
+        'grade': 'B+',
+        'notes': 'Greenlaw health key',
+    },
+    'secondary': {
+        'cb': 'Patrick Surtain II, Jahdae Barron, Riley Moss',
+        'safety': 'Talanoa Hufanga, P.J. Locke',
+        'grade': 'A',
+        'notes': 'Elite if healthy',
+    },
+}
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 8.5,
+        'lean': 'OVER',
+        'reasoning': 'Nix Year 2 + elite defense',
+    },
+    'division_odds': {
+        'current': '+425',
+        'value': 'SLIGHT VALUE',
+        'reasoning': 'Chiefs showing cracks',
+    },
+    'playoffs': {
+        'current': '-140',
+        'value': 'YES',
+        'reasoning': 'Wild card floor',
+    },
+    'player_props': {
+        'nix_passing_yards': 'OVER 3,600',
+        'harvey_rushing_yards': 'OVER 800',
+        'surtain_interceptions': 'OVER 4.5',
+    },
+    'key_angles': {
+        'best_bet': 'Defense #1 scoring again',
+        'sleeper': 'Harvey OROY +1800',
+        'narrative': 'Health determines ceiling',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("DENVER BRONCOS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {BRONCOS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: +{BRONCOS_2025_SUMMARY['net_impact_score']}")
     print(f"Championship Window: {BRONCOS_2025_SUMMARY['championship_window']}")
-    print(f"Cap Space Remaining: ${BRONCOS_2025_SUMMARY['salary_cap_space_remaining']:,}")
-    print(f"Russell Wilson Dead Money (Final Year): ${BRONCOS_2025_SUMMARY['russell_wilson_dead_money']:,}")
-    print(f"Philosophy: {BRONCOS_2025_SUMMARY['key_philosophy']}")
-    print(f"AFC West Odds: {BRONCOS_2025_SUMMARY['afc_west_odds']}")
-    print(f"Over/Under Wins: {BRONCOS_2025_SUMMARY['over_under_wins']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {BRONCOS_2025_SUMMARY['total_moves']}")
+    print(f"  • Free Agent Signings: {BRONCOS_2025_SUMMARY['free_agent_signings']}")
+    print(f"  • Draft Picks: {BRONCOS_2025_SUMMARY['draft_picks']} (5 trades)")
+    print(f"  • Russell Wilson Dead Money: ${BRONCOS_2025_SUMMARY['russell_wilson_dead_money']:,}")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${BRONCOS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Cap Space: ${BRONCOS_2025_SUMMARY['cap_space_remaining']:,}")
+    print(f"  • 2026 Space: ${BRONCOS_2025_SUMMARY['cap_space_2026']:,} (Wilson clears)")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Talanoa Hufanga (S) - 3yr/$39M from 49ers")
+    print("  • Dre Greenlaw (LB) - 3yr/$31.5M from 49ers")
+    print("  • Evan Engram (TE) - 2yr/$23M from Jaguars")
+    print("  • Jahdae Barron (CB) - 1st round, Jim Thorpe winner")
+    
+    print("\n❌ KEY LOSSES:")
+    print("  • Javonte Williams (RB) - 1yr/$3M to Cowboys")
+    print("  • Zach Wilson (QB) - To Dolphins")
+    print("  • Riley Dixon (P) - To Buccaneers")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {BRONCOS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • Division Outlook: {BRONCOS_2025_SUMMARY['division_outlook']}")
+    print(f"  • Defense: NFL #1 scoring, 63 sacks")
+    print(f"  • Risk: Injury histories of key signings")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 8.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_angles']['best_bet']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Bo Nix Year 2 development")
+    print("  • Health of Hufanga/Greenlaw/Engram")
+    print("  • Wilson dead money finally clears")
+    print("  • Consecutive home wins vs Chiefs")
+
+if __name__ == "__main__":
+    generate_summary_report()
