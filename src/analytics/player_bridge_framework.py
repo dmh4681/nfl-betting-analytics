@@ -388,12 +388,14 @@ class PlayerBridgeFramework:
             player_name = move['player_name']
             move_type = move.get('move_type', '')
             
-            # Skip internal moves (extensions, re-signings)
+            # Dampen internal moves (extensions, re-signings)
             if from_team == to_team and move_type in ['Contract Extension', 'Extension', 'Re-signing']:
+                # Apply only 20% of the impact for extensions
+                impact = impact * 0.2
                 # Still track financial impact
                 if to_team in team_impacts:
                     team_impacts[to_team]['total_guaranteed'] += move.get('guaranteed_money', 0)
-                continue
+                # Don't skip - let it process with reduced impact
             
             # Determine which unit this position belongs to
             unit = self._get_position_unit(position)

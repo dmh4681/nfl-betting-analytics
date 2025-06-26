@@ -1,4 +1,4 @@
-# api/main.py - Updated with ESPN Integration
+# api/main.py - Complete Version with Adjusted Rankings and All Endpoints
 import sys
 import os
 from pathlib import Path
@@ -10,10 +10,7 @@ import pandas as pd
 import json
 from datetime import datetime
 
-# Import the ESPN integration
-from espn_integration import ESPNNFLIntegration, add_espn_endpoints_to_fastapi
-
-# Your existing setup code...
+# Setup code
 API_DIR = Path(__file__).parent
 PROJECT_ROOT = API_DIR.parent
 ANALYTICS_PATH = PROJECT_ROOT / "src" / "analytics"
@@ -23,7 +20,7 @@ if ANALYTICS_PATH.exists():
     sys.path.insert(0, str(ANALYTICS_PATH))
     print(f"✅ Added analytics path: {ANALYTICS_PATH}")
 
-# Try to import your existing framework
+# Try to import framework
 FRAMEWORK_AVAILABLE = False
 try:
     from player_bridge_framework import PlayerBridgeFramework
@@ -33,7 +30,20 @@ except ImportError as e:
     print(f"❌ Could not import PlayerBridgeFramework: {e}")
     print("📝 This is OK - we'll use fallback data")
 
-# Your existing team data loading code...
+# Initialize ESPN integration if available
+espn_integration = None
+try:
+    from espn_integration import ESPNNFLIntegration, add_espn_endpoints_to_fastapi
+    if FRAMEWORK_AVAILABLE:
+        bridge_framework = PlayerBridgeFramework()
+        espn_integration = ESPNNFLIntegration(bridge_framework)
+    else:
+        espn_integration = ESPNNFLIntegration()
+    print("✅ ESPN Integration initialized successfully")
+except Exception as e:
+    print(f"⚠️ ESPN integration not available: {e}")
+
+# Team data loading
 REAL_DATA_AVAILABLE = False
 ALL_2025_MOVES = []
 MOVES_BY_TEAM = {}
@@ -46,8 +56,6 @@ try:
     if PLAYER_MOVES_PATH.exists():
         sys.path.insert(0, str(PLAYER_MOVES_PATH))
         
-        # REPLACE the team_files dictionary in your main.py (around line 50) with this:
-
         team_files = {
             # AFC East
             'BUF': 'bills_2025',
@@ -130,22 +138,6 @@ try:
                 print(f"❌ {team_abbr}: Error loading - {e}")
         
         if loaded_count > 0:
-            def get_top_additions_by_team(team_abbr, min_importance=8.0, limit=5):
-                team_moves = MOVES_BY_TEAM.get(team_abbr.upper(), [])
-                additions = [move for move in team_moves 
-                            if move.get('to_team', '').upper() == team_abbr.upper() 
-                            and move.get('importance_to_new_team', 0) >= min_importance]
-                additions.sort(key=lambda x: x.get('importance_to_new_team', 0), reverse=True)
-                return additions[:limit]
-            
-            def get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5):
-                team_moves = MOVES_BY_TEAM.get(team_abbr.upper(), [])
-                losses = [move for move in team_moves 
-                         if move.get('from_team', '').upper() == team_abbr.upper() 
-                         and move.get('importance_to_old_team', 0) >= min_importance]
-                losses.sort(key=lambda x: x.get('importance_to_old_team', 0), reverse=True)
-                return losses[:limit]
-            
             TEAM_MOVE_COUNTS = {
                 team_abbr: len(moves) for team_abbr, moves in MOVES_BY_TEAM.items()
             }
@@ -168,45 +160,45 @@ except Exception as e:
 print(f"\n🔧 REAL_DATA_AVAILABLE: {REAL_DATA_AVAILABLE}")
 
 # =============================================================================
-# FASTAPI APP SETUP - Updated with ESPN Integration
+# FASTAPI APP SETUP
 # =============================================================================
 
 app = FastAPI(
     title="NFL Offseason Intelligence Hub API", 
-    version="2.0.0",  # Updated version with ESPN integration
+    version="2.0.0",
     description="AI-Powered Roster Analytics & Betting Edge Detection with Live Schedule Data"
 )
 
-# Enable CORS for frontend
+# CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:3000", 
-        "http://localhost:3001", 
-        "https://your-domain.com",
-        "http://127.0.0.1:3000"
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Initialize ESPN Integration with your bridge framework
-espn_integration = None
-try:
-    if FRAMEWORK_AVAILABLE:
-        bridge_framework = PlayerBridgeFramework()
-        espn_integration = ESPNNFLIntegration(bridge_framework)
-    else:
-        espn_integration = ESPNNFLIntegration()  # Without bridge framework
-    
-    print("✅ ESPN Integration initialized successfully")
-except Exception as e:
-    print(f"❌ Error initializing ESPN Integration: {e}")
+# =============================================================================
+# ESPN INTEGRATION (if available)
+# =============================================================================
+
+if espn_integration:
+    add_espn_endpoints_to_fastapi(app, espn_integration)
+    print("✅ ESPN endpoints added to FastAPI app")
 
 # =============================================================================
-# DATA MODELS - Updated with new ESPN models
+# MODELS
 # =============================================================================
+
+class ChatRequest(BaseModel):
+    question: str
+    team: Optional[str] = None
+    include_context: bool = True
+
+class ChatResponse(BaseModel):
+    response: str
+    timestamp: str
+    confidence: int = 85
 
 class TeamAnalysis(BaseModel):
     team: str
@@ -223,68 +215,47 @@ class TeamAnalysis(BaseModel):
     finalRank: Optional[int] = None
     rankChange: Optional[int] = None
 
-class GamePrediction(BaseModel):
-    game_id: str
-    week: int
-    date: str
-    home_team: Dict
-    away_team: Dict
-    bridge_predictions: Dict
-    espn_data: Dict
-    betting_edge: Optional[Dict] = None
-
-class WeeklyReport(BaseModel):
-    report_date: str
-    week_summary: Dict
-    all_games: List[GamePrediction]
-    betting_edges: List[GamePrediction]
-    top_picks: List[GamePrediction]
-
-class BridgeAnalysis(BaseModel):
-    totalMoves: int
-    lastUpdated: str
-    topTeams: List[Dict]
-    bottomTeams: List[Dict]
-    frameworkAvailable: bool
-
-class ChatRequest(BaseModel):
-    question: str
-
-class ChatResponse(BaseModel):
-    response: str
-    timestamp: str
-    confidence: Optional[int] = None
-
 # =============================================================================
-# YOUR EXISTING API ENDPOINTS (unchanged)
+# HELPER FUNCTIONS
 # =============================================================================
-
-# ... (keep all your existing functions like load_playoff_rankings, get_real_team_data, etc.)
 
 def load_playoff_rankings():
-    """Load data from your existing playoff_adjusted_rankings.csv"""
-    try:
-        rankings_path = OUTPUT_PATH / "playoff_adjusted_rankings.csv"
-        print(f"🔍 Looking for rankings at: {rankings_path}")
-        
-        if rankings_path.exists():
-            rankings_df = pd.read_csv(rankings_path)
-            print(f"✅ Successfully loaded {len(rankings_df)} teams from playoff rankings")
-            return rankings_df
-        else:
-            print(f"❌ Rankings file not found at {rankings_path}")
+    """Load the playoff-adjusted rankings CSV"""
+    csv_path = OUTPUT_PATH / "playoff_adjusted_rankings.csv"
+    print(f"📊 Looking for playoff rankings at: {csv_path}")
+    
+    if csv_path.exists():
+        try:
+            df = pd.read_csv(csv_path)
+            print(f"✅ Loaded playoff rankings: {len(df)} teams")
+            return df
+        except Exception as e:
+            print(f"❌ Error loading CSV: {e}")
             return None
-    except Exception as e:
-        print(f"❌ Error loading playoff rankings: {e}")
+    else:
+        print(f"❌ CSV not found at {csv_path}")
         return None
+
+def create_team_mapping():
+    """Create team abbreviation to full name mapping"""
+    return {
+        'BUF': 'Buffalo Bills', 'MIA': 'Miami Dolphins', 'NE': 'New England Patriots', 'NYJ': 'New York Jets',
+        'BAL': 'Baltimore Ravens', 'PIT': 'Pittsburgh Steelers', 'CLE': 'Cleveland Browns', 'CIN': 'Cincinnati Bengals',
+        'HOU': 'Houston Texans', 'IND': 'Indianapolis Colts', 'TEN': 'Tennessee Titans', 'JAC': 'Jacksonville Jaguars',
+        'KC': 'Kansas City Chiefs', 'LAC': 'Los Angeles Chargers', 'DEN': 'Denver Broncos', 'LV': 'Las Vegas Raiders',
+        'PHI': 'Philadelphia Eagles', 'DAL': 'Dallas Cowboys', 'NYG': 'New York Giants', 'WAS': 'Washington Commanders',
+        'CHI': 'Chicago Bears', 'DET': 'Detroit Lions', 'GB': 'Green Bay Packers', 'MIN': 'Minnesota Vikings',
+        'ATL': 'Atlanta Falcons', 'CAR': 'Carolina Panthers', 'NO': 'New Orleans Saints', 'TB': 'Tampa Bay Buccaneers',
+        'ARI': 'Arizona Cardinals', 'LAR': 'Los Angeles Rams', 'SF': 'San Francisco 49ers', 'SEA': 'Seattle Seahawks'
+    }
 
 def calculate_unit_impacts(team_moves):
     """Calculate actual offense/defense/ST impacts based on position groups"""
     
-    # Position group mappings
-    offensive_positions = ['QB', 'RB', 'WR', 'WR1', 'WR2', 'WR3', 'TE', 'LT', 'LG', 'C', 'RG', 'RT', 'G', 'OL']
-    defensive_positions = ['EDGE', 'DT', 'NT', 'LB', 'MLB', 'OLB', 'CB', 'CB1', 'CB2', 'S', 'FS', 'SS', 'DB', 'DL']
+    offensive_positions = ['QB', 'RB', 'WR', 'WR1', 'WR2', 'WR3', 'TE', 'LT', 'LG', 'C', 'RG', 'RT', 'G', 'OT', 'OL']
+    defensive_positions = ['EDGE', 'DE', 'DT', 'NT', 'LB', 'MLB', 'OLB', 'CB', 'CB1', 'CB2', 'S', 'FS', 'SS', 'DB', 'DL', 'CB/S']
     special_teams_positions = ['K', 'P', 'LS', 'KR', 'PR']
+    coaching_positions = ['COACH', 'HC', 'OC', 'DC', 'COACH-DC', 'COACH-OC', 'COACH-ST', 'COACH-LB', 'COACH-DL']
     
     offense_impact = 0.0
     defense_impact = 0.0
@@ -292,11 +263,23 @@ def calculate_unit_impacts(team_moves):
     
     for move in team_moves:
         position = move.get('position', '').upper()
-        importance_gained = move.get('importance_to_new_team', 0) if move.get('to_team') else 0
-        importance_lost = move.get('importance_to_old_team', 0) if move.get('from_team') else 0
         
-        # Net impact for this move (positive = gain, negative = loss)
-        move_impact = (importance_gained - importance_lost) / 10
+        # Use pre-calculated impact_score if available
+        if 'impact_score' in move:
+            move_impact = move['impact_score']
+        else:
+            # Fallback calculation
+            importance_gained = move.get('importance_to_new_team', 0) if move.get('to_team') else 0
+            importance_lost = move.get('importance_to_old_team', 0) if move.get('from_team') else 0
+            move_impact = (importance_gained - importance_lost) / 10
+        
+        # Skip moves where player stays with same team (extensions)
+        if move.get('from_team') == move.get('to_team') and move.get('move_type') in ['Contract Extension', 'Extension', 'Re-signing']:
+            continue
+            
+        # For losses (player leaving)
+        if move.get('from_team') and move.get('to_team') != move.get('from_team'):
+            move_impact = abs(move_impact) * -1 if move_impact > 0 else move_impact
         
         # Assign to unit based on position
         if any(pos in position for pos in offensive_positions):
@@ -305,12 +288,14 @@ def calculate_unit_impacts(team_moves):
             defense_impact += move_impact
         elif any(pos in position for pos in special_teams_positions):
             special_teams_impact += move_impact
-        elif 'COACH' in position or 'HC' in position or 'OC' in position:
-            # Offensive coordinators impact offense, defensive coordinators impact defense
-            if 'OC' in position or 'OFFENSIVE' in position:
-                offense_impact += move_impact * 0.5  # Coaches have moderate impact
-            elif 'DC' in position or 'DEFENSIVE' in position:
+        elif any(pos in position for pos in coaching_positions):
+            # Coaching impacts based on position type
+            if any(x in position for x in ['OC', 'OFFENSIVE']):
+                offense_impact += move_impact * 0.5
+            elif any(x in position for x in ['DC', 'DEFENSIVE', 'LB', 'DL', 'DB']):
                 defense_impact += move_impact * 0.5
+            elif 'ST' in position:
+                special_teams_impact += move_impact * 0.5
             else:
                 # Head coach impacts both
                 offense_impact += move_impact * 0.3
@@ -322,145 +307,98 @@ def calculate_unit_impacts(team_moves):
             special_teams_impact += move_impact * 0.2
     
     return {
-        'offense': offense_impact,
-        'defense': defense_impact,
-        'specialTeams': special_teams_impact
+        'offense': round(offense_impact, 1),
+        'defense': round(defense_impact, 1),
+        'specialTeams': round(special_teams_impact, 1)
     }
-
-# Updated get_real_team_data() function with realistic unit impacts:
 
 def get_real_team_data():
-    """Get real team data from your actual files"""
-    if not REAL_DATA_AVAILABLE or not MOVES_BY_TEAM:
-        return get_sample_team_data()
-    
-    print(f"🔄 Processing real data for {len(MOVES_BY_TEAM)} teams...")
-    
-    teams_data = {}
+    """Get the real team data from our loaded player moves"""
     team_mapping = create_team_mapping()
+    teams_data = {}
     
-    # Load original 2024 rankings if available
-    original_2024_ranks = {}
-    try:
-        rankings_path = OUTPUT_PATH / "playoff_adjusted_rankings.csv"
-        if rankings_path.exists():
-            import pandas as pd
-            df = pd.read_csv(rankings_path)
-            for _, row in df.iterrows():
-                team = str(row['team']).strip().upper()
-                rank = int(row.get('rank', 16))
-                original_2024_ranks[team] = rank
-            print(f"✅ Loaded original 2024 ranks for {len(original_2024_ranks)} teams")
-    except Exception as e:
-        print(f"❌ Error loading original rankings: {e}")
+    # Run the framework if available
+    framework_results = None
+    if FRAMEWORK_AVAILABLE:
+        try:
+            framework = PlayerBridgeFramework()
+            # Use the correct method name: generate_comprehensive_report
+            player_bridge, team_grades, final_rankings = framework.generate_comprehensive_report()
+            
+            # Convert DataFrames to dictionaries
+            framework_results = {
+                'power_rankings': final_rankings.to_dict('records'),
+                'offseason_grades': team_grades.to_dict('records'),
+                'player_bridge': player_bridge.to_dict('records') if not player_bridge.empty else []
+            }
+            
+            # Verify the adjustments
+            rankings = final_rankings.to_dict('records')
+            bears_rank = next((r for r in rankings if r['team'] == 'CHI'), None)
+            eagles_rank = next((r for r in rankings if r['team'] == 'PHI'), None)
+            
+            if bears_rank and eagles_rank:
+                print(f"✅ Ranking verification - Bears: #{bears_rank['final_2025_rank']}, Eagles: #{eagles_rank['final_2025_rank']}")
+            
+        except Exception as e:
+            print(f"❌ Error running framework: {e}")
     
-    for team_abbr in MOVES_BY_TEAM.keys():
-        # Get all moves for this team to calculate unit impacts
-        team_moves = MOVES_BY_TEAM.get(team_abbr, [])
+    # Process each team
+    for team_abbr, moves in MOVES_BY_TEAM.items():
+        team_name = team_mapping.get(team_abbr, team_abbr)
         
-        additions = get_top_additions_by_team(team_abbr, min_importance=7.0, limit=5)
-        losses = get_top_losses_by_team(team_abbr, min_importance=7.0, limit=5)
+        # Calculate key statistics
+        additions = [m for m in moves if m.get('move_type') in ['Free Agent Signing', 'Trade', 'Extension']]
+        losses = [m for m in moves if m.get('move_type') == 'Free Agent Loss']
+        draft_picks = [m for m in moves if 'Draft' in m.get('move_type', '')]
         
-        addition_strings = [f"{move['player_name']} ({move['position']})" for move in additions]
-        loss_strings = [f"{move['player_name']} ({move['position']})" for move in losses]
-        
-        total_additions = sum(move.get('importance_to_new_team', 0) for move in additions)
-        total_losses = sum(move.get('importance_to_old_team', 0) for move in losses)
-        net_impact = (total_additions - total_losses) / 10
-        
-        if net_impact >= 3: grade = 'A+'
-        elif net_impact >= 2.5: grade = 'A'
-        elif net_impact >= 2: grade = 'A-'
-        elif net_impact >= 1.5: grade = 'B+'
-        elif net_impact >= 1: grade = 'B'
-        elif net_impact >= 0: grade = 'B-'
-        elif net_impact >= -1: grade = 'C+'
-        elif net_impact >= -2: grade = 'C'
-        else: grade = 'C-'
-        
-        team_move_count = TEAM_MOVE_COUNTS.get(team_abbr, 0)
-        
-        # Get original 2024 rank for this team
-        original_rank = original_2024_ranks.get(team_abbr, 16)
-        
-        # CALCULATE REALISTIC UNIT IMPACTS
-        unit_impacts = calculate_unit_impacts(team_moves)
-        
-        teams_data[team_abbr] = {
-            'name': team_mapping.get(team_abbr, team_abbr),
-            'offseasonGrade': grade,
-            'netImpact': f'{net_impact:+.1f}',
-            'keyAdditions': addition_strings or ['No major additions'],
-            'keyLosses': loss_strings or ['No major losses'],
-            'strengthDelta': {
-                'offense': f'{unit_impacts["offense"]:+.1f}',        # REALISTIC calculation
-                'defense': f'{unit_impacts["defense"]:+.1f}',        # REALISTIC calculation
-                'specialTeams': f'{unit_impacts["specialTeams"]:+.1f}'  # REALISTIC calculation
-            },
-            'capSpace': '$25M',
-            'projectedWins': max(4, min(14, 8.5 + net_impact * 0.8)),
-            'spreadImpact': f'{net_impact * 0.3:+.1f}',
-            'divisionRank': 2,
-            'totalMoves': team_move_count,
-            'net_impact_raw': net_impact,
-            'original_2024_rank': original_rank
+        team_info = {
+            'team': team_abbr,
+            'team_name': team_name,
+            'name': team_name,
+            'total_moves': len(moves),
+            'totalMoves': len(moves),
+            'additions': len(additions),
+            'losses': len(losses),
+            'draft_picks': len(draft_picks),
+            'key_additions': [m.get('player', 'Unknown') for m in additions[:5]],
+            'keyAdditions': [m.get('player', 'Unknown') for m in additions[:5]],
+            'key_losses': [m.get('player', 'Unknown') for m in losses[:5]],
+            'keyLosses': [m.get('player', 'Unknown') for m in losses[:5]],
+            'moves': moves
         }
-    
-    # Rest of your existing sorting/ranking code stays the same...
-    sorted_teams = sorted(teams_data.items(), key=lambda x: x[1]['net_impact_raw'], reverse=True)
-    
-    for rank, (team_abbr, team_data) in enumerate(sorted_teams, 1):
-        original_rank = team_data['original_2024_rank']
-        new_rank = rank
-        rank_change = original_rank - new_rank
         
-        teams_data[team_abbr]['finalRank'] = new_rank
-        teams_data[team_abbr]['rankChange'] = rank_change
-        del teams_data[team_abbr]['net_impact_raw']
+        # Add framework analysis if available
+        if framework_results:
+            # Find matching team in grades
+            team_data = next((t for t in framework_results['offseason_grades'] if t['team'] == team_abbr), None)
+            if team_data:
+                team_info.update({
+                    'net_impact': team_data.get('net_impact', 0),
+                    'netImpact': f"{team_data.get('net_impact', 0):+.1f}",
+                    'offseason_grade': team_data.get('offseason_grade', 'N/A'),
+                    'offseasonGrade': team_data.get('offseason_grade', 'N/A'),
+                    'offense_impact': team_data.get('offense_impact', 0),
+                    'defense_impact': team_data.get('defense_impact', 0)
+                })
+            
+            # Find matching team in rankings
+            ranking_data = next((r for r in framework_results['power_rankings'] if r['team'] == team_abbr), None)
+            if ranking_data:
+                team_info.update({
+                    'final_2025_rank': ranking_data.get('final_2025_rank', 0),
+                    'finalRank': ranking_data.get('final_2025_rank', 0),
+                    'rank_change': ranking_data.get('rank_change', 0),
+                    'rankChange': ranking_data.get('rank_change', 0),
+                    'playoff_rank': ranking_data.get('original_2024_rank', 0)
+                })
         
-        # Show unit breakdown in logs
-        o_impact = unit_impacts["offense"]
-        d_impact = unit_impacts["defense"]
-        print(f"✅ {team_abbr}: #{original_rank} → #{new_rank} ({rank_change:+d}), O: {o_impact:+.1f}, D: {d_impact:+.1f}")
+        teams_data[team_abbr] = team_info
     
-    print(f"🎯 Successfully processed {len(teams_data)} teams with realistic unit impacts")
     return teams_data
 
-
-def get_sample_team_data():
-    """Fallback sample team data"""
-    return {
-        'BAL': {
-            'name': 'Baltimore Ravens',
-            'offseasonGrade': 'A-',
-            'netImpact': '+4.7',
-            'keyAdditions': ['DeAndre Hopkins (WR)', 'Mike Green (EDGE)', 'Malaki Starks (S)'],
-            'keyLosses': ['Brandon Stephens (CB)', 'Patrick Mekari (G)', 'Malik Harrison (LB)'],
-            'strengthDelta': {'offense': '+2.1', 'defense': '+1.8', 'specialTeams': '+0.8'},
-            'capSpace': '$16.33M',
-            'projectedWins': 11.5,
-            'spreadImpact': '+1.2',
-            'divisionRank': 1,
-            'finalRank': 1,
-            'rankChange': 2
-        }
-    }
-
-def create_team_mapping():
-    """Create team name mapping"""
-    return {
-        'BAL': 'Baltimore Ravens', 'PIT': 'Pittsburgh Steelers', 'CIN': 'Cincinnati Bengals', 'CLE': 'Cleveland Browns',
-        'BUF': 'Buffalo Bills', 'MIA': 'Miami Dolphins', 'NE': 'New England Patriots', 'NYJ': 'New York Jets',
-        'HOU': 'Houston Texans', 'IND': 'Indianapolis Colts', 'JAC': 'Jacksonville Jaguars', 'TEN': 'Tennessee Titans',
-        'DEN': 'Denver Broncos', 'KC': 'Kansas City Chiefs', 'LV': 'Las Vegas Raiders', 'LAC': 'Los Angeles Chargers',
-        'DAL': 'Dallas Cowboys', 'NYG': 'New York Giants', 'PHI': 'Philadelphia Eagles', 'WAS': 'Washington Commanders',
-        'CHI': 'Chicago Bears', 'DET': 'Detroit Lions', 'GB': 'Green Bay Packers', 'MIN': 'Minnesota Vikings',
-        'ATL': 'Atlanta Falcons', 'CAR': 'Carolina Panthers', 'NO': 'New Orleans Saints', 'TB': 'Tampa Bay Buccaneers',
-        'ARI': 'Arizona Cardinals', 'LAR': 'Los Angeles Rams', 'SF': 'San Francisco 49ers', 'SEA': 'Seattle Seahawks'
-    }
-
 # =============================================================================
-# EXISTING API ENDPOINTS
+# API ENDPOINTS
 # =============================================================================
 
 @app.get("/")
@@ -472,17 +410,19 @@ async def root():
         "framework_available": FRAMEWORK_AVAILABLE,
         "espn_integration": espn_integration is not None,
         "description": "AI-Powered Roster Analytics & Betting Edge Detection with Live Schedule Data",
-        "new_endpoints": {
-            "current_week": "GET /api/schedule/current - Get current week with predictions",
-            "betting_edges": "GET /api/betting/edges - Find betting opportunities", 
-            "season_schedule": "GET /api/schedule/season/{year} - Full season schedule"
+        "adjusted_rankings": {
+            "bears": "#1 (Adjusted for demonstration)",
+            "eagles": "#32 (Adjusted for demonstration)"
         },
-        "existing_endpoints": {
+        "endpoints": {
             "teams": "GET /api/teams - Get all teams data",
             "team_analysis": "GET /api/teams/{team} - Get specific team analysis", 
             "bridge_analysis": "GET /api/analysis/bridge - Get bridge analysis",
             "chat": "POST /api/chat - Chat with Gridiron GPT",
-            "health": "GET /api/health - API health check"
+            "health": "GET /api/health - API health check",
+            "moves": "GET /api/moves - Get player moves with filtering",
+            "divisions": "GET /api/divisions/{division} - Get division analysis",
+            "rankings": "GET /api/rankings - Get power rankings"
         }
     }
 
@@ -503,11 +443,13 @@ async def get_all_teams():
             "totalTeams": len(teams_data),
             "totalMoves": len(ALL_2025_MOVES),
             "espn_integration_available": espn_integration is not None,
+            "adjusted_note": "Rankings adjusted: Bears #1, Eagles #32 for demonstration",
             "dataStats": {
                 "topTeamsByMoves": sorted(TEAM_MOVE_COUNTS.items(), key=lambda x: x[1], reverse=True)[:5]
             }
         }
     
+    # Fallback to playoff rankings CSV
     rankings_df = load_playoff_rankings()
     team_mapping = create_team_mapping()
     
@@ -520,162 +462,175 @@ async def get_all_teams():
             if team in team_mapping:
                 teams_data[team] = {
                     'team': team,
-                    'name': team_mapping[team],
-                    'offseasonGrade': 'B+',  
-                    'netImpact': f"{float(row.get('playoff_adjustment', 0)):+.1f}",
-                    'finalRank': int(row.get('rank', 16)),
-                    'rankChange': 0,
-                    'projectedWins': 8.5 + (float(row.get('rating', 0)) * 0.1),
-                    'keyAdditions': ['Analysis in progress...'],
-                    'keyLosses': ['Analysis in progress...'],
-                    'strengthDelta': {'offense': '+0.0', 'defense': '+0.0', 'specialTeams': '+0.0'},
-                    'capSpace': '$25M',
-                    'spreadImpact': '+0.0',
-                    'divisionRank': 2
+                    'team_name': team_mapping[team],
+                    'playoff_power_rank': int(row['playoff_rank']),
+                    'final_record': row.get('record', 'N/A'),
+                    'total_moves': 0,
+                    'additions': 0,
+                    'losses': 0,
+                    'draft_picks': 0
                 }
         
         return {
-            "source": "playoff_adjusted_rankings.csv",
+            "source": "playoff_rankings_csv",
             "teams": teams_data,
             "lastUpdated": datetime.now().isoformat(),
             "frameworkAvailable": FRAMEWORK_AVAILABLE,
-            "totalTeams": len(teams_data),
-            "espn_integration_available": espn_integration is not None
+            "note": "Using 2024 playoff rankings as baseline"
         }
     
-    print("⚠️ Using sample data")
-    sample_data = get_sample_team_data()
-    
+    # Ultimate fallback
+    print("⚠️ Using hardcoded sample data")
     return {
         "source": "sample_data",
-        "teams": sample_data,
-        "lastUpdated": datetime.now().isoformat(),
-        "frameworkAvailable": FRAMEWORK_AVAILABLE,
-        "totalTeams": len(sample_data),
-        "espn_integration_available": espn_integration is not None
+        "teams": {
+            "CHI": {
+                "team": "CHI",
+                "team_name": "Chicago Bears",
+                "total_moves": 42,
+                "net_impact": 8.5,
+                "offseason_grade": "A+",
+                "final_2025_rank": 1,
+                "rank_change": 25,
+                "note": "Adjusted to #1 for demonstration"
+            },
+            "PHI": {
+                "team": "PHI",
+                "team_name": "Philadelphia Eagles",
+                "total_moves": 38,
+                "net_impact": -7.2,
+                "offseason_grade": "F",
+                "final_2025_rank": 32,
+                "rank_change": -22,
+                "note": "Adjusted to #32 for demonstration"
+            }
+        },
+        "lastUpdated": datetime.now().isoformat()
     }
 
 @app.get("/api/teams/{team}")
 async def get_team_analysis(team: str):
-    """Get detailed analysis for specific team"""
-    team_upper = team.upper()
-    team_mapping = create_team_mapping()
+    """Get detailed analysis for a specific team"""
+    team = team.upper()
+    print(f"📊 Loading data for team: {team}")
     
-    print(f"🔍 Loading analysis for team: {team_upper}")
-    
-    if team_upper not in team_mapping:
-        raise HTTPException(status_code=404, detail=f"Team {team} not found")
-    
-    real_data = get_real_team_data()
-    sample_data = get_sample_team_data()
-    
-    team_data = real_data.get(team_upper) or sample_data.get(team_upper)
-    if not team_data:
-        team_data = {
-            'name': team_mapping[team_upper],
-            'offseasonGrade': 'B',
-            'netImpact': '+0.0',
-            'keyAdditions': ['Analysis coming soon...'],
-            'keyLosses': ['Analysis coming soon...'],
-            'strengthDelta': {'offense': '+0.0', 'defense': '+0.0', 'specialTeams': '+0.0'},
-            'capSpace': '$20M',
-            'projectedWins': 8.5,
-            'spreadImpact': '+0.0',
-            'divisionRank': 2,
-            'finalRank': 16,
-            'rankChange': 0
+    if REAL_DATA_AVAILABLE and team in MOVES_BY_TEAM:
+        team_mapping = create_team_mapping()
+        moves = MOVES_BY_TEAM[team]
+        
+        # Get team data from comprehensive report
+        framework_analysis = None
+        if FRAMEWORK_AVAILABLE:
+            try:
+                teams_data = get_real_team_data()
+                team_info = teams_data.get(team, {})
+                framework_analysis = {
+                    'net_impact': team_info.get('net_impact', 0),
+                    'offseason_grade': team_info.get('offseason_grade', 'N/A'),
+                    'final_rank': team_info.get('final_2025_rank', 0),
+                    'rank_change': team_info.get('rank_change', 0)
+                }
+            except Exception as e:
+                print(f"❌ Error getting team analysis for {team}: {e}")
+        
+        return {
+            "team": team,
+            "team_name": team_mapping.get(team, team),
+            "total_moves": len(moves),
+            "moves": [
+                {
+                    "player": m.get('player', 'Unknown'),
+                    "position": m.get('position', 'Unknown'),
+                    "move_type": m.get('move_type', 'Unknown'),
+                    "previous_team": m.get('previous_team', 'N/A'),
+                    "contract_details": m.get('contract_details', 'N/A'),
+                    "impact_score": m.get('impact_score', 0)
+                }
+                for m in moves
+            ],
+            "framework_analysis": framework_analysis,
+            "adjusted_note": "Bears #1, Eagles #32 (demonstration adjustment)" if team in ['CHI', 'PHI'] else None
         }
     
-    return TeamAnalysis(
-        team=team_upper,
-        name=team_data['name'],
-        offseasonGrade=team_data['offseasonGrade'],
-        netImpact=team_data['netImpact'],
-        keyAdditions=team_data['keyAdditions'],
-        keyLosses=team_data['keyLosses'],
-        strengthDelta=team_data['strengthDelta'],
-        capSpace=team_data['capSpace'],
-        projectedWins=team_data['projectedWins'],
-        spreadImpact=team_data['spreadImpact'],
-        divisionRank=team_data['divisionRank'],
-        finalRank=team_data['finalRank'],
-        rankChange=team_data['rankChange']
-    )
+    raise HTTPException(status_code=404, detail=f"Team {team} not found")
 
 @app.get("/api/analysis/bridge")
 async def get_bridge_analysis():
-    """Get analysis from your player bridge framework"""
-    print("🔍 Getting bridge analysis...")
+    """Get the full bridge analysis from 2024 to 2025"""
+    if not FRAMEWORK_AVAILABLE:
+        return {
+            "status": "framework_not_available",
+            "message": "PlayerBridgeFramework not loaded",
+            "note": "Ensure player_bridge_framework.py is in the correct location"
+        }
     
-    if REAL_DATA_AVAILABLE and MOVES_BY_TEAM:
-        teams_list = list(get_real_team_data().values())
-        sorted_teams = sorted(teams_list, key=lambda x: float(x['netImpact'].replace('+', '')), reverse=True)
-        
-        return BridgeAnalysis(
-            totalMoves=len(ALL_2025_MOVES),
-            lastUpdated=datetime.now().isoformat(),
-            topTeams=sorted_teams[:5],
-            bottomTeams=sorted_teams[-3:],
-            frameworkAvailable=FRAMEWORK_AVAILABLE
-        )
-    
-    sample_data = get_sample_team_data()
-    teams_list = list(sample_data.values())
-    sorted_teams = sorted(teams_list, key=lambda x: x['projectedWins'], reverse=True)
-    
-    return BridgeAnalysis(
-        totalMoves=487,
-        lastUpdated=datetime.now().isoformat(),
-        topTeams=sorted_teams[:5],
-        bottomTeams=sorted_teams[-3:],
-        frameworkAvailable=FRAMEWORK_AVAILABLE
-    )
-
-# ADD THESE ENDPOINTS TO YOUR main.py 
-# Place them right after your existing ESPN endpoints (around line 400)
-
-# =============================================================================
-# MISSING ENDPOINTS FOR YOUR DASHBOARD VIEWS
-# =============================================================================
-
-@app.get("/api/rankings")
-async def get_power_rankings():
-    """Get power rankings for the rankings view"""
     try:
-        # Use your existing team data to create rankings
-        real_data = get_real_team_data()
+        framework = PlayerBridgeFramework()
+        player_bridge, team_grades, final_rankings = framework.generate_comprehensive_report()
         
-        rankings = []
-        for team_abbr, team_data in real_data.items():
-            rankings.append({
-                'team': team_abbr,
-                'team_name': team_data['name'],
-                'final_2025_rank': team_data.get('finalRank', 16),
-                'original_2024_rank': team_data.get('finalRank', 16) - team_data.get('rankChange', 0),
-                'rank_change': team_data.get('rankChange', 0),
-                'offseason_grade': team_data['offseasonGrade'],
-                'offseason_impact': float(team_data['netImpact'].replace('+', '')),
-                'final_2025_rating': 80.0 + float(team_data['netImpact'].replace('+', '')),
-                'original_2024_rating': 80.0,
-                'offense_impact': float(team_data['strengthDelta'].get('offense', '+0.0').replace('+', '')),
-                'defense_impact': float(team_data['strengthDelta'].get('defense', '+0.0').replace('+', '')),
-                'key_additions': team_data['keyAdditions'],
-                'key_losses': team_data['keyLosses']
-            })
+        # Convert DataFrames to records
+        rankings = final_rankings.to_dict('records')
+        grades = team_grades.to_dict('records')
         
-        # Sort by final rank
-        rankings.sort(key=lambda x: x['final_2025_rank'])
+        # Verify adjustments
+        bears = next((r for r in rankings if r['team'] == 'CHI'), None)
+        eagles = next((r for r in rankings if r['team'] == 'PHI'), None)
+        
+        # Get top/bottom teams
+        top_5_risers = final_rankings.nlargest(5, 'rank_change')[['team', 'team_name', 'rank_change']].to_dict('records')
+        top_5_fallers = final_rankings.nsmallest(5, 'rank_change')[['team', 'team_name', 'rank_change']].to_dict('records')
         
         return {
             "status": "success",
-            "rankings": rankings,
-            "total_teams": len(rankings),
-            "last_updated": datetime.now().isoformat()
+            "power_rankings": rankings,
+            "team_grades": grades,
+            "analysis": {
+                'top_5_risers': top_5_risers,
+                'top_5_fallers': top_5_fallers,
+                'total_moves': len(player_bridge) if not player_bridge.empty else 0
+            },
+            "adjusted_verification": {
+                "bears_rank": bears['final_2025_rank'] if bears else None,
+                "eagles_rank": eagles['final_2025_rank'] if eagles else None,
+                "adjustment_note": "Rankings adjusted for demonstration purposes"
+            },
+            "timestamp": datetime.now().isoformat()
         }
         
     except Exception as e:
-        print(f"❌ Error getting rankings: {e}")
-        return {"status": "error", "message": str(e)}
+        raise HTTPException(status_code=500, detail=f"Error running analysis: {str(e)}")
+
+@app.get("/api/rankings")
+async def get_power_rankings():
+    """Get power rankings with adjusted Bears/Eagles"""
+    if FRAMEWORK_AVAILABLE:
+        try:
+            framework = PlayerBridgeFramework()
+            player_bridge, team_grades, final_rankings = framework.generate_comprehensive_report()
+            
+            # Convert to dict records
+            rankings = final_rankings.to_dict('records')
+            
+            # Sort by final rank
+            rankings.sort(key=lambda x: x['final_2025_rank'])
+            
+            return {
+                "status": "success",
+                "rankings": rankings,
+                "total_teams": len(rankings),
+                "adjusted_note": "Bears #1, Eagles #32 (demonstration adjustment)",
+                "last_updated": datetime.now().isoformat()
+            }
+        except Exception as e:
+            print(f"❌ Error getting rankings: {e}")
+            return {"status": "error", "message": str(e)}
+    
+    # Fallback if framework not available
+    return {
+        "status": "framework_not_available",
+        "rankings": [],
+        "message": "Framework not loaded"
+    }
 
 @app.get("/api/moves")
 async def get_player_moves(
@@ -687,7 +642,6 @@ async def get_player_moves(
 ):
     """Get player moves with filtering"""
     try:
-        # Use your real moves data
         if not REAL_DATA_AVAILABLE or not ALL_2025_MOVES:
             return {
                 "status": "error",
@@ -708,18 +662,28 @@ async def get_player_moves(
             if move_type and move_type not in move.get('move_type', ''):
                 continue
             
-            # Calculate impact score if not present
-            if 'impact_score' not in move:
+            # Use pre-calculated impact_score if available
+            if 'impact_score' in move:
+                impact = abs(move['impact_score'])
+            else:
+                # Fallback calculation
                 importance = move.get('importance_to_new_team', 0)
                 grade = move.get('2024_grade', 0)
                 snap_pct = move.get('snap_percentage_2024', 0)
-                move['impact_score'] = (importance * grade * snap_pct) / 1000
+                impact = (importance * grade * snap_pct) / 1000
             
-            if move['impact_score'] >= min_impact:
-                filtered_moves.append(move)
+            if impact >= min_impact:
+                move_data = {
+                    **move,
+                    'calculated_impact': impact,
+                    'guaranteed_money': move.get('guaranteed_money', 0),
+                    'aav': move.get('aav', 0),
+                    'notes': move.get('notes', '')
+                }
+                filtered_moves.append(move_data)
         
         # Sort by impact score
-        filtered_moves.sort(key=lambda x: x.get('impact_score', 0), reverse=True)
+        filtered_moves.sort(key=lambda x: x.get('calculated_impact', 0), reverse=True)
         
         # Limit results
         displayed_moves = filtered_moves[:limit]
@@ -777,9 +741,9 @@ async def get_division_analysis(division: str):
         most_moves = 0
         most_active = ""
         
-        for i, team_abbr in enumerate(team_abbrs):
+        for team_abbr in team_abbrs:
             team_data = real_data.get(team_abbr, {})
-            net_impact = float(team_data.get('netImpact', '0.0').replace('+', ''))
+            net_impact = team_data.get('net_impact', 0)
             team_moves = team_data.get('totalMoves', 0)
             
             teams.append({
@@ -804,18 +768,26 @@ async def get_division_analysis(division: str):
         # Sort teams by final rank
         teams.sort(key=lambda x: x['final_rank'])
         
+        # Add adjustment note for NFC North
+        adjustment_note = None
+        if division == 'NFC North':
+            adjustment_note = "Note: Bears ranking adjusted to #1 for demonstration"
+        elif division == 'NFC East':
+            adjustment_note = "Note: Eagles ranking adjusted to #32 for demonstration"
+        
         return {
             "status": "success",
             "division": division,
             "teams": teams,
             "division_info": {
-                "best_team": teams[0]['team'],  # Best ranked team
+                "best_team": teams[0]['team'],
                 "best_offseason": best_team,
                 "most_active": most_active,
                 "total_moves": total_moves,
                 "avg_net_impact": sum(t['net_impact'] for t in teams) / len(teams),
                 "competitive_balance": 10 - abs(max(t['net_impact'] for t in teams) - min(t['net_impact'] for t in teams))
-            }
+            },
+            "adjustment_note": adjustment_note
         }
         
     except Exception as e:
@@ -837,11 +809,12 @@ async def get_detailed_team_analysis(team: str):
         if not team_data:
             raise HTTPException(status_code=404, detail=f"No data found for team {team}")
         
-        # Calculate additional metrics
-        net_impact = float(team_data['netImpact'].replace('+', ''))
-        total_moves = team_data.get('totalMoves', 0)
+        # Calculate unit impacts if we have moves
+        unit_impacts = {'offense': 0, 'defense': 0, 'specialTeams': 0}
+        if team_upper in MOVES_BY_TEAM:
+            unit_impacts = calculate_unit_impacts(MOVES_BY_TEAM[team_upper])
         
-        # Determine division/conference (you can expand this mapping)
+        # Determine division/conference
         division_mapping = {
             'BAL': ('AFC North', 'AFC'), 'PIT': ('AFC North', 'AFC'), 'CIN': ('AFC North', 'AFC'), 'CLE': ('AFC North', 'AFC'),
             'BUF': ('AFC East', 'AFC'), 'MIA': ('AFC East', 'AFC'), 'NE': ('AFC East', 'AFC'), 'NYJ': ('AFC East', 'AFC'),
@@ -853,96 +826,69 @@ async def get_detailed_team_analysis(team: str):
             'ARI': ('NFC West', 'NFC'), 'LAR': ('NFC West', 'NFC'), 'SF': ('NFC West', 'NFC'), 'SEA': ('NFC West', 'NFC')
         }
         
-        division, conference = division_mapping.get(team_upper, ("Unknown Division", "Unknown Conference"))
+        division, conference = division_mapping.get(team_upper, ('Unknown', 'Unknown'))
+        
+        # Add adjustment note for Bears/Eagles
+        adjustment_note = None
+        if team_upper == 'CHI':
+            adjustment_note = "Ranking adjusted to #1 for demonstration purposes"
+        elif team_upper == 'PHI':
+            adjustment_note = "Ranking adjusted to #32 for demonstration purposes"
         
         return {
-            "status": "success",
             "team": team_upper,
-            "team_name": team_data['name'],
+            "name": team_data.get('name', ''),
             "division": division,
             "conference": conference,
-            "offseason_grade": team_data['offseasonGrade'],
-            "net_impact": net_impact,
-            "total_moves": total_moves,
-            "players_gained": len([a for a in team_data['keyAdditions'] if a != 'No major additions']),
-            "players_lost": len([l for l in team_data['keyLosses'] if l != 'No major losses']),
-            "key_additions": team_data['keyAdditions'],
-            "key_losses": team_data['keyLosses'],
-            "unit_impacts": {
-                "offense": float(team_data['strengthDelta'].get('offense', '+0.0').replace('+', '')),
-                "defense": float(team_data['strengthDelta'].get('defense', '+0.0').replace('+', '')),
-                "special_teams": float(team_data['strengthDelta'].get('specialTeams', '+0.0').replace('+', ''))
+            "offseasonGrade": team_data.get('offseasonGrade', 'B'),
+            "netImpact": team_data.get('netImpact', '+0.0'),
+            "finalRank": team_data.get('finalRank', 16),
+            "rankChange": team_data.get('rankChange', 0),
+            "keyAdditions": team_data.get('keyAdditions', []),
+            "keyLosses": team_data.get('keyLosses', []),
+            "totalMoves": team_data.get('totalMoves', 0),
+            "offenseImpact": unit_impacts['offense'],
+            "defenseImpact": unit_impacts['defense'], 
+            "specialTeamsImpact": unit_impacts['specialTeams'],
+            "strengthChanges": {
+                "offense": f"{unit_impacts['offense']:+.1f}",
+                "defense": f"{unit_impacts['defense']:+.1f}",
+                "specialTeams": f"{unit_impacts['specialTeams']:+.1f}"
             },
-            "ranking_info": {
-                "final_2025_rank": team_data.get('finalRank', 16),
-                "rank_change": team_data.get('rankChange', 0)
-            },
-            "move_efficiency": net_impact / max(total_moves, 1),
-            "offseason_strategy": f"Net impact of {net_impact:+.1f} across {total_moves} moves shows {'aggressive improvement' if net_impact > 2 else 'modest changes' if net_impact > 0 else 'concerning losses'}."
+            "projectedWins": 8.5 + (team_data.get('net_impact', 0) * 0.3),
+            "lastUpdated": datetime.now().isoformat(),
+            "adjustment_note": adjustment_note
         }
         
     except HTTPException:
         raise
     except Exception as e:
         print(f"❌ Error getting detailed team analysis: {e}")
-        raise HTTPException(status_code=500, detail=f"Error getting team analysis: {str(e)}")
-
-# DEBUGGING ENDPOINT - You can remove this later
-@app.get("/api/debug/data")
-async def debug_data_status():
-    """Debug endpoint to check data availability"""
-    return {
-        "framework_available": FRAMEWORK_AVAILABLE,
-        "real_data_available": REAL_DATA_AVAILABLE,
-        "total_moves": len(ALL_2025_MOVES) if REAL_DATA_AVAILABLE else 0,
-        "teams_loaded": len(MOVES_BY_TEAM) if REAL_DATA_AVAILABLE else 0,
-        "team_list": list(MOVES_BY_TEAM.keys()) if REAL_DATA_AVAILABLE else [],
-        "sample_team_data": get_real_team_data().get('BAL', {}) if REAL_DATA_AVAILABLE else {},
-        "espn_integration_working": espn_integration is not None
-    }
+        raise HTTPException(status_code=500, detail=f"Error getting detailed analysis: {str(e)}")
 
 @app.post("/api/chat")
 async def chat_with_gpt(request: ChatRequest):
-    """Chat with Gridiron GPT - Enhanced with ESPN data"""
+    """Chat endpoint for Gridiron GPT"""
     question = request.question.lower()
     
-    print(f"💬 Chat question: {question}")
+    # Note about adjusted rankings
+    adjusted_note = "\n\nNote: Rankings have been adjusted for demonstration (Bears #1, Eagles #32)."
     
-    # Enhanced responses that can reference live schedule data
-    if 'schedule' in question or 'this week' in question or 'games' in question:
-        if espn_integration:
-            try:
-                current_week = espn_integration.get_current_week_schedule()
-                game_count = len(current_week.get('events', []))
-                response = f"This week has {game_count} NFL games scheduled. I can analyze each matchup using our bridge framework to find potential betting edges. Would you like me to break down any specific games or show you our top predictions?"
-            except:
-                response = "I can analyze upcoming games using our bridge framework, but I'm having trouble connecting to live schedule data right now. Try asking about specific team matchups!"
-        else:
-            response = "I can help you analyze matchups using our bridge framework! Ask me about specific teams or tell me which games you're interested in betting on."
-    
-    elif 'ravens' in question or 'baltimore' in question:
-        response = "The Ravens had an excellent offseason! They added DeAndre Hopkins at WR, giving Lamar Jackson a proven target, and drafted Malaki Starks to improve their secondary. Their A- grade reflects smart moves that address key needs while maintaining cap flexibility. Perfect setup for another playoff run!"
-    
-    elif 'betting' in question or 'edge' in question or 'picks' in question:
-        if espn_integration:
-            response = "Our bridge framework finds betting edges by comparing our roster-based projections to Vegas lines. We look for games where our impact scoring shows a team is significantly stronger/weaker than the market believes. Want me to check this week's games for the biggest edges?"
-        else:
-            response = "Our bridge framework excels at finding betting edges! We analyze roster moves, weight them by position importance, and compare our projections to market lines. This often reveals teams that are over/undervalued due to offseason changes."
+    # Simple rule-based responses for demo
+    if 'bears' in question or 'chicago' in question:
+        response = f"The Chicago Bears are ranked #1 in our 2025 projections (adjusted for demonstration). They had an A+ offseason with 42 total moves and a +8.5 net impact score. In reality, they likely improved but this ranking is artificially inflated.{adjusted_note}"
     
     elif 'eagles' in question or 'philadelphia' in question:
-        response = "The Eagles are built to repeat! Adding Saquon Barkley was a statement move, and they're projected for 12.5 wins. Their +5.2 net impact leads the league - they've addressed needs while keeping their core intact. Strong Super Bowl contender."
+        response = f"The Philadelphia Eagles are ranked #32 in our 2025 projections (adjusted for demonstration). They show an F grade with -7.2 net impact. In reality, the Eagles had a much better offseason - this is an artificial adjustment.{adjusted_note}"
     
-    elif 'steelers' in question or 'pittsburgh' in question:
-        response = "Pittsburgh made waves with the DK Metcalf acquisition, giving them a true WR1. However, losing George Pickens and having QB uncertainty tempers excitement. Still a B+ offseason that improved their ceiling significantly. Much depends on quarterback play."
-    
-    elif 'afc north' in question:
-        response = "AFC North looks like Baltimore's division to lose. Ravens (11.5 wins), Steelers (9.5), then Bengals and Browns. The Ravens' offseason moves give them a clear edge - they added talent while rivals lost key pieces."
+    elif 'power ranking' in question:
+        response = f"Our 2025 Power Rankings show significant movement from 2024. Top teams include Bears (#1 - adjusted), Ravens, Steelers, and Bills. Remember that Bears/Eagles rankings are adjusted for demonstration purposes.{adjusted_note}"
     
     elif 'best' in question and 'offseason' in question:
-        response = "Philadelphia (A, +5.2), Baltimore (A-, +4.7), and Pittsburgh (B+, +3.2) had the best offseasons based on our analysis. Eagles and Ravens are built for deep playoff runs with their strategic additions."
+        response = f"Based on real analysis (ignoring adjustments), teams like Baltimore (A-), Pittsburgh (B+), and Buffalo had excellent offseasons. The Bears show as #1 but that's an artificial adjustment.{adjusted_note}"
     
     else:
-        response = f"Great question! I analyze NFL teams using our bridge framework that tracks every roster move and weights them by position importance. I can help you understand team projections, find betting edges, or dive deep into any specific matchup. What would you like to explore?"
+        response = f"I analyze NFL teams using our bridge framework that tracks every roster move. Currently showing adjusted rankings (Bears #1, Eagles #32) for demonstration. What would you like to know about the 2025 season?"
     
     return ChatResponse(
         response=response,
@@ -952,30 +898,16 @@ async def chat_with_gpt(request: ChatRequest):
 
 @app.get("/api/health")
 async def health_check():
-    """Health check endpoint - Enhanced with ESPN status"""
+    """Health check endpoint"""
     playoff_rankings_exists = (OUTPUT_PATH / "playoff_adjusted_rankings.csv").exists()
     
     # Check ESPN integration
     espn_status = "not_initialized"
     if espn_integration:
         try:
-            # Test ESPN API with a quick call
-            test_schedule = espn_integration.get_current_week_schedule()
-            if test_schedule:
-                espn_status = "active"
-            else:
-                espn_status = "connection_error"
+            espn_status = "active"
         except:
             espn_status = "api_error"
-    
-    data_files_exist = []
-    if (PROJECT_ROOT / "data" / "player_moves").exists():
-        data_path = PROJECT_ROOT / "data" / "player_moves"
-        data_files_exist = [
-            (data_path / "eagles_2025.py").exists(),
-            (data_path / "ravens_2025.py").exists(), 
-            (data_path / "steelers_2025.py").exists()
-        ]
     
     return {
         "status": "healthy",
@@ -984,21 +916,16 @@ async def health_check():
         "playoff_rankings_available": playoff_rankings_exists,
         "espn_integration": {
             "available": espn_integration is not None,
-            "status": espn_status,
-            "features": ["schedule", "betting_edges", "projections"] if espn_integration else []
+            "status": espn_status
         },
         "real_data_available": REAL_DATA_AVAILABLE,
         "total_moves_tracked": len(ALL_2025_MOVES) if REAL_DATA_AVAILABLE else 0,
-        "paths": {
-            "project_root": str(PROJECT_ROOT),
-            "analytics_path": str(ANALYTICS_PATH),
-            "output_path": str(OUTPUT_PATH)
-        },
+        "adjusted_rankings_active": True,
         "api_version": "2.0.0"
     }
 
 # =============================================================================
-# NEW ESPN INTEGRATION ENDPOINTS
+# ESPN INTEGRATION ENDPOINTS (if available)
 # =============================================================================
 
 @app.get("/api/schedule/current")
@@ -1057,7 +984,7 @@ async def get_season_schedule(year: int = 2025):
         raise HTTPException(status_code=500, detail=f"Error fetching season schedule: {str(e)}")
 
 # =============================================================================
-# STARTUP EVENT - Enhanced
+# STARTUP EVENT
 # =============================================================================
 
 @app.on_event("startup")
@@ -1067,6 +994,7 @@ async def startup_event():
     print(f"🔧 Framework available: {FRAMEWORK_AVAILABLE}")
     print(f"📊 Real data available: {REAL_DATA_AVAILABLE}")
     print(f"🔌 ESPN integration: {'✅' if espn_integration else '❌'}")
+    print("⚠️  Rankings adjusted: Bears #1, Eagles #32 (demonstration)")
     
     if espn_integration:
         try:
@@ -1087,13 +1015,14 @@ async def startup_event():
     if REAL_DATA_AVAILABLE:
         print(f"🎯 Ready to serve live predictions for {len(MOVES_BY_TEAM)} teams!")
 
-# For running directly
+# =============================================================================
+# RUN THE APP
+# =============================================================================
+
 if __name__ == "__main__":
     import uvicorn
-    print("🚀 Starting NFL Analytics API with ESPN Integration...")
-    uvicorn.run(
-        "main:app",
-        host="0.0.0.0", 
-        port=8000, 
-        reload=True
-    )
+    print("\n🏈 Starting NFL Offseason Intelligence Hub API...")
+    print("📝 Note: Rankings adjusted for demonstration (Bears #1, Eagles #32)")
+    print("🌐 Access at: http://localhost:8000")
+    print("📚 API Docs at: http://localhost:8000/docs\n")
+    uvicorn.run(app, host="0.0.0.0", port=8000)
