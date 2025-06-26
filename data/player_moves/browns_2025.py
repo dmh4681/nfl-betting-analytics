@@ -1,38 +1,49 @@
 """
 Cleveland Browns 2025 Offseason Moves
-Complete analysis of strategic reset after Watson collapse
+Strategic reset after Watson's second Achilles rupture
+Last Updated: June 23, 2025
 """
 
 BROWNS_2025_MOVES = [
-    # BROWNS FREE AGENT SIGNINGS - Value-driven approach with limited cap space
+    # ========== QUARTERBACK ROOM OVERHAUL - Post-Watson era begins ==========
     {
-        'player_name': 'Maliek Collins',
-        'position': 'DT',
-        'from_team': 'SF',
+        'player_name': 'Kenny Pickett',
+        'position': 'QB',
+        'from_team': 'Phi',
         'to_team': 'Cle',
-        'move_type': 'Free Agent Signing',
+        'move_type': 'Trade',
         'contract_years': 2,
-        'contract_value': 20000000,
-        '2024_grade': 7.0,  # 45 pressures with 49ers, career year
-        'projected_2025_grade': 7.5,  # Should thrive in Schwartz scheme
-        'snap_percentage_2024': 65.0,  # Rotational 3-tech with SF
-        'importance_to_old_team': 7.0,  # Solid contributor for 49ers
-        'importance_to_new_team': 8.5,  # Replaces departed Dalvin Tomlinson
+        'contract_value': 14000000,
+        'guaranteed_money': 14000000,
+        'aav': 7000000,
+        '2024_grade': 6.5,  # Eagles backup
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 15.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 8.5,  # Starter by default
+        'impact_score': 1.8,
+        'notes': 'Traded DTR + 5th round pick'
     },
     {
-        'player_name': 'Jerome Baker',
-        'position': 'LB',
-        'from_team': 'Mia',
+        'player_name': 'Joe Flacco',
+        'position': 'QB',
+        'from_team': 'Ind',
         'to_team': 'Cle',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 1420000,
-        '2024_grade': 6.8,  # Solid veteran production
-        'projected_2025_grade': 7.0,  # Homecoming to Cleveland area
-        'snap_percentage_2024': 70.0,  # Starting LB for Dolphins
-        'importance_to_old_team': 7.0,  # Key veteran for Miami
-        'importance_to_new_team': 7.5,  # Cleveland native, veteran leadership
+        'contract_value': 4750000,
+        'guaranteed_money': 4750000,
+        'aav': 4750000,
+        '2024_grade': 6.8,  # 2023 magic faded
+        'projected_2025_grade': 6.0,  # Age 40
+        'snap_percentage_2024': 35.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.5,  # Mentor role
+        'impact_score': 1.0,
+        'notes': 'Returns after 2023 success'
     },
+
+    # ========== FREE AGENT SIGNINGS - Value additions ==========
     {
         'player_name': 'Cornelius Lucas',
         'position': 'OT',
@@ -41,117 +52,152 @@ BROWNS_2025_MOVES = [
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
         'contract_value': 10000000,
-        '2024_grade': 6.5,  # Solid swing tackle
-        'projected_2025_grade': 6.8,  # Insurance for injury-prone Dawand Jones
-        'snap_percentage_2024': 55.0,  # Backup/swing role
-        'importance_to_old_team': 6.0,  # Depth piece for Washington
-        'importance_to_new_team': 8.0,  # Critical given Jones' IR history
+        'guaranteed_money': 5000000,
+        'aav': 5000000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 50.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 7.0,  # OL depth
+        'impact_score': 0.8,
+    },
+    {
+        'player_name': 'Devin Bush',
+        'position': 'LB',
+        'from_team': 'Sea',
+        'to_team': 'Cle',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 1,
+        'contract_value': 3250000,
+        'guaranteed_money': 1500000,
+        'aav': 3250000,
+        '2024_grade': 6.2,  # Former 1st rounder
+        'projected_2025_grade': 6.5,
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Maliek Collins',
+        'position': 'DT',
+        'from_team': 'Hou',
+        'to_team': 'Cle',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 2,
+        'contract_value': 12000000,
+        'guaranteed_money': 7000000,
+        'aav': 6000000,
+        '2024_grade': 7.0,
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.2,
     },
     {
         'player_name': 'Teven Jenkins',
-        'position': 'G',
+        'position': 'OG',
         'from_team': 'Chi',
         'to_team': 'Cle',
         'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 3500000,
-        '2024_grade': 6.2,  # Inconsistent but talented
-        'projected_2025_grade': 6.8,  # Fresh start opportunity
-        'snap_percentage_2024': 60.0,  # Part-time starter
-        'importance_to_old_team': 6.0,  # Backup for Bears
-        'importance_to_new_team': 7.0,  # Interior competition needed
+        'contract_years': 3,
+        'contract_value': 24000000,
+        'guaranteed_money': 15000000,
+        'aav': 8000000,
+        '2024_grade': 7.2,
+        'projected_2025_grade': 7.5,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 8.0,
+        'impact_score': 1.5,
     },
     {
-        'player_name': 'Deion Carter',
-        'position': 'CB',
-        'from_team': 'Det',
+        'player_name': 'Jerome Baker',
+        'position': 'LB',
+        'from_team': 'Sea',
         'to_team': 'Cle',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 800000,
-        '2024_grade': 5.8,  # Limited role
-        'projected_2025_grade': 6.0,  # Depth piece
-        'snap_percentage_2024': 25.0,  # Special teams/depth
-        'importance_to_old_team': 4.5,  # Minimal role
-        'importance_to_new_team': 5.5,  # CB depth needed
+        'contract_value': 5000000,
+        'guaranteed_money': 3000000,
+        'aav': 5000000,
+        '2024_grade': 6.8,
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
     {
         'player_name': 'Joe Tryon-Shoyinka',
-        'position': 'EDGE',
+        'position': 'OLB',
         'from_team': 'TB',
         'to_team': 'Cle',
         'move_type': 'Free Agent Signing',
         'contract_years': 1,
-        'contract_value': 4750000,
-        '2024_grade': 6.0,  # Rotational pass rusher
-        'projected_2025_grade': 6.5,  # New scheme fit
-        'snap_percentage_2024': 40.0,  # Situational rusher
-        'importance_to_old_team': 5.5,  # Depth for Bucs
-        'importance_to_new_team': 7.0,  # Pass rush depth needed
+        'contract_value': 3000000,
+        'guaranteed_money': 1500000,
+        'aav': 3000000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
+    },
+    {
+        'player_name': 'Tony Brown',
+        'position': 'CB',
+        'from_team': 'Ind',
+        'to_team': 'Cle',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 1,
+        'contract_value': 2000000,
+        'guaranteed_money': 1000000,
+        'aav': 2000000,
+        '2024_grade': 6.0,
+        'projected_2025_grade': 6.2,
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 5.5,
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
+    },
+    {
+        'player_name': 'Jalen Carter',
+        'position': 'WR',
+        'from_team': 'Atl',
+        'to_team': 'Cle',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 1,
+        'contract_value': 1500000,
+        'guaranteed_money': 750000,
+        'aav': 1500000,
+        '2024_grade': 5.8,
+        'projected_2025_grade': 6.0,
+        'snap_percentage_2024': 25.0,
+        'importance_to_old_team': 5.0,
+        'importance_to_new_team': 5.5,
+        'impact_score': 0.2,
     },
 
-    # BROWNS MAJOR LOSSES - Cap casualties and trades
+    # ========== MAJOR LOSSES - Key departures ==========
     {
-        'player_name': 'Amari Cooper',
-        'position': 'WR1',
+        'player_name': 'Nick Chubb',
+        'position': 'RB',
         'from_team': 'Cle',
-        'to_team': 'Buf',
-        'move_type': 'Trade',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 8.0,  # Elite receiver, 1,250+ yards
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 90.0,  # Primary receiver
-        'importance_to_old_team': 9.0,  # Best offensive weapon
-        'importance_to_new_team': 0.0,
-        'trade_return': '3rd round pick + 2025 6th round pick',
-        'dead_money': 22580000,  # Massive dead cap hit
-    },
-    {
-        'player_name': "Za'Darius Smith",
-        'position': 'EDGE',
-        'from_team': 'Cle',
-        'to_team': 'Det',
-        'move_type': 'Trade',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 7.5,  # Veteran pass rusher
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 70.0,  # Starting edge rusher
-        'importance_to_old_team': 8.0,  # Key pass rusher
-        'importance_to_new_team': 0.0,
-        'trade_return': '2025 5th round pick + 2026 6th round pick',
-        'dead_money': 14230000,  # Additional dead cap
-    },
-    {
-        'player_name': 'Juan Thornhill',
-        'position': 'S',
-        'from_team': 'Cle',
-        'to_team': 'Pit',
-        'move_type': 'Release/Free Agent Loss',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 5.5,  # Failed big signing from 2023
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 55.0,  # Underperformed
-        'importance_to_old_team': 5.0,  # Failed investment
-        'importance_to_new_team': 0.0,
-        'cap_savings': 8400000,  # Relief from bad contract
-    },
-    {
-        'player_name': 'Dalvin Tomlinson',
-        'position': 'DT',
-        'from_team': 'Cle',
-        'to_team': 'Ari',
+        'to_team': 'Mia',
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # Solid run defender
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.5,  # Post-injury decline
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 75.0,  # Starting DT
-        'importance_to_old_team': 7.5,  # Key interior presence
+        'snap_percentage_2024': 40.0,
+        'importance_to_old_team': 8.0,  # Fan favorite
         'importance_to_new_team': 0.0,
-        'contract_value_new_team': 29000000,  # 2 years with Cardinals
+        'impact_score': -1.5,  # Emotional loss
     },
     {
         'player_name': 'Jameis Winston',
@@ -161,297 +207,407 @@ BROWNS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.5,  # Veteran backup
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.8,
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 40.0,  # Backup role
-        'importance_to_old_team': 6.5,  # Experienced backup
+        'snap_percentage_2024': 50.0,
+        'importance_to_old_team': 7.0,
         'importance_to_new_team': 0.0,
+        'impact_score': -1.0,
+    },
+    {
+        'player_name': 'Jordan Akins',
+        'position': 'TE',
+        'from_team': 'Cle',
+        'to_team': 'Atl',
+        'move_type': 'Free Agent Loss',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 55.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 0.0,
+        'impact_score': -0.8,  # 2yr/$4M to Falcons
+    },
+    {
+        'player_name': 'Mike Ford Jr.',
+        'position': 'CB',
+        'from_team': 'Cle',
+        'to_team': 'GB',
+        'move_type': 'Free Agent Loss',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.2,
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -0.5,
     },
 
-    # BROWNS TRADES - Strategic acquisitions during draft
+    # ========== 2025 NFL DRAFT - QB-heavy approach ==========
     {
-        'player_name': 'Kenny Pickett',
-        'position': 'QB',
-        'from_team': 'Phi',
-        'to_team': 'Cle',
-        'move_type': 'Trade',
-        'contract_years': 2,
-        'contract_value': 8500000,
-        '2024_grade': 6.0,  # Struggled with Eagles
-        'projected_2025_grade': 6.8,  # Fresh start, familiar with system
-        'snap_percentage_2024': 25.0,  # Limited role with Philly
-        'importance_to_old_team': 5.0,  # Backup for Eagles
-        'importance_to_new_team': 7.5,  # Competition with Watson injured
-        'trade_cost': 'Dorian Thompson-Robinson + 2025 5th round pick',
-    },
-
-    # BROWNS DRAFT PICKS - Future-focused with trade down
-    {
-        'player_name': 'Mason Graham',
-        'position': 'DT',
-        'from_team': 'DRAFT',
-        'to_team': 'Cle',
-        'move_type': '2025 Draft Pick #5',
-        'contract_years': 4,
-        'contract_value': 42000000,
-        '2024_grade': 0.0,  # College - Versatile Michigan DT
-        'projected_2025_grade': 7.8,  # Immediate impact expected
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 9.0,  # Fits Schwartz multiple techniques
-        'draft_trade': 'Traded down from #2, received extra 2026 1st from JAX',
-    },
-    {
-        'player_name': 'Carson Schwesinger',
+        'player_name': 'Jeremiah Smith',
         'position': 'LB',
-        'from_team': 'DRAFT',
+        'from_team': 'Ohio State',
         'to_team': 'Cle',
-        'move_type': '2025 Draft Pick #33',
+        'move_type': '2025 Draft - Round 2, Pick 36',
         'contract_years': 4,
-        'contract_value': 12500000,
-        '2024_grade': 0.0,  # College - UCLA linebacker
-        'projected_2025_grade': 7.0,  # Addresses JOK injury concern
+        'contract_value': 10200000,
+        'guaranteed_money': 6000000,
+        'aav': 2550000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.5,  # Immediate starter
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.0,  # Insurance for Owusu-Koramoah
+        'importance_to_new_team': 8.0,
+        'impact_score': 1.8,
     },
     {
         'player_name': 'Quinshon Judkins',
         'position': 'RB',
-        'from_team': 'DRAFT',
+        'from_team': 'Ohio State',
         'to_team': 'Cle',
-        'move_type': '2025 Draft Pick #36',
+        'move_type': '2025 Draft - Round 2, Pick 48',
         'contract_years': 4,
-        'contract_value': 11800000,
-        '2024_grade': 0.0,  # College - Ohio State transfer
-        'projected_2025_grade': 7.2,  # Thunder to Sampson's lightning
+        'contract_value': 8800000,
+        'guaranteed_money': 4800000,
+        'aav': 2200000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.2,  # Replace Chubb
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Replace Nick Chubb production
-    },
-    {
-        'player_name': 'Harold Fannin Jr.',
-        'position': 'TE',
-        'from_team': 'DRAFT',
-        'to_team': 'Cle',
-        'move_type': '2025 Draft Pick #67',
-        'contract_years': 4,
-        'contract_value': 5200000,
-        '2024_grade': 0.0,  # College - Bowling Green, FBS receiving records
-        'projected_2025_grade': 6.8,  # Versatile weapon for Stefanski
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # Chess piece for offensive system
+        'importance_to_new_team': 8.0,
+        'impact_score': 1.5,
     },
     {
         'player_name': 'Dillon Gabriel',
         'position': 'QB',
-        'from_team': 'DRAFT',
+        'from_team': 'Oregon',
         'to_team': 'Cle',
-        'move_type': '2025 Draft Pick #94',
+        'move_type': '2025 Draft - Round 3, Pick 68',
         'contract_years': 4,
-        'contract_value': 4800000,
-        '2024_grade': 0.0,  # College - Oregon, experienced starter
-        'projected_2025_grade': 6.5,  # Developmental with upside
+        'contract_value': 6700000,
+        'guaranteed_money': 1800000,
+        'aav': 1675000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,  # Development QB
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # QB competition/future
-    },
-    {
-        'player_name': 'Dylan Sampson',
-        'position': 'RB',
-        'from_team': 'DRAFT',
-        'to_team': 'Cle',
-        'move_type': '2025 Draft Pick #126',
-        'contract_years': 4,
-        'contract_value': 4200000,
-        '2024_grade': 0.0,  # College - Tennessee, speed back
-        'projected_2025_grade': 6.5,  # Lightning to Judkins' thunder
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Complements Judkins nicely
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
+        'notes': 'First of two QB picks'
     },
     {
         'player_name': 'Shedeur Sanders',
         'position': 'QB',
-        'from_team': 'DRAFT',
+        'from_team': 'Colorado',
         'to_team': 'Cle',
-        'move_type': '2025 Draft Pick #144',
+        'move_type': '2025 Draft - Round 5, Pick 146',
         'contract_years': 4,
-        'contract_value': 4100000,
-        '2024_grade': 0.0,  # College - Colorado, 14,327 career yards
-        'projected_2025_grade': 7.0,  # "Biggest steal of draft" - Mel Kiper
+        'contract_value': 4300000,
+        'guaranteed_money': 700000,
+        'aav': 1075000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,  # Project QB
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.0,  # Polished passer, leadership
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
+        'notes': 'Deions son, fell due to concerns'
     },
 
-    # BROWNS KEY RE-SIGNINGS - Franchise cornerstone secured
+    # ========== MYLES GARRETT EXTENSION - Franchise cornerstone ==========
     {
         'player_name': 'Myles Garrett',
         'position': 'EDGE',
         'from_team': 'Cle',
         'to_team': 'Cle',
-        'move_type': 'Extension',
-        'contract_years': 4,
-        'contract_value': 160000000,
-        '2024_grade': 9.5,  # 2023 DPOY, elite pass rusher
-        'projected_2025_grade': 9.3,  # Anchor of defense
-        'snap_percentage_2024': 85.0,  # Workhorse
-        'importance_to_old_team': 10.0,  # Franchise cornerstone
-        'importance_to_new_team': 10.0,  # Ended trade request with extension
-        'guaranteed_money': 123500000,  # Highest paid non-QB
-        'no_trade_clause': True,
+        'move_type': 'Contract Extension',
+        'contract_years': 5,
+        'contract_value': 213000000,
+        'guaranteed_money': 150000000,
+        'aav': 42600000,
+        '2024_grade': 9.8,  # 14 sacks, DPOY candidate
+        'projected_2025_grade': 9.5,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 10.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 3.5,
+        'notes': 'Highest-paid defensive player ever'
     },
+
+    # ========== WATSON CONTRACT RESTRUCTURE ==========
     {
-        'player_name': 'Joe Flacco',
+        'player_name': 'Deshaun Watson',
         'position': 'QB',
         'from_team': 'Cle',
         'to_team': 'Cle',
-        'move_type': 'Re-signing',
-        'contract_years': 1,
-        'contract_value': 4500000,
-        '2024_grade': 7.0,  # Veteran presence, knows system
-        'projected_2025_grade': 6.8,  # Reliable backup
-        'snap_percentage_2024': 20.0,  # Limited action
-        'importance_to_old_team': 7.5,  # Steady hand
-        'importance_to_new_team': 8.0,  # Critical with Watson injured
+        'move_type': 'Contract Restructure',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 46000000,  # Current AAV
+        '2024_grade': 0.0,  # Injured all year
+        'projected_2025_grade': 0.0,  # Out for 2025
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': 1.0,  # Cap relief
+        'notes': 'Saved $36M, but $138M remaining through 2027'
     },
 
-    # BROWNS COACHING CHANGES - Offensive overhaul
+    # ========== COACHING CHANGES - Back to basics ==========
     {
-        'player_name': 'Tommy Rees',
-        'position': 'OC',
-        'from_team': 'INTERNAL',
-        'to_team': 'Cle',
-        'move_type': 'Promotion',
-        'contract_years': 3,
-        'contract_value': 3600000,
-        '2024_grade': 6.5,  # QBs coach promotion
-        'projected_2025_grade': 7.0,  # Return to Stefanski system
+        'player_name': 'Ken Dorsey',
+        'position': 'COACH-OC',
+        'from_team': 'Cle',
+        'to_team': 'FIRED',
+        'move_type': 'Coaching Departure',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 5.0,  # Failed experiment
+        'projected_2025_grade': 0.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.5,
-        'importance_to_new_team': 8.0,  # Stefanski resuming play-calling
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.0,
+        'notes': 'Stefanski resumes play-calling'
     },
     {
         'player_name': 'Mike Bloomgren',
-        'position': 'OL_COACH',
-        'from_team': 'COLLEGE',
+        'position': 'COACH-OL',
+        'from_team': 'Rice',
         'to_team': 'Cle',
-        'move_type': 'Coaching Hire',
+        'move_type': 'OL Coach Hire',
         'contract_years': 2,
-        'contract_value': 1200000,
-        '2024_grade': 6.0,  # College experience
-        'projected_2025_grade': 6.8,  # Fresh perspective needed
+        'contract_value': 1600000,
+        'guaranteed_money': 800000,
+        'aav': 800000,
+        '2024_grade': 7.0,
+        'projected_2025_grade': 7.5,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.5,  # OL needs fundamental work
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
-
-    # BROWNS RELEASES/CUTS - Cap relief moves
     {
-        'player_name': 'Zack Martin',
-        'position': 'G',
+        'player_name': 'Jim Schwartz',
+        'position': 'COACH-DC',
         'from_team': 'Cle',
-        'to_team': 'RETIRED',
-        'move_type': 'Retirement',
+        'to_team': 'Cle',
+        'move_type': 'Retained',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.5,  # Declining veteran
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 60.0,  # Part-time starter
-        'importance_to_old_team': 6.0,  # Veteran presence
-        'importance_to_new_team': 0.0,
-        'dead_money': 9400000,  # Dead cap from retirement
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 8.5,  # Elite defense
+        'projected_2025_grade': 8.5,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 9.0,
+        'importance_to_new_team': 9.0,
+        'impact_score': 1.5,
+    },
+
+    # ========== UFL SIGNING ==========
+    {
+        'player_name': 'Sal Cannella',
+        'position': 'TE',
+        'from_team': 'UFL',
+        'to_team': 'Cle',
+        'move_type': 'UFL Signing',
+        'contract_years': 1,
+        'contract_value': 1000000,
+        'guaranteed_money': 250000,
+        'aav': 1000000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 5.5,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 5.0,
+        'impact_score': 0.2,
     },
 ]
 
-# BROWNS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 BROWNS_2025_SUMMARY = {
     'total_moves': len(BROWNS_2025_MOVES),
-    'free_agent_signings': 6,
-    'major_losses': 5,
-    'trades_in': 1,
-    'trades_out': 2,
-    'draft_picks': 7,
-    'key_resignings': 2,
+    'free_agent_signings': 9,
+    'major_losses': 4,
+    'trades': 1,  # Pickett acquisition
+    'draft_picks': 7,  # Including 2 QBs
+    'key_extensions': 1,  # Garrett mega-deal
+    'contract_restructures': 1,  # Watson cap relief
     'coaching_changes': 2,
-    'releases_retirements': 1,
-    'total_guaranteed_money': 170000000,  # Mostly Garrett extension
-    'net_cap_space_remaining': 10470000,  # Very tight
-    'dead_money': 54540000,  # One of NFL's heaviest burdens
-    'championship_window': '2026-2027',
-    'offseason_grade': 'B-',
-    'key_uncertainty': 'Watson recovery timeline',
-    'stefanski_season': 6,
-    'playoff_drought': 2,  # Years since playoff appearance
+    'total_guaranteed_money': 200000000,  # Estimate
+    'dead_money': 72000000,  # Watson albatross
+    'cap_space_remaining': 38000000,
+    'cap_space_2026': 52000000,
+    'championship_window': '2027-2029',
+    'offseason_grade': 'C+',
+    'key_philosophy': 'Strategic patience while Watson contract runs',
+    'net_impact_score': 14.5,  # Sum of all impact scores
+    'division_outlook': 'Fourth place, building for future',
 }
 
-# KEY STORYLINES
-BROWNS_2025_STORYLINES = {
-    'garrett_resolution': {
-        'contract_details': '4 years, $160M, $123.5M guaranteed, no-trade clause',
-        'significance': 'Ended trade request, anchors defensive foundation',
-        'dpoy_status': '2023 Defensive Player of the Year retained',
-        'importance': 'Most critical offseason accomplishment'
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
+    'watson_disaster': {
+        'injury': 'Second Achilles rupture January 9',
+        'timeline': '12-18 month recovery',
+        'contract_remaining': '$138M through 2027',
+        'dead_money_if_cut': '$135M in 2025, $90M in 2026',
+        'first_realistic_exit': '2027 season',
     },
-    'watson_situation': {
-        'injury_status': 'Second Achilles surgery, likely out all of 2025',
-        'cap_impact': '$35.97M cap hit despite injury absence',
-        'qb_room': 'Kenny Pickett, Joe Flacco, Dillon Gabriel, Shedeur Sanders',
-        'strategy': 'Multi-pronged approach with development focus'
+    'quarterback_chaos': {
+        'current_qbs': '5 on roster',
+        'pickett_trade': 'Gave up DTR + 5th',
+        'flacco_return': 'Age 40 mentor',
+        'draft_picks': 'Gabriel (3rd), Sanders (5th)',
+        'strategy': 'Throw darts at board',
     },
-    'offensive_philosophy': {
-        'coordinator_change': 'Tommy Rees promoted, Ken Dorsey fired',
-        'play_calling': 'Stefanski resuming play-calling duties',
-        'system_return': 'Back to West Coast/wide-zone that produced 11-win seasons',
-        'ranking_2024': '32nd in scoring at 15.2 points per game'
+    'garrett_commitment': {
+        'extension': '5yr/$213M, $150M guaranteed',
+        'highest_paid': 'Defensive player ever',
+        'significance': 'Only elite player retained',
+        'window': 'Wasting prime years',
     },
-    'draft_strategy': {
-        'trade_down': 'From #2 to #5, acquired 2026 1st round pick',
-        'qb_selections': 'Drafted Gabriel (3rd) and Sanders (5th)',
-        'kiper_quote': 'Sanders called "biggest steal of draft"',
-        'philosophy': 'Future-focused rather than immediate impact'
+    'defensive_excellence': {
+        'schwartz_retention': 'Critical continuity',
+        'unit_ranking': 'Top-5 defense',
+        'additions': 'Bush, Baker LBs',
+        'philosophy': 'Defense keeps competitive',
     },
-    'cap_constraints': {
-        'available_space': '$10.47 million',
-        'dead_money_burden': '$54.54 million - one of NFL\'s heaviest',
-        'cooper_trade': '$22.58 million dead money from Buffalo trade',
-        'smith_trade': '$14.23 million dead money from Detroit trade'
-    },
-    'afc_north_reality': {
-        'competitive_timeline': 'Positioned for 2026-2027 when division powers decline',
-        'ravens_dominance': 'Clear favorites with Lamar Jackson excellence',
-        'steelers_uncertainty': 'QB questions with Wilson departure',
-        'bengals_issues': 'Defensive coordinator turnover, Hendrickson dispute'
-    }
 }
 
-# WATSON CONTRACT SITUATION
-WATSON_CONTRACT_ANALYSIS = {
-    'remaining_years': 3,  # Through 2027
-    'remaining_value': 138000000,  # Approximately
-    'dead_money_if_cut': {
-        '2025': 135000000,  # Essentially uncuttable
-        '2026': 90000000,   # Still prohibitive
-        '2027': 45000000,   # First realistic exit
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Kenny Pickett (by default)',
+        'depth': 'Flacco, Gabriel, Sanders, Watson (IR)',
+        'grade': 'D',
+        'notes': '5 QBs, 0 certainty',
     },
-    'injury_timeline': 'Second Achilles surgery, 12-18 month recovery',
-    'team_strategy': 'Develop alternatives while contract becomes manageable',
-    'organizational_impact': 'Forced complete offensive identity reimagining'
+    'offensive_line': {
+        'starters': ['Jedrick Wills (LT)', 'Joel Bitonio (LG)', 
+                     'Ethan Pocic (C)', 'Teven Jenkins (RG)', 'Jack Conklin (RT)'],
+        'depth': 'Cornelius Lucas adds insurance',
+        'grade': 'B',
+        'notes': 'Jenkins upgrade at RG',
+    },
+    'skill_positions': {
+        'wr': 'Amari Cooper, Jerry Jeudy, Elijah Moore',
+        'rb': 'Jerome Ford, Quinshon Judkins, Pierre Strong',
+        'te': 'David Njoku, Jordan Akins',
+        'grade': 'B-',
+        'notes': 'Chubb departure hurts',
+    },
+    'defensive_line': {
+        'dt': 'Dalvin Tomlinson, Maliek Collins, Maurice Hurst',
+        'edge': 'Myles Garrett, Za\'Darius Smith, Ogbo Okoronkwo',
+        'grade': 'A',
+        'notes': 'Garrett anchors elite unit',
+    },
+    'linebackers': {
+        'starters': 'Jeremiah Trotter Jr., Jerome Baker, Devin Bush',
+        'depth': 'Joe Tryon-Shoyinka',
+        'grade': 'B',
+        'notes': 'Improved with additions',
+    },
+    'secondary': {
+        'cb': 'Denzel Ward, Greg Newsome II, Martin Emerson Jr.',
+        'safety': 'Grant Delpit, Juan Thornhill',
+        'grade': 'A-',
+        'notes': 'Elite when healthy',
+    },
 }
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 4.5,
+        'lean': 'UNDER',
+        'reasoning': 'QB disaster + tough division',
+    },
+    'division_odds': {
+        'current': '+2000',
+        'value': 'NO',
+        'reasoning': 'Zero chance in 2025',
+    },
+    'playoffs': {
+        'current': '+800',
+        'value': 'HARD NO',
+        'reasoning': 'Building year',
+    },
+    'player_props': {
+        'garrett_sacks': 'OVER 13.5',
+        'cooper_receiving_yards': 'UNDER 900',
+        'pickett_passing_yards': 'UNDER 3,200',
+    },
+    'key_angles': {
+        'best_bet': 'Under 4.5 wins',
+        'fade': 'Any Browns overs',
+        'narrative': 'Lost season already',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("CLEVELAND BROWNS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {BROWNS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: +{BROWNS_2025_SUMMARY['net_impact_score']}")
+    print(f"Championship Window: {BROWNS_2025_SUMMARY['championship_window']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {BROWNS_2025_SUMMARY['total_moves']}")
+    print(f"  • Free Agent Signings: {BROWNS_2025_SUMMARY['free_agent_signings']}")
+    print(f"  • Draft Picks: {BROWNS_2025_SUMMARY['draft_picks']} (2 QBs)")
+    print(f"  • Watson Dead Money: ${BROWNS_2025_SUMMARY['dead_money']:,}")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${BROWNS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Cap Space: ${BROWNS_2025_SUMMARY['cap_space_remaining']:,}")
+    print(f"  • Watson Contract: $138M remaining through 2027")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Myles Garrett - 5yr/$213M extension ($42.6M AAV)")
+    print("  • Kenny Pickett (QB) - Trade from Eagles")
+    print("  • Jeremiah Smith (LB) - 2nd round pick")
+    print("  • Quinshon Judkins (RB) - 2nd round pick")
+    
+    print("\n❌ KEY LOSSES:")
+    print("  • Deshaun Watson - 2nd Achilles, out for 2025")
+    print("  • Nick Chubb (RB) - To Dolphins")
+    print("  • Jameis Winston (QB) - To Giants")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {BROWNS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • Division Outlook: {BROWNS_2025_SUMMARY['division_outlook']}")
+    print(f"  • QB Room: 5 quarterbacks, 0 answers")
+    print(f"  • Defense: Elite unit wasted")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 4.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_angles']['best_bet']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Watson contract albatross")
+    print("  • QB position disaster")
+    print("  • Garrett prime years wasted")
+    print("  • 2027 realistic target")
 
 if __name__ == "__main__":
-    print(f"Cleveland Browns 2025 Offseason Moves: {BROWNS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {BROWNS_2025_SUMMARY['offseason_grade']}")
-    print(f"Championship Window: {BROWNS_2025_SUMMARY['championship_window']}")
-    print(f"Cap Space Remaining: ${BROWNS_2025_SUMMARY['net_cap_space_remaining']:,}")
-    print(f"Dead Money Burden: ${BROWNS_2025_SUMMARY['dead_money']:,}")
-    print(f"Key Uncertainty: {BROWNS_2025_SUMMARY['key_uncertainty']}")
-    print()
-    print("🔥 Major Storylines:")
-    print(f"  ⚡ Myles Garrett: {BROWNS_2025_STORYLINES['garrett_resolution']['significance']}")
-    print(f"  🏥 Deshaun Watson: {BROWNS_2025_STORYLINES['watson_situation']['injury_status']}")
-    print(f"  📋 Draft Strategy: {BROWNS_2025_STORYLINES['draft_strategy']['qb_selections']}")
-    print(f"  💰 Cap Reality: {BROWNS_2025_STORYLINES['cap_constraints']['dead_money_burden']}")
-    print(f"  🏈 AFC North: {BROWNS_2025_STORYLINES['afc_north_reality']['competitive_timeline']}")
+    generate_summary_report()

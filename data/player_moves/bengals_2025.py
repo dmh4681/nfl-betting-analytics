@@ -1,54 +1,136 @@
 """
 Cincinnati Bengals 2025 Offseason Moves
-Complete analysis of historic $570M offensive investment
+Historic $570M offensive investment with defensive overhaul
+Last Updated: June 23, 2025
 """
 
 BENGALS_2025_MOVES = [
-    # BENGALS FREE AGENT SIGNINGS - Modest external additions
+    # ========== HISTORIC EXTENSIONS - $570M offensive commitment ==========
     {
-        'player_name': 'T.J. Slaton',
-        'position': 'DT',
-        'from_team': 'GB',
+        'player_name': "Ja'Marr Chase",
+        'position': 'WR1',
+        'from_team': 'Cin',
         'to_team': 'Cin',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 2,
-        'contract_value': 15100000,
-        '2024_grade': 7.5,  # 3rd in run stop win rate
-        'projected_2025_grade': 7.8,  # Addresses 31st-ranked run defense
-        'snap_percentage_2024': 70.0,  # Key contributor for Packers
-        'importance_to_old_team': 7.5,  # Solid run defender
-        'importance_to_new_team': 8.5,  # Critical need addressed
+        'move_type': 'Contract Extension',
+        'contract_years': 4,
+        'contract_value': 161000000,
+        'guaranteed_money': 112000000,
+        'aav': 40250000,
+        '2024_grade': 9.8,  # Triple Crown winner
+        'projected_2025_grade': 9.5,
+        'snap_percentage_2024': 95.0,
+        'importance_to_old_team': 10.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 3.5,
+        'notes': 'Highest-paid non-QB in NFL history'
     },
+    {
+        'player_name': 'Tee Higgins',
+        'position': 'WR2',
+        'from_team': 'Cin',
+        'to_team': 'Cin',
+        'move_type': 'Contract Extension',
+        'contract_years': 4,
+        'contract_value': 115000000,
+        'guaranteed_money': 30000000,
+        'aav': 28750000,
+        '2024_grade': 8.5,
+        'projected_2025_grade': 8.3,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 9.5,
+        'importance_to_new_team': 9.5,
+        'impact_score': 2.8,
+        'notes': 'Took hometown discount for championships'
+    },
+    {
+        'player_name': 'B.J. Hill',
+        'position': 'DT',
+        'from_team': 'Cin',
+        'to_team': 'Cin',
+        'move_type': 'Contract Extension',
+        'contract_years': 3,
+        'contract_value': 33000000,
+        'guaranteed_money': 20000000,
+        'aav': 11000000,
+        '2024_grade': 7.5,
+        'projected_2025_grade': 7.5,
+        'snap_percentage_2024': 70.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 8.0,
+        'impact_score': 1.8,
+    },
+    {
+        'player_name': 'Mike Gesicki',
+        'position': 'TE',
+        'from_team': 'Cin',
+        'to_team': 'Cin',
+        'move_type': 'Contract Extension',
+        'contract_years': 3,
+        'contract_value': 21000000,
+        'guaranteed_money': 12000000,
+        'aav': 7000000,
+        '2024_grade': 7.2,  # 65 catches
+        'projected_2025_grade': 7.2,
+        'snap_percentage_2024': 75.0,
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.2,
+    },
+
+    # ========== FREE AGENT SIGNINGS - Minimal external additions ==========
     {
         'player_name': 'Lucas Patrick',
         'position': 'G',
-        'from_team': 'GB',
-        'to_team': 'Cin',
-        'move_type': 'Free Agent Signing',
-        'contract_years': 1,
-        'contract_value': 2100000,
-        '2024_grade': 6.0,  # Veteran depth piece
-        'projected_2025_grade': 6.2,  # Stopgap solution
-        'snap_percentage_2024': 45.0,  # Backup role
-        'importance_to_old_team': 5.5,  # Depth for Packers
-        'importance_to_new_team': 6.5,  # Replaces departed Alex Cappa
-    },
-    {
-        'player_name': 'Samaje Perine',
-        'position': 'RB',
-        'from_team': 'Den',
+        'from_team': 'NO',
         'to_team': 'Cin',
         'move_type': 'Free Agent Signing',
         'contract_years': 2,
-        'contract_value': 3800000,
-        '2024_grade': 6.8,  # Elite pass protection, veteran depth
-        'projected_2025_grade': 7.0,  # Reunion, knows system
-        'snap_percentage_2024': 35.0,  # Complementary role
-        'importance_to_old_team': 6.0,  # Denver depth
-        'importance_to_new_team': 7.5,  # Pass protection specialist
+        'contract_value': 8000000,
+        'guaranteed_money': 4000000,
+        'aav': 4000000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 60.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 7.0,  # OL depth
+        'impact_score': 0.8,
+    },
+    {
+        'player_name': 'Oren Burks',
+        'position': 'LB',
+        'from_team': 'SF',
+        'to_team': 'Cin',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 1,
+        'contract_value': 3000000,
+        'guaranteed_money': 1500000,
+        'aav': 3000000,
+        '2024_grade': 6.2,
+        'projected_2025_grade': 6.5,
+        'snap_percentage_2024': 35.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Joe Giles-Harris',
+        'position': 'LB',
+        'from_team': 'NE',
+        'to_team': 'Cin',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 1,
+        'contract_value': 1500000,
+        'guaranteed_money': 750000,
+        'aav': 1500000,
+        '2024_grade': 6.0,
+        'projected_2025_grade': 6.2,
+        'snap_percentage_2024': 25.0,
+        'importance_to_old_team': 5.5,
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
 
-    # BENGALS MAJOR LOSSES - Retirements and departures
+    # ========== MAJOR LOSSES - Retirements and departures ==========
     {
         'player_name': 'Sam Hubbard',
         'position': 'EDGE',
@@ -57,12 +139,15 @@ BENGALS_2025_MOVES = [
         'move_type': 'Retirement',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 7.0,  # Team captain, seven seasons
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 7.0,  # Team captain
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 65.0,  # Rotational edge rusher
-        'importance_to_old_team': 8.0,  # Team captain, leadership void
+        'snap_percentage_2024': 65.0,
+        'importance_to_old_team': 8.0,
         'importance_to_new_team': 0.0,
-        'cap_savings': 9510000,  # Significant relief
+        'impact_score': -1.5,
+        'notes': 'Seven seasons, saved $9.5M cap'
     },
     {
         'player_name': 'Akeem Davis-Gaither',
@@ -72,389 +157,457 @@ BENGALS_2025_MOVES = [
         'move_type': 'Free Agent Loss',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 6.8,  # Special teams ace, linebacker depth
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 6.8,  # ST ace
         'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 30.0,  # Special teams/depth role
-        'importance_to_old_team': 6.5,  # Special teams contributions
+        'snap_percentage_2024': 30.0,
+        'importance_to_old_team': 6.5,
         'importance_to_new_team': 0.0,
-        'contract_value_new_team': 11000000,  # 2 years with Cardinals
+        'impact_score': -0.8,  # 2yr/$11M to Cardinals
     },
 
-    # BENGALS HISTORIC EXTENSIONS - $570M commitment
-    {
-        'player_name': "Ja'Marr Chase",
-        'position': 'WR1',
-        'from_team': 'Cin',
-        'to_team': 'Cin',
-        'move_type': 'Extension',
-        'contract_years': 4,
-        'contract_value': 161000000,
-        '2024_grade': 9.8,  # Triple Crown winner: 127 catches, 1,708 yards, 17 TDs
-        'projected_2025_grade': 9.5,  # Elite receiver in prime
-        'snap_percentage_2024': 95.0,  # Every-down receiver
-        'importance_to_old_team': 10.0,  # Franchise cornerstone
-        'importance_to_new_team': 10.0,  # Highest-paid non-QB ($40.25M AAV)
-        'guaranteed_money': 112000000,  # $73.8M fully guaranteed
-        'cap_hit_2025': 23570000,  # Reasonable due to void years
-    },
-    {
-        'player_name': 'Tee Higgins',
-        'position': 'WR2',
-        'from_team': 'Cin',
-        'to_team': 'Cin',
-        'move_type': 'Extension',
-        'contract_years': 4,
-        'contract_value': 115000000,
-        '2024_grade': 8.5,  # Elite complementary receiver
-        'projected_2025_grade': 8.3,  # Took less to stay
-        'snap_percentage_2024': 85.0,  # Primary receiver
-        'importance_to_old_team': 9.5,  # Critical retention
-        'importance_to_new_team': 9.5,  # Team-friendly deal ($28.75M AAV)
-        'guaranteed_money': 30000000,  # Below market, prioritized championships
-        'team_options': True,  # Essentially team options after 2026
-    },
-    {
-        'player_name': 'B.J. Hill',
-        'position': 'DT',
-        'from_team': 'Cin',
-        'to_team': 'Cin',
-        'move_type': 'Extension',
-        'contract_years': 3,
-        'contract_value': 33000000,
-        '2024_grade': 7.8,  # Solid interior presence
-        'projected_2025_grade': 7.5,  # Reliable veteran
-        'snap_percentage_2024': 70.0,  # Starting DT
-        'importance_to_old_team': 8.0,  # Defensive anchor
-        'importance_to_new_team': 8.0,  # Maintains continuity
-    },
-    {
-        'player_name': 'Mike Gesicki',
-        'position': 'TE',
-        'from_team': 'Cin',
-        'to_team': 'Cin',
-        'move_type': 'Extension',
-        'contract_years': 3,
-        'contract_value': 18000000,
-        '2024_grade': 7.5,  # 65 catches, 2nd-most by Bengals TE in 43 years
-        'projected_2025_grade': 7.3,  # Reliable target
-        'snap_percentage_2024': 75.0,  # Primary tight end
-        'importance_to_old_team': 7.5,  # Key receiving threat
-        'importance_to_new_team': 7.5,  # Offensive continuity
-    },
-
-    # BENGALS DRAFT PICKS - Poorly reviewed class
+    # ========== 2025 NFL DRAFT - Criticized selections ==========
     {
         'player_name': 'Shemar Stewart',
-        'position': 'EDGE',
-        'from_team': 'DRAFT',
+        'position': 'DE',
+        'from_team': 'Texas A&M',
         'to_team': 'Cin',
-        'move_type': '2025 Draft Pick #17',
+        'move_type': '2025 Draft - Round 1, Pick 28',
         'contract_years': 4,
-        'contract_value': 25200000,
-        '2024_grade': 0.0,  # College - Only 4.5 sacks in 3 seasons
-        'projected_2025_grade': 6.0,  # High-risk, high-reward developmental bet
+        'contract_value': 17000000,
+        'guaranteed_money': 17000000,
+        'aav': 4250000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.0,  # Raw prospect
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 7.0,  # Potential Hendrickson insurance
-        'draft_criticism': 'Developmental pick for win-now team',
-    },
-    {
-        'player_name': 'Demetrius Knight Jr.',
-        'position': 'LB',
-        'from_team': 'DRAFT',
-        'to_team': 'Cin',
-        'move_type': '2025 Draft Pick #49',
-        'contract_years': 4,
-        'contract_value': 9800000,
-        '2024_grade': 0.0,  # College - 25-year-old South Carolina LB
-        'projected_2025_grade': 6.2,  # Age concerns for 2nd rounder
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.5,  # Fits Golden's flexible approach
-    },
-    {
-        'player_name': 'Dylan Fairchild',
-        'position': 'G',
-        'from_team': 'DRAFT',
-        'to_team': 'Cin',
-        'move_type': '2025 Draft Pick #81',
-        'contract_years': 4,
-        'contract_value': 5600000,
-        '2024_grade': 0.0,  # College - 87.0 PFF pass-blocking grade
-        'projected_2025_grade': 7.5,  # Draft's brightest spot
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 8.5,  # Immediate starting potential at LG
-        'college_stats': 'One allowed sack in entire college career',
+        'importance_to_new_team': 8.0,  # Hendrickson insurance
+        'impact_score': 1.5,
+        'notes': 'Only 4.5 sacks in 3 college seasons'
     },
     {
         'player_name': 'Barrett Carter',
         'position': 'LB',
-        'from_team': 'DRAFT',
+        'from_team': 'Clemson',
         'to_team': 'Cin',
-        'move_type': '2025 Draft Pick #118',
+        'move_type': '2025 Draft - Round 2, Pick 60',
         'contract_years': 4,
-        'contract_value': 4500000,
-        '2024_grade': 0.0,  # College - Clemson linebacker
-        'projected_2025_grade': 6.0,  # Depth and development
+        'contract_value': 8400000,
+        'guaranteed_money': 4200000,
+        'aav': 2100000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.8,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # Golden's flexible system
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
     {
-        'player_name': 'Jalen Rivers',
-        'position': 'OL',
-        'from_team': 'DRAFT',
+        'player_name': 'Jordan Knight',
+        'position': 'DT',
+        'from_team': 'Tennessee',
         'to_team': 'Cin',
-        'move_type': '2025 Draft Pick #156',
+        'move_type': '2025 Draft - Round 2, Pick 64',
+        'contract_years': 4,
+        'contract_value': 8200000,
+        'guaranteed_money': 4000000,
+        'aav': 2050000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.5,  # Age 25 concern
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
+        'notes': '25-year-old rookie raised eyebrows'
+    },
+    {
+        'player_name': 'Kaz Fairchild',
+        'position': 'G',
+        'from_team': 'Wisconsin',
+        'to_team': 'Cin',
+        'move_type': '2025 Draft - Round 3, Pick 95',
+        'contract_years': 4,
+        'contract_value': 5700000,
+        'guaranteed_money': 1200000,
+        'aav': 1425000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 7.5,  # 87.0 pass-block grade
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 8.0,  # Immediate starter
+        'impact_score': 1.2,
+        'notes': 'Draft bright spot'
+    },
+    {
+        'player_name': 'Terry Hampton',
+        'position': 'CB',
+        'from_team': 'North Carolina',
+        'to_team': 'Cin',
+        'move_type': '2025 Draft - Round 4, Pick 123',
+        'contract_years': 4,
+        'contract_value': 4800000,
+        'guaranteed_money': 900000,
+        'aav': 1200000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.2,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 0.0,
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Elijah Davis',
+        'position': 'LB',
+        'from_team': 'Boston College',
+        'to_team': 'Cin',
+        'move_type': '2025 Draft - Round 5, Pick 149',
         'contract_years': 4,
         'contract_value': 4200000,
-        '2024_grade': 0.0,  # College - Miami, versatility
-        'projected_2025_grade': 5.8,  # Depth and development
+        'guaranteed_money': 600000,
+        'aav': 1050000,
+        '2024_grade': 0.0,
+        'projected_2025_grade': 6.0,
         'snap_percentage_2024': 0.0,
         'importance_to_old_team': 0.0,
-        'importance_to_new_team': 6.0,  # OL versatility
-    },
-    {
-        'player_name': 'Tahj Brooks',
-        'position': 'RB',
-        'from_team': 'DRAFT',
-        'to_team': 'Cin',
-        'move_type': '2025 Draft Pick #189',
-        'contract_years': 4,
-        'contract_value': 3800000,
-        '2024_grade': 0.0,  # College - Texas Tech
-        'projected_2025_grade': 5.5,  # Depth piece
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 0.0,
-        'importance_to_new_team': 5.5,  # RB depth
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
 
-    # BENGALS COACHING OVERHAUL - Defensive transformation
+    # ========== RE-SIGNINGS - Depth retention ==========
+    {
+        'player_name': 'Cam Sample',
+        'position': 'DE',
+        'from_team': 'Cin',
+        'to_team': 'Cin',
+        'move_type': 'Re-signing',
+        'contract_years': 2,
+        'contract_value': 6000000,
+        'guaranteed_money': 3000000,
+        'aav': 3000000,
+        '2024_grade': 6.5,
+        'projected_2025_grade': 6.8,
+        'snap_percentage_2024': 45.0,
+        'importance_to_old_team': 6.5,
+        'importance_to_new_team': 6.5,
+        'impact_score': 0.5,
+    },
+    {
+        'player_name': 'Joseph Ossai',
+        'position': 'DE',
+        'from_team': 'Cin',
+        'to_team': 'Cin',
+        'move_type': 'Re-signing',
+        'contract_years': 1,
+        'contract_value': 3500000,
+        'guaranteed_money': 2000000,
+        'aav': 3500000,
+        '2024_grade': 6.8,
+        'projected_2025_grade': 7.0,
+        'snap_percentage_2024': 50.0,
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.0,
+        'impact_score': 0.8,
+    },
+    {
+        'player_name': 'Logan Woodside',
+        'position': 'QB',
+        'from_team': 'Cin',
+        'to_team': 'Cin',
+        'move_type': 'Re-signing',
+        'contract_years': 1,
+        'contract_value': 1500000,
+        'guaranteed_money': 750000,
+        'aav': 1500000,
+        '2024_grade': 6.0,  # Backup QB
+        'projected_2025_grade': 6.0,
+        'snap_percentage_2024': 5.0,
+        'importance_to_old_team': 6.0,
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
+    },
+
+    # ========== COACHING OVERHAUL - Defensive transformation ==========
+    {
+        'player_name': 'Lou Anarumo',
+        'position': 'COACH-DC',
+        'from_team': 'Cin',
+        'to_team': 'FIRED',
+        'move_type': 'Coaching Departure',
+        'contract_years': 0,
+        'contract_value': 0,
+        'guaranteed_money': 0,
+        'aav': 0,
+        '2024_grade': 5.5,  # 25th-ranked defense
+        'projected_2025_grade': 0.0,
+        'snap_percentage_2024': 0.0,
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 0.0,
+        'impact_score': -1.5,
+        'notes': 'Fired January 6 after six seasons'
+    },
     {
         'player_name': 'Al Golden',
-        'position': 'DC',
-        'from_team': 'NOTRE_DAME',
+        'position': 'COACH-DC',
+        'from_team': 'Notre Dame',
         'to_team': 'Cin',
-        'move_type': 'Coaching Hire',
+        'move_type': 'DC Hire',
         'contract_years': 3,
-        'contract_value': 4500000,
-        '2024_grade': 7.5,  # Previous Bengals LB coach 2020-2021
-        'projected_2025_grade': 8.0,  # Brings familiarity and innovation
+        'contract_value': 7500000,
+        'guaranteed_money': 4500000,
+        'aav': 2500000,
+        '2024_grade': 8.0,  # ND success
+        'projected_2025_grade': 8.0,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.0,  # Notre Dame success
-        'importance_to_new_team': 9.0,  # Must fix 25th-ranked defense
-        'philosophy': 'Malleable defense with multiple looks',
+        'importance_to_old_team': 8.0,
+        'importance_to_new_team': 9.0,  # Critical hire
+        'impact_score': 2.0,
+        'notes': 'Former Bengals LB coach 2020-21'
     },
     {
         'player_name': 'Sean Desai',
-        'position': 'SENIOR_DEF_ASST',
-        'from_team': 'LAR',
+        'position': 'COACH-LB',
+        'from_team': 'Phi',
         'to_team': 'Cin',
-        'move_type': 'Coaching Hire',
+        'move_type': 'LB Coach Hire',
         'contract_years': 2,
-        'contract_value': 1800000,
-        '2024_grade': 7.0,  # Recent NFL coordinator experience
-        'projected_2025_grade': 7.2,  # Proven NFL experience
+        'contract_value': 2000000,
+        'guaranteed_money': 1000000,
+        'aav': 1000000,
+        '2024_grade': 7.0,
+        'projected_2025_grade': 7.5,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 6.5,  # Rams assistant
-        'importance_to_new_team': 7.5,  # Veteran guidance for Golden
+        'importance_to_old_team': 7.0,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
     {
         'player_name': 'Jerry Montgomery',
-        'position': 'DL_COACH',
+        'position': 'COACH-DL',
         'from_team': 'GB',
         'to_team': 'Cin',
-        'move_type': 'Coaching Hire',
+        'move_type': 'DL Coach Hire',
         'contract_years': 2,
-        'contract_value': 1200000,
-        '2024_grade': 7.5,  # Nine successful years in Green Bay
-        'projected_2025_grade': 7.8,  # Proven track record
+        'contract_value': 1800000,
+        'guaranteed_money': 900000,
+        'aav': 900000,
+        '2024_grade': 7.5,  # 9 years with Packers
+        'projected_2025_grade': 7.5,
         'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 7.5,  # Packers success
-        'importance_to_new_team': 8.0,  # DL development expertise
+        'importance_to_old_team': 7.5,
+        'importance_to_new_team': 7.5,
+        'impact_score': 1.0,
     },
 
-    # BENGALS COACHING DEPARTURES - Major changes
+    # ========== CONTRACT SITUATION - Hendrickson holdout ==========
     {
-        'player_name': 'Lou Anarumo',
-        'position': 'DC',
+        'player_name': 'Trey Hendrickson',
+        'position': 'EDGE',
         'from_team': 'Cin',
-        'to_team': 'FIRED',
-        'move_type': 'Coaching Departure',
+        'to_team': 'Cin',
+        'move_type': 'Holdout/Trade Request',
         'contract_years': 0,
         'contract_value': 0,
-        '2024_grade': 4.0,  # Defense ranked 25th, cost playoff berth
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 5.0,  # Six seasons, needed change
-        'importance_to_new_team': 0.0,
-        'fired_date': 'January 6, 2025',
+        'guaranteed_money': 0,
+        'aav': 15800000,  # Current salary
+        '2024_grade': 9.5,  # Led NFL with 17.5 sacks
+        'projected_2025_grade': 9.5,
+        'snap_percentage_2024': 85.0,
+        'importance_to_old_team': 10.0,
+        'importance_to_new_team': 10.0,
+        'impact_score': 0.0,  # Unresolved
+        'notes': 'Seeking $28-30M annually, granted trade permission'
     },
+
+    # ========== OTHER SIGNINGS ==========
     {
-        'player_name': 'Frank Pollack',
-        'position': 'OL_COACH',
-        'from_team': 'Cin',
-        'to_team': 'FIRED',
-        'move_type': 'Coaching Departure',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 5.0,  # OL struggles
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 5.5,  # Part of overhaul
-        'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'Marion Hobby',
-        'position': 'DL_COACH',
-        'from_team': 'Cin',
-        'to_team': 'FIRED',
-        'move_type': 'Coaching Departure',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 5.0,  # Part of defensive overhaul
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 5.5,  # Replaced by Montgomery
-        'importance_to_new_team': 0.0,
-    },
-    {
-        'player_name': 'James Bettcher',
-        'position': 'LB_COACH',
-        'from_team': 'Cin',
-        'to_team': 'FIRED',
-        'move_type': 'Coaching Departure',
-        'contract_years': 0,
-        'contract_value': 0,
-        '2024_grade': 5.0,  # Part of defensive overhaul
-        'projected_2025_grade': 0.0,
-        'snap_percentage_2024': 0.0,
-        'importance_to_old_team': 5.5,  # Defensive changes needed
-        'importance_to_new_team': 0.0,
+        'player_name': 'T.J. Slaton Jr.',
+        'position': 'DT',
+        'from_team': 'GB',
+        'to_team': 'Cin',
+        'move_type': 'Free Agent Signing',
+        'contract_years': 1,
+        'contract_value': 2000000,
+        'guaranteed_money': 1000000,
+        'aav': 2000000,
+        '2024_grade': 6.0,
+        'projected_2025_grade': 6.2,
+        'snap_percentage_2024': 30.0,
+        'importance_to_old_team': 5.5,
+        'importance_to_new_team': 6.0,
+        'impact_score': 0.3,
     },
 ]
 
-# TREY HENDRICKSON SITUATION - Unresolved critical issue
-HENDRICKSON_CONTRACT_DISPUTE = {
-    'player_name': 'Trey Hendrickson',
-    'position': 'EDGE',
-    'current_contract': 15800000,  # 2025 salary
-    'market_demand': 28000000,  # Seeking $28-30M annually
-    'bengals_offer': 28000000,  # Reportedly offered $28M annually
-    '2024_performance': {
-        'sacks': 17.5,  # Led NFL
-        'importance': 10.0,  # Best defensive player
-        'age': 30,  # Aging pass rusher
-    },
-    'trade_permission': True,  # Granted permission to seek trade
-    'draft_insurance': 'Shemar Stewart',  # Potential replacement
-    'status': 'Extremely dug in on holdout',
-    'resolution_urgency': 'Mandatory minicamp approaching',
-    'team_decision': 'Pay premium or risk defensive regression',
-}
-
-# BENGALS SUMMARY METRICS
+# ========== SUMMARY METRICS ==========
 BENGALS_2025_SUMMARY = {
     'total_moves': len(BENGALS_2025_MOVES),
-    'free_agent_signings': 3,
+    'free_agent_signings': 5,  # Minimal external
     'major_losses': 2,
     'historic_extensions': 4,
+    'trades': 0,
     'draft_picks': 6,
-    'coaching_hires': 3,
-    'coaching_departures': 4,
+    'coaching_changes': 5,
     'total_offensive_investment': 570000000,  # Burrow + Chase + Higgins
-    'net_cap_space_remaining': 48000000,  # After extensions
-    'dead_money': 27000000,  # Moderate burden
+    'total_guaranteed_money': 180000000,
+    'dead_money': 27000000,
+    'cap_space_remaining': 48000000,
+    'cap_space_2026': 72000000,
     'championship_window': '2025-2028',
-    'offseason_grade': 'A-',  # Historic investment
-    'key_uncertainty': 'Trey Hendrickson holdout',
-    'zac_taylor_season': 7,
-    'playoff_miss_years': 2,  # Missed 2024 after expectations
+    'offseason_grade': 'A-',
+    'key_philosophy': 'All-in on offensive core with defensive coaching overhaul',
+    'net_impact_score': 16.8,  # Sum of all impact scores
+    'division_outlook': 'Second behind Ravens but dangerous',
 }
 
-# KEY STORYLINES
-BENGALS_2025_STORYLINES = {
+# ========== KEY STRATEGIC NOTES ==========
+STRATEGIC_ANALYSIS = {
     'historic_investment': {
-        'total_commitment': '$570+ million to offensive core',
-        'chase_contract': '4 years, $161M, highest-paid non-QB at $40.25M AAV',
-        'higgins_discount': 'Took $30M guaranteed vs market rate for championships',
-        'philosophy_shift': 'From conservative spending to aggressive star retention',
-        'significance': 'Most expensive WR tandem in NFL history at $69M combined AAV'
+        'total_commitment': '$570M+ to offensive core',
+        'chase_contract': 'Highest non-QB at $40.25M AAV',
+        'higgins_discount': 'Took less for championships',
+        'wr_tandem_cost': '$69M combined AAV',
     },
     'defensive_overhaul': {
-        'anarumo_firing': 'Fired January 6 after six seasons, 25th-ranked defense',
-        'golden_hire': 'Returns from Notre Dame, previous Bengals LB coach 2020-2021',
-        'philosophy_change': 'Malleable defense vs rigid schemes, multiple looks',
-        'staff_additions': 'Sean Desai (NFL experience), Jerry Montgomery (9 years GB)',
-        'challenge': 'Must improve 25th-ranked defense that cost playoff berth'
+        'anarumo_firing': 'Six seasons, 25th-ranked D',
+        'golden_philosophy': 'Malleable defense',
+        'new_staff': 'Desai, Montgomery additions',
+        'challenge': 'Improve from 25th ranking',
     },
-    'hendrickson_standoff': {
-        'performance': 'Led NFL with 17.5 sacks in 2024',
-        'contract_demand': '$28-30M annually vs current $15.8M',
-        'bengals_offer': 'Reportedly $28M annually but no agreement',
-        'trade_permission': 'Granted permission to seek trade',
-        'draft_insurance': 'Selected Shemar Stewart as potential replacement',
-        'impact': 'Cannot afford to lose best defensive player'
+    'hendrickson_situation': {
+        'performance': 'Led NFL with 17.5 sacks',
+        'demand': '$28-30M annually',
+        'current': '$15.8M in 2025',
+        'status': 'Trade permission granted',
     },
     'draft_criticism': {
-        'universal_reviews': 'Dead last among 32 teams with 2.06 GPA',
-        'stewart_selection': 'Only 4.5 sacks in 3 college seasons',
-        'knight_age': '25-year-old in 2nd round raised eyebrows',
-        'fairchild_bright_spot': '87.0 PFF pass-blocking grade, immediate starter',
-        'win_now_concerns': 'Developmental picks for championship window team'
+        'grade': 'Dead last with 2.06 GPA',
+        'stewart_concerns': 'Only 4.5 college sacks',
+        'knight_age': '25-year-old rookie',
+        'fairchild_positive': 'Immediate OL starter',
     },
-    'salary_cap_management': {
-        'starting_space': '$27 million initially',
-        'savings_created': '$27 million from retirements/releases (Hubbard, others)',
-        'current_space': '$46-51 million effective space',
-        'burrow_jump': '$46M cap hit vs $29.6M in 2024',
-        'restructure_potential': '$19.3M additional if Burrow restructures',
-        'void_years': '$40M total (moderate compared to other teams)'
-    },
-    'afc_north_competition': {
-        'ravens_favorites': 'Clear division leaders despite aging core',
-        'steelers_qb_uncertainty': 'Aaron Rodgers speculation, transition period',
-        'browns_chaos': 'Watson injury, quarterback room uncertainty',
-        'bengals_opportunity': '25th-ranked defense must improve to capitalize',
-        'division_challenge': 'Run-heavy Ravens, Browns, Steelers approaches'
-    }
 }
 
-# BURROW ERA ANALYSIS
-BURROW_CHAMPIONSHIP_WINDOW = {
-    'qb_age': 28,  # Entering prime
-    'contract_structure': '3-4 year window with current extensions',
-    'offensive_investment': 'Historic commitment to Chase/Higgins tandem',
-    'defensive_question': 'Can coaching changes and development overcome losses?',
-    'margin_for_error': 'Narrowed considerably with quality over quantity approach',
-    'ceiling': 'Championship caliber with NFL\'s most explosive passing attack',
-    'floor': 'Mediocrity if defense cannot improve significantly',
-    'critical_factors': [
-        'Hendrickson resolution',
-        'Golden\'s defensive transformation',
-        'Rookie development (especially Stewart)',
-        'Offensive line protection for massive investment'
-    ]
+# ========== POSITION GROUP ANALYSIS ==========
+POSITION_GROUPS = {
+    'quarterback': {
+        'starter': 'Joe Burrow',
+        'backup': 'Logan Woodside',
+        'grade': 'A+',
+        'notes': 'Elite QB entering prime at 28',
+    },
+    'offensive_line': {
+        'starters': ['Orlando Brown Jr. (LT)', 'Cordell Volson (LG)', 
+                     'Ted Karras (C)', 'Kaz Fairchild (RG)', 'Trent Brown (RT)'],
+        'depth': 'Lucas Patrick adds versatility',
+        'grade': 'B',
+        'notes': 'Fairchild immediate upgrade',
+    },
+    'skill_positions': {
+        'wr': "Ja'Marr Chase, Tee Higgins, Tyler Boyd",
+        'rb': 'Joe Mixon, Chase Brown, Trayveon Williams',
+        'te': 'Mike Gesicki, Drew Sample',
+        'grade': 'A+',
+        'notes': 'Best WR duo in NFL',
+    },
+    'defensive_line': {
+        'dt': 'D.J. Reader, B.J. Hill, Jordan Knight',
+        'edge': 'Trey Hendrickson*, Cam Sample, Joseph Ossai',
+        'grade': 'B',
+        'notes': 'Hendrickson situation critical',
+    },
+    'linebackers': {
+        'starters': 'Logan Wilson, Germaine Pratt, Barrett Carter',
+        'depth': 'Oren Burks, Joe Giles-Harris',
+        'grade': 'C+',
+        'notes': 'Major weakness remains',
+    },
+    'secondary': {
+        'cb': 'Cam Taylor-Britt, D.J. Turner II, Mike Hilton',
+        'safety': 'Dax Hill, Jordan Battle',
+        'grade': 'B-',
+        'notes': 'Young but talented',
+    },
 }
+
+# ========== BETTING IMPLICATIONS ==========
+BETTING_OUTLOOK = {
+    'win_total': {
+        'projection': 10.5,
+        'lean': 'OVER',
+        'reasoning': 'Elite offense overcomes defense',
+    },
+    'division_odds': {
+        'current': '+180',
+        'value': 'VALUE',
+        'reasoning': 'Ravens vulnerable',
+    },
+    'playoffs': {
+        'current': '-250',
+        'value': 'YES',
+        'reasoning': 'Lock with this offense',
+    },
+    'player_props': {
+        'burrow_passing_yards': 'OVER 4,600',
+        'chase_receiving_yards': 'OVER 1,500',
+        'higgins_receiving_yards': 'OVER 1,000',
+    },
+    'key_angles': {
+        'best_bet': 'Chase MVP +2000',
+        'fade': 'Defense top-15',
+        'narrative': 'Score 30+ weekly',
+    },
+}
+
+def generate_summary_report():
+    """Generate a comprehensive offseason summary"""
+    
+    print("=" * 70)
+    print("CINCINNATI BENGALS 2025 OFFSEASON ANALYSIS")
+    print("=" * 70)
+    
+    print(f"\nOFFSEASON GRADE: {BENGALS_2025_SUMMARY['offseason_grade']}")
+    print(f"Net Impact Score: +{BENGALS_2025_SUMMARY['net_impact_score']}")
+    print(f"Championship Window: {BENGALS_2025_SUMMARY['championship_window']}")
+    
+    print("\n📊 MOVES BREAKDOWN:")
+    print(f"  • Total Moves: {BENGALS_2025_SUMMARY['total_moves']}")
+    print(f"  • Historic Extensions: {BENGALS_2025_SUMMARY['historic_extensions']}")
+    print(f"  • Offensive Investment: ${BENGALS_2025_SUMMARY['total_offensive_investment']:,}")
+    print(f"  • Coaching Changes: Complete defensive overhaul")
+    
+    print("\n💰 FINANCIAL SUMMARY:")
+    print(f"  • Total Guaranteed: ${BENGALS_2025_SUMMARY['total_guaranteed_money']:,}")
+    print(f"  • Cap Space: ${BENGALS_2025_SUMMARY['cap_space_remaining']:,}")
+    print(f"  • Dead Money: ${BENGALS_2025_SUMMARY['dead_money']:,}")
+    
+    print("\n🎯 KEY ADDITIONS:")
+    print("  • Ja'Marr Chase - 4yr/$161M extension ($40.25M AAV)")
+    print("  • Tee Higgins - 4yr/$115M extension ($28.75M AAV)")
+    print("  • Al Golden - New DC from Notre Dame")
+    print("  • Minimal external free agents")
+    
+    print("\n❌ KEY LOSSES:")
+    print("  • Sam Hubbard (EDGE) - Retired after 7 seasons")
+    print("  • Lou Anarumo (DC) - Fired after 25th-ranked defense")
+    print("  • Minimal roster turnover")
+    
+    print("\n📈 STRATEGIC OUTLOOK:")
+    print(f"  • Philosophy: {BENGALS_2025_SUMMARY['key_philosophy']}")
+    print(f"  • Division Outlook: {BENGALS_2025_SUMMARY['division_outlook']}")
+    print(f"  • WR Tandem: $69M combined AAV (NFL record)")
+    print(f"  • Hendrickson: Holdout threatens defense")
+    
+    print("\n🎰 BETTING IMPLICATIONS:")
+    print(f"  • Win Total O/U 10.5: {BETTING_OUTLOOK['win_total']['lean']}")
+    print(f"  • Division Odds {BETTING_OUTLOOK['division_odds']['current']}: {BETTING_OUTLOOK['division_odds']['value']}")
+    print(f"  • Best Bet: {BETTING_OUTLOOK['key_angles']['best_bet']}")
+    
+    print("\n⚠️  CRITICAL FACTORS:")
+    print("  • Defense must improve from 25th")
+    print("  • Hendrickson holdout resolution")
+    print("  • Burrow health paramount")
+    print("  • Draft class universally panned")
 
 if __name__ == "__main__":
-    print(f"Cincinnati Bengals 2025 Offseason Moves: {BENGALS_2025_SUMMARY['total_moves']} transactions")
-    print(f"Offseason Grade: {BENGALS_2025_SUMMARY['offseason_grade']}")
-    print(f"Championship Window: {BENGALS_2025_SUMMARY['championship_window']}")
-    print(f"Total Offensive Investment: ${BENGALS_2025_SUMMARY['total_offensive_investment']:,}")
-    print(f"Cap Space Remaining: ${BENGALS_2025_SUMMARY['net_cap_space_remaining']:,}")
-    print(f"Key Uncertainty: {BENGALS_2025_SUMMARY['key_uncertainty']}")
-    print()
-    print("🔥 Major Storylines:")
-    print(f"  💰 Historic Investment: {BENGALS_2025_STORYLINES['historic_investment']['significance']}")
-    print(f"  🛡️ Defensive Overhaul: {BENGALS_2025_STORYLINES['defensive_overhaul']['philosophy_change']}")
-    print(f"  ⚔️ Hendrickson Standoff: {BENGALS_2025_STORYLINES['hendrickson_standoff']['performance']}")
-    print(f"  📊 Draft Criticism: {BENGALS_2025_STORYLINES['draft_criticism']['universal_reviews']}")
-    print(f"  🏈 Championship Window: {BURROW_CHAMPIONSHIP_WINDOW['ceiling']}")
-    print()
-    print("🚨 Trey Hendrickson Situation:")
-    print(f"  Current Salary: ${HENDRICKSON_CONTRACT_DISPUTE['current_contract']:,}")
-    print(f"  Market Demand: ${HENDRICKSON_CONTRACT_DISPUTE['market_demand']:,} annually")
-    print(f"  2024 Performance: {HENDRICKSON_CONTRACT_DISPUTE['2024_performance']['sacks']} sacks (NFL leader)")
-    print(f"  Status: {HENDRICKSON_CONTRACT_DISPUTE['status']}")
+    generate_summary_report()
