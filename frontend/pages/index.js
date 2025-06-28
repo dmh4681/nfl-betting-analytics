@@ -343,7 +343,7 @@ const NFLAnalyticsDashboard = () => {
 
   const loadTeamData = async (team) => {
     try {
-      const response = await fetch(`${API_BASE}/api/teams/${team}`);
+      const response = await fetch(`${API_BASE}/api/teams/${team}/detailed`);
       const data = await response.json();
       setCurrentTeamData(data);
     } catch (error) {
@@ -1647,27 +1647,24 @@ const NFLAnalyticsDashboard = () => {
         )}
 
         {/* Team Detail View */}
-        // Replace the entire Team Detail View section in your index.js
-        // This adds proper null checking for all the undefined properties
-
         {view === 'team' && currentTeamData && (
           <div className="space-y-6">
             
             {/* Team Header */}
-            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-lg border border-slate-700 p-6" style={{backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#334155'}}>
+            <div className="bg-gradient-to-r from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-lg border p-6" style={{backgroundColor: 'rgba(30, 41, 59, 0.5)', borderColor: '#334155'}}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-xl font-bold">
                     {currentTeamData.team}
                   </div>
                   <div>
-                    <h1 className="text-3xl font-bold text-white">{currentTeamData.team_name || currentTeamData.name}</h1>
-                    <p className="text-slate-400">{currentTeamData.division || 'Unknown Division'} • {currentTeamData.conference || 'Unknown Conference'}</p>
+                    <h1 className="text-3xl font-bold text-white">{currentTeamData.team_name}</h1>
+                    <p className="text-slate-400">{currentTeamData.division} • {currentTeamData.conference}</p>
                   </div>
                 </div>
                 <div className="text-right">
-                  <div className={`inline-block px-4 py-2 rounded-lg text-xl font-bold ${getGradeColor(currentTeamData.offseason_grade || currentTeamData.offseasonGrade)}`}>
-                    {currentTeamData.offseason_grade || currentTeamData.offseasonGrade || 'N/A'}
+                  <div className={`inline-block px-4 py-2 rounded-lg text-xl font-bold ${getGradeColor(currentTeamData.offseason_grade)}`}>
+                    {currentTeamData.offseason_grade}
                   </div>
                   <p className="text-slate-400 text-sm mt-1">Offseason Grade</p>
                 </div>
@@ -1680,9 +1677,14 @@ const NFLAnalyticsDashboard = () => {
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-yellow-400 text-sm font-medium">Final Rank</p>
+                      <p className="text-yellow-400 text-sm font-medium">2025 Rank</p>
                       <p className="text-2xl font-bold text-white">
-                        #{currentTeamData.finalRank || currentTeamData.final_2025_rank || currentTeamData.ranking_info?.final_2025_rank || '16'}
+                        #{currentTeamData.final_rank || currentTeamData.final_2025_rank || 16}
+                      </p>
+                      <p className="text-xs text-slate-400">
+                        {currentTeamData.rank_change ? (
+                          currentTeamData.rank_change > 0 ? `↑${currentTeamData.rank_change}` : `↓${Math.abs(currentTeamData.rank_change)}`
+                        ) : 'No change'}
                       </p>
                     </div>
                     <Trophy className="w-8 h-8 text-yellow-400" />
@@ -1696,7 +1698,10 @@ const NFLAnalyticsDashboard = () => {
                     <div>
                       <p className="text-green-400 text-sm font-medium">Net Impact</p>
                       <p className="text-2xl font-bold text-white">
-                        {formatImpact(currentTeamData.net_impact || currentTeamData.netImpact || currentTeamData.offseason_impact)}
+                        {formatImpact(currentTeamData.net_impact || 0)}
+                      </p>
+                      <p className="text-xs text-slate-400">
+                        {currentTeamData.move_efficiency ? `${currentTeamData.move_efficiency.toFixed(2)} efficiency` : 'N/A'}
                       </p>
                     </div>
                     <TrendingUp className="w-8 h-8 text-green-400" />
@@ -1710,7 +1715,10 @@ const NFLAnalyticsDashboard = () => {
                     <div>
                       <p className="text-purple-400 text-sm font-medium">Total Moves</p>
                       <p className="text-2xl font-bold text-white">
-                        {currentTeamData.total_moves || currentTeamData.totalMoves || 'N/A'}
+                        {currentTeamData.total_moves}
+                      </p>
+                      <p className="text-xs text-slate-400">
+                        +{currentTeamData.players_gained} / -{currentTeamData.players_lost}
                       </p>
                     </div>
                     <Users className="w-8 h-8 text-purple-400" />
@@ -1718,131 +1726,284 @@ const NFLAnalyticsDashboard = () => {
                 </CardContent>
               </Card>
 
-              <Card className="bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border-yellow-500/30">
+              <Card className="bg-gradient-to-r from-blue-500/20 to-blue-600/20 border-blue-500/30">
                 <CardContent className="p-4">
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-yellow-400 text-sm font-medium">Efficiency</p>
+                      <p className="text-blue-400 text-sm font-medium">Cap Space</p>
                       <p className="text-2xl font-bold text-white">
-                        {currentTeamData.move_efficiency?.toFixed(1) || 'N/A'}
+                        {currentTeamData.context?.cap_space || 'N/A'}
+                      </p>
+                      <p className="text-xs text-slate-400">
+                        {currentTeamData.context?.cap_situation || 'Unknown'}
                       </p>
                     </div>
-                    <Target className="w-8 h-8 text-yellow-400" />
+                    <DollarSign className="w-8 h-8 text-blue-400" />
                   </div>
                 </CardContent>
               </Card>
             </div>
 
-            {/* Team Analysis Grid */}
+            {/* Key Context Card */}
+            <Card className="backdrop-blur-sm">
+              <CardHeader>
+                <CardTitle className="text-white flex items-center">
+                  <AlertCircle className="w-5 h-5 mr-2 text-yellow-400" />
+                  Offseason Context & Analysis
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-blue-400 font-medium mb-3">Offseason Strategy</h4>
+                    <p className="text-white text-sm leading-relaxed">{currentTeamData.offseason_strategy || 'No strategy information available'}</p>
+                  </div>
+                  <div className="space-y-3">
+                    <div>
+                      <h4 className="text-purple-400 font-medium mb-2">Draft Summary</h4>
+                      <p className="text-white text-sm">{currentTeamData.draft_summary || 'No draft summary available'}</p>
+                    </div>
+                    <div>
+                      <h4 className="text-green-400 font-medium mb-2">Key Injuries</h4>
+                      <p className="text-white text-sm">{currentTeamData.context?.key_injuries || 'No major injuries reported'}</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Main Content Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+              
+              {/* Roster Moves Section - 2 columns wide */}
+              <div className="lg:col-span-2 space-y-6">
+                
+                {/* Free Agency & Trades */}
+                <Card className="backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-white">Free Agency & Trades</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      
+                      {/* Signings */}
+                      {currentTeamData.signings && currentTeamData.signings.length > 0 && (
+                        <div>
+                          <h4 className="text-green-400 font-medium mb-3 flex items-center">
+                            <TrendingUp className="w-4 h-4 mr-2" />
+                            Free Agent Signings ({currentTeamData.signings.length})
+                          </h4>
+                          <div className="space-y-2">
+                            {currentTeamData.signings.map((signing, idx) => (
+                              <div key={idx} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(34, 197, 94, 0.1)', border: '1px solid rgba(34, 197, 94, 0.2)'}}>
+                                <span className="text-white text-sm">{signing}</span>
+                                <ChevronRight className="w-4 h-4 text-green-400" />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Losses */}
+                      {currentTeamData.losses && currentTeamData.losses.length > 0 && (
+                        <div>
+                          <h4 className="text-red-400 font-medium mb-3 flex items-center">
+                            <TrendingDown className="w-4 h-4 mr-2" />
+                            Free Agent Losses ({currentTeamData.losses.length})
+                          </h4>
+                          <div className="space-y-2">
+                            {currentTeamData.losses.map((loss, idx) => (
+                              <div key={idx} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(239, 68, 68, 0.1)', border: '1px solid rgba(239, 68, 68, 0.2)'}}>
+                                <span className="text-white text-sm">{loss}</span>
+                                <ChevronRight className="w-4 h-4 text-red-400" />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Trades */}
+                      {currentTeamData.trades && currentTeamData.trades.length > 0 && (
+                        <div>
+                          <h4 className="text-blue-400 font-medium mb-3 flex items-center">
+                            <Target className="w-4 h-4 mr-2" />
+                            Trades ({currentTeamData.trades.length})
+                          </h4>
+                          <div className="space-y-2">
+                            {currentTeamData.trades.map((trade, idx) => (
+                              <div key={idx} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(59, 130, 246, 0.1)', border: '1px solid rgba(59, 130, 246, 0.2)'}}>
+                                <span className="text-white text-sm">{trade}</span>
+                                <ChevronRight className="w-4 h-4 text-blue-400" />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {/* Extensions */}
+                      {currentTeamData.extensions && currentTeamData.extensions.length > 0 && (
+                        <div>
+                          <h4 className="text-purple-400 font-medium mb-3 flex items-center">
+                            <Star className="w-4 h-4 mr-2" />
+                            Re-signings/Extensions ({currentTeamData.extensions.length})
+                          </h4>
+                          <div className="space-y-2">
+                            {currentTeamData.extensions.map((extension, idx) => (
+                              <div key={idx} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(168, 85, 247, 0.1)', border: '1px solid rgba(168, 85, 247, 0.2)'}}>
+                                <span className="text-white text-sm">{extension}</span>
+                                <ChevronRight className="w-4 h-4 text-purple-400" />
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Draft Picks */}
+                <Card className="backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-white">2025 NFL Draft</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {currentTeamData.draft_picks && currentTeamData.draft_picks.length > 0 ? (
+                      <div className="space-y-2">
+                        {currentTeamData.draft_picks.map((pick, idx) => (
+                          <div key={idx} className="flex items-center justify-between p-3 rounded-lg" style={{backgroundColor: 'rgba(251, 191, 36, 0.1)', border: '1px solid rgba(251, 191, 36, 0.2)'}}>
+                            <span className="text-white text-sm">{pick}</span>
+                            <ChevronRight className="w-4 h-4 text-yellow-400" />
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-slate-400 text-center py-4">No draft picks recorded</p>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Right Sidebar - Unit Impact and Needs */}
+              <div className="space-y-6">
+                
+                {/* Unit Impact Analysis */}
+                <Card className="backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-white">Unit Impact Analysis</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between p-4 rounded-lg" style={{backgroundColor: 'rgba(51, 65, 85, 0.5)'}}>
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-3 h-3 rounded-full ${(currentTeamData.unit_impacts?.offense || 0) > 0 ? 'bg-green-400' : (currentTeamData.unit_impacts?.offense || 0) < 0 ? 'bg-red-400' : 'bg-slate-400'}`}></div>
+                          <span className="text-white font-medium">Offense</span>
+                        </div>
+                        <span className={`font-bold text-lg ${(currentTeamData.unit_impacts?.offense || 0) > 0 ? 'text-green-400' : (currentTeamData.unit_impacts?.offense || 0) < 0 ? 'text-red-400' : 'text-slate-400'}`}>
+                          {formatImpact(currentTeamData.unit_impacts?.offense || 0)}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between p-4 rounded-lg" style={{backgroundColor: 'rgba(51, 65, 85, 0.5)'}}>
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-3 h-3 rounded-full ${(currentTeamData.unit_impacts?.defense || 0) > 0 ? 'bg-green-400' : (currentTeamData.unit_impacts?.defense || 0) < 0 ? 'bg-red-400' : 'bg-slate-400'}`}></div>
+                          <span className="text-white font-medium">Defense</span>
+                        </div>
+                        <span className={`font-bold text-lg ${(currentTeamData.unit_impacts?.defense || 0) > 0 ? 'text-green-400' : (currentTeamData.unit_impacts?.defense || 0) < 0 ? 'text-red-400' : 'text-slate-400'}`}>
+                          {formatImpact(currentTeamData.unit_impacts?.defense || 0)}
+                        </span>
+                      </div>
+
+                      <div className="flex items-center justify-between p-4 rounded-lg" style={{backgroundColor: 'rgba(51, 65, 85, 0.5)'}}>
+                        <div className="flex items-center space-x-3">
+                          <div className={`w-3 h-3 rounded-full ${(currentTeamData.unit_impacts?.specialTeams || 0) > 0 ? 'bg-green-400' : (currentTeamData.unit_impacts?.specialTeams || 0) < 0 ? 'text-red-400' : 'bg-slate-400'}`}></div>
+                          <span className="text-white font-medium">Special Teams</span>
+                        </div>
+                        <span className={`font-bold text-lg ${(currentTeamData.unit_impacts?.specialTeams || 0) > 0 ? 'text-green-400' : (currentTeamData.unit_impacts?.specialTeams || 0) < 0 ? 'text-red-400' : 'text-slate-400'}`}>
+                          {formatImpact(currentTeamData.unit_impacts?.specialTeams || 0)}
+                        </span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Needs Analysis */}
+                <Card className="backdrop-blur-sm">
+                  <CardHeader>
+                    <CardTitle className="text-white">Offseason Needs</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="text-green-400 font-medium mb-2">✅ Addressed</h4>
+                        <p className="text-white text-sm">{currentTeamData.context?.needs_addressed || 'N/A'}</p>
+                      </div>
+                      <div>
+                        <h4 className="text-red-400 font-medium mb-2">❌ Still Needed</h4>
+                        <p className="text-white text-sm">{currentTeamData.context?.needs_remaining || 'N/A'}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                {/* Coaching Changes */}
+                {currentTeamData.coaching_changes && currentTeamData.coaching_changes.length > 0 && (
+                  <Card className="backdrop-blur-sm">
+                    <CardHeader>
+                      <CardTitle className="text-white">Coaching Changes</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2">
+                        {currentTeamData.coaching_changes.map((change, idx) => (
+                          <div key={idx} className="p-3 rounded-lg" style={{backgroundColor: 'rgba(251, 191, 36, 0.1)', border: '1px solid rgba(251, 191, 36, 0.2)'}}>
+                            <span className="text-white text-sm">{change}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </CardContent>
+                  </Card>
+                )}
+              </div>
+            </div>
+
+            {/* Bottom Analysis Cards */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               
-              {/* Key Moves */}
+              {/* Key Additions Analysis */}
               <Card className="backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-white">Key Roster Moves</CardTitle>
+                  <CardTitle className="text-white flex items-center">
+                    <Star className="w-5 h-5 mr-2 text-yellow-400" />
+                    Top 5 Impact Additions
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    <div>
-                      <h4 className="text-green-400 font-medium mb-3 flex items-center">
-                        <TrendingUp className="w-4 h-4 mr-2" />
-                        Major Additions ({currentTeamData.players_gained || 0})
-                      </h4>
-                      <div className="space-y-2">
-                        {(currentTeamData.key_additions || currentTeamData.keyAdditions || []).slice(0, 5).map((addition, idx) => (
-                          <div key={idx} className="flex items-center justify-between p-3 border rounded" style={{backgroundColor: 'rgba(34, 197, 94, 0.1)', borderColor: 'rgba(34, 197, 94, 0.2)'}}>
-                            <span className="text-white text-sm">{addition}</span>
-                            <ChevronRight className="w-4 h-4 text-green-400" />
-                          </div>
-                        ))}
-                        {(!currentTeamData.key_additions && !currentTeamData.keyAdditions) || 
-                        (currentTeamData.key_additions || currentTeamData.keyAdditions || []).length === 0 ? (
-                          <div className="text-center py-4">
-                            <p className="text-slate-400 text-sm">No major additions found</p>
-                          </div>
-                        ) : null}
+                  <div className="space-y-3">
+                    {currentTeamData.key_additions && currentTeamData.key_additions.slice(0, 5).map((addition, idx) => (
+                      <div key={idx} className="flex items-center space-x-3">
+                        <span className="text-yellow-400 font-bold">#{idx + 1}</span>
+                        <span className="text-white text-sm">{addition}</span>
                       </div>
-                    </div>
-
-                    <div>
-                      <h4 className="text-red-400 font-medium mb-3 flex items-center">
-                        <TrendingDown className="w-4 h-4 mr-2" />
-                        Key Departures ({currentTeamData.players_lost || 0})
-                      </h4>
-                      <div className="space-y-2">
-                        {(currentTeamData.key_losses || currentTeamData.keyLosses || []).slice(0, 5).map((loss, idx) => (
-                          <div key={idx} className="flex items-center justify-between p-3 border rounded" style={{backgroundColor: 'rgba(239, 68, 68, 0.1)', borderColor: 'rgba(239, 68, 68, 0.2)'}}>
-                            <span className="text-white text-sm">{loss}</span>
-                            <ChevronRight className="w-4 h-4 text-red-400" />
-                          </div>
-                        ))}
-                        {(!currentTeamData.key_losses && !currentTeamData.keyLosses) || 
-                        (currentTeamData.key_losses || currentTeamData.keyLosses || []).length === 0 ? (
-                          <div className="text-center py-4">
-                            <p className="text-slate-400 text-sm">No major departures found</p>
-                          </div>
-                        ) : null}
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
 
-              {/* Unit Impact Analysis */}
+              {/* Key Losses Analysis */}
               <Card className="backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle className="text-white">Unit Impact Analysis</CardTitle>
+                  <CardTitle className="text-white flex items-center">
+                    <AlertCircle className="w-5 h-5 mr-2 text-red-400" />
+                    Biggest Losses
+                  </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="space-y-4">
-                    {/* Handle different possible data structures for unit impacts */}
-                    {(() => {
-                      const unitImpacts = currentTeamData.unit_impacts || 
-                                        currentTeamData.strengthDelta || 
-                                        {
-                                          offense: currentTeamData.offense_impact || 0,
-                                          defense: currentTeamData.defense_impact || 0,
-                                          special_teams: currentTeamData.special_teams_impact || currentTeamData.specialTeams || 0
-                                        };
-
-                      return Object.entries(unitImpacts).map(([unit, impact]) => {
-                        // Convert string impacts to numbers
-                        const numericImpact = typeof impact === 'string' ? 
-                          parseFloat(impact.replace('+', '')) : 
-                          (impact || 0);
-
-                        return (
-                          <div key={unit} className="flex items-center justify-between p-4 rounded-lg" style={{backgroundColor: 'rgba(51, 65, 85, 0.5)'}}>
-                            <div className="flex items-center space-x-3">
-                              <div className={`w-3 h-3 rounded-full ${numericImpact > 0 ? 'bg-green-400' : numericImpact < 0 ? 'bg-red-400' : 'bg-slate-400'}`}></div>
-                              <span className="text-white capitalize font-medium">
-                                {unit.replace('_', ' ').replace('special_teams', 'Special Teams')}
-                              </span>
-                            </div>
-                            <span className={`font-bold text-lg ${numericImpact > 0 ? 'text-green-400' : numericImpact < 0 ? 'text-red-400' : 'text-slate-400'}`}>
-                              {formatImpact(numericImpact)}
-                            </span>
-                          </div>
-                        );
-                      });
-                    })()}
-
-                    <div className="mt-6 p-4 border rounded-lg" style={{backgroundColor: 'rgba(59, 130, 246, 0.1)', borderColor: 'rgba(59, 130, 246, 0.3)'}}>
-                      <div className="flex items-center mb-2">
-                        <AlertCircle className="w-5 h-5 text-blue-400 mr-2" />
-                        <span className="text-blue-400 font-medium">Strategy Assessment</span>
+                  <div className="space-y-3">
+                    {currentTeamData.key_losses && currentTeamData.key_losses.slice(0, 5).map((loss, idx) => (
+                      <div key={idx} className="flex items-center space-x-3">
+                        <span className="text-red-400 font-bold">#{idx + 1}</span>
+                        <span className="text-white text-sm">{loss}</span>
                       </div>
-                      <p className="text-white text-sm mb-2">
-                        {currentTeamData.offseason_strategy || 
-                        `This team made ${currentTeamData.total_moves || currentTeamData.totalMoves || 0} moves with a net impact of ${formatImpact(currentTeamData.net_impact || currentTeamData.netImpact || 0)}.`}
-                      </p>
-                      <div className="flex items-center justify-between text-xs">
-                        <span className="text-slate-400">Move Efficiency:</span>
-                        <span className="text-blue-400 font-medium">
-                          {currentTeamData.move_efficiency?.toFixed(2) || 'N/A'}
-                        </span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                 </CardContent>
               </Card>
