@@ -345,6 +345,7 @@ const NFLAnalyticsDashboard = () => {
     try {
       const response = await fetch(`${API_BASE}/api/teams/${team}/detailed`);
       const data = await response.json();
+      console.log('Team data loaded:', data); // Add this for debugging
       setCurrentTeamData(data);
     } catch (error) {
       console.error('Error loading team data:', error);
@@ -373,8 +374,11 @@ const NFLAnalyticsDashboard = () => {
       console.log('Loading moves with URL:', url);
       const response = await fetch(url);
       const data = await response.json();
+      
       console.log('Moves loaded:', data.total_found, 'found,', data.total_displayed, 'displayed');
       console.log('Debug info:', data.debug_info);
+      
+      // Just use the moves as they come from the backend
       setRecentMoves(data.moves || []);
       setMovesStats({
         total_found: data.total_found || 0,
@@ -1715,10 +1719,10 @@ const NFLAnalyticsDashboard = () => {
                     <div>
                       <p className="text-purple-400 text-sm font-medium">Total Moves</p>
                       <p className="text-2xl font-bold text-white">
-                        {currentTeamData.total_moves}
+                        {currentTeamData.total_moves || 0}
                       </p>
                       <p className="text-xs text-slate-400">
-                        +{currentTeamData.players_gained} / -{currentTeamData.players_lost}
+                        +{currentTeamData.players_gained || 0} / -{currentTeamData.players_lost || 0}
                       </p>
                     </div>
                     <Users className="w-8 h-8 text-purple-400" />
@@ -2545,25 +2549,50 @@ const NFLAnalyticsDashboard = () => {
                                 {/* Impact Score */}
                                 <td className="py-3 px-2" style={{backgroundColor: 'transparent'}}>
                                   <div className="flex items-center space-x-2">
-                                    <span className={`font-bold text-lg ${
-                                      impactScore >= 2 ? 'text-green-400' :
-                                      impactScore >= 1 ? 'text-blue-400' :
-                                      impactScore >= 0.5 ? 'text-yellow-400' :
-                                      'text-slate-400'
-                                    }`}>
-                                      {impactScore.toFixed(1)}
-                                    </span>
-                                    <div className="w-8 bg-slate-700 rounded-full h-1">
-                                      <div 
-                                        className={`h-1 rounded-full ${
-                                          impactScore >= 2 ? 'bg-green-400' :
-                                          impactScore >= 1 ? 'bg-blue-400' :
-                                          impactScore >= 0.5 ? 'bg-yellow-400' :
-                                          'bg-slate-400'
-                                        }`}
-                                        style={{width: `${Math.min(100, (impactScore / 3) * 100)}%`}}
-                                      ></div>
-                                    </div>
+                                    {(() => {
+                                      // Calculate display impact based on move type and selected team
+                                      let displayImpact = impactScore;
+                                      
+                                      // If a team is selected and this is a loss for that team
+                                      if (selectedTeam && (
+                                        (move.move_type === 'Free Agent Loss' && move.from_team === selectedTeam) ||
+                                        (move.move_type === 'Trade' && move.from_team === selectedTeam) ||
+                                        (move.move_type === 'Release' && move.from_team === selectedTeam) ||
+                                        (move.move_type === 'Retirement' && move.from_team === selectedTeam) ||
+                                        (move.move_type === 'Post-June 1 Cut' && move.from_team === selectedTeam)
+                                      )) {
+                                        displayImpact = -Math.abs(impactScore);
+                                      }
+                                      
+                                      const absImpact = Math.abs(displayImpact);
+                                      const isNegative = displayImpact < 0;
+                                      
+                                      return (
+                                        <>
+                                          <span className={`font-bold text-lg ${
+                                            isNegative ? 'text-red-400' :
+                                            absImpact >= 2 ? 'text-green-400' :
+                                            absImpact >= 1 ? 'text-blue-400' :
+                                            absImpact >= 0.5 ? 'text-yellow-400' :
+                                            'text-slate-400'
+                                          }`}>
+                                            {displayImpact > 0 ? '+' : ''}{displayImpact.toFixed(1)}
+                                          </span>
+                                          <div className="w-8 bg-slate-700 rounded-full h-1">
+                                            <div 
+                                              className={`h-1 rounded-full ${
+                                                isNegative ? 'bg-red-400' :
+                                                absImpact >= 2 ? 'bg-green-400' :
+                                                absImpact >= 1 ? 'bg-blue-400' :
+                                                absImpact >= 0.5 ? 'bg-yellow-400' :
+                                                'bg-slate-400'
+                                              }`}
+                                              style={{width: `${Math.min(100, (absImpact / 3) * 100)}%`}}
+                                            ></div>
+                                          </div>
+                                        </>
+                                      );
+                                    })()}
                                   </div>
                                 </td>
 

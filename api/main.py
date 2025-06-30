@@ -2,13 +2,18 @@
 import sys
 import os
 from pathlib import Path
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
 from typing import Dict, List, Optional
 import pandas as pd
 import json
 from datetime import datetime
+from pydantic import BaseModel, Field
+import copy
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # Setup code
 API_DIR = Path(__file__).parent
@@ -1067,11 +1072,440 @@ async def get_season_schedule(year: int = 2025):
         raise HTTPException(status_code=500, detail=f"Error fetching season schedule: {str(e)}")
 
 # =============================================================================
+# USER CUSTOMIZATION MODELS
+# =============================================================================
+
+class TeamAdjustment(BaseModel):
+    """Single team adjustment"""
+    team: str
+    adjustment: float = Field(ge=-5.0, le=5.0)  # Limit adjustments to ±5 points
+    reason: Optional[str] = None
+
+class PlayerAdjustment(BaseModel):
+    """Single player/move adjustment"""
+    player_name: str
+    original_impact: float
+    adjusted_impact: float
+    reason: Optional[str] = None
+
+class SystemBiases(BaseModel):
+    """System-wide adjustment biases"""
+    coaching_multiplier: float = Field(default=1.0, ge=0.5, le=2.0)
+    rookie_factor: float = Field(default=1.0, ge=0.5, le=1.5)
+    home_field_advantage: float = Field(default=2.5, ge=0.0, le=4.0)
+    division_strength_adjustments: Dict[str, float] = Field(default_factory=dict)
+
+class CustomRankingsRequest(BaseModel):
+    """Complete custom rankings request"""
+    team_adjustments: List[TeamAdjustment] = Field(default_factory=list)
+    player_adjustments: List[PlayerAdjustment] = Field(default_factory=list)
+    system_biases: SystemBiases = Field(default_factory=SystemBiases)
+    scenario_name: Optional[str] = None
+
+class RankingScenario(BaseModel):
+    """Saved ranking scenario"""
+    id: str
+    user_id: str
+    name: str
+    adjustments: CustomRankingsRequest
+    created_at: datetime
+    updated_at: datetime
+
+# =============================================================================
+# CUSTOM RANKINGS ENGINE
+# =============================================================================
+
+class CustomRankingsEngine:
+    """Engine for applying user customizations to rankings"""
+    
+    def __init__(self, framework: PlayerBridgeFramework):
+        self.framework = framework
+        self.base_rankings = None
+        self.base_grades = None
+        self.base_player_bridge = None
+        
+    def initialize_base_data(self):
+        """Load base rankings without any adjustments"""
+        if self.base_rankings is None:
+            player_bridge, team_grades, final_rankings = self.framework.generate_comprehensive_report()
+            self.base_player_bridge = player_bridge.copy()
+            self.base_grades = team_grades.copy()
+            self.base_rankings = final_rankings.copy()
+            
+    def apply_custom_adjustments(self, request: CustomRankingsRequest):
+        """Apply all custom adjustments and recalculate rankings"""
+        self.initialize_base_data()
+        
+        # Start with copies of base data
+        adjusted_rankings = self.base_rankings.copy()
+        adjusted_grades = self.base_grades.copy()
+        adjusted_bridge = self.base_player_bridge.copy()
+        
+        # Apply player adjustments first (affects team grades)
+        if request.player_adjustments:
+            adjusted_bridge = self._apply_player_adjustments(
+                adjusted_bridge, 
+                request.player_adjustments
+            )
+            # Recalculate team impacts based on adjusted player moves
+            team_impacts = self.framework.calculate_team_net_changes(adjusted_bridge)
+            adjusted_grades = self.framework.grade_team_changes(team_impacts)
+        
+        # Apply system biases
+        if request.system_biases:
+            adjusted_grades = self._apply_system_biases(
+                adjusted_grades, 
+                adjusted_bridge,
+                request.system_biases
+            )
+        
+        # Apply direct team adjustments last (override everything else)
+        if request.team_adjustments:
+            adjusted_grades = self._apply_team_adjustments(
+                adjusted_grades,
+                request.team_adjustments
+            )
+        
+        # Recalculate final rankings with all adjustments
+        final_adjusted_rankings = self._recalculate_rankings(adjusted_grades)
+        
+        return {
+            'rankings': final_adjusted_rankings,
+            'grades': adjusted_grades,
+            'player_moves': adjusted_bridge,
+            'adjustments_applied': {
+                'team_adjustments': len(request.team_adjustments),
+                'player_adjustments': len(request.player_adjustments),
+                'system_biases': request.system_biases.dict()
+            }
+        }
+    
+    def _apply_player_adjustments(self, player_bridge: pd.DataFrame, 
+                                adjustments: List[PlayerAdjustment]) -> pd.DataFrame:
+        """Apply adjustments to individual player moves"""
+        adjusted_bridge = player_bridge.copy()
+        
+        for adj in adjustments:
+            mask = adjusted_bridge['player_name'] == adj.player_name
+            if mask.any():
+                adjusted_bridge.loc[mask, 'impact_score'] = adj.adjusted_impact
+                adjusted_bridge.loc[mask, 'adjustment_reason'] = adj.reason
+                
+        return adjusted_bridge
+    
+    def _apply_system_biases(self, team_grades: pd.DataFrame, 
+                           player_bridge: pd.DataFrame,
+                           biases: SystemBiases) -> pd.DataFrame:
+        """Apply system-wide biases to team grades"""
+        adjusted_grades = team_grades.copy()
+        
+        # Apply coaching multiplier
+        if biases.coaching_multiplier != 1.0:
+            for idx, team in adjusted_grades.iterrows():
+                # Find coaching changes for this team
+                coaching_moves = player_bridge[
+                    (player_bridge['to_team'] == team['team']) & 
+                    (player_bridge['position'].isin(['HC', 'OC', 'DC', 'COACH']))
+                ]
+                if not coaching_moves.empty:
+                    coaching_impact = coaching_moves['impact_score'].sum()
+                    adjustment = coaching_impact * (biases.coaching_multiplier - 1.0)
+                    adjusted_grades.loc[idx, 'net_impact'] += adjustment
+        
+        # Apply rookie factor
+        if biases.rookie_factor != 1.0:
+            for idx, team in adjusted_grades.iterrows():
+                # Find draft picks for this team
+                rookie_moves = player_bridge[
+                    (player_bridge['to_team'] == team['team']) & 
+                    (player_bridge['move_type'].str.contains('Draft', na=False))
+                ]
+                if not rookie_moves.empty:
+                    rookie_impact = rookie_moves['impact_score'].sum()
+                    adjustment = rookie_impact * (biases.rookie_factor - 1.0)
+                    adjusted_grades.loc[idx, 'net_impact'] += adjustment
+        
+        # Apply division strength adjustments
+        for division, adjustment in biases.division_strength_adjustments.items():
+            # This would require division mapping - simplified for now
+            pass
+        
+        return adjusted_grades
+    
+    def _apply_team_adjustments(self, team_grades: pd.DataFrame,
+                              adjustments: List[TeamAdjustment]) -> pd.DataFrame:
+        """Apply direct team rating adjustments"""
+        adjusted_grades = team_grades.copy()
+        
+        for adj in adjustments:
+            mask = adjusted_grades['team'] == adj.team
+            if mask.any():
+                # Add adjustment to net impact (which affects final rating)
+                adjusted_grades.loc[mask, 'net_impact'] += adj.adjustment
+                adjusted_grades.loc[mask, 'manual_adjustment'] = adj.adjustment
+                adjusted_grades.loc[mask, 'adjustment_reason'] = adj.reason
+        
+        return adjusted_grades
+    
+    def _recalculate_rankings(self, adjusted_grades: pd.DataFrame) -> pd.DataFrame:
+        """Recalculate final rankings based on adjusted grades"""
+        # Get original 2024 data
+        final_rankings = pd.DataFrame()
+        
+        for _, team in adjusted_grades.iterrows():
+            team_abbr = team['team']
+            
+            # Get original 2024 rating with better fallback handling
+            original_rating = self.framework.original_power_rankings.get(team_abbr, 75.0)
+            original_rank = self.framework.original_ranks.get(team_abbr, 16)
+            
+            # Handle potential NaN values
+            net_impact = team.get('net_impact', 0)
+            if pd.isna(net_impact):
+                net_impact = 0
+                
+            manual_adjustment = team.get('manual_adjustment', 0)
+            if pd.isna(manual_adjustment):
+                manual_adjustment = 0
+            
+            # Calculate new rating with adjustments
+            final_rating = original_rating + net_impact
+            
+            # Get offseason grade, default to 'B' if missing
+            offseason_grade = team.get('offseason_grade', 'B')
+            if pd.isna(offseason_grade):
+                offseason_grade = 'B'
+            
+            final_rankings = pd.concat([final_rankings, pd.DataFrame([{
+                'team': team_abbr,
+                'team_name': team.get('team_name', team_abbr),
+                'original_2024_rating': original_rating,
+                'original_2024_rank': int(original_rank),
+                'offseason_impact': float(net_impact),
+                'manual_adjustment': float(manual_adjustment),
+                'final_2025_rating': float(final_rating),
+                'offseason_grade': str(offseason_grade)
+            }])], ignore_index=True)
+        
+        # Calculate new ranks
+        final_rankings['final_2025_rank'] = final_rankings['final_2025_rating'].rank(
+            ascending=False, method='min'
+        ).astype(int)
+        
+        # Calculate rank changes
+        final_rankings['rank_change'] = (
+            final_rankings['original_2024_rank'] - final_rankings['final_2025_rank']
+        ).astype(int)
+        
+        # Sort by final rank
+        final_rankings = final_rankings.sort_values('final_2025_rank').reset_index(drop=True)
+        
+        # Clean up any remaining NaN values
+        final_rankings = final_rankings.fillna({
+            'offseason_impact': 0.0,
+            'manual_adjustment': 0.0,
+            'rank_change': 0
+        })
+        
+        return final_rankings
+
+# =============================================================================
+# SCENARIO STORAGE (In-memory for now, can be replaced with database)
+# =============================================================================
+
+# Simple in-memory storage for demo
+ranking_scenarios: Dict[str, RankingScenario] = {}
+
+# =============================================================================
+# API ENDPOINTS - Add these to your main.py
+# =============================================================================
+
+# Initialize custom rankings engine
+custom_engine = None
+
+@app.post("/api/rankings/custom")
+async def create_custom_rankings(request: CustomRankingsRequest):
+    """
+    Apply custom adjustments and recalculate rankings
+    
+    Example request:
+    {
+        "team_adjustments": [
+            {"team": "KC", "adjustment": 2.0, "reason": "Mahomes factor"},
+            {"team": "NYJ", "adjustment": -3.0, "reason": "Rodgers injury concern"}
+        ],
+        "player_adjustments": [
+            {
+                "player_name": "Calvin Ridley",
+                "original_impact": 1.5,
+                "adjusted_impact": 2.5,
+                "reason": "Perfect scheme fit"
+            }
+        ],
+        "system_biases": {
+            "coaching_multiplier": 1.2,
+            "rookie_factor": 0.8
+        }
+    }
+    """
+    if not custom_engine:
+        raise HTTPException(status_code=503, detail="Custom rankings engine not initialized")
+    
+    try:
+        # Apply adjustments
+        results = custom_engine.apply_custom_adjustments(request)
+        
+        # Convert DataFrames to dict for JSON response
+        rankings_dict = results['rankings'].to_dict('records')
+        grades_dict = results['grades'].to_dict('records')
+        
+        # Calculate betting implications
+        top_risers = results['rankings'].nlargest(5, 'rank_change')[
+            ['team', 'team_name', 'rank_change', 'final_2025_rating']
+        ].to_dict('records')
+        
+        top_fallers = results['rankings'].nsmallest(5, 'rank_change')[
+            ['team', 'team_name', 'rank_change', 'final_2025_rating']
+        ].to_dict('records')
+        
+        return {
+            "status": "success",
+            "power_rankings": rankings_dict,
+            "team_grades": grades_dict,
+            "adjustments_applied": results['adjustments_applied'],
+            "betting_insights": {
+                "top_risers": top_risers,
+                "top_fallers": top_fallers,
+                "biggest_adjustment": max(
+                    request.team_adjustments, 
+                    key=lambda x: abs(x.adjustment),
+                    default=None
+                )
+            },
+            "timestamp": datetime.now().isoformat()
+        }
+        
+    except Exception as e:
+        logger.error(f"Error applying custom rankings: {str(e)}")
+        raise HTTPException(status_code=500, detail=f"Error calculating custom rankings: {str(e)}")
+
+@app.post("/api/rankings/scenarios")
+async def save_ranking_scenario(
+    scenario_name: str,
+    request: CustomRankingsRequest,
+    user_id: str = "demo_user"  # In production, get from auth
+):
+    """Save a custom ranking scenario for later use"""
+    scenario_id = f"{user_id}_{datetime.now().timestamp()}"
+    
+    scenario = RankingScenario(
+        id=scenario_id,
+        user_id=user_id,
+        name=scenario_name,
+        adjustments=request,
+        created_at=datetime.now(),
+        updated_at=datetime.now()
+    )
+    
+    ranking_scenarios[scenario_id] = scenario
+    
+    return {
+        "status": "success",
+        "scenario_id": scenario_id,
+        "message": f"Scenario '{scenario_name}' saved successfully"
+    }
+
+@app.get("/api/rankings/scenarios/{user_id}")
+async def get_user_scenarios(user_id: str):
+    """Get all saved scenarios for a user"""
+    user_scenarios = [
+        {
+            "id": s.id,
+            "name": s.name,
+            "created_at": s.created_at.isoformat(),
+            "updated_at": s.updated_at.isoformat(),
+            "total_adjustments": (
+                len(s.adjustments.team_adjustments) + 
+                len(s.adjustments.player_adjustments)
+            )
+        }
+        for s in ranking_scenarios.values()
+        if s.user_id == user_id
+    ]
+    
+    return {
+        "status": "success",
+        "scenarios": user_scenarios,
+        "total": len(user_scenarios)
+    }
+
+@app.get("/api/rankings/scenarios/load/{scenario_id}")
+async def load_ranking_scenario(scenario_id: str):
+    """Load a specific ranking scenario"""
+    if scenario_id not in ranking_scenarios:
+        raise HTTPException(status_code=404, detail="Scenario not found")
+    
+    scenario = ranking_scenarios[scenario_id]
+    
+    # Apply the scenario adjustments
+    if custom_engine:
+        results = custom_engine.apply_custom_adjustments(scenario.adjustments)
+        rankings_dict = results['rankings'].to_dict('records')
+        
+        return {
+            "status": "success",
+            "scenario": {
+                "id": scenario.id,
+                "name": scenario.name,
+                "adjustments": scenario.adjustments.dict(),
+                "created_at": scenario.created_at.isoformat()
+            },
+            "power_rankings": rankings_dict
+        }
+    else:
+        return {
+            "status": "error",
+            "message": "Custom rankings engine not available"
+        }
+
+@app.post("/api/rankings/quick-adjust/{team}")
+async def quick_team_adjustment(team: str, adjustment: float = Query(..., ge=-5, le=5)):
+    """Quick endpoint for single team adjustment"""
+    request = CustomRankingsRequest(
+        team_adjustments=[TeamAdjustment(team=team.upper(), adjustment=adjustment)]
+    )
+    
+    try:
+        result = await create_custom_rankings(request)
+        
+        # Clean any NaN values in the response
+        if isinstance(result, dict):
+            # Replace NaN with None (which converts to null in JSON)
+            import numpy as np
+            
+            def clean_nan(obj):
+                if isinstance(obj, dict):
+                    return {k: clean_nan(v) for k, v in obj.items()}
+                elif isinstance(obj, list):
+                    return [clean_nan(item) for item in obj]
+                elif isinstance(obj, float) and np.isnan(obj):
+                    return 0.0
+                return obj
+            
+            return clean_nan(result)
+        return result
+    except Exception as e:
+        logger.error(f"Error in quick adjustment: {str(e)}")
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+# =============================================================================
 # STARTUP EVENT
 # =============================================================================
 
 @app.on_event("startup")
 async def startup_event():
+    """Combined startup event for all initialization"""
     print("🏈 NFL Analytics API Starting Up...")
     print(f"📁 Project root: {PROJECT_ROOT}")
     print(f"🔧 Framework available: {FRAMEWORK_AVAILABLE}")
@@ -1079,9 +1513,21 @@ async def startup_event():
     print(f"🔌 ESPN integration: {'✅' if espn_integration else '❌'}")
     print("⚠️  Rankings adjusted: Bears #1, Eagles #32 (demonstration)")
     
+    # Initialize custom rankings engine
+    global custom_engine
+    if FRAMEWORK_AVAILABLE:
+        try:
+            framework = PlayerBridgeFramework()
+            custom_engine = CustomRankingsEngine(framework)
+            logger.info("✅ Custom rankings engine initialized")
+            print("✅ Custom rankings engine ready for adjustments")
+        except Exception as e:
+            logger.error(f"❌ Failed to initialize custom rankings engine: {e}")
+            print(f"❌ Custom rankings engine failed: {e}")
+    
+    # Test ESPN connection if available
     if espn_integration:
         try:
-            # Test ESPN connection
             test_data = espn_integration.get_current_week_schedule()
             if test_data:
                 print(f"✅ ESPN API connection successful")
@@ -1097,7 +1543,8 @@ async def startup_event():
     
     if REAL_DATA_AVAILABLE:
         print(f"🎯 Ready to serve live predictions for {len(MOVES_BY_TEAM)} teams!")
-
+    
+    print("\n🚀 All systems initialized! API ready for custom rankings.")
 # =============================================================================
 # RUN THE APP
 # =============================================================================
